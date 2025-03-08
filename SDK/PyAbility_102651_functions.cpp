@@ -39,7 +39,7 @@ void APyProjectile_10265101::K2_OnBeginAgentTask()
 // PythonFunction PyAbility_102651.PyProjectile_10265101.K2_OnProcessHit
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FHitResult                       Hit                                                    (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FHitResult&                Hit                                                    (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyProjectile_10265101::K2_OnProcessHit(const struct FHitResult& Hit)
 {
@@ -84,7 +84,7 @@ void APyProjectile_10265101::K2_OnEndAgentTask()
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyCue_Scope_Start_10265101::OnExecuteFX(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters) const
 {

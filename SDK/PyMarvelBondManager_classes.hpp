@@ -17,13 +17,14 @@ namespace SDK
 {
 
 // PythonClass PyMarvelBondManager.PyMarvelBondManager
-// 0x0000 (0x0628 - 0x0628)
+// 0x0000 (0x0638 - 0x0638)
 class APyMarvelBondManager final : public AMarvelBondManager
 {
 public:
 	void K2_OnInitialize();
 	void K2_OnDeInitialize();
 	void OnBondStateChange(const struct FBondInstance& InBondInstance, const TArray<class AMarvelBaseCharacter*>& TriggerCharacters);
+	void OnCharacterBondStateChange(const struct FBondInstance& InBondInstance, class AMarvelBaseCharacter* Target, bool IsActive);
 	void OnBondCharacterAdd(class AMarvelBaseCharacter* TriggerCharacter, const TArray<struct FBondInstance>& RefBondInstances);
 	void OnBondCharacterRemove(class AMarvelBaseCharacter* TriggerCharacter, const TArray<struct FBondInstance>& RefBondInstances);
 	void OnGlobalCharacterRegister(class AActor* Character);
@@ -46,7 +47,7 @@ public:
 };
 
 // PythonClass PyMarvelBondManager.PyMarvelDefaultBondAbility
-// 0x0000 (0x2580 - 0x2580)
+// 0x0000 (0x2588 - 0x2588)
 class UPyMarvelDefaultBondAbility : public UMarvelGameplayAbility
 {
 public:

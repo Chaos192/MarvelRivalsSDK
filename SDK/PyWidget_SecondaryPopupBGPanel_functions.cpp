@@ -64,7 +64,7 @@ void UPyWidget_SecondaryPopupBGPanel::PreConstruct(bool IsDesignTime)
 // PythonFunction PyWidget_SecondaryPopupBGPanel.PyWidget_SecondaryPopupBGPanel.SetTitleText
 // (Native, Public, BlueprintCallable)
 // Parameters:
-// class FText                             TitleText_0                                            (Parm)
+// const class FText&                      TitleText_0                                            (Parm)
 
 void UPyWidget_SecondaryPopupBGPanel::SetTitleText(const class FText& TitleText_0)
 {
@@ -116,9 +116,9 @@ void UPyWidget_SecondaryPopupBGPanel::SetTitleTimeCountDown(int32 TimeCountDown,
 // PythonFunction PyWidget_SecondaryPopupBGPanel.PyWidget_SecondaryPopupBGPanel.SetBtnsText
 // (Native, Public, BlueprintCallable)
 // Parameters:
-// class FText                             LeftBtnText_0                                          (Parm)
-// class FText                             RightBtnText_0                                         (Parm)
-// class FText                             close_text                                             (Parm)
+// const class FText&                      LeftBtnText_0                                          (Parm)
+// const class FText&                      RightBtnText_0                                         (Parm)
+// const class FText&                      close_text                                             (Parm)
 
 void UPyWidget_SecondaryPopupBGPanel::SetBtnsText(const class FText& LeftBtnText_0, const class FText& RightBtnText_0, const class FText& close_text)
 {
@@ -145,7 +145,7 @@ void UPyWidget_SecondaryPopupBGPanel::SetBtnsText(const class FText& LeftBtnText
 // PythonFunction PyWidget_SecondaryPopupBGPanel.PyWidget_SecondaryPopupBGPanel.SetCloseBtnText
 // (Native, Public, BlueprintCallable)
 // Parameters:
-// class FText                             BtnText                                                (Parm)
+// const class FText&                      BtnText                                                (Parm)
 
 void UPyWidget_SecondaryPopupBGPanel::SetCloseBtnText(const class FText& BtnText)
 {
@@ -170,8 +170,8 @@ void UPyWidget_SecondaryPopupBGPanel::SetCloseBtnText(const class FText& BtnText
 // PythonFunction PyWidget_SecondaryPopupBGPanel.PyWidget_SecondaryPopupBGPanel.SetBtnAboveTipsText
 // (Native, Public, BlueprintCallable)
 // Parameters:
-// class FText                             LeftTips                                               (Parm)
-// class FText                             RightTips                                              (Parm)
+// const class FText&                      LeftTips                                               (Parm)
+// const class FText&                      RightTips                                              (Parm)
 
 void UPyWidget_SecondaryPopupBGPanel::SetBtnAboveTipsText(const class FText& LeftTips, const class FText& RightTips)
 {
@@ -344,6 +344,31 @@ void UPyWidget_SecondaryPopupBGPanel::SetButtonEnabled(bool Enabled)
 }
 
 
+// PythonFunction PyWidget_SecondaryPopupBGPanel.PyWidget_SecondaryPopupBGPanel.SetRightButtonEnabled
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    Enabled                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UPyWidget_SecondaryPopupBGPanel::SetRightButtonEnabled(bool Enabled)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyWidget_SecondaryPopupBGPanel", "SetRightButtonEnabled");
+
+	Params::PyWidget_SecondaryPopupBGPanel_SetRightButtonEnabled Parms{};
+
+	Parms.Enabled = Enabled;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // PythonFunction PyWidget_SecondaryPopupBGPanel.PyWidget_SecondaryPopupBGPanel.SetRightBtnVisible
 // (Native, Public, BlueprintCallable)
 // Parameters:
@@ -447,10 +472,10 @@ void UPyWidget_SecondaryPopupBGPanel::SetRightBtn2Visible(bool Visible)
 // PythonFunction PyWidget_SecondaryPopupBGPanel.PyWidget_SecondaryPopupBGPanel.SetLeftBtnTwoPrice
 // (Native, Public, BlueprintCallable)
 // Parameters:
-// class FString                           cost_id1                                               (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    cost_id1                                               (Parm, ZeroConstructor, HasGetValueTypeHash)
 // int32                                   price1                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    is_enough1                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           cost_id2                                               (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    cost_id2                                               (Parm, ZeroConstructor, HasGetValueTypeHash)
 // int32                                   price2                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    is_enough2                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
@@ -658,7 +683,7 @@ void UPyWidget_SecondaryPopupBGUnit_V2::OnInitialized()
 // PythonFunction PyWidget_SecondaryPopupBGPanel.PyWidget_SecondaryPopupBGUnit_V2.OnAnimationFinished
 // (BlueprintCosmetic, Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UWidgetAnimation*                 Animation                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// const class UWidgetAnimation*           Animation                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 void UPyWidget_SecondaryPopupBGUnit_V2::OnAnimationFinished(const class UWidgetAnimation* Animation)
 {

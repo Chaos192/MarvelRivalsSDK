@@ -22,7 +22,7 @@ namespace SDK
 class UUIC_SummonedHpBar_BattlePanelBP_C final : public UPyUIC_Summoned_HpBar
 {
 public:
-	TMap<EClientPlayerViewSide, struct FWidgetStyle_HealthBar_BattlePanel> WidgetStyleConfig;                                 // 0x0118(0x0050)(Edit, BlueprintVisible, ExposeOnSpawn)
+	TMap<EClientPlayerViewSide, struct FWidgetStyle_HealthBar_BattlePanel> WidgetStyleConfig;        // 0x0118(0x0050)(Edit, BlueprintVisible, ExposeOnSpawn)
 	bool                                          NeedShowAvatar;                                    // 0x0168(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:

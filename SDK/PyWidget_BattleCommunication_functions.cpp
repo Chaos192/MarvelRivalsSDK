@@ -164,7 +164,7 @@ void UPyWidget_BattleCommunicationPanel::SetIsBattleMode(bool bIsBattleMode)
 // PythonFunction PyWidget_BattleCommunication.PyWidget_BattleCommunicationPanel.Tick
 // (BlueprintCosmetic, Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGeometry                        MyGeometry                                             (Parm, IsPlainOldData, NoDestructor)
+// const struct FGeometry&                 MyGeometry                                             (Parm, IsPlainOldData, NoDestructor)
 // float                                   InDeltaTime                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UPyWidget_BattleCommunicationPanel::Tick(const struct FGeometry& MyGeometry, float InDeltaTime)

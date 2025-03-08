@@ -259,8 +259,8 @@ void UPyWidget_Setting_SwitchShiftButton::SetTabID(int32 TabId)
 // PythonFunction PyWidget_SettingBase.PyWidget_Setting_Key.OnKeyDown
 // (BlueprintCosmetic, Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGeometry                        MyGeometry                                             (Parm, IsPlainOldData, NoDestructor)
-// struct FKeyEvent                        InKeyEvent                                             (Parm)
+// const struct FGeometry&                 MyGeometry                                             (Parm, IsPlainOldData, NoDestructor)
+// const struct FKeyEvent&                 InKeyEvent                                             (Parm)
 // struct FEventReply                      ReturnValue                                            (Parm, OutParm, ReturnParm)
 
 struct FEventReply UPyWidget_Setting_Key::OnKeyDown(const struct FGeometry& MyGeometry, const struct FKeyEvent& InKeyEvent)
@@ -396,7 +396,7 @@ void UPyWidget_Setting_Key::SetKeyAsset(class UMarvelKeyUIAsset* InKeyAsset)
 // PythonFunction PyWidget_SettingBase.PyWidget_Setting_Key.SetInputChord
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FInputChord                      Chord_0                                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
+// const struct FInputChord&               Chord_0                                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
 
 void UPyWidget_Setting_Key::SetInputChord(const struct FInputChord& Chord_0)
 {
@@ -421,7 +421,7 @@ void UPyWidget_Setting_Key::SetInputChord(const struct FInputChord& Chord_0)
 // PythonFunction PyWidget_SettingBase.PyWidget_Setting_Key.SetKey
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FKey                             InKey                                                  (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
+// const struct FKey&                      InKey                                                  (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 bool UPyWidget_Setting_Key::SetKey(const struct FKey& InKey)
@@ -449,7 +449,7 @@ bool UPyWidget_Setting_Key::SetKey(const struct FKey& InKey)
 // PythonFunction PyWidget_SettingBase.PyWidget_Setting_Key.SetMouseKey
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FKey                             InKey                                                  (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
+// const struct FKey&                      InKey                                                  (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
 
 void UPyWidget_Setting_Key::SetMouseKey(const struct FKey& InKey)
 {
@@ -474,7 +474,7 @@ void UPyWidget_Setting_Key::SetMouseKey(const struct FKey& InKey)
 // PythonFunction PyWidget_SettingBase.PyWidget_Setting_Key.SetActionMapping
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FInputActionKeyMapping           ActionMap                                              (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FInputActionKeyMapping&    ActionMap                                              (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyWidget_Setting_Key::SetActionMapping(const struct FInputActionKeyMapping& ActionMap)
 {
@@ -499,7 +499,7 @@ void UPyWidget_Setting_Key::SetActionMapping(const struct FInputActionKeyMapping
 // PythonFunction PyWidget_SettingBase.PyWidget_Setting_Key.SetAxisMapping
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FInputAxisKeyMapping             AxisMap                                                (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FInputAxisKeyMapping&      AxisMap                                                (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyWidget_Setting_Key::SetAxisMapping(const struct FInputAxisKeyMapping& AxisMap)
 {
@@ -524,7 +524,7 @@ void UPyWidget_Setting_Key::SetAxisMapping(const struct FInputAxisKeyMapping& Ax
 // PythonFunction PyWidget_SettingBase.PyWidget_Setting_Key.ConstructChordString
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FInputChord                      Input                                                  (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
+// const struct FInputChord&               Input                                                  (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
 // class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash)
 
 class FString UPyWidget_Setting_Key::ConstructChordString(const struct FInputChord& Input)
@@ -552,7 +552,7 @@ class FString UPyWidget_Setting_Key::ConstructChordString(const struct FInputCho
 // PythonFunction PyWidget_SettingBase.PyWidget_Setting_Key.ConstructActionString
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FInputActionKeyMapping           Input                                                  (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FInputActionKeyMapping&    Input                                                  (ConstParm, Parm, OutParm, ReferenceParm)
 // class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash)
 
 class FString UPyWidget_Setting_Key::ConstructActionString(const struct FInputActionKeyMapping& Input)
@@ -580,7 +580,7 @@ class FString UPyWidget_Setting_Key::ConstructActionString(const struct FInputAc
 // PythonFunction PyWidget_SettingBase.PyWidget_Setting_Key.ConstructAxisString
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FInputAxisKeyMapping             Input                                                  (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FInputAxisKeyMapping&      Input                                                  (ConstParm, Parm, OutParm, ReferenceParm)
 // class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash)
 
 class FString UPyWidget_Setting_Key::ConstructAxisString(const struct FInputAxisKeyMapping& Input)
@@ -608,7 +608,7 @@ class FString UPyWidget_Setting_Key::ConstructAxisString(const struct FInputAxis
 // PythonFunction PyWidget_SettingBase.PyWidget_Setting_Key.SetText
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class FText                             KeyText                                                (Parm)
+// const class FText&                      KeyText                                                (Parm)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 bool UPyWidget_Setting_Key::SetText(const class FText& KeyText)
@@ -636,7 +636,7 @@ bool UPyWidget_Setting_Key::SetText(const class FText& KeyText)
 // PythonFunction PyWidget_SettingBase.PyWidget_Setting_Key.SetBrush
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FSlateBrush                      Brush                                                  (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FSlateBrush&               Brush                                                  (ConstParm, Parm, OutParm, ReferenceParm)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 bool UPyWidget_Setting_Key::SetBrush(const struct FSlateBrush& Brush)
@@ -664,8 +664,8 @@ bool UPyWidget_Setting_Key::SetBrush(const struct FSlateBrush& Brush)
 // PythonFunction PyWidget_SettingBase.PyWidget_Setting_Key.SetMultiKeyWidget
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FInputChord                      key1                                                   (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
-// struct FInputChord                      key2                                                   (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
+// const struct FInputChord&               key1                                                   (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
+// const struct FInputChord&               key2                                                   (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
 
 void UPyWidget_Setting_Key::SetMultiKeyWidget(const struct FInputChord& key1, const struct FInputChord& key2)
 {
@@ -710,8 +710,8 @@ void UPyWidget_Setting_Item::OnInitialized()
 // PythonFunction PyWidget_SettingBase.PyWidget_Setting_Item.OnMouseEnter
 // (BlueprintCosmetic, Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGeometry                        MyGeometry                                             (Parm, IsPlainOldData, NoDestructor)
-// struct FPointerEvent                    MouseEvent                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGeometry&                 MyGeometry                                             (Parm, IsPlainOldData, NoDestructor)
+// const struct FPointerEvent&             MouseEvent                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyWidget_Setting_Item::OnMouseEnter(const struct FGeometry& MyGeometry, const struct FPointerEvent& MouseEvent)
 {
@@ -737,7 +737,7 @@ void UPyWidget_Setting_Item::OnMouseEnter(const struct FGeometry& MyGeometry, co
 // PythonFunction PyWidget_SettingBase.PyWidget_Setting_Item.OnMouseLeave
 // (BlueprintCosmetic, Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FPointerEvent                    MouseEvent                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FPointerEvent&             MouseEvent                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyWidget_Setting_Item::OnMouseLeave(const struct FPointerEvent& MouseEvent)
 {
@@ -806,7 +806,7 @@ void UPyWidget_Setting_Item::Construct()
 // PythonFunction PyWidget_SettingBase.PyWidget_Setting_Item.OnPaint
 // (BlueprintCosmetic, Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
 // Parameters:
-// struct FPaintContext                    Context                                                (Parm, OutParm, ReferenceParm, NoDestructor)
+// struct FPaintContext&                   Context                                                (Parm, OutParm, ReferenceParm, NoDestructor)
 
 void UPyWidget_Setting_Item::OnPaint(struct FPaintContext& Context) const
 {
@@ -833,7 +833,7 @@ void UPyWidget_Setting_Item::OnPaint(struct FPaintContext& Context) const
 // PythonFunction PyWidget_SettingBase.PyWidget_Setting_VBox.OnPaint
 // (BlueprintCosmetic, Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
 // Parameters:
-// struct FPaintContext                    Context                                                (Parm, OutParm, ReferenceParm, NoDestructor)
+// struct FPaintContext&                   Context                                                (Parm, OutParm, ReferenceParm, NoDestructor)
 
 void UPyWidget_Setting_VBox::OnPaint(struct FPaintContext& Context) const
 {
@@ -917,7 +917,7 @@ void UPyWidget_SettingDesc::PostSetButtonFailed()
 // PythonFunction PyWidget_SettingBase.PyWidget_SettingDesc.SetPreBindText
 // (Native, Public, BlueprintCallable)
 // Parameters:
-// class FString                           Text                                                   (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Text                                                   (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyWidget_SettingDesc::SetPreBindText(const class FString& Text)
 {
@@ -943,8 +943,8 @@ void UPyWidget_SettingDesc::SetPreBindText(const class FString& Text)
 // (Native, Public, BlueprintCallable)
 // Parameters:
 // int32                                   Type                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           key1                                                   (Parm, ZeroConstructor, HasGetValueTypeHash)
-// class FString                           key2                                                   (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    key1                                                   (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    key2                                                   (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyWidget_SettingDesc::SetBindSuccessTips(int32 Type, const class FString& key1, const class FString& key2)
 {
@@ -971,9 +971,9 @@ void UPyWidget_SettingDesc::SetBindSuccessTips(int32 Type, const class FString& 
 // PythonFunction PyWidget_SettingBase.PyWidget_SettingDesc.SetBindConflictTips
 // (Native, Public, BlueprintCallable)
 // Parameters:
-// class FString                           key1                                                   (Parm, ZeroConstructor, HasGetValueTypeHash)
-// class FString                           key2                                                   (Parm, ZeroConstructor, HasGetValueTypeHash)
-// class FString                           key3                                                   (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    key1                                                   (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    key2                                                   (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    key3                                                   (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyWidget_SettingDesc::SetBindConflictTips(const class FString& key1, const class FString& key2, const class FString& key3)
 {

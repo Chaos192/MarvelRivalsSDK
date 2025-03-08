@@ -20,6 +20,27 @@
 namespace SDK
 {
 
+// PythonClass PyWidget_CommonItem_V2.PyWidget_CommonItem_ItemData
+// 0x0018 (0x0048 - 0x0030)
+class UPyWidget_CommonItem_ItemData : public UObject
+{
+public:
+	class FString                                 ItemId;                                            // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ItemNum;                                           // 0x0040(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EItemType                                     ItemType;                                          // 0x0044(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EWidgetFocusType                              ItemFocusType;                                     // 0x0045(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PyWidget_CommonItem_ItemData">();
+	}
+	static class UPyWidget_CommonItem_ItemData* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPyWidget_CommonItem_ItemData>();
+	}
+};
+
 // PythonClass PyWidget_CommonItem_V2.PyWidget_CommonItem
 // 0x0080 (0x0970 - 0x08F0)
 class UPyWidget_CommonItem : public UPyWidget_BaseCommonButton
@@ -48,7 +69,7 @@ public:
 	class UMarvelImage*                           Img_Item_Icon;                                     // 0x0940(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FSlateColor                            ItemGainColor;                                     // 0x0948(0x0014)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	uint8                                         Pad_95C[0x4];                                      // 0x095C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TMulticastInlineDelegate<void(const class FString& ItemId, EItemType ItemType)> OnItemClicked;                                     // 0x0960(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const class FString& ItemId, EItemType ItemType)> OnItemClicked;   // 0x0960(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 
 public:
 	void SetItemIcon(class UTexture2D* Img_Icon, TSoftObjectPtr<class UTexture2D> Image_Icon_Soft);
@@ -60,13 +81,13 @@ public:
 	void SetItemObject(class UObject* ItemObject);
 	void OnAnimationsDisabled();
 	void OnAnimationFinished(const class UWidgetAnimation* Animation);
-	void SetIsHover(bool IsHover_0);
+	void SetItemIconQuality(EItemQualityType ItemQuality);
 	void SetIsFocusable(bool IsFocusable);
 	struct FEventReply OnFocusReceived(const struct FGeometry& MyGeometry, const struct FFocusEvent& InFocusEvent);
 	void Destruct();
 	void Construct();
 	void OnInitialized();
-	void SetItemIconQuality(EItemQualityType ItemQuality);
+	void SetIsHover(bool IsHover_0);
 	void SetItemNum(int32 ItemNum_0, int32 Multiple);
 	void SetIsNumVisible(bool IsNumVisible);
 	void SetIsEmpty(bool IsEmpty_0);
@@ -92,27 +113,6 @@ public:
 	static class UPyWidget_CommonItem* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UPyWidget_CommonItem>();
-	}
-};
-
-// PythonClass PyWidget_CommonItem_V2.PyWidget_CommonItem_ItemData
-// 0x0018 (0x0048 - 0x0030)
-class UPyWidget_CommonItem_ItemData final : public UObject
-{
-public:
-	class FString                                 ItemId;                                            // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         ItemNum;                                           // 0x0040(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EItemType                                     ItemType;                                          // 0x0044(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EWidgetFocusType                              ItemFocusType;                                     // 0x0045(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"PyWidget_CommonItem_ItemData">();
-	}
-	static class UPyWidget_CommonItem_ItemData* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UPyWidget_CommonItem_ItemData>();
 	}
 };
 

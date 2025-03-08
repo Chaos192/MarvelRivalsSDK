@@ -66,7 +66,7 @@ void UPyUIController_102235_v3::OnDestruct()
 // PythonFunction PyAbility_102235.PyUIController_102235_v3.OnAbilityCountUpdate
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayTag                     Tag                                                    (ConstParm, Parm, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              Tag                                                    (ConstParm, Parm, NoDestructor, HasGetValueTypeHash)
 // int32                                   Count                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UPyUIController_102235_v3::OnAbilityCountUpdate(const struct FGameplayTag& Tag, int32 Count)
@@ -93,7 +93,7 @@ void UPyUIController_102235_v3::OnAbilityCountUpdate(const struct FGameplayTag& 
 // PythonFunction PyAbility_102235.PyUIController_102235_v3.OnBuffTagUpdate
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayTag                     Tag                                                    (ConstParm, Parm, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              Tag                                                    (ConstParm, Parm, NoDestructor, HasGetValueTypeHash)
 // int32                                   Count                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UPyUIController_102235_v3::OnBuffTagUpdate(const struct FGameplayTag& Tag, int32 Count)
@@ -139,7 +139,7 @@ void UPyAbility_102235::BeginPlay()
 // PythonFunction PyAbility_102235.PyAbility_102235.OnTagUpdate
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FGameplayTag                     TagUpdated                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              TagUpdated                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
 // bool                                    TagExists                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UPyAbility_102235::OnTagUpdate(const struct FGameplayTag& TagUpdated, bool TagExists)
@@ -323,7 +323,7 @@ void UPyAbility_102235::K2_OnEndAbility(bool bWasCancelled)
 // PythonFunction PyAbility_102235.PyAbility_102235.NativeOnMontageCompleted
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_102235::NativeOnMontageCompleted(const class FString& Tag)
 {
@@ -348,7 +348,7 @@ void UPyAbility_102235::NativeOnMontageCompleted(const class FString& Tag)
 // PythonFunction PyAbility_102235.PyAbility_102235.NativeOnMontageInterrupted
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_102235::NativeOnMontageInterrupted(const class FString& Tag)
 {
@@ -373,7 +373,7 @@ void UPyAbility_102235::NativeOnMontageInterrupted(const class FString& Tag)
 // PythonFunction PyAbility_102235.PyAbility_102235.NativeOnMontageCancelled
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_102235::NativeOnMontageCancelled(const class FString& Tag)
 {
@@ -399,7 +399,7 @@ void UPyAbility_102235::NativeOnMontageCancelled(const class FString& Tag)
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 bool APyCue_Ability_Loop_10225501::WhileActive(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
@@ -428,7 +428,7 @@ bool APyCue_Ability_Loop_10225501::WhileActive(class AActor* MyTarget, const str
 // PythonFunction PyAbility_102235.PyCue_Ability_Loop_10225501.OnTagUpdate
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FGameplayTag                     TagUpdated                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              TagUpdated                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
 // bool                                    TagExists                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void APyCue_Ability_Loop_10225501::OnTagUpdate(const struct FGameplayTag& TagUpdated, bool TagExists)
@@ -455,7 +455,7 @@ void APyCue_Ability_Loop_10225501::OnTagUpdate(const struct FGameplayTag& TagUpd
 // PythonFunction PyAbility_102235.PyCue_Ability_Loop_10225501.K2_UpdateTeamVisualEffect
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FTeamVisual                      NewTeamVisual                                          (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
+// const struct FTeamVisual&               NewTeamVisual                                          (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
 
 void APyCue_Ability_Loop_10225501::K2_UpdateTeamVisualEffect(const struct FTeamVisual& NewTeamVisual)
 {
@@ -481,7 +481,7 @@ void APyCue_Ability_Loop_10225501::K2_UpdateTeamVisualEffect(const struct FTeamV
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 bool APyCue_Ability_Loop_10225501::OnRemove(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)

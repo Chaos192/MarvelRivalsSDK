@@ -118,54 +118,6 @@ enum class ELodUpdateOption : uint8
 	ELodUpdateOption_MAX                     = 3,
 };
 
-// ScriptStruct RigLogicModule.CoordinateSystem
-// 0x0003 (0x0003 - 0x0000)
-struct FCoordinateSystem final
-{
-public:
-	EDirection                                    XAxis;                                             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EDirection                                    YAxis;                                             // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EDirection                                    ZAxis;                                             // 0x0002(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// ScriptStruct RigLogicModule.MeshBlendShapeChannelMapping
-// 0x0008 (0x0008 - 0x0000)
-struct FMeshBlendShapeChannelMapping final
-{
-public:
-	int32                                         MeshIndex;                                         // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         BlendShapeChannelIndex;                            // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// ScriptStruct RigLogicModule.TextureCoordinate
-// 0x0008 (0x0008 - 0x0000)
-struct FTextureCoordinate final
-{
-public:
-	float                                         U;                                                 // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         V;                                                 // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// ScriptStruct RigLogicModule.VertexLayout
-// 0x000C (0x000C - 0x0000)
-struct FVertexLayout final
-{
-public:
-	int32                                         position;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         TextureCoordinate;                                 // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Normal;                                            // 0x0008(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// ScriptStruct RigLogicModule.AnimNode_RigLogic
-// 0x0050 (0x0078 - 0x0028)
-struct FAnimNode_RigLogic final : public FAnimNode_Base
-{
-public:
-	struct FPoseLink                              AnimSequence;                                      // 0x0028(0x0010)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	int32                                         LODThreshold;                                      // 0x0038(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_3C[0x3C];                                      // 0x003C(0x003C)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-
 // ScriptStruct RigLogicModule.RigUnit_RigLogic_IntArray
 // 0x0010 (0x0010 - 0x0000)
 struct FRigUnit_RigLogic_IntArray final
@@ -200,6 +152,54 @@ public:
 	struct FRigUnit_RigLogic_Data                 Data;                                              // 0x0170(0x0098)(Transient, ContainsInstancedReference, NativeAccessSpecifierPrivate)
 	bool                                          bIsInitialized;                                    // 0x0208(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	uint8                                         Pad_209[0x7];                                      // 0x0209(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+
+// ScriptStruct RigLogicModule.CoordinateSystem
+// 0x0003 (0x0003 - 0x0000)
+struct FCoordinateSystem final
+{
+public:
+	EDirection                                    XAxis;                                             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EDirection                                    YAxis;                                             // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EDirection                                    ZAxis;                                             // 0x0002(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// ScriptStruct RigLogicModule.TextureCoordinate
+// 0x0008 (0x0008 - 0x0000)
+struct FTextureCoordinate final
+{
+public:
+	float                                         U;                                                 // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         V;                                                 // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// ScriptStruct RigLogicModule.MeshBlendShapeChannelMapping
+// 0x0008 (0x0008 - 0x0000)
+struct FMeshBlendShapeChannelMapping final
+{
+public:
+	int32                                         MeshIndex;                                         // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         BlendShapeChannelIndex;                            // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// ScriptStruct RigLogicModule.VertexLayout
+// 0x000C (0x000C - 0x0000)
+struct FVertexLayout final
+{
+public:
+	int32                                         position;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         TextureCoordinate;                                 // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Normal;                                            // 0x0008(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// ScriptStruct RigLogicModule.AnimNode_RigLogic
+// 0x0050 (0x0078 - 0x0028)
+struct FAnimNode_RigLogic final : public FAnimNode_Base
+{
+public:
+	struct FPoseLink                              AnimSequence;                                      // 0x0028(0x0010)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	int32                                         LODThreshold;                                      // 0x0038(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_3C[0x3C];                                      // 0x003C(0x003C)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 
 }

@@ -18,52 +18,6 @@
 namespace SDK
 {
 
-// PythonClass PyWidget_SummonedInfo.PyWidget_SummonedNum
-// 0x0000 (0x05F0 - 0x05F0)
-class UPyWidget_SummonedNum final : public UPyMarvelUserWidget
-{
-public:
-	void SetTotalNumCur(int32 InTotalNumCur);
-	void SetTotalNumMax(int32 InTotalNumMax);
-	void SetSummonedDesc(const class FText& InDesc);
-	void SetStyle(const struct FWidgetStyle_HealthBar_BattlePanel& WidgetStyle);
-	void SetIcon(TSoftObjectPtr<class UTexture2D> InIcon);
-	void MarvelRemoveFromParent();
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"PyWidget_SummonedNum">();
-	}
-	static class UPyWidget_SummonedNum* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UPyWidget_SummonedNum>();
-	}
-};
-
-// PythonClass PyWidget_SummonedInfo.PyWidget_SummonedHpBar
-// 0x0000 (0x0878 - 0x0878)
-class UPyWidget_SummonedHpBar : public UPyWidget_HpBar_V3
-{
-public:
-	void SetTotalHpCur(float InTotalHpCur);
-	void SetSummonedDesc(const class FText& InDesc);
-	void SetStyle(const struct FWidgetStyle_HealthBar_BattlePanel& WidgetStyle);
-	void SetIcon(TSoftObjectPtr<class UTexture2D> InIcon);
-	void MarvelVisibilityChanged();
-	void MarvelRemoveFromParent();
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"PyWidget_SummonedHpBar">();
-	}
-	static class UPyWidget_SummonedHpBar* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UPyWidget_SummonedHpBar>();
-	}
-};
-
 // PythonClass PyWidget_SummonedInfo.PyWidget_SummonedInfo
 // 0x0030 (0x0610 - 0x05E0)
 class UPyWidget_SummonedInfo final : public UWidget_MainHpBar
@@ -128,6 +82,52 @@ public:
 	static class UPyWidget_SummonedInfoPanel* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UPyWidget_SummonedInfoPanel>();
+	}
+};
+
+// PythonClass PyWidget_SummonedInfo.PyWidget_SummonedNum
+// 0x0000 (0x05F0 - 0x05F0)
+class UPyWidget_SummonedNum final : public UPyMarvelUserWidget
+{
+public:
+	void SetTotalNumCur(int32 InTotalNumCur);
+	void SetTotalNumMax(int32 InTotalNumMax);
+	void SetSummonedDesc(const class FText& InDesc);
+	void SetStyle(const struct FWidgetStyle_HealthBar_BattlePanel& WidgetStyle);
+	void SetIcon(TSoftObjectPtr<class UTexture2D> InIcon);
+	void MarvelRemoveFromParent();
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PyWidget_SummonedNum">();
+	}
+	static class UPyWidget_SummonedNum* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPyWidget_SummonedNum>();
+	}
+};
+
+// PythonClass PyWidget_SummonedInfo.PyWidget_SummonedHpBar
+// 0x0000 (0x0878 - 0x0878)
+class UPyWidget_SummonedHpBar : public UPyWidget_HpBar_V3
+{
+public:
+	void SetTotalHpCur(float InTotalHpCur);
+	void SetSummonedDesc(const class FText& InDesc);
+	void SetStyle(const struct FWidgetStyle_HealthBar_BattlePanel& WidgetStyle);
+	void SetIcon(TSoftObjectPtr<class UTexture2D> InIcon);
+	void MarvelVisibilityChanged();
+	void MarvelRemoveFromParent();
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PyWidget_SummonedHpBar">();
+	}
+	static class UPyWidget_SummonedHpBar* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPyWidget_SummonedHpBar>();
 	}
 };
 

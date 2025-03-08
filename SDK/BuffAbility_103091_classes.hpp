@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BuffAbility_103091.BuffAbility_103091_C
-// 0x0000 (0x12E0 - 0x12E0)
+// 0x0000 (0x12E8 - 0x12E8)
 class UBuffAbility_103091_C final : public UBuffManagerAbility_100009
 {
 public:

@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass NotTreatShield_102241.NotTreatShield_102241_C
-// 0x0000 (0x12B8 - 0x12B8)
+// 0x0000 (0x12C8 - 0x12C8)
 class UNotTreatShield_102241_C final : public UPyFallability_102241
 {
 public:

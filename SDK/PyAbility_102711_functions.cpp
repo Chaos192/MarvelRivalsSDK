@@ -40,7 +40,7 @@ void UPyAbility_102711::K2_ActivateAbility()
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int32                                   SocketId                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FMarvelAbilitySocketInfo         SocketInfo                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
+// const struct FMarvelAbilitySocketInfo&  SocketInfo                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
 
 void UPyAbility_102711::HandleAnimSocketInfo(int32 SocketId, const struct FMarvelAbilitySocketInfo& SocketInfo)
 {
@@ -67,7 +67,7 @@ void UPyAbility_102711::HandleAnimSocketInfo(int32 SocketId, const struct FMarve
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // class AActor*                           SpawnActor                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayAbilityTargetDataHandle Data                                                   (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayAbilityTargetDataHandle&Data                                                   (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyAbility_102711::OnProjectileTaskSuccess(class AActor* SpawnActor, const struct FGameplayAbilityTargetDataHandle& Data)
 {
@@ -93,7 +93,7 @@ void UPyAbility_102711::OnProjectileTaskSuccess(class AActor* SpawnActor, const 
 // PythonFunction PyAbility_102711.PyAbility_102711.NativeOnMontageEvent
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_102711::NativeOnMontageEvent(const class FString& Tag)
 {

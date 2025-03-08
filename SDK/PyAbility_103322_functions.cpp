@@ -39,7 +39,7 @@ void UPyAbility_103322::BeginPlay()
 // PythonFunction PyAbility_103322.PyAbility_103322.OnActivateFailed
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FGameplayTagContainer            FailReason                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayTagContainer&     FailReason                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyAbility_103322::OnActivateFailed(const struct FGameplayTagContainer& FailReason)
 {
@@ -152,7 +152,7 @@ void UPyAbility_103322::K2_ActivateAbility()
 // PythonFunction PyAbility_103322.PyAbility_103322.NativeOnMontageCompleted
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_103322::NativeOnMontageCompleted(const class FString& Tag)
 {

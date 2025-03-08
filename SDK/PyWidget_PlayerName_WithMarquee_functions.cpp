@@ -127,7 +127,7 @@ void UPyWidget_PlayerName_WithMarquee::OnCascadingVisibleChanged(bool Visible)
 // PythonFunction PyWidget_PlayerName_WithMarquee.PyWidget_PlayerName_WithMarquee.SetText
 // (Native, Public, BlueprintCallable)
 // Parameters:
-// class FText                             Text                                                   (Parm)
+// const class FText&                      Text                                                   (Parm)
 
 void UPyWidget_PlayerName_WithMarquee::SetText(const class FText& Text)
 {

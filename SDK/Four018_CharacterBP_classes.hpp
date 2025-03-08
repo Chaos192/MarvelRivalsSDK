@@ -17,11 +17,11 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass 4018_CharacterBP.4018_CharacterBP_C
-// 0x0000 (0x1820 - 0x1820)
+// 0x0000 (0x1880 - 0x1880)
 class AFour018_CharacterBP_C final : public APyGalactaBigBotCharacter
 {
 public:
-	class UMarvelMoveLogicBaseComponent*          MoveLogic;                                         // 0x1818(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UMarvelMoveLogicBaseComponent*          MoveLogic;                                         // 0x1878(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

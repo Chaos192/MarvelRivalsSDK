@@ -10,23 +10,23 @@
 
 #include "Basic.hpp"
 
-#include "PyAbility_103331_classes.hpp"
 #include "Engine_structs.hpp"
 #include "GameplayTags_structs.hpp"
+#include "PyAbility_103331_classes.hpp"
 
 
 namespace SDK
 {
 
 // BlueprintGeneratedClass Ability_103334_BP.Ability_103334_BP_C
-// 0x0018 (0x25A8 - 0x2590)
+// 0x0018 (0x25B0 - 0x2598)
 class UAbility_103334_BP_C final : public UPyAbility_103331
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x2590(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	bool                                          是否成功激活了二阶段技能;                          // 0x2598(0x0001)(Edit, BlueprintVisible, ZeroConstructor, Transient, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2599[0x3];                                     // 0x2599(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FGameplayTag                           HandleTag;                                         // 0x259C(0x000C)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x2598(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	bool                                          是否成功激活了二阶段技能;                          // 0x25A0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, Transient, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_25A1[0x3];                                     // 0x25A1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FGameplayTag                           HandleTag;                                         // 0x25A4(0x000C)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 
 public:
 	bool CanActivate();

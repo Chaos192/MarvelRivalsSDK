@@ -22,6 +22,44 @@ public:
 	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 
+// PythonFunction PyMarvelGameInstance.PyMarvelGameInstance.OnHandShakeMsg
+// 0x0010 (0x0010 - 0x0000)
+struct PyMarvelGameInstance_OnHandShakeMsg final
+{
+public:
+	class FString                                 sMsg;                                              // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash)
+};
+
+// PythonFunction PyMarvelGameInstance.PyMarvelGameInstance.OnUELoginMsg
+// 0x0010 (0x0010 - 0x0000)
+struct PyMarvelGameInstance_OnUELoginMsg final
+{
+public:
+	class FString                                 sMsg;                                              // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash)
+};
+
+// PythonFunction PyMarvelGameInstance.PyMarvelGameInstance.OnUEConnectionTimeOut
+// 0x0020 (0x0020 - 0x0000)
+struct PyMarvelGameInstance_OnUEConnectionTimeOut final
+{
+public:
+	int64                                         connectionId;                                      // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         State;                                             // 0x0008(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 msg;                                               // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash)
+};
+
+// PythonFunction PyMarvelGameInstance.PyMarvelGameInstance.OnUEConnectionFastTimeOut
+// 0x0020 (0x0020 - 0x0000)
+struct PyMarvelGameInstance_OnUEConnectionFastTimeOut final
+{
+public:
+	int64                                         connectionId;                                      // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         State;                                             // 0x0008(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 msg;                                               // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash)
+};
+
 // PythonFunction PyMarvelGameInstance.PyMarvelGameInstance.CallEngineQuit
 // 0x0010 (0x0010 - 0x0000)
 struct PyMarvelGameInstance_CallEngineQuit final
@@ -95,6 +133,14 @@ struct PyMarvelGameInstance_ProcessReplayLoadingInfo final
 public:
 	class FString                                 SpecificData;                                      // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash)
 	class FString                                 Error;                                             // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
+};
+
+// PythonFunction PyMarvelGameInstance.PyMarvelGameInstance.GetDemoObDelayTime
+// 0x0004 (0x0004 - 0x0000)
+struct PyMarvelGameInstance_GetDemoObDelayTime final
+{
+public:
+	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 
 // PythonFunction PyMarvelGameInstance.PyMarvelGameInstance.UploadDrpfData

@@ -20,7 +20,7 @@ namespace SDK
 // PythonFunction PyAbility_104713.PyEffectiveComponent_104713.K2_OnPostApplyContainer
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TArray<struct FHitResult>               HitResults                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const TArray<struct FHitResult>&        HitResults                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyEffectiveComponent_104713::K2_OnPostApplyContainer(const TArray<struct FHitResult>& HitResults)
 {
@@ -45,7 +45,7 @@ void UPyEffectiveComponent_104713::K2_OnPostApplyContainer(const TArray<struct F
 // PythonFunction PyAbility_104713.PyEffectiveComponent_10477201.K2_OnPreApplyContainer
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TArray<struct FHitResult>               HitResults                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const TArray<struct FHitResult>&        HitResults                                             (ConstParm, Parm, OutParm, ReferenceParm)
 // TArray<struct FHitResult>               ReturnValue                                            (Parm, OutParm, ReturnParm)
 
 TArray<struct FHitResult> UPyEffectiveComponent_10477201::K2_OnPreApplyContainer(const TArray<struct FHitResult>& HitResults)
@@ -73,7 +73,7 @@ TArray<struct FHitResult> UPyEffectiveComponent_10477201::K2_OnPreApplyContainer
 // PythonFunction PyAbility_104713.PyEffectiveComponent_104723.K2_OnPostApplyContainer
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TArray<struct FHitResult>               HitResults                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const TArray<struct FHitResult>&        HitResults                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyEffectiveComponent_104723::K2_OnPostApplyContainer(const TArray<struct FHitResult>& HitResults)
 {

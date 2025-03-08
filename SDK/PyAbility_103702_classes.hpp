@@ -36,7 +36,7 @@ public:
 };
 
 // PythonClass PyAbility_103702.PyAbility_103702
-// 0x0000 (0x2598 - 0x2598)
+// 0x0000 (0x25A0 - 0x25A0)
 class UPyAbility_103702 : public UMarvelAbility_LongPressTrigger
 {
 public:

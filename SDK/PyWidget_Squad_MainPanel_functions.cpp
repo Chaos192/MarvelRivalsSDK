@@ -121,8 +121,8 @@ void UPyWidget_Squad_MainPanel::OnNameplatePositioned()
 // PythonFunction PyWidget_Squad_MainPanel.PyWidget_Squad_MainPanel.OnMouseButtonDown
 // (BlueprintCosmetic, Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGeometry                        MyGeometry                                             (Parm, IsPlainOldData, NoDestructor)
-// struct FPointerEvent                    MouseEvent                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGeometry&                 MyGeometry                                             (Parm, IsPlainOldData, NoDestructor)
+// const struct FPointerEvent&             MouseEvent                                             (ConstParm, Parm, OutParm, ReferenceParm)
 // struct FEventReply                      ReturnValue                                            (Parm, OutParm, ReturnParm)
 
 struct FEventReply UPyWidget_Squad_MainPanel::OnMouseButtonDown(const struct FGeometry& MyGeometry, const struct FPointerEvent& MouseEvent)
@@ -151,8 +151,8 @@ struct FEventReply UPyWidget_Squad_MainPanel::OnMouseButtonDown(const struct FGe
 // PythonFunction PyWidget_Squad_MainPanel.PyWidget_Squad_MainPanel.OnMouseButtonUp
 // (BlueprintCosmetic, Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGeometry                        MyGeometry                                             (Parm, IsPlainOldData, NoDestructor)
-// struct FPointerEvent                    MouseEvent                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGeometry&                 MyGeometry                                             (Parm, IsPlainOldData, NoDestructor)
+// const struct FPointerEvent&             MouseEvent                                             (ConstParm, Parm, OutParm, ReferenceParm)
 // struct FEventReply                      ReturnValue                                            (Parm, OutParm, ReturnParm)
 
 struct FEventReply UPyWidget_Squad_MainPanel::OnMouseButtonUp(const struct FGeometry& MyGeometry, const struct FPointerEvent& MouseEvent)

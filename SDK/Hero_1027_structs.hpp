@@ -88,15 +88,6 @@ enum class EWallPushMethod : uint8
 	EWallPushMethod_MAX                      = 5,
 };
 
-// ScriptStruct Hero_1027.WallAttackNotify
-// 0x0002 (0x0002 - 0x0000)
-struct FWallAttackNotify final
-{
-public:
-	uint8                                         bAttackFront : 1;                                  // 0x0000(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         NotifyCounter;                                     // 0x0001(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
 // ScriptStruct Hero_1027.MarvelWallBuildingContext
 // 0x02E0 (0x02E0 - 0x0000)
 struct alignas(0x10) FMarvelWallBuildingContext final
@@ -113,6 +104,27 @@ public:
 	uint8                                         Pad_23[0x2BD];                                     // 0x0023(0x02BD)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 
+// ScriptStruct Hero_1027.FindBuildingPlace
+// 0x0240 (0x0240 - 0x0000)
+struct FFindBuildingPlace final
+{
+public:
+	struct FHitResult                             HitResult;                                         // 0x0000(0x0170)(BlueprintVisible, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	struct FTransform                             Transform;                                         // 0x0170(0x0060)(BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                LocalLocation;                                     // 0x01D0(0x0018)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FPortalSegments                        PortalSegments;                                    // 0x01E8(0x0050)(BlueprintVisible, NativeAccessSpecifierPublic)
+	EWallBuildingEdge                             BuildingEdge;                                      // 0x0238(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_239[0x7];                                      // 0x0239(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+
+// ScriptStruct Hero_1027.WallBuildingPostPhysicsTickFunction
+// 0x0008 (0x0038 - 0x0030)
+struct FWallBuildingPostPhysicsTickFunction final : public FTickFunction
+{
+public:
+	uint8                                         Pad_30[0x8];                                       // 0x0030(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+
 // ScriptStruct Hero_1027.WallHealthStateConfig
 // 0x0008 (0x0008 - 0x0000)
 struct FWallHealthStateConfig final
@@ -120,6 +132,18 @@ struct FWallHealthStateConfig final
 public:
 	float                                         MinHealthRatio;                                    // 0x0000(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         FillColorIndex;                                    // 0x0004(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// ScriptStruct Hero_1027.WallDefendNotify
+// 0x0008 (0x0008 - 0x0000)
+struct FWallDefendNotify final
+{
+public:
+	uint8                                         bNewlyApply : 1;                                   // 0x0000(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bArmorAdded : 1;                                   // 0x0000(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         NotifyCounter;                                     // 0x0001(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2[0x2];                                        // 0x0002(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         LastAttackActorUID;                                // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
 // ScriptStruct Hero_1027.FragmentationExplosionConfig
@@ -136,37 +160,13 @@ public:
 	int32                                         FragmentationNumber;                               // 0x0014(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
-// ScriptStruct Hero_1027.FindBuildingPlace
-// 0x0240 (0x0240 - 0x0000)
-struct FFindBuildingPlace final
+// ScriptStruct Hero_1027.WallAttackNotify
+// 0x0002 (0x0002 - 0x0000)
+struct FWallAttackNotify final
 {
 public:
-	struct FHitResult                             HitResult;                                         // 0x0000(0x0170)(BlueprintVisible, ContainsInstancedReference, NativeAccessSpecifierPublic)
-	struct FTransform                             Transform;                                         // 0x0170(0x0060)(BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                LocalLocation;                                     // 0x01D0(0x0018)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FPortalSegments                        PortalSegments;                                    // 0x01E8(0x0050)(BlueprintVisible, NativeAccessSpecifierPublic)
-	EWallBuildingEdge                             BuildingEdge;                                      // 0x0238(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_239[0x7];                                      // 0x0239(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-
-// ScriptStruct Hero_1027.WallDefendNotify
-// 0x0008 (0x0008 - 0x0000)
-struct FWallDefendNotify final
-{
-public:
-	uint8                                         bNewlyApply : 1;                                   // 0x0000(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bArmorAdded : 1;                                   // 0x0000(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bAttackFront : 1;                                  // 0x0000(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
 	uint8                                         NotifyCounter;                                     // 0x0001(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2[0x2];                                        // 0x0002(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         LastAttackActorUID;                                // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// ScriptStruct Hero_1027.WallBuildingPostPhysicsTickFunction
-// 0x0008 (0x0038 - 0x0030)
-struct FWallBuildingPostPhysicsTickFunction final : public FTickFunction
-{
-public:
-	uint8                                         Pad_30[0x8];                                       // 0x0030(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 
 // ScriptStruct Hero_1027.AuraPlantDissolvingFXSpec

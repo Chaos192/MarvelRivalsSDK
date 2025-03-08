@@ -58,7 +58,7 @@ void UPyGamemodeAudioMgr::OnHudInitialize()
 // PythonFunction PyGamemodeAudioMgr.PyGamemodeAudioMgr.ReceiveNotifyVoice
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FProcedureNotifyDataVoice        DataVoice                                              (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FProcedureNotifyDataVoice& DataVoice                                              (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyGamemodeAudioMgr::ReceiveNotifyVoice(const struct FProcedureNotifyDataVoice& DataVoice)
 {

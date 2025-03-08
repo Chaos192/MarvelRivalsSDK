@@ -44,7 +44,7 @@ void APyHealthPackSpawner::ReceiveBeginPlay()
 // class UPrimitiveComponent*              OtherComp                                              (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // int32                                   OtherBodyIndex                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    bFromSweep                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FHitResult                       SweepResult                                            (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FHitResult&                SweepResult                                            (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyHealthPackSpawner::OnPlayerEnter(class UPrimitiveComponent* OverlappedComponent, class AActor* Player, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const struct FHitResult& SweepResult)
 {
@@ -110,7 +110,7 @@ void APyHealthPackSpawner::OnPlayerExit(class UPrimitiveComponent* OverlappedCom
 // class UPrimitiveComponent*              OtherComp                                              (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // int32                                   OtherBodyIndex                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    bFromSweep                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FHitResult                       SweepResult                                            (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FHitResult&                SweepResult                                            (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyHealthPackSpawner::OnEnterStartRange(class UPrimitiveComponent* OverlappedComponent, class AActor* Player, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const struct FHitResult& SweepResult)
 {
@@ -176,7 +176,7 @@ void APyHealthPackSpawner::OnLeaveStartRange(class UPrimitiveComponent* Overlapp
 // class UPrimitiveComponent*              OtherComp                                              (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // int32                                   OtherBodyIndex                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    bFromSweep                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FHitResult                       SweepResult                                            (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FHitResult&                SweepResult                                            (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyHealthPackSpawner::OnEnterLoopRange(class UPrimitiveComponent* OverlappedComponent, class AActor* Player, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const struct FHitResult& SweepResult)
 {
@@ -422,7 +422,7 @@ void UPyBuffAbility_20000018::K2_ActivateAbility()
 // Parameters:
 // class AActor*                           InSourceAvatar                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // class AActor*                           InTargetAvatar                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FAttributeModifierHandle         ParmeterHandle                                         (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
+// const struct FAttributeModifierHandle&  ParmeterHandle                                         (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
 
 void UPyBuffAbility_20000018::OnTakeDamage(class AActor* InSourceAvatar, class AActor* InTargetAvatar, const struct FAttributeModifierHandle& ParmeterHandle)
 {

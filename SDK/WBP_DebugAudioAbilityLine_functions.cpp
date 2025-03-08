@@ -54,8 +54,8 @@ void UWBP_DebugAudioAbilityLine_C::ExecuteUbergraph_WBP_DebugAudioAbilityLine(in
 // Function WBP_DebugAudioAbilityLine.WBP_DebugAudioAbilityLine_C.GetEventName
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// struct FMarvelAbilityAudioPack          Event                                                  (BlueprintVisible, BlueprintReadOnly, Parm)
-// class FText                             Str                                                    (Parm, OutParm)
+// const struct FMarvelAbilityAudioPack&   Event                                                  (BlueprintVisible, BlueprintReadOnly, Parm)
+// class FText*                            Str                                                    (Parm, OutParm)
 
 void UWBP_DebugAudioAbilityLine_C::GetEventName(const struct FMarvelAbilityAudioPack& Event, class FText* Str)
 {
@@ -78,7 +78,7 @@ void UWBP_DebugAudioAbilityLine_C::GetEventName(const struct FMarvelAbilityAudio
 // Function WBP_DebugAudioAbilityLine.WBP_DebugAudioAbilityLine_C.Init
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FMarvelAbilityAudioPack          AudioTable                                             (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm)
+// const struct FMarvelAbilityAudioPack&   AudioTable                                             (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm)
 
 void UWBP_DebugAudioAbilityLine_C::Init(const struct FMarvelAbilityAudioPack& AudioTable)
 {
@@ -98,7 +98,7 @@ void UWBP_DebugAudioAbilityLine_C::Init(const struct FMarvelAbilityAudioPack& Au
 // Function WBP_DebugAudioAbilityLine.WBP_DebugAudioAbilityLine_C.Play
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// EClientPlayerViewSide                   Side                                                   (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const EClientPlayerViewSide&            Side                                                   (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UWBP_DebugAudioAbilityLine_C::Play(const EClientPlayerViewSide& Side)
 {

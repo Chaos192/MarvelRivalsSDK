@@ -17,29 +17,6 @@
 namespace SDK
 {
 
-// PythonClass PyWidget_DropDownList_Network.PyWidget_DropDownList_Network
-// 0x0000 (0x1570 - 0x1570)
-class UPyWidget_DropDownList_Network : public UPyWidget_DropDownList
-{
-public:
-	void OnInitialized();
-	void Construct();
-	void Destruct();
-	void PreConstruct(bool IsDesignTime);
-	void SetIsExtend(bool IsExtended_0);
-	void SetItemID(int32 ItemId_0);
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"PyWidget_DropDownList_Network">();
-	}
-	static class UPyWidget_DropDownList_Network* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UPyWidget_DropDownList_Network>();
-	}
-};
-
 // PythonClass PyWidget_DropDownList_Network.PyWidget_DataCenter_Btn
 // 0x0008 (0x05F8 - 0x05F0)
 class UPyWidget_DataCenter_Btn : public UPyMarvelUserWidget
@@ -61,6 +38,29 @@ public:
 	static class UPyWidget_DataCenter_Btn* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UPyWidget_DataCenter_Btn>();
+	}
+};
+
+// PythonClass PyWidget_DropDownList_Network.PyWidget_DropDownList_Network
+// 0x0000 (0x1570 - 0x1570)
+class UPyWidget_DropDownList_Network : public UPyWidget_DropDownList
+{
+public:
+	void OnInitialized();
+	void Construct();
+	void Destruct();
+	void PreConstruct(bool IsDesignTime);
+	void SetIsExtend(bool IsExtended_0);
+	void SetItemID(int32 ItemId_0);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PyWidget_DropDownList_Network">();
+	}
+	static class UPyWidget_DropDownList_Network* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPyWidget_DropDownList_Network>();
 	}
 };
 

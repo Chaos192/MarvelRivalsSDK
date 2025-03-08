@@ -36,7 +36,7 @@ public:
 };
 
 // PythonClass PyAbility_104006.PyAbility_104006
-// 0x0000 (0x2838 - 0x2838)
+// 0x0000 (0x2840 - 0x2840)
 class UPyAbility_104006 : public UAbility_104001_ChangeSculpt
 {
 public:

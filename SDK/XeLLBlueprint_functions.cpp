@@ -320,7 +320,7 @@ bool UXeLLBlueprintLibrary::IsXeLLSupported()
 // Function XeLLBlueprint.XeLLBlueprintLibrary.SetFlashIndicatorEnabled
 // (Final, RequiredAPI, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// bool                                    bEnabled                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bEnabled                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UXeLLBlueprintLibrary::SetFlashIndicatorEnabled(const bool bEnabled)
 {
@@ -345,7 +345,7 @@ void UXeLLBlueprintLibrary::SetFlashIndicatorEnabled(const bool bEnabled)
 // Function XeLLBlueprint.XeLLBlueprintLibrary.SetXeLLMode
 // (Final, RequiredAPI, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// EXeLLMode                               Mode                                                   (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const EXeLLMode                         Mode                                                   (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UXeLLBlueprintLibrary::SetXeLLMode(const EXeLLMode Mode)
 {

@@ -21,8 +21,8 @@ namespace SDK
 // (Event, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UObject*                          Object                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class FString                           SettingKey                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-// TMap<int32, class FText>                OPTIONS                                                (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// const class FString&                    SettingKey                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const TMap<int32, class FText>&         OPTIONS                                                (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 // TMap<int32, class FText>                ReturnValue                                            (Parm, OutParm, ReturnParm)
 
 TMap<int32, class FText> UPC_UISettingEntryScalabilityGeneratorBP_C::BP_Gen(class UObject* Object, const class FString& SettingKey, const TMap<int32, class FText>& OPTIONS)

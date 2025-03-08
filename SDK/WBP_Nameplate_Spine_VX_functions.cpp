@@ -54,7 +54,7 @@ void UWBP_Nameplate_Spine_VX_C::ExecuteUbergraph_WBP_Nameplate_Spine_VX(int32 En
 // Function WBP_Nameplate_Spine_VX.WBP_Nameplate_Spine_VX_C.Tick
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// struct FGeometry                        MyGeometry                                             (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
+// const struct FGeometry&                 MyGeometry                                             (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
 // float                                   InDeltaTime                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UWBP_Nameplate_Spine_VX_C::Tick(const struct FGeometry& MyGeometry, float InDeltaTime)

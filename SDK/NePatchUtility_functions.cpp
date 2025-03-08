@@ -20,9 +20,9 @@ namespace SDK
 // Function NePatchUtility.NePatchUtility.AddContainerHeaderData
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FNePatchUCasFileHandle           UCasFile                                               (Parm, NativeAccessSpecifierPublic)
-// class FString                           ContainerEntryChunkID                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<uint8>                           Data                                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FNePatchUCasFileHandle&    UCasFile                                               (Parm, NativeAccessSpecifierPublic)
+// const class FString&                    ContainerEntryChunkID                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<uint8>&                    Data                                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UNePatchUtility::AddContainerHeaderData(const struct FNePatchUCasFileHandle& UCasFile, const class FString& ContainerEntryChunkID, const TArray<uint8>& Data)
@@ -52,9 +52,9 @@ bool UNePatchUtility::AddContainerHeaderData(const struct FNePatchUCasFileHandle
 // Function NePatchUtility.NePatchUtility.AddPakData
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FNePatchPakFileHandle            PakFile                                                (Parm, NativeAccessSpecifierPublic)
-// class FString                           Filename                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<uint8>                           Data                                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FNePatchPakFileHandle&     PakFile                                                (Parm, NativeAccessSpecifierPublic)
+// const class FString&                    Filename                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<uint8>&                    Data                                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UNePatchUtility::AddPakData(const struct FNePatchPakFileHandle& PakFile, const class FString& Filename, const TArray<uint8>& Data)
@@ -84,9 +84,9 @@ bool UNePatchUtility::AddPakData(const struct FNePatchPakFileHandle& PakFile, co
 // Function NePatchUtility.NePatchUtility.AddShaderCodeData
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FNePatchShaderLibraryFileHandle  ShaderLibrary                                          (Parm, NativeAccessSpecifierPublic)
-// class FString                           ShaderHash                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<uint8>                           Data                                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FNePatchShaderLibraryFileHandle&ShaderLibrary                                          (Parm, NativeAccessSpecifierPublic)
+// const class FString&                    ShaderHash                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<uint8>&                    Data                                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UNePatchUtility::AddShaderCodeData(const struct FNePatchShaderLibraryFileHandle& ShaderLibrary, const class FString& ShaderHash, const TArray<uint8>& Data)
@@ -116,9 +116,9 @@ bool UNePatchUtility::AddShaderCodeData(const struct FNePatchShaderLibraryFileHa
 // Function NePatchUtility.NePatchUtility.AddUCasData
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FNePatchUCasFileHandle           UCasFile                                               (Parm, NativeAccessSpecifierPublic)
-// struct FNePatchUtocEntry                Entry                                                  (ConstParm, Parm, NativeAccessSpecifierPublic)
-// TArray<uint8>                           Data                                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FNePatchUCasFileHandle&    UCasFile                                               (Parm, NativeAccessSpecifierPublic)
+// const struct FNePatchUtocEntry&         Entry                                                  (ConstParm, Parm, NativeAccessSpecifierPublic)
+// const TArray<uint8>&                    Data                                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UNePatchUtility::AddUCasData(const struct FNePatchUCasFileHandle& UCasFile, const struct FNePatchUtocEntry& Entry, const TArray<uint8>& Data)
@@ -148,10 +148,10 @@ bool UNePatchUtility::AddUCasData(const struct FNePatchUCasFileHandle& UCasFile,
 // Function NePatchUtility.NePatchUtility.AddUCasDataFromResultUtoc
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FNePatchUCasFileHandle           UCasFile                                               (Parm, NativeAccessSpecifierPublic)
-// struct FNePatchUtocFileHandle           ResultUtocFileHandle                                   (Parm, NativeAccessSpecifierPublic)
-// class FString                           ChunkIdStr                                             (ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<uint8>                           Data                                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FNePatchUCasFileHandle&    UCasFile                                               (Parm, NativeAccessSpecifierPublic)
+// const struct FNePatchUtocFileHandle&    ResultUtocFileHandle                                   (Parm, NativeAccessSpecifierPublic)
+// const class FString&                    ChunkIdStr                                             (ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<uint8>&                    Data                                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UNePatchUtility::AddUCasDataFromResultUtoc(const struct FNePatchUCasFileHandle& UCasFile, const struct FNePatchUtocFileHandle& ResultUtocFileHandle, const class FString& ChunkIdStr, const TArray<uint8>& Data)
@@ -182,8 +182,8 @@ bool UNePatchUtility::AddUCasDataFromResultUtoc(const struct FNePatchUCasFileHan
 // Function NePatchUtility.NePatchUtility.ApplyShaderLibrary
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           Directory                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Directory                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UNePatchUtility::ApplyShaderLibrary(const class FString& Name_0, const class FString& Directory)
@@ -212,8 +212,8 @@ bool UNePatchUtility::ApplyShaderLibrary(const class FString& Name_0, const clas
 // Function NePatchUtility.NePatchUtility.CalcPakDownloadEntries
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// struct FNePatchPakFileHandle            PakFile                                                (Parm, NativeAccessSpecifierPublic)
-// struct FNePatchHashFileHandle           RemoteHashFile                                         (Parm, NativeAccessSpecifierPublic)
+// const struct FNePatchPakFileHandle&     PakFile                                                (Parm, NativeAccessSpecifierPublic)
+// const struct FNePatchHashFileHandle&    RemoteHashFile                                         (Parm, NativeAccessSpecifierPublic)
 // TArray<struct FNePatchEntry>            ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
 TArray<struct FNePatchEntry> UNePatchUtility::CalcPakDownloadEntries(const struct FNePatchPakFileHandle& PakFile, const struct FNePatchHashFileHandle& RemoteHashFile)
@@ -242,8 +242,8 @@ TArray<struct FNePatchEntry> UNePatchUtility::CalcPakDownloadEntries(const struc
 // Function NePatchUtility.NePatchUtility.CalcShaderLibraryDownloadEntries
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// struct FNePatchShaderLibraryFileHandle  ShaderLibrary                                          (Parm, NativeAccessSpecifierPublic)
-// struct FNePatchShaderHashFileHandle     RemoteHashFile                                         (Parm, NativeAccessSpecifierPublic)
+// const struct FNePatchShaderLibraryFileHandle&ShaderLibrary                                          (Parm, NativeAccessSpecifierPublic)
+// const struct FNePatchShaderHashFileHandle&RemoteHashFile                                         (Parm, NativeAccessSpecifierPublic)
 // TArray<struct FNePatchShaderCodeEntry>  ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
 TArray<struct FNePatchShaderCodeEntry> UNePatchUtility::CalcShaderLibraryDownloadEntries(const struct FNePatchShaderLibraryFileHandle& ShaderLibrary, const struct FNePatchShaderHashFileHandle& RemoteHashFile)
@@ -272,9 +272,9 @@ TArray<struct FNePatchShaderCodeEntry> UNePatchUtility::CalcShaderLibraryDownloa
 // Function NePatchUtility.NePatchUtility.CheckEntryDataHash
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FNePatchUtocFileHandle           ResultUtocFileHandle                                   (Parm, NativeAccessSpecifierPublic)
-// class FString                           ChunkIdStr                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<uint8>                           CompressedData                                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FNePatchUtocFileHandle&    ResultUtocFileHandle                                   (Parm, NativeAccessSpecifierPublic)
+// const class FString&                    ChunkIdStr                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<uint8>&                    CompressedData                                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UNePatchUtility::CheckEntryDataHash(const struct FNePatchUtocFileHandle& ResultUtocFileHandle, const class FString& ChunkIdStr, const TArray<uint8>& CompressedData)
@@ -304,8 +304,8 @@ bool UNePatchUtility::CheckEntryDataHash(const struct FNePatchUtocFileHandle& Re
 // Function NePatchUtility.NePatchUtility.CheckNeedUpdateWholeFile
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// struct FNePatchHashFileHandle           OldHashFile                                            (Parm, NativeAccessSpecifierPublic)
-// struct FNePatchHashFileHandle           NewHashFile                                            (Parm, NativeAccessSpecifierPublic)
+// const struct FNePatchHashFileHandle&    OldHashFile                                            (Parm, NativeAccessSpecifierPublic)
+// const struct FNePatchHashFileHandle&    NewHashFile                                            (Parm, NativeAccessSpecifierPublic)
 // bool                                    bPrintReason                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -336,7 +336,7 @@ bool UNePatchUtility::CheckNeedUpdateWholeFile(const struct FNePatchHashFileHand
 // Function NePatchUtility.NePatchUtility.ClosePak
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// struct FNePatchPakFileHandle            PakFile                                                (Parm, NativeAccessSpecifierPublic)
+// const struct FNePatchPakFileHandle&     PakFile                                                (Parm, NativeAccessSpecifierPublic)
 
 void UNePatchUtility::ClosePak(const struct FNePatchPakFileHandle& PakFile)
 {
@@ -361,7 +361,7 @@ void UNePatchUtility::ClosePak(const struct FNePatchPakFileHandle& PakFile)
 // Function NePatchUtility.NePatchUtility.ClosePakHash
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// struct FNePatchHashFileHandle           HashFile                                               (Parm, NativeAccessSpecifierPublic)
+// const struct FNePatchHashFileHandle&    HashFile                                               (Parm, NativeAccessSpecifierPublic)
 
 void UNePatchUtility::ClosePakHash(const struct FNePatchHashFileHandle& HashFile)
 {
@@ -386,7 +386,7 @@ void UNePatchUtility::ClosePakHash(const struct FNePatchHashFileHandle& HashFile
 // Function NePatchUtility.NePatchUtility.CloseShaderHash
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// struct FNePatchShaderHashFileHandle     HashFile                                               (Parm, NativeAccessSpecifierPublic)
+// const struct FNePatchShaderHashFileHandle&HashFile                                               (Parm, NativeAccessSpecifierPublic)
 
 void UNePatchUtility::CloseShaderHash(const struct FNePatchShaderHashFileHandle& HashFile)
 {
@@ -411,7 +411,7 @@ void UNePatchUtility::CloseShaderHash(const struct FNePatchShaderHashFileHandle&
 // Function NePatchUtility.NePatchUtility.CloseShaderLibrary
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// struct FNePatchShaderLibraryFileHandle  ShaderLibrary                                          (Parm, NativeAccessSpecifierPublic)
+// const struct FNePatchShaderLibraryFileHandle&ShaderLibrary                                          (Parm, NativeAccessSpecifierPublic)
 
 void UNePatchUtility::CloseShaderLibrary(const struct FNePatchShaderLibraryFileHandle& ShaderLibrary)
 {
@@ -436,7 +436,7 @@ void UNePatchUtility::CloseShaderLibrary(const struct FNePatchShaderLibraryFileH
 // Function NePatchUtility.NePatchUtility.CloseUCas
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// struct FNePatchUCasFileHandle           UCasFile                                               (Parm, NativeAccessSpecifierPublic)
+// const struct FNePatchUCasFileHandle&    UCasFile                                               (Parm, NativeAccessSpecifierPublic)
 
 void UNePatchUtility::CloseUCas(const struct FNePatchUCasFileHandle& UCasFile)
 {
@@ -461,7 +461,7 @@ void UNePatchUtility::CloseUCas(const struct FNePatchUCasFileHandle& UCasFile)
 // Function NePatchUtility.NePatchUtility.CloseUtoc
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// struct FNePatchUtocFileHandle           TocFile                                                (Parm, NativeAccessSpecifierPublic)
+// const struct FNePatchUtocFileHandle&    TocFile                                                (Parm, NativeAccessSpecifierPublic)
 
 void UNePatchUtility::CloseUtoc(const struct FNePatchUtocFileHandle& TocFile)
 {
@@ -486,8 +486,8 @@ void UNePatchUtility::CloseUtoc(const struct FNePatchUtocFileHandle& TocFile)
 // Function NePatchUtility.NePatchUtility.ComparePakHash
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// struct FNePatchHashFileHandle           OldHashFile                                            (Parm, NativeAccessSpecifierPublic)
-// struct FNePatchHashFileHandle           NewHashFile                                            (Parm, NativeAccessSpecifierPublic)
+// const struct FNePatchHashFileHandle&    OldHashFile                                            (Parm, NativeAccessSpecifierPublic)
+// const struct FNePatchHashFileHandle&    NewHashFile                                            (Parm, NativeAccessSpecifierPublic)
 // TArray<struct FNePatchEntry>            ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
 TArray<struct FNePatchEntry> UNePatchUtility::ComparePakHash(const struct FNePatchHashFileHandle& OldHashFile, const struct FNePatchHashFileHandle& NewHashFile)
@@ -516,8 +516,8 @@ TArray<struct FNePatchEntry> UNePatchUtility::ComparePakHash(const struct FNePat
 // Function NePatchUtility.NePatchUtility.ComparePakHashList
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// TArray<struct FNePatchHashFileHandle>   LocalHashFileList                                      (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
-// TArray<struct FNePatchHashFileHandle>   RemoteHashFileList                                     (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+// const TArray<struct FNePatchHashFileHandle>&LocalHashFileList                                      (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+// const TArray<struct FNePatchHashFileHandle>&RemoteHashFileList                                     (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 // TArray<struct FNePatchEntry>            ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
 TArray<struct FNePatchEntry> UNePatchUtility::ComparePakHashList(const TArray<struct FNePatchHashFileHandle>& LocalHashFileList, const TArray<struct FNePatchHashFileHandle>& RemoteHashFileList)
@@ -546,9 +546,9 @@ TArray<struct FNePatchEntry> UNePatchUtility::ComparePakHashList(const TArray<st
 // Function NePatchUtility.NePatchUtility.ComparePakHashToHandle
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<struct FNePatchHashFileHandle>   LocalHashFileList                                      (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
-// TArray<struct FNePatchHashFileHandle>   RemoteHashFileList                                     (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
-// struct FNePatchHashFileHandle           OutHashFileHandle                                      (Parm, OutParm, NativeAccessSpecifierPublic)
+// const TArray<struct FNePatchHashFileHandle>&LocalHashFileList                                      (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+// const TArray<struct FNePatchHashFileHandle>&RemoteHashFileList                                     (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+// struct FNePatchHashFileHandle*          OutHashFileHandle                                      (Parm, OutParm, NativeAccessSpecifierPublic)
 // TArray<struct FNePatchEntry>            ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
 TArray<struct FNePatchEntry> UNePatchUtility::ComparePakHashToHandle(const TArray<struct FNePatchHashFileHandle>& LocalHashFileList, const TArray<struct FNePatchHashFileHandle>& RemoteHashFileList, struct FNePatchHashFileHandle* OutHashFileHandle)
@@ -580,9 +580,9 @@ TArray<struct FNePatchEntry> UNePatchUtility::ComparePakHashToHandle(const TArra
 // Function NePatchUtility.NePatchUtility.CompareUtoc
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FNePatchUtocFileHandle           OldTocFile                                             (Parm, NativeAccessSpecifierPublic)
-// struct FNePatchUtocFileHandle           NewTocFile                                             (Parm, NativeAccessSpecifierPublic)
-// struct FNePatchUtocFileHandle           OutTocResource                                         (Parm, OutParm, NativeAccessSpecifierPublic)
+// const struct FNePatchUtocFileHandle&    OldTocFile                                             (Parm, NativeAccessSpecifierPublic)
+// const struct FNePatchUtocFileHandle&    NewTocFile                                             (Parm, NativeAccessSpecifierPublic)
+// struct FNePatchUtocFileHandle*          OutTocResource                                         (Parm, OutParm, NativeAccessSpecifierPublic)
 // TArray<struct FNePatchUtocEntry>        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
 TArray<struct FNePatchUtocEntry> UNePatchUtility::CompareUtoc(const struct FNePatchUtocFileHandle& OldTocFile, const struct FNePatchUtocFileHandle& NewTocFile, struct FNePatchUtocFileHandle* OutTocResource)
@@ -614,10 +614,10 @@ TArray<struct FNePatchUtocEntry> UNePatchUtility::CompareUtoc(const struct FNePa
 // Function NePatchUtility.NePatchUtility.CompareUtocs
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<struct FNePatchUtocFileHandle>   LocalTocFileList                                       (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
-// TArray<struct FNePatchUtocFileHandle>   RemoteTocFileList                                      (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
-// TArray<struct FNePatchUtocEntry>        DiffEntries                                            (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
-// TArray<struct FNePatchUtocEntry>        DifferHeaderEntries                                    (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+// const TArray<struct FNePatchUtocFileHandle>&LocalTocFileList                                       (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+// const TArray<struct FNePatchUtocFileHandle>&RemoteTocFileList                                      (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+// TArray<struct FNePatchUtocEntry>*       DiffEntries                                            (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+// TArray<struct FNePatchUtocEntry>*       DifferHeaderEntries                                    (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UNePatchUtility::CompareUtocs(const TArray<struct FNePatchUtocFileHandle>& LocalTocFileList, const TArray<struct FNePatchUtocFileHandle>& RemoteTocFileList, TArray<struct FNePatchUtocEntry>* DiffEntries, TArray<struct FNePatchUtocEntry>* DifferHeaderEntries)
@@ -652,9 +652,9 @@ bool UNePatchUtility::CompareUtocs(const TArray<struct FNePatchUtocFileHandle>& 
 // Function NePatchUtility.NePatchUtility.CompareUtocsToResultUtoc
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<struct FNePatchUtocFileHandle>   LocalTocFileList                                       (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
-// TArray<struct FNePatchUtocFileHandle>   RemoteTocFileList                                      (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
-// struct FNePatchUtocFileHandle           OutResultUtocFileHandle                                (Parm, OutParm, NativeAccessSpecifierPublic)
+// const TArray<struct FNePatchUtocFileHandle>&LocalTocFileList                                       (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+// const TArray<struct FNePatchUtocFileHandle>&RemoteTocFileList                                      (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+// struct FNePatchUtocFileHandle*          OutResultUtocFileHandle                                (Parm, OutParm, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UNePatchUtility::CompareUtocsToResultUtoc(const TArray<struct FNePatchUtocFileHandle>& LocalTocFileList, const TArray<struct FNePatchUtocFileHandle>& RemoteTocFileList, struct FNePatchUtocFileHandle* OutResultUtocFileHandle)
@@ -686,9 +686,9 @@ bool UNePatchUtility::CompareUtocsToResultUtoc(const TArray<struct FNePatchUtocF
 // Function NePatchUtility.NePatchUtility.CopyDataFromOtherPak
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// struct FNePatchPakFileHandle            PakFile                                                (Parm, NativeAccessSpecifierPublic)
-// class FString                           OtherPakFilename                                       (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FNePatchHashFileHandle           OtherHashFile                                          (Parm, NativeAccessSpecifierPublic)
+// const struct FNePatchPakFileHandle&     PakFile                                                (Parm, NativeAccessSpecifierPublic)
+// const class FString&                    OtherPakFilename                                       (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FNePatchHashFileHandle&    OtherHashFile                                          (Parm, NativeAccessSpecifierPublic)
 // bool                                    bSalvageMode                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bSkipExistingData                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -722,9 +722,9 @@ bool UNePatchUtility::CopyDataFromOtherPak(const struct FNePatchPakFileHandle& P
 // Function NePatchUtility.NePatchUtility.CopyDataFromOtherShaderLibrary
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// struct FNePatchShaderLibraryFileHandle  ShaderLibrary                                          (Parm, NativeAccessSpecifierPublic)
-// class FString                           OtherShaderLibraryPath                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FNePatchShaderHashFileHandle     OtherHashFile                                          (Parm, NativeAccessSpecifierPublic)
+// const struct FNePatchShaderLibraryFileHandle&ShaderLibrary                                          (Parm, NativeAccessSpecifierPublic)
+// const class FString&                    OtherShaderLibraryPath                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FNePatchShaderHashFileHandle&OtherHashFile                                          (Parm, NativeAccessSpecifierPublic)
 // bool                                    bSalvageMode                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bSkipExistingData                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -758,8 +758,8 @@ bool UNePatchUtility::CopyDataFromOtherShaderLibrary(const struct FNePatchShader
 // Function NePatchUtility.NePatchUtility.CopyFromOtherUtoc
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FNePatchUtocFileHandle           OtherUtocFile                                          (Parm, NativeAccessSpecifierPublic)
-// TArray<struct FNePatchUtocEntry>        InOutDiffEntries                                       (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+// const struct FNePatchUtocFileHandle&    OtherUtocFile                                          (Parm, NativeAccessSpecifierPublic)
+// TArray<struct FNePatchUtocEntry>*       InOutDiffEntries                                       (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UNePatchUtility::CopyFromOtherUtoc(const struct FNePatchUtocFileHandle& OtherUtocFile, TArray<struct FNePatchUtocEntry>* InOutDiffEntries)
@@ -790,8 +790,8 @@ bool UNePatchUtility::CopyFromOtherUtoc(const struct FNePatchUtocFileHandle& Oth
 // Function NePatchUtility.NePatchUtility.CopyFromOtherUtocToResultUtoc
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// struct FNePatchUtocFileHandle           OtherUtocFile                                          (Parm, NativeAccessSpecifierPublic)
-// struct FNePatchUtocFileHandle           ResultUtocFileHandle                                   (Parm, NativeAccessSpecifierPublic)
+// const struct FNePatchUtocFileHandle&    OtherUtocFile                                          (Parm, NativeAccessSpecifierPublic)
+// const struct FNePatchUtocFileHandle&    ResultUtocFileHandle                                   (Parm, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UNePatchUtility::CopyFromOtherUtocToResultUtoc(const struct FNePatchUtocFileHandle& OtherUtocFile, const struct FNePatchUtocFileHandle& ResultUtocFileHandle)
@@ -820,9 +820,9 @@ bool UNePatchUtility::CopyFromOtherUtocToResultUtoc(const struct FNePatchUtocFil
 // Function NePatchUtility.NePatchUtility.CopyHashFiles
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           SrcDirectory                                           (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           DstDirectory                                           (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           Extension                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    SrcDirectory                                           (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    DstDirectory                                           (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Extension                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UNePatchUtility::CopyHashFiles(const class FString& SrcDirectory, const class FString& DstDirectory, const class FString& Extension)
@@ -852,8 +852,8 @@ bool UNePatchUtility::CopyHashFiles(const class FString& SrcDirectory, const cla
 // Function NePatchUtility.NePatchUtility.FlushContainerHeaderData
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// struct FNePatchUCasFileHandle           UCasFile                                               (Parm, NativeAccessSpecifierPublic)
-// struct FNePatchUtocFileHandle           ResultUtocFileHandle                                   (Parm, NativeAccessSpecifierPublic)
+// const struct FNePatchUCasFileHandle&    UCasFile                                               (Parm, NativeAccessSpecifierPublic)
+// const struct FNePatchUtocFileHandle&    ResultUtocFileHandle                                   (Parm, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UNePatchUtility::FlushContainerHeaderData(const struct FNePatchUCasFileHandle& UCasFile, const struct FNePatchUtocFileHandle& ResultUtocFileHandle)
@@ -882,8 +882,8 @@ bool UNePatchUtility::FlushContainerHeaderData(const struct FNePatchUCasFileHand
 // Function NePatchUtility.NePatchUtility.GetHashFilePaths
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           Directory                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           Extension                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Directory                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Extension                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<class FString>                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
 TArray<class FString> UNePatchUtility::GetHashFilePaths(const class FString& Directory, const class FString& Extension)
@@ -912,7 +912,7 @@ TArray<class FString> UNePatchUtility::GetHashFilePaths(const class FString& Dir
 // Function NePatchUtility.NePatchUtility.GetPakHashCompressionMethods
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// struct FNePatchHashFileHandle           HashFile                                               (Parm, NativeAccessSpecifierPublic)
+// const struct FNePatchHashFileHandle&    HashFile                                               (Parm, NativeAccessSpecifierPublic)
 // const TArray<class FName>               ReturnValue                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 const TArray<class FName> UNePatchUtility::GetPakHashCompressionMethods(const struct FNePatchHashFileHandle& HashFile)
@@ -940,7 +940,7 @@ const TArray<class FName> UNePatchUtility::GetPakHashCompressionMethods(const st
 // Function NePatchUtility.NePatchUtility.GetPakHashMountPoint
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// struct FNePatchHashFileHandle           HashFile                                               (Parm, NativeAccessSpecifierPublic)
+// const struct FNePatchHashFileHandle&    HashFile                                               (Parm, NativeAccessSpecifierPublic)
 // class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class FString UNePatchUtility::GetPakHashMountPoint(const struct FNePatchHashFileHandle& HashFile)
@@ -968,7 +968,7 @@ class FString UNePatchUtility::GetPakHashMountPoint(const struct FNePatchHashFil
 // Function NePatchUtility.NePatchUtility.GetPakHashPatchEntries
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// struct FNePatchHashFileHandle           HashFile                                               (Parm, NativeAccessSpecifierPublic)
+// const struct FNePatchHashFileHandle&    HashFile                                               (Parm, NativeAccessSpecifierPublic)
 // const TArray<struct FNePatchEntry>      ReturnValue                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 const TArray<struct FNePatchEntry> UNePatchUtility::GetPakHashPatchEntries(const struct FNePatchHashFileHandle& HashFile)
@@ -996,7 +996,7 @@ const TArray<struct FNePatchEntry> UNePatchUtility::GetPakHashPatchEntries(const
 // Function NePatchUtility.NePatchUtility.GetPakHashPatchEntry
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// struct FNePatchHashFileHandle           HashFile                                               (Parm, NativeAccessSpecifierPublic)
+// const struct FNePatchHashFileHandle&    HashFile                                               (Parm, NativeAccessSpecifierPublic)
 // int32                                   EntryIndex                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const struct FNePatchEntry              ReturnValue                                            (ConstParm, Parm, OutParm, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
 
@@ -1026,7 +1026,7 @@ const struct FNePatchEntry UNePatchUtility::GetPakHashPatchEntry(const struct FN
 // Function NePatchUtility.NePatchUtility.GetPakHashPatchEntryCount
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// struct FNePatchHashFileHandle           HashFile                                               (Parm, NativeAccessSpecifierPublic)
+// const struct FNePatchHashFileHandle&    HashFile                                               (Parm, NativeAccessSpecifierPublic)
 // int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 int32 UNePatchUtility::GetPakHashPatchEntryCount(const struct FNePatchHashFileHandle& HashFile)
@@ -1054,7 +1054,7 @@ int32 UNePatchUtility::GetPakHashPatchEntryCount(const struct FNePatchHashFileHa
 // Function NePatchUtility.NePatchUtility.GetPakPatchEntries
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// struct FNePatchPakFileHandle            PakFile                                                (Parm, NativeAccessSpecifierPublic)
+// const struct FNePatchPakFileHandle&     PakFile                                                (Parm, NativeAccessSpecifierPublic)
 // const TArray<struct FNePatchEntry>      ReturnValue                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 const TArray<struct FNePatchEntry> UNePatchUtility::GetPakPatchEntries(const struct FNePatchPakFileHandle& PakFile)
@@ -1082,7 +1082,7 @@ const TArray<struct FNePatchEntry> UNePatchUtility::GetPakPatchEntries(const str
 // Function NePatchUtility.NePatchUtility.GetShaderHashLibraryCodeOffset
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// struct FNePatchShaderHashFileHandle     HashFile                                               (Parm, NativeAccessSpecifierPublic)
+// const struct FNePatchShaderHashFileHandle&HashFile                                               (Parm, NativeAccessSpecifierPublic)
 // int64                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 int64 UNePatchUtility::GetShaderHashLibraryCodeOffset(const struct FNePatchShaderHashFileHandle& HashFile)
@@ -1110,7 +1110,7 @@ int64 UNePatchUtility::GetShaderHashLibraryCodeOffset(const struct FNePatchShade
 // Function NePatchUtility.NePatchUtility.GetShaderLibraryLibraryCodeOffset
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// struct FNePatchShaderLibraryFileHandle  ShaderLibrary                                          (Parm, NativeAccessSpecifierPublic)
+// const struct FNePatchShaderLibraryFileHandle&ShaderLibrary                                          (Parm, NativeAccessSpecifierPublic)
 // int64                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 int64 UNePatchUtility::GetShaderLibraryLibraryCodeOffset(const struct FNePatchShaderLibraryFileHandle& ShaderLibrary)
@@ -1138,7 +1138,7 @@ int64 UNePatchUtility::GetShaderLibraryLibraryCodeOffset(const struct FNePatchSh
 // Function NePatchUtility.NePatchUtility.GetUTocPatchEntries
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// struct FNePatchUtocFileHandle           UtocFile                                               (Parm, NativeAccessSpecifierPublic)
+// const struct FNePatchUtocFileHandle&    UtocFile                                               (Parm, NativeAccessSpecifierPublic)
 // TArray<struct FNePatchUtocEntry>        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
 TArray<struct FNePatchUtocEntry> UNePatchUtility::GetUTocPatchEntries(const struct FNePatchUtocFileHandle& UtocFile)
@@ -1166,8 +1166,8 @@ TArray<struct FNePatchUtocEntry> UNePatchUtility::GetUTocPatchEntries(const stru
 // Function NePatchUtility.NePatchUtility.GetUTocPatchEntry
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// struct FNePatchUtocFileHandle           UtocFile                                               (Parm, NativeAccessSpecifierPublic)
-// class FString                           ChunkIdStr                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FNePatchUtocFileHandle&    UtocFile                                               (Parm, NativeAccessSpecifierPublic)
+// const class FString&                    ChunkIdStr                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FNePatchUtocEntry                ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
 struct FNePatchUtocEntry UNePatchUtility::GetUTocPatchEntry(const struct FNePatchUtocFileHandle& UtocFile, const class FString& ChunkIdStr)
@@ -1221,9 +1221,9 @@ bool UNePatchUtility::HasActiveWiFiConnection()
 // Function NePatchUtility.NePatchUtility.MergeAllUCasDataFromFolder
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// struct FNePatchUCasFileHandle           UCasFile                                               (Parm, NativeAccessSpecifierPublic)
-// struct FNePatchUtocFileHandle           ResultUtocFileHandle                                   (Parm, NativeAccessSpecifierPublic)
-// class FString                           UCasDataFolder                                         (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FNePatchUCasFileHandle&    UCasFile                                               (Parm, NativeAccessSpecifierPublic)
+// const struct FNePatchUtocFileHandle&    ResultUtocFileHandle                                   (Parm, NativeAccessSpecifierPublic)
+// const class FString&                    UCasDataFolder                                         (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UNePatchUtility::MergeAllUCasDataFromFolder(const struct FNePatchUCasFileHandle& UCasFile, const struct FNePatchUtocFileHandle& ResultUtocFileHandle, const class FString& UCasDataFolder)
@@ -1253,7 +1253,7 @@ bool UNePatchUtility::MergeAllUCasDataFromFolder(const struct FNePatchUCasFileHa
 // Function NePatchUtility.NePatchUtility.MountPak
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           PakFilename                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    PakFilename                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   Order                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -1283,9 +1283,9 @@ bool UNePatchUtility::MountPak(const class FString& PakFilename, int32 Order)
 // Function NePatchUtility.NePatchUtility.MountPakWithMountPoint
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           PakFilename                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    PakFilename                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   PakOrder                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           MountPoint                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    MountPoint                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UNePatchUtility::MountPakWithMountPoint(const class FString& PakFilename, int32 PakOrder, const class FString& MountPoint)
@@ -1315,9 +1315,9 @@ bool UNePatchUtility::MountPakWithMountPoint(const class FString& PakFilename, i
 // Function NePatchUtility.NePatchUtility.OpenPakForWrite
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class FString                           PakFilePath                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FNePatchHashFileHandle           RemoteHashFile                                         (Parm, NativeAccessSpecifierPublic)
-// struct FNePatchPakFileHandle            OutPakFile                                             (Parm, OutParm, NativeAccessSpecifierPublic)
+// const class FString&                    PakFilePath                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FNePatchHashFileHandle&    RemoteHashFile                                         (Parm, NativeAccessSpecifierPublic)
+// struct FNePatchPakFileHandle*           OutPakFile                                             (Parm, OutParm, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UNePatchUtility::OpenPakForWrite(const class FString& PakFilePath, const struct FNePatchHashFileHandle& RemoteHashFile, struct FNePatchPakFileHandle* OutPakFile)
@@ -1349,10 +1349,10 @@ bool UNePatchUtility::OpenPakForWrite(const class FString& PakFilePath, const st
 // Function NePatchUtility.NePatchUtility.OpenPakForWriteWithInitialHash
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class FString                           PakFilePath                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FNePatchHashFileHandle           RemoteHashFile                                         (Parm, NativeAccessSpecifierPublic)
-// struct FNePatchHashFileHandle           InitialHashFile                                        (Parm, NativeAccessSpecifierPublic)
-// struct FNePatchPakFileHandle            OutPakFile                                             (Parm, OutParm, NativeAccessSpecifierPublic)
+// const class FString&                    PakFilePath                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FNePatchHashFileHandle&    RemoteHashFile                                         (Parm, NativeAccessSpecifierPublic)
+// const struct FNePatchHashFileHandle&    InitialHashFile                                        (Parm, NativeAccessSpecifierPublic)
+// struct FNePatchPakFileHandle*           OutPakFile                                             (Parm, OutParm, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UNePatchUtility::OpenPakForWriteWithInitialHash(const class FString& PakFilePath, const struct FNePatchHashFileHandle& RemoteHashFile, const struct FNePatchHashFileHandle& InitialHashFile, struct FNePatchPakFileHandle* OutPakFile)
@@ -1385,8 +1385,8 @@ bool UNePatchUtility::OpenPakForWriteWithInitialHash(const class FString& PakFil
 // Function NePatchUtility.NePatchUtility.OpenPakHash
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class FString                           HashFilePath                                           (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FNePatchHashFileHandle           OutHashFile                                            (Parm, OutParm, NativeAccessSpecifierPublic)
+// const class FString&                    HashFilePath                                           (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FNePatchHashFileHandle*          OutHashFile                                            (Parm, OutParm, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UNePatchUtility::OpenPakHash(const class FString& HashFilePath, struct FNePatchHashFileHandle* OutHashFile)
@@ -1417,8 +1417,8 @@ bool UNePatchUtility::OpenPakHash(const class FString& HashFilePath, struct FNeP
 // Function NePatchUtility.NePatchUtility.OpenShaderHash
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class FString                           HashFilePath                                           (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FNePatchShaderHashFileHandle     OutHashFile                                            (Parm, OutParm, NativeAccessSpecifierPublic)
+// const class FString&                    HashFilePath                                           (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FNePatchShaderHashFileHandle*    OutHashFile                                            (Parm, OutParm, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UNePatchUtility::OpenShaderHash(const class FString& HashFilePath, struct FNePatchShaderHashFileHandle* OutHashFile)
@@ -1449,9 +1449,9 @@ bool UNePatchUtility::OpenShaderHash(const class FString& HashFilePath, struct F
 // Function NePatchUtility.NePatchUtility.OpenShaderLibraryForWrite
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class FString                           ShaderLibraryPath                                      (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FNePatchShaderHashFileHandle     RemoteHashFile                                         (Parm, NativeAccessSpecifierPublic)
-// struct FNePatchShaderLibraryFileHandle  OutShaderLibrary                                       (Parm, OutParm, NativeAccessSpecifierPublic)
+// const class FString&                    ShaderLibraryPath                                      (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FNePatchShaderHashFileHandle&RemoteHashFile                                         (Parm, NativeAccessSpecifierPublic)
+// struct FNePatchShaderLibraryFileHandle* OutShaderLibrary                                       (Parm, OutParm, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UNePatchUtility::OpenShaderLibraryForWrite(const class FString& ShaderLibraryPath, const struct FNePatchShaderHashFileHandle& RemoteHashFile, struct FNePatchShaderLibraryFileHandle* OutShaderLibrary)
@@ -1483,10 +1483,10 @@ bool UNePatchUtility::OpenShaderLibraryForWrite(const class FString& ShaderLibra
 // Function NePatchUtility.NePatchUtility.OpenShaderLibraryForWriteWithInitialHash
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class FString                           ShaderLibraryPath                                      (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FNePatchShaderHashFileHandle     RemoteHashFile                                         (Parm, NativeAccessSpecifierPublic)
-// struct FNePatchShaderHashFileHandle     InitialHashFile                                        (Parm, NativeAccessSpecifierPublic)
-// struct FNePatchShaderLibraryFileHandle  OutShaderLibrary                                       (Parm, OutParm, NativeAccessSpecifierPublic)
+// const class FString&                    ShaderLibraryPath                                      (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FNePatchShaderHashFileHandle&RemoteHashFile                                         (Parm, NativeAccessSpecifierPublic)
+// const struct FNePatchShaderHashFileHandle&InitialHashFile                                        (Parm, NativeAccessSpecifierPublic)
+// struct FNePatchShaderLibraryFileHandle* OutShaderLibrary                                       (Parm, OutParm, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UNePatchUtility::OpenShaderLibraryForWriteWithInitialHash(const class FString& ShaderLibraryPath, const struct FNePatchShaderHashFileHandle& RemoteHashFile, const struct FNePatchShaderHashFileHandle& InitialHashFile, struct FNePatchShaderLibraryFileHandle* OutShaderLibrary)
@@ -1519,8 +1519,8 @@ bool UNePatchUtility::OpenShaderLibraryForWriteWithInitialHash(const class FStri
 // Function NePatchUtility.NePatchUtility.OpenUcasForWrite
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class FString                           UCasFilePath                                           (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FNePatchUCasFileHandle           OutUCasFile                                            (Parm, OutParm, NativeAccessSpecifierPublic)
+// const class FString&                    UCasFilePath                                           (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FNePatchUCasFileHandle*          OutUCasFile                                            (Parm, OutParm, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UNePatchUtility::OpenUcasForWrite(const class FString& UCasFilePath, struct FNePatchUCasFileHandle* OutUCasFile)
@@ -1551,8 +1551,8 @@ bool UNePatchUtility::OpenUcasForWrite(const class FString& UCasFilePath, struct
 // Function NePatchUtility.NePatchUtility.OpenUtoc
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class FString                           TocFilePath                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FNePatchUtocFileHandle           OutTocFile                                             (Parm, OutParm, NativeAccessSpecifierPublic)
+// const class FString&                    TocFilePath                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FNePatchUtocFileHandle*          OutTocFile                                             (Parm, OutParm, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UNePatchUtility::OpenUtoc(const class FString& TocFilePath, struct FNePatchUtocFileHandle* OutTocFile)
@@ -1583,7 +1583,7 @@ bool UNePatchUtility::OpenUtoc(const class FString& TocFilePath, struct FNePatch
 // Function NePatchUtility.NePatchUtility.RegisterDecryptKey
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           DecryptionKeyStr                                       (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    DecryptionKeyStr                                       (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UNePatchUtility::RegisterDecryptKey(const class FString& DecryptionKeyStr)
@@ -1611,7 +1611,7 @@ bool UNePatchUtility::RegisterDecryptKey(const class FString& DecryptionKeyStr)
 // Function NePatchUtility.NePatchUtility.SavePakHashFile
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// struct FNePatchPakFileHandle            PakFile                                                (Parm, NativeAccessSpecifierPublic)
+// const struct FNePatchPakFileHandle&     PakFile                                                (Parm, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UNePatchUtility::SavePakHashFile(const struct FNePatchPakFileHandle& PakFile)
@@ -1639,7 +1639,7 @@ bool UNePatchUtility::SavePakHashFile(const struct FNePatchPakFileHandle& PakFil
 // Function NePatchUtility.NePatchUtility.SaveShaderLibraryHashFile
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// struct FNePatchShaderLibraryFileHandle  ShaderLibrary                                          (Parm, NativeAccessSpecifierPublic)
+// const struct FNePatchShaderLibraryFileHandle&ShaderLibrary                                          (Parm, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UNePatchUtility::SaveShaderLibraryHashFile(const struct FNePatchShaderLibraryFileHandle& ShaderLibrary)
@@ -1667,9 +1667,9 @@ bool UNePatchUtility::SaveShaderLibraryHashFile(const struct FNePatchShaderLibra
 // Function NePatchUtility.NePatchUtility.SaveUtocFile
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           NewUtocFileName                                        (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<struct FNePatchUtocEntry>        DiffEntryList                                          (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
-// TArray<struct FNePatchUtocFileHandle>   RemoteTocFileList                                      (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+// const class FString&                    NewUtocFileName                                        (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<struct FNePatchUtocEntry>& DiffEntryList                                          (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+// const TArray<struct FNePatchUtocFileHandle>&RemoteTocFileList                                      (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UNePatchUtility::SaveUtocFile(const class FString& NewUtocFileName, const TArray<struct FNePatchUtocEntry>& DiffEntryList, const TArray<struct FNePatchUtocFileHandle>& RemoteTocFileList)
@@ -1699,9 +1699,9 @@ bool UNePatchUtility::SaveUtocFile(const class FString& NewUtocFileName, const T
 // Function NePatchUtility.NePatchUtility.SaveUtocFileFromResultUtoc
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           NewUtocFileName                                        (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FNePatchUtocFileHandle           ResultUtocFileHandle                                   (Parm, NativeAccessSpecifierPublic)
-// TArray<struct FNePatchUtocFileHandle>   RemoteTocFileList                                      (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+// const class FString&                    NewUtocFileName                                        (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FNePatchUtocFileHandle&    ResultUtocFileHandle                                   (Parm, NativeAccessSpecifierPublic)
+// const TArray<struct FNePatchUtocFileHandle>&RemoteTocFileList                                      (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UNePatchUtility::SaveUtocFileFromResultUtoc(const class FString& NewUtocFileName, const struct FNePatchUtocFileHandle& ResultUtocFileHandle, const TArray<struct FNePatchUtocFileHandle>& RemoteTocFileList)
@@ -1731,8 +1731,8 @@ bool UNePatchUtility::SaveUtocFileFromResultUtoc(const class FString& NewUtocFil
 // Function NePatchUtility.NePatchUtility.SetPakHashPatchEntries
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FNePatchHashFileHandle           HashFile                                               (Parm, NativeAccessSpecifierPublic)
-// TArray<struct FNePatchEntry>            Entries                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FNePatchHashFileHandle&    HashFile                                               (Parm, NativeAccessSpecifierPublic)
+// const TArray<struct FNePatchEntry>&     Entries                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UNePatchUtility::SetPakHashPatchEntries(const struct FNePatchHashFileHandle& HashFile, const TArray<struct FNePatchEntry>& Entries)
 {
@@ -1758,7 +1758,7 @@ void UNePatchUtility::SetPakHashPatchEntries(const struct FNePatchHashFileHandle
 // Function NePatchUtility.NePatchUtility.UnmountPak
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           PakFilename                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    PakFilename                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UNePatchUtility::UnmountPak(const class FString& PakFilename)

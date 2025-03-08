@@ -115,7 +115,7 @@ void UPyLoginPanelV3::Destruct()
 // PythonFunction PyLoginPanelV3.PyLoginPanelV3.OnAnimationFinished
 // (BlueprintCosmetic, Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UWidgetAnimation*                 Animation                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// const class UWidgetAnimation*           Animation                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 void UPyLoginPanelV3::OnAnimationFinished(const class UWidgetAnimation* Animation)
 {
@@ -140,7 +140,7 @@ void UPyLoginPanelV3::OnAnimationFinished(const class UWidgetAnimation* Animatio
 // PythonFunction PyLoginPanelV3.PyLoginPanelV3.OnAnimationStarted
 // (BlueprintCosmetic, Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UWidgetAnimation*                 Animation                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// const class UWidgetAnimation*           Animation                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 void UPyLoginPanelV3::OnAnimationStarted(const class UWidgetAnimation* Animation)
 {

@@ -85,7 +85,7 @@ void APyLevelSummoned_200009::ReceiveTick(float DeltaSeconds)
 // Parameters:
 // class AController*                      InSource                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // class AActor*                           InSourceAvatar                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FAttributeModifierHandle         ParameterHandle                                        (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
+// const struct FAttributeModifierHandle&  ParameterHandle                                        (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
 
 void APyLevelSummoned_200009::OnDeath(class AController* InSource, class AActor* InSourceAvatar, const struct FAttributeModifierHandle& ParameterHandle)
 {
@@ -114,7 +114,7 @@ void APyLevelSummoned_200009::OnDeath(class AController* InSource, class AActor*
 // Parameters:
 // class AController*                      InSource                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // class AActor*                           InSourceAvatar                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FAttributeModifierHandle         ParameterHandle                                        (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
+// const struct FAttributeModifierHandle&  ParameterHandle                                        (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
 
 void APyLevelSummoned_200009::OnTakeDamage(class AController* InSource, class AActor* InSourceAvatar, const struct FAttributeModifierHandle& ParameterHandle)
 {

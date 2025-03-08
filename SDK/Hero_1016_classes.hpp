@@ -14,11 +14,11 @@
 #include "CoreUObject_structs.hpp"
 #include "Marvel_structs.hpp"
 #include "Marvel_classes.hpp"
-#include "DeclarativeUnreal_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
 #include "Hero_1016_structs.hpp"
 #include "GameplayAbilities_structs.hpp"
+#include "DeclarativeUnreal_structs.hpp"
 
 
 namespace SDK
@@ -87,7 +87,7 @@ public:
 };
 
 // Class Hero_1016.Ability_101621
-// 0x0000 (0x2580 - 0x2580)
+// 0x0000 (0x2588 - 0x2588)
 class UAbility_101621 : public UMarvelGameplayAbility
 {
 public:
@@ -102,13 +102,13 @@ public:
 };
 
 // Class Hero_1016.Projectile_Loki
-// 0x0010 (0x3060 - 0x3050)
+// 0x0010 (0x3120 - 0x3110)
 class AProjectile_Loki : public AMarvelAbilityTargetActor_Projectile
 {
 public:
-	uint8                                         Pad_3050[0x8];                                     // 0x3050(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	bool                                          bPhantomOwned;                                     // 0x3058(0x0001)(Net, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_3059[0x7];                                     // 0x3059(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3108[0x8];                                     // 0x3108(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          bPhantomOwned;                                     // 0x3110(0x0001)(Net, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_3111[0xF];                                     // 0x3111(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	bool IsPhantomOwned();
@@ -126,12 +126,9 @@ public:
 };
 
 // Class Hero_1016.Projectile_10162101
-// 0x0010 (0x3070 - 0x3060)
+// 0x0000 (0x3120 - 0x3120)
 class AProjectile_10162101 : public AProjectile_Loki
 {
-public:
-	uint8                                         Pad_3060[0x10];                                    // 0x3060(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
 public:
 	static class UClass* StaticClass()
 	{
@@ -185,14 +182,14 @@ public:
 };
 
 // Class Hero_1016.Summoned_10163101
-// 0x0020 (0x08B0 - 0x0890)
+// 0x0020 (0x08E0 - 0x08C0)
 class ASummoned_10163101 : public AMarvelSummonerBase
 {
 public:
-	uint8                                         Pad_890[0x8];                                      // 0x0890(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	class UConfig_101631*                         CachedConfig;                                      // 0x0898(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class USummonedComp_10163101*                 SummonedComp_10163101;                             // 0x08A0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_8A8[0x8];                                      // 0x08A8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_8C0[0x8];                                      // 0x08C0(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	class UConfig_101631*                         CachedConfig;                                      // 0x08C8(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class USummonedComp_10163101*                 SummonedComp_10163101;                             // 0x08D0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_8D8[0x8];                                      // 0x08D8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	class USummonedComp_10163101* GetOwningComponent();
@@ -214,7 +211,7 @@ class USummonedComp_10163101 : public UMarvelSummonedComponent
 {
 public:
 	struct FMarvelAbilityTraceContext             GroundTraceContext;                                // 0x0CA0(0x0F90)(Edit, BlueprintVisible, ContainsInstancedReference, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class AActor* Value)> OnPositionReady;                                   // 0x1C30(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class AActor* Value)> OnPositionReady;                             // 0x1C30(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 	TArray<EObjectTypeQuery>                      BlockingTypes;                                     // 0x1C40(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPublic)
 	bool                                          bPositionReady;                                    // 0x1C50(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_1C51[0x7];                                     // 0x1C51(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
@@ -244,13 +241,13 @@ public:
 };
 
 // Class Hero_1016.Ability_101631
-// 0x0018 (0x2598 - 0x2580)
+// 0x0018 (0x25A0 - 0x2588)
 class UAbility_101631 : public UMarvelGameplayAbility
 {
 public:
-	class UConfig_101631*                         Config_101631;                                     // 0x2580(0x0008)(BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UAbility_101631*                        Instigator_Ability_101631;                         // 0x2588(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class ASummoned_10163101*                     CurSummoned;                                       // 0x2590(0x0008)(BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UConfig_101631*                         Config_101631;                                     // 0x2588(0x0008)(BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UAbility_101631*                        Instigator_Ability_101631;                         // 0x2590(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class ASummoned_10163101*                     CurSummoned;                                       // 0x2598(0x0008)(BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	class UAbility_101631* GetInstigatorAbility();
@@ -267,7 +264,7 @@ public:
 };
 
 // Class Hero_1016.UMarvelTreatOverflowConvAbility_10163101
-// 0x0000 (0x11F0 - 0x11F0)
+// 0x0000 (0x1200 - 0x1200)
 class UUMarvelTreatOverflowConvAbility_10163101 : public UMarvelTreatOverflowConvAbility
 {
 public:
@@ -300,11 +297,11 @@ public:
 };
 
 // Class Hero_1016.Stealth_101641
-// 0x0068 (0x1380 - 0x1318)
+// 0x0068 (0x1388 - 0x1320)
 class UStealth_101641 : public UMarvelStealthAbility
 {
 public:
-	struct FGameplayTagContainer                  BlockInputAbilities;                               // 0x1318(0x0068)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	struct FGameplayTagContainer                  BlockInputAbilities;                               // 0x1320(0x0068)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -342,16 +339,16 @@ public:
 };
 
 // Class Hero_1016.Ability_101651
-// 0x00B8 (0x2638 - 0x2580)
+// 0x00B8 (0x2640 - 0x2588)
 class UAbility_101651 : public UMarvelGameplayAbility
 {
 public:
-	EAbilityState_101651                          CurrentAbilityState;                               // 0x2580(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EAbilityState_101651                          LastAbilityState;                                  // 0x2581(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2582[0x6];                                     // 0x2582(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	class UMarvelAbilityTask_PlayMontageAndWaitForEvent* TimelineTask;                                      // 0x2588(0x0008)(BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class ALokiCharacter*                         OwnerChar;                                         // 0x2590(0x0008)(BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FPredictionKey                         TimelineKey;                                       // 0x2598(0x00A0)(HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EAbilityState_101651                          CurrentAbilityState;                               // 0x2588(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EAbilityState_101651                          LastAbilityState;                                  // 0x2589(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_258A[0x6];                                     // 0x258A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class UMarvelAbilityTask_PlayMontageAndWaitForEvent* TimelineTask;                               // 0x2590(0x0008)(BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class ALokiCharacter*                         OwnerChar;                                         // 0x2598(0x0008)(BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FPredictionKey                         TimelineKey;                                       // 0x25A0(0x00A0)(HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	struct FVector GetOriginCharacterAimedLocation();
@@ -395,20 +392,20 @@ public:
 };
 
 // Class Hero_1016.Summoned_10165101
-// 0x0140 (0x0FE0 - 0x0EA0)
+// 0x0140 (0x1010 - 0x0ED0)
 class ASummoned_10165101 : public ASummonedCharacterBase
 {
 public:
-	uint8                                         Pad_E98[0x110];                                    // 0x0E98(0x0110)(Fixing Size After Last Property [ Dumper-7 ])
-	class ULokiMoveLogicBaseComponent*            LokiMoveLogicComponent;                            // 0x0FA8(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, EditConst, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UMarvelSolvePenetrationComponent*       SolvePenetrationComponent;                         // 0x0FB0(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UMeshHiddenComponent*                   HiddenComponent;                                   // 0x0FB8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bInVisible;                                        // 0x0FC0(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_FC1[0x7];                                      // 0x0FC1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FDeclarationHolder                     DeclarePlayerViewSideHolder;                       // 0x0FC8(0x0010)(Protected, NativeAccessSpecifierProtected)
-	bool                                          bForceMovementCompActive;                          // 0x0FD8(0x0001)(Net, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bPushByLevel;                                      // 0x0FD9(0x0001)(Net, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_FDA[0x6];                                      // 0x0FDA(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_EC8[0x110];                                    // 0x0EC8(0x0110)(Fixing Size After Last Property [ Dumper-7 ])
+	class ULokiMoveLogicBaseComponent*            LokiMoveLogicComponent;                            // 0x0FD8(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, EditConst, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UMarvelSolvePenetrationComponent*       SolvePenetrationComponent;                         // 0x0FE0(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UMeshHiddenComponent*                   HiddenComponent;                                   // 0x0FE8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bInVisible;                                        // 0x0FF0(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_FF1[0x7];                                      // 0x0FF1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FDeclarationHolder                     DeclarePlayerViewSideHolder;                       // 0x0FF8(0x0010)(Protected, NativeAccessSpecifierProtected)
+	bool                                          bForceMovementCompActive;                          // 0x1008(0x0001)(Net, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bPushByLevel;                                      // 0x1009(0x0001)(Net, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_100A[0x6];                                     // 0x100A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void OnPlayerViewSideChanged(EClientPlayerViewSide InViewSide);
@@ -509,17 +506,17 @@ public:
 };
 
 // Class Hero_1016.Summoned_10165102
-// 0x0040 (0x08D0 - 0x0890)
+// 0x0040 (0x0900 - 0x08C0)
 class ASummoned_10165102 final : public AMarvelSummonerBase
 {
 public:
-	class USphereComponent*                       OverlapCollisionComponent;                         // 0x0890(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UOverlapHandlerComponent*               OverlapHandleComponent;                            // 0x0898(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class AActor* InActor)> OverlapActorDelegate;                              // 0x08A0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	class AActor*                                 OverlappedActor;                                   // 0x08B0(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_8B8[0x8];                                      // 0x08B8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	bool                                          bHasExecuteCue;                                    // 0x08C0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_8C1[0xF];                                      // 0x08C1(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class USphereComponent*                       OverlapCollisionComponent;                         // 0x08C0(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UOverlapHandlerComponent*               OverlapHandleComponent;                            // 0x08C8(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class AActor* InActor)> OverlapActorDelegate;                      // 0x08D0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	class AActor*                                 OverlappedActor;                                   // 0x08E0(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_8E8[0x8];                                      // 0x08E8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          bHasExecuteCue;                                    // 0x08F0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_8F1[0xF];                                      // 0x08F1(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void NetMulticastCharacterOverlap(class AActor* InActor);
@@ -713,13 +710,13 @@ public:
 };
 
 // Class Hero_1016.Ability_101652
-// 0x0018 (0x2598 - 0x2580)
+// 0x0018 (0x25A0 - 0x2588)
 class UAbility_101652 : public UMarvelGameplayAbility
 {
 public:
-	class ASummoned_10165101*                     TargetPhantom;                                     // 0x2580(0x0008)(BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TWeakObjectPtr<class AActor>                  ViewportTarget;                                    // 0x2588(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class UConfig_101652*                         Config;                                            // 0x2590(0x0008)(BlueprintVisible, ZeroConstructor, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class ASummoned_10165101*                     TargetPhantom;                                     // 0x2588(0x0008)(BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TWeakObjectPtr<class AActor>                  ViewportTarget;                                    // 0x2590(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UConfig_101652*                         Config;                                            // 0x2598(0x0008)(BlueprintVisible, ZeroConstructor, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 
 public:
 	float AnglesToPoint(const struct FTransform& Transform, const struct FVector& Point);
@@ -800,40 +797,40 @@ public:
 };
 
 // Class Hero_1016.Ability_101661
-// 0x01C0 (0x2740 - 0x2580)
+// 0x01C0 (0x2748 - 0x2588)
 class UAbility_101661 : public UMarvelGameplayAbility
 {
 public:
-	TMulticastInlineDelegate<void()>              OnTryActivateWithoutTarget;                        // 0x2580(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class AActor* InTarget)> OnPrimaryTargetUpdate;                             // 0x2590(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class AActor* KillTarget)> OnActingCharacterKillActor;                        // 0x25A0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_25B0[0x18];                                    // 0x25B0(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
-	class UConfig_101661*                         MyConfig;                                          // 0x25C8(0x0008)(ZeroConstructor, Transient, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         ExtraUltimateTime;                                 // 0x25D0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	int32                                         DisguiseStateUltimateUseCount;                     // 0x25D4(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FPredictionKey                         DisguiseStateEndedKey;                             // 0x25D8(0x00A0)(Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	TWeakObjectPtr<class AActor>                  ViewportTarget;                                    // 0x2678(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	int32                                         SavedTargetHeroID;                                 // 0x2680(0x0004)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	int32                                         SavedTargetSkinID;                                 // 0x2684(0x0004)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          SavedTargetIsEnemy;                                // 0x2688(0x0001)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	EBattleSide                                   SavedTargetBattleSide;                             // 0x2689(0x0001)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_268A[0x6];                                     // 0x268A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 SavedTargetPlayerName;                             // 0x2690(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class APlayerState*                           SavedTargetPlayerState;                            // 0x26A0(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         SavedTargetCollisionRadius;                        // 0x26A8(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         SavedTargetCollisionHalfHeight;                    // 0x26AC(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class AMarvelBaseCharacter*                   ActingCharacter;                                   // 0x26B0(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class AController*                            ActingController;                                  // 0x26B8(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class AMarvelPlayerState*                     ActingPlayerState;                                 // 0x26C0(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         TargetDuplicateEffectStartTime;                    // 0x26C8(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FActiveGameplayEffectHandle            TargetDuplicateEffectHandle;                       // 0x26CC(0x0008)(BlueprintVisible, BlueprintReadOnly, Transient, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FActiveGameplayEffectHandle            TargetDeceptionEffectHandle;                       // 0x26D4(0x0008)(BlueprintVisible, BlueprintReadOnly, Transient, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_26DC[0x4];                                     // 0x26DC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FActiveGameplayEffectHandle>    SourceDisguiseEffectHandles;                       // 0x26E0(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, Protected, NativeAccessSpecifierProtected)
-	class UAbilityTask_WaitGameplayEffectRemoved* WaitEffectRemovedTask;                             // 0x26F0(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class UMarvelAbilityTask_SelectTarget*        SelectTask;                                        // 0x26F8(0x0008)(BlueprintVisible, ZeroConstructor, Transient, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class UAbilityTask_WaitGameplayEvent*         WaitGameplayEvent;                                 // 0x2700(0x0008)(BlueprintVisible, ZeroConstructor, Transient, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_2708[0x38];                                    // 0x2708(0x0038)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	TMulticastInlineDelegate<void()>              OnTryActivateWithoutTarget;                        // 0x2588(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class AActor* InTarget)> OnPrimaryTargetUpdate;                    // 0x2598(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class AActor* KillTarget)> OnActingCharacterKillActor;             // 0x25A8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	uint8                                         Pad_25B8[0x18];                                    // 0x25B8(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
+	class UConfig_101661*                         MyConfig;                                          // 0x25D0(0x0008)(ZeroConstructor, Transient, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         ExtraUltimateTime;                                 // 0x25D8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	int32                                         DisguiseStateUltimateUseCount;                     // 0x25DC(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FPredictionKey                         DisguiseStateEndedKey;                             // 0x25E0(0x00A0)(Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	TWeakObjectPtr<class AActor>                  ViewportTarget;                                    // 0x2680(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	int32                                         SavedTargetHeroID;                                 // 0x2688(0x0004)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	int32                                         SavedTargetSkinID;                                 // 0x268C(0x0004)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          SavedTargetIsEnemy;                                // 0x2690(0x0001)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	EBattleSide                                   SavedTargetBattleSide;                             // 0x2691(0x0001)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_2692[0x6];                                     // 0x2692(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 SavedTargetPlayerName;                             // 0x2698(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class APlayerState*                           SavedTargetPlayerState;                            // 0x26A8(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         SavedTargetCollisionRadius;                        // 0x26B0(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         SavedTargetCollisionHalfHeight;                    // 0x26B4(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class AMarvelBaseCharacter*                   ActingCharacter;                                   // 0x26B8(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class AController*                            ActingController;                                  // 0x26C0(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class AMarvelPlayerState*                     ActingPlayerState;                                 // 0x26C8(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         TargetDuplicateEffectStartTime;                    // 0x26D0(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FActiveGameplayEffectHandle            TargetDuplicateEffectHandle;                       // 0x26D4(0x0008)(BlueprintVisible, BlueprintReadOnly, Transient, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FActiveGameplayEffectHandle            TargetDeceptionEffectHandle;                       // 0x26DC(0x0008)(BlueprintVisible, BlueprintReadOnly, Transient, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_26E4[0x4];                                     // 0x26E4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FActiveGameplayEffectHandle>    SourceDisguiseEffectHandles;                       // 0x26E8(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, Protected, NativeAccessSpecifierProtected)
+	class UAbilityTask_WaitGameplayEffectRemoved* WaitEffectRemovedTask;                             // 0x26F8(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UMarvelAbilityTask_SelectTarget*        SelectTask;                                        // 0x2700(0x0008)(BlueprintVisible, ZeroConstructor, Transient, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UAbilityTask_WaitGameplayEvent*         WaitGameplayEvent;                                 // 0x2708(0x0008)(BlueprintVisible, ZeroConstructor, Transient, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_2710[0x38];                                    // 0x2710(0x0038)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void AddActingCharacterEnergyValue(class AActor* SourceActor);
@@ -852,6 +849,7 @@ public:
 	void OnHeroHulkAbilitiesFinishInit(class AActor* SourceActor);
 	void OnMrFantasyAbilityEnd(const struct FAbilityEndedData& InAbilityEndedData);
 	void OnMySelfPlayerStateChange(class AMarvelPlayerState* InPlayerState);
+	void OnMySelfPossessedPawnChanged(class APawn* OldPawn, class APawn* NewPawn);
 	void OnServerControllerPostNewPawn(class APawn* InPawn);
 	void OnServerControllerPostPawnSpawn(class APawn* InPawn, ESpawnMethod InMethod);
 	void OnServerControllerPreNewPawn(class APawn* InPawn);
@@ -1099,17 +1097,18 @@ public:
 };
 
 // Class Hero_1016.LokiCharacter
-// 0x0030 (0x1840 - 0x1810)
+// 0x0030 (0x18A0 - 0x1870)
 class ALokiCharacter : public AMarvelBaseCharacter
 {
 public:
-	bool                                          bInVisible;                                        // 0x1810(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1811[0x7];                                     // 0x1811(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class ULokiPhantomManagementComponent*        PhantomManagementComponent;                        // 0x1818(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class ULokiMoveLogicBaseComponent*            LokiMoveLogic;                                     // 0x1820(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bResetPhantomCache;                                // 0x1828(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_1829[0x7];                                     // 0x1829(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class AActor*>                         ActivePhantoms;                                    // 0x1830(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
+	bool                                          bInVisible;                                        // 0x1868(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1869[0x7];                                     // 0x1869(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class ULokiPhantomManagementComponent*        PhantomManagementComponent;                        // 0x1870(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class ULokiMoveLogicBaseComponent*            LokiMoveLogic;                                     // 0x1878(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bResetPhantomCache;                                // 0x1880(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_1881[0x7];                                     // 0x1881(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class AActor*>                         ActivePhantoms;                                    // 0x1888(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
+	uint8                                         Pad_1898[0x8];                                     // 0x1898(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void SpawnLokiPhantom(const struct FTransform& InTransform, const class UMarvelGameplayAbility* InAbility);
@@ -1148,7 +1147,7 @@ public:
 };
 
 // Class Hero_1016.LokiMovementComponent
-// 0x0000 (0x1B60 - 0x1B60)
+// 0x0000 (0x1BA0 - 0x1BA0)
 class ULokiMovementComponent final : public UMarvelCharacterMovementComponent
 {
 public:

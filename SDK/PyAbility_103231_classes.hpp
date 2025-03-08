@@ -37,11 +37,11 @@ public:
 };
 
 // PythonClass PyAbility_103231.PyAbility_103231
-// 0x0010 (0x2598 - 0x2588)
+// 0x0010 (0x25A0 - 0x2590)
 class UPyAbility_103231 : public UAbility_108
 {
 public:
-	TMulticastInlineDelegate<void(float Distance)> JumpDistanceDelegate;                              // 0x2588(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(float Distance)> JumpDistanceDelegate;                             // 0x2590(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 
 public:
 	void BeginPlay();
@@ -104,11 +104,11 @@ public:
 };
 
 // PythonClass PyAbility_103231.PyEffectAbility_103231
-// 0x0008 (0x1100 - 0x10F8)
+// 0x0008 (0x1108 - 0x1100)
 class UPyEffectAbility_103231 : public UMarvelEffectGameplayAbility
 {
 public:
-	int32                                         AbilityID;                                         // 0x10F8(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         AbilityID;                                         // 0x1100(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void BeginPlay();

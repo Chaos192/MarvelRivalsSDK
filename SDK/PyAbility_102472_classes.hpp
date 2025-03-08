@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // PythonClass PyAbility_102472.PyUIController_102472
-// 0x0000 (0x0C60 - 0x0C60)
+// 0x0000 (0x0C50 - 0x0C50)
 class UPyUIController_102472 final : public UUIC_Ability
 {
 public:
@@ -36,11 +36,11 @@ public:
 };
 
 // PythonClass PyAbility_102472.PyAbility_102472
-// 0x0008 (0x2588 - 0x2580)
+// 0x0008 (0x2590 - 0x2588)
 class UPyAbility_102472 : public UMarvelGameplayAbility
 {
 public:
-	bool                                          IsInAttacking;                                     // 0x2580(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsInAttacking;                                     // 0x2588(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void BeginPlay();

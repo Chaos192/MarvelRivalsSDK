@@ -20,7 +20,7 @@ namespace SDK
 // PythonFunction PyAbility_212.PyAbility_212.TryMakeTriggerContext
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayEventData               EventData                                              (Parm, OutParm, ReferenceParm)
+// struct FGameplayEventData&              EventData                                              (Parm, OutParm, ReferenceParm)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 bool UPyAbility_212::TryMakeTriggerContext(struct FGameplayEventData& EventData)
@@ -50,7 +50,7 @@ bool UPyAbility_212::TryMakeTriggerContext(struct FGameplayEventData& EventData)
 // PythonFunction PyAbility_212.PyAbility_212.K2_ActivateAbilityFromEvent
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayEventData               EventData                                              (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayEventData&        EventData                                              (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyAbility_212::K2_ActivateAbilityFromEvent(const struct FGameplayEventData& EventData)
 {
@@ -119,7 +119,7 @@ void UPyAbility_212::K2_OnEndAbility(bool bWasCancelled)
 // PythonFunction PyAbility_212.PyAbility_212.NativeOnMontageCompleted
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           EventTag                                               (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    EventTag                                               (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_212::NativeOnMontageCompleted(const class FString& EventTag)
 {
@@ -144,7 +144,7 @@ void UPyAbility_212::NativeOnMontageCompleted(const class FString& EventTag)
 // PythonFunction PyAbility_212.PyAbility_212.NativeOnMontageBlendOut
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           EventTag                                               (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    EventTag                                               (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_212::NativeOnMontageBlendOut(const class FString& EventTag)
 {
@@ -169,7 +169,7 @@ void UPyAbility_212::NativeOnMontageBlendOut(const class FString& EventTag)
 // PythonFunction PyAbility_212.PyAbility_212.NativeOnMontageInterrupted
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           EventTag                                               (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    EventTag                                               (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_212::NativeOnMontageInterrupted(const class FString& EventTag)
 {
@@ -194,7 +194,7 @@ void UPyAbility_212::NativeOnMontageInterrupted(const class FString& EventTag)
 // PythonFunction PyAbility_212.PyAbility_212.NativeOnMontageCancelled
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           EventTag                                               (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    EventTag                                               (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_212::NativeOnMontageCancelled(const class FString& EventTag)
 {

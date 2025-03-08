@@ -40,7 +40,7 @@ void AProjectile_10472201_BP_C::ExecuteUbergraph_Projectile_10472201_BP(int32 En
 // Function Projectile_10472201_BP.Projectile_10472201_BP_C.K2_OnProcessHit
 // (Event, Public, HasOutParams, BlueprintEvent)
 // Parameters:
-// struct FHitResult                       ImpactResult                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, ContainsInstancedReference)
+// const struct FHitResult&                ImpactResult                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, ContainsInstancedReference)
 
 void AProjectile_10472201_BP_C::K2_OnProcessHit(const struct FHitResult& ImpactResult)
 {

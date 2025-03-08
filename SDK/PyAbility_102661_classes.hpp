@@ -66,13 +66,13 @@ public:
 };
 
 // PythonClass PyAbility_102661.PyAbility_102661
-// 0x0030 (0x25E8 - 0x25B8)
+// 0x0030 (0x25F0 - 0x25C0)
 class UPyAbility_102661 : public UAbility_102661
 {
 public:
-	TMulticastInlineDelegate<void(int32 Num)>     OnRefreshNumUpdate;                                // 0x25B8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void()>              OnNeedAddShield;                                   // 0x25C8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void()>              OnUpCDAudioStage;                                  // 0x25D8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(int32 Num)>     OnRefreshNumUpdate;                                // 0x25C0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void()>              OnNeedAddShield;                                   // 0x25D0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void()>              OnUpCDAudioStage;                                  // 0x25E0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 
 public:
 	void BeginPlay();
@@ -100,7 +100,7 @@ public:
 };
 
 // PythonClass PyAbility_102661.PyFallability_10266101
-// 0x0000 (0x12B8 - 0x12B8)
+// 0x0000 (0x12C8 - 0x12C8)
 class UPyFallability_10266101 : public UMarvelNotTreatFallAbility
 {
 public:
@@ -139,14 +139,14 @@ public:
 };
 
 // PythonClass PyAbility_102661.PyUIController_102661
-// 0x0020 (0x0C80 - 0x0C60)
+// 0x0020 (0x0C70 - 0x0C50)
 class UPyUIController_102661 final : public UUIC_Ability
 {
 public:
-	class UAkAudioEvent*                          Audio_CooldownEnd_Stage_One;                       // 0x0C60(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UAkAudioEvent*                          Audio_CooldownEnd_Stage_Two;                       // 0x0C68(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UAkAudioEvent*                          Audio_CooldownEnd_Stage_Three;                     // 0x0C70(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Audio_CooldownEnd_ResetStage_Interval_Time;        // 0x0C78(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UAkAudioEvent*                          Audio_CooldownEnd_Stage_One;                       // 0x0C50(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UAkAudioEvent*                          Audio_CooldownEnd_Stage_Two;                       // 0x0C58(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UAkAudioEvent*                          Audio_CooldownEnd_Stage_Three;                     // 0x0C60(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Audio_CooldownEnd_ResetStage_Interval_Time;        // 0x0C68(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void OnInit();

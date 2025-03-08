@@ -20,7 +20,7 @@ namespace SDK
 // PythonFunction PyAbility_211.PyAbility_211.TryMakeTriggerContext
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayEventData               EventData                                              (Parm, OutParm, ReferenceParm)
+// struct FGameplayEventData&              EventData                                              (Parm, OutParm, ReferenceParm)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 bool UPyAbility_211::TryMakeTriggerContext(struct FGameplayEventData& EventData)
@@ -50,7 +50,7 @@ bool UPyAbility_211::TryMakeTriggerContext(struct FGameplayEventData& EventData)
 // PythonFunction PyAbility_211.PyAbility_211.K2_ActivateAbilityFromEvent
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayEventData               EventData                                              (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayEventData&        EventData                                              (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyAbility_211::K2_ActivateAbilityFromEvent(const struct FGameplayEventData& EventData)
 {
@@ -114,7 +114,7 @@ void UPyAbility_211::EndPlay()
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 bool UPyCue_Ability_Instant_21101::OnExecute(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters) const
@@ -292,7 +292,7 @@ void UPyUIController_211::Destruct()
 // PythonFunction PyAbility_211.PyUIController_211.OnTagUpdate
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FGameplayTag                     Tag                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              Tag                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
 // bool                                    Exist                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UPyUIController_211::OnTagUpdate(const struct FGameplayTag& Tag, bool Exist)

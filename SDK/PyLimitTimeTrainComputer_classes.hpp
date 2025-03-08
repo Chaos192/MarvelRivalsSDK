@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "PyTrainComputer_classes.hpp"
-#include "Marvel_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "Marvel_structs.hpp"
 #include "PyLimitTimeTrainComputer_structs.hpp"
+#include "PyTrainComputer_classes.hpp"
 
 
 namespace SDK
@@ -35,8 +35,8 @@ public:
 	int32                                         TrainingKillCount;                                 // 0x0724(0x0004)(Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<int32>                                 SpawnedAIUIDList;                                  // 0x0728(0x0010)(Net, NativeAccessSpecifierPublic)
 	TMap<class FString, int32>                    DefaultConfig;                                     // 0x0738(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	TMap<class FString, TArray<class APyAISpawnActor*>> AISpawnActorConfig;                                // 0x0788(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	TMap<class FString, TArray<class APyAISpawnActor*>> AirAISpawnActorConfig;                             // 0x07D8(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	TMap<class FString, TArray<class APyAISpawnActor*>> AISpawnActorConfig;                          // 0x0788(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	TMap<class FString, TArray<class APyAISpawnActor*>> AirAISpawnActorConfig;                       // 0x07D8(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	int32                                         AISpawnLimit;                                      // 0x0828(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         AirAISpawnLimit;                                   // 0x082C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         AIRandomSpawnLimit;                                // 0x0830(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)

@@ -131,6 +131,23 @@ public:
 	TArray<class UMovieGraphNode*>                NodeInstances;                                     // 0x0000(0x0010)(ZeroConstructor, Transient, UObjectWrapper, NativeAccessSpecifierPublic)
 };
 
+// ScriptStruct MovieRenderPipelineCore.MovieGraphEvaluatedBranchConfig
+// 0x0050 (0x0050 - 0x0000)
+struct FMovieGraphEvaluatedBranchConfig final
+{
+public:
+	TMap<class FString, struct FMovieGraphEvaluatedSettingsStack> NamedNodes;                        // 0x0000(0x0050)(Transient, NativeAccessSpecifierPrivate)
+};
+
+// ScriptStruct MovieRenderPipelineCore.MovieGraphResolveArgs
+// 0x00A0 (0x00A0 - 0x0000)
+struct FMovieGraphResolveArgs final
+{
+public:
+	TMap<class FString, class FString>            FilenameArguments;                                 // 0x0000(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	TMap<class FString, class FString>            FileMetadata;                                      // 0x0050(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+};
+
 // ScriptStruct MovieRenderPipelineCore.MoviePipelinePassIdentifier
 // 0x0020 (0x0020 - 0x0000)
 struct FMoviePipelinePassIdentifier final
@@ -153,8 +170,8 @@ public:
 struct FMoviePipelineShotOutputData final
 {
 public:
-	TWeakObjectPtr<class UMoviePipelineExecutorShot> Shot;                                              // 0x0000(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMap<struct FMoviePipelinePassIdentifier, struct FMoviePipelineRenderPassOutputData> RenderPassData;                                    // 0x0008(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, EditConst, NativeAccessSpecifierPublic)
+	TWeakObjectPtr<class UMoviePipelineExecutorShot> Shot;                                           // 0x0000(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TMap<struct FMoviePipelinePassIdentifier, struct FMoviePipelineRenderPassOutputData> RenderPassData; // 0x0008(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, EditConst, NativeAccessSpecifierPublic)
 };
 
 // ScriptStruct MovieRenderPipelineCore.MoviePipelineOutputData
@@ -179,6 +196,23 @@ public:
 	class FString                                 RendererName;                                      // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 SubResourceName;                                   // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 CameraName;                                        // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// ScriptStruct MovieRenderPipelineCore.MovieGraphRenderPassOutputData
+// 0x0010 (0x0010 - 0x0000)
+struct FMovieGraphRenderPassOutputData final
+{
+public:
+	TArray<class FString>                         FilePaths;                                         // 0x0000(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, NativeAccessSpecifierPublic)
+};
+
+// ScriptStruct MovieRenderPipelineCore.MovieGraphRenderOutputData
+// 0x0058 (0x0058 - 0x0000)
+struct FMovieGraphRenderOutputData final
+{
+public:
+	TWeakObjectPtr<class UMoviePipelineExecutorShot> Shot;                                           // 0x0000(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TMap<struct FMovieGraphRenderDataIdentifier, struct FMovieGraphRenderPassOutputData> RenderPassData; // 0x0008(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, EditConst, NativeAccessSpecifierPublic)
 };
 
 // ScriptStruct MovieRenderPipelineCore.MovieGraphTimeStepData
@@ -224,14 +258,6 @@ public:
 	TArray<class UMovieGraphSubgraphNode*>        SubgraphStack;                                     // 0x00E0(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
 };
 
-// ScriptStruct MovieRenderPipelineCore.MovieGraphEvaluatedBranchConfig
-// 0x0050 (0x0050 - 0x0000)
-struct FMovieGraphEvaluatedBranchConfig final
-{
-public:
-	TMap<class FString, struct FMovieGraphEvaluatedSettingsStack> NamedNodes;                                        // 0x0000(0x0050)(Transient, NativeAccessSpecifierPrivate)
-};
-
 // ScriptStruct MovieRenderPipelineCore.MovieGraphInitConfig
 // 0x0020 (0x0020 - 0x0000)
 struct FMovieGraphInitConfig final
@@ -242,32 +268,6 @@ public:
 	TSubclassOf<class UMovieGraphDataSourceBase>  DataSourceClass;                                   // 0x0010(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bRenderViewport;                                   // 0x0018(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-
-// ScriptStruct MovieRenderPipelineCore.MovieGraphRenderPassOutputData
-// 0x0010 (0x0010 - 0x0000)
-struct FMovieGraphRenderPassOutputData final
-{
-public:
-	TArray<class FString>                         FilePaths;                                         // 0x0000(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, NativeAccessSpecifierPublic)
-};
-
-// ScriptStruct MovieRenderPipelineCore.MovieGraphRenderOutputData
-// 0x0058 (0x0058 - 0x0000)
-struct FMovieGraphRenderOutputData final
-{
-public:
-	TWeakObjectPtr<class UMoviePipelineExecutorShot> Shot;                                              // 0x0000(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMap<struct FMovieGraphRenderDataIdentifier, struct FMovieGraphRenderPassOutputData> RenderPassData;                                    // 0x0008(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, EditConst, NativeAccessSpecifierPublic)
-};
-
-// ScriptStruct MovieRenderPipelineCore.MovieGraphResolveArgs
-// 0x00A0 (0x00A0 - 0x0000)
-struct FMovieGraphResolveArgs final
-{
-public:
-	TMap<class FString, class FString>            FilenameArguments;                                 // 0x0000(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	TMap<class FString, class FString>            FileMetadata;                                      // 0x0050(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 };
 
 // ScriptStruct MovieRenderPipelineCore.MovieGraphFilenameResolveParams

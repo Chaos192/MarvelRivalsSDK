@@ -108,7 +108,7 @@ void UPyAbility_105232::K2_ActivateAbility()
 // PythonFunction PyAbility_105232.PyAbility_105232.NativeOnMontageCompleted
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_105232::NativeOnMontageCompleted(const class FString& Tag)
 {
@@ -133,7 +133,7 @@ void UPyAbility_105232::NativeOnMontageCompleted(const class FString& Tag)
 // PythonFunction PyAbility_105232.PyAbility_105232.NativeOnMontageEvent
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_105232::NativeOnMontageEvent(const class FString& Tag)
 {
@@ -159,9 +159,9 @@ void UPyAbility_105232::NativeOnMontageEvent(const class FString& Tag)
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int32                                   TimelineIndex                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FHitResult                       InHitResult                                            (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FHitResult&                InHitResult                                            (ConstParm, Parm, OutParm, ReferenceParm)
 // bool                                    BlockDash                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FVector                          TargetLocation                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVector&                   TargetLocation                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UPyAbility_105232::K2_OnPlayTimeline(int32 TimelineIndex, const struct FHitResult& InHitResult, bool BlockDash, const struct FVector& TargetLocation)
 {

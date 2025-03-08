@@ -51,30 +51,6 @@ public:
 	}
 };
 
-// PythonClass PyAbility_104661.PyUIController_104661_SetHeroPortait
-// 0x0010 (0x0C70 - 0x0C60)
-class UPyUIController_104661_SetHeroPortait final : public UUIC_Ability
-{
-public:
-	TSubclassOf<class UUserWidget>                HeroPortaitClass;                                  // 0x0C60(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         UpdateTime;                                        // 0x0C68(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-public:
-	void OnInit();
-	void OnDestruct();
-	void SetReady(bool bInReady);
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"PyUIController_104661_SetHeroPortait">();
-	}
-	static class UPyUIController_104661_SetHeroPortait* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UPyUIController_104661_SetHeroPortait>();
-	}
-};
-
 // PythonClass PyAbility_104661.PyAbility_104661
 // 0x0000 (0x5CD0 - 0x5CD0)
 class UPyAbility_104661 : public UAbility_104661
@@ -101,18 +77,25 @@ public:
 	}
 };
 
-// PythonClass PyAbility_104661.PyWidget_HeroPortrait_104661
-// 0x0000 (0x03B8 - 0x03B8)
-class UPyWidget_HeroPortrait_104661 final : public UUserWidget
+// PythonClass PyAbility_104661.PyResurrectionAbility_10466101
+// 0x0000 (0x11B0 - 0x11B0)
+class UPyResurrectionAbility_10466101 : public UResurrectionAbility_10466101
 {
+public:
+	void K2_DoResurrection();
+	void K2_EnterResurrection();
+	void K2_PreResurrection();
+	void BeginPlay();
+	void K2_OnEndAbility(bool bWasCancelled);
+
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"PyWidget_HeroPortrait_104661">();
+		return StaticClassImpl<"PyResurrectionAbility_10466101">();
 	}
-	static class UPyWidget_HeroPortrait_104661* GetDefaultObj()
+	static class UPyResurrectionAbility_10466101* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UPyWidget_HeroPortrait_104661>();
+		return GetDefaultObjImpl<UPyResurrectionAbility_10466101>();
 	}
 };
 
@@ -136,30 +119,8 @@ public:
 	}
 };
 
-// PythonClass PyAbility_104661.PyResurrectionAbility_10466101
-// 0x0000 (0x11A8 - 0x11A8)
-class UPyResurrectionAbility_10466101 : public UResurrectionAbility_10466101
-{
-public:
-	void K2_DoResurrection();
-	void K2_EnterResurrection();
-	void K2_PreResurrection();
-	void BeginPlay();
-	void K2_OnEndAbility(bool bWasCancelled);
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"PyResurrectionAbility_10466101">();
-	}
-	static class UPyResurrectionAbility_10466101* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UPyResurrectionAbility_10466101>();
-	}
-};
-
 // PythonClass PyAbility_104661.PyEffectAbility_104661
-// 0x0000 (0x1100 - 0x1100)
+// 0x0000 (0x1108 - 0x1108)
 class UPyEffectAbility_104661 : public UEffectAbility_104661
 {
 public:
@@ -175,6 +136,45 @@ public:
 	static class UPyEffectAbility_104661* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UPyEffectAbility_104661>();
+	}
+};
+
+// PythonClass PyAbility_104661.PyUIController_104661_SetHeroPortait
+// 0x0010 (0x0C60 - 0x0C50)
+class UPyUIController_104661_SetHeroPortait final : public UUIC_Ability
+{
+public:
+	TSubclassOf<class UUserWidget>                HeroPortaitClass;                                  // 0x0C50(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         UpdateTime;                                        // 0x0C58(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	void OnInit();
+	void OnDestruct();
+	void SetReady(bool bInReady);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PyUIController_104661_SetHeroPortait">();
+	}
+	static class UPyUIController_104661_SetHeroPortait* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPyUIController_104661_SetHeroPortait>();
+	}
+};
+
+// PythonClass PyAbility_104661.PyWidget_HeroPortrait_104661
+// 0x0000 (0x03B8 - 0x03B8)
+class UPyWidget_HeroPortrait_104661 final : public UUserWidget
+{
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PyWidget_HeroPortrait_104661">();
+	}
+	static class UPyWidget_HeroPortrait_104661* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPyWidget_HeroPortrait_104661>();
 	}
 };
 

@@ -40,11 +40,11 @@ public:
 };
 
 // PythonClass PyAbility_102011.PyAbility_102011
-// 0x0010 (0x2598 - 0x2588)
+// 0x0010 (0x25A0 - 0x2590)
 class UPyAbility_102011 : public UAbility_108
 {
 public:
-	TMulticastInlineDelegate<void()>              OnAddEnergyDispatcher;                             // 0x2588(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void()>              OnAddEnergyDispatcher;                             // 0x2590(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 
 public:
 	void BeginPlay();

@@ -147,7 +147,7 @@ void UPyAbility_105051::K2_EndAbilityWithChecked()
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // class AActor*                           SpawnActor                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayAbilityTargetDataHandle Data                                                   (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayAbilityTargetDataHandle&Data                                                   (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyAbility_105051::OnProjectileSpawn(class AActor* SpawnActor, const struct FGameplayAbilityTargetDataHandle& Data)
 {
@@ -349,7 +349,7 @@ void APyProjectile_105051::ReceiveEndPlay(EEndPlayReason EndPlayReason)
 // PythonFunction PyAbility_105051.PyProjectile_105051.K2_OnProjectileInfoForceChanged_ThreadSafe
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FProjectileForceChangedInfo      InProjectileForceChangedInfo                           (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FProjectileForceChangedInfo&InProjectileForceChangedInfo                           (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyProjectile_105051::K2_OnProjectileInfoForceChanged_ThreadSafe(const struct FProjectileForceChangedInfo& InProjectileForceChangedInfo)
 {

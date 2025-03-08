@@ -79,13 +79,13 @@ public:
 };
 
 // PythonClass PyAbility_134.PyAbility_134
-// 0x0008 (0x2828 - 0x2820)
+// 0x0008 (0x2830 - 0x2828)
 class UPyAbility_134 : public UAbility_134
 {
 public:
-	bool                                          OpenDebugLog;                                      // 0x2820(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2821[0x3];                                     // 0x2821(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         LevelRespawnInterval;                              // 0x2824(0x0004)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          OpenDebugLog;                                      // 0x2828(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2829[0x3];                                     // 0x2829(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         LevelRespawnInterval;                              // 0x282C(0x0004)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void BeginPlay();
@@ -123,7 +123,7 @@ public:
 };
 
 // PythonClass PyAbility_134.PyUIController_134
-// 0x0000 (0x0C60 - 0x0C60)
+// 0x0000 (0x0C50 - 0x0C50)
 class UPyUIController_134 final : public UUIC_Ability
 {
 public:

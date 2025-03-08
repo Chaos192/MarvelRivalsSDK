@@ -25,9 +25,9 @@ public:
 	bool                                          IsTestModeForAI;                                   // 0x0670(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_671[0x3];                                      // 0x0671(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         OverrideAIDifficultyLevel;                         // 0x0674(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class AController* LogoutController)> MarvelLogoutEvent;                                 // 0x0678(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class AController* LogoutController)> MarvelLoginEvent;                                  // 0x0688(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class AMarvelGameMode* SelfGameMode, class ULevelSubsystem* SelfSubsystem)> PostProcessLevelSubsystem;                         // 0x0698(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class AController* LogoutController)> MarvelLogoutEvent;           // 0x0678(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class AController* LogoutController)> MarvelLoginEvent;            // 0x0688(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class AMarvelGameMode* SelfGameMode, class ULevelSubsystem* SelfSubsystem)> PostProcessLevelSubsystem; // 0x0698(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 	class UPyGameModeConnectComponent*            ConnectComponent;                                  // 0x06A8(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:

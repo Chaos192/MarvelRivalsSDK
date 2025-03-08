@@ -18,12 +18,13 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Projectile_10472201_BP.Projectile_10472201_BP_C
-// 0x0180 (0x31D0 - 0x3050)
+// 0x0180 (0x3290 - 0x3110)
 class AProjectile_10472201_BP_C final : public AMarvelAbilityTargetActor_Projectile
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x3050(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	struct FHitResult                             Impact_Result;                                     // 0x3058(0x0170)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
+	uint8                                         Pad_3108[0x8];                                     // 0x3108(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x3110(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FHitResult                             Impact_Result;                                     // 0x3118(0x0170)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
 
 public:
 	void ExecuteUbergraph_Projectile_10472201_BP(int32 EntryPoint);

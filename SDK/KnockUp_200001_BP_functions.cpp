@@ -40,8 +40,8 @@ void UKnockUp_200001_BP_C::ExecuteUbergraph_KnockUp_200001_BP(int32 EntryPoint)
 // Function KnockUp_200001_BP.KnockUp_200001_BP_C.GetOwnerAndCauser
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class AActor*                           Owner                                                  (Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class AActor*                           Causer                                                 (Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class AActor**                          Owner                                                  (Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class AActor**                          Causer                                                 (Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 void UKnockUp_200001_BP_C::GetOwnerAndCauser(class AActor** Owner, class AActor** Causer)
 {

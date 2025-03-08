@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // PythonClass PyAbility_103141.PyUIController_103142
-// 0x0000 (0x0C60 - 0x0C60)
+// 0x0000 (0x0C50 - 0x0C50)
 class UPyUIController_103142 final : public UUIC_Ability
 {
 public:
@@ -37,7 +37,7 @@ public:
 };
 
 // PythonClass PyAbility_103141.PyAbility_103141
-// 0x0000 (0x2588 - 0x2588)
+// 0x0000 (0x2590 - 0x2590)
 class UPyAbility_103141 : public UAbility_108
 {
 public:
@@ -55,12 +55,12 @@ public:
 };
 
 // PythonClass PyAbility_103141.PyUIController_103141
-// 0x0010 (0x0C70 - 0x0C60)
+// 0x0010 (0x0C60 - 0x0C50)
 class UPyUIController_103141 final : public UUIC_Ability
 {
 public:
-	class UTexture2D*                             EnhancedIcon;                                      // 0x0C60(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UTexture2D*                             NormalIcon;                                        // 0x0C68(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UTexture2D*                             EnhancedIcon;                                      // 0x0C50(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UTexture2D*                             NormalIcon;                                        // 0x0C58(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void OnInit();

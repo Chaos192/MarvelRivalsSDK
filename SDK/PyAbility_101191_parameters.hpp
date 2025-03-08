@@ -48,24 +48,6 @@ public:
 	bool                                          ReturnValue;                                       // 0x01C0(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 
-// PythonFunction PyAbility_101191.PyUIController_101191.OnTagUpdate
-// 0x0010 (0x0010 - 0x0000)
-struct PyUIController_101191_OnTagUpdate final
-{
-public:
-	struct FGameplayTag                           Tag;                                               // 0x0000(0x000C)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
-	bool                                          Exist;                                             // 0x000C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-
-// PythonFunction PyAbility_101191.PyUIController_101191.PyInitChargeParam
-// 0x0002 (0x0002 - 0x0000)
-struct PyUIController_101191_PyInitChargeParam final
-{
-public:
-	bool                                          bIsHulk;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          ReturnValue;                                       // 0x0001(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-
 // PythonFunction PyAbility_101191.PyCue_Scope_HitImpact_10119101.ComputeDecalRotation
 // 0x0198 (0x0198 - 0x0000)
 struct PyCue_Scope_HitImpact_10119101_ComputeDecalRotation final
@@ -75,6 +57,50 @@ public:
 	class AActor*                                 InCauser;                                          // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	struct FHitResult                             HitResult;                                         // 0x0010(0x0170)(ConstParm, Parm, OutParm, ReferenceParm)
 	struct FRotator                               ReturnValue;                                       // 0x0180(0x0018)(ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+};
+
+// PythonFunction PyAbility_101191.PyCue_Ability_Loop_101191_AirGrab.WhileActive
+// 0x01C8 (0x01C8 - 0x0000)
+struct PyCue_Ability_Loop_101191_AirGrab_WhileActive final
+{
+public:
+	class AActor*                                 MyTarget;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	struct FGameplayCueParameters                 Parameters;                                        // 0x0008(0x01B8)(ConstParm, Parm, OutParm, ReferenceParm)
+	bool                                          ReturnValue;                                       // 0x01C0(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+
+// PythonFunction PyAbility_101191.PyCue_Ability_Loop_101191_AirGrab.OnRemove
+// 0x01C8 (0x01C8 - 0x0000)
+struct PyCue_Ability_Loop_101191_AirGrab_OnRemove final
+{
+public:
+	class AActor*                                 MyTarget;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	struct FGameplayCueParameters                 Parameters;                                        // 0x0008(0x01B8)(ConstParm, Parm, OutParm, ReferenceParm)
+	bool                                          ReturnValue;                                       // 0x01C0(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+
+// PythonFunction PyAbility_101191.PyWidget_AbilityEnergy_101191.SetVisible
+// 0x0001 (0x0001 - 0x0000)
+struct PyWidget_AbilityEnergy_101191_SetVisible final
+{
+public:
+	bool                                          bInVisible;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+
+// PythonFunction PyAbility_101191.PyWidget_AbilityEnergy_101191.SetVisibleImmediately
+// 0x0001 (0x0001 - 0x0000)
+struct PyWidget_AbilityEnergy_101191_SetVisibleImmediately final
+{
+public:
+	bool                                          Invisible;                                         // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+
+// PythonFunction PyAbility_101191.PyWidget_AbilityEnergy_101191.SetPercent
+// 0x0004 (0x0004 - 0x0000)
+struct PyWidget_AbilityEnergy_101191_SetPercent final
+{
+public:
+	float                                         InPercent;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 
 // PythonFunction PyAbility_101191.PyAbility_101191.CanActivate
@@ -135,48 +161,22 @@ public:
 	class FString                                 EventTag;                                          // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash)
 };
 
-// PythonFunction PyAbility_101191.PyCue_Ability_Loop_101191_AirGrab.WhileActive
-// 0x01C8 (0x01C8 - 0x0000)
-struct PyCue_Ability_Loop_101191_AirGrab_WhileActive final
+// PythonFunction PyAbility_101191.PyUIController_101191.OnTagUpdate
+// 0x0010 (0x0010 - 0x0000)
+struct PyUIController_101191_OnTagUpdate final
 {
 public:
-	class AActor*                                 MyTarget;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	struct FGameplayCueParameters                 Parameters;                                        // 0x0008(0x01B8)(ConstParm, Parm, OutParm, ReferenceParm)
-	bool                                          ReturnValue;                                       // 0x01C0(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FGameplayTag                           Tag;                                               // 0x0000(0x000C)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+	bool                                          Exist;                                             // 0x000C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 
-// PythonFunction PyAbility_101191.PyCue_Ability_Loop_101191_AirGrab.OnRemove
-// 0x01C8 (0x01C8 - 0x0000)
-struct PyCue_Ability_Loop_101191_AirGrab_OnRemove final
+// PythonFunction PyAbility_101191.PyUIController_101191.PyInitChargeParam
+// 0x0002 (0x0002 - 0x0000)
+struct PyUIController_101191_PyInitChargeParam final
 {
 public:
-	class AActor*                                 MyTarget;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	struct FGameplayCueParameters                 Parameters;                                        // 0x0008(0x01B8)(ConstParm, Parm, OutParm, ReferenceParm)
-	bool                                          ReturnValue;                                       // 0x01C0(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-
-// PythonFunction PyAbility_101191.PyWidget_AbilityEnergy_101191.SetVisible
-// 0x0001 (0x0001 - 0x0000)
-struct PyWidget_AbilityEnergy_101191_SetVisible final
-{
-public:
-	bool                                          bInVisible;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-
-// PythonFunction PyAbility_101191.PyWidget_AbilityEnergy_101191.SetVisibleImmediately
-// 0x0001 (0x0001 - 0x0000)
-struct PyWidget_AbilityEnergy_101191_SetVisibleImmediately final
-{
-public:
-	bool                                          Invisible;                                         // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-
-// PythonFunction PyAbility_101191.PyWidget_AbilityEnergy_101191.SetPercent
-// 0x0004 (0x0004 - 0x0000)
-struct PyWidget_AbilityEnergy_101191_SetPercent final
-{
-public:
-	float                                         InPercent;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bIsHulk;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          ReturnValue;                                       // 0x0001(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 
 // PythonFunction PyAbility_101191.PyCue_Ability_Loop_10119103.WhileActive

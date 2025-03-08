@@ -16,38 +16,6 @@
 namespace SDK::Params
 {
 
-// PythonFunction PyAbility_104561.PyAbility_104561.OnWaitTaskConfirm
-// 0x0168 (0x0168 - 0x0000)
-struct PyAbility_104561_OnWaitTaskConfirm final
-{
-public:
-	struct FGameplayAbilityTargetDataHandle       Data;                                              // 0x0000(0x0168)(ConstParm, Parm, OutParm, ReferenceParm)
-};
-
-// PythonFunction PyAbility_104561.PyAbility_104561.OnWaitTaskCancel
-// 0x0168 (0x0168 - 0x0000)
-struct PyAbility_104561_OnWaitTaskCancel final
-{
-public:
-	struct FGameplayAbilityTargetDataHandle       Data;                                              // 0x0000(0x0168)(ConstParm, Parm, OutParm, ReferenceParm)
-};
-
-// PythonFunction PyAbility_104561.PyAbility_104561.NativeOnMontageCompleted
-// 0x0010 (0x0010 - 0x0000)
-struct PyAbility_104561_NativeOnMontageCompleted final
-{
-public:
-	class FString                                 Tag;                                               // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash)
-};
-
-// PythonFunction PyAbility_104561.PyAbility_104561.K2_OnEndAbility
-// 0x0001 (0x0001 - 0x0000)
-struct PyAbility_104561_K2_OnEndAbility final
-{
-public:
-	bool                                          bWasCancelled;                                     // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-
 // PythonFunction PyAbility_104561.PyCue_ProjectileLoop_10456101.WhileActive
 // 0x01C8 (0x01C8 - 0x0000)
 struct PyCue_ProjectileLoop_10456101_WhileActive final
@@ -102,6 +70,38 @@ public:
 	class AActor*                                 MyTarget;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	struct FGameplayCueParameters                 Parameters;                                        // 0x0008(0x01B8)(ConstParm, Parm, OutParm, ReferenceParm)
 	bool                                          ReturnValue;                                       // 0x01C0(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+
+// PythonFunction PyAbility_104561.PyAbility_104561.OnWaitTaskConfirm
+// 0x0168 (0x0168 - 0x0000)
+struct PyAbility_104561_OnWaitTaskConfirm final
+{
+public:
+	struct FGameplayAbilityTargetDataHandle       Data;                                              // 0x0000(0x0168)(ConstParm, Parm, OutParm, ReferenceParm)
+};
+
+// PythonFunction PyAbility_104561.PyAbility_104561.OnWaitTaskCancel
+// 0x0168 (0x0168 - 0x0000)
+struct PyAbility_104561_OnWaitTaskCancel final
+{
+public:
+	struct FGameplayAbilityTargetDataHandle       Data;                                              // 0x0000(0x0168)(ConstParm, Parm, OutParm, ReferenceParm)
+};
+
+// PythonFunction PyAbility_104561.PyAbility_104561.NativeOnMontageCompleted
+// 0x0010 (0x0010 - 0x0000)
+struct PyAbility_104561_NativeOnMontageCompleted final
+{
+public:
+	class FString                                 Tag;                                               // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash)
+};
+
+// PythonFunction PyAbility_104561.PyAbility_104561.K2_OnEndAbility
+// 0x0001 (0x0001 - 0x0000)
+struct PyAbility_104561_K2_OnEndAbility final
+{
+public:
+	bool                                          bWasCancelled;                                     // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 
 }

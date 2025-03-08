@@ -84,7 +84,7 @@ class UInterchangePipelineBase : public UObject
 public:
 	uint8                                         Pad_30[0x8];                                       // 0x0030(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	class UInterchangeResultsContainer*           Results;                                           // 0x0038(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	TMap<class FName, struct FInterchangePipelinePropertyStates> PropertiesStates;                                  // 0x0040(0x0050)(Protected, NativeAccessSpecifierProtected)
+	TMap<class FName, struct FInterchangePipelinePropertyStates> PropertiesStates;                   // 0x0040(0x0050)(Protected, NativeAccessSpecifierProtected)
 	uint8                                         Pad_90[0x60];                                      // 0x0090(0x0060)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
@@ -341,7 +341,7 @@ public:
 class UInterchangeBaseNodeContainer final : public UObject
 {
 public:
-	TMap<class FString, class UInterchangeBaseNode*> Nodes;                                             // 0x0030(0x0050)(Edit, EditConst, UObjectWrapper, NativeAccessSpecifierPrivate)
+	TMap<class FString, class UInterchangeBaseNode*> Nodes;                                          // 0x0030(0x0050)(Edit, EditConst, UObjectWrapper, NativeAccessSpecifierPrivate)
 	uint8                                         Pad_80[0x50];                                      // 0x0080(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:

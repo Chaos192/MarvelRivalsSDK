@@ -19,11 +19,11 @@ namespace SDK
 {
 
 // PythonClass PyAbility_102972.PyKnockUp_102972
-// 0x0008 (0x1DA0 - 0x1D98)
+// 0x0008 (0x1DB0 - 0x1DA8)
 class UPyKnockUp_102972 : public UMarvelKnockUpAbility
 {
 public:
-	int32                                         NoPawnColliBuff;                                   // 0x1D98(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         NoPawnColliBuff;                                   // 0x1DA8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void OnKnockUped(class AMarvelBaseCharacter* Owner, class AActor* Causer);
@@ -41,7 +41,7 @@ public:
 };
 
 // PythonClass PyAbility_102972.PyAbility_102972
-// 0x0000 (0x25A8 - 0x25A8)
+// 0x0000 (0x25B0 - 0x25B0)
 class UPyAbility_102972 : public UAbility_102972
 {
 public:

@@ -21,7 +21,7 @@ namespace SDK
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // class FName                             Method_Name                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           Args                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Args                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void APyActor::CallPythonActorMethod(class FName Method_Name, const class FString& Args)
 {
@@ -48,7 +48,7 @@ void APyActor::CallPythonActorMethod(class FName Method_Name, const class FStrin
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // class FName                             Method_Name                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           Args                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Args                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool APyActor::CallPythonActorMethodBool(class FName Method_Name, const class FString& Args)
@@ -78,7 +78,7 @@ bool APyActor::CallPythonActorMethodBool(class FName Method_Name, const class FS
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // class FName                             Method_Name                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           Args                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Args                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class FString APyActor::CallPythonActorMethodString(class FName Method_Name, const class FString& Args)
@@ -108,7 +108,7 @@ class FString APyActor::CallPythonActorMethodString(class FName Method_Name, con
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // class FName                             Method_Name                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           Args                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Args                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void APyCharacter::CallPyCharacterMethod(class FName Method_Name, const class FString& Args)
 {
@@ -135,7 +135,7 @@ void APyCharacter::CallPyCharacterMethod(class FName Method_Name, const class FS
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // class FName                             Method_Name                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           Args                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Args                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool APyCharacter::CallPyCharacterMethodBool(class FName Method_Name, const class FString& Args)
@@ -165,7 +165,7 @@ bool APyCharacter::CallPyCharacterMethodBool(class FName Method_Name, const clas
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // class FName                             Method_Name                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           Args                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Args                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 float APyCharacter::CallPyCharacterMethodFloat(class FName Method_Name, const class FString& Args)
@@ -195,7 +195,7 @@ float APyCharacter::CallPyCharacterMethodFloat(class FName Method_Name, const cl
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // class FName                             Method_Name                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           Args                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Args                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class FString APyCharacter::CallPyCharacterMethodString(class FName Method_Name, const class FString& Args)
@@ -333,7 +333,7 @@ void APyCharacter::SetPythonAttrObject(class FName attr, class UObject* Object)
 // (Final, Native, Public, HasDefaults, BlueprintCallable)
 // Parameters:
 // class FName                             attr                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FRotator                         Rotator                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FRotator&                  Rotator                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 
 void APyCharacter::SetPythonAttrRotator(class FName attr, const struct FRotator& Rotator)
 {
@@ -360,7 +360,7 @@ void APyCharacter::SetPythonAttrRotator(class FName attr, const struct FRotator&
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // class FName                             attr                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           String                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    String                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void APyCharacter::SetPythonAttrString(class FName attr, const class FString& String)
 {
@@ -387,7 +387,7 @@ void APyCharacter::SetPythonAttrString(class FName attr, const class FString& St
 // (Final, Native, Public, HasDefaults, BlueprintCallable)
 // Parameters:
 // class FName                             attr                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          Vector                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   Vector                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void APyCharacter::SetPythonAttrVector(class FName attr, const struct FVector& Vector)
 {
@@ -414,7 +414,7 @@ void APyCharacter::SetPythonAttrVector(class FName attr, const struct FVector& V
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // class FName                             Method_Name                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           Args                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Args                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void APyHUD::CallPythonHUDMethod(class FName Method_Name, const class FString& Args)
 {
@@ -441,7 +441,7 @@ void APyHUD::CallPythonHUDMethod(class FName Method_Name, const class FString& A
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // class FName                             Method_Name                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           Args                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Args                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool APyHUD::CallPythonHUDMethodBool(class FName Method_Name, const class FString& Args)
@@ -471,7 +471,7 @@ bool APyHUD::CallPythonHUDMethodBool(class FName Method_Name, const class FStrin
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // class FName                             Method_Name                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           Args                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Args                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class FString APyHUD::CallPythonHUDMethodString(class FName Method_Name, const class FString& Args)
@@ -581,7 +581,7 @@ class FString APyPawn::CallPythonPawnMethodString(class FName Method_Name)
 // Function UnrealEnginePython.TestOnlyObject.AddRefCount
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FTestOnlyRefCount                InOutRefCount                                          (Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// struct FTestOnlyRefCount&               InOutRefCount                                          (Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 int32 UTestOnlyObject::AddRefCount(struct FTestOnlyRefCount& InOutRefCount)
@@ -611,7 +611,7 @@ int32 UTestOnlyObject::AddRefCount(struct FTestOnlyRefCount& InOutRefCount)
 // Function UnrealEnginePython.TestOnlyObject.GetOwnedRefs
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FTestOnlyRefCount                RefCount                                               (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FTestOnlyRefCount&         RefCount                                               (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 int32 UTestOnlyObject::GetOwnedRefs(const struct FTestOnlyRefCount& RefCount)
@@ -714,7 +714,7 @@ struct FTestOnlyRefCount UTestOnlyObject::NewRefCount2()
 // Function UnrealEnginePython.TestOnlyObject.OutRefCount
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FTestOnlyRefCount                OutRefCount_0                                          (Parm, OutParm, NativeAccessSpecifierPublic)
+// struct FTestOnlyRefCount*               OutRefCount_0                                          (Parm, OutParm, NativeAccessSpecifierPublic)
 
 void UTestOnlyObject::OutRefCount(struct FTestOnlyRefCount* OutRefCount_0)
 {
@@ -740,7 +740,7 @@ void UTestOnlyObject::OutRefCount(struct FTestOnlyRefCount* OutRefCount_0)
 // Function UnrealEnginePython.TestOnlyObject.OutRefCount2
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FTestOnlyRefCount                OutRefCount                                            (Parm, OutParm, NativeAccessSpecifierPublic)
+// struct FTestOnlyRefCount*               OutRefCount                                            (Parm, OutParm, NativeAccessSpecifierPublic)
 
 void UTestOnlyObject::OutRefCount2(struct FTestOnlyRefCount* OutRefCount)
 {
@@ -766,7 +766,7 @@ void UTestOnlyObject::OutRefCount2(struct FTestOnlyRefCount* OutRefCount)
 // Function UnrealEnginePython.TestOnlyObject.OutRefCount_NoImpl
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FTestOnlyRefCount                OutRefCount                                            (Parm, OutParm, NativeAccessSpecifierPublic)
+// struct FTestOnlyRefCount*               OutRefCount                                            (Parm, OutParm, NativeAccessSpecifierPublic)
 
 void UTestOnlyObject::OutRefCount_NoImpl(struct FTestOnlyRefCount* OutRefCount)
 {
@@ -837,7 +837,7 @@ struct FTestOnlyRefCount UTestOnlyObject::Call_BP_NewRefCount()
 // Function UnrealEnginePython.PythonBlueprintFunctionLibrary.ExecutePythonScript
 // (Final, Exec, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           Script                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Script                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UPythonBlueprintFunctionLibrary::ExecutePythonScript(const class FString& Script)
 {
@@ -862,7 +862,7 @@ void UPythonBlueprintFunctionLibrary::ExecutePythonScript(const class FString& S
 // Function UnrealEnginePython.PythonBlueprintFunctionLibrary.ExecutePythonString
 // (Final, Exec, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           PythonCmd                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    PythonCmd                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UPythonBlueprintFunctionLibrary::ExecutePythonString(const class FString& PythonCmd)
 {
@@ -888,7 +888,7 @@ void UPythonBlueprintFunctionLibrary::ExecutePythonString(const class FString& P
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // class FName                             Method_Name                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           Args                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Args                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UPythonComponent::CallPythonComponentMethod(class FName Method_Name, const class FString& Args)
 {
@@ -915,7 +915,7 @@ void UPythonComponent::CallPythonComponentMethod(class FName Method_Name, const 
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // class FName                             Method_Name                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           Args                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Args                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UPythonComponent::CallPythonComponentMethodBool(class FName Method_Name, const class FString& Args)
@@ -945,7 +945,7 @@ bool UPythonComponent::CallPythonComponentMethodBool(class FName Method_Name, co
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // class FName                             Method_Name                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           Args                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Args                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 float UPythonComponent::CallPythonComponentMethodFloat(class FName Method_Name, const class FString& Args)
@@ -975,7 +975,7 @@ float UPythonComponent::CallPythonComponentMethodFloat(class FName Method_Name, 
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // class FName                             Method_Name                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           Args                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Args                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 int32 UPythonComponent::CallPythonComponentMethodInt(class FName Method_Name, const class FString& Args)
@@ -1005,7 +1005,7 @@ int32 UPythonComponent::CallPythonComponentMethodInt(class FName Method_Name, co
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // class FName                             Method_Name                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           Args                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Args                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TMap<class FString, class FString>      ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
 TMap<class FString, class FString> UPythonComponent::CallPythonComponentMethodMap(class FName Method_Name, const class FString& Args)
@@ -1065,7 +1065,7 @@ class UObject* UPythonComponent::CallPythonComponentMethodObject(class FName Met
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // class FName                             Method_Name                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           Args                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Args                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class FString UPythonComponent::CallPythonComponentMethodString(class FName Method_Name, const class FString& Args)
@@ -1095,8 +1095,8 @@ class FString UPythonComponent::CallPythonComponentMethodString(class FName Meth
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // class FName                             Method_Name                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           Args                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<class FString>                   output_strings                                         (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+// const class FString&                    Args                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TArray<class FString>*                  output_strings                                         (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 
 void UPythonComponent::CallPythonComponentMethodStringArray(class FName Method_Name, const class FString& Args, TArray<class FString>* output_strings)
 {
@@ -1253,7 +1253,7 @@ void UPythonComponent::SetPythonAttrObject(class FName attr, class UObject* Obje
 // (Final, Native, Public, HasDefaults, BlueprintCallable)
 // Parameters:
 // class FName                             attr                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FRotator                         Rotator                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FRotator&                  Rotator                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 
 void UPythonComponent::SetPythonAttrRotator(class FName attr, const struct FRotator& Rotator)
 {
@@ -1280,7 +1280,7 @@ void UPythonComponent::SetPythonAttrRotator(class FName attr, const struct FRota
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // class FName                             attr                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           String                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    String                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UPythonComponent::SetPythonAttrString(class FName attr, const class FString& String)
 {
@@ -1307,7 +1307,7 @@ void UPythonComponent::SetPythonAttrString(class FName attr, const class FString
 // (Final, Native, Public, HasDefaults, BlueprintCallable)
 // Parameters:
 // class FName                             attr                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          Vector                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   Vector                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UPythonComponent::SetPythonAttrVector(class FName attr, const struct FVector& Vector)
 {
@@ -1372,7 +1372,7 @@ void UPythonScript::Run()
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // class FName                             Method_Name                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           Args                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Args                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UPyUserWidget::CallPythonUserWidgetMethod(class FName Method_Name, const class FString& Args)
 {
@@ -1623,7 +1623,7 @@ void UTestInvokeObject::Call_void_object(class UTestInvokeObject* InArg1)
 // Function UnrealEnginePython.TestInvokeObject.Call_void_str
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FString                           InArg1                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    InArg1                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UTestInvokeObject::Call_void_str(const class FString& InArg1)
 {
@@ -1648,7 +1648,7 @@ void UTestInvokeObject::Call_void_str(const class FString& InArg1)
 // Function UnrealEnginePython.TestInvokeObject.Call_void_struct
 // (Final, Native, Public, HasOutParams)
 // Parameters:
-// struct FTestInvokeStruct                InArg1                                                 (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FTestInvokeStruct&         InArg1                                                 (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UTestInvokeObject::Call_void_struct(const struct FTestInvokeStruct& InArg1)
 {

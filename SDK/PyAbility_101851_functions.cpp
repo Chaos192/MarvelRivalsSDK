@@ -21,7 +21,7 @@ namespace SDK
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyCue_Ability_Instant_10185101::OnExecuteFX(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters) const
 {
@@ -86,7 +86,7 @@ void UPyTraceComponent_10185102::K2_Initialize()
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyCue_Ability_Instant_10185102::OnExecuteFX(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters) const
 {

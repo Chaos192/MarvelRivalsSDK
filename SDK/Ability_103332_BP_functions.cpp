@@ -54,7 +54,7 @@ void UAbility_103332_BP_C::ExecuteUbergraph_Ability_103332_BP(int32 EntryPoint)
 // Function Ability_103332_BP.Ability_103332_BP_C.K2_ActivateAbilityFromEvent
 // (Event, Protected, HasOutParams, BlueprintEvent)
 // Parameters:
-// struct FGameplayEventData               EventData                                              (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// const struct FGameplayEventData&        EventData                                              (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 
 void UAbility_103332_BP_C::K2_ActivateAbilityFromEvent(const struct FGameplayEventData& EventData)
 {
@@ -94,7 +94,7 @@ void UAbility_103332_BP_C::K2_OnEndAbility(bool bWasCancelled)
 // Function Ability_103332_BP.Ability_103332_BP_C.OnConfirmTarget_Event
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class AActor*                           InputTarget                                            (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+// const class AActor*&                    InputTarget                                            (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash)
 
 void UAbility_103332_BP_C::OnConfirmTarget_Event(const class AActor*& InputTarget)
 {
@@ -134,8 +134,8 @@ void UAbility_103332_BP_C::OnPress_EC77EA6D45CFD2278882AFBD3C7CFD10(float OnRele
 // Function Ability_103332_BP.Ability_103332_BP_C.目标是否有效
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FHitResult                       HitInfo                                                (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, ContainsInstancedReference)
-// bool                                    bResult                                                (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FHitResult&                HitInfo                                                (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, ContainsInstancedReference)
+// bool*                                   bResult                                                (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UAbility_103332_BP_C::目标是否有效(const struct FHitResult& HitInfo, bool* bResult)
 {

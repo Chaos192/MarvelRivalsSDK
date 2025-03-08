@@ -47,7 +47,7 @@ public:
 class ULocationServicesImpl final : public UObject
 {
 public:
-	TMulticastInlineDelegate<void(const struct FLocationServicesData& LocationData)> OnLocationChanged;                                 // 0x0030(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const struct FLocationServicesData& LocationData)> OnLocationChanged; // 0x0030(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()

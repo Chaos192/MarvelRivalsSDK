@@ -40,7 +40,7 @@ void UWBP_AbilitySystemDebugger_C::ExecuteUbergraph_WBP_AbilitySystemDebugger(in
 // Function WBP_AbilitySystemDebugger.WBP_AbilitySystemDebugger_C.Tick
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// struct FGeometry                        MyGeometry                                             (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
+// const struct FGeometry&                 MyGeometry                                             (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
 // float                                   InDeltaTime                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UWBP_AbilitySystemDebugger_C::Tick(const struct FGeometry& MyGeometry, float InDeltaTime)

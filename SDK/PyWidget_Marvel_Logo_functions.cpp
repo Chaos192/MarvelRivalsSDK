@@ -20,7 +20,7 @@ namespace SDK
 // PythonFunction PyWidget_Marvel_Logo.PyWidget_Marvel_Logo.OnAnimationFinished
 // (BlueprintCosmetic, Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UWidgetAnimation*                 Animation                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// const class UWidgetAnimation*           Animation                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 void UPyWidget_Marvel_Logo::OnAnimationFinished(const class UWidgetAnimation* Animation)
 {

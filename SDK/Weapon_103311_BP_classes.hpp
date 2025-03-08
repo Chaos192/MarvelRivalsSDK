@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Weapon_103311_BP.Weapon_103311_BP_C
-// 0x0000 (0x0CB0 - 0x0CB0)
+// 0x0000 (0x0CA0 - 0x0CA0)
 class AWeapon_103311_BP_C final : public APyShootingWeapon_103311
 {
 public:

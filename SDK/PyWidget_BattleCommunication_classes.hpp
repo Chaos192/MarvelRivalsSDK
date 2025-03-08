@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "InputCore_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "Marvel_structs.hpp"
-#include "InputCore_structs.hpp"
 #include "SlateCore_structs.hpp"
 #include "GameplayTags_structs.hpp"
 #include "PyMarvelUserWidget_classes.hpp"
@@ -40,9 +40,9 @@ public:
 	TMap<struct FGameplayTag, TArray<int32>>      ActivitySignalPanelInfo;                           // 0x0698(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	TMulticastInlineDelegate<void(int32 idx)>     OnCommIDChangedDispatcher;                         // 0x06E8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 	TMulticastInlineDelegate<void(int32 idx)>     OnPersonaliseIDChangedDispatcher;                  // 0x06F8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(struct FGameplayTag& Tag)> OnSignalTagChangedDispatcher;                      // 0x0708(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const struct FGameplayTag& Tag)> OnSignalTagChangedDispatcher;     // 0x0708(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 	TMulticastInlineDelegate<void(int32 idx)>     OnClickBtnListen;                                  // 0x0718(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(bool IsVisible)> OnSignalPanelVisibleChanged;                       // 0x0728(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(bool IsVisible)> OnSignalPanelVisibleChanged;                      // 0x0728(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 
 public:
 	void MarvelSetVisible(bool Visible);

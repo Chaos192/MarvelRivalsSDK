@@ -92,16 +92,15 @@ public:
 };
 
 // PythonClass PyAbility_104861.PyAbility_104861
-// 0x0068 (0x25E8 - 0x2580)
+// 0x0060 (0x25E8 - 0x2588)
 class UPyAbility_104861 : public UMarvelGameplayAbility
 {
 public:
-	struct FAbilityStage_104861                   CurAbilityStage;                                   // 0x2580(0x0008)(BlueprintVisible, Net, RepNotify, NoDestructor, NativeAccessSpecifierPublic)
-	struct FTargetInfo_104861                     CurSelectTarget;                                   // 0x2588(0x0030)(BlueprintVisible, Net, RepNotify, NoDestructor, NativeAccessSpecifierPublic)
-	struct FRandomStream                          TargetSelectSeed;                                  // 0x25B8(0x0008)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAbilityStage_104861                   CurAbilityStage;                                   // 0x2588(0x0008)(BlueprintVisible, Net, RepNotify, NoDestructor, NativeAccessSpecifierPublic)
+	struct FTargetInfo_104861                     CurSelectTarget;                                   // 0x2590(0x0030)(BlueprintVisible, Net, RepNotify, NoDestructor, NativeAccessSpecifierPublic)
 	class AActor*                                 TraceActorRef;                                     // 0x25C0(0x0008)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(struct FTargetInfo_104861& Target, float dash_duration)> FindNextTargetDispatcher;                          // 0x25C8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(struct FAbilityStage_104861& NewStage)> AbilityStageUpdateDispatcher;                      // 0x25D8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const struct FTargetInfo_104861& Target, float dash_duration)> FindNextTargetDispatcher; // 0x25C8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const struct FAbilityStage_104861& NewStage)> AbilityStageUpdateDispatcher; // 0x25D8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 
 public:
 	void BeginPlay();

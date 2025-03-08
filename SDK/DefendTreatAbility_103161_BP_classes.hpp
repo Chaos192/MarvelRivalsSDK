@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass DefendTreatAbility_103161_BP.DefendTreatAbility_103161_BP_C
-// 0x0000 (0x1148 - 0x1148)
+// 0x0000 (0x1150 - 0x1150)
 class UDefendTreatAbility_103161_BP_C final : public UDefendTreatAbility
 {
 public:

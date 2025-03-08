@@ -24,9 +24,9 @@ struct Ability_103341_BP_C_ExecuteUbergraph_Ability_103341_BP final
 public:
 	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FGameplayTag                           K2Node_CustomEvent_TriggerNotifyTagEventDelegate__DelegateSignature_EventTag; // 0x0004(0x000C)(NoDestructor, HasGetValueTypeHash)
-	TDelegate<void(const struct FGameplayTag& EventTag)> K2Node_CreateDelegate_OutputDelegate;              // 0x0010(0x0014)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	TDelegate<void(const struct FGameplayTag& EventTag)> K2Node_CreateDelegate_OutputDelegate;       // 0x0010(0x0014)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	struct FGameplayTag                           Temp_struct_Variable;                              // 0x0024(0x000C)(NoDestructor, HasGetValueTypeHash)
-	TDelegate<void(class ACharacter* Character, EMovementMode PrevMovementMode, uint8 PreviousCustomMode)> K2Node_CreateDelegate_OutputDelegate_1;            // 0x0030(0x0014)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	TDelegate<void(class ACharacter* Character, EMovementMode PrevMovementMode, uint8 PreviousCustomMode)> K2Node_CreateDelegate_OutputDelegate_1; // 0x0030(0x0014)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	bool                                          GameplayTagsK2Node_SwitchGameplayTag_CmpSuccess;   // 0x0044(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_45[0x3];                                       // 0x0045(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<int32>                                 K2Node_MakeArray_Array;                            // 0x0048(0x0010)(ReferenceParm)
@@ -42,7 +42,7 @@ public:
 	bool                                          CallFunc_NotEqual_ByteByte_ReturnValue;            // 0x0088(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          K2Node_Event_bWasCancelled;                        // 0x0089(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_8A[0x2];                                       // 0x008A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	TDelegate<void(const struct FGameplayTag& EventTag)> K2Node_CreateDelegate_OutputDelegate_2;            // 0x008C(0x0014)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	TDelegate<void(const struct FGameplayTag& EventTag)> K2Node_CreateDelegate_OutputDelegate_2;     // 0x008C(0x0014)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 };
 
 // Function Ability_103341_BP.Ability_103341_BP_C.K2_OnEndAbility

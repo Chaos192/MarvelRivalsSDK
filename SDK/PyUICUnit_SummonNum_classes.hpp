@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "DeclarativeUnreal_structs.hpp"
 #include "Marvel_structs.hpp"
 #include "Marvel_classes.hpp"
-#include "DeclarativeUnreal_structs.hpp"
 
 
 namespace SDK
@@ -27,7 +27,7 @@ public:
 	TSubclassOf<class UPyWidget_SummonedNum>      NumClass_V7;                                       // 0x0050(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bHiddenWhenEmpty;                                  // 0x0058(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_59[0x7];                                       // 0x0059(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<EClientPlayerViewSide, struct FWidgetStyle_HealthBar_BattlePanel> WidgetStyleConfig;                                 // 0x0060(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	TMap<EClientPlayerViewSide, struct FWidgetStyle_HealthBar_BattlePanel> WidgetStyleConfig;        // 0x0060(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	int32                                         HostSummonID;                                      // 0x00B0(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_B4[0x4];                                       // 0x00B4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<int32>                                 SummonIDList;                                      // 0x00B8(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)

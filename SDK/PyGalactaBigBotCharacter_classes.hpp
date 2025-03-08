@@ -18,12 +18,13 @@ namespace SDK
 {
 
 // PythonClass PyGalactaBigBotCharacter.PyGalactaBigBotCharacter
-// 0x0010 (0x1820 - 0x1810)
+// 0x0010 (0x1880 - 0x1870)
 #pragma pack(push, 0x1)
 class alignas(0x10) APyGalactaBigBotCharacter : public AMarvelBaseCharacter
 {
 public:
-	class UAnimationAsset*                        NotMatchAnimation;                                 // 0x1810(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1868[0x8];                                     // 0x1868(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	class UAnimationAsset*                        NotMatchAnimation;                                 // 0x1870(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void ReceiveBeginPlay();

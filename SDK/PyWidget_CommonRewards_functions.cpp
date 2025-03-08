@@ -58,7 +58,7 @@ void UPyWidget_CommonRewards::Construct()
 // PythonFunction PyWidget_CommonRewards.PyWidget_CommonRewards.Tick
 // (BlueprintCosmetic, Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGeometry                        MyGeometry                                             (Parm, IsPlainOldData, NoDestructor)
+// const struct FGeometry&                 MyGeometry                                             (Parm, IsPlainOldData, NoDestructor)
 // float                                   InDeltaTime                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UPyWidget_CommonRewards::Tick(const struct FGeometry& MyGeometry, float InDeltaTime)

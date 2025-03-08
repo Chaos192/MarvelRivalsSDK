@@ -11,10 +11,10 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "CoreUObject_structs.hpp"
 #include "CommonInput_structs.hpp"
 #include "SlateCore_structs.hpp"
 #include "GameplayTags_structs.hpp"
+#include "CoreUObject_structs.hpp"
 #include "InputCore_structs.hpp"
 
 
@@ -78,16 +78,6 @@ enum class ETransitionCurve : uint8
 	ETransitionCurve_MAX                     = 7,
 };
 
-// ScriptStruct CommonUI.RichTextIconData
-// 0x0058 (0x0078 - 0x0020)
-struct FRichTextIconData final : public FTableRowBase
-{
-public:
-	class FText                                   DisplayName;                                       // 0x0020(0x0018)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
-	TSoftObjectPtr<class UObject>                 ResourceObject;                                    // 0x0038(0x0030)(Edit, DisableEditOnInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector2D                              ImageSize;                                         // 0x0068(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
 // ScriptStruct CommonUI.CommonNumberFormattingOptions
 // 0x0014 (0x0014 - 0x0000)
 struct FCommonNumberFormattingOptions final
@@ -102,14 +92,33 @@ public:
 	int32                                         MaximumFractionalDigits;                           // 0x0010(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
-// ScriptStruct CommonUI.CommonInputActionHandlerData
-// 0x0028 (0x0028 - 0x0000)
-struct FCommonInputActionHandlerData final
+// ScriptStruct CommonUI.UITag
+// 0x0000 (0x000C - 0x000C)
+struct FUITag : public FGameplayTag
+{
+};
+
+// ScriptStruct CommonUI.UIActionTag
+// 0x0000 (0x000C - 0x000C)
+struct FUIActionTag final : public FUITag
+{
+};
+
+// ScriptStruct CommonUI.CommonAnalogCursorSettings
+// 0x0024 (0x0024 - 0x0000)
+struct FCommonAnalogCursorSettings final
 {
 public:
-	struct FDataTableRowHandle                    InputActionRow;                                    // 0x0000(0x0018)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, NativeAccessSpecifierPublic)
-	EInputActionState                             State;                                             // 0x0018(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_19[0xF];                                       // 0x0019(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	int32                                         PreprocessorPriority;                              // 0x0000(0x0004)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bEnableCursorAcceleration;                         // 0x0004(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         CursorAcceleration;                                // 0x0008(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         CursorMaxSpeed;                                    // 0x000C(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         CursorDeadZone;                                    // 0x0010(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         HoverSlowdownFactor;                               // 0x0014(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ScrollDeadZone;                                    // 0x0018(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ScrollUpdatePeriod;                                // 0x001C(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ScrollMultiplier;                                  // 0x0020(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
 // ScriptStruct CommonUI.CommonRegisteredTabInfo
@@ -135,16 +144,14 @@ public:
 	bool                                          bHideCursorDuringViewportCapture;                  // 0x0004(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 };
 
-// ScriptStruct CommonUI.UITag
-// 0x0000 (0x000C - 0x000C)
-struct FUITag : public FGameplayTag
+// ScriptStruct CommonUI.CommonInputActionHandlerData
+// 0x0028 (0x0028 - 0x0000)
+struct FCommonInputActionHandlerData final
 {
-};
-
-// ScriptStruct CommonUI.UIActionTag
-// 0x0000 (0x000C - 0x000C)
-struct FUIActionTag final : public FUITag
-{
+public:
+	struct FDataTableRowHandle                    InputActionRow;                                    // 0x0000(0x0018)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, NativeAccessSpecifierPublic)
+	EInputActionState                             State;                                             // 0x0018(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_19[0xF];                                       // 0x0019(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 
 // ScriptStruct CommonUI.CommonButtonStyleOptionalSlateSound
@@ -155,6 +162,16 @@ public:
 	bool                                          bHasSound;                                         // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSlateSound                            Sound;                                             // 0x0008(0x0020)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+};
+
+// ScriptStruct CommonUI.RichTextIconData
+// 0x0058 (0x0068 - 0x0010)
+struct FRichTextIconData final : public FTableRowBase
+{
+public:
+	class FText                                   DisplayName;                                       // 0x0010(0x0018)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	TSoftObjectPtr<class UObject>                 ResourceObject;                                    // 0x0028(0x0030)(Edit, DisableEditOnInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector2D                              ImageSize;                                         // 0x0058(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
 // ScriptStruct CommonUI.CommonInputTypeInfo
@@ -173,18 +190,18 @@ public:
 };
 
 // ScriptStruct CommonUI.CommonInputActionDataBase
-// 0x0390 (0x03B0 - 0x0020)
+// 0x0390 (0x03A0 - 0x0010)
 struct FCommonInputActionDataBase final : public FTableRowBase
 {
 public:
-	class FText                                   DisplayName;                                       // 0x0020(0x0018)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	class FText                                   HoldDisplayName;                                   // 0x0038(0x0018)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	int32                                         NavBarPriority;                                    // 0x0050(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_54[0xC];                                       // 0x0054(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FCommonInputTypeInfo                   KeyboardInputTypeInfo;                             // 0x0060(0x0100)(Edit, Protected, NativeAccessSpecifierProtected)
-	struct FCommonInputTypeInfo                   DefaultGamepadInputTypeInfo;                       // 0x0160(0x0100)(Edit, Protected, NativeAccessSpecifierProtected)
-	TMap<class FName, struct FCommonInputTypeInfo> GamepadInputOverrides;                             // 0x0260(0x0050)(Edit, Protected, NativeAccessSpecifierProtected)
-	struct FCommonInputTypeInfo                   TouchInputTypeInfo;                                // 0x02B0(0x0100)(Edit, Protected, NativeAccessSpecifierProtected)
+	class FText                                   DisplayName;                                       // 0x0010(0x0018)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	class FText                                   HoldDisplayName;                                   // 0x0028(0x0018)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	int32                                         NavBarPriority;                                    // 0x0040(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_44[0xC];                                       // 0x0044(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FCommonInputTypeInfo                   KeyboardInputTypeInfo;                             // 0x0050(0x0100)(Edit, Protected, NativeAccessSpecifierProtected)
+	struct FCommonInputTypeInfo                   DefaultGamepadInputTypeInfo;                       // 0x0150(0x0100)(Edit, Protected, NativeAccessSpecifierProtected)
+	TMap<class FName, struct FCommonInputTypeInfo> GamepadInputOverrides;                            // 0x0250(0x0050)(Edit, Protected, NativeAccessSpecifierProtected)
+	struct FCommonInputTypeInfo                   TouchInputTypeInfo;                                // 0x02A0(0x0100)(Edit, Protected, NativeAccessSpecifierProtected)
 };
 
 // ScriptStruct CommonUI.UIActionKeyMapping
@@ -206,23 +223,6 @@ public:
 	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FText                                   DefaultDisplayName;                                // 0x0010(0x0018)(Edit, Config, NativeAccessSpecifierPublic)
 	TArray<struct FUIActionKeyMapping>            KeyMappings;                                       // 0x0028(0x0010)(Edit, ZeroConstructor, Config, NativeAccessSpecifierPublic)
-};
-
-// ScriptStruct CommonUI.CommonAnalogCursorSettings
-// 0x0024 (0x0024 - 0x0000)
-struct FCommonAnalogCursorSettings final
-{
-public:
-	int32                                         PreprocessorPriority;                              // 0x0000(0x0004)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bEnableCursorAcceleration;                         // 0x0004(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         CursorAcceleration;                                // 0x0008(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         CursorMaxSpeed;                                    // 0x000C(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         CursorDeadZone;                                    // 0x0010(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         HoverSlowdownFactor;                               // 0x0014(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ScrollDeadZone;                                    // 0x0018(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ScrollUpdatePeriod;                                // 0x001C(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ScrollMultiplier;                                  // 0x0020(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
 }

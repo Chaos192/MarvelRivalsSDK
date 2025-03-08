@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "AIModule_structs.hpp"
 #include "GameplayTags_structs.hpp"
+#include "AIModule_structs.hpp"
 #include "PyBTNodeBase_classes.hpp"
 
 

@@ -51,7 +51,7 @@ void UBTS_PyNotifySelfWhenInjured::ReceiveTickAI(class AAIController* OwnerContr
 // Parameters:
 // class AActor*                           SourceAvatar                                           (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // class AActor*                           TargetAvatar                                           (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FAttributeModifierHandle         ModifierParamsHandle                                   (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
+// const struct FAttributeModifierHandle&  ModifierParamsHandle                                   (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
 
 void UBTS_PyNotifyNearByEnemyWhenTakeDamage::OnPawnTakingDamage(class AActor* SourceAvatar, class AActor* TargetAvatar, const struct FAttributeModifierHandle& ModifierParamsHandle)
 {

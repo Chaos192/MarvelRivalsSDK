@@ -35,11 +35,11 @@ public:
 };
 
 // PythonClass PyAbility_104162.PyAbility_104162
-// 0x0008 (0x2588 - 0x2580)
+// 0x0008 (0x2590 - 0x2588)
 class UPyAbility_104162 : public UMarvelGameplayAbility
 {
 public:
-	class AMarvelAbilityTargetActor_Scope*        ScopeActor;                                        // 0x2580(0x0008)(Net, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AMarvelAbilityTargetActor_Scope*        ScopeActor;                                        // 0x2588(0x0008)(Net, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void BeginPlay();

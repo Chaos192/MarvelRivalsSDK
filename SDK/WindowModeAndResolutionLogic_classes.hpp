@@ -16,24 +16,6 @@
 namespace SDK
 {
 
-// PythonClass WindowModeAndResolutionLogic.UISettingEntryMonitorSelectionOptionsGenerator
-// 0x0000 (0x0030 - 0x0030)
-class UUISettingEntryMonitorSelectionOptionsGenerator final : public UUISettingEntryOptionsGenerator
-{
-public:
-	TMap<int32, class FText> BP_Gen(class UObject* Obj, const class FString& setting_key, const TMap<int32, class FText>& OPTIONS);
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"UISettingEntryMonitorSelectionOptionsGenerator">();
-	}
-	static class UUISettingEntryMonitorSelectionOptionsGenerator* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UUISettingEntryMonitorSelectionOptionsGenerator>();
-	}
-};
-
 // PythonClass WindowModeAndResolutionLogic.UISettingEntryWindowModeOptionsGenerator
 // 0x0000 (0x0030 - 0x0030)
 class UUISettingEntryWindowModeOptionsGenerator final : public UUISettingEntryOptionsGenerator
@@ -52,23 +34,22 @@ public:
 	}
 };
 
-// PythonClass WindowModeAndResolutionLogic.UISettingEntryMonitorSelection
+// PythonClass WindowModeAndResolutionLogic.UISettingEntryResolutionHandler
 // 0x0000 (0x0030 - 0x0030)
-class UUISettingEntryMonitorSelection final : public UUISettingEntrySettingHandler
+class UUISettingEntryResolutionHandler final : public UUISettingEntrySettingHandler
 {
 public:
 	void BP_OnApply(class UObject* Obj, const class FString& setting_key, const TMap<class FString, class FString>& P, const TMap<int32, class FText>& OPTIONS, float Value);
-	float BP_GetCurrentValue(class UObject* Obj, const class FString& setting_key, const TMap<class FString, class FString>& P, const TMap<int32, class FText>& O);
-	TMap<class FString, int32> BP_OnChanged(class UObject* Obj, const class FString& setting_key, const TMap<class FString, class FString>& Params_0, const TMap<int32, class FText>& OPTIONS, float Value, const TMap<class FString, int32>& Tags);
+	float BP_GetCurrentValue(class UObject* Obj, const class FString& setting_key, const TMap<class FString, class FString>& Params_0, const TMap<int32, class FText>& OPTIONS);
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"UISettingEntryMonitorSelection">();
+		return StaticClassImpl<"UISettingEntryResolutionHandler">();
 	}
-	static class UUISettingEntryMonitorSelection* GetDefaultObj()
+	static class UUISettingEntryResolutionHandler* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UUISettingEntryMonitorSelection>();
+		return GetDefaultObjImpl<UUISettingEntryResolutionHandler>();
 	}
 };
 
@@ -95,24 +76,6 @@ public:
 	}
 };
 
-// PythonClass WindowModeAndResolutionLogic.UISettingEntryResolutionAspectOptionsGenerator
-// 0x0000 (0x0030 - 0x0030)
-class UUISettingEntryResolutionAspectOptionsGenerator final : public UUISettingEntryOptionsGenerator
-{
-public:
-	TMap<int32, class FText> BP_Gen(class UObject* Obj, const class FString& setting_key, const TMap<int32, class FText>& OPTIONS);
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"UISettingEntryResolutionAspectOptionsGenerator">();
-	}
-	static class UUISettingEntryResolutionAspectOptionsGenerator* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UUISettingEntryResolutionAspectOptionsGenerator>();
-	}
-};
-
 // PythonClass WindowModeAndResolutionLogic.UISettingEntryResolutionAspectHandler
 // 0x0000 (0x0030 - 0x0030)
 class UUISettingEntryResolutionAspectHandler final : public UUISettingEntrySettingHandler
@@ -132,22 +95,21 @@ public:
 	}
 };
 
-// PythonClass WindowModeAndResolutionLogic.UISettingEntryResolutionHandler
+// PythonClass WindowModeAndResolutionLogic.UISettingEntryResolutionAspectOptionsGenerator
 // 0x0000 (0x0030 - 0x0030)
-class UUISettingEntryResolutionHandler final : public UUISettingEntrySettingHandler
+class UUISettingEntryResolutionAspectOptionsGenerator final : public UUISettingEntryOptionsGenerator
 {
 public:
-	void BP_OnApply(class UObject* Obj, const class FString& setting_key, const TMap<class FString, class FString>& P, const TMap<int32, class FText>& OPTIONS, float Value);
-	float BP_GetCurrentValue(class UObject* Obj, const class FString& setting_key, const TMap<class FString, class FString>& Params_0, const TMap<int32, class FText>& OPTIONS);
+	TMap<int32, class FText> BP_Gen(class UObject* Obj, const class FString& setting_key, const TMap<int32, class FText>& OPTIONS);
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"UISettingEntryResolutionHandler">();
+		return StaticClassImpl<"UISettingEntryResolutionAspectOptionsGenerator">();
 	}
-	static class UUISettingEntryResolutionHandler* GetDefaultObj()
+	static class UUISettingEntryResolutionAspectOptionsGenerator* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UUISettingEntryResolutionHandler>();
+		return GetDefaultObjImpl<UUISettingEntryResolutionAspectOptionsGenerator>();
 	}
 };
 
@@ -166,6 +128,44 @@ public:
 	static class UUISettingEntryResolutionOptionsGenerator* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UUISettingEntryResolutionOptionsGenerator>();
+	}
+};
+
+// PythonClass WindowModeAndResolutionLogic.UISettingEntryMonitorSelectionOptionsGenerator
+// 0x0000 (0x0030 - 0x0030)
+class UUISettingEntryMonitorSelectionOptionsGenerator final : public UUISettingEntryOptionsGenerator
+{
+public:
+	TMap<int32, class FText> BP_Gen(class UObject* Obj, const class FString& setting_key, const TMap<int32, class FText>& OPTIONS);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"UISettingEntryMonitorSelectionOptionsGenerator">();
+	}
+	static class UUISettingEntryMonitorSelectionOptionsGenerator* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UUISettingEntryMonitorSelectionOptionsGenerator>();
+	}
+};
+
+// PythonClass WindowModeAndResolutionLogic.UISettingEntryMonitorSelection
+// 0x0000 (0x0030 - 0x0030)
+class UUISettingEntryMonitorSelection final : public UUISettingEntrySettingHandler
+{
+public:
+	void BP_OnApply(class UObject* Obj, const class FString& setting_key, const TMap<class FString, class FString>& P, const TMap<int32, class FText>& OPTIONS, float Value);
+	float BP_GetCurrentValue(class UObject* Obj, const class FString& setting_key, const TMap<class FString, class FString>& P, const TMap<int32, class FText>& O);
+	TMap<class FString, int32> BP_OnChanged(class UObject* Obj, const class FString& setting_key, const TMap<class FString, class FString>& Params_0, const TMap<int32, class FText>& OPTIONS, float Value, const TMap<class FString, int32>& Tags);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"UISettingEntryMonitorSelection">();
+	}
+	static class UUISettingEntryMonitorSelection* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UUISettingEntryMonitorSelection>();
 	}
 };
 

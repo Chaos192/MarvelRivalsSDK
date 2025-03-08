@@ -16,20 +16,12 @@
 namespace SDK
 {
 
-// ScriptStruct TypedElementFramework.TypedElementDataStorageColumn
-// 0x0000 (0x0000 - 0x0000)
-#pragma pack(push, 0x1)
-struct alignas(0x01) FTypedElementDataStorageColumn
-{
-};
-#pragma pack(pop)
-
-// ScriptStruct TypedElementFramework.TypedElementLabelColumn
-// 0x0010 (0x0010 - 0x0000)
-struct FTypedElementLabelColumn final : public FTypedElementDataStorageColumn
+// ScriptStruct TypedElementFramework.TypedElementDataStorageTag
+// 0x0001 (0x0001 - 0x0000)
+struct FTypedElementDataStorageTag
 {
 public:
-	class FString                                 Label;                                             // 0x0000(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 
 // ScriptStruct TypedElementFramework.ScriptTypedElementHandle
@@ -39,6 +31,14 @@ struct alignas(0x08) FScriptTypedElementHandle final
 public:
 	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
+
+// ScriptStruct TypedElementFramework.TypedElementDataStorageColumn
+// 0x0000 (0x0000 - 0x0000)
+#pragma pack(push, 0x1)
+struct alignas(0x01) FTypedElementDataStorageColumn
+{
+};
+#pragma pack(pop)
 
 // ScriptStruct TypedElementFramework.TypedElementUObjectColumn
 // 0x0008 (0x0008 - 0x0000)
@@ -56,20 +56,20 @@ public:
 	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 
-// ScriptStruct TypedElementFramework.TypedElementDataStorageTag
-// 0x0001 (0x0001 - 0x0000)
-struct FTypedElementDataStorageTag
-{
-public:
-	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-
 // ScriptStruct TypedElementFramework.TypedElementWidgetConstructor
 // 0x0010 (0x0010 - 0x0000)
 struct alignas(0x08) FTypedElementWidgetConstructor final
 {
 public:
 	uint8                                         Pad_0[0x10];                                       // 0x0000(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+
+// ScriptStruct TypedElementFramework.TypedElementLabelColumn
+// 0x0010 (0x0010 - 0x0000)
+struct FTypedElementLabelColumn final : public FTypedElementDataStorageColumn
+{
+public:
+	class FString                                 Label;                                             // 0x0000(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
 // ScriptStruct TypedElementFramework.TypedElementLabelHashColumn

@@ -16,13 +16,20 @@
 namespace SDK::Params
 {
 
-// PythonFunction PyWidget_Common_Bg.PyExtension_CommonBg_RegisterNavigationLv2.OnSubNavClicked
-// 0x0008 (0x0008 - 0x0000)
-struct PyExtension_CommonBg_RegisterNavigationLv2_OnSubNavClicked final
+// PythonFunction PyWidget_Common_Bg.PyExtension_CommonBg_RegisterNavigationLv1.OnNavClicked
+// 0x0004 (0x0004 - 0x0000)
+struct PyExtension_CommonBg_RegisterNavigationLv1_OnNavClicked final
 {
 public:
-	int32                                         ParentIndex;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         ChildIndex;                                        // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Index_0;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+
+// PythonFunction PyWidget_Common_Bg.PyExtension_Career_RegisterNavigationLv1.OnNavClicked
+// 0x0004 (0x0004 - 0x0000)
+struct PyExtension_Career_RegisterNavigationLv1_OnNavClicked final
+{
+public:
+	int32                                         Index_0;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 
 // PythonFunction PyWidget_Common_Bg.PyWidget_Common_Bg.OnStackPanelTopWidgetChanged
@@ -66,20 +73,13 @@ public:
 	ESlateVisibility                              InVisilibity;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 
-// PythonFunction PyWidget_Common_Bg.PyExtension_CommonBg_RegisterNavigationLv1.OnNavClicked
-// 0x0004 (0x0004 - 0x0000)
-struct PyExtension_CommonBg_RegisterNavigationLv1_OnNavClicked final
+// PythonFunction PyWidget_Common_Bg.PyExtension_CommonBg_RegisterNavigationLv2.OnSubNavClicked
+// 0x0008 (0x0008 - 0x0000)
+struct PyExtension_CommonBg_RegisterNavigationLv2_OnSubNavClicked final
 {
 public:
-	int32                                         Index_0;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-
-// PythonFunction PyWidget_Common_Bg.PyExtension_Career_RegisterNavigationLv1.OnNavClicked
-// 0x0004 (0x0004 - 0x0000)
-struct PyExtension_Career_RegisterNavigationLv1_OnNavClicked final
-{
-public:
-	int32                                         Index_0;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         ParentIndex;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         ChildIndex;                                        // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 
 }

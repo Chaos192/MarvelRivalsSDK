@@ -21,9 +21,9 @@ namespace SDK
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UObject*                          Obj                                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class FString                           setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
-// TMap<class FString, class FString>      P                                                      (ConstParm, Parm, OutParm, ReferenceParm)
-// TMap<int32, class FText>                O                                                      (ConstParm, Parm, OutParm, ReferenceParm)
+// const class FString&                    setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const TMap<class FString, class FString>&P                                                      (ConstParm, Parm, OutParm, ReferenceParm)
+// const TMap<int32, class FText>&         O                                                      (ConstParm, Parm, OutParm, ReferenceParm)
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 float UUISettingEntryLimitTimeTrainHandler::BP_GetCurrentValue(class UObject* Obj, const class FString& setting_key, const TMap<class FString, class FString>& P, const TMap<int32, class FText>& O)
@@ -55,9 +55,9 @@ float UUISettingEntryLimitTimeTrainHandler::BP_GetCurrentValue(class UObject* Ob
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UObject*                          Obj                                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class FString                           setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
-// TMap<class FString, class FString>      P                                                      (ConstParm, Parm, OutParm, ReferenceParm)
-// TMap<int32, class FText>                O                                                      (ConstParm, Parm, OutParm, ReferenceParm)
+// const class FString&                    setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const TMap<class FString, class FString>&P                                                      (ConstParm, Parm, OutParm, ReferenceParm)
+// const TMap<int32, class FText>&         O                                                      (ConstParm, Parm, OutParm, ReferenceParm)
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 float UUISettingEntryLimitTimeTrainHandler::BP_GetDefaultValue(class UObject* Obj, const class FString& setting_key, const TMap<class FString, class FString>& P, const TMap<int32, class FText>& O)

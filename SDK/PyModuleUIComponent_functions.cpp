@@ -20,8 +20,8 @@ namespace SDK
 // PythonFunction PyModuleUIComponent.PyModuleUIComponent.ShowCommonText
 // (Net, Native, NetMulticast, Public, BlueprintCallable)
 // Parameters:
-// class FString                           str_content                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
-// class FString                           UI_NAME                                                (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    str_content                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    UI_NAME                                                (Parm, ZeroConstructor, HasGetValueTypeHash)
 // float                                   DurationTime                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UPyModuleUIComponent::ShowCommonText(const class FString& str_content, const class FString& UI_NAME, float DurationTime)
@@ -49,7 +49,7 @@ void UPyModuleUIComponent::ShowCommonText(const class FString& str_content, cons
 // PythonFunction PyModuleUIComponent.PyModuleUIComponent.ShowUI
 // (Net, Native, NetMulticast, Public, BlueprintCallable)
 // Parameters:
-// class FString                           UI_NAME                                                (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    UI_NAME                                                (Parm, ZeroConstructor, HasGetValueTypeHash)
 // float                                   DurationTime                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // int32                                   PlayerUID                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
@@ -78,7 +78,7 @@ void UPyModuleUIComponent::ShowUI(const class FString& UI_NAME, float DurationTi
 // PythonFunction PyModuleUIComponent.PyModuleUIComponent.HideUI
 // (Net, Native, NetMulticast, Public, BlueprintCallable)
 // Parameters:
-// class FString                           UI_NAME                                                (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    UI_NAME                                                (Parm, ZeroConstructor, HasGetValueTypeHash)
 // int32                                   PlayerUID                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UPyModuleUIComponent::HideUI(const class FString& UI_NAME, int32 PlayerUID)
@@ -106,7 +106,7 @@ void UPyModuleUIComponent::HideUI(const class FString& UI_NAME, int32 PlayerUID)
 // (Net, Native, NetMulticast, Public, BlueprintCallable)
 // Parameters:
 // float                                   Percent                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           UI_NAME                                                (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    UI_NAME                                                (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyModuleUIComponent::UpdateBarUI(float Percent, const class FString& UI_NAME)
 {
@@ -133,7 +133,7 @@ void UPyModuleUIComponent::UpdateBarUI(float Percent, const class FString& UI_NA
 // (Net, Native, NetMulticast, Public, BlueprintCallable)
 // Parameters:
 // float                                   Percent                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           UI_NAME                                                (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    UI_NAME                                                (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyModuleUIComponent::UpdatePieUI(float Percent, const class FString& UI_NAME)
 {
@@ -160,7 +160,7 @@ void UPyModuleUIComponent::UpdatePieUI(float Percent, const class FString& UI_NA
 // (Net, Native, NetMulticast, Public, BlueprintCallable)
 // Parameters:
 // int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           UI_NAME                                                (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    UI_NAME                                                (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyModuleUIComponent::UpdateCampStateUI(int32 Index_0, const class FString& UI_NAME)
 {
@@ -187,7 +187,7 @@ void UPyModuleUIComponent::UpdateCampStateUI(int32 Index_0, const class FString&
 // (Net, Native, NetMulticast, Public, BlueprintCallable)
 // Parameters:
 // float                                   Percent                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           UI_NAME                                                (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    UI_NAME                                                (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyModuleUIComponent::UpdateVictoryProgressText(float Percent, const class FString& UI_NAME)
 {
@@ -213,9 +213,9 @@ void UPyModuleUIComponent::UpdateVictoryProgressText(float Percent, const class 
 // PythonFunction PyModuleUIComponent.PyModuleUIComponent.AssaultHint
 // (Net, Native, NetMulticast, Public, BlueprintCallable)
 // Parameters:
-// class FString                           UI_NAME                                                (Parm, ZeroConstructor, HasGetValueTypeHash)
-// class FString                           RedSideHint                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
-// class FString                           BlueSideHint                                           (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    UI_NAME                                                (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    RedSideHint                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    BlueSideHint                                           (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyModuleUIComponent::AssaultHint(const class FString& UI_NAME, const class FString& RedSideHint, const class FString& BlueSideHint)
 {
@@ -242,8 +242,8 @@ void UPyModuleUIComponent::AssaultHint(const class FString& UI_NAME, const class
 // PythonFunction PyModuleUIComponent.PyModuleUIComponent.AssaultObjectiveUnlock
 // (Net, Native, NetMulticast, Public, BlueprintCallable)
 // Parameters:
-// class FString                           CampName                                               (Parm, ZeroConstructor, HasGetValueTypeHash)
-// class FString                           UI_NAME                                                (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    CampName                                               (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    UI_NAME                                                (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyModuleUIComponent::AssaultObjectiveUnlock(const class FString& CampName, const class FString& UI_NAME)
 {
@@ -271,8 +271,8 @@ void UPyModuleUIComponent::AssaultObjectiveUnlock(const class FString& CampName,
 // Parameters:
 // float                                   CurrentProgress                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                                   TotalProgress                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           CampName                                               (Parm, ZeroConstructor, HasGetValueTypeHash)
-// class FString                           UI_NAME                                                (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    CampName                                               (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    UI_NAME                                                (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyModuleUIComponent::UpdateAssaultPieOccupy(float CurrentProgress, float TotalProgress, const class FString& CampName, const class FString& UI_NAME)
 {
@@ -301,8 +301,8 @@ void UPyModuleUIComponent::UpdateAssaultPieOccupy(float CurrentProgress, float T
 // (Net, Native, NetMulticast, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // float                                   CurrentProgress                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// TArray<float>                           OccupyProgressStage                                    (ConstParm, Parm, OutParm, ReferenceParm)
-// class FString                           UI_NAME                                                (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const TArray<float>&                    OccupyProgressStage                                    (ConstParm, Parm, OutParm, ReferenceParm)
+// const class FString&                    UI_NAME                                                (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyModuleUIComponent::UpdateAssaultBarProcess(float CurrentProgress, const TArray<float>& OccupyProgressStage, const class FString& UI_NAME)
 {
@@ -329,8 +329,8 @@ void UPyModuleUIComponent::UpdateAssaultBarProcess(float CurrentProgress, const 
 // PythonFunction PyModuleUIComponent.PyModuleUIComponent.AssaultObjectiveClose
 // (Net, Native, NetMulticast, Public, BlueprintCallable)
 // Parameters:
-// class FString                           CampName                                               (Parm, ZeroConstructor, HasGetValueTypeHash)
-// class FString                           UI_NAME                                                (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    CampName                                               (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    UI_NAME                                                (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyModuleUIComponent::AssaultObjectiveClose(const class FString& CampName, const class FString& UI_NAME)
 {
@@ -356,7 +356,7 @@ void UPyModuleUIComponent::AssaultObjectiveClose(const class FString& CampName, 
 // PythonFunction PyModuleUIComponent.PyModuleUIComponent.SetRoute
 // (Net, Native, NetMulticast, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<float>                           RouteLength                                            (ConstParm, Parm, OutParm, ReferenceParm)
+// const TArray<float>&                    RouteLength                                            (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyModuleUIComponent::SetRoute(const TArray<float>& RouteLength)
 {
@@ -381,7 +381,7 @@ void UPyModuleUIComponent::SetRoute(const TArray<float>& RouteLength)
 // PythonFunction PyModuleUIComponent.PyModuleUIComponent.ChangeControlColor
 // (Net, Native, NetMulticast, Public, BlueprintCallable)
 // Parameters:
-// class FString                           UI_NAME                                                (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    UI_NAME                                                (Parm, ZeroConstructor, HasGetValueTypeHash)
 // EOwnershipType                          OwnerSide                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UPyModuleUIComponent::ChangeControlColor(const class FString& UI_NAME, EOwnershipType OwnerSide)
@@ -409,7 +409,7 @@ void UPyModuleUIComponent::ChangeControlColor(const class FString& UI_NAME, EOwn
 // (Net, Native, NetMulticast, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // class UMarvelSplineComponent*           MarvelSpline                                           (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FVector                          Color                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVector&                   Color                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UPyModuleUIComponent::SetSplineColor(class UMarvelSplineComponent* MarvelSpline, const struct FVector& Color)
 {
@@ -435,7 +435,7 @@ void UPyModuleUIComponent::SetSplineColor(class UMarvelSplineComponent* MarvelSp
 // PythonFunction PyModuleUIComponent.PyModuleUIComponent.ControlActorIndicator
 // (Net, Native, NetMulticast, Public, BlueprintCallable)
 // Parameters:
-// class FString                           ActorName                                              (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    ActorName                                              (Parm, ZeroConstructor, HasGetValueTypeHash)
 // bool                                    Hiddden                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UPyModuleUIComponent::ControlActorIndicator(const class FString& ActorName, bool Hiddden)

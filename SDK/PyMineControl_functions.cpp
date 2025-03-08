@@ -20,7 +20,7 @@ namespace SDK
 // PythonFunction PyMineControl.PyMineControl.SetUIName
 // (Native, Public, BlueprintCallable)
 // Parameters:
-// class FString                           Param_Name_0                                           (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Param_Name_0                                           (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void APyMineControl::SetUIName(const class FString& Param_Name_0)
 {
@@ -45,7 +45,7 @@ void APyMineControl::SetUIName(const class FString& Param_Name_0)
 // PythonFunction PyMineControl.PyMineControl.SetSceneHUDName
 // (Native, Public, BlueprintCallable)
 // Parameters:
-// class FString                           Param_Name_0                                           (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Param_Name_0                                           (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void APyMineControl::SetSceneHUDName(const class FString& Param_Name_0)
 {

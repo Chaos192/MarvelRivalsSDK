@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
+#include "ResonanceAudio_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
 #include "AudioExtensions_classes.hpp"
-#include "ResonanceAudio_structs.hpp"
 #include "Engine_classes.hpp"
 
 
@@ -65,7 +65,7 @@ class AResonanceAudioDirectivityVisualizer final : public AActor
 public:
 	uint8                                         Pad_490[0x70];                                     // 0x0490(0x0070)(Fixing Size After Last Property [ Dumper-7 ])
 	class UMaterial*                              Material;                                          // 0x0500(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	class UResonanceAudioSpatializationSourceSettings* Settings;                                          // 0x0508(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class UResonanceAudioSpatializationSourceSettings* Settings;                                     // 0x0508(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 
 public:
 	static class UClass* StaticClass()

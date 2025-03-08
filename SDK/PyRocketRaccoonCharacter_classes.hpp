@@ -18,13 +18,13 @@ namespace SDK
 {
 
 // PythonClass PyRocketRaccoonCharacter.PyRocketRaccoonCharacter
-// 0x0030 (0x18A0 - 0x1870)
+// 0x0030 (0x1900 - 0x18D0)
 class APyRocketRaccoonCharacter : public ARocketRaccoonCharacter
 {
 public:
-	class ASummoned_10234101*                     RespawnBeaconSummoned;                             // 0x1870(0x0008)(Net, ZeroConstructor, Transient, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(struct FHitResult& Hit)> OnCharacterLandedDispatcher;                       // 0x1878(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void()>              OnResurrectSuccess;                                // 0x1888(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	class ASummoned_10234101*                     RespawnBeaconSummoned;                             // 0x18D0(0x0008)(Net, ZeroConstructor, Transient, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const struct FHitResult& Hit)> OnCharacterLandedDispatcher;        // 0x18D8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void()>              OnResurrectSuccess;                                // 0x18E8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 
 public:
 	void OnLanded(const struct FHitResult& Hit);

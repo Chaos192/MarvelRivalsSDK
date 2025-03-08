@@ -20,7 +20,7 @@ namespace SDK
 // Function Appdump.AppdumpLibrary.AddFiles
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<class UAppDumpAssociatedFile*>   ntAssociatedFileArray                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TArray<class UAppDumpAssociatedFile*>&ntAssociatedFileArray                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UAppdumpLibrary::AddFiles(const TArray<class UAppDumpAssociatedFile*>& ntAssociatedFileArray)
 {
@@ -89,10 +89,10 @@ class FString UAppdumpLibrary::GetUploadFileDir()
 // Function Appdump.AppdumpLibrary.InitWithFile
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           desFileName                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           srcContent                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           srcFilePath                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           fileFeature                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    desFileName                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    srcContent                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    srcFilePath                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    fileFeature                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UAppDumpAssociatedFile*           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class UAppDumpAssociatedFile* UAppdumpLibrary::InitWithFile(const class FString& desFileName, const class FString& srcContent, const class FString& srcFilePath, const class FString& fileFeature)
@@ -173,9 +173,9 @@ bool UAppdumpLibrary::IsLastTimeCrash()
 // Function Appdump.AppdumpLibrary.PostFiles
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class UAppDumpAssociatedFile*           mainFile                                               (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<class UAppDumpAssociatedFile*>   minorFileArray                                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// class FString                           ErrorType                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UAppDumpAssociatedFile*     mainFile                                               (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<class UAppDumpAssociatedFile*>&minorFileArray                                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const class FString&                    ErrorType                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UAppdumpLibrary::PostFiles(const class UAppDumpAssociatedFile* mainFile, const TArray<class UAppDumpAssociatedFile*>& minorFileArray, const class FString& ErrorType)
 {
@@ -202,7 +202,7 @@ void UAppdumpLibrary::PostFiles(const class UAppDumpAssociatedFile* mainFile, co
 // Function Appdump.AppdumpLibrary.PostScriptError
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           errorContent                                           (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    errorContent                                           (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UAppdumpLibrary::PostScriptError(const class FString& errorContent)
 {
@@ -227,8 +227,8 @@ void UAppdumpLibrary::PostScriptError(const class FString& errorContent)
 // Function Appdump.AppdumpLibrary.SafelyBindCondition
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           Key                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           Value                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Key                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Value                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UAppdumpLibrary::SafelyBindCondition(const class FString& Key, const class FString& Value)
@@ -257,8 +257,8 @@ bool UAppdumpLibrary::SafelyBindCondition(const class FString& Key, const class 
 // Function Appdump.AppdumpLibrary.SafelyUnbindCondition
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           Key                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           Value                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Key                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Value                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UAppdumpLibrary::SafelyUnbindCondition(const class FString& Key, const class FString& Value)
@@ -287,7 +287,7 @@ bool UAppdumpLibrary::SafelyUnbindCondition(const class FString& Key, const clas
 // Function Appdump.AppdumpLibrary.SetBranch
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           branch                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    branch                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UAppdumpLibrary::SetBranch(const class FString& branch)
 {
@@ -337,7 +337,7 @@ void UAppdumpLibrary::SetDebugMode(bool debugMode)
 // Function Appdump.AppdumpLibrary.SetEventOccurCallback
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TDelegate<void(int32 EventType, const class FString& eventInfo)>tOnEventOccurBLCallback                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TDelegate<void(int32 EventType, const class FString& eventInfo)>&tOnEventOccurBLCallback                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UAppdumpLibrary::SetEventOccurCallback(const TDelegate<void(int32 EventType, const class FString& eventInfo)>& tOnEventOccurBLCallback)
 {
@@ -362,7 +362,7 @@ void UAppdumpLibrary::SetEventOccurCallback(const TDelegate<void(int32 EventType
 // Function Appdump.AppdumpLibrary.SetHost
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           Host                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Host                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UAppdumpLibrary::SetHost(const class FString& Host)
 {
@@ -387,8 +387,8 @@ void UAppdumpLibrary::SetHost(const class FString& Host)
 // Function Appdump.AppdumpLibrary.SetParam
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           Key                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           Value                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Key                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Value                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UAppdumpLibrary::SetParam(const class FString& Key, const class FString& Value)
 {
@@ -414,7 +414,7 @@ void UAppdumpLibrary::SetParam(const class FString& Key, const class FString& Va
 // Function Appdump.AppdumpLibrary.SetUrl
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           URL                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    URL                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UAppdumpLibrary::SetUrl(const class FString& URL)
 {

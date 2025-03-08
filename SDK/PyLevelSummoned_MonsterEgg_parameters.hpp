@@ -18,25 +18,6 @@
 namespace SDK::Params
 {
 
-// PythonFunction PyLevelSummoned_MonsterEgg.PyTraceComponent_MonsterInsect.OnTrace
-// 0x0018 (0x0018 - 0x0000)
-struct PyTraceComponent_MonsterInsect_OnTrace final
-{
-public:
-	class UObject*                                TraceSource;                                       // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	TArray<struct FHitResult>                     HitResults;                                        // 0x0008(0x0010)(ConstParm, Parm, OutParm, ReferenceParm)
-};
-
-// PythonFunction PyLevelSummoned_MonsterEgg.PyLevelSummoned_MonsterEgg.OnDeath
-// 0x0028 (0x0028 - 0x0000)
-struct PyLevelSummoned_MonsterEgg_OnDeath final
-{
-public:
-	class AController*                            InSource;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class AActor*                                 InSourceAvatar;                                    // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	struct FAttributeModifierHandle               ModifierParameter;                                 // 0x0010(0x0018)(ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
-};
-
 // PythonFunction PyLevelSummoned_MonsterEgg.PyCue_Buff_MonsterInsect.WhileActiveFX
 // 0x01C0 (0x01C0 - 0x0000)
 struct PyCue_Buff_MonsterInsect_WhileActiveFX final
@@ -63,24 +44,6 @@ public:
 	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 
-// PythonFunction PyLevelSummoned_MonsterEgg.PyLevelSummoned_MonsterInsect.OnInstigatorDeath
-// 0x0028 (0x0028 - 0x0000)
-struct PyLevelSummoned_MonsterInsect_OnInstigatorDeath final
-{
-public:
-	class AActor*                                 InSource;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class AActor*                                 InTarget;                                          // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	struct FAttributeModifierHandle               Modifier;                                          // 0x0010(0x0018)(ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
-};
-
-// PythonFunction PyLevelSummoned_MonsterEgg.PyLevelSummoned_MonsterInsect.ReceiveTick
-// 0x0004 (0x0004 - 0x0000)
-struct PyLevelSummoned_MonsterInsect_ReceiveTick final
-{
-public:
-	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-
 // PythonFunction PyLevelSummoned_MonsterEgg.PyCue_Summoner_Loop_MonsterInsect.WhileActiveFX
 // 0x01C0 (0x01C0 - 0x0000)
 struct PyCue_Summoner_Loop_MonsterInsect_WhileActiveFX final
@@ -97,6 +60,43 @@ struct PyCue_Summoner_Loop_MonsterInsect_OnRemoveFX final
 public:
 	class AActor*                                 MyTarget;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	struct FGameplayCueParameters                 Parameters;                                        // 0x0008(0x01B8)(ConstParm, Parm, OutParm, ReferenceParm)
+};
+
+// PythonFunction PyLevelSummoned_MonsterEgg.PyLevelSummoned_MonsterEgg.OnDeath
+// 0x0028 (0x0028 - 0x0000)
+struct PyLevelSummoned_MonsterEgg_OnDeath final
+{
+public:
+	class AController*                            InSource;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 InSourceAvatar;                                    // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	struct FAttributeModifierHandle               ModifierParameter;                                 // 0x0010(0x0018)(ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
+};
+
+// PythonFunction PyLevelSummoned_MonsterEgg.PyTraceComponent_MonsterInsect.OnTrace
+// 0x0018 (0x0018 - 0x0000)
+struct PyTraceComponent_MonsterInsect_OnTrace final
+{
+public:
+	class UObject*                                TraceSource;                                       // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	TArray<struct FHitResult>                     HitResults;                                        // 0x0008(0x0010)(ConstParm, Parm, OutParm, ReferenceParm)
+};
+
+// PythonFunction PyLevelSummoned_MonsterEgg.PyLevelSummoned_MonsterInsect.OnInstigatorDeath
+// 0x0028 (0x0028 - 0x0000)
+struct PyLevelSummoned_MonsterInsect_OnInstigatorDeath final
+{
+public:
+	class AActor*                                 InSource;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 InTarget;                                          // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	struct FAttributeModifierHandle               Modifier;                                          // 0x0010(0x0018)(ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
+};
+
+// PythonFunction PyLevelSummoned_MonsterEgg.PyLevelSummoned_MonsterInsect.ReceiveTick
+// 0x0004 (0x0004 - 0x0000)
+struct PyLevelSummoned_MonsterInsect_ReceiveTick final
+{
+public:
+	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 
 }

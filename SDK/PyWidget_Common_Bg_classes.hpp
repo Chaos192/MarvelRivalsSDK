@@ -17,24 +17,42 @@
 namespace SDK
 {
 
-// PythonClass PyWidget_Common_Bg.PyExtension_CommonBg_RegisterNavigationLv2
+// PythonClass PyWidget_Common_Bg.PyExtension_CommonBg_RegisterNavigationLv1
 // 0x0000 (0x0030 - 0x0030)
-class UPyExtension_CommonBg_RegisterNavigationLv2 final : public UMarvelUserWidgetExtension
+class UPyExtension_CommonBg_RegisterNavigationLv1 : public UMarvelUserWidgetExtension
 {
 public:
 	void BP_Construct();
-	void OnSubNavClicked(int32 ParentIndex, int32 ChildIndex);
+	void OnNavClicked(int32 Index_0);
 	void FlushCommonBg();
 	void BP_Destruct();
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"PyExtension_CommonBg_RegisterNavigationLv2">();
+		return StaticClassImpl<"PyExtension_CommonBg_RegisterNavigationLv1">();
 	}
-	static class UPyExtension_CommonBg_RegisterNavigationLv2* GetDefaultObj()
+	static class UPyExtension_CommonBg_RegisterNavigationLv1* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UPyExtension_CommonBg_RegisterNavigationLv2>();
+		return GetDefaultObjImpl<UPyExtension_CommonBg_RegisterNavigationLv1>();
+	}
+};
+
+// PythonClass PyWidget_Common_Bg.PyExtension_Career_RegisterNavigationLv1
+// 0x0000 (0x0030 - 0x0030)
+class UPyExtension_Career_RegisterNavigationLv1 final : public UPyExtension_CommonBg_RegisterNavigationLv1
+{
+public:
+	void OnNavClicked(int32 Index_0);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PyExtension_Career_RegisterNavigationLv1">();
+	}
+	static class UPyExtension_Career_RegisterNavigationLv1* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPyExtension_Career_RegisterNavigationLv1>();
 	}
 };
 
@@ -89,42 +107,24 @@ public:
 	}
 };
 
-// PythonClass PyWidget_Common_Bg.PyExtension_CommonBg_RegisterNavigationLv1
+// PythonClass PyWidget_Common_Bg.PyExtension_CommonBg_RegisterNavigationLv2
 // 0x0000 (0x0030 - 0x0030)
-class UPyExtension_CommonBg_RegisterNavigationLv1 : public UMarvelUserWidgetExtension
+class UPyExtension_CommonBg_RegisterNavigationLv2 final : public UMarvelUserWidgetExtension
 {
 public:
 	void BP_Construct();
-	void OnNavClicked(int32 Index_0);
+	void OnSubNavClicked(int32 ParentIndex, int32 ChildIndex);
 	void FlushCommonBg();
 	void BP_Destruct();
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"PyExtension_CommonBg_RegisterNavigationLv1">();
+		return StaticClassImpl<"PyExtension_CommonBg_RegisterNavigationLv2">();
 	}
-	static class UPyExtension_CommonBg_RegisterNavigationLv1* GetDefaultObj()
+	static class UPyExtension_CommonBg_RegisterNavigationLv2* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UPyExtension_CommonBg_RegisterNavigationLv1>();
-	}
-};
-
-// PythonClass PyWidget_Common_Bg.PyExtension_Career_RegisterNavigationLv1
-// 0x0000 (0x0030 - 0x0030)
-class UPyExtension_Career_RegisterNavigationLv1 final : public UPyExtension_CommonBg_RegisterNavigationLv1
-{
-public:
-	void OnNavClicked(int32 Index_0);
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"PyExtension_Career_RegisterNavigationLv1">();
-	}
-	static class UPyExtension_Career_RegisterNavigationLv1* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UPyExtension_Career_RegisterNavigationLv1>();
+		return GetDefaultObjImpl<UPyExtension_CommonBg_RegisterNavigationLv2>();
 	}
 };
 

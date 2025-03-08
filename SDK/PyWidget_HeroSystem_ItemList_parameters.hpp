@@ -10,9 +10,19 @@
 
 #include "Basic.hpp"
 
+#include "SlateCore_structs.hpp"
+
 
 namespace SDK::Params
 {
+
+// PythonFunction PyWidget_HeroSystem_ItemList.PyWidget_HeroSystem_ItemList.PreConstruct
+// 0x0001 (0x0001 - 0x0000)
+struct PyWidget_HeroSystem_ItemList_PreConstruct final
+{
+public:
+	bool                                          IsDesignTime;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
 
 // PythonFunction PyWidget_HeroSystem_ItemList.PyWidget_HeroSystem_ItemList.MarvelSetVisible
 // 0x0001 (0x0001 - 0x0000)
@@ -22,16 +32,14 @@ public:
 	bool                                          Visible;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 
-// PythonFunction PyWidget_HeroSystem_ItemList.PyWidget_HeroSystem_ItemList.OnWrapBoxScrolled
-// 0x0018 (0x0018 - 0x0000)
-struct PyWidget_HeroSystem_ItemList_OnWrapBoxScrolled final
+// PythonFunction PyWidget_HeroSystem_ItemList.PyWidget_HeroSystem_ItemList.OnTileViewNav
+// 0x0010 (0x0010 - 0x0000)
+struct PyWidget_HeroSystem_ItemList_OnTileViewNav final
 {
 public:
-	int32                                         NextFocusableChildIndex;                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         FocusedChildDirection;                             // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         NumItemsLine;                                      // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UButton*                                ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash)
+	EUINavigation                                 Navigation_0;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UWidget*                                ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash)
 };
 
 }

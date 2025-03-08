@@ -17,11 +17,11 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass 1032_CharacterBP.1032_CharacterBP_C
-// 0x0010 (0x1840 - 0x1830)
+// 0x0010 (0x1890 - 0x1880)
 class AOne032_CharacterBP_C final : public APySquirrelGirlCharacter
 {
 public:
-	class UPhysicalInteractionComponent*          PhysicalInteraction;                               // 0x1830(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UPhysicalInteractionComponent*          PhysicalInteraction;                               // 0x1880(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

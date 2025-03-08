@@ -38,7 +38,7 @@ public:
 };
 
 // PythonClass PyAbility_103561.PyAbility_103561
-// 0x0000 (0x2580 - 0x2580)
+// 0x0000 (0x2588 - 0x2588)
 class UPyAbility_103561 : public UMarvelGameplayAbility
 {
 public:

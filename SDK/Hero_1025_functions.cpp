@@ -20,7 +20,7 @@ namespace SDK
 // Function Hero_1025.AbilityStatistics_102581.OnAdsorbStateUpdated
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// EAdsorbState                            AdsorbState                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const EAdsorbState                      AdsorbState                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UAbilityStatistics_102581::OnAdsorbStateUpdated(const EAdsorbState AdsorbState)
 {
@@ -45,7 +45,7 @@ void UAbilityStatistics_102581::OnAdsorbStateUpdated(const EAdsorbState AdsorbSt
 // Function Hero_1025.Projectile_10251101.IsValidTargetToSpawnTreatScope
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FHitResult                       InHitResult                                            (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FHitResult&                InHitResult                                            (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool AProjectile_10251101::IsValidTargetToSpawnTreatScope(const struct FHitResult& InHitResult)
@@ -160,7 +160,7 @@ struct FRotator ACue_Ability_Loop_10258101::GetReleaseAimRotation()
 // Function Hero_1025.Cue_Ability_Loop_10258101.GetVisualHitLocation
 // (Final, Native, Public, HasOutParams, HasDefaults)
 // Parameters:
-// struct FVector                          OutLocation                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVector*                         OutLocation                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool ACue_Ability_Loop_10258101::GetVisualHitLocation(struct FVector* OutLocation)
@@ -423,7 +423,7 @@ void ACue_Ability_Loop_10258101::UpdateFXsVisibility()
 // Function Hero_1025.Cue_Ability_Loop_10258101.UpdateHitFXLocation
 // (Final, Native, Public, HasOutParams, HasDefaults)
 // Parameters:
-// struct FVector                          InLocation                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   InLocation                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void ACue_Ability_Loop_10258101::UpdateHitFXLocation(const struct FVector& InLocation)
 {
@@ -448,7 +448,7 @@ void ACue_Ability_Loop_10258101::UpdateHitFXLocation(const struct FVector& InLoc
 // Function Hero_1025.Cue_Ability_Loop_10258101.UpdateLinkFXParam
 // (Final, Native, Public, HasOutParams, HasDefaults)
 // Parameters:
-// struct FVector                          InHitLocation                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   InHitLocation                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void ACue_Ability_Loop_10258101::UpdateLinkFXParam(const struct FVector& InHitLocation)
 {
@@ -743,7 +743,7 @@ void ACloakChildActor::OnBodyFXShown()
 // Parameters:
 // class AActor*                           OutSourceAvatar                                        (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           OutTargetAvatar                                        (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FAttributeModifierHandle         ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FAttributeModifierHandle&  ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void ACloakChildActor::OnCharacterDeath(class AActor* OutSourceAvatar, class AActor* OutTargetAvatar, const struct FAttributeModifierHandle& ModifierParameterHandle)
 {
@@ -771,7 +771,7 @@ void ACloakChildActor::OnCharacterDeath(class AActor* OutSourceAvatar, class AAc
 // (Final, Native, Public, HasOutParams)
 // Parameters:
 // class AActor*                           OutTargetActor                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FCharacterRebornParam            Param                                                  (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FCharacterRebornParam&     Param                                                  (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 void ACloakChildActor::OnCharacterReborn(class AActor* OutTargetActor, const struct FCharacterRebornParam& Param)
 {
@@ -797,7 +797,7 @@ void ACloakChildActor::OnCharacterReborn(class AActor* OutTargetActor, const str
 // Function Hero_1025.CloakChildActor.OnTagUpdate
 // (Final, Native, Public, HasOutParams)
 // Parameters:
-// struct FGameplayTag                     Tag                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              Tag                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bTagExists                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void ACloakChildActor::OnTagUpdate(const struct FGameplayTag& Tag, bool bTagExists)
@@ -863,8 +863,8 @@ void ACloakChildActor::UpdateBodyFX()
 // (Final, Native, Public, HasOutParams)
 // Parameters:
 // class UAbilitySystemComponent*          ASC                                                    (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayEffectSpecStackHandle   GameplayEffectSpecHandle                               (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-// struct FActiveGameplayEffectHandle      ActiveGameplayEffectHandle                             (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayEffectSpecStackHandle&GameplayEffectSpecHandle                               (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FActiveGameplayEffectHandle&ActiveGameplayEffectHandle                             (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UEpicMomentAction_1025::OnGameplayEffectAppliedToTarget(class UAbilitySystemComponent* ASC, const struct FGameplayEffectSpecStackHandle& GameplayEffectSpecHandle, const struct FActiveGameplayEffectHandle& ActiveGameplayEffectHandle)
 {
@@ -894,7 +894,7 @@ void UEpicMomentAction_1025::OnGameplayEffectAppliedToTarget(class UAbilitySyste
 // class AActor*                           SourceActor                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UMarvelGameplayAbility*           SourceAbility                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           Scope                                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FMarvelTargetActorGenerateInfo   GenerateInfo                                           (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FMarvelTargetActorGenerateInfo&GenerateInfo                                           (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UEpicMomentAction_1025::OnScopeBegin(class AActor* SourceActor, class UMarvelGameplayAbility* SourceAbility, class AActor* Scope, const struct FMarvelTargetActorGenerateInfo& GenerateInfo)
 {

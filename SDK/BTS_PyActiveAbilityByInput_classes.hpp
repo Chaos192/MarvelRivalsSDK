@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Marvel_structs.hpp"
 #include "MarvelAI_structs.hpp"
+#include "Marvel_structs.hpp"
 #include "PyBTNodeBase_classes.hpp"
 
 

@@ -55,6 +55,60 @@ void UPyUIController_104001::OnDestruct()
 }
 
 
+// PythonFunction PyAbility_104001.PyCue_Buff_Loop_10400103.WhileActiveAudio
+// (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+
+void APyCue_Buff_Loop_10400103::WhileActiveAudio(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyCue_Buff_Loop_10400103", "WhileActiveAudio");
+
+	Params::PyCue_Buff_Loop_10400103_WhileActiveAudio Parms{};
+
+	Parms.MyTarget = MyTarget;
+	Parms.Parameters = std::move(Parameters);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// PythonFunction PyAbility_104001.PyCue_Buff_Loop_10400103.OnRemoveAudio
+// (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+
+void APyCue_Buff_Loop_10400103::OnRemoveAudio(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyCue_Buff_Loop_10400103", "OnRemoveAudio");
+
+	Params::PyCue_Buff_Loop_10400103_OnRemoveAudio Parms{};
+
+	Parms.MyTarget = MyTarget;
+	Parms.Parameters = std::move(Parameters);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // PythonFunction PyAbility_104001.PyAbility_104001.K2_ActivateAbility
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 
@@ -77,7 +131,7 @@ void UPyAbility_104001::K2_ActivateAbility()
 // PythonFunction PyAbility_104001.PyAbility_104001.OnTagUpdate
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FGameplayTag                     Tag                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              Tag                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
 // bool                                    Exist                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UPyAbility_104001::OnTagUpdate(const struct FGameplayTag& Tag, bool Exist)
@@ -106,7 +160,7 @@ void UPyAbility_104001::OnTagUpdate(const struct FGameplayTag& Tag, bool Exist)
 // Parameters:
 // class AActor*                           InSource                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // class AActor*                           InTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FAttributeModifierHandle         ParamHandle                                            (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
+// const struct FAttributeModifierHandle&  ParamHandle                                            (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
 
 void UPyAbility_104001::OnOwnerDeath(class AActor* InSource, class AActor* InTarget, const struct FAttributeModifierHandle& ParamHandle)
 {
@@ -259,7 +313,7 @@ void UPyAbility_104001::K2_OnEndAbility(bool bWasCancelled)
 // PythonFunction PyAbility_104001.PyAbility_104001.NativeOnMontageCompleted
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_104001::NativeOnMontageCompleted(const class FString& Tag)
 {
@@ -284,7 +338,7 @@ void UPyAbility_104001::NativeOnMontageCompleted(const class FString& Tag)
 // PythonFunction PyAbility_104001.PyAbility_104001.NativeOnMontageBlendOut
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_104001::NativeOnMontageBlendOut(const class FString& Tag)
 {
@@ -309,7 +363,7 @@ void UPyAbility_104001::NativeOnMontageBlendOut(const class FString& Tag)
 // PythonFunction PyAbility_104001.PyAbility_104001.NativeOnMontageInterrupted
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_104001::NativeOnMontageInterrupted(const class FString& Tag)
 {
@@ -334,7 +388,7 @@ void UPyAbility_104001::NativeOnMontageInterrupted(const class FString& Tag)
 // PythonFunction PyAbility_104001.PyAbility_104001.NativeOnMontageCancelled
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_104001::NativeOnMontageCancelled(const class FString& Tag)
 {
@@ -359,7 +413,7 @@ void UPyAbility_104001::NativeOnMontageCancelled(const class FString& Tag)
 // PythonFunction PyAbility_104001.PyAbility_104001.NativeOnMontageEvent
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_104001::NativeOnMontageEvent(const class FString& Tag)
 {

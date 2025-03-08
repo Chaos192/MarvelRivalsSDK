@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Buff_ChangeGravityScale_10416106.Buff_ChangeGravityScale_10416106_C
-// 0x0000 (0x11B0 - 0x11B0)
+// 0x0000 (0x11B8 - 0x11B8)
 class UBuff_ChangeGravityScale_10416106_C final : public UMarvelChangeGravityAbility
 {
 public:

@@ -21,11 +21,11 @@ namespace SDK
 {
 
 // PythonClass PyAbility_102235.PyUIController_102235_v3
-// 0x0008 (0x0C90 - 0x0C88)
+// 0x0008 (0x0C80 - 0x0C78)
 class UPyUIController_102235_v3 final : public UUIC_Controller_102235
 {
 public:
-	int32                                         BuffID;                                            // 0x0C88(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         BuffID;                                            // 0x0C78(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void SetAbility(int32 InAbilityId, class UGameplayAbility* InAbility);
@@ -45,7 +45,7 @@ public:
 };
 
 // PythonClass PyAbility_102235.PyAbility_102235
-// 0x0000 (0x2580 - 0x2580)
+// 0x0000 (0x2588 - 0x2588)
 class UPyAbility_102235 : public UMarvelGameplayAbility
 {
 public:

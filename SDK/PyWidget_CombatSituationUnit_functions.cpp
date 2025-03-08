@@ -104,8 +104,8 @@ void UPyWidget_CombatSituationPanel::OnReplayTimelineClickClearChildren(float In
 // Parameters:
 // class AActor*                           Source                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // class AActor*                           Target                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FAttributeModifierHandle         ModifierHandle                                         (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
-// struct FGlobalEventExtraData            ExtraData                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
+// const struct FAttributeModifierHandle&  ModifierHandle                                         (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
+// const struct FGlobalEventExtraData&     ExtraData                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
 
 void UPyWidget_CombatSituationPanel::OnKillEvent(class AActor* Source, class AActor* Target, const struct FAttributeModifierHandle& ModifierHandle, const struct FGlobalEventExtraData& ExtraData)
 {
@@ -133,7 +133,7 @@ void UPyWidget_CombatSituationPanel::OnKillEvent(class AActor* Source, class AAc
 // PythonFunction PyWidget_CombatSituationUnit.PyWidget_CombatSituationPanel.ShowUIRebornInfo
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FCharacterRebornParam            RebornParam                                            (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FCharacterRebornParam&     RebornParam                                            (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyWidget_CombatSituationPanel::ShowUIRebornInfo(const struct FCharacterRebornParam& RebornParam)
 {
@@ -215,7 +215,7 @@ void UPyWidget_CombatSituationUnit_V3::Destruct()
 // PythonFunction PyWidget_CombatSituationUnit.PyWidget_CombatSituationUnit_V3.OnAnimationFinished
 // (BlueprintCosmetic, Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UWidgetAnimation*                 Animation                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// const class UWidgetAnimation*           Animation                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 void UPyWidget_CombatSituationUnit_V3::OnAnimationFinished(const class UWidgetAnimation* Animation)
 {

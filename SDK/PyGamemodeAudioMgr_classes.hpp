@@ -21,7 +21,7 @@ namespace SDK
 class UPyGamemodeAudioMgr : public UProcedureAudioManager
 {
 public:
-	TMulticastInlineDelegate<void(const class FString& VoiceTag, const class FString& NextVoiceTag)> OnSystemVoiceEnd;                                  // 0x08C8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const class FString& VoiceTag, const class FString& NextVoiceTag)> OnSystemVoiceEnd; // 0x08C8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 
 public:
 	void ReceiveInitialize();

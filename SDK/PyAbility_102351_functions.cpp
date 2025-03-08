@@ -21,7 +21,7 @@ namespace SDK
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyCue_TraceActor_10235106::WhileActiveFX(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
 {
@@ -48,7 +48,7 @@ void APyCue_TraceActor_10235106::WhileActiveFX(class AActor* MyTarget, const str
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyCue_Summoner_Loop_10235101::OnActiveFX(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
 {
@@ -150,7 +150,7 @@ void UPyAbility_102351::MissileEventNotify()
 // PythonFunction PyAbility_102351.PyAbility_102351.OnConfirmEvent
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FGameplayAbilityTargetDataHandle Data                                                   (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayAbilityTargetDataHandle&Data                                                   (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyAbility_102351::OnConfirmEvent(const struct FGameplayAbilityTargetDataHandle& Data)
 {
@@ -194,7 +194,7 @@ void UPyAbility_102351::MultiConfirm()
 // PythonFunction PyAbility_102351.PyAbility_102351.OnCancelEvent
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FGameplayAbilityTargetDataHandle Data                                                   (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayAbilityTargetDataHandle&Data                                                   (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyAbility_102351::OnCancelEvent(const struct FGameplayAbilityTargetDataHandle& Data)
 {

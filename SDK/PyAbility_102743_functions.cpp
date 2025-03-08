@@ -134,7 +134,7 @@ void UPyAbility_102743::OnEndAbility(bool bCanceled)
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // class AActor*                           SpawnActor                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayAbilityTargetDataHandle Data                                                   (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayAbilityTargetDataHandle&Data                                                   (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyAbility_102743::OnScopeSpawnSuccess(class AActor* SpawnActor, const struct FGameplayAbilityTargetDataHandle& Data)
 {

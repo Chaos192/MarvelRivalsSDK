@@ -551,16 +551,6 @@ public:
 	bool                                          bIsEnhanced;                                       // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
-// Function Hero_1027.Cue_Summoner_Loop_10274101.OnTakeDamage
-// 0x0028 (0x0028 - 0x0000)
-struct Cue_Summoner_Loop_10274101_OnTakeDamage final
-{
-public:
-	class AActor*                                 InSource;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class AActor*                                 InSourceAvatar;                                    // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FAttributeModifierHandle               ModifierParameterHandle;                           // 0x0010(0x0018)(ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
 // Function Hero_1027.Cue_Summoner_Loop_10274101.OnWallActivateStateChange_ThreadSafe
 // 0x0001 (0x0001 - 0x0000)
 struct Cue_Summoner_Loop_10274101_OnWallActivateStateChange_ThreadSafe final
@@ -600,7 +590,7 @@ public:
 struct MarvelSummonedAbilityInterface_BindSummonedChangeDelegate final
 {
 public:
-	TDelegate<void(class AActor* InActor, bool bIsAdd)> InDelegate;                                        // 0x0000(0x0014)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(class AActor* InActor, bool bIsAdd)> InDelegate;                                  // 0x0000(0x0014)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
 // Function Hero_1027.MarvelSummonedAbilityInterface.GetOnSummonedChangeDelegate
@@ -608,7 +598,7 @@ public:
 struct MarvelSummonedAbilityInterface_GetOnSummonedChangeDelegate final
 {
 public:
-	TMulticastInlineDelegate<void(class AActor* InActor, bool bIsAdd)> ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class AActor* InActor, bool bIsAdd)> ReturnValue;                  // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NativeAccessSpecifierPublic)
 };
 
 // Function Hero_1027.MarvelSummonedAbilityInterface.UnBindSummonedChangeDelegate
@@ -616,7 +606,7 @@ public:
 struct MarvelSummonedAbilityInterface_UnBindSummonedChangeDelegate final
 {
 public:
-	TDelegate<void(class AActor* InActor, bool bIsAdd)> InDelegate;                                        // 0x0000(0x0014)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(class AActor* InActor, bool bIsAdd)> InDelegate;                                  // 0x0000(0x0014)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
 // Function Hero_1027.MarvelAbilityTargetActor_WallBuilding.OnPlayerViewSideChanged
@@ -633,7 +623,7 @@ struct MarvelAbilityTask_FindBuildingLoc_FindBuildingLoc final
 {
 public:
 	class UMarvelGameplayAbility*                 OwningAbility;                                     // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TSubclassOf<class AMarvelAbilityTargetActor_WallBuilding> TraceActorClass_0;                                 // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSubclassOf<class AMarvelAbilityTargetActor_WallBuilding> TraceActorClass_0;                     // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UMarvelAbilityTask_FindBuildingLoc*     ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 

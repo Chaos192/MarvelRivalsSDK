@@ -178,7 +178,7 @@ void UPyModularRuleControlComponent::SOvertimeEndEvent()
 // PythonFunction PyModularRuleControlComponent.PyModularRuleControlComponent.GetCampByName
 // (Native, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// class FString                           CampName                                               (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    CampName                                               (Parm, ZeroConstructor, HasGetValueTypeHash)
 // class AActor*                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash)
 
 class AActor* UPyModularRuleControlComponent::GetCampByName(const class FString& CampName)

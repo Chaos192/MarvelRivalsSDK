@@ -66,6 +66,32 @@ public:
 	float                                         RecoverValue;                                      // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 
+// PythonFunction PyAbility_103741.PyAbility_103743.CanActivate
+// 0x0001 (0x0001 - 0x0000)
+struct PyAbility_103743_CanActivate final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+
+// PythonFunction PyAbility_103741.PyAbility_103743.GetProperTargetActor
+// 0x0018 (0x0018 - 0x0000)
+struct PyAbility_103743_GetProperTargetActor final
+{
+public:
+	TArray<class AActor*>                         TargetActors;                                      // 0x0000(0x0010)(ConstParm, Parm, OutParm, ReferenceParm)
+	class AActor*                                 ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash)
+};
+
+// PythonFunction PyAbility_103741.PyAbility_103743.CheckViewportTarget
+// 0x0010 (0x0010 - 0x0000)
+struct PyAbility_103743_CheckViewportTarget final
+{
+public:
+	class AActor*                                 InTarget;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+
 // PythonFunction PyAbility_103741.PySummoned_10374101.OnInstigatorDeath
 // 0x0028 (0x0028 - 0x0000)
 struct PySummoned_10374101_OnInstigatorDeath final

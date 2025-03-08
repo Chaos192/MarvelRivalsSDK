@@ -23,7 +23,7 @@ namespace SDK
 // class APyControl*                       Control                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // float                                   LosingSpeed                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                                   TimeToLoseOccupy                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// TMap<int32, float>                      OccupyProgressSpeed                                    (ConstParm, Parm, OutParm, ReferenceParm)
+// const TMap<int32, float>&               OccupyProgressSpeed                                    (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyLevelControlNodes::SetPyControl(class APyControl* Control, float LosingSpeed, float TimeToLoseOccupy, const TMap<int32, float>& OccupyProgressSpeed)
 {

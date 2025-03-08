@@ -36,11 +36,11 @@ public:
 };
 
 // PythonClass PyAbility_103721.PyUIController_103721
-// 0x0008 (0x0C68 - 0x0C60)
+// 0x0008 (0x0C58 - 0x0C50)
 class UPyUIController_103721 final : public UUIC_Ability
 {
 public:
-	class UTexture2D*                             Icon;                                              // 0x0C60(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UTexture2D*                             Icon;                                              // 0x0C50(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void OnInit();
@@ -58,11 +58,11 @@ public:
 };
 
 // PythonClass PyAbility_103721.PyAbility_103721
-// 0x0008 (0x2588 - 0x2580)
+// 0x0008 (0x2590 - 0x2588)
 class UPyAbility_103721 : public UMarvelGameplayAbility
 {
 public:
-	int32                                         ShootIronCount;                                    // 0x2580(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ShootIronCount;                                    // 0x2588(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void BeginPlay();

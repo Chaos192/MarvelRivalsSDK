@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "PyAbility_105232_classes.hpp"
-#include "GameplayTags_structs.hpp"
 #include "Marvel_structs.hpp"
 #include "Marvel_classes.hpp"
+#include "GameplayTags_structs.hpp"
+#include "PyAbility_105232_classes.hpp"
 
 
 namespace SDK
@@ -52,7 +52,7 @@ public:
 };
 
 // PythonClass PyAbility_105233.PyAbility_105233
-// 0x0000 (0x2628 - 0x2628)
+// 0x0000 (0x2630 - 0x2630)
 class UPyAbility_105233 : public UPyAbility_105232
 {
 public:

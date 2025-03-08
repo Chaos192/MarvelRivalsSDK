@@ -10,13 +10,13 @@
 
 #include "Basic.hpp"
 
-#include "AkAudio_structs.hpp"
 #include "UMG_classes.hpp"
-#include "WwiseResourceLoader_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
+#include "AkAudio_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
+#include "WwiseResourceLoader_structs.hpp"
 #include "SlateCore_structs.hpp"
 #include "MovieScene_structs.hpp"
 #include "MovieScene_classes.hpp"
@@ -181,9 +181,9 @@ class UAkAndroidInitializationSettings final : public UObject
 {
 public:
 	uint8                                         Pad_30[0x8];                                       // 0x0030(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FAkCommonInitializationSettingsWithSampleRate CommonSettings;                                    // 0x0038(0x0070)(Edit, Config, NativeAccessSpecifierPublic)
-	struct FAkCommunicationSettingsWithSystemInitialization CommunicationSettings;                             // 0x00A8(0x0020)(Edit, Config, NativeAccessSpecifierPublic)
-	struct FAkAndroidAdvancedInitializationSettings AdvancedSettings;                                  // 0x00C8(0x0044)(Edit, Config, NoDestructor, AdvancedDisplay, NativeAccessSpecifierPublic)
+	struct FAkCommonInitializationSettingsWithSampleRate CommonSettings;                             // 0x0038(0x0070)(Edit, Config, NativeAccessSpecifierPublic)
+	struct FAkCommunicationSettingsWithSystemInitialization CommunicationSettings;                   // 0x00A8(0x0020)(Edit, Config, NativeAccessSpecifierPublic)
+	struct FAkAndroidAdvancedInitializationSettings AdvancedSettings;                                // 0x00C8(0x0044)(Edit, Config, NoDestructor, AdvancedDisplay, NativeAccessSpecifierPublic)
 	uint8                                         Pad_10C[0x4];                                      // 0x010C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
@@ -477,9 +477,9 @@ public:
 	uint8                                         Pad_F82[0x6];                                      // 0x0F82(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FAkBoolPropertyToControl               ThePropertyToControl;                              // 0x0F88(0x0010)(Edit, NativeAccessSpecifierPublic)
 	struct FAkWwiseItemToControl                  ItemToControl;                                     // 0x0F98(0x0040)(Edit, Config, EditConst, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(bool bIsChecked)> AkOnCheckStateChanged;                             // 0x0FD8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(const struct FGuid& ItemDroppedID)> OnItemDropped;                                     // 0x0FE8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(const class FString& PropertyDropped)> OnPropertyDropped;                                 // 0x0FF8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(bool bIsChecked)> AkOnCheckStateChanged;                           // 0x0FD8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const struct FGuid& ItemDroppedID)> OnItemDropped;                 // 0x0FE8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const class FString& PropertyDropped)> OnPropertyDropped;          // 0x0FF8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	uint8                                         Pad_1008[0x58];                                    // 0x1008(0x0058)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
@@ -623,7 +623,7 @@ public:
 };
 
 // Class AkAudio.DrawPortalComponent
-// 0x0000 (0x0840 - 0x0840)
+// 0x0000 (0x08D0 - 0x08D0)
 class UDrawPortalComponent final : public UPrimitiveComponent
 {
 public:
@@ -638,7 +638,7 @@ public:
 };
 
 // Class AkAudio.DrawRoomComponent
-// 0x0000 (0x0840 - 0x0840)
+// 0x0000 (0x08D0 - 0x08D0)
 class UDrawRoomComponent final : public UPrimitiveComponent
 {
 public:
@@ -919,7 +919,7 @@ public:
 	int32                                         LOD;                                               // 0x048C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         WeldingThreshold;                                  // 0x0490(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_494[0x4];                                      // 0x0494(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<class UMaterialInterface*, struct FAkGeometrySurfaceOverride> StaticMeshSurfaceOverride;                         // 0x0498(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	TMap<class UMaterialInterface*, struct FAkGeometrySurfaceOverride> StaticMeshSurfaceOverride;    // 0x0498(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FAkGeometrySurfaceOverride             CollisionMeshSurfaceOverride;                      // 0x04E8(0x0018)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
 	bool                                          bEnableDiffraction;                                // 0x0500(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bEnableDiffractionOnBoundaryEdges;                 // 0x0501(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -973,9 +973,9 @@ class UAkHololensInitializationSettings final : public UObject
 {
 public:
 	uint8                                         Pad_30[0x8];                                       // 0x0030(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FAkCommonInitializationSettingsWithSampleRate CommonSettings;                                    // 0x0038(0x0070)(Edit, Config, NativeAccessSpecifierPublic)
-	struct FAkCommunicationSettingsWithSystemInitialization CommunicationSettings;                             // 0x00A8(0x0020)(Edit, Config, NativeAccessSpecifierPublic)
-	struct FAkHololensAdvancedInitializationSettings AdvancedSettings;                                  // 0x00C8(0x0040)(Edit, Config, NoDestructor, AdvancedDisplay, NativeAccessSpecifierPublic)
+	struct FAkCommonInitializationSettingsWithSampleRate CommonSettings;                             // 0x0038(0x0070)(Edit, Config, NativeAccessSpecifierPublic)
+	struct FAkCommunicationSettingsWithSystemInitialization CommunicationSettings;                   // 0x00A8(0x0020)(Edit, Config, NativeAccessSpecifierPublic)
+	struct FAkHololensAdvancedInitializationSettings AdvancedSettings;                               // 0x00C8(0x0040)(Edit, Config, NoDestructor, AdvancedDisplay, NativeAccessSpecifierPublic)
 
 public:
 	void MigrateMultiCoreRendering(bool NewValue);
@@ -1031,11 +1031,11 @@ class UAkIOSInitializationSettings final : public UObject
 {
 public:
 	uint8                                         Pad_30[0x8];                                       // 0x0030(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FAkCommonInitializationSettingsWithSampleRate CommonSettings;                                    // 0x0038(0x0070)(Edit, Config, NativeAccessSpecifierPublic)
+	struct FAkCommonInitializationSettingsWithSampleRate CommonSettings;                             // 0x0038(0x0070)(Edit, Config, NativeAccessSpecifierPublic)
 	struct FAkAudioSession                        AudioSession;                                      // 0x00A8(0x000C)(Edit, Config, NoDestructor, NativeAccessSpecifierPublic)
 	uint8                                         Pad_B4[0x4];                                       // 0x00B4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FAkCommunicationSettingsWithSystemInitialization CommunicationSettings;                             // 0x00B8(0x0020)(Edit, Config, NativeAccessSpecifierPublic)
-	struct FAkAdvancedInitializationSettingsWithMultiCoreRendering AdvancedSettings;                                  // 0x00D8(0x003C)(Edit, Config, NoDestructor, AdvancedDisplay, NativeAccessSpecifierPublic)
+	struct FAkCommunicationSettingsWithSystemInitialization CommunicationSettings;                   // 0x00B8(0x0020)(Edit, Config, NativeAccessSpecifierPublic)
+	struct FAkAdvancedInitializationSettingsWithMultiCoreRendering AdvancedSettings;                 // 0x00D8(0x003C)(Edit, Config, NoDestructor, AdvancedDisplay, NativeAccessSpecifierPublic)
 	uint8                                         Pad_114[0x4];                                      // 0x0114(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
@@ -1088,8 +1088,8 @@ public:
 class UAkItemBoolProperties final : public UWidget
 {
 public:
-	TMulticastInlineDelegate<void(const class FString& PropertySelected)> OnSelectionChanged;                                // 0x01B8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(const class FString& PropertyDragged)> OnPropertyDragged;                                 // 0x01C8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const class FString& PropertySelected)> OnSelectionChanged;        // 0x01B8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const class FString& PropertyDragged)> OnPropertyDragged;          // 0x01C8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	uint8                                         Pad_1D8[0x20];                                     // 0x01D8(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
@@ -1133,8 +1133,8 @@ public:
 class UAkItemProperties final : public UWidget
 {
 public:
-	TMulticastInlineDelegate<void(const class FString& PropertySelected)> OnSelectionChanged;                                // 0x01B8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(const class FString& PropertyDragged)> OnPropertyDragged;                                 // 0x01C8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const class FString& PropertySelected)> OnSelectionChanged;        // 0x01B8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const class FString& PropertyDragged)> OnPropertyDragged;          // 0x01C8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	uint8                                         Pad_1D8[0x20];                                     // 0x01D8(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
@@ -1192,9 +1192,9 @@ class UAkLinuxArm64InitializationSettings final : public UObject
 {
 public:
 	uint8                                         Pad_30[0x8];                                       // 0x0030(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FAkCommonInitializationSettingsWithSampleRate CommonSettings;                                    // 0x0038(0x0070)(Edit, Config, NativeAccessSpecifierPublic)
-	struct FAkCommunicationSettingsWithSystemInitialization CommunicationSettings;                             // 0x00A8(0x0020)(Edit, Config, NativeAccessSpecifierPublic)
-	struct FAkAdvancedInitializationSettingsWithMultiCoreRendering AdvancedSettings;                                  // 0x00C8(0x003C)(Edit, Config, NoDestructor, AdvancedDisplay, NativeAccessSpecifierPublic)
+	struct FAkCommonInitializationSettingsWithSampleRate CommonSettings;                             // 0x0038(0x0070)(Edit, Config, NativeAccessSpecifierPublic)
+	struct FAkCommunicationSettingsWithSystemInitialization CommunicationSettings;                   // 0x00A8(0x0020)(Edit, Config, NativeAccessSpecifierPublic)
+	struct FAkAdvancedInitializationSettingsWithMultiCoreRendering AdvancedSettings;                 // 0x00C8(0x003C)(Edit, Config, NoDestructor, AdvancedDisplay, NativeAccessSpecifierPublic)
 	uint8                                         Pad_104[0x4];                                      // 0x0104(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
@@ -1232,9 +1232,9 @@ class UAkLinuxInitializationSettings final : public UObject
 {
 public:
 	uint8                                         Pad_30[0x8];                                       // 0x0030(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FAkCommonInitializationSettingsWithSampleRate CommonSettings;                                    // 0x0038(0x0070)(Edit, Config, NativeAccessSpecifierPublic)
-	struct FAkCommunicationSettingsWithSystemInitialization CommunicationSettings;                             // 0x00A8(0x0020)(Edit, Config, NativeAccessSpecifierPublic)
-	struct FAkAdvancedInitializationSettingsWithMultiCoreRendering AdvancedSettings;                                  // 0x00C8(0x003C)(Edit, Config, NoDestructor, AdvancedDisplay, NativeAccessSpecifierPublic)
+	struct FAkCommonInitializationSettingsWithSampleRate CommonSettings;                             // 0x0038(0x0070)(Edit, Config, NativeAccessSpecifierPublic)
+	struct FAkCommunicationSettingsWithSystemInitialization CommunicationSettings;                   // 0x00A8(0x0020)(Edit, Config, NativeAccessSpecifierPublic)
+	struct FAkAdvancedInitializationSettingsWithMultiCoreRendering AdvancedSettings;                 // 0x00C8(0x003C)(Edit, Config, NoDestructor, AdvancedDisplay, NativeAccessSpecifierPublic)
 	uint8                                         Pad_104[0x4];                                      // 0x0104(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
@@ -1272,9 +1272,9 @@ class UAkMacInitializationSettings final : public UObject
 {
 public:
 	uint8                                         Pad_30[0x8];                                       // 0x0030(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FAkCommonInitializationSettingsWithSampleRate CommonSettings;                                    // 0x0038(0x0070)(Edit, Config, NativeAccessSpecifierPublic)
-	struct FAkCommunicationSettingsWithSystemInitialization CommunicationSettings;                             // 0x00A8(0x0020)(Edit, Config, NativeAccessSpecifierPublic)
-	struct FAkAdvancedInitializationSettingsWithMultiCoreRendering AdvancedSettings;                                  // 0x00C8(0x003C)(Edit, Config, NoDestructor, AdvancedDisplay, NativeAccessSpecifierPublic)
+	struct FAkCommonInitializationSettingsWithSampleRate CommonSettings;                             // 0x0038(0x0070)(Edit, Config, NativeAccessSpecifierPublic)
+	struct FAkCommunicationSettingsWithSystemInitialization CommunicationSettings;                   // 0x00A8(0x0020)(Edit, Config, NativeAccessSpecifierPublic)
+	struct FAkAdvancedInitializationSettingsWithMultiCoreRendering AdvancedSettings;                 // 0x00C8(0x003C)(Edit, Config, NoDestructor, AdvancedDisplay, NativeAccessSpecifierPublic)
 	uint8                                         Pad_104[0x4];                                      // 0x0104(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
@@ -1344,8 +1344,8 @@ public:
 };
 
 // Class AkAudio.AkPlatformInitialisationSettingsBase
-// 0x0000 (0x0030 - 0x0030)
-class IAkPlatformInitialisationSettingsBase final : public IInterface
+// 0x0000 (0x0000 - 0x0000)
+class IAkPlatformInitialisationSettingsBase final
 {
 public:
 	static class UClass* StaticClass()
@@ -1356,6 +1356,15 @@ public:
 	{
 		return GetDefaultObjImpl<IAkPlatformInitialisationSettingsBase>();
 	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
 };
 
 // Class AkAudio.AkPS5InitializationSettings
@@ -1365,7 +1374,7 @@ class UAkPS5InitializationSettings : public UObject
 public:
 	uint8                                         Pad_30[0x8];                                       // 0x0030(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FAkCommonInitializationSettings        CommonSettings;                                    // 0x0038(0x0068)(Edit, Config, NativeAccessSpecifierPublic)
-	struct FAkCommunicationSettingsWithSystemInitialization CommunicationSettings;                             // 0x00A0(0x0020)(Edit, Config, NativeAccessSpecifierPublic)
+	struct FAkCommunicationSettingsWithSystemInitialization CommunicationSettings;                   // 0x00A0(0x0020)(Edit, Config, NativeAccessSpecifierPublic)
 	struct FAkPS5AdvancedInitializationSettings   AdvancedSettings;                                  // 0x00C0(0x0050)(Edit, Config, NoDestructor, AdvancedDisplay, NativeAccessSpecifierPublic)
 
 public:
@@ -1505,7 +1514,7 @@ public:
 	ECollisionChannel                             DefaultOcclusionCollisionChannel;                  // 0x008C(0x0001)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	ECollisionChannel                             DefaultFitToGeometryCollisionChannel;              // 0x008D(0x0001)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_8E[0x2];                                       // 0x008E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<TSoftObjectPtr<class UPhysicalMaterial>, struct FAkGeometrySurfacePropertiesToMap> AkGeometryMap;                                     // 0x0090(0x0050)(Edit, EditFixedSize, Config, NativeAccessSpecifierPublic)
+	TMap<TSoftObjectPtr<class UPhysicalMaterial>, struct FAkGeometrySurfacePropertiesToMap> AkGeometryMap; // 0x0090(0x0050)(Edit, EditFixedSize, Config, NativeAccessSpecifierPublic)
 	float                                         GlobalDecayAbsorption;                             // 0x00E0(0x0004)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_E4[0x4];                                       // 0x00E4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TSoftObjectPtr<class UAkAuxBus>               DefaultReverbAuxBus;                               // 0x00E8(0x0030)(Edit, Config, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -1517,7 +1526,7 @@ public:
 	TSoftObjectPtr<class UAkRtpc>                 DecayEstimateRTPC;                                 // 0x01C8(0x0030)(Edit, Config, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TSoftObjectPtr<class UAkRtpc>                 TimeToFirstReflectionRTPC;                         // 0x01F8(0x0030)(Edit, Config, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TSoftObjectPtr<class UAkAudioEvent>           AudioInputEvent;                                   // 0x0228(0x0030)(Edit, Config, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMap<struct FGuid, struct FAkAcousticTextureParams> AcousticTextureParamsMap;                          // 0x0258(0x0050)(Config, NativeAccessSpecifierPublic)
+	TMap<struct FGuid, struct FAkAcousticTextureParams> AcousticTextureParamsMap;                    // 0x0258(0x0050)(Config, NativeAccessSpecifierPublic)
 	bool                                          SplitSwitchContainerMedia;                         // 0x02A8(0x0001)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          SplitMediaPerFolder;                               // 0x02A9(0x0001)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          UseEventBasedPackaging;                            // 0x02AA(0x0001)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -1604,8 +1613,8 @@ public:
 	struct FAkPropertyToControl                   ThePropertyToControl;                              // 0x0700(0x0010)(Edit, EditConst, NativeAccessSpecifierPublic)
 	struct FAkWwiseItemToControl                  ItemToControl;                                     // 0x0710(0x0040)(Edit, Config, EditConst, NativeAccessSpecifierPublic)
 	TMulticastInlineDelegate<void(float Value)>   OnValueChanged;                                    // 0x0750(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(const struct FGuid& ItemDroppedID)> OnItemDropped;                                     // 0x0760(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(const class FString& PropertyDropped)> OnPropertyDropped;                                 // 0x0770(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const struct FGuid& ItemDroppedID)> OnItemDropped;                 // 0x0760(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const class FString& PropertyDropped)> OnPropertyDropped;          // 0x0770(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	uint8                                         Pad_780[0x20];                                     // 0x0780(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
@@ -1783,11 +1792,11 @@ class UAkTVOSInitializationSettings final : public UObject
 {
 public:
 	uint8                                         Pad_30[0x8];                                       // 0x0030(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FAkCommonInitializationSettingsWithSampleRate CommonSettings;                                    // 0x0038(0x0070)(Edit, Config, NativeAccessSpecifierPublic)
+	struct FAkCommonInitializationSettingsWithSampleRate CommonSettings;                             // 0x0038(0x0070)(Edit, Config, NativeAccessSpecifierPublic)
 	struct FAkAudioSession                        AudioSession;                                      // 0x00A8(0x000C)(Edit, Config, NoDestructor, NativeAccessSpecifierPublic)
 	uint8                                         Pad_B4[0x4];                                       // 0x00B4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FAkCommunicationSettingsWithSystemInitialization CommunicationSettings;                             // 0x00B8(0x0020)(Edit, Config, NativeAccessSpecifierPublic)
-	struct FAkAdvancedInitializationSettingsWithMultiCoreRendering AdvancedSettings;                                  // 0x00D8(0x003C)(Edit, Config, NoDestructor, AdvancedDisplay, NativeAccessSpecifierPublic)
+	struct FAkCommunicationSettingsWithSystemInitialization CommunicationSettings;                   // 0x00B8(0x0020)(Edit, Config, NativeAccessSpecifierPublic)
+	struct FAkAdvancedInitializationSettingsWithMultiCoreRendering AdvancedSettings;                 // 0x00D8(0x003C)(Edit, Config, NoDestructor, AdvancedDisplay, NativeAccessSpecifierPublic)
 	uint8                                         Pad_114[0x4];                                      // 0x0114(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
@@ -1917,9 +1926,9 @@ class UAkWindowsInitializationSettings final : public UObject
 {
 public:
 	uint8                                         Pad_30[0x8];                                       // 0x0030(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FAkCommonInitializationSettingsWithSampleRate CommonSettings;                                    // 0x0038(0x0070)(Edit, Config, NativeAccessSpecifierPublic)
-	struct FAkCommunicationSettingsWithSystemInitialization CommunicationSettings;                             // 0x00A8(0x0020)(Edit, Config, NativeAccessSpecifierPublic)
-	struct FAkWindowsAdvancedInitializationSettings AdvancedSettings;                                  // 0x00C8(0x0044)(Edit, Config, NoDestructor, AdvancedDisplay, NativeAccessSpecifierPublic)
+	struct FAkCommonInitializationSettingsWithSampleRate CommonSettings;                             // 0x0038(0x0070)(Edit, Config, NativeAccessSpecifierPublic)
+	struct FAkCommunicationSettingsWithSystemInitialization CommunicationSettings;                   // 0x00A8(0x0020)(Edit, Config, NativeAccessSpecifierPublic)
+	struct FAkWindowsAdvancedInitializationSettings AdvancedSettings;                                // 0x00C8(0x0044)(Edit, Config, NoDestructor, AdvancedDisplay, NativeAccessSpecifierPublic)
 	uint8                                         Pad_10C[0x4];                                      // 0x010C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
@@ -1987,9 +1996,9 @@ class UAkWinGDKInitializationSettings : public UObject
 {
 public:
 	uint8                                         Pad_30[0x8];                                       // 0x0030(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FAkCommonInitializationSettingsWithSampleRate CommonSettings;                                    // 0x0038(0x0070)(Edit, Config, NativeAccessSpecifierPublic)
-	struct FAkCommunicationSettingsWithSystemInitialization CommunicationSettings;                             // 0x00A8(0x0020)(Edit, Config, NativeAccessSpecifierPublic)
-	struct FAkWinGDKAdvancedInitializationSettings AdvancedSettings;                                  // 0x00C8(0x0044)(Edit, Config, NoDestructor, AdvancedDisplay, NativeAccessSpecifierPublic)
+	struct FAkCommonInitializationSettingsWithSampleRate CommonSettings;                             // 0x0038(0x0070)(Edit, Config, NativeAccessSpecifierPublic)
+	struct FAkCommunicationSettingsWithSystemInitialization CommunicationSettings;                   // 0x00A8(0x0020)(Edit, Config, NativeAccessSpecifierPublic)
+	struct FAkWinGDKAdvancedInitializationSettings AdvancedSettings;                                 // 0x00C8(0x0044)(Edit, Config, NoDestructor, AdvancedDisplay, NativeAccessSpecifierPublic)
 	uint8                                         Pad_10C[0x4];                                      // 0x010C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
@@ -2056,8 +2065,8 @@ public:
 class UAkWwiseTree final : public UWidget
 {
 public:
-	TMulticastInlineDelegate<void(const struct FGuid& ItemSelectedID)> OnSelectionChanged;                                // 0x01B8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(const struct FGuid& ItemDraggedID, const class FString& ItemDraggedName)> OnItemDragged;                                     // 0x01C8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const struct FGuid& ItemSelectedID)> OnSelectionChanged;           // 0x01B8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const struct FGuid& ItemDraggedID, const class FString& ItemDraggedName)> OnItemDragged; // 0x01C8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	uint8                                         Pad_1D8[0x20];                                     // 0x01D8(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
@@ -2082,8 +2091,8 @@ public:
 class UAkWwiseTreeSelector final : public UWidget
 {
 public:
-	TMulticastInlineDelegate<void(const struct FGuid& ItemSelectedID)> OnSelectionChanged;                                // 0x01B8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(const struct FGuid& ItemDraggedID, const class FString& ItemDraggedName)> OnItemDragged;                                     // 0x01C8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const struct FGuid& ItemSelectedID)> OnSelectionChanged;           // 0x01B8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const struct FGuid& ItemDraggedID, const class FString& ItemDraggedName)> OnItemDragged; // 0x01C8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	uint8                                         Pad_1D8[0x40];                                     // 0x01D8(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
@@ -2105,7 +2114,7 @@ public:
 	uint8                                         Pad_30[0x8];                                       // 0x0030(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FAkCommonInitializationSettings        CommonSettings;                                    // 0x0038(0x0068)(Edit, Config, NativeAccessSpecifierPublic)
 	struct FAkXSXApuHeapInitializationSettings    ApuHeapSettings;                                   // 0x00A0(0x0008)(Edit, Config, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAkCommunicationSettingsWithSystemInitialization CommunicationSettings;                             // 0x00A8(0x0020)(Edit, Config, NativeAccessSpecifierPublic)
+	struct FAkCommunicationSettingsWithSystemInitialization CommunicationSettings;                   // 0x00A8(0x0020)(Edit, Config, NativeAccessSpecifierPublic)
 	struct FAkXSXAdvancedInitializationSettings   AdvancedSettings;                                  // 0x00C8(0x0048)(Edit, Config, NoDestructor, AdvancedDisplay, NativeAccessSpecifierPublic)
 
 public:
@@ -2228,7 +2237,7 @@ public:
 	class UAkRtpc*                                RTPC;                                              // 0x00F8(0x0008)(Edit, ZeroConstructor, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	class FString                                 Name_0;                                            // 0x0100(0x0010)(Edit, ZeroConstructor, AdvancedDisplay, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	struct FRichCurve                             FloatCurve;                                        // 0x0110(0x0080)(Protected, NativeAccessSpecifierProtected)
-	struct FMovieSceneFloatChannelSerializationHelper FloatChannelSerializationHelper;                   // 0x0190(0x0030)(Protected, NativeAccessSpecifierProtected)
+	struct FMovieSceneFloatChannelSerializationHelper FloatChannelSerializationHelper;               // 0x0190(0x0030)(Protected, NativeAccessSpecifierProtected)
 	struct FMovieSceneFloatChannel                RTPCChannel;                                       // 0x01C0(0x0110)(Protected, NativeAccessSpecifierProtected)
 
 public:
@@ -2265,7 +2274,7 @@ public:
 class UPostEventAsync final : public UBlueprintAsyncActionBase
 {
 public:
-	TMulticastInlineDelegate<void(int32 PlayingID)> Completed;                                         // 0x0038(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(int32 PlayingID)> Completed;                                       // 0x0038(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	uint8                                         Pad_48[0x60];                                      // 0x0048(0x0060)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
@@ -2289,7 +2298,7 @@ public:
 class UPostEventAtLocationAsync final : public UBlueprintAsyncActionBase
 {
 public:
-	TMulticastInlineDelegate<void(int32 PlayingID)> Completed;                                         // 0x0038(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(int32 PlayingID)> Completed;                                       // 0x0038(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	uint8                                         Pad_48[0x68];                                      // 0x0048(0x0068)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:

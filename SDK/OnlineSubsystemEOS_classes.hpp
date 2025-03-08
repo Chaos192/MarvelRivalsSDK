@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Engine_classes.hpp"
 #include "SocketSubsystemEOS_classes.hpp"
+#include "Engine_classes.hpp"
 #include "OnlineSubsystemEOS_structs.hpp"
 
 
@@ -19,7 +19,7 @@ namespace SDK
 {
 
 // Class OnlineSubsystemEOS.NetDriverEOS
-// 0x0000 (0x0BA0 - 0x0BA0)
+// 0x0000 (0x0C10 - 0x0C10)
 class UNetDriverEOS final : public UNetDriverEOSBase
 {
 public:

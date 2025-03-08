@@ -10,11 +10,11 @@
 
 #include "Basic.hpp"
 
+#include "Chaos_structs.hpp"
 #include "Engine_classes.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
 #include "ChaosSolverEngine_structs.hpp"
-#include "Chaos_structs.hpp"
 #include "DeveloperSettings_classes.hpp"
 
 
@@ -63,11 +63,11 @@ class UChaosGameplayEventDispatcher final : public UChaosEventListenerComponent
 {
 public:
 	uint8                                         Pad_F8[0xC0];                                      // 0x00F8(0x00C0)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<class UPrimitiveComponent*, struct FChaosHandlerSet> CollisionEventRegistrations;                       // 0x01B8(0x0050)(ContainsInstancedReference, NativeAccessSpecifierPrivate)
-	TMap<class UPrimitiveComponent*, struct FBreakEventCallbackWrapper> BreakEventRegistrations;                           // 0x0208(0x0050)(ContainsInstancedReference, NativeAccessSpecifierPrivate)
-	TMap<class UPrimitiveComponent*, struct FRemovalEventCallbackWrapper> RemovalEventRegistrations;                         // 0x0258(0x0050)(ContainsInstancedReference, NativeAccessSpecifierPrivate)
-	TMap<class UPrimitiveComponent*, struct FCrumblingEventCallbackWrapper> CrumblingEventRegistrations;                       // 0x02A8(0x0050)(ContainsInstancedReference, NativeAccessSpecifierPrivate)
-	TMap<class UPrimitiveComponent*, struct FDamageEventCallbackWrapper> DamageEventRegistrations;                          // 0x02F8(0x0050)(ContainsInstancedReference, NativeAccessSpecifierPrivate)
+	TMap<class UPrimitiveComponent*, struct FChaosHandlerSet> CollisionEventRegistrations;           // 0x01B8(0x0050)(ContainsInstancedReference, NativeAccessSpecifierPrivate)
+	TMap<class UPrimitiveComponent*, struct FBreakEventCallbackWrapper> BreakEventRegistrations;     // 0x0208(0x0050)(ContainsInstancedReference, NativeAccessSpecifierPrivate)
+	TMap<class UPrimitiveComponent*, struct FRemovalEventCallbackWrapper> RemovalEventRegistrations; // 0x0258(0x0050)(ContainsInstancedReference, NativeAccessSpecifierPrivate)
+	TMap<class UPrimitiveComponent*, struct FCrumblingEventCallbackWrapper> CrumblingEventRegistrations; // 0x02A8(0x0050)(ContainsInstancedReference, NativeAccessSpecifierPrivate)
+	TMap<class UPrimitiveComponent*, struct FDamageEventCallbackWrapper> DamageEventRegistrations;   // 0x02F8(0x0050)(ContainsInstancedReference, NativeAccessSpecifierPrivate)
 	uint8                                         Pad_348[0x18];                                     // 0x0348(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
@@ -82,8 +82,8 @@ public:
 };
 
 // Class ChaosSolverEngine.ChaosNotifyHandlerInterface
-// 0x0000 (0x0030 - 0x0030)
-class IChaosNotifyHandlerInterface final : public IInterface
+// 0x0000 (0x0000 - 0x0000)
+class IChaosNotifyHandlerInterface final
 {
 public:
 	static class UClass* StaticClass()
@@ -93,6 +93,15 @@ public:
 	static class IChaosNotifyHandlerInterface* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<IChaosNotifyHandlerInterface>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
 	}
 };
 

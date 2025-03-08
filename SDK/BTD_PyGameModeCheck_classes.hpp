@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "PyBTNodeBase_classes.hpp"
 #include "BTD_PyGameModeCheck_structs.hpp"
+#include "PyBTNodeBase_classes.hpp"
 
 
 namespace SDK

@@ -12,9 +12,9 @@
 
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
-#include "MediaAssets_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
+#include "MediaAssets_structs.hpp"
 #include "AudioMixer_classes.hpp"
 
 
@@ -32,8 +32,8 @@ public:
 	TMulticastInlineDelegate<void()>              OnEndReached;                                      // 0x0058(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	TMulticastInlineDelegate<void()>              OnSubMediaEndReached;                              // 0x0068(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	TMulticastInlineDelegate<void()>              OnMediaClosed;                                     // 0x0078(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(const class FString& OpenedUrl)> OnMediaOpened;                                     // 0x0088(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(const class FString& FailedUrl)> OnMediaOpenFailed;                                 // 0x0098(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const class FString& OpenedUrl)> OnMediaOpened;                    // 0x0088(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const class FString& FailedUrl)> OnMediaOpenFailed;                // 0x0098(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	TMulticastInlineDelegate<void()>              OnPlaybackResumed;                                 // 0x00A8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	TMulticastInlineDelegate<void()>              OnPlaybackSuspended;                               // 0x00B8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	TMulticastInlineDelegate<void()>              OnSeekCompleted;                                   // 0x00C8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
@@ -154,8 +154,8 @@ public:
 };
 
 // Class MediaAssets.MediaSourceRendererInterface
-// 0x0000 (0x0030 - 0x0030)
-class IMediaSourceRendererInterface final : public IInterface
+// 0x0000 (0x0000 - 0x0000)
+class IMediaSourceRendererInterface final
 {
 public:
 	static class UClass* StaticClass()
@@ -165,6 +165,15 @@ public:
 	static class IMediaSourceRendererInterface* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<IMediaSourceRendererInterface>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
 	}
 };
 
@@ -321,8 +330,8 @@ public:
 };
 
 // Class MediaAssets.MediaPlayerProxyInterface
-// 0x0000 (0x0030 - 0x0030)
-class IMediaPlayerProxyInterface final : public IInterface
+// 0x0000 (0x0000 - 0x0000)
+class IMediaPlayerProxyInterface final
 {
 public:
 	static class UClass* StaticClass()
@@ -332,6 +341,15 @@ public:
 	static class IMediaPlayerProxyInterface* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<IMediaPlayerProxyInterface>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
 	}
 };
 

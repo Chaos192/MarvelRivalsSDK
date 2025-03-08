@@ -49,7 +49,7 @@ public:
 struct FMovieSceneGeometryCacheSectionTemplate final : public FMovieSceneEvalTemplate
 {
 public:
-	struct FMovieSceneGeometryCacheSectionTemplateParameters Params;                                            // 0x0020(0x0058)(NativeAccessSpecifierPublic)
+	struct FMovieSceneGeometryCacheSectionTemplateParameters Params;                                 // 0x0020(0x0058)(NativeAccessSpecifierPublic)
 };
 
 }

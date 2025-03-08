@@ -58,12 +58,11 @@ public:
 };
 
 // Class Hero_1025.Projectile_10251101
-// 0x0010 (0x3060 - 0x3050)
+// 0x0000 (0x3110 - 0x3110)
 class AProjectile_10251101 : public AMarvelAbilityTargetActor_Projectile
 {
 public:
-	class UConfig_102511*                         OriginAbilityConfig;                               // 0x3050(0x0008)(BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_3058[0x8];                                     // 0x3058(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class UConfig_102511*                         OriginAbilityConfig;                               // 0x3108(0x0008)(BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	bool IsValidTargetToSpawnTreatScope(const struct FHitResult& InHitResult);
@@ -129,13 +128,13 @@ public:
 };
 
 // Class Hero_1025.Ability_102581
-// 0x0058 (0x25D8 - 0x2580)
+// 0x0058 (0x25E0 - 0x2588)
 class UAbility_102581 : public UMarvelGameplayAbility
 {
 public:
-	TMulticastInlineDelegate<void(EAdsorbState AdsorbState)> AdsorbStateUpdatedDispatcher;                      // 0x2580(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	struct FAdsorbResult                          CurrentAdsorbResult;                               // 0x2590(0x0040)(BlueprintVisible, Net, RepNotify, ContainsInstancedReference, NativeAccessSpecifierPublic)
-	class UMarvelAbilityTask_Adsorb*              AdsorbTask;                                        // 0x25D0(0x0008)(BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const EAdsorbState AdsorbState)> AdsorbStateUpdatedDispatcher;     // 0x2588(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	struct FAdsorbResult                          CurrentAdsorbResult;                               // 0x2598(0x0040)(BlueprintVisible, Net, RepNotify, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	class UMarvelAbilityTask_Adsorb*              AdsorbTask;                                        // 0x25D8(0x0008)(BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void OnReleaseKeyInput();
@@ -208,7 +207,7 @@ public:
 class AScope_10259101 final : public AMarvelAbilityTargetActor_Scope
 {
 public:
-	TMap<class AActor*, class UPrimitiveComponent*> CachedTracedActors;                                // 0x1700(0x0050)(BlueprintVisible, ExportObject, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	TMap<class AActor*, class UPrimitiveComponent*> CachedTracedActors;                              // 0x1700(0x0050)(BlueprintVisible, ExportObject, ContainsInstancedReference, NativeAccessSpecifierPublic)
 	TMap<class AActor*, float>                    CachedActorsLeftTime;                              // 0x1750(0x0050)(BlueprintVisible, NativeAccessSpecifierPublic)
 	int32                                         BuffIDToRemoveWhenLeaveScope;                      // 0x17A0(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         MaxSpanToTemporarilyLeave;                         // 0x17A4(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -300,13 +299,13 @@ public:
 };
 
 // Class Hero_1025.CloakAndDaggerCharacter
-// 0x0010 (0x1820 - 0x1810)
+// 0x0010 (0x1880 - 0x1870)
 class ACloakAndDaggerCharacter : public AMarvelBaseCharacter
 {
 public:
-	class UDaggerMoveLogicBaseComponent*          DaggerMoveLogic;                                   // 0x1810(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	EDaggerCharacterType                          CurrentCharacterType;                              // 0x1818(0x0001)(Net, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_1819[0x7];                                     // 0x1819(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class UDaggerMoveLogicBaseComponent*          DaggerMoveLogic;                                   // 0x1868(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	EDaggerCharacterType                          CurrentCharacterType;                              // 0x1870(0x0001)(Net, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_1871[0xF];                                     // 0x1871(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	EDaggerCharacterType GetCurrentCharacterType();
@@ -324,14 +323,14 @@ public:
 };
 
 // Class Hero_1025.NiagaraComponent_Cloak
-// 0x0050 (0x0BC0 - 0x0B70)
+// 0x0050 (0x0C50 - 0x0C00)
 class UNiagaraComponent_Cloak final : public UNiagaraComponent
 {
 public:
-	class FString                                 OpacityVariableName;                               // 0x0B70(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UCurveFloat*                            AlphaCurve;                                        // 0x0B80(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UMarvelTimelineComponent*               TimelineComponent;                                 // 0x0B88(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_B90[0x30];                                     // 0x0B90(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class FString                                 OpacityVariableName;                               // 0x0C00(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UCurveFloat*                            AlphaCurve;                                        // 0x0C10(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UMarvelTimelineComponent*               TimelineComponent;                                 // 0x0C18(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C20[0x30];                                     // 0x0C20(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void FadeInFromStart();
@@ -383,7 +382,7 @@ public:
 };
 
 // Class Hero_1025.CloakAudioComponent
-// 0x0000 (0x0C90 - 0x0C90)
+// 0x0000 (0x0C80 - 0x0C80)
 class UCloakAudioComponent final : public UCharacterAudioComponent
 {
 public:
@@ -413,7 +412,7 @@ public:
 };
 
 // Class Hero_1025.DaggerMovementComponent
-// 0x0000 (0x1B60 - 0x1B60)
+// 0x0000 (0x1BA0 - 0x1BA0)
 class UDaggerMovementComponent final : public UMarvelCharacterMovementComponent
 {
 public:

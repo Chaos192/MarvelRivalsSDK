@@ -23,6 +23,7 @@ class UDeviceFunctionLibrary final : public UBlueprintFunctionLibrary
 public:
 	static class FString GetCpuInfo();
 	static class FString GetGpuInfo();
+	static TArray<class FString> GetDisplayDevicesInfo();
 	static class FString QueryCpuVendor(const class FString& cpu_info);
 	static class FString QueryGpuVendor(const class FString& gpu_info);
 	static float GetBenchmarkCpuGrade();

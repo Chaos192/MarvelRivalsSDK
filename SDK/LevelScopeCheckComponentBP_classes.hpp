@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass LevelScopeCheckComponentBP.LevelScopeCheckComponentBP_C
-// 0x0000 (0x0D90 - 0x0D90)
+// 0x0000 (0x0E20 - 0x0E20)
 class ULevelScopeCheckComponentBP_C final : public ULevelScopeCheckComponent
 {
 public:

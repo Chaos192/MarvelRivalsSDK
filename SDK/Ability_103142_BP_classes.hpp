@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Ability_103142_BP.Ability_103142_BP_C
-// 0x0000 (0x2588 - 0x2588)
+// 0x0000 (0x2590 - 0x2590)
 class UAbility_103142_BP_C final : public UAbility_108_WithDelayEndAbility
 {
 public:

@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass WC_DyingBP.WC_DyingBP_C
-// 0x0000 (0x0B10 - 0x0B10)
+// 0x0000 (0x0BA0 - 0x0BA0)
 class UWC_DyingBP_C final : public UMarvelWidgetComponent
 {
 public:

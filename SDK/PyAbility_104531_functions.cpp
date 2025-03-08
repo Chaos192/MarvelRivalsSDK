@@ -77,7 +77,7 @@ void UPyAbility_104531::K2_ActivateAbility()
 // PythonFunction PyAbility_104531.PyAbility_104531.NativeOnMontageEvent
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_104531::NativeOnMontageEvent(const class FString& Tag)
 {

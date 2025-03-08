@@ -17,13 +17,13 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Summoned_10423101_BP.Summoned_10423101_BP_C
-// 0x0020 (0x08B0 - 0x0890)
+// 0x0020 (0x08E0 - 0x08C0)
 class ASummoned_10423101_BP_C final : public AMarvelSummonerBase
 {
 public:
-	class UStaticMeshComponent*                   BlockProjectileCollision1;                         // 0x0890(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UStaticMeshComponent*                   BlockProjectileCollision;                          // 0x0898(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UStaticMeshComponent*                   ShiledCollision;                                   // 0x08A0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UStaticMeshComponent*                   BlockProjectileCollision1;                         // 0x08C0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UStaticMeshComponent*                   BlockProjectileCollision;                          // 0x08C8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UStaticMeshComponent*                   ShiledCollision;                                   // 0x08D0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

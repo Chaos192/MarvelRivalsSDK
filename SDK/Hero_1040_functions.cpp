@@ -45,7 +45,7 @@ bool UAbility_104001_ChangeSculpt::CanActivateNotOverride()
 // Function Hero_1040.Ability_104001_ChangeSculpt.SetEnergyConfigByState
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// EMisterFantasticState                   State                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const EMisterFantasticState             State                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UAbility_104001_ChangeSculpt::SetEnergyConfigByState(const EMisterFantasticState State)
 {
@@ -120,7 +120,7 @@ bool UAbility_104001::GetEnableStateSwitch()
 // Function Hero_1040.Ability_104001.InitEnergyConfigByState
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// EMisterFantasticState                   State                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const EMisterFantasticState             State                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UAbility_104001::InitEnergyConfigByState(const EMisterFantasticState State)
@@ -206,7 +206,7 @@ bool UAbility_104001::IsNormalRange(float SkillEnergy)
 // Parameters:
 // class AActor*                           InSourceAvatar                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           InTargetAvatar                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FAttributeModifierHandle         ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FAttributeModifierHandle&  ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UAbility_104001::OnDeath(class AActor* InSourceAvatar, class AActor* InTargetAvatar, const struct FAttributeModifierHandle& ModifierParameterHandle)
 {
@@ -283,7 +283,7 @@ void UAbility_104001::SetWaitingToActivateAbility(int32 AbilityID)
 // Function Hero_1040.EffectiveComponent_10401101.K2_OnPreApplyContainer
 // (Native, Public, HasOutParams)
 // Parameters:
-// TArray<struct FHitResult>               HitResults                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const TArray<struct FHitResult>&        HitResults                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 // TArray<struct FHitResult>               ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 TArray<struct FHitResult> UEffectiveComponent_10401101::K2_OnPreApplyContainer(const TArray<struct FHitResult>& HitResults)
@@ -308,11 +308,119 @@ TArray<struct FHitResult> UEffectiveComponent_10401101::K2_OnPreApplyContainer(c
 }
 
 
+// Function Hero_1040.Ability_104032.GetCacheTLIndex
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// uint8                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+uint8 UAbility_104032::GetCacheTLIndex()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Ability_104032", "GetCacheTLIndex");
+
+	Params::Ability_104032_GetCacheTLIndex Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Hero_1040.Ability_104032.HasLeftArmMissile
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UAbility_104032::HasLeftArmMissile()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Ability_104032", "HasLeftArmMissile");
+
+	Params::Ability_104032_HasLeftArmMissile Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Hero_1040.Ability_104032.OnMyProjectileHit
+// (Final, Native, Public, HasOutParams)
+// Parameters:
+// const struct FHitResult&                Hit                                                    (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+
+void UAbility_104032::OnMyProjectileHit(const struct FHitResult& Hit)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Ability_104032", "OnMyProjectileHit");
+
+	Params::Ability_104032_OnMyProjectileHit Parms{};
+
+	Parms.Hit = std::move(Hit);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Hero_1040.Ability_104032.RestoreRightHandMontage
+// (Final, Native, Public, BlueprintCallable)
+
+void UAbility_104032::RestoreRightHandMontage()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Ability_104032", "RestoreRightHandMontage");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Hero_1040.Summoner_10405101.K2_OnBeginAgentTask
+// (Event, Public, BlueprintEvent)
+
+void ASummoner_10405101::K2_OnBeginAgentTask()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Summoner_10405101", "K2_OnBeginAgentTask");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function Hero_1040.Ability_104011.OnAbilityHit
 // (Native, Event, Protected, HasOutParams, BlueprintEvent)
 // Parameters:
 // class UGameplayAbility*                 Ability                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<struct FHitResult>               HitResults                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const TArray<struct FHitResult>&        HitResults                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 void UAbility_104011::OnAbilityHit(class UGameplayAbility* Ability, const TArray<struct FHitResult>& HitResults)
 {
@@ -357,8 +465,8 @@ void UAbility_104031::Client_PrepareEndAbility()
 // Function Hero_1040.Ability_104031.OnCharacterTranslatedByPortal
 // (Final, Native, Public, HasDefaults)
 // Parameters:
-// struct FVector                          LastPos                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          NewPos                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   LastPos                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   NewPos                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UAbility_104031::OnCharacterTranslatedByPortal(const struct FVector& LastPos, const struct FVector& NewPos)
 {
@@ -384,7 +492,7 @@ void UAbility_104031::OnCharacterTranslatedByPortal(const struct FVector& LastPo
 // Function Hero_1040.Ability_104031.OnEntangleBuffRemoved
 // (Final, Native, Protected, HasOutParams)
 // Parameters:
-// struct FGameplayEffectRemovalInfo       GameplayEffectRemovalInfo                              (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FGameplayEffectRemovalInfo&GameplayEffectRemovalInfo                              (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UAbility_104031::OnEntangleBuffRemoved(const struct FGameplayEffectRemovalInfo& GameplayEffectRemovalInfo)
 {
@@ -409,7 +517,7 @@ void UAbility_104031::OnEntangleBuffRemoved(const struct FGameplayEffectRemovalI
 // Function Hero_1040.Ability_104031.OnMyProjectileHit
 // (Final, Native, Public, HasOutParams)
 // Parameters:
-// struct FHitResult                       Hit                                                    (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FHitResult&                Hit                                                    (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 void UAbility_104031::OnMyProjectileHit(const struct FHitResult& Hit)
 {
@@ -526,210 +634,6 @@ void UAbility_104031::UpdateMovementTickPreRequisite()
 }
 
 
-// Function Hero_1040.MisterFantasticCharacter.AddExpandStateBuff
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// EMisterFantasticState                   CurrentState                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AMisterFantasticCharacter::AddExpandStateBuff(EMisterFantasticState CurrentState)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MisterFantasticCharacter", "AddExpandStateBuff");
-
-	Params::MisterFantasticCharacter_AddExpandStateBuff Parms{};
-
-	Parms.CurrentState = CurrentState;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Hero_1040.MisterFantasticCharacter.AddNormalStateBuff
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// EMisterFantasticState                   CurrentState                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AMisterFantasticCharacter::AddNormalStateBuff(EMisterFantasticState CurrentState)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MisterFantasticCharacter", "AddNormalStateBuff");
-
-	Params::MisterFantasticCharacter_AddNormalStateBuff Parms{};
-
-	Parms.CurrentState = CurrentState;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Hero_1040.MisterFantasticCharacter.AddSkillEnergy
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class UGameplayAbility*                 InstigateAbility                                       (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AMisterFantasticCharacter::AddSkillEnergy(class UGameplayAbility* InstigateAbility, float Value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MisterFantasticCharacter", "AddSkillEnergy");
-
-	Params::MisterFantasticCharacter_AddSkillEnergy Parms{};
-
-	Parms.InstigateAbility = InstigateAbility;
-	Parms.Value = Value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Hero_1040.MisterFantasticCharacter.GetCurrentState
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// EMisterFantasticState                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-EMisterFantasticState AMisterFantasticCharacter::GetCurrentState()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MisterFantasticCharacter", "GetCurrentState");
-
-	Params::MisterFantasticCharacter_GetCurrentState Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Hero_1040.MisterFantasticCharacter.K2_ClearScheduleTimer
-// (Event, Public, BlueprintEvent)
-
-void AMisterFantasticCharacter::K2_ClearScheduleTimer()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MisterFantasticCharacter", "K2_ClearScheduleTimer");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function Hero_1040.MisterFantasticCharacter.K2_ResetSpringArm
-// (Final, Native, Public, BlueprintCallable)
-
-void AMisterFantasticCharacter::K2_ResetSpringArm()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MisterFantasticCharacter", "K2_ResetSpringArm");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Hero_1040.MisterFantasticCharacter.OnAbilityActivated
-// (Final, Native, Public)
-// Parameters:
-// class UGameplayAbility*                 InAbility                                              (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AMisterFantasticCharacter::OnAbilityActivated(class UGameplayAbility* InAbility)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MisterFantasticCharacter", "OnAbilityActivated");
-
-	Params::MisterFantasticCharacter_OnAbilityActivated Parms{};
-
-	Parms.InAbility = InAbility;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Hero_1040.MisterFantasticCharacter.ResetSkillEnergyReduceTiming
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   Timing                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AMisterFantasticCharacter::ResetSkillEnergyReduceTiming(const float Timing)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MisterFantasticCharacter", "ResetSkillEnergyReduceTiming");
-
-	Params::MisterFantasticCharacter_ResetSkillEnergyReduceTiming Parms{};
-
-	Parms.Timing = Timing;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Hero_1040.MisterFantasticCharacter.TotalAssistantKillCheck
-// (Final, Native, Public)
-
-void AMisterFantasticCharacter::TotalAssistantKillCheck()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MisterFantasticCharacter", "TotalAssistantKillCheck");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // Function Hero_1040.Cue_Ability_Loop_10403102.GetOwnerAbility
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -818,219 +722,6 @@ void ACue_Ability_Loop_10403102::OnTargetChanged()
 }
 
 
-// Function Hero_1040.Ability_104032.GetCacheTLIndex
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// uint8                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-uint8 UAbility_104032::GetCacheTLIndex()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Ability_104032", "GetCacheTLIndex");
-
-	Params::Ability_104032_GetCacheTLIndex Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Hero_1040.Ability_104032.HasLeftArmMissile
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UAbility_104032::HasLeftArmMissile()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Ability_104032", "HasLeftArmMissile");
-
-	Params::Ability_104032_HasLeftArmMissile Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Hero_1040.Ability_104032.OnMyProjectileHit
-// (Final, Native, Public, HasOutParams)
-// Parameters:
-// struct FHitResult                       Hit                                                    (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-
-void UAbility_104032::OnMyProjectileHit(const struct FHitResult& Hit)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Ability_104032", "OnMyProjectileHit");
-
-	Params::Ability_104032_OnMyProjectileHit Parms{};
-
-	Parms.Hit = std::move(Hit);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Hero_1040.Ability_104032.RestoreRightHandMontage
-// (Final, Native, Public, BlueprintCallable)
-
-void UAbility_104032::RestoreRightHandMontage()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Ability_104032", "RestoreRightHandMontage");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Hero_1040.MisterFantasticChildActor.OnCharacterWillDeath
-// (Final, Native, Public, HasOutParams)
-// Parameters:
-// class AActor*                           DamageCauser                                           (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class AActor*                           TargetActor                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FAttributeModifierHandle         ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AMisterFantasticChildActor::OnCharacterWillDeath(class AActor* DamageCauser, class AActor* TargetActor, const struct FAttributeModifierHandle& ModifierParameterHandle)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MisterFantasticChildActor", "OnCharacterWillDeath");
-
-	Params::MisterFantasticChildActor_OnCharacterWillDeath Parms{};
-
-	Parms.DamageCauser = DamageCauser;
-	Parms.TargetActor = TargetActor;
-	Parms.ModifierParameterHandle = std::move(ModifierParameterHandle);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Hero_1040.MisterFantasticChildActor.OnTagUpdated
-// (Final, Native, Public, HasOutParams)
-// Parameters:
-// struct FGameplayTag                     Tag                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bInExist                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AMisterFantasticChildActor::OnTagUpdated(const struct FGameplayTag& Tag, bool bInExist)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MisterFantasticChildActor", "OnTagUpdated");
-
-	Params::MisterFantasticChildActor_OnTagUpdated Parms{};
-
-	Parms.Tag = std::move(Tag);
-	Parms.bInExist = bInExist;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Hero_1040.MisterFantasticChildActor.ShouldEnableURO
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool AMisterFantasticChildActor::ShouldEnableURO()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MisterFantasticChildActor", "ShouldEnableURO");
-
-	Params::MisterFantasticChildActor_ShouldEnableURO Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Hero_1040.MisterFantasticChildActor.UpdateHitShapeCollision
-// (Final, Native, Public, BlueprintCallable)
-
-void AMisterFantasticChildActor::UpdateHitShapeCollision()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MisterFantasticChildActor", "UpdateHitShapeCollision");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Hero_1040.MisterFantasticChildActor.UpdateUROState
-// (Final, Native, Public, BlueprintCallable)
-
-void AMisterFantasticChildActor::UpdateUROState()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MisterFantasticChildActor", "UpdateUROState");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // Function Hero_1040.Ability_104041.JumpToAttackSection
 // (Final, Native, Public)
 
@@ -1055,7 +746,7 @@ void UAbility_104041::JumpToAttackSection()
 // Parameters:
 // class AActor*                           DamageCauser                                           (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           TargetActor                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FAttributeModifierHandle         ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FAttributeModifierHandle&  ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UAbility_104041::OnCharacterDeath(class AActor* DamageCauser, class AActor* TargetActor, const struct FAttributeModifierHandle& ModifierParameterHandle)
 {
@@ -1107,7 +798,7 @@ void UAbility_104041::OnDashFinish(EDashStopReason Reason)
 // Function Hero_1040.Ability_104041.OnRep_GrabSegment
 // (Final, Native, Public)
 // Parameters:
-// struct FPortalSegments                  OldSegment                                             (Parm, NativeAccessSpecifierPublic)
+// const struct FPortalSegments&           OldSegment                                             (Parm, NativeAccessSpecifierPublic)
 
 void UAbility_104041::OnRep_GrabSegment(const struct FPortalSegments& OldSegment)
 {
@@ -1149,7 +840,7 @@ void UAbility_104041::OnTargetDataTimedOut()
 
 
 // Function Hero_1040.Ability_104041.OnTargetTranslatedByPortal
-// (Final, Native, Public)
+// (Native, Public)
 // Parameters:
 // class AMarvelBaseCharacter*             Character                                              (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class APortalViewActor*                 Portal                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -1203,7 +894,7 @@ void UAbility_104041::PlayTimelineBySculpt(int32 SculptID)
 // Function Hero_1040.Ability_104041.RotationToTarget
 // (Final, Native, Public, HasDefaults)
 // Parameters:
-// struct FVector                          InTargetLocation                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   InTargetLocation                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UAbility_104041::RotationToTarget(const struct FVector& InTargetLocation)
 {
@@ -1228,7 +919,7 @@ void UAbility_104041::RotationToTarget(const struct FVector& InTargetLocation)
 // Function Hero_1040.Ability_104041.SetSelectTarget
 // (Final, Native, Public, HasOutParams)
 // Parameters:
-// struct FGameplayAbilityTargetDataHandle Handle                                                 (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FGameplayAbilityTargetDataHandle&Handle                                                 (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UAbility_104041::SetSelectTarget(const struct FGameplayAbilityTargetDataHandle& Handle)
 {
@@ -1275,26 +966,12 @@ void UAbility_104041::UpdateSelectResult(bool bMarkDirty)
 }
 
 
-// Function Hero_1040.Summoner_10405101.K2_OnBeginAgentTask
-// (Event, Public, BlueprintEvent)
-
-void ASummoner_10405101::K2_OnBeginAgentTask()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Summoner_10405101", "K2_OnBeginAgentTask");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function Hero_1040.MarvelSummonedComp_10405101.OnWallSummonerDeath
 // (Native, Public, HasOutParams)
 // Parameters:
 // class AActor*                           InSourceAvatar                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           InTargetAvatar                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FAttributeModifierHandle         ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FAttributeModifierHandle&  ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UMarvelSummonedComp_10405101::OnWallSummonerDeath(class AActor* InSourceAvatar, class AActor* InTargetAvatar, const struct FAttributeModifierHandle& ModifierParameterHandle)
 {
@@ -1607,7 +1284,7 @@ struct FVector UMisterFantasticAnimInstance::GetTracedLocation()
 // Function Hero_1040.MisterFantasticAnimInstance.On104032LeftHandHit
 // (Final, Native, Public, HasOutParams, HasDefaults)
 // Parameters:
-// struct FVector                          InHitLocation                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   InHitLocation                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UMisterFantasticAnimInstance::On104032LeftHandHit(const struct FVector& InHitLocation)
 {
@@ -1638,6 +1315,329 @@ void UMisterFantasticAnimInstance::Trace104011Arm()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("MisterFantasticAnimInstance", "Trace104011Arm");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Hero_1040.MisterFantasticCharacter.AddExpandStateBuff
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// EMisterFantasticState                   CurrentState                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMisterFantasticCharacter::AddExpandStateBuff(EMisterFantasticState CurrentState)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MisterFantasticCharacter", "AddExpandStateBuff");
+
+	Params::MisterFantasticCharacter_AddExpandStateBuff Parms{};
+
+	Parms.CurrentState = CurrentState;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Hero_1040.MisterFantasticCharacter.AddNormalStateBuff
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// EMisterFantasticState                   CurrentState                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMisterFantasticCharacter::AddNormalStateBuff(EMisterFantasticState CurrentState)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MisterFantasticCharacter", "AddNormalStateBuff");
+
+	Params::MisterFantasticCharacter_AddNormalStateBuff Parms{};
+
+	Parms.CurrentState = CurrentState;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Hero_1040.MisterFantasticCharacter.AddSkillEnergy
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UGameplayAbility*                 InstigateAbility                                       (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMisterFantasticCharacter::AddSkillEnergy(class UGameplayAbility* InstigateAbility, float Value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MisterFantasticCharacter", "AddSkillEnergy");
+
+	Params::MisterFantasticCharacter_AddSkillEnergy Parms{};
+
+	Parms.InstigateAbility = InstigateAbility;
+	Parms.Value = Value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Hero_1040.MisterFantasticCharacter.GetCurrentState
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// EMisterFantasticState                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+EMisterFantasticState AMisterFantasticCharacter::GetCurrentState()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MisterFantasticCharacter", "GetCurrentState");
+
+	Params::MisterFantasticCharacter_GetCurrentState Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Hero_1040.MisterFantasticCharacter.K2_ClearScheduleTimer
+// (Event, Public, BlueprintEvent)
+
+void AMisterFantasticCharacter::K2_ClearScheduleTimer()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MisterFantasticCharacter", "K2_ClearScheduleTimer");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function Hero_1040.MisterFantasticCharacter.K2_ResetSpringArm
+// (Final, Native, Public, BlueprintCallable)
+
+void AMisterFantasticCharacter::K2_ResetSpringArm()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MisterFantasticCharacter", "K2_ResetSpringArm");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Hero_1040.MisterFantasticCharacter.OnAbilityActivated
+// (Final, Native, Public)
+// Parameters:
+// class UGameplayAbility*                 InAbility                                              (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMisterFantasticCharacter::OnAbilityActivated(class UGameplayAbility* InAbility)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MisterFantasticCharacter", "OnAbilityActivated");
+
+	Params::MisterFantasticCharacter_OnAbilityActivated Parms{};
+
+	Parms.InAbility = InAbility;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Hero_1040.MisterFantasticCharacter.ResetSkillEnergyReduceTiming
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// const float                             Timing                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMisterFantasticCharacter::ResetSkillEnergyReduceTiming(const float Timing)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MisterFantasticCharacter", "ResetSkillEnergyReduceTiming");
+
+	Params::MisterFantasticCharacter_ResetSkillEnergyReduceTiming Parms{};
+
+	Parms.Timing = Timing;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Hero_1040.MisterFantasticCharacter.TotalAssistantKillCheck
+// (Final, Native, Public)
+
+void AMisterFantasticCharacter::TotalAssistantKillCheck()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MisterFantasticCharacter", "TotalAssistantKillCheck");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Hero_1040.MisterFantasticChildActor.OnCharacterWillDeath
+// (Final, Native, Public, HasOutParams)
+// Parameters:
+// class AActor*                           DamageCauser                                           (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           TargetActor                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FAttributeModifierHandle&  ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMisterFantasticChildActor::OnCharacterWillDeath(class AActor* DamageCauser, class AActor* TargetActor, const struct FAttributeModifierHandle& ModifierParameterHandle)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MisterFantasticChildActor", "OnCharacterWillDeath");
+
+	Params::MisterFantasticChildActor_OnCharacterWillDeath Parms{};
+
+	Parms.DamageCauser = DamageCauser;
+	Parms.TargetActor = TargetActor;
+	Parms.ModifierParameterHandle = std::move(ModifierParameterHandle);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Hero_1040.MisterFantasticChildActor.OnTagUpdated
+// (Final, Native, Public, HasOutParams)
+// Parameters:
+// const struct FGameplayTag&              Tag                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bInExist                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMisterFantasticChildActor::OnTagUpdated(const struct FGameplayTag& Tag, bool bInExist)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MisterFantasticChildActor", "OnTagUpdated");
+
+	Params::MisterFantasticChildActor_OnTagUpdated Parms{};
+
+	Parms.Tag = std::move(Tag);
+	Parms.bInExist = bInExist;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Hero_1040.MisterFantasticChildActor.ShouldEnableURO
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool AMisterFantasticChildActor::ShouldEnableURO()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MisterFantasticChildActor", "ShouldEnableURO");
+
+	Params::MisterFantasticChildActor_ShouldEnableURO Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Hero_1040.MisterFantasticChildActor.UpdateHitShapeCollision
+// (Final, Native, Public, BlueprintCallable)
+
+void AMisterFantasticChildActor::UpdateHitShapeCollision()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MisterFantasticChildActor", "UpdateHitShapeCollision");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Hero_1040.MisterFantasticChildActor.UpdateUROState
+// (Final, Native, Public, BlueprintCallable)
+
+void AMisterFantasticChildActor::UpdateUROState()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MisterFantasticChildActor", "UpdateUROState");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

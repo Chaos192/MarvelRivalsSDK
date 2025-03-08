@@ -169,7 +169,7 @@ public:
 class UAnimationSharingSetup final : public UObject
 {
 public:
-	TArray<struct FPerSkeletonAnimationSharingSetup> SkeletonSetups;                                    // 0x0030(0x0010)(Edit, ZeroConstructor, Config, NativeAccessSpecifierPublic)
+	TArray<struct FPerSkeletonAnimationSharingSetup> SkeletonSetups;                                 // 0x0030(0x0010)(Edit, ZeroConstructor, Config, NativeAccessSpecifierPublic)
 	struct FAnimationSharingScalability           ScalabilitySettings;                               // 0x0040(0x0010)(Edit, Config, NoDestructor, NativeAccessSpecifierPublic)
 
 public:

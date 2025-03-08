@@ -353,6 +353,14 @@ public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
+// Function Hero_1049.Ability_104971.OnPredictingClientGrabTargetPredictFailed
+// 0x0008 (0x0008 - 0x0000)
+struct Ability_104971_OnPredictingClientGrabTargetPredictFailed final
+{
+public:
+	class ACharacter*                             InCharacter;                                       // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
 // Function Hero_1049.Ability_104971.OnServerReceiveGrabTarget
 // 0x0168 (0x0168 - 0x0000)
 struct Ability_104971_OnServerReceiveGrabTarget final

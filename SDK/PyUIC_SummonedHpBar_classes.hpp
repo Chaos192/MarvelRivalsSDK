@@ -12,9 +12,9 @@
 
 #include "Marvel_structs.hpp"
 #include "Marvel_classes.hpp"
+#include "DeclarativeUnreal_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
-#include "DeclarativeUnreal_structs.hpp"
 
 
 namespace SDK

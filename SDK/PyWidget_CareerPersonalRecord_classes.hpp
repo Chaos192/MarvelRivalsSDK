@@ -21,8 +21,9 @@ namespace SDK
 {
 
 // PythonClass PyWidget_CareerPersonalRecord.PyWidget_CareerPersonalRecord_Item
-// 0x0530 (0x0C80 - 0x0750)
-class UPyWidget_CareerPersonalRecord_Item : public UPyWidget_Button
+// 0x0550 (0x0CA0 - 0x0750)
+#pragma pack(push, 0x1)
+class alignas(0x10) UPyWidget_CareerPersonalRecord_Item : public UPyWidget_Button
 {
 public:
 	struct FSlateBrush                            TextureWin;                                        // 0x0750(0x00D0)(Edit, BlueprintVisible, DisableEditOnInstance, NativeAccessSpecifierPublic)
@@ -36,6 +37,10 @@ public:
 	struct FSlateColor                            Color_Score_Non;                                   // 0x0C40(0x0014)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FSlateColor                            Color_Score_Add;                                   // 0x0C54(0x0014)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FSlateColor                            Color_Score_Sub;                                   // 0x0C68(0x0014)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C7C[0x4];                                      // 0x0C7C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UTexture2D*                             TextureCommon_K;                                   // 0x0C80(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UTexture2D*                             TextureCommon_D;                                   // 0x0C88(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UTexture2D*                             TextureCommon_A;                                   // 0x0C90(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void OnInitialized();
@@ -55,6 +60,7 @@ public:
 		return GetDefaultObjImpl<UPyWidget_CareerPersonalRecord_Item>();
 	}
 };
+#pragma pack(pop)
 
 // PythonClass PyWidget_CareerPersonalRecord.PyWidget_CareerPersonalRecord
 // 0x0330 (0x0920 - 0x05F0)

@@ -21,11 +21,11 @@ namespace SDK
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UObject*                          Object                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class FString                           SettingKey                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-// TMap<class FString, class FString>      Params_0                                               (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// TMap<int32, class FText>                OPTIONS                                                (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// const class FString&                    SettingKey                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const TMap<class FString, class FString>&Params_0                                               (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// const TMap<int32, class FText>&         OPTIONS                                                (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 // float                                   Value                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// TMap<class FString, int32>              CurrentTags                                            (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// const TMap<class FString, int32>&       CurrentTags                                            (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 // TMap<class FString, int32>              ReturnValue                                            (Parm, OutParm, ReturnParm)
 
 TMap<class FString, int32> UPC_UISettingEntryBestSettingHandlerBP_C::BP_OnBtnClicked(class UObject* Object, const class FString& SettingKey, const TMap<class FString, class FString>& Params_0, const TMap<int32, class FText>& OPTIONS, float Value, const TMap<class FString, int32>& CurrentTags)

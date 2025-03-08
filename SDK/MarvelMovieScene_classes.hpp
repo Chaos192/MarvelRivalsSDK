@@ -10,11 +10,11 @@
 
 #include "Basic.hpp"
 
-#include "Niagara_structs.hpp"
 #include "MarvelMovieScene_structs.hpp"
 #include "MovieScene_structs.hpp"
 #include "MovieScene_classes.hpp"
 #include "MovieSceneTracks_structs.hpp"
+#include "Niagara_structs.hpp"
 #include "Engine_classes.hpp"
 
 
@@ -39,6 +39,24 @@ public:
 	}
 };
 
+// Class MarvelMovieScene.MovieSceneMarvelNiagaraShowModeSection
+// 0x0108 (0x0200 - 0x00F8)
+class UMovieSceneMarvelNiagaraShowModeSection final : public UMovieSceneSection
+{
+public:
+	struct FMovieSceneByteChannel                 NiagaraShowModeKeys;                               // 0x00F8(0x0108)(NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"MovieSceneMarvelNiagaraShowModeSection">();
+	}
+	static class UMovieSceneMarvelNiagaraShowModeSection* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UMovieSceneMarvelNiagaraShowModeSection>();
+	}
+};
+
 // Class MarvelMovieScene.MovieSceneMarvelBlastDynamicFragmentsTrack
 // 0x0020 (0x00C0 - 0x00A0)
 class UMovieSceneMarvelBlastDynamicFragmentsTrack final : public UMovieSceneNameableTrack
@@ -55,6 +73,27 @@ public:
 	static class UMovieSceneMarvelBlastDynamicFragmentsTrack* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UMovieSceneMarvelBlastDynamicFragmentsTrack>();
+	}
+};
+
+// Class MarvelMovieScene.MovieSceneMarvelWeightedBlendableTrack
+// 0x0020 (0x00C0 - 0x00A0)
+class UMovieSceneMarvelWeightedBlendableTrack final : public UMovieSceneNameableTrack
+{
+public:
+	uint8                                         Pad_A0[0x8];                                       // 0x00A0(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         ArrayIndex;                                        // 0x00A8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_AC[0x4];                                       // 0x00AC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class UMovieSceneSection*>             MarvelWeightedBlendableSections;                   // 0x00B0(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPrivate)
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"MovieSceneMarvelWeightedBlendableTrack">();
+	}
+	static class UMovieSceneMarvelWeightedBlendableTrack* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UMovieSceneMarvelWeightedBlendableTrack>();
 	}
 };
 
@@ -75,6 +114,24 @@ public:
 	static class UMovieSceneMarvelCableActorSection* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UMovieSceneMarvelCableActorSection>();
+	}
+};
+
+// Class MarvelMovieScene.MovieSceneMarvelNiagaraTickScaleSection
+// 0x0110 (0x0208 - 0x00F8)
+class UMovieSceneMarvelNiagaraTickScaleSection final : public UMovieSceneSection
+{
+public:
+	struct FMovieSceneFloatChannel                NiagaraTickScaleInstances;                         // 0x00F8(0x0110)(Edit, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"MovieSceneMarvelNiagaraTickScaleSection">();
+	}
+	static class UMovieSceneMarvelNiagaraTickScaleSection* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UMovieSceneMarvelNiagaraTickScaleSection>();
 	}
 };
 
@@ -131,6 +188,21 @@ public:
 	static class UMovieSceneMarvelChaosEffectTrack* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UMovieSceneMarvelChaosEffectTrack>();
+	}
+};
+
+// Class MarvelMovieScene.MovieSceneMarvelNiagaraSplineComponentInvalidatorSystem
+// 0x0000 (0x0048 - 0x0048)
+class UMovieSceneMarvelNiagaraSplineComponentInvalidatorSystem final : public UMovieSceneEntityInstantiatorSystem
+{
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"MovieSceneMarvelNiagaraSplineComponentInvalidatorSystem">();
+	}
+	static class UMovieSceneMarvelNiagaraSplineComponentInvalidatorSystem* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UMovieSceneMarvelNiagaraSplineComponentInvalidatorSystem>();
 	}
 };
 
@@ -202,6 +274,25 @@ public:
 	}
 };
 
+// Class MarvelMovieScene.MovieSceneMarvelOwnerSeeSection
+// 0x0200 (0x02F8 - 0x00F8)
+class UMovieSceneMarvelOwnerSeeSection final : public UMovieSceneSection
+{
+public:
+	struct FMovieSceneBoolChannel                 OwnerNoSeeKeys;                                    // 0x00F8(0x0100)(Edit, NativeAccessSpecifierPublic)
+	struct FMovieSceneBoolChannel                 OnlyOwnerSeeKeys;                                  // 0x01F8(0x0100)(Edit, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"MovieSceneMarvelOwnerSeeSection">();
+	}
+	static class UMovieSceneMarvelOwnerSeeSection* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UMovieSceneMarvelOwnerSeeSection>();
+	}
+};
+
 // Class MarvelMovieScene.MovieSceneMarvelCombineTriggerFXTrack
 // 0x0020 (0x00C0 - 0x00A0)
 class UMovieSceneMarvelCombineTriggerFXTrack final : public UMovieSceneNameableTrack
@@ -241,22 +332,21 @@ public:
 	}
 };
 
-// Class MarvelMovieScene.MovieSceneMarvelPaintSceneSection
-// 0x01F0 (0x02E8 - 0x00F8)
-class UMovieSceneMarvelPaintSceneSection final : public UMovieSceneSection
+// Class MarvelMovieScene.MovieSceneMarvelPortalLinkTargetSystem
+// 0x0190 (0x01D8 - 0x0048)
+class UMovieSceneMarvelPortalLinkTargetSystem final : public UMovieSceneEntityInstantiatorSystem
 {
 public:
-	struct FMovieScenePaintSceneCommandData       Commands;                                          // 0x00F8(0x00F8)(NativeAccessSpecifierPrivate)
-	struct FMovieScenePaintSceneReconnectRebuildData RebuildData;                                       // 0x01F0(0x00F8)(NativeAccessSpecifierPrivate)
+	uint8                                         Pad_48[0x190];                                     // 0x0048(0x0190)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"MovieSceneMarvelPaintSceneSection">();
+		return StaticClassImpl<"MovieSceneMarvelPortalLinkTargetSystem">();
 	}
-	static class UMovieSceneMarvelPaintSceneSection* GetDefaultObj()
+	static class UMovieSceneMarvelPortalLinkTargetSystem* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UMovieSceneMarvelPaintSceneSection>();
+		return GetDefaultObjImpl<UMovieSceneMarvelPortalLinkTargetSystem>();
 	}
 };
 
@@ -299,21 +389,21 @@ public:
 	}
 };
 
-// Class MarvelMovieScene.MovieSceneMarvelPoseableMeshComponentSection
-// 0x00F8 (0x01F0 - 0x00F8)
-class UMovieSceneMarvelPoseableMeshComponentSection final : public UMovieSceneSection
+// Class MarvelMovieScene.MovieSceneMarvelNiagaraSplineComponentSystem
+// 0x0178 (0x01C0 - 0x0048)
+class UMovieSceneMarvelNiagaraSplineComponentSystem final : public UMovieSceneEntityInstantiatorSystem
 {
 public:
-	struct FBoneSpaceTransformsChannel            BoneSpaceTransforms;                               // 0x00F8(0x00F8)(NativeAccessSpecifierPublic)
+	uint8                                         Pad_48[0x178];                                     // 0x0048(0x0178)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"MovieSceneMarvelPoseableMeshComponentSection">();
+		return StaticClassImpl<"MovieSceneMarvelNiagaraSplineComponentSystem">();
 	}
-	static class UMovieSceneMarvelPoseableMeshComponentSection* GetDefaultObj()
+	static class UMovieSceneMarvelNiagaraSplineComponentSystem* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UMovieSceneMarvelPoseableMeshComponentSection>();
+		return GetDefaultObjImpl<UMovieSceneMarvelNiagaraSplineComponentSystem>();
 	}
 };
 
@@ -335,6 +425,25 @@ public:
 	static class UMovieSceneMarvelNiagaraArrayFloatTrack* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UMovieSceneMarvelNiagaraArrayFloatTrack>();
+	}
+};
+
+// Class MarvelMovieScene.MovieSceneMarvelPaintSceneTrack
+// 0x0020 (0x00C0 - 0x00A0)
+class UMovieSceneMarvelPaintSceneTrack final : public UMovieSceneNameableTrack
+{
+public:
+	uint8                                         Pad_A0[0x10];                                      // 0x00A0(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class UMovieSceneSection*>             Sections;                                          // 0x00B0(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPrivate)
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"MovieSceneMarvelPaintSceneTrack">();
+	}
+	static class UMovieSceneMarvelPaintSceneTrack* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UMovieSceneMarvelPaintSceneTrack>();
 	}
 };
 
@@ -382,21 +491,6 @@ public:
 	}
 };
 
-// Class MarvelMovieScene.MovieSceneMarvelPortalLinkTargetInvalidatorSystem
-// 0x0000 (0x0048 - 0x0048)
-class UMovieSceneMarvelPortalLinkTargetInvalidatorSystem final : public UMovieSceneEntityInstantiatorSystem
-{
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"MovieSceneMarvelPortalLinkTargetInvalidatorSystem">();
-	}
-	static class UMovieSceneMarvelPortalLinkTargetInvalidatorSystem* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UMovieSceneMarvelPortalLinkTargetInvalidatorSystem>();
-	}
-};
-
 // Class MarvelMovieScene.MovieSceneMarvelNiagaraMeshComponentSystem
 // 0x0178 (0x01C0 - 0x0048)
 class UMovieSceneMarvelNiagaraMeshComponentSystem final : public UMovieSceneEntityInstantiatorSystem
@@ -412,6 +506,24 @@ public:
 	static class UMovieSceneMarvelNiagaraMeshComponentSystem* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UMovieSceneMarvelNiagaraMeshComponentSystem>();
+	}
+};
+
+// Class MarvelMovieScene.MovieSceneMarvelPoseableMeshComponentSection
+// 0x00F8 (0x01F0 - 0x00F8)
+class UMovieSceneMarvelPoseableMeshComponentSection final : public UMovieSceneSection
+{
+public:
+	struct FBoneSpaceTransformsChannel            BoneSpaceTransforms;                               // 0x00F8(0x00F8)(NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"MovieSceneMarvelPoseableMeshComponentSection">();
+	}
+	static class UMovieSceneMarvelPoseableMeshComponentSection* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UMovieSceneMarvelPoseableMeshComponentSection>();
 	}
 };
 
@@ -453,21 +565,23 @@ public:
 	}
 };
 
-// Class MarvelMovieScene.MovieSceneMarvelSplineComponentSection
-// 0x00F8 (0x01F0 - 0x00F8)
-class UMovieSceneMarvelSplineComponentSection final : public UMovieSceneSection
+// Class MarvelMovieScene.MovieSceneMarvelWeightedBlendableSection
+// 0x0118 (0x0210 - 0x00F8)
+class UMovieSceneMarvelWeightedBlendableSection final : public UMovieSceneSection
 {
 public:
-	struct FSplineCurvesChannel                   SplineCurves;                                      // 0x00F8(0x00F8)(NativeAccessSpecifierPublic)
+	int32                                         ArrayIndex;                                        // 0x00F8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_FC[0x4];                                       // 0x00FC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FMovieSceneFloatChannel                WeightKeys;                                        // 0x0100(0x0110)(Edit, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"MovieSceneMarvelSplineComponentSection">();
+		return StaticClassImpl<"MovieSceneMarvelWeightedBlendableSection">();
 	}
-	static class UMovieSceneMarvelSplineComponentSection* GetDefaultObj()
+	static class UMovieSceneMarvelWeightedBlendableSection* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UMovieSceneMarvelSplineComponentSection>();
+		return GetDefaultObjImpl<UMovieSceneMarvelWeightedBlendableSection>();
 	}
 };
 
@@ -487,45 +601,6 @@ public:
 	static class UMovieSceneMarvelNiagaraParameterCollectionTrack* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UMovieSceneMarvelNiagaraParameterCollectionTrack>();
-	}
-};
-
-// Class MarvelMovieScene.MovieSceneMarvelNiagaraShowModeSection
-// 0x0108 (0x0200 - 0x00F8)
-class UMovieSceneMarvelNiagaraShowModeSection final : public UMovieSceneSection
-{
-public:
-	struct FMovieSceneByteChannel                 NiagaraShowModeKeys;                               // 0x00F8(0x0108)(NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"MovieSceneMarvelNiagaraShowModeSection">();
-	}
-	static class UMovieSceneMarvelNiagaraShowModeSection* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UMovieSceneMarvelNiagaraShowModeSection>();
-	}
-};
-
-// Class MarvelMovieScene.PaintSceneManagerActor
-// 0x0040 (0x04D0 - 0x0490)
-class APaintSceneManagerActor final : public AActor
-{
-public:
-	uint8                                         Pad_490[0x40];                                     // 0x0490(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void OnScenePushPaintSceneCommands(const struct FPaintSceneCommand& InCommand);
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"PaintSceneManagerActor">();
-	}
-	static class APaintSceneManagerActor* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<APaintSceneManagerActor>();
 	}
 };
 
@@ -574,76 +649,6 @@ public:
 	}
 };
 
-// Class MarvelMovieScene.MovieSceneMarvelPortalLinkTargetSystem
-// 0x0190 (0x01D8 - 0x0048)
-class UMovieSceneMarvelPortalLinkTargetSystem final : public UMovieSceneEntityInstantiatorSystem
-{
-public:
-	uint8                                         Pad_48[0x190];                                     // 0x0048(0x0190)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"MovieSceneMarvelPortalLinkTargetSystem">();
-	}
-	static class UMovieSceneMarvelPortalLinkTargetSystem* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UMovieSceneMarvelPortalLinkTargetSystem>();
-	}
-};
-
-// Class MarvelMovieScene.MovieSceneMarvelNiagaraSplineComponentInvalidatorSystem
-// 0x0000 (0x0048 - 0x0048)
-class UMovieSceneMarvelNiagaraSplineComponentInvalidatorSystem final : public UMovieSceneEntityInstantiatorSystem
-{
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"MovieSceneMarvelNiagaraSplineComponentInvalidatorSystem">();
-	}
-	static class UMovieSceneMarvelNiagaraSplineComponentInvalidatorSystem* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UMovieSceneMarvelNiagaraSplineComponentInvalidatorSystem>();
-	}
-};
-
-// Class MarvelMovieScene.MovieSceneMarvelSplineMeshComponentTrack
-// 0x0018 (0x00B8 - 0x00A0)
-class UMovieSceneMarvelSplineMeshComponentTrack final : public UMovieSceneNameableTrack
-{
-public:
-	uint8                                         Pad_A0[0x8];                                       // 0x00A0(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class UMovieSceneSection*>             Sections;                                          // 0x00A8(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPrivate)
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"MovieSceneMarvelSplineMeshComponentTrack">();
-	}
-	static class UMovieSceneMarvelSplineMeshComponentTrack* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UMovieSceneMarvelSplineMeshComponentTrack>();
-	}
-};
-
-// Class MarvelMovieScene.MovieSceneMarvelNiagaraSplineComponentSystem
-// 0x0178 (0x01C0 - 0x0048)
-class UMovieSceneMarvelNiagaraSplineComponentSystem final : public UMovieSceneEntityInstantiatorSystem
-{
-public:
-	uint8                                         Pad_48[0x178];                                     // 0x0048(0x0178)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"MovieSceneMarvelNiagaraSplineComponentSystem">();
-	}
-	static class UMovieSceneMarvelNiagaraSplineComponentSystem* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UMovieSceneMarvelNiagaraSplineComponentSystem>();
-	}
-};
-
 // Class MarvelMovieScene.MovieSceneMarvelNiagaraSplineComponentTrack
 // 0x0010 (0x00B0 - 0x00A0)
 class UMovieSceneMarvelNiagaraSplineComponentTrack final : public UMovieSceneTrack
@@ -659,24 +664,6 @@ public:
 	static class UMovieSceneMarvelNiagaraSplineComponentTrack* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UMovieSceneMarvelNiagaraSplineComponentTrack>();
-	}
-};
-
-// Class MarvelMovieScene.MovieSceneMarvelNiagaraTickScaleSection
-// 0x0110 (0x0208 - 0x00F8)
-class UMovieSceneMarvelNiagaraTickScaleSection final : public UMovieSceneSection
-{
-public:
-	struct FMovieSceneFloatChannel                NiagaraTickScaleInstances;                         // 0x00F8(0x0110)(Edit, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"MovieSceneMarvelNiagaraTickScaleSection">();
-	}
-	static class UMovieSceneMarvelNiagaraTickScaleSection* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UMovieSceneMarvelNiagaraTickScaleSection>();
 	}
 };
 
@@ -699,25 +686,6 @@ public:
 	}
 };
 
-// Class MarvelMovieScene.MovieSceneMarvelOwnerSeeSection
-// 0x0200 (0x02F8 - 0x00F8)
-class UMovieSceneMarvelOwnerSeeSection final : public UMovieSceneSection
-{
-public:
-	struct FMovieSceneBoolChannel                 OwnerNoSeeKeys;                                    // 0x00F8(0x0100)(Edit, NativeAccessSpecifierPublic)
-	struct FMovieSceneBoolChannel                 OnlyOwnerSeeKeys;                                  // 0x01F8(0x0100)(Edit, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"MovieSceneMarvelOwnerSeeSection">();
-	}
-	static class UMovieSceneMarvelOwnerSeeSection* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UMovieSceneMarvelOwnerSeeSection>();
-	}
-};
-
 // Class MarvelMovieScene.MovieSceneMarvelOwnerSeeTrack
 // 0x0018 (0x00B8 - 0x00A0)
 class UMovieSceneMarvelOwnerSeeTrack final : public UMovieSceneNameableTrack
@@ -737,22 +705,22 @@ public:
 	}
 };
 
-// Class MarvelMovieScene.MovieSceneMarvelPaintSceneTrack
-// 0x0020 (0x00C0 - 0x00A0)
-class UMovieSceneMarvelPaintSceneTrack final : public UMovieSceneNameableTrack
+// Class MarvelMovieScene.MovieSceneMarvelPaintSceneSection
+// 0x01F0 (0x02E8 - 0x00F8)
+class UMovieSceneMarvelPaintSceneSection final : public UMovieSceneSection
 {
 public:
-	uint8                                         Pad_A0[0x10];                                      // 0x00A0(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class UMovieSceneSection*>             Sections;                                          // 0x00B0(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPrivate)
+	struct FMovieScenePaintSceneCommandData       Commands;                                          // 0x00F8(0x00F8)(NativeAccessSpecifierPrivate)
+	struct FMovieScenePaintSceneReconnectRebuildData RebuildData;                                    // 0x01F0(0x00F8)(NativeAccessSpecifierPrivate)
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"MovieSceneMarvelPaintSceneTrack">();
+		return StaticClassImpl<"MovieSceneMarvelPaintSceneSection">();
 	}
-	static class UMovieSceneMarvelPaintSceneTrack* GetDefaultObj()
+	static class UMovieSceneMarvelPaintSceneSection* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UMovieSceneMarvelPaintSceneTrack>();
+		return GetDefaultObjImpl<UMovieSceneMarvelPaintSceneSection>();
 	}
 };
 
@@ -777,6 +745,21 @@ public:
 	static class UMovieSceneMarvelPortalLinkTargetSection* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UMovieSceneMarvelPortalLinkTargetSection>();
+	}
+};
+
+// Class MarvelMovieScene.MovieSceneMarvelPortalLinkTargetInvalidatorSystem
+// 0x0000 (0x0048 - 0x0048)
+class UMovieSceneMarvelPortalLinkTargetInvalidatorSystem final : public UMovieSceneEntityInstantiatorSystem
+{
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"MovieSceneMarvelPortalLinkTargetInvalidatorSystem">();
+	}
+	static class UMovieSceneMarvelPortalLinkTargetInvalidatorSystem* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UMovieSceneMarvelPortalLinkTargetInvalidatorSystem>();
 	}
 };
 
@@ -817,6 +800,24 @@ public:
 	}
 };
 
+// Class MarvelMovieScene.MovieSceneMarvelSplineComponentSection
+// 0x00F8 (0x01F0 - 0x00F8)
+class UMovieSceneMarvelSplineComponentSection final : public UMovieSceneSection
+{
+public:
+	struct FSplineCurvesChannel                   SplineCurves;                                      // 0x00F8(0x00F8)(NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"MovieSceneMarvelSplineComponentSection">();
+	}
+	static class UMovieSceneMarvelSplineComponentSection* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UMovieSceneMarvelSplineComponentSection>();
+	}
+};
+
 // Class MarvelMovieScene.MovieSceneMarvelSplineComponentTrack
 // 0x0020 (0x00C0 - 0x00A0)
 class UMovieSceneMarvelSplineComponentTrack final : public UMovieSceneNameableTrack
@@ -854,44 +855,43 @@ public:
 	}
 };
 
-// Class MarvelMovieScene.MovieSceneMarvelWeightedBlendableSection
-// 0x0118 (0x0210 - 0x00F8)
-class UMovieSceneMarvelWeightedBlendableSection final : public UMovieSceneSection
-{
-public:
-	int32                                         ArrayIndex;                                        // 0x00F8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_FC[0x4];                                       // 0x00FC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FMovieSceneFloatChannel                WeightKeys;                                        // 0x0100(0x0110)(Edit, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"MovieSceneMarvelWeightedBlendableSection">();
-	}
-	static class UMovieSceneMarvelWeightedBlendableSection* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UMovieSceneMarvelWeightedBlendableSection>();
-	}
-};
-
-// Class MarvelMovieScene.MovieSceneMarvelWeightedBlendableTrack
-// 0x0020 (0x00C0 - 0x00A0)
-class UMovieSceneMarvelWeightedBlendableTrack final : public UMovieSceneNameableTrack
+// Class MarvelMovieScene.MovieSceneMarvelSplineMeshComponentTrack
+// 0x0018 (0x00B8 - 0x00A0)
+class UMovieSceneMarvelSplineMeshComponentTrack final : public UMovieSceneNameableTrack
 {
 public:
 	uint8                                         Pad_A0[0x8];                                       // 0x00A0(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         ArrayIndex;                                        // 0x00A8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_AC[0x4];                                       // 0x00AC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class UMovieSceneSection*>             MarvelWeightedBlendableSections;                   // 0x00B0(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPrivate)
+	TArray<class UMovieSceneSection*>             Sections;                                          // 0x00A8(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPrivate)
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"MovieSceneMarvelWeightedBlendableTrack">();
+		return StaticClassImpl<"MovieSceneMarvelSplineMeshComponentTrack">();
 	}
-	static class UMovieSceneMarvelWeightedBlendableTrack* GetDefaultObj()
+	static class UMovieSceneMarvelSplineMeshComponentTrack* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UMovieSceneMarvelWeightedBlendableTrack>();
+		return GetDefaultObjImpl<UMovieSceneMarvelSplineMeshComponentTrack>();
+	}
+};
+
+// Class MarvelMovieScene.PaintSceneManagerActor
+// 0x0040 (0x04D0 - 0x0490)
+class APaintSceneManagerActor final : public AActor
+{
+public:
+	uint8                                         Pad_490[0x40];                                     // 0x0490(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void OnScenePushPaintSceneCommands(const struct FPaintSceneCommand& InCommand);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PaintSceneManagerActor">();
+	}
+	static class APaintSceneManagerActor* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<APaintSceneManagerActor>();
 	}
 };
 

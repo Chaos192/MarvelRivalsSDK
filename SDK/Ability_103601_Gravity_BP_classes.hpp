@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Ability_103601_Gravity_BP.Ability_103601_Gravity_BP_C
-// 0x0000 (0x11B0 - 0x11B0)
+// 0x0000 (0x11B8 - 0x11B8)
 class UAbility_103601_Gravity_BP_C final : public UChangeGravityAbility_103601
 {
 public:

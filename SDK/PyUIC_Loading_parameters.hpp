@@ -62,5 +62,13 @@ public:
 	class FString                                 LoadedWorld;                                       // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash)
 };
 
+// PythonFunction PyUIC_Loading.PyUIC_Loading.LevelLoadingPercent
+// 0x0004 (0x0004 - 0x0000)
+struct PyUIC_Loading_LevelLoadingPercent final
+{
+public:
+	int32                                         Percent;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+
 }
 

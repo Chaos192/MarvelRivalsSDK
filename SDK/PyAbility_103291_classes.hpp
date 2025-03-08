@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "PyAbility_103651_classes.hpp"
 #include "Marvel_classes.hpp"
 #include "GameplayAbilities_structs.hpp"
+#include "PyAbility_103651_classes.hpp"
 
 
 namespace SDK
@@ -55,7 +55,7 @@ public:
 };
 
 // PythonClass PyAbility_103291.PyAbility_103291
-// 0x0000 (0x2580 - 0x2580)
+// 0x0000 (0x2588 - 0x2588)
 class UPyAbility_103291 : public UMarvelGameplayAbility
 {
 public:
@@ -78,7 +78,7 @@ public:
 };
 
 // PythonClass PyAbility_103291.PyCue_Buff_10329101
-// 0x0000 (0x16B0 - 0x16B0)
+// 0x0000 (0x2650 - 0x2650)
 class APyCue_Buff_10329101 final : public APyCue_Buff_10365102
 {
 public:

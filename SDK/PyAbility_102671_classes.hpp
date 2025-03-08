@@ -36,8 +36,37 @@ public:
 	}
 };
 
+// PythonClass PyAbility_102671.PyCue_Ability_Loop_10267101
+// 0x0018 (0x0E90 - 0x0E78)
+class APyCue_Ability_Loop_10267101 final : public ACue_Ability_Loop_10267101
+{
+public:
+	class UAnimationAsset*                        AnimToPlay;                                        // 0x0E78(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         TimeToDetachMesh;                                  // 0x0E80(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         TimeMeshExists;                                    // 0x0E84(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         TimeSmokeAppear;                                   // 0x0E88(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         TimeSmokeExists;                                   // 0x0E8C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	void ReceiveBeginPlay();
+	bool WhileActive(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters);
+	bool OnRemove(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters);
+	void SetMeshInVisible();
+	void DetachMesh();
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PyCue_Ability_Loop_10267101">();
+	}
+	static class APyCue_Ability_Loop_10267101* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<APyCue_Ability_Loop_10267101>();
+	}
+};
+
 // PythonClass PyAbility_102671.PyAbility_102671
-// 0x0000 (0x2580 - 0x2580)
+// 0x0000 (0x2588 - 0x2588)
 class UPyAbility_102671 : public UAbility_102671
 {
 public:
@@ -101,7 +130,7 @@ public:
 };
 
 // PythonClass PyAbility_102671.PyProjectile_10267101
-// 0x0000 (0x3050 - 0x3050)
+// 0x0000 (0x3110 - 0x3110)
 class APyProjectile_10267101 final : public AMarvelAbilityTargetActor_Projectile
 {
 public:
@@ -112,35 +141,6 @@ public:
 	static class APyProjectile_10267101* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<APyProjectile_10267101>();
-	}
-};
-
-// PythonClass PyAbility_102671.PyCue_Ability_Loop_10267101
-// 0x0018 (0x0E70 - 0x0E58)
-class APyCue_Ability_Loop_10267101 final : public ACue_Ability_Loop_10267101
-{
-public:
-	class UAnimationAsset*                        AnimToPlay;                                        // 0x0E58(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         TimeToDetachMesh;                                  // 0x0E60(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         TimeMeshExists;                                    // 0x0E64(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         TimeSmokeAppear;                                   // 0x0E68(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         TimeSmokeExists;                                   // 0x0E6C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-public:
-	void ReceiveBeginPlay();
-	bool WhileActive(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters);
-	bool OnRemove(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters);
-	void SetMeshInVisible();
-	void DetachMesh();
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"PyCue_Ability_Loop_10267101">();
-	}
-	static class APyCue_Ability_Loop_10267101* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<APyCue_Ability_Loop_10267101>();
 	}
 };
 

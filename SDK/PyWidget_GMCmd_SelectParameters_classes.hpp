@@ -17,31 +17,6 @@
 namespace SDK
 {
 
-// PythonClass PyWidget_GMCmd_SelectParameters.PyWidget_GMCmd_SelectParameters_Item
-// 0x0028 (0x0618 - 0x05F0)
-class UPyWidget_GMCmd_SelectParameters_Item : public UPyMarvelUserWidget
-{
-public:
-	uint8                                         Pad_5E9[0x7];                                      // 0x05E9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UObject*                                ItemObject;                                        // 0x05F0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(const class FString& ParametersName, const class FString& ParametersValue)> OnCmdBtnClicked;                                   // 0x05F8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(const class FString& ParametersName, const class FString& ParametersValue)> OnCmdBtnDoubleClicked;                             // 0x0608(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-
-public:
-	void OnInitialized();
-	void SetParametersData(class UObject* ItemObject_0);
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"PyWidget_GMCmd_SelectParameters_Item">();
-	}
-	static class UPyWidget_GMCmd_SelectParameters_Item* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UPyWidget_GMCmd_SelectParameters_Item>();
-	}
-};
-
 // PythonClass PyWidget_GMCmd_SelectParameters.PyWidget_GMCmd_SelectParameters_ItemData
 // 0x0020 (0x0050 - 0x0030)
 class UPyWidget_GMCmd_SelectParameters_ItemData final : public UObject
@@ -68,7 +43,7 @@ class UPyWidget_GMCmd_SelectParameters : public UPyMarvelUserWidget
 public:
 	uint8                                         Pad_5E9[0x7];                                      // 0x05E9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TSubclassOf<class UUserWidget>                SelectItemClass;                                   // 0x05F0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(const class FString& ParametersName, const class FString& ParametersValue)> OnParametersChanged;                               // 0x05F8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const class FString& ParametersName, const class FString& ParametersValue)> OnParametersChanged; // 0x05F8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 
 public:
 	void OnInitialized();
@@ -84,6 +59,31 @@ public:
 	static class UPyWidget_GMCmd_SelectParameters* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UPyWidget_GMCmd_SelectParameters>();
+	}
+};
+
+// PythonClass PyWidget_GMCmd_SelectParameters.PyWidget_GMCmd_SelectParameters_Item
+// 0x0028 (0x0618 - 0x05F0)
+class UPyWidget_GMCmd_SelectParameters_Item : public UPyMarvelUserWidget
+{
+public:
+	uint8                                         Pad_5E9[0x7];                                      // 0x05E9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                ItemObject;                                        // 0x05F0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const class FString& ParametersName, const class FString& ParametersValue)> OnCmdBtnClicked; // 0x05F8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const class FString& ParametersName, const class FString& ParametersValue)> OnCmdBtnDoubleClicked; // 0x0608(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+
+public:
+	void OnInitialized();
+	void SetParametersData(class UObject* ItemObject_0);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PyWidget_GMCmd_SelectParameters_Item">();
+	}
+	static class UPyWidget_GMCmd_SelectParameters_Item* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPyWidget_GMCmd_SelectParameters_Item>();
 	}
 };
 

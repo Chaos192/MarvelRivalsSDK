@@ -13,8 +13,8 @@
 #include "HeroGallery_HeroListBP_structs.hpp"
 #include "HeroGallery_InfoBP_structs.hpp"
 #include "HeroGallery_SkinBP_structs.hpp"
-#include "HeroGallery_SkillBP_structs.hpp"
 #include "Marvel_structs.hpp"
+#include "HeroGallery_SkillBP_structs.hpp"
 #include "HeroGallery_AchievementBP_structs.hpp"
 #include "HeroNameLinesBP_structs.hpp"
 

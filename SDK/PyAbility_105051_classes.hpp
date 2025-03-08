@@ -36,7 +36,7 @@ public:
 };
 
 // PythonClass PyAbility_105051.PyAbility_105051
-// 0x0000 (0x2588 - 0x2588)
+// 0x0000 (0x2590 - 0x2590)
 class UPyAbility_105051 : public UAbility_108
 {
 public:
@@ -63,7 +63,7 @@ public:
 };
 
 // PythonClass PyAbility_105051.PyProjectile_105051
-// 0x0000 (0x3050 - 0x3050)
+// 0x0000 (0x3110 - 0x3110)
 class APyProjectile_105051 : public AMarvelAbilityTargetActor_Projectile
 {
 public:

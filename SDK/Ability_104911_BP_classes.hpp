@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Ability_104911_BP.Ability_104911_BP_C
-// 0x0000 (0x2580 - 0x2580)
+// 0x0000 (0x2588 - 0x2588)
 class UAbility_104911_BP_C final : public UMarvelGameplayAbility
 {
 public:

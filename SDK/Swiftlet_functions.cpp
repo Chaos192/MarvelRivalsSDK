@@ -20,7 +20,7 @@ namespace SDK
 // Function Swiftlet.SwiftletHotKeyHelper.OnReceiveEnhancedInputAction
 // (Native, Event, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UInputAction*                     Action                                                 (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UInputAction*               Action                                                 (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void USwiftletHotKeyHelper::OnReceiveEnhancedInputAction(const class UInputAction* Action)
 {
@@ -46,7 +46,7 @@ void USwiftletHotKeyHelper::OnReceiveEnhancedInputAction(const class UInputActio
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // class UInputComponent*                  InputComponent                                         (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UInputAction*                     Action                                                 (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UInputAction*               Action                                                 (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void USwiftletHotKeyHelper::RegisterEnhancedInputAction(class UInputComponent* InputComponent, const class UInputAction* Action)
 {
@@ -72,7 +72,7 @@ void USwiftletHotKeyHelper::RegisterEnhancedInputAction(class UInputComponent* I
 // Function Swiftlet.SwiftletProcedure.CollectInfo
 // (Final, Native, Public)
 // Parameters:
-// class FString                           CustomInfoJsonString                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    CustomInfoJsonString                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void USwiftletProcedure::CollectInfo(const class FString& CustomInfoJsonString)
 {
@@ -147,7 +147,7 @@ bool USwiftletProcedure::IsAllDataUploaded()
 // Function Swiftlet.SwiftletProcedure.Run
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FString                           CustomInfoJsonString                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    CustomInfoJsonString                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void USwiftletProcedure::Run(const class FString& CustomInfoJsonString)
 {
@@ -473,7 +473,7 @@ class FString UInfoCollectManager::GetPlatform()
 // (Final, Native, Public)
 // Parameters:
 // class USwiftletProcedure*               SwiftletProcedure                                      (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           InfoKey                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    InfoKey                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class FString UInfoCollectManager::GetProcessStats(class USwiftletProcedure* SwiftletProcedure, const class FString& InfoKey)

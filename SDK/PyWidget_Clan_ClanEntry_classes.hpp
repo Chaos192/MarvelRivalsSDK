@@ -21,7 +21,7 @@ namespace SDK
 
 // PythonClass PyWidget_Clan_ClanEntry.PyWidget_Clan_ClanEntry
 // 0x00F8 (0x06E8 - 0x05F0)
-class UPyWidget_Clan_ClanEntry final : public UPyMarvelUserWidget
+class UPyWidget_Clan_ClanEntry : public UPyMarvelUserWidget
 {
 public:
 	uint8                                         Pad_5E9[0x3];                                      // 0x05E9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])

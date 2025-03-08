@@ -77,8 +77,8 @@ void UPyWidget_AbilityTarget::Destruct()
 // PythonFunction PyWidget_AbilityTarget.PyWidget_AbilityTarget.AddTip
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   InTipID                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FUIActionData                    InActionData                                           (Parm)
+// const int32                             InTipID                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FUIActionData&             InActionData                                           (Parm)
 
 void UPyWidget_AbilityTarget::AddTip(const int32 InTipID, const struct FUIActionData& InActionData)
 {
@@ -104,7 +104,7 @@ void UPyWidget_AbilityTarget::AddTip(const int32 InTipID, const struct FUIAction
 // PythonFunction PyWidget_AbilityTarget.PyWidget_AbilityTarget.RemoveTip
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   InTipID                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const int32                             InTipID                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UPyWidget_AbilityTarget::RemoveTip(const int32 InTipID)
 {

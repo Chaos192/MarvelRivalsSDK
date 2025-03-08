@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Marvel_classes.hpp"
 #include "Hero_1033_classes.hpp"
+#include "Marvel_classes.hpp"
 
 
 namespace SDK
@@ -36,7 +36,7 @@ public:
 };
 
 // PythonClass PyAbility_103302.PyAbility_103302
-// 0x0000 (0x2690 - 0x2690)
+// 0x0000 (0x2698 - 0x2698)
 class UPyAbility_103302 : public UAbility_103302
 {
 public:

@@ -21,7 +21,7 @@ namespace SDK
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UAIAbilityExecutor*               OwnerExecutor                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FAIAbilityUsage                  AbilityUsage                                           (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
+// const struct FAIAbilityUsage&           AbilityUsage                                           (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
 // class AMarvelAIController*              Controller                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
@@ -53,7 +53,7 @@ bool UPyAIAbilityActivationLogicBase::BeginLogic(class UAIAbilityExecutor* Owner
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UAIAbilityExecutor*               OwnerExecutor                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FAIAbilityUsage                  AbilityUsage                                           (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
+// const struct FAIAbilityUsage&           AbilityUsage                                           (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
 // class AMarvelAIController*              Controller                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // float                                   DeltaTime                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -87,7 +87,7 @@ bool UPyAIAbilityActivationLogicBase::TickLogic(class UAIAbilityExecutor* OwnerE
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UAIAbilityExecutor*               OwnerExecutor                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FAIAbilityUsage                  AbilityUsage                                           (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
+// const struct FAIAbilityUsage&           AbilityUsage                                           (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
 // class AMarvelAIController*              Controller                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 

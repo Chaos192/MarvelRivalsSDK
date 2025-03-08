@@ -17,12 +17,64 @@
 namespace SDK
 {
 
+// Function Hero_1030.ProjectileConductBase.OnLocalConductBounceTargetDataCallback
+// (Final, Native, Public, HasOutParams)
+// Parameters:
+// const struct FGameplayAbilityTargetDataHandle&LocalDataHandle                                        (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void AProjectileConductBase::OnLocalConductBounceTargetDataCallback(const struct FGameplayAbilityTargetDataHandle& LocalDataHandle)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ProjectileConductBase", "OnLocalConductBounceTargetDataCallback");
+
+	Params::ProjectileConductBase_OnLocalConductBounceTargetDataCallback Parms{};
+
+	Parms.LocalDataHandle = std::move(LocalDataHandle);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Hero_1030.ProjectileConductBase.OnMergeConductBounceTargetDataCallback
+// (Final, Native, Public, HasOutParams)
+// Parameters:
+// const struct FGameplayAbilityTargetDataHandle&RemoteDataHandle                                       (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FGameplayAbilityTargetDataHandle&LocalDataHandle                                        (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void AProjectileConductBase::OnMergeConductBounceTargetDataCallback(const struct FGameplayAbilityTargetDataHandle& RemoteDataHandle, const struct FGameplayAbilityTargetDataHandle& LocalDataHandle)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ProjectileConductBase", "OnMergeConductBounceTargetDataCallback");
+
+	Params::ProjectileConductBase_OnMergeConductBounceTargetDataCallback Parms{};
+
+	Parms.RemoteDataHandle = std::move(RemoteDataHandle);
+	Parms.LocalDataHandle = std::move(LocalDataHandle);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function Hero_1030.ProjectileConductBase.OnOwnerApplyDamage
 // (Final, Native, Public, HasOutParams)
 // Parameters:
 // class AActor*                           InSourceAvatar                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           InTargetAvatar                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FAttributeModifierHandle         ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FAttributeModifierHandle&  ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void AProjectileConductBase::OnOwnerApplyDamage(class AActor* InSourceAvatar, class AActor* InTargetAvatar, const struct FAttributeModifierHandle& ModifierParameterHandle)
 {
@@ -49,8 +101,8 @@ void AProjectileConductBase::OnOwnerApplyDamage(class AActor* InSourceAvatar, cl
 // Function Hero_1030.ProjectileConductBase.RemoteProjectileBounce
 // (Native, Public, HasOutParams, HasDefaults)
 // Parameters:
-// struct FHitResult                       ImpactResult                                           (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-// struct FVector                          ImpactVelocity                                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FHitResult&                ImpactResult                                           (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FVector&                   ImpactVelocity                                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void AProjectileConductBase::RemoteProjectileBounce(const struct FHitResult& ImpactResult, const struct FVector& ImpactVelocity)
 {
@@ -105,7 +157,7 @@ void AScope_10304102::OnActorEndPlay(class AActor* Actor, EEndPlayReason EndPlay
 // Parameters:
 // class AActor*                           InSourceAvatar                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           InTargetAvatar                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FAttributeModifierHandle         ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FAttributeModifierHandle&  ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void AScope_10304102::OnCharacterDeath(class AActor* InSourceAvatar, class AActor* InTargetAvatar, const struct FAttributeModifierHandle& ModifierParameterHandle)
 {
@@ -133,7 +185,7 @@ void AScope_10304102::OnCharacterDeath(class AActor* InSourceAvatar, class AActo
 // (Final, Native, Public, HasDefaults)
 // Parameters:
 // class AActor*                           InActor                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          Delta                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   Delta                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 struct FVector UScopeManager_10304102::DoCondition(class AActor* InActor, const struct FVector& Delta)
@@ -164,7 +216,7 @@ struct FVector UScopeManager_10304102::DoCondition(class AActor* InActor, const 
 // Parameters:
 // class AActor*                           InSourceAvatar                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           InTargetAvatar                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FAttributeModifierHandle         ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FAttributeModifierHandle&  ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void ACue_Buff_10304101::OnOwnerApplyDamage(class AActor* InSourceAvatar, class AActor* InTargetAvatar, const struct FAttributeModifierHandle& ModifierParameterHandle)
 {
@@ -193,7 +245,7 @@ void ACue_Buff_10304101::OnOwnerApplyDamage(class AActor* InSourceAvatar, class 
 // Parameters:
 // class AActor*                           InSource                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           InSourceAvatar                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FAttributeModifierHandle         ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FAttributeModifierHandle&  ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void ACue_Summoner_Loop_10304101::OnOwnerSummonerDeath(class AActor* InSource, class AActor* InSourceAvatar, const struct FAttributeModifierHandle& ModifierParameterHandle)
 {
@@ -270,7 +322,7 @@ void UAbility_103051::OnOwnerLanding(EMovementMode Mode)
 // Function Hero_1030.Cue_Projectile_Loop_10305101.OnGenericGameplayTagUpdate
 // (Final, Native, Public)
 // Parameters:
-// struct FGameplayTag                     InTag                                                  (ConstParm, Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              InTag                                                  (ConstParm, Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   Count                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void ACue_Projectile_Loop_10305101::OnGenericGameplayTagUpdate(const struct FGameplayTag& InTag, int32 Count)
@@ -422,7 +474,7 @@ void UAbility_103052::LeaveGlide(float Time)
 // Function Hero_1030.Projectile_10306101.SetProjectileEndPoint
 // (Final, Native, Protected, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FVector                          InLocation                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   InLocation                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void AProjectile_10306101::SetProjectileEndPoint(const struct FVector& InLocation)
 {
@@ -447,7 +499,7 @@ void AProjectile_10306101::SetProjectileEndPoint(const struct FVector& InLocatio
 // Function Hero_1030.Projectile_10306101.SetProjectileIndex
 // (Final, Native, Protected, BlueprintCallable)
 // Parameters:
-// int32                                   InValue                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int32                             InValue                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void AProjectile_10306101::SetProjectileIndex(const int32 InValue)
 {
@@ -472,7 +524,7 @@ void AProjectile_10306101::SetProjectileIndex(const int32 InValue)
 // Function Hero_1030.Projectile_10306101.SetProjectileTransform
 // (Final, Native, Protected, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FTransform                       InTransform                                            (ConstParm, Parm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FTransform&                InTransform                                            (ConstParm, Parm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void AProjectile_10306101::SetProjectileTransform(const struct FTransform& InTransform)
 {
@@ -497,7 +549,7 @@ void AProjectile_10306101::SetProjectileTransform(const struct FTransform& InTra
 // Function Hero_1030.Projectile_10306101.SetSummonerLocation
 // (Final, Native, Protected, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FVector                          InLocation                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   InLocation                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void AProjectile_10306101::SetSummonerLocation(const struct FVector& InLocation)
 {
@@ -575,7 +627,7 @@ struct FTransform ASummoned_10306101::CalcMoonTransform()
 // class AActor*                           SourceActor                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UMarvelGameplayAbility*           SourceAbility                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           Summoned                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FMarvelTargetActorGenerateInfo   GenerateInfo                                           (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FMarvelTargetActorGenerateInfo&GenerateInfo                                           (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UEpicMomentAction_1030::OnSummonerBegin(class AActor* SourceActor, class UMarvelGameplayAbility* SourceAbility, class AActor* Summoned, const struct FMarvelTargetActorGenerateInfo& GenerateInfo)
 {
@@ -628,7 +680,7 @@ void UEpicMomentAction_1030::OnSummonerEnd(class AActor* InActor)
 // Function Hero_1030.MoonKnightAnimInstance.OnGenericGameplayTagUpdate
 // (Final, Native, Public)
 // Parameters:
-// struct FGameplayTag                     InTag                                                  (ConstParm, Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              InTag                                                  (ConstParm, Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   Count                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UMoonKnightAnimInstance::OnGenericGameplayTagUpdate(const struct FGameplayTag& InTag, int32 Count)
@@ -655,7 +707,7 @@ void UMoonKnightAnimInstance::OnGenericGameplayTagUpdate(const struct FGameplayT
 // Function Hero_1030.MoonKnightAnimInstance.GetLinkedAeroAnimInstances
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// TArray<class UAnimInstance*>            OutLinkedInstances                                     (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+// TArray<class UAnimInstance*>*           OutLinkedInstances                                     (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 
 void UMoonKnightAnimInstance::GetLinkedAeroAnimInstances(TArray<class UAnimInstance*>* OutLinkedInstances) const
 {
@@ -682,7 +734,7 @@ void UMoonKnightAnimInstance::GetLinkedAeroAnimInstances(TArray<class UAnimInsta
 // (Final, Native, Public, HasOutParams)
 // Parameters:
 // class AActor*                           Target                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FCharacterRebornParam            Param                                                  (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FCharacterRebornParam&     Param                                                  (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 void AMoonKnightChildActor::OnOwnerReborn(class AActor* Target, const struct FCharacterRebornParam& Param)
 {

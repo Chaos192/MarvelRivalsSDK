@@ -77,8 +77,8 @@ public:
 };
 
 // Class AudioExtensions.AudioParameterControllerInterface
-// 0x0000 (0x0030 - 0x0030)
-class IAudioParameterControllerInterface : public IInterface
+// 0x0000 (0x0000 - 0x0000)
+class IAudioParameterControllerInterface final
 {
 public:
 	void ResetParameters();
@@ -103,6 +103,15 @@ public:
 	static class IAudioParameterControllerInterface* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<IAudioParameterControllerInterface>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
 	}
 };
 

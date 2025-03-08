@@ -17,62 +17,6 @@
 namespace SDK
 {
 
-// PythonFunction PyAbility_103352.PyCue_Scope_Start_10335201.OnExecuteFX
-// (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
-// Parameters:
-// class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
-
-void UPyCue_Scope_Start_10335201::OnExecuteFX(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PyCue_Scope_Start_10335201", "OnExecuteFX");
-
-	Params::PyCue_Scope_Start_10335201_OnExecuteFX Parms{};
-
-	Parms.MyTarget = MyTarget;
-	Parms.Parameters = std::move(Parameters);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// PythonFunction PyAbility_103352.PyCue_Scope_Start_10335201.SetFXParameter
-// (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
-// Parameters:
-// class UNiagaraComponent*                InFXComponent                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class AActor*                           MyTarget                                               (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
-
-void UPyCue_Scope_Start_10335201::SetFXParameter(class UNiagaraComponent* InFXComponent, const class AActor* MyTarget, const struct FGameplayCueParameters& Parameters) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PyCue_Scope_Start_10335201", "SetFXParameter");
-
-	Params::PyCue_Scope_Start_10335201_SetFXParameter Parms{};
-
-	Parms.InFXComponent = InFXComponent;
-	Parms.MyTarget = MyTarget;
-	Parms.Parameters = std::move(Parameters);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // PythonFunction PyAbility_103352.PyEffectiveComponent_10335201.K2_Initialize
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 
@@ -133,7 +77,7 @@ void APyProjectile_10335201::K2_OnBeginAgentTask()
 // PythonFunction PyAbility_103352.PyProjectile_10335201.K2_OnProcessHit
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FHitResult                       ImpactResult                                           (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FHitResult&                ImpactResult                                           (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyProjectile_10335201::K2_OnProcessHit(const struct FHitResult& ImpactResult)
 {
@@ -150,147 +94,6 @@ void APyProjectile_10335201::K2_OnProcessHit(const struct FHitResult& ImpactResu
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// PythonFunction PyAbility_103352.PySummoned_10335201.ReceiveBeginPlay
-// (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
-
-void APySummoned_10335201::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PySummoned_10335201", "ReceiveBeginPlay");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// PythonFunction PyAbility_103352.PySummoned_10335201.K2_OnSummonedBeginAgentTask
-// (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
-
-void APySummoned_10335201::K2_OnSummonedBeginAgentTask()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PySummoned_10335201", "K2_OnSummonedBeginAgentTask");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// PythonFunction PyAbility_103352.PySummoned_10335201.DelaySpawnScope
-// (Native, Public, BlueprintCallable)
-
-void APySummoned_10335201::DelaySpawnScope()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PySummoned_10335201", "DelaySpawnScope");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// PythonFunction PyAbility_103352.PySummoned_10335201.K2_OnSummonedEndAgentTask
-// (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
-
-void APySummoned_10335201::K2_OnSummonedEndAgentTask()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PySummoned_10335201", "K2_OnSummonedEndAgentTask");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// PythonFunction PyAbility_103352.PyTraceComponent_10335201.K2_Initialize
-// (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
-
-void UPyTraceComponent_10335201::K2_Initialize()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PyTraceComponent_10335201", "K2_Initialize");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// PythonFunction PyAbility_103352.PyProjectile_10335202.K2_OnBounce
-// (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// struct FHitResult                       ImpactResult                                           (ConstParm, Parm, OutParm, ReferenceParm)
-// struct FVector                          ImpactVelocity                                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void APyProjectile_10335202::K2_OnBounce(const struct FHitResult& ImpactResult, const struct FVector& ImpactVelocity)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PyProjectile_10335202", "K2_OnBounce");
-
-	Params::PyProjectile_10335202_K2_OnBounce Parms{};
-
-	Parms.ImpactResult = std::move(ImpactResult);
-	Parms.ImpactVelocity = std::move(ImpactVelocity);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// PythonFunction PyAbility_103352.PyProjectile_10335202.K2_OnEndAgentTask
-// (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
-
-void APyProjectile_10335202::K2_OnEndAgentTask()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PyProjectile_10335202", "K2_OnEndAgentTask");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
 }
@@ -431,7 +234,7 @@ void UPyAbility_103352::OnDurationEnd()
 // PythonFunction PyAbility_103352.PyAbility_103352.NativeOnMontageEvent
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_103352::NativeOnMontageEvent(const class FString& Tag)
 {
@@ -453,11 +256,208 @@ void UPyAbility_103352::NativeOnMontageEvent(const class FString& Tag)
 }
 
 
+// PythonFunction PyAbility_103352.PySummoned_10335201.ReceiveBeginPlay
+// (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
+
+void APySummoned_10335201::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PySummoned_10335201", "ReceiveBeginPlay");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// PythonFunction PyAbility_103352.PySummoned_10335201.K2_OnSummonedBeginAgentTask
+// (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
+
+void APySummoned_10335201::K2_OnSummonedBeginAgentTask()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PySummoned_10335201", "K2_OnSummonedBeginAgentTask");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// PythonFunction PyAbility_103352.PySummoned_10335201.DelaySpawnScope
+// (Native, Public, BlueprintCallable)
+
+void APySummoned_10335201::DelaySpawnScope()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PySummoned_10335201", "DelaySpawnScope");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// PythonFunction PyAbility_103352.PySummoned_10335201.K2_OnSummonedEndAgentTask
+// (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
+
+void APySummoned_10335201::K2_OnSummonedEndAgentTask()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PySummoned_10335201", "K2_OnSummonedEndAgentTask");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// PythonFunction PyAbility_103352.PyCue_Scope_Start_10335201.OnExecuteFX
+// (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
+// Parameters:
+// class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+
+void UPyCue_Scope_Start_10335201::OnExecuteFX(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyCue_Scope_Start_10335201", "OnExecuteFX");
+
+	Params::PyCue_Scope_Start_10335201_OnExecuteFX Parms{};
+
+	Parms.MyTarget = MyTarget;
+	Parms.Parameters = std::move(Parameters);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// PythonFunction PyAbility_103352.PyCue_Scope_Start_10335201.SetFXParameter
+// (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
+// Parameters:
+// class UNiagaraComponent*                InFXComponent                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// const class AActor*                     MyTarget                                               (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+
+void UPyCue_Scope_Start_10335201::SetFXParameter(class UNiagaraComponent* InFXComponent, const class AActor* MyTarget, const struct FGameplayCueParameters& Parameters) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyCue_Scope_Start_10335201", "SetFXParameter");
+
+	Params::PyCue_Scope_Start_10335201_SetFXParameter Parms{};
+
+	Parms.InFXComponent = InFXComponent;
+	Parms.MyTarget = MyTarget;
+	Parms.Parameters = std::move(Parameters);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// PythonFunction PyAbility_103352.PyTraceComponent_10335201.K2_Initialize
+// (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
+
+void UPyTraceComponent_10335201::K2_Initialize()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyTraceComponent_10335201", "K2_Initialize");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// PythonFunction PyAbility_103352.PyProjectile_10335202.K2_OnBounce
+// (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const struct FHitResult&                ImpactResult                                           (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FVector&                   ImpactVelocity                                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void APyProjectile_10335202::K2_OnBounce(const struct FHitResult& ImpactResult, const struct FVector& ImpactVelocity)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyProjectile_10335202", "K2_OnBounce");
+
+	Params::PyProjectile_10335202_K2_OnBounce Parms{};
+
+	Parms.ImpactResult = std::move(ImpactResult);
+	Parms.ImpactVelocity = std::move(ImpactVelocity);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// PythonFunction PyAbility_103352.PyProjectile_10335202.K2_OnEndAgentTask
+// (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
+
+void APyProjectile_10335202::K2_OnEndAgentTask()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyProjectile_10335202", "K2_OnEndAgentTask");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // PythonFunction PyAbility_103352.PyCue_Ability_Loop_10335201.WhileActive
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 bool APyCue_Ability_Loop_10335201::WhileActive(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
@@ -487,7 +487,7 @@ bool APyCue_Ability_Loop_10335201::WhileActive(class AActor* MyTarget, const str
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 bool APyCue_Ability_Loop_10335201::OnRemove(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
@@ -517,7 +517,7 @@ bool APyCue_Ability_Loop_10335201::OnRemove(class AActor* MyTarget, const struct
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 bool APyCue_Ability_Loop_10335201::OnExecute(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
@@ -547,7 +547,7 @@ bool APyCue_Ability_Loop_10335201::OnExecute(class AActor* MyTarget, const struc
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyCue_Projectile_Loop_10335201::WhileActiveFX(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
 {

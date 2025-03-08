@@ -402,8 +402,8 @@ void UDragAbility_102161::ApplyBuffToTarget(EDashStopReason Reason)
 // Parameters:
 // class AActor*                           SelfActor                                              (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           OtherActor                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          NormalImpulse                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FHitResult                       Hit                                                    (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FVector&                   NormalImpulse                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FHitResult&                Hit                                                    (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 void UDragAbility_102161::OnCharacterHit(class AActor* SelfActor, class AActor* OtherActor, const struct FVector& NormalImpulse, const struct FHitResult& Hit)
 {
@@ -469,7 +469,7 @@ void ASummoned_102181::ClearCurrentAfterImage()
 // Function Hero_1021.Summoned_102181.GetAllAfterImageLocations
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<struct FVector>                  OutLocations                                           (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+// TArray<struct FVector>*                 OutLocations                                           (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 
 void ASummoned_102181::GetAllAfterImageLocations(TArray<struct FVector>* OutLocations)
 {
@@ -610,7 +610,7 @@ void ASummoned_102181::OnRep_TargetCharacter()
 // Parameters:
 // class AActor*                           InSourceAvatar                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           InTargetAvatar                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FAttributeModifierHandle         ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FAttributeModifierHandle&  ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void ASummoned_102181::OnSummonerTakeDamage(class AActor* InSourceAvatar, class AActor* InTargetAvatar, const struct FAttributeModifierHandle& ModifierParameterHandle)
 {
@@ -732,7 +732,7 @@ void ACue_Summoner_Loop_10218101::ClearLoopTimer()
 // (Native, Event, Public, HasOutParams, BlueprintEvent)
 // Parameters:
 // class AMarvelBaseCharacter*             OutTargetCharacter                                     (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FAfterImageSpec                  AfterImageSpec                                         (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FAfterImageSpec&           AfterImageSpec                                         (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 void ACue_Summoner_Loop_10218101::OnSetupAfterCom(class AMarvelBaseCharacter* OutTargetCharacter, const struct FAfterImageSpec& AfterImageSpec)
 {
@@ -824,7 +824,7 @@ void ACue_Summoner_Loop_10218101::UpdatePoseMesh(float DeltaSeconds)
 // class AActor*                           SourceActor                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UMarvelGameplayAbility*           SourceAbility                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           Summoned                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FMarvelTargetActorGenerateInfo   GenerateInfo                                           (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FMarvelTargetActorGenerateInfo&GenerateInfo                                           (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UEpicMomentAction_1021::OnSummonedBegin(class AActor* SourceActor, class UMarvelGameplayAbility* SourceAbility, class AActor* Summoned, const struct FMarvelTargetActorGenerateInfo& GenerateInfo)
 {
@@ -879,7 +879,7 @@ void UEpicMomentAction_1021::OnSummonedEnd(class AActor* InSummoner)
 // Parameters:
 // class AActor*                           InSourceAvatar                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           InTargetAvatar                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FAttributeModifierHandle         ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FAttributeModifierHandle&  ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UEpicMomentAction_1021::OnSummonerTakeDamage(class AActor* InSourceAvatar, class AActor* InTargetAvatar, const struct FAttributeModifierHandle& ModifierParameterHandle)
 {
@@ -956,7 +956,7 @@ bool AHawkeyeCharacter::GetIsInBowState()
 // Function Hero_1021.HawkeyeCharacter.OnArrowTypeTagUpdate
 // (Final, Native, Public, HasOutParams)
 // Parameters:
-// struct FGameplayTag                     Tag                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              Tag                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bExist                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void AHawkeyeCharacter::OnArrowTypeTagUpdate(const struct FGameplayTag& Tag, bool bExist)
@@ -1365,8 +1365,8 @@ void AHawkeyeChildActor::UpdateArrowMesh(class ACharacter* OutUselessChar, EHawk
 // Parameters:
 // class AActor*                           Killer                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           Target                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FAttributeModifierHandle         ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGlobalEventExtraData            ExtraData                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FAttributeModifierHandle&  ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGlobalEventExtraData&     ExtraData                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
 void UTabData_1021::OnActorPreDeath(class AActor* Killer, class AActor* Target, const struct FAttributeModifierHandle& ModifierParameterHandle, const struct FGlobalEventExtraData& ExtraData)
 {
@@ -1396,8 +1396,8 @@ void UTabData_1021::OnActorPreDeath(class AActor* Killer, class AActor* Target, 
 // Parameters:
 // class UAbilitySystemComponent*          Source                                                 (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UAbilitySystemComponent*          Target                                                 (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayEffectSpecStackHandle   EffectSpecHandle                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-// struct FActiveGameplayEffectHandle      EffectHandle                                           (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayEffectSpecStackHandle&EffectSpecHandle                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FActiveGameplayEffectHandle&EffectHandle                                           (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UTabData_1021::OnBuffAddEvent(class UAbilitySystemComponent* Source, class UAbilitySystemComponent* Target, const struct FGameplayEffectSpecStackHandle& EffectSpecHandle, const struct FActiveGameplayEffectHandle& EffectHandle)
 {
@@ -1427,7 +1427,7 @@ void UTabData_1021::OnBuffAddEvent(class UAbilitySystemComponent* Source, class 
 // Parameters:
 // class AActor*                           InSourceAvatar                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           InTargetAvatar                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FAttributeModifierHandle         ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FAttributeModifierHandle&  ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UTabData_1021::OnPostApplyDamage(class AActor* InSourceAvatar, class AActor* InTargetAvatar, const struct FAttributeModifierHandle& ModifierParameterHandle)
 {

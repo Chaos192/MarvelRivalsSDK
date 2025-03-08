@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // PythonClass PyAbility_102101.PyAbility_102101
-// 0x0000 (0x2678 - 0x2678)
+// 0x0000 (0x2680 - 0x2680)
 class UPyAbility_102101 : public UMarvelAbility_DoubleJump
 {
 public:

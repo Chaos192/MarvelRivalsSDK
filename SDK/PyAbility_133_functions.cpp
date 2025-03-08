@@ -58,7 +58,7 @@ void APyProjectile_13301::K2_OnEndAgentTask()
 // PythonFunction PyAbility_133.PyProjectile_13301.K2_OnProcessHit
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FHitResult                       Hit                                                    (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FHitResult&                Hit                                                    (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyProjectile_13301::K2_OnProcessHit(const struct FHitResult& Hit)
 {
@@ -83,7 +83,7 @@ void APyProjectile_13301::K2_OnProcessHit(const struct FHitResult& Hit)
 // PythonFunction PyAbility_133.PyProjectile_13301.K2_OnFlyOverMaxDistance
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FHitResult                       Hit                                                    (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FHitResult&                Hit                                                    (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyProjectile_13301::K2_OnFlyOverMaxDistance(const struct FHitResult& Hit)
 {
@@ -171,7 +171,7 @@ bool UPyAbility_133::CanActivate()
 // PythonFunction PyAbility_133.PyAbility_133.TryMakeTriggerContext
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayEventData               EventData                                              (Parm, OutParm, ReferenceParm)
+// struct FGameplayEventData&              EventData                                              (Parm, OutParm, ReferenceParm)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 bool UPyAbility_133::TryMakeTriggerContext(struct FGameplayEventData& EventData)
@@ -220,7 +220,7 @@ void UPyAbility_133::K2_ActivateAbility()
 // PythonFunction PyAbility_133.PyAbility_133.K2_ActivateAbilityFromEvent
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayEventData               EventData                                              (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayEventData&        EventData                                              (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyAbility_133::K2_ActivateAbilityFromEvent(const struct FGameplayEventData& EventData)
 {
@@ -320,7 +320,7 @@ void UPyAbility_133::OnJumpPress(float TimeWaited)
 // PythonFunction PyAbility_133.PyAbility_133.NativeOnMontageCompleted
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_133::NativeOnMontageCompleted(const class FString& Tag)
 {
@@ -389,7 +389,7 @@ void UPyAbility_133::StartIntoSwingingLoopState()
 // PythonFunction PyAbility_133.PyAbility_133.K2_OnServerReceiveClientMissileData
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FHitResult                       InHitResult                                            (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FHitResult&                InHitResult                                            (ConstParm, Parm, OutParm, ReferenceParm)
 // bool                                    bNeedSpecialMove                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    bIsHitGround                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
@@ -456,7 +456,7 @@ void UPyAbility_133::OnServerExpired()
 // PythonFunction PyAbility_133.PyAbility_133.K2_OnNetSyncOnEdgeOffCliff
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayAbilityTargetDataHandle Data                                                   (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayAbilityTargetDataHandle&Data                                                   (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyAbility_133::K2_OnNetSyncOnEdgeOffCliff(const struct FGameplayAbilityTargetDataHandle& Data)
 {
@@ -613,7 +613,7 @@ void UPyAbility_133::NetMulticast_SetSwingParams(bool IsLeftHandShoot)
 // PythonFunction PyAbility_133.PyAbility_133.K2_ReadySimpleSwing
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FSwingInfo                       InSwingInfo                                            (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FSwingInfo&                InSwingInfo                                            (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyAbility_133::K2_ReadySimpleSwing(const struct FSwingInfo& InSwingInfo)
 {

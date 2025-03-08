@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Ability_105002_BP.Ability_105002_BP_C
-// 0x0000 (0x25B0 - 0x25B0)
+// 0x0000 (0x25B8 - 0x25B8)
 class UAbility_105002_BP_C final : public UAbility_OffBattleBuffMgr
 {
 public:

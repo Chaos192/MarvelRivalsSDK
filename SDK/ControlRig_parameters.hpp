@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_structs.hpp"
 #include "ControlRig_structs.hpp"
-#include "AnimationCore_structs.hpp"
 #include "RigVM_structs.hpp"
+#include "CoreUObject_structs.hpp"
+#include "AnimationCore_structs.hpp"
 
 
 namespace SDK::Params
@@ -1886,7 +1886,7 @@ public:
 struct ControlRigComponent_AddMappedComponents final
 {
 public:
-	TArray<struct FControlRigComponentMappedComponent> Components;                                        // 0x0000(0x0010)(Parm, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	TArray<struct FControlRigComponentMappedComponent> Components;                                   // 0x0000(0x0010)(Parm, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 };
 
 // Function ControlRig.ControlRigComponent.AddMappedElements
@@ -1894,7 +1894,7 @@ public:
 struct ControlRigComponent_AddMappedElements final
 {
 public:
-	TArray<struct FControlRigComponentMappedElement> NewMappedElements;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	TArray<struct FControlRigComponentMappedElement> NewMappedElements;                              // 0x0000(0x0010)(Parm, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 };
 
 // Function ControlRig.ControlRigComponent.AddMappedSkeletalMesh
@@ -1904,7 +1904,7 @@ struct ControlRigComponent_AddMappedSkeletalMesh final
 public:
 	class USkeletalMeshComponent*                 SkeletalMeshComponent;                             // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<struct FControlRigComponentMappedBone> Bones;                                             // 0x0008(0x0010)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FControlRigComponentMappedCurve> Curves;                                            // 0x0018(0x0010)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FControlRigComponentMappedCurve> Curves;                                           // 0x0018(0x0010)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 };
 
 // Function ControlRig.ControlRigComponent.CanExecute
@@ -2288,7 +2288,7 @@ public:
 struct ControlRigComponent_SetMappedElements final
 {
 public:
-	TArray<struct FControlRigComponentMappedElement> NewMappedElements;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	TArray<struct FControlRigComponentMappedElement> NewMappedElements;                              // 0x0000(0x0010)(Parm, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 };
 
 // Function ControlRig.ControlRigComponent.SetObjectBinding

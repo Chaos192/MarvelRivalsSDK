@@ -18,7 +18,7 @@ namespace SDK::Params
 {
 
 // Function WBP_DebugAudioAbilityLine.WBP_DebugAudioAbilityLine_C.ExecuteUbergraph_WBP_DebugAudioAbilityLine
-// 0x0178 (0x0178 - 0x0000)
+// 0x0168 (0x0168 - 0x0000)
 struct WBP_DebugAudioAbilityLine_C_ExecuteUbergraph_WBP_DebugAudioAbilityLine final
 {
 public:
@@ -36,58 +36,58 @@ public:
 	bool                                          Temp_bool_Variable;                                // 0x0058(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_59[0x7];                                       // 0x0059(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UAkAudioEvent*                          Temp_object_Variable_4;                            // 0x0060(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	struct FMarvelAbilityAudioPack                K2Node_CustomEvent_AudioTable;                     // 0x0068(0x00B0)(ConstParm)
-	EClientPlayerViewSide                         K2Node_CustomEvent_Side;                           // 0x0118(0x0001)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FMarvelAbilityAudioPack                K2Node_CustomEvent_AudioTable;                     // 0x0068(0x00A0)(ConstParm)
+	EClientPlayerViewSide                         K2Node_CustomEvent_Side;                           // 0x0108(0x0001)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_109[0x7];                                      // 0x0109(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UCheckBox*                              K2Node_Select_Default;                             // 0x0110(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0118(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_119[0x7];                                      // 0x0119(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UCheckBox*                              K2Node_Select_Default;                             // 0x0120(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0128(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_129[0x7];                                      // 0x0129(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UUMGSequencePlayer*                     CallFunc_PlayAnimation_ReturnValue;                // 0x0130(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class UWidgetAnimation*                       K2Node_Select_Default_1;                           // 0x0138(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class APlayerController*                      CallFunc_GetPlayerController_ReturnValue;          // 0x0140(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class UUMGSequencePlayer*                     CallFunc_PlayAnimation_ReturnValue_1;              // 0x0148(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class UMarvelAudioAdmin*                      CallFunc_GetMarvelAudioAdmin_ReturnValue;          // 0x0150(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	TArray<class FString>                         CallFunc_GetSoloedAkEvents_ReturnValue;            // 0x0158(0x0010)(ReferenceParm)
-	bool                                          CallFunc_Array_Contains_ReturnValue;               // 0x0168(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_169[0x7];                                      // 0x0169(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UAkAudioEvent*                          K2Node_Select_Default_2;                           // 0x0170(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class UUMGSequencePlayer*                     CallFunc_PlayAnimation_ReturnValue;                // 0x0120(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class UWidgetAnimation*                       K2Node_Select_Default_1;                           // 0x0128(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class APlayerController*                      CallFunc_GetPlayerController_ReturnValue;          // 0x0130(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class UUMGSequencePlayer*                     CallFunc_PlayAnimation_ReturnValue_1;              // 0x0138(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class UMarvelAudioAdmin*                      CallFunc_GetMarvelAudioAdmin_ReturnValue;          // 0x0140(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	TArray<class FString>                         CallFunc_GetSoloedAkEvents_ReturnValue;            // 0x0148(0x0010)(ReferenceParm)
+	bool                                          CallFunc_Array_Contains_ReturnValue;               // 0x0158(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_159[0x7];                                      // 0x0159(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UAkAudioEvent*                          K2Node_Select_Default_2;                           // 0x0160(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 };
 
 // Function WBP_DebugAudioAbilityLine.WBP_DebugAudioAbilityLine_C.GetEventName
-// 0x0308 (0x0308 - 0x0000)
+// 0x02F8 (0x02F8 - 0x0000)
 struct WBP_DebugAudioAbilityLine_C_GetEventName final
 {
 public:
-	struct FMarvelAbilityAudioPack                Event;                                             // 0x0000(0x00B0)(BlueprintVisible, BlueprintReadOnly, Parm)
-	class FText                                   Str;                                               // 0x00B0(0x0018)(Parm, OutParm)
-	bool                                          CallFunc_Greater_IntInt_ReturnValue;               // 0x00C8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_C9[0x7];                                       // 0x00C9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 CallFunc_GetDisplayName_ReturnValue;               // 0x00D0(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	class FString                                 CallFunc_Split_LeftS;                              // 0x00E0(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	class FString                                 CallFunc_Split_RightS;                             // 0x00F0(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Split_ReturnValue;                        // 0x0100(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_101[0x7];                                      // 0x0101(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FText                                   CallFunc_Conv_StringToText_ReturnValue;            // 0x0108(0x0018)()
-	class FText                                   CallFunc_Conv_StringToText_ReturnValue_1;          // 0x0120(0x0018)()
-	struct FFormatArgumentData                    K2Node_MakeStruct_FormatArgumentData;              // 0x0138(0x0050)(HasGetValueTypeHash)
-	struct FFormatArgumentData                    K2Node_MakeStruct_FormatArgumentData_1;            // 0x0188(0x0050)(HasGetValueTypeHash)
-	class FText                                   CallFunc_Conv_StringToText_ReturnValue_2;          // 0x01D8(0x0018)()
-	TArray<struct FFormatArgumentData>            K2Node_MakeArray_Array;                            // 0x01F0(0x0010)(ReferenceParm)
-	struct FFormatArgumentData                    K2Node_MakeStruct_FormatArgumentData_2;            // 0x0200(0x0050)(HasGetValueTypeHash)
-	class FText                                   CallFunc_Format_ReturnValue;                       // 0x0250(0x0018)()
-	class FString                                 CallFunc_Conv_IntToString_ReturnValue;             // 0x0268(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	class FText                                   CallFunc_Conv_StringToText_ReturnValue_3;          // 0x0278(0x0018)()
-	struct FFormatArgumentData                    K2Node_MakeStruct_FormatArgumentData_3;            // 0x0290(0x0050)(HasGetValueTypeHash)
-	TArray<struct FFormatArgumentData>            K2Node_MakeArray_Array_1;                          // 0x02E0(0x0010)(ReferenceParm)
-	class FText                                   CallFunc_Format_ReturnValue_1;                     // 0x02F0(0x0018)()
+	struct FMarvelAbilityAudioPack                Event;                                             // 0x0000(0x00A0)(BlueprintVisible, BlueprintReadOnly, Parm)
+	class FText                                   Str;                                               // 0x00A0(0x0018)(Parm, OutParm)
+	bool                                          CallFunc_Greater_IntInt_ReturnValue;               // 0x00B8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_B9[0x7];                                       // 0x00B9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_GetDisplayName_ReturnValue;               // 0x00C0(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Split_LeftS;                              // 0x00D0(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Split_RightS;                             // 0x00E0(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Split_ReturnValue;                        // 0x00F0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_F1[0x7];                                       // 0x00F1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FText                                   CallFunc_Conv_StringToText_ReturnValue;            // 0x00F8(0x0018)()
+	class FText                                   CallFunc_Conv_StringToText_ReturnValue_1;          // 0x0110(0x0018)()
+	struct FFormatArgumentData                    K2Node_MakeStruct_FormatArgumentData;              // 0x0128(0x0050)(HasGetValueTypeHash)
+	struct FFormatArgumentData                    K2Node_MakeStruct_FormatArgumentData_1;            // 0x0178(0x0050)(HasGetValueTypeHash)
+	class FText                                   CallFunc_Conv_StringToText_ReturnValue_2;          // 0x01C8(0x0018)()
+	TArray<struct FFormatArgumentData>            K2Node_MakeArray_Array;                            // 0x01E0(0x0010)(ReferenceParm)
+	struct FFormatArgumentData                    K2Node_MakeStruct_FormatArgumentData_2;            // 0x01F0(0x0050)(HasGetValueTypeHash)
+	class FText                                   CallFunc_Format_ReturnValue;                       // 0x0240(0x0018)()
+	class FString                                 CallFunc_Conv_IntToString_ReturnValue;             // 0x0258(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FText                                   CallFunc_Conv_StringToText_ReturnValue_3;          // 0x0268(0x0018)()
+	struct FFormatArgumentData                    K2Node_MakeStruct_FormatArgumentData_3;            // 0x0280(0x0050)(HasGetValueTypeHash)
+	TArray<struct FFormatArgumentData>            K2Node_MakeArray_Array_1;                          // 0x02D0(0x0010)(ReferenceParm)
+	class FText                                   CallFunc_Format_ReturnValue_1;                     // 0x02E0(0x0018)()
 };
 
 // Function WBP_DebugAudioAbilityLine.WBP_DebugAudioAbilityLine_C.Init
-// 0x00B0 (0x00B0 - 0x0000)
+// 0x00A0 (0x00A0 - 0x0000)
 struct WBP_DebugAudioAbilityLine_C_Init final
 {
 public:
-	struct FMarvelAbilityAudioPack                AudioTable;                                        // 0x0000(0x00B0)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm)
+	struct FMarvelAbilityAudioPack                AudioTable;                                        // 0x0000(0x00A0)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm)
 };
 
 // Function WBP_DebugAudioAbilityLine.WBP_DebugAudioAbilityLine_C.Play

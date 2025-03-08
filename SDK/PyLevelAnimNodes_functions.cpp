@@ -21,7 +21,7 @@ namespace SDK
 // (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
 // class AActor*                           Instance                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class FString                           SkeletalMeshName                                       (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    SkeletalMeshName                                       (Parm, ZeroConstructor, HasGetValueTypeHash)
 // class USkeletalMeshComponent*           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash)
 
 class USkeletalMeshComponent* UPyLevelAnimNodes::GetSkeletalMesh(class AActor* Instance, const class FString& SkeletalMeshName)
@@ -51,7 +51,7 @@ class USkeletalMeshComponent* UPyLevelAnimNodes::GetSkeletalMesh(class AActor* I
 // (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
 // class AActor*                           Instance                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class FString                           MediaName                                              (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    MediaName                                              (Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UMediaPlateComponent*             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash)
 
 class UMediaPlateComponent* UPyLevelAnimNodes::GetMediaPlate(class AActor* Instance, const class FString& MediaName)

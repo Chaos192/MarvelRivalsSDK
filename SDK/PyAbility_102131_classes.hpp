@@ -21,15 +21,15 @@ namespace SDK
 {
 
 // PythonClass PyAbility_102131.PyAbility_102131
-// 0x0038 (0x25B8 - 0x2580)
+// 0x0038 (0x25C0 - 0x2588)
 class UPyAbility_102131 : public UMarvelGameplayAbility
 {
 public:
-	bool                                          IsLooseBow;                                        // 0x2580(0x0001)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2581[0x7];                                     // 0x2581(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TMulticastInlineDelegate<void()>              OnPreShootingDelegate;                             // 0x2588(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void()>              OnLooseBow;                                        // 0x2598(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(struct FHawkeyeArrowData& ArrowData)> QATestArrowData;                                   // 0x25A8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	bool                                          IsLooseBow;                                        // 0x2588(0x0001)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2589[0x7];                                     // 0x2589(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TMulticastInlineDelegate<void()>              OnPreShootingDelegate;                             // 0x2590(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void()>              OnLooseBow;                                        // 0x25A0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const struct FHawkeyeArrowData& ArrowData)> QATestArrowData;       // 0x25B0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 
 public:
 	void BeginPlay();
@@ -119,13 +119,14 @@ public:
 };
 
 // PythonClass PyAbility_102131.PyProjectile_10213101
-// 0x0020 (0x3070 - 0x3050)
+// 0x0020 (0x3130 - 0x3110)
 class APyProjectile_10213101 : public AMarvelAbilityTargetActor_Projectile
 {
 public:
-	float                                         ChargeTime;                                        // 0x3050(0x0004)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_3054[0x4];                                     // 0x3054(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TMulticastInlineDelegate<void(bool is_hidden, struct FHitResult& ImpactResult)> DelegateShowArrowMesh;                             // 0x3058(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3108[0x8];                                     // 0x3108(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         ChargeTime;                                        // 0x3110(0x0004)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3114[0x4];                                     // 0x3114(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TMulticastInlineDelegate<void(bool is_hidden, const struct FHitResult& ImpactResult)> DelegateShowArrowMesh; // 0x3118(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 
 public:
 	void K2_OnBeginAgentTask();
@@ -147,16 +148,16 @@ public:
 };
 
 // PythonClass PyAbility_102131.PyUIController_102131
-// 0x00D0 (0x0D30 - 0x0C60)
+// 0x00D0 (0x0D20 - 0x0C50)
 class UPyUIController_102131 final : public UUIC_Ability
 {
 public:
-	class UTexture2D*                             ThumpArrowIcon;                                    // 0x0C60(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UTexture2D*                             BurstArrowIcon;                                    // 0x0C68(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TSubclassOf<class UUserWidget>                WeaponWidget;                                      // 0x0C70(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FUIActionData                          ThumpActionData;                                   // 0x0C78(0x0058)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FUIActionData                          BurstActionData;                                   // 0x0CD0(0x0058)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	float                                         MaxAccumulateNeedTime;                             // 0x0D28(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UTexture2D*                             ThumpArrowIcon;                                    // 0x0C50(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UTexture2D*                             BurstArrowIcon;                                    // 0x0C58(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSubclassOf<class UUserWidget>                WeaponWidget;                                      // 0x0C60(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FUIActionData                          ThumpActionData;                                   // 0x0C68(0x0058)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FUIActionData                          BurstActionData;                                   // 0x0CC0(0x0058)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	float                                         MaxAccumulateNeedTime;                             // 0x0D18(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void SetAbility(int32 InAbilityId, class UGameplayAbility* InAbility);

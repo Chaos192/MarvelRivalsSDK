@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "PyWidget_SingleActiveWidget_classes.hpp"
 #include "Marvel_structs.hpp"
+#include "PyWidget_SingleActiveWidget_classes.hpp"
 
 
 namespace SDK

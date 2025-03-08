@@ -19,13 +19,14 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Ability_102511_BP.Ability_102511_BP_C
-// 0x10B8 (0x3640 - 0x2588)
+// 0x10C0 (0x3650 - 0x2590)
 class UAbility_102511_BP_C final : public UAbility_108
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x2588(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	struct FSelectTaskParam                       选取参数;                                          // 0x2590(0x10A0)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
-	class AActor*                                 Target;                                            // 0x3630(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x2590(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	uint8                                         Pad_2598[0x8];                                     // 0x2598(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSelectTaskParam                       选取参数;                                          // 0x25A0(0x10A0)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
+	class AActor*                                 Target;                                            // 0x3640(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void AE_OnAbilityInitialized();

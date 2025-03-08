@@ -24,7 +24,7 @@ public:
 	void K2_OnInitialize();
 	void K2_DeInitialize();
 	void WriteToLog();
-	void SendWarning(const class FString& warning_str);
+	void SendWarning(const TArray<int32>& LSScores, const TArray<int32>& RSScores, const TArray<int32>& LTScores, const TArray<int32>& RTScores);
 
 public:
 	static class UClass* StaticClass()

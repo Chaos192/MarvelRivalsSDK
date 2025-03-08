@@ -21,9 +21,9 @@ namespace SDK
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UObject*                          Obj                                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class FString                           setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
-// TMap<class FString, class FString>      P                                                      (ConstParm, Parm, OutParm, ReferenceParm)
-// TMap<int32, class FText>                OPTIONS                                                (ConstParm, Parm, OutParm, ReferenceParm)
+// const class FString&                    setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const TMap<class FString, class FString>&P                                                      (ConstParm, Parm, OutParm, ReferenceParm)
+// const TMap<int32, class FText>&         OPTIONS                                                (ConstParm, Parm, OutParm, ReferenceParm)
 // float                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UUISettingEntryLanguageHandler::BP_OnApply(class UObject* Obj, const class FString& setting_key, const TMap<class FString, class FString>& P, const TMap<int32, class FText>& OPTIONS, float Value)
@@ -54,9 +54,9 @@ void UUISettingEntryLanguageHandler::BP_OnApply(class UObject* Obj, const class 
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UObject*                          Obj                                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class FString                           setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
-// TMap<class FString, class FString>      P                                                      (ConstParm, Parm, OutParm, ReferenceParm)
-// TMap<int32, class FText>                O                                                      (ConstParm, Parm, OutParm, ReferenceParm)
+// const class FString&                    setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const TMap<class FString, class FString>&P                                                      (ConstParm, Parm, OutParm, ReferenceParm)
+// const TMap<int32, class FText>&         O                                                      (ConstParm, Parm, OutParm, ReferenceParm)
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 float UUISettingEntryLanguageHandler::BP_GetCurrentValue(class UObject* Obj, const class FString& setting_key, const TMap<class FString, class FString>& P, const TMap<int32, class FText>& O)
@@ -88,11 +88,11 @@ float UUISettingEntryLanguageHandler::BP_GetCurrentValue(class UObject* Obj, con
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UObject*                          Obj                                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class FString                           setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
-// TMap<class FString, class FString>      Params_0                                               (ConstParm, Parm, OutParm, ReferenceParm)
-// TMap<int32, class FText>                OPTIONS                                                (ConstParm, Parm, OutParm, ReferenceParm)
+// const class FString&                    setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const TMap<class FString, class FString>&Params_0                                               (ConstParm, Parm, OutParm, ReferenceParm)
+// const TMap<int32, class FText>&         OPTIONS                                                (ConstParm, Parm, OutParm, ReferenceParm)
 // float                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// TMap<class FString, int32>              Tags                                                   (ConstParm, Parm, OutParm, ReferenceParm)
+// const TMap<class FString, int32>&       Tags                                                   (ConstParm, Parm, OutParm, ReferenceParm)
 // TMap<class FString, int32>              ReturnValue                                            (Parm, OutParm, ReturnParm)
 
 TMap<class FString, int32> UUISettingEntryLanguageHandler::BP_OnChanged(class UObject* Obj, const class FString& setting_key, const TMap<class FString, class FString>& Params_0, const TMap<int32, class FText>& OPTIONS, float Value, const TMap<class FString, int32>& Tags)
@@ -126,8 +126,8 @@ TMap<class FString, int32> UUISettingEntryLanguageHandler::BP_OnChanged(class UO
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UObject*                          Obj                                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class FString                           setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
-// TMap<int32, class FText>                OPTIONS                                                (ConstParm, Parm, OutParm, ReferenceParm)
+// const class FString&                    setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const TMap<int32, class FText>&         OPTIONS                                                (ConstParm, Parm, OutParm, ReferenceParm)
 // TMap<int32, class FText>                ReturnValue                                            (Parm, OutParm, ReturnParm)
 
 TMap<int32, class FText> UUISettingEntryLanguageOptionGenerator::BP_Gen(class UObject* Obj, const class FString& setting_key, const TMap<int32, class FText>& OPTIONS)

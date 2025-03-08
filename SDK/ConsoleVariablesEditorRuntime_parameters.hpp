@@ -48,7 +48,7 @@ public:
 struct ConsoleVariablesAsset_ReplaceSavedCommands final
 {
 public:
-	TArray<struct FConsoleVariablesEditorAssetSaveData> Replacement;                                       // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TArray<struct FConsoleVariablesEditorAssetSaveData> Replacement;                                 // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 };
 
 // Function ConsoleVariablesEditorRuntime.ConsoleVariablesAsset.SetVariableCollectionDescription
@@ -86,7 +86,7 @@ public:
 struct ConsoleVariablesAsset_GetSavedCommands final
 {
 public:
-	TArray<struct FConsoleVariablesEditorAssetSaveData> ReturnValue;                                       // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
+	TArray<struct FConsoleVariablesEditorAssetSaveData> ReturnValue;                                 // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
 };
 
 // Function ConsoleVariablesEditorRuntime.ConsoleVariablesAsset.GetSavedCommandsAsCommaSeparatedString

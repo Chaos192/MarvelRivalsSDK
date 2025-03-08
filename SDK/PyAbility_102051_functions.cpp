@@ -58,7 +58,7 @@ void APyScope_10205101::K2_OnEndAgentTask()
 // PythonFunction PyAbility_102051.PyScope_10205101.OnTraceResult
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<struct FHitResult>               HitResults                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const TArray<struct FHitResult>&        HitResults                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyScope_10205101::OnTraceResult(const TArray<struct FHitResult>& HitResults)
 {
@@ -128,7 +128,7 @@ void APyScope_10205101::OnSummonedSpawned(class AActor* Summoned)
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyCue_Summoned_Loop_10205101::WhileActiveFX(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
 {
@@ -155,7 +155,7 @@ void APyCue_Summoned_Loop_10205101::WhileActiveFX(class AActor* MyTarget, const 
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyCue_Summoned_Loop_10205101::OnExecuteFX(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
 {
@@ -200,7 +200,7 @@ void APyCue_Summoned_Loop_10205101::SetTransparency()
 // PythonFunction PyAbility_102051.PyCue_Summoned_Loop_10205101.SetMaterialParams
 // (Native, Public, BlueprintCallable)
 // Parameters:
-// class FString                           MaterialName                                           (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    MaterialName                                           (Parm, ZeroConstructor, HasGetValueTypeHash)
 // float                                   MaterialValue                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void APyCue_Summoned_Loop_10205101::SetMaterialParams(const class FString& MaterialName, float MaterialValue)
@@ -286,7 +286,7 @@ void UPySummonedComp_10205101::OnHookTargetDamagedTimer()
 // Parameters:
 // class AActor*                           Source                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // class AActor*                           Dest                                                   (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FAttributeModifierHandle         Parm                                                   (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
+// const struct FAttributeModifierHandle&  Parm                                                   (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
 
 void UPySummonedComp_10205101::OnTargetDeath(class AActor* Source, class AActor* Dest, const struct FAttributeModifierHandle& Parm)
 {
@@ -340,7 +340,7 @@ void UPySummonedComp_10205101::OnTargetDestroy(class AActor* Target)
 // Parameters:
 // class AActor*                           Source                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // class AActor*                           Dest                                                   (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FAttributeModifierHandle         Parm                                                   (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
+// const struct FAttributeModifierHandle&  Parm                                                   (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
 
 void UPySummonedComp_10205101::OnTargetTakeDamage(class AActor* Source, class AActor* Dest, const struct FAttributeModifierHandle& Parm)
 {
@@ -367,8 +367,8 @@ void UPySummonedComp_10205101::OnTargetTakeDamage(class AActor* Source, class AA
 // PythonFunction PyAbility_102051.PySummonedComp_10205101.OnEffectRemoved
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FActiveGameplayEffectHandle      EffectHandle                                           (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayEffectSpecStackHandle   ExpiredEffectSpecHandle                                (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
+// const struct FActiveGameplayEffectHandle&EffectHandle                                           (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayEffectSpecStackHandle&ExpiredEffectSpecHandle                                (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
 
 void UPySummonedComp_10205101::OnEffectRemoved(const struct FActiveGameplayEffectHandle& EffectHandle, const struct FGameplayEffectSpecStackHandle& ExpiredEffectSpecHandle)
 {
@@ -395,7 +395,7 @@ void UPySummonedComp_10205101::OnEffectRemoved(const struct FActiveGameplayEffec
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyCue_Buff_10205101::WhileActiveFX(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
 {
@@ -422,7 +422,7 @@ void APyCue_Buff_10205101::WhileActiveFX(class AActor* MyTarget, const struct FG
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyCue_Scope_Loop_10205101::WhileActiveFX(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
 {
@@ -449,7 +449,7 @@ void APyCue_Scope_Loop_10205101::WhileActiveFX(class AActor* MyTarget, const str
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyCue_Scope_Loop_10205101::OnRemoveFX(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
 {

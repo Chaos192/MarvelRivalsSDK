@@ -77,7 +77,7 @@ void UPyAbility_105261::MissileEventNotify()
 // PythonFunction PyAbility_105261.PyAbility_105261.NativeOnMontageCompleted
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_105261::NativeOnMontageCompleted(const class FString& Tag)
 {
@@ -102,7 +102,7 @@ void UPyAbility_105261::NativeOnMontageCompleted(const class FString& Tag)
 // PythonFunction PyAbility_105261.PyAbility_105261.NativeOnMontageInterrupted
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_105261::NativeOnMontageInterrupted(const class FString& Tag)
 {
@@ -127,7 +127,7 @@ void UPyAbility_105261::NativeOnMontageInterrupted(const class FString& Tag)
 // PythonFunction PyAbility_105261.PyAbility_105261.NativeOnMontageCancelled
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_105261::NativeOnMontageCancelled(const class FString& Tag)
 {
@@ -152,7 +152,7 @@ void UPyAbility_105261::NativeOnMontageCancelled(const class FString& Tag)
 // PythonFunction PyAbility_105261.PyAbility_105261.NativeOnMontageEvent
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_105261::NativeOnMontageEvent(const class FString& Tag)
 {
@@ -178,7 +178,7 @@ void UPyAbility_105261::NativeOnMontageEvent(const class FString& Tag)
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 bool APyCue_Ability_Loop_10526101::WhileActive(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
@@ -208,7 +208,7 @@ bool APyCue_Ability_Loop_10526101::WhileActive(class AActor* MyTarget, const str
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 bool APyCue_Ability_Loop_10526101::OnRemove(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)

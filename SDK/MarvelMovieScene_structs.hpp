@@ -10,12 +10,12 @@
 
 #include "Basic.hpp"
 
-#include "MovieSceneTracks_structs.hpp"
 #include "BlastNiagara_structs.hpp"
 #include "Niagara_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "MovieScene_structs.hpp"
 #include "ChaosNiagara_structs.hpp"
+#include "MovieSceneTracks_structs.hpp"
 #include "Engine_structs.hpp"
 
 
@@ -38,42 +38,6 @@ enum class ENiagaraArrayFloatType : uint8
 	ENiagaraArrayFloatType_MAX               = 9,
 };
 
-// ScriptStruct MarvelMovieScene.NiagaraArrayFloatBundleData
-// 0x0078 (0x0078 - 0x0000)
-struct FNiagaraArrayFloatBundleData final
-{
-public:
-	TArray<float>                                 FloatData1;                                        // 0x0000(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FVector2D>                      FloatData2;                                        // 0x0010(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FVector>                        FloatData3;                                        // 0x0020(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FVector4>                       FloatData4;                                        // 0x0030(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FLinearColor>                   ColorData;                                         // 0x0040(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FQuat>                          QuatData;                                          // 0x0050(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FMatrix>                        MatrixData;                                        // 0x0060(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-	ENiagaraArrayFloatType                        FloatType;                                         // 0x0070(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_71[0x7];                                       // 0x0071(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-
-// ScriptStruct MarvelMovieScene.MovieSceneNiagaraArrayFloatData
-// 0x00A8 (0x00F8 - 0x0050)
-struct FMovieSceneNiagaraArrayFloatData final : public FMovieSceneChannel
-{
-public:
-	TArray<struct FFrameNumber>                   Times;                                             // 0x0050(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
-	TArray<struct FNiagaraArrayFloatBundleData>   KeyValues;                                         // 0x0060(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
-	struct FMovieSceneKeyHandleMap                KeyHandles;                                        // 0x0070(0x0088)(Transient, NativeAccessSpecifierPrivate)
-};
-
-// ScriptStruct MarvelMovieScene.MovieSceneMarvelNiagaraArrayFloatTemplate
-// 0x0108 (0x0128 - 0x0020)
-struct FMovieSceneMarvelNiagaraArrayFloatTemplate final : public FMovieSceneEvalTemplate
-{
-public:
-	struct FMovieSceneNiagaraArrayFloatData       ArrayFloatData;                                    // 0x0020(0x00F8)(NativeAccessSpecifierPublic)
-	class FName                                   OverrideName;                                      // 0x0118(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_124[0x4];                                      // 0x0124(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-
 // ScriptStruct MarvelMovieScene.BlastDynamicFragmentsSoftEventData
 // 0x0030 (0x0030 - 0x0000)
 struct FBlastDynamicFragmentsSoftEventData final
@@ -90,20 +54,8 @@ struct FMovieSceneBlastDynamicFragmentsData final : public FMovieSceneChannel
 {
 public:
 	TArray<struct FFrameNumber>                   Times;                                             // 0x0050(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
-	TArray<struct FBlastDynamicFragmentsSoftEventData> KeyValues;                                         // 0x0060(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
+	TArray<struct FBlastDynamicFragmentsSoftEventData> KeyValues;                                    // 0x0060(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
 	struct FMovieSceneKeyHandleMap                KeyHandles;                                        // 0x0070(0x0088)(Transient, NativeAccessSpecifierPrivate)
-};
-
-// ScriptStruct MarvelMovieScene.ChaosFragmentParticleDataStore
-// 0x0030 (0x0030 - 0x0000)
-struct FChaosFragmentParticleDataStore final
-{
-public:
-	struct FVector3f                              position;                                          // 0x0000(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FQuat4f                                Rotation;                                          // 0x0010(0x0010)(IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector3f                              Scale;                                             // 0x0020(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Index;                                             // 0x002C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
 // ScriptStruct MarvelMovieScene.MovieSceneMarvelBlastDynamicFragmentsTemplate
@@ -183,12 +135,24 @@ public:
 	uint8                                         Pad_119[0x7];                                      // 0x0119(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 
+// ScriptStruct MarvelMovieScene.ChaosFragmentParticleDataStore
+// 0x0030 (0x0030 - 0x0000)
+struct FChaosFragmentParticleDataStore final
+{
+public:
+	struct FVector3f                              position;                                          // 0x0000(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FQuat4f                                Rotation;                                          // 0x0010(0x0010)(IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector3f                              Scale;                                             // 0x0020(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Index;                                             // 0x002C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
 // ScriptStruct MarvelMovieScene.DynamicBatchMeshEventData
 // 0x0010 (0x0010 - 0x0000)
 struct FDynamicBatchMeshEventData final
 {
 public:
-	TArray<struct FChaosFragmentParticleDataStore> ParticleDatas;                                     // 0x0000(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FChaosFragmentParticleDataStore> ParticleDatas;                                    // 0x0000(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
 };
 
 // ScriptStruct MarvelMovieScene.MovieSceneDynamicBatchMeshData
@@ -207,6 +171,42 @@ struct FMovieSceneMarvelDynamicBatchMeshTemplate final : public FMovieSceneEvalT
 {
 public:
 	struct FMovieSceneDynamicBatchMeshData        InstanceData;                                      // 0x0020(0x00F8)(NativeAccessSpecifierPublic)
+};
+
+// ScriptStruct MarvelMovieScene.NiagaraArrayFloatBundleData
+// 0x0078 (0x0078 - 0x0000)
+struct FNiagaraArrayFloatBundleData final
+{
+public:
+	TArray<float>                                 FloatData1;                                        // 0x0000(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FVector2D>                      FloatData2;                                        // 0x0010(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FVector>                        FloatData3;                                        // 0x0020(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FVector4>                       FloatData4;                                        // 0x0030(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FLinearColor>                   ColorData;                                         // 0x0040(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FQuat>                          QuatData;                                          // 0x0050(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FMatrix>                        MatrixData;                                        // 0x0060(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	ENiagaraArrayFloatType                        FloatType;                                         // 0x0070(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_71[0x7];                                       // 0x0071(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+
+// ScriptStruct MarvelMovieScene.MovieSceneNiagaraArrayFloatData
+// 0x00A8 (0x00F8 - 0x0050)
+struct FMovieSceneNiagaraArrayFloatData final : public FMovieSceneChannel
+{
+public:
+	TArray<struct FFrameNumber>                   Times;                                             // 0x0050(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
+	TArray<struct FNiagaraArrayFloatBundleData>   KeyValues;                                         // 0x0060(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
+	struct FMovieSceneKeyHandleMap                KeyHandles;                                        // 0x0070(0x0088)(Transient, NativeAccessSpecifierPrivate)
+};
+
+// ScriptStruct MarvelMovieScene.MovieSceneMarvelNiagaraArrayFloatTemplate
+// 0x0108 (0x0128 - 0x0020)
+struct FMovieSceneMarvelNiagaraArrayFloatTemplate final : public FMovieSceneEvalTemplate
+{
+public:
+	struct FMovieSceneNiagaraArrayFloatData       ArrayFloatData;                                    // 0x0020(0x00F8)(NativeAccessSpecifierPublic)
+	class FName                                   OverrideName;                                      // 0x0118(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_124[0x4];                                      // 0x0124(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 
 // ScriptStruct MarvelMovieScene.MovieSceneMarvelNiagaraParameterCollectionTemplate
@@ -262,7 +262,7 @@ struct FMovieScenePaintSceneReconnectRebuildData final : public FMovieSceneChann
 {
 public:
 	TArray<struct FFrameNumber>                   Times;                                             // 0x0050(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
-	TArray<struct FPaintSceneReconnectRebuildData> KeyValues;                                         // 0x0060(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
+	TArray<struct FPaintSceneReconnectRebuildData> KeyValues;                                        // 0x0060(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
 	struct FMovieSceneKeyHandleMap                KeyHandles;                                        // 0x0070(0x0088)(Transient, NativeAccessSpecifierPrivate)
 };
 
@@ -272,7 +272,7 @@ struct FMovieSceneMarvelPaintSceneTemplate final : public FMovieSceneEvalTemplat
 {
 public:
 	struct FMovieScenePaintSceneCommandData       Commands;                                          // 0x0020(0x00F8)(NativeAccessSpecifierPublic)
-	struct FMovieScenePaintSceneReconnectRebuildData RebuildData;                                       // 0x0118(0x00F8)(NativeAccessSpecifierPublic)
+	struct FMovieScenePaintSceneReconnectRebuildData RebuildData;                                    // 0x0118(0x00F8)(NativeAccessSpecifierPublic)
 };
 
 // ScriptStruct MarvelMovieScene.BoneSpaceTransformsData

@@ -21,7 +21,7 @@ namespace SDK
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 bool APyCue_Buff_10433201::WhileActive(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
@@ -51,7 +51,7 @@ bool APyCue_Buff_10433201::WhileActive(class AActor* MyTarget, const struct FGam
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 bool APyCue_Buff_10433201::OnRemove(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
@@ -118,7 +118,7 @@ void UPyAbility_104332::K2_ActivateAbility()
 // PythonFunction PyAbility_104332.PyAbility_104332.OnTagUpdate
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FGameplayTag                     TagUpdated                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              TagUpdated                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
 // bool                                    TagExists                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UPyAbility_104332::OnTagUpdate(const struct FGameplayTag& TagUpdated, bool TagExists)
@@ -265,9 +265,9 @@ void UPyAbility_104332::K2_OnEndAbility(bool bWasCancelled)
 // PythonFunction PyAbility_104332.PyAbility_104332.ModifyDeathImpulseInfo
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   ImpulseLevel                                           (Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FVector                          DeathDir                                               (Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FAttributeModifierParameter      ModifierParameter                                      (ConstParm, Parm, OutParm, ReferenceParm)
+// int32&                                  ImpulseLevel                                           (Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FVector&                         DeathDir                                               (Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FAttributeModifierParameter&ModifierParameter                                      (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyAbility_104332::ModifyDeathImpulseInfo(int32& ImpulseLevel, struct FVector& DeathDir, const struct FAttributeModifierParameter& ModifierParameter)
 {
@@ -317,7 +317,7 @@ void UPyTraceComponent_10433201::K2_Initialize()
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // class UObject*                          TraceSource                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// TArray<struct FHitResult>               HitResults                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const TArray<struct FHitResult>&        HitResults                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyTraceComponent_10433201::OnTraceCompleted(class UObject* TraceSource, const TArray<struct FHitResult>& HitResults)
 {

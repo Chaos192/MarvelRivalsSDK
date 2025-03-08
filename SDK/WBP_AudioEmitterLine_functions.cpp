@@ -121,7 +121,7 @@ bool UWBP_AudioEmitterLine_C::IsTimeOut()
 // Function WBP_AudioEmitterLine.WBP_AudioEmitterLine_C.OnAnimationFinished
 // (BlueprintCosmetic, Event, Protected, BlueprintEvent)
 // Parameters:
-// class UWidgetAnimation*                 Animation                                              (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// const class UWidgetAnimation*           Animation                                              (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 void UWBP_AudioEmitterLine_C::OnAnimationFinished(const class UWidgetAnimation* Animation)
 {
@@ -185,7 +185,7 @@ void UWBP_AudioEmitterLine_C::PlayByName(class FName EventName_0)
 // Function WBP_AudioEmitterLine.WBP_AudioEmitterLine_C.Tick
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// struct FGeometry                        MyGeometry                                             (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
+// const struct FGeometry&                 MyGeometry                                             (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
 // float                                   InDeltaTime                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UWBP_AudioEmitterLine_C::Tick(const struct FGeometry& MyGeometry, float InDeltaTime)

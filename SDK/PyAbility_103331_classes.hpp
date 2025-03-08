@@ -10,30 +10,12 @@
 
 #include "Basic.hpp"
 
-#include "Marvel_classes.hpp"
 #include "Hero_1033_classes.hpp"
+#include "Marvel_classes.hpp"
 
 
 namespace SDK
 {
-
-// PythonClass PyAbility_103331.PyCue_Ability_Instant_10333101
-// 0x0000 (0x0368 - 0x0368)
-class UPyCue_Ability_Instant_10333101 final : public UMarvelCueNotify_Base
-{
-public:
-	void OnExecuteAudio(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters) const;
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"PyCue_Ability_Instant_10333101">();
-	}
-	static class UPyCue_Ability_Instant_10333101* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UPyCue_Ability_Instant_10333101>();
-	}
-};
 
 // PythonClass PyAbility_103331.PyConfig_103331
 // 0x0008 (0x00A0 - 0x0098)
@@ -53,8 +35,32 @@ public:
 	}
 };
 
+// PythonClass PyAbility_103331.PyUIController_103331
+// 0x0010 (0x0C60 - 0x0C50)
+class UPyUIController_103331 final : public UUIC_Ability
+{
+public:
+	class UTexture2D*                             Icon_Normal;                                       // 0x0C50(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UTexture2D*                             Icon_Switch;                                       // 0x0C58(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	void SetAbility(int32 InAbilityId, class UGameplayAbility* InAbility);
+	void ReceiveTick(float DeltaSeconds);
+	void Destruct();
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PyUIController_103331">();
+	}
+	static class UPyUIController_103331* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPyUIController_103331>();
+	}
+};
+
 // PythonClass PyAbility_103331.PyAbility_103331
-// 0x0000 (0x2590 - 0x2590)
+// 0x0000 (0x2598 - 0x2598)
 class UPyAbility_103331 : public UAbility_103331
 {
 public:
@@ -73,7 +79,7 @@ public:
 };
 
 // PythonClass PyAbility_103331.PyBuffAbility_10333102
-// 0x0000 (0x10F8 - 0x10F8)
+// 0x0000 (0x1100 - 0x1100)
 class UPyBuffAbility_10333102 final : public UMarvelEffectGameplayAbility
 {
 public:
@@ -87,27 +93,21 @@ public:
 	}
 };
 
-// PythonClass PyAbility_103331.PyUIController_103331
-// 0x0010 (0x0C70 - 0x0C60)
-class UPyUIController_103331 final : public UUIC_Ability
+// PythonClass PyAbility_103331.PyCue_Ability_Instant_10333101
+// 0x0000 (0x0368 - 0x0368)
+class UPyCue_Ability_Instant_10333101 final : public UMarvelCueNotify_Base
 {
 public:
-	class UTexture2D*                             Icon_Normal;                                       // 0x0C60(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UTexture2D*                             Icon_Switch;                                       // 0x0C68(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-public:
-	void SetAbility(int32 InAbilityId, class UGameplayAbility* InAbility);
-	void ReceiveTick(float DeltaSeconds);
-	void Destruct();
+	void OnExecuteAudio(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters) const;
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"PyUIController_103331">();
+		return StaticClassImpl<"PyCue_Ability_Instant_10333101">();
 	}
-	static class UPyUIController_103331* GetDefaultObj()
+	static class UPyCue_Ability_Instant_10333101* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UPyUIController_103331>();
+		return GetDefaultObjImpl<UPyCue_Ability_Instant_10333101>();
 	}
 };
 

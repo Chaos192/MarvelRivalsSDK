@@ -58,8 +58,8 @@ void UPyAbilityExtraStatistics_104146::OnAbilityActivate()
 // PythonFunction PyAbilityExtraStatistics_104146.PyAbilityExtraStatistics_104146.OnAbilityHit
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FActionLogBattleContext          BattleContext                                          (ConstParm, Parm, OutParm, ReferenceParm)
-// struct FAttributeModifierHandle         ParameterHandle                                        (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
+// const struct FActionLogBattleContext&   BattleContext                                          (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FAttributeModifierHandle&  ParameterHandle                                        (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
 
 void UPyAbilityExtraStatistics_104146::OnAbilityHit(const struct FActionLogBattleContext& BattleContext, const struct FAttributeModifierHandle& ParameterHandle)
 {
@@ -87,7 +87,7 @@ void UPyAbilityExtraStatistics_104146::OnAbilityHit(const struct FActionLogBattl
 // Parameters:
 // class AActor*                           DamageCauser                                           (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // class AActor*                           TargetActor                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FAttributeModifierHandle         ParameterHandle                                        (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
+// const struct FAttributeModifierHandle&  ParameterHandle                                        (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
 
 void UPyAbilityExtraStatistics_104146::OnCharacterDeath(class AActor* DamageCauser, class AActor* TargetActor, const struct FAttributeModifierHandle& ParameterHandle)
 {
@@ -115,8 +115,8 @@ void UPyAbilityExtraStatistics_104146::OnCharacterDeath(class AActor* DamageCaus
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           Instigator                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FMarvelTargetActorGenerateInfo   GenerateInfo                                           (ConstParm, Parm, OutParm, ReferenceParm)
-// struct FEndAgentTaskInfo                EndInfo                                                (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
+// const struct FMarvelTargetActorGenerateInfo&GenerateInfo                                           (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FEndAgentTaskInfo&         EndInfo                                                (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
 
 void UPyAbilityExtraStatistics_104146::OnAbilityEndAgentTask(class AActor* Instigator, const struct FMarvelTargetActorGenerateInfo& GenerateInfo, const struct FEndAgentTaskInfo& EndInfo)
 {

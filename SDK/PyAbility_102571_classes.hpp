@@ -47,51 +47,25 @@ public:
 	}
 };
 
-// PythonClass PyAbility_102571.PyConfig_102571
-// 0x0C28 (0x0CC0 - 0x0098)
-class UPyConfig_102571 final : public UMarvelAbilityConfig
-{
-public:
-	int32                                         FlyCountThreshold;                                 // 0x0098(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9C[0x4];                                       // 0x009C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FDashAbilityInfo                       DashInfo;                                          // 0x00A0(0x0BA8)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	int32                                         ScopeId;                                           // 0x0C48(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C4C[0x4];                                      // 0x0C4C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FGameplayTagContainer                  ForbidenEnergyTags;                                // 0x0C50(0x0068)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	float                                         TraceFloorDistance;                                // 0x0CB8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MaxFloorSlope;                                     // 0x0CBC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"PyConfig_102571">();
-	}
-	static class UPyConfig_102571* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UPyConfig_102571>();
-	}
-};
-
 // PythonClass PyAbility_102571.PyCue_Ability_Loop_10257101
-// 0x0060 (0x0EB0 - 0x0E50)
+// 0x0058 (0x0EA8 - 0x0E50)
 class APyCue_Ability_Loop_10257101 final : public AMarvelCueNotify_Ability
 {
 public:
 	class UAnimMontage*                           DaggerMontage;                                     // 0x0E50(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UAnimMontage*                           CloakMontage;                                      // 0x0E58(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         FlyMeshOffsetX;                                    // 0x0E60(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         DaggerDestroyTime;                                 // 0x0E64(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         CloakDestroyTime;                                  // 0x0E68(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGameplayTag                           ScreenEffectTag;                                   // 0x0E6C(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UFXSystemAsset*                         FlyTrajectoryEffect;                               // 0x0E78(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                FlyEffectOffset;                                   // 0x0E80(0x0018)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UFXSystemAsset*                         FlyStopEffect;                                     // 0x0E98(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         CustomRenderDepth;                                 // 0x0EA0(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_EA4[0x4];                                      // 0x0EA4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class USkeletalMeshComponent*                 ViceMeshComponent;                                 // 0x0EA8(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGameplayTag                           ScreenEffectTag;                                   // 0x0E64(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UFXSystemAsset*                         FlyTrajectoryEffect;                               // 0x0E70(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                FlyEffectOffset;                                   // 0x0E78(0x0018)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UFXSystemAsset*                         FlyStopEffect;                                     // 0x0E90(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         CustomRenderDepth;                                 // 0x0E98(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_E9C[0x4];                                      // 0x0E9C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class USkeletalMeshComponent*                 ViceMeshComponent;                                 // 0x0EA0(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	bool WhileActive(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters);
+	void OnMontageEnded(const class FString& NotifyName);
 	void OnAbilityInit(int32 AbilityID);
 	void OnTranslatedByPortal(const struct FVector& LastPosition, const struct FVector& NewPosition);
 	void OnFlyStarted(bool IsLastFly);
@@ -137,7 +111,7 @@ public:
 	bool                                          SpreadState;                                       // 0x1700(0x0001)(Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_1701[0x7];                                     // 0x1701(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TMulticastInlineDelegate<void()>              SpreadStoppedDispatcher;                           // 0x1708(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(struct FVector& InLocation)> ScopeFloorLocationDispatcher;                      // 0x1718(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const struct FVector& InLocation)> ScopeFloorLocationDispatcher;   // 0x1718(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 
 public:
 	void K2_OnInitializeData();
@@ -161,23 +135,49 @@ public:
 	}
 };
 
+// PythonClass PyAbility_102571.PyConfig_102571
+// 0x0C28 (0x0CC0 - 0x0098)
+class UPyConfig_102571 final : public UMarvelAbilityConfig
+{
+public:
+	int32                                         FlyCountThreshold;                                 // 0x0098(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9C[0x4];                                       // 0x009C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FDashAbilityInfo                       DashInfo;                                          // 0x00A0(0x0BA8)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	int32                                         ScopeId;                                           // 0x0C48(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C4C[0x4];                                      // 0x0C4C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FGameplayTagContainer                  ForbidenEnergyTags;                                // 0x0C50(0x0068)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	float                                         TraceFloorDistance;                                // 0x0CB8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MaxFloorSlope;                                     // 0x0CBC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PyConfig_102571">();
+	}
+	static class UPyConfig_102571* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPyConfig_102571>();
+	}
+};
+
 // PythonClass PyAbility_102571.PyAbility_102571
-// 0x0048 (0x25C8 - 0x2580)
+// 0x0048 (0x25D0 - 0x2588)
 class UPyAbility_102571 : public UMarvelGameplayAbility
 {
 public:
-	int32                                         FlyCounter;                                        // 0x2580(0x0004)(Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EAbilityState_102571                          AbilityState;                                      // 0x2584(0x0001)(Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2585[0x3];                                     // 0x2585(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	TMulticastInlineDelegate<void(bool IsLastFly)> FlyStartedDispatcher;                              // 0x2588(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(bool IsLastFly)> FlyStopedDispatcher;                               // 0x2598(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void()>              AbilityEndedDispatcher;                            // 0x25A8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(struct FVector& InLocation)> FloorLocationDispatcher;                           // 0x25B8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	int32                                         FlyCounter;                                        // 0x2588(0x0004)(Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EAbilityState_102571                          AbilityState;                                      // 0x258C(0x0001)(Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_258D[0x3];                                     // 0x258D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	TMulticastInlineDelegate<void(bool IsLastFly)> FlyStartedDispatcher;                             // 0x2590(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(bool IsLastFly)> FlyStopedDispatcher;                              // 0x25A0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void()>              AbilityEndedDispatcher;                            // 0x25B0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const struct FVector& InLocation)> FloorLocationDispatcher;        // 0x25C0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 
 public:
 	void BeginPlay();
 	void OnRep_AbilityState();
 	void K2_ActivateAbility();
+	void OnSculptChanged(int32 SculptID);
 	void ReceiveTick(float DeltaSeconds);
 	void NativeOnMontageEvent(const class FString& Tag);
 	void OnDashFinish(EDashStopReason Reason);

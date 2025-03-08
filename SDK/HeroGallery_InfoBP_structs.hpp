@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "HeroGalleryNameLanguageBP_structs.hpp"
 #include "Marvel_structs.hpp"
 #include "CoreUObject_structs.hpp"
-#include "HeroGalleryNameLanguageBP_structs.hpp"
 
 
 namespace SDK

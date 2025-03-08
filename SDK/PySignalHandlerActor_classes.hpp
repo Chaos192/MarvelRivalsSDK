@@ -10,35 +10,35 @@
 
 #include "Basic.hpp"
 
+#include "CoreUObject_structs.hpp"
 #include "Marvel_structs.hpp"
 #include "Marvel_classes.hpp"
-#include "CoreUObject_structs.hpp"
 #include "GameplayTags_structs.hpp"
-#include "Engine_structs.hpp"
 #include "DeclarativeUnreal_structs.hpp"
+#include "Engine_structs.hpp"
 
 
 namespace SDK
 {
 
 // PythonClass PySignalHandlerActor.PySignalHandlerActor
-// 0x0230 (0x0870 - 0x0640)
+// 0x0230 (0x0860 - 0x0630)
 class APySignalHandlerActor : public ASignalHandlerActor
 {
 public:
-	struct FSignalResult                          RequestResult;                                     // 0x0640(0x0190)(BlueprintVisible, Net, NativeAccessSpecifierPublic)
-	bool                                          BeCancelled;                                       // 0x07D0(0x0001)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_7D1[0x3];                                      // 0x07D1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         AbilityID;                                         // 0x07D4(0x0004)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          IsFallOff;                                         // 0x07D8(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_7D9[0x7];                                      // 0x07D9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FDeclarationHolder                     ViewerSideWatcher;                                 // 0x07E0(0x0010)(NativeAccessSpecifierPublic)
-	TMap<struct FGameplayTag, class UNiagaraSystem*> Tag2NiagaraSystem;                                 // 0x07F0(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance, NativeAccessSpecifierPublic)
-	float                                         CheckViewInterval;                                 // 0x0840(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_844[0x4];                                      // 0x0844(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector2D                              SceneScreenOffset;                                 // 0x0848(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector2D                              ObjectScreenOffset;                                // 0x0858(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UAkAudioEvent*                          CancelAudioEvent;                                  // 0x0868(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FSignalResult                          RequestResult;                                     // 0x0630(0x0190)(BlueprintVisible, Net, NativeAccessSpecifierPublic)
+	bool                                          BeCancelled;                                       // 0x07C0(0x0001)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_7C1[0x3];                                      // 0x07C1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         AbilityID;                                         // 0x07C4(0x0004)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsFallOff;                                         // 0x07C8(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_7C9[0x7];                                      // 0x07C9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FDeclarationHolder                     ViewerSideWatcher;                                 // 0x07D0(0x0010)(NativeAccessSpecifierPublic)
+	TMap<struct FGameplayTag, class UNiagaraSystem*> Tag2NiagaraSystem;                              // 0x07E0(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	float                                         CheckViewInterval;                                 // 0x0830(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_834[0x4];                                      // 0x0834(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector2D                              SceneScreenOffset;                                 // 0x0838(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector2D                              ObjectScreenOffset;                                // 0x0848(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UAkAudioEvent*                          CancelAudioEvent;                                  // 0x0858(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void ReceiveBeginPlay();

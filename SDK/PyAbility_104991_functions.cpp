@@ -39,7 +39,7 @@ void UPyAbility_104991::BeginPlay()
 // PythonFunction PyAbility_104991.PyAbility_104991.K2_ActivateAbilityFromEvent
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayEventData               EventData                                              (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayEventData&        EventData                                              (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyAbility_104991::K2_ActivateAbilityFromEvent(const struct FGameplayEventData& EventData)
 {

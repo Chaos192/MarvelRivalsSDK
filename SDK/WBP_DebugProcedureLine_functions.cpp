@@ -41,7 +41,7 @@ void UWBP_DebugProcedureLine_C::ExecuteUbergraph_WBP_DebugProcedureLine(int32 En
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class FName                             Desc                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           EventName_0                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    EventName_0                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UAkAudioEvent*                    AkEvent_0                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 void UWBP_DebugProcedureLine_C::Init(class FName Desc, const class FString& EventName_0, class UAkAudioEvent* AkEvent_0)
@@ -78,7 +78,7 @@ void UWBP_DebugProcedureLine_C::Play()
 // Function WBP_DebugProcedureLine.WBP_DebugProcedureLine_C.Tick
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// struct FGeometry                        MyGeometry                                             (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
+// const struct FGeometry&                 MyGeometry                                             (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
 // float                                   InDeltaTime                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UWBP_DebugProcedureLine_C::Tick(const struct FGeometry& MyGeometry, float InDeltaTime)

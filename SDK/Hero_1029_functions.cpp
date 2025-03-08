@@ -40,8 +40,8 @@ float AProjectile_10292101::GetAccumulateTime()
 // Function Hero_1029.Cue_Ability_Loop_102921_Common.CalculateFxLocRot
 // (Native, Event, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FVector                          OutLoc                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FRotator                         OutRot                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// struct FVector*                         OutLoc                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FRotator*                        OutRot                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 
 void ACue_Ability_Loop_102921_Common::CalculateFxLocRot(struct FVector* OutLoc, struct FRotator* OutRot)
 {
@@ -91,7 +91,7 @@ void ACue_Ability_Loop_102921_Common::UpdateFx()
 // Parameters:
 // class UNiagaraComponent*                SpawnedNiagara                                         (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 void UCue_Projectile_HitImpact_10292101::OnHitNiagaraSpawned(class UNiagaraComponent* SpawnedNiagara, class AActor* MyTarget, const struct FGameplayCueParameters& Parameters) const
 {
@@ -212,7 +212,7 @@ bool ASummoned_10294101::IsTargetCanBeTP(class AActor* TargetActor)
 // Function Hero_1029.Summoned_10294101.OnASCTagUpdate
 // (Final, Native, Public, HasOutParams)
 // Parameters:
-// struct FGameplayTag                     TagUpdate                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              TagUpdate                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bTagExist                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void ASummoned_10294101::OnASCTagUpdate(const struct FGameplayTag& TagUpdate, bool bTagExist)
@@ -321,7 +321,7 @@ void ASummoned_10294101::SetTargetTP(class ASummoned_10294101* InTargetTP)
 // Function Hero_1029.Summoned_10294101.SetTPFaceDir
 // (Final, Native, Public, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FVector                          InDir                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   InDir                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void ASummoned_10294101::SetTPFaceDir(const struct FVector& InDir)
 {
@@ -492,8 +492,8 @@ class ASummoned_10294101* USummonedOverlapComp_10294101::GetOwnerSummoned_102941
 // Function Hero_1029.Cue_Ability_Instant_10294101.CustomDebugDraw
 // (Final, Native, Public, HasDefaults, BlueprintCallable, Const)
 // Parameters:
-// struct FRotator                         Dir                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-// struct FVector                          Start                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FRotator&                  Dir                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FVector&                   Start                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UCue_Ability_Instant_10294101::CustomDebugDraw(const struct FRotator& Dir, const struct FVector& Start) const
 {
@@ -523,11 +523,11 @@ void UCue_Ability_Instant_10294101::CustomDebugDraw(const struct FRotator& Dir, 
 // bool                                    bIsAttach                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class USkeletalMeshComponent*           Mesh                                                   (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FName                             Socket                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-// struct FVector                          Loc                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FRotator                         rot                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-// struct FVector                          RelativeLoc                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FRotator                         RelativeRot                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FVector&                   Loc                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FRotator&                  rot                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FVector&                   RelativeLoc                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FRotator&                  RelativeRot                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 
 void UCue_Ability_Instant_10294101::CustomSpawnFX(class UFXSystemAsset* InFXAsset, bool bIsAttach, class USkeletalMeshComponent* Mesh, class FName Socket, const struct FGameplayCueParameters& Parameters, const struct FVector& Loc, const struct FRotator& rot, const struct FVector& RelativeLoc, const struct FRotator& RelativeRot) const
 {
@@ -694,7 +694,7 @@ void UAbility_102972::SetTarget(class AActor* OutTarget)
 // Function Hero_1029.MagikAnimInstance.OnCharacterTagUpdate
 // (Final, Native, Protected, HasOutParams)
 // Parameters:
-// struct FGameplayTag                     InTag                                                  (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              InTag                                                  (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bExist                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UMagikAnimInstance::OnCharacterTagUpdate(const struct FGameplayTag& InTag, bool bExist)
@@ -742,8 +742,8 @@ void UMagikMoveLogicBaseComponent::InterruptTurningPlaceMontage()
 // Parameters:
 // class AActor*                           Killer                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           Target                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FAttributeModifierHandle         ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGlobalEventExtraData            ExtraData                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FAttributeModifierHandle&  ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGlobalEventExtraData&     ExtraData                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
 void UTabData_1029::OnActorDeath(class AActor* Killer, class AActor* Target, const struct FAttributeModifierHandle& ModifierParameterHandle, const struct FGlobalEventExtraData& ExtraData)
 {

@@ -45,7 +45,7 @@ void ULiveLinkInstance::SetRetargetAsset(TSubclassOf<class ULiveLinkRetargetAsse
 // Function LiveLinkAnimationCore.LiveLinkInstance.SetSubject
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// struct FLiveLinkSubjectName             SubjectName                                            (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FLiveLinkSubjectName&      SubjectName                                            (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void ULiveLinkInstance::SetSubject(const struct FLiveLinkSubjectName& SubjectName)
 {
@@ -126,7 +126,7 @@ class FName ULiveLinkRemapAsset::GetRemappedCurveName(class FName CurveName) con
 // Function LiveLinkAnimationCore.LiveLinkRemapAsset.RemapCurveElements
 // (RequiredAPI, Native, Event, Public, HasOutParams, BlueprintEvent, Const)
 // Parameters:
-// TMap<class FName, float>                CurveItems                                             (Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// TMap<class FName, float>&               CurveItems                                             (Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 void ULiveLinkRemapAsset::RemapCurveElements(TMap<class FName, float>& CurveItems) const
 {

@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // PythonClass PyDoor.PyDoor
-// 0x0040 (0x0520 - 0x04E0)
+// 0x0048 (0x0528 - 0x04E0)
 class APyDoor final : public AGameplayActorBase
 {
 public:
@@ -30,6 +30,7 @@ public:
 	class UAkAudioEvent*                          StartCloseDoorEvent;                               // 0x0508(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UAkAudioEvent*                          EndCloseDoorEvent;                                 // 0x0510(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UAkAudioEvent*                          CloseProcessEvent;                                 // 0x0518(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          AlwaysOpenCollision;                               // 0x0520(0x0001)(Edit, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void ReceiveBeginPlay();

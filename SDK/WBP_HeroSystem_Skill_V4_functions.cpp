@@ -43,7 +43,7 @@ void UWBP_HeroSystem_Skill_V4_C::AddShapeItem(int32 HeroID_0, int32 SpapeID)
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int32                                   Index_0                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FUIAbilityInfo                   AbilityInfo                                            (BlueprintVisible, BlueprintReadOnly, Parm)
+// const struct FUIAbilityInfo&            AbilityInfo                                            (BlueprintVisible, BlueprintReadOnly, Parm)
 // class UPanelWidget*                     Box                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 // bool                                    IsWeapon                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 

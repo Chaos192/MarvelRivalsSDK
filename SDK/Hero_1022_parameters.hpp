@@ -147,14 +147,6 @@ public:
 	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 
-// Function Hero_1022.Ability_102253.OnDashFinish
-// 0x0001 (0x0001 - 0x0000)
-struct Ability_102253_OnDashFinish final
-{
-public:
-	EDashStopReason                               Reason;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
 // Function Hero_1022.Ability_102254.GetCurrentAimImpactPoint
 // 0x0018 (0x0018 - 0x0000)
 struct Ability_102254_GetCurrentAimImpactPoint final
@@ -225,6 +217,22 @@ public:
 // Function Hero_1022.Ability_102255.OnKey102235Release
 // 0x0004 (0x0004 - 0x0000)
 struct Ability_102255_OnKey102235Release final
+{
+public:
+	float                                         TimeWaited;                                        // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function Hero_1022.Ability_102255.OnKeyVPress
+// 0x0004 (0x0004 - 0x0000)
+struct Ability_102255_OnKeyVPress final
+{
+public:
+	float                                         TimeWaited;                                        // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function Hero_1022.Ability_102255.OnKeyVRelease
+// 0x0004 (0x0004 - 0x0000)
+struct Ability_102255_OnKeyVRelease final
 {
 public:
 	float                                         TimeWaited;                                        // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -318,12 +326,30 @@ public:
 	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 
+// Function Hero_1022.CaptainAmericaCharacter.GetShareComboState
+// 0x0004 (0x0004 - 0x0000)
+struct CaptainAmericaCharacter_GetShareComboState final
+{
+public:
+	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
 // Function Hero_1022.CaptainAmericaCharacter.GetShieldMesh
 // 0x0008 (0x0008 - 0x0000)
 struct CaptainAmericaCharacter_GetShieldMesh final
 {
 public:
 	class USkeletalMeshComponent*                 ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function Hero_1022.CaptainAmericaCharacter.SetShareComboState
+// 0x000C (0x000C - 0x0000)
+struct CaptainAmericaCharacter_SetShareComboState final
+{
+public:
+	int32                                         NewState;                                          // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ComboSectionNum;                                   // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ComboTimeout;                                      // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
 // Function Hero_1022.CaptainAmericaCharacter.SetShieldActive

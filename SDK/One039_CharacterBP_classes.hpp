@@ -17,11 +17,11 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass 1039_CharacterBP.1039_CharacterBP_C
-// 0x0010 (0x1830 - 0x1820)
+// 0x0010 (0x1880 - 0x1870)
 class AOne039_CharacterBP_C final : public APyThorCharacter
 {
 public:
-	class UPhysicalInteractionComponent*          PhysicalInteraction;                               // 0x1820(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UPhysicalInteractionComponent*          PhysicalInteraction;                               // 0x1870(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

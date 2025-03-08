@@ -88,7 +88,7 @@ void UWC_CharacterCommunicationSign_BP_C::ReceiveBeginPlay()
 // Function WC_CharacterCommunicationSign_BP.WC_CharacterCommunicationSign_BP_C.SetComponentAndWidgetStyle
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FWidgetStyle_SceneIndicator_AbilityInStyle                                                (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
+// const struct FWidgetStyle_SceneIndicator_Ability&InStyle                                                (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
 
 void UWC_CharacterCommunicationSign_BP_C::SetComponentAndWidgetStyle(const struct FWidgetStyle_SceneIndicator_Ability& InStyle)
 {
@@ -188,7 +188,7 @@ bool UWC_CharacterCommunicationSign_BP_C::ShouldBeVisible()
 // Function WC_CharacterCommunicationSign_BP.WC_CharacterCommunicationSign_BP_C.UpdateSign
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           RowName                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    RowName                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // double                                  RemainTime_0                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UWC_CharacterCommunicationSign_BP_C::UpdateSign(const class FString& RowName, double RemainTime_0)

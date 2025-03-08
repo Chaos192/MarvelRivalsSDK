@@ -58,7 +58,7 @@ void UPyMarvelAISystem::ReceiveAIRoundStart()
 // PythonFunction PyMarvelAISystem.PyMarvelAISystem.AddAICustom
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FAISpawnParam                    spawn_param                                            (Parm)
+// const struct FAISpawnParam&             spawn_param                                            (Parm)
 // class AMarvelAIController*              ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash)
 
 class AMarvelAIController* UPyMarvelAISystem::AddAICustom(const struct FAISpawnParam& spawn_param)
@@ -117,7 +117,7 @@ bool UPyMarvelAISystem::RemoveAIByUID(int32 UID)
 // int32                                   UID                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // int32                                   hero_id                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // EBattleSide                             battle_side                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash)
 // int32                                   difficulty_mode                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // int32                                   difficulty_level                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class AMarvelAIControllerBase*          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash)

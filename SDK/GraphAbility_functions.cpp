@@ -237,13 +237,13 @@ void UGASpecTaskBase_Ability::OnAbilityEnd()
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // class UGameplayAbility*                 OwningAbility                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TDelegate<void(struct FHitResult& HitInfo, bool* bResult)>FilterDelegate                                         (Parm, ZeroConstructor, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FSelectTaskParam                 SelectParam                                            (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// TDelegate<void(const struct FHitResult& HitInfo, bool* bResult)>FilterDelegate                                         (Parm, ZeroConstructor, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FSelectTaskParam&          SelectParam                                            (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 // bool                                    bAutoBeginSelect                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bShouldCheckActivate                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UGASpecTask_SelectTarget*         ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UGASpecTask_SelectTarget* UGASpecTask_SelectTarget::AsSelectTargetAbility(class UGameplayAbility* OwningAbility, TDelegate<void(struct FHitResult& HitInfo, bool* bResult)> FilterDelegate, const struct FSelectTaskParam& SelectParam, bool bAutoBeginSelect, bool bShouldCheckActivate)
+class UGASpecTask_SelectTarget* UGASpecTask_SelectTarget::AsSelectTargetAbility(class UGameplayAbility* OwningAbility, TDelegate<void(const struct FHitResult& HitInfo, bool* bResult)> FilterDelegate, const struct FSelectTaskParam& SelectParam, bool bAutoBeginSelect, bool bShouldCheckActivate)
 {
 	static class UFunction* Func = nullptr;
 
@@ -310,8 +310,8 @@ void UGASpecTask_SelectTarget::EndSelect()
 // Function GraphAbility.GASpecTask_SelectTarget.FilterTargets
 // (Final, Native, Public, HasOutParams, HasDefaults)
 // Parameters:
-// struct FVector                          TraceStart                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<struct FHitResult>               InHitResults                                           (Parm, OutParm, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FVector&                   TraceStart                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TArray<struct FHitResult>*              InHitResults                                           (Parm, OutParm, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 void UGASpecTask_SelectTarget::FilterTargets(const struct FVector& TraceStart, TArray<struct FHitResult>* InHitResults)
 {
@@ -340,11 +340,11 @@ void UGASpecTask_SelectTarget::FilterTargets(const struct FVector& TraceStart, T
 // (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
 // class UGameplayAbility*                 OwningAbility                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FDashAbilityInfo                 DashInfo_0                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FVector                          ToLocation                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          ToDirection                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FDashAbilityInfo&          DashInfo_0                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FVector&                   ToLocation                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   ToDirection                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           ToTargetActor                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FPortalSegments                  PortalSegments_0                                       (Parm, AdvancedDisplay, NativeAccessSpecifierPublic)
+// const struct FPortalSegments&           PortalSegments_0                                       (Parm, AdvancedDisplay, NativeAccessSpecifierPublic)
 // class UGATask_ApplyDash*                ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class UGATask_ApplyDash* UGATask_ApplyDash::ApplyDash(class UGameplayAbility* OwningAbility, const struct FDashAbilityInfo& DashInfo_0, const struct FVector& ToLocation, const struct FVector& ToDirection, class AActor* ToTargetActor, const struct FPortalSegments& PortalSegments_0)
@@ -423,8 +423,8 @@ void UGATask_ApplyDash::OnDashFinished(EDashStopReason Reason)
 // Parameters:
 // class AActor*                           SelfActor                                              (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           OtherActor                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          NormalImpulse                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FHitResult                       Hit                                                    (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FVector&                   NormalImpulse                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FHitResult&                Hit                                                    (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 void UGATask_ApplyDash::OnDashHit(class AActor* SelfActor, class AActor* OtherActor, const struct FVector& NormalImpulse, const struct FHitResult& Hit)
 {
@@ -586,8 +586,8 @@ void UGATask_Gather::StopGather()
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class UGameplayAbility*                 OwningAbility                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<class UAnimTimeline*>            Timelines_0                                            (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
-// TArray<int32>                           AnimIndexs_0                                           (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+// const TArray<class UAnimTimeline*>&     Timelines_0                                            (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+// const TArray<int32>&                    AnimIndexs_0                                           (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 // bool                                    bStopTimeline                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UGATask_PlayTimeline*             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -620,7 +620,7 @@ class UGATask_PlayTimeline* UGATask_PlayTimeline::PlayTimeline(class UGameplayAb
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class UGameplayAbility*                 OwningAbility                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<int32>                           TimelineIndexs_0                                       (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+// const TArray<int32>&                    TimelineIndexs_0                                       (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 // bool                                    bStopTimeline                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UGATask_PlayTimeline*             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -670,8 +670,8 @@ void UGATask_PlayTimeline::EndPlayTimeline()
 // Function GraphAbility.GATask_PlayTimeline.OnBlendOut
 // (Final, Native, Private, HasOutParams)
 // Parameters:
-// struct FGameplayTag                     EventTag                                               (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayEventData               EventData                                              (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              EventTag                                               (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayEventData&        EventData                                              (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UGATask_PlayTimeline::OnBlendOut(const struct FGameplayTag& EventTag, const struct FGameplayEventData& EventData)
 {
@@ -697,8 +697,8 @@ void UGATask_PlayTimeline::OnBlendOut(const struct FGameplayTag& EventTag, const
 // Function GraphAbility.GATask_PlayTimeline.OnCancelled
 // (Final, Native, Private, HasOutParams)
 // Parameters:
-// struct FGameplayTag                     EventTag                                               (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayEventData               EventData                                              (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              EventTag                                               (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayEventData&        EventData                                              (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UGATask_PlayTimeline::OnCancelled(const struct FGameplayTag& EventTag, const struct FGameplayEventData& EventData)
 {
@@ -724,8 +724,8 @@ void UGATask_PlayTimeline::OnCancelled(const struct FGameplayTag& EventTag, cons
 // Function GraphAbility.GATask_PlayTimeline.OnCompleted
 // (Final, Native, Private, HasOutParams)
 // Parameters:
-// struct FGameplayTag                     EventTag                                               (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayEventData               EventData                                              (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              EventTag                                               (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayEventData&        EventData                                              (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UGATask_PlayTimeline::OnCompleted(const struct FGameplayTag& EventTag, const struct FGameplayEventData& EventData)
 {
@@ -751,8 +751,8 @@ void UGATask_PlayTimeline::OnCompleted(const struct FGameplayTag& EventTag, cons
 // Function GraphAbility.GATask_PlayTimeline.OnInterrupted
 // (Final, Native, Private, HasOutParams)
 // Parameters:
-// struct FGameplayTag                     EventTag                                               (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayEventData               EventData                                              (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              EventTag                                               (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayEventData&        EventData                                              (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UGATask_PlayTimeline::OnInterrupted(const struct FGameplayTag& EventTag, const struct FGameplayEventData& EventData)
 {
@@ -778,8 +778,8 @@ void UGATask_PlayTimeline::OnInterrupted(const struct FGameplayTag& EventTag, co
 // Function GraphAbility.GATask_PlayTimeline.OnReceiveEvent
 // (Final, Native, Private, HasOutParams)
 // Parameters:
-// struct FGameplayTag                     EventTag                                               (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayEventData               EventData                                              (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              EventTag                                               (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayEventData&        EventData                                              (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UGATask_PlayTimeline::OnReceiveEvent(const struct FGameplayTag& EventTag, const struct FGameplayEventData& EventData)
 {
@@ -888,8 +888,8 @@ void UGATask_ProjectileHoming::OnHomingEnd()
 // Parameters:
 // class UGameplayAbility*                 OwningAbility                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   InProjectileID                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          CustomLocation_0                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FRotator                         CustomRotation_0                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, NativeAccessSpecifierPublic)
+// const struct FVector&                   CustomLocation_0                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FRotator&                  CustomRotation_0                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, NativeAccessSpecifierPublic)
 // bool                                    bRelative                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UGATask_SpawnProjectile*          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -924,8 +924,8 @@ class UGATask_SpawnProjectile* UGATask_SpawnProjectile::SpawnProjectile(class UG
 // Parameters:
 // class UObject*                          Source                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   InProjectileID                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          CustomLocation_0                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FRotator                         CustomRotation_0                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, NativeAccessSpecifierPublic)
+// const struct FVector&                   CustomLocation_0                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FRotator&                  CustomRotation_0                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, NativeAccessSpecifierPublic)
 // class UGATask_SpawnProjectile*          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class UGATask_SpawnProjectile* UGATask_SpawnProjectile::SpawnProjectileWithObject(class UObject* Source, int32 InProjectileID, const struct FVector& CustomLocation_0, const struct FRotator& CustomRotation_0)
@@ -959,8 +959,8 @@ class UGATask_SpawnProjectile* UGATask_SpawnProjectile::SpawnProjectileWithObjec
 // class UGameplayAbility*                 OwningAbility                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   InProjectileID                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           Source                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          CustomLocation_0                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FRotator                         CustomRotation_0                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, NativeAccessSpecifierPublic)
+// const struct FVector&                   CustomLocation_0                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FRotator&                  CustomRotation_0                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, NativeAccessSpecifierPublic)
 // class UGATask_SpawnProjectile*          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class UGATask_SpawnProjectile* UGATask_SpawnProjectile::SpawnProjectileWithSource(class UGameplayAbility* OwningAbility, int32 InProjectileID, class AActor* Source, const struct FVector& CustomLocation_0, const struct FRotator& CustomRotation_0)
@@ -1061,7 +1061,7 @@ void UGATask_SpawnProjectile::OnEndAgentTask(class AActor* TargetActor)
 // Function GraphAbility.GATask_SpawnProjectile.OnHitOrTraceTarget
 // (Final, Native, Protected, HasOutParams)
 // Parameters:
-// struct FHitResult                       HitTarget                                              (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FHitResult&                HitTarget                                              (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 void UGATask_SpawnProjectile::OnHitOrTraceTarget(const struct FHitResult& HitTarget)
 {
@@ -1087,7 +1087,7 @@ void UGATask_SpawnProjectile::OnHitOrTraceTarget(const struct FHitResult& HitTar
 // (Final, Native, Protected, HasOutParams)
 // Parameters:
 // class AActor*                           SpawnActor                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayAbilityTargetDataHandle Data                                                   (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FGameplayAbilityTargetDataHandle&Data                                                   (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UGATask_SpawnProjectile::OnSpawnSuccess(class AActor* SpawnActor, const struct FGameplayAbilityTargetDataHandle& Data)
 {
@@ -1115,8 +1115,8 @@ void UGATask_SpawnProjectile::OnSpawnSuccess(class AActor* SpawnActor, const str
 // Parameters:
 // class UGameplayAbility*                 OwningAbility                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   InScopeID                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          CustomLocation_0                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FRotator                         CustomRotation_0                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, NativeAccessSpecifierPublic)
+// const struct FVector&                   CustomLocation_0                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FRotator&                  CustomRotation_0                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, NativeAccessSpecifierPublic)
 // class UGATask_SpawnScope*               ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class UGATask_SpawnScope* UGATask_SpawnScope::SpawnScope(class UGameplayAbility* OwningAbility, int32 InScopeID, const struct FVector& CustomLocation_0, const struct FRotator& CustomRotation_0)
@@ -1149,8 +1149,8 @@ class UGATask_SpawnScope* UGATask_SpawnScope::SpawnScope(class UGameplayAbility*
 // Parameters:
 // class UObject*                          Source                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   InScopeID                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          CustomLocation_0                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FRotator                         CustomRotation_0                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, NativeAccessSpecifierPublic)
+// const struct FVector&                   CustomLocation_0                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FRotator&                  CustomRotation_0                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, NativeAccessSpecifierPublic)
 // class UGATask_SpawnScope*               ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class UGATask_SpawnScope* UGATask_SpawnScope::SpawnScopeWithObject(class UObject* Source, int32 InScopeID, const struct FVector& CustomLocation_0, const struct FRotator& CustomRotation_0)
@@ -1184,8 +1184,8 @@ class UGATask_SpawnScope* UGATask_SpawnScope::SpawnScopeWithObject(class UObject
 // class UGameplayAbility*                 OwningAbility                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   InScopeID                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           Source                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          CustomLocation_0                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FRotator                         CustomRotation_0                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, NativeAccessSpecifierPublic)
+// const struct FVector&                   CustomLocation_0                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FRotator&                  CustomRotation_0                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, NativeAccessSpecifierPublic)
 // class UGATask_SpawnScope*               ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class UGATask_SpawnScope* UGATask_SpawnScope::SpawnScopeWithSource(class UGameplayAbility* OwningAbility, int32 InScopeID, class AActor* Source, const struct FVector& CustomLocation_0, const struct FRotator& CustomRotation_0)
@@ -1314,7 +1314,7 @@ void UGATask_SpawnScope::OnNoActorScopeInited(class UMarvelAgentTraceComponent* 
 // (Final, Native, Protected, HasOutParams)
 // Parameters:
 // class AActor*                           SpawnActor                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayAbilityTargetDataHandle Data                                                   (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FGameplayAbilityTargetDataHandle&Data                                                   (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UGATask_SpawnScope::OnSpawnActorSuccess(class AActor* SpawnActor, const struct FGameplayAbilityTargetDataHandle& Data)
 {
@@ -1341,7 +1341,7 @@ void UGATask_SpawnScope::OnSpawnActorSuccess(class AActor* SpawnActor, const str
 // (Final, Native, Protected, HasOutParams)
 // Parameters:
 // class UObject*                          TraceSource                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<struct FHitResult>               HitResults                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const TArray<struct FHitResult>&        HitResults                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 void UGATask_SpawnScope::OnTrace(class UObject* TraceSource, const TArray<struct FHitResult>& HitResults)
 {
@@ -1388,8 +1388,8 @@ void UGATask_SpawnScope::OnTraceEnd()
 // Parameters:
 // class UObject*                          Source                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   InSummonedID                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          CustomLocation_0                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FRotator                         CustomRotation_0                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, NativeAccessSpecifierPublic)
+// const struct FVector&                   CustomLocation_0                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FRotator&                  CustomRotation_0                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, NativeAccessSpecifierPublic)
 // class UGATask_SpawnSummoned*            ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class UGATask_SpawnSummoned* UGATask_SpawnSummoned::SpawnProjectileWithObject(class UObject* Source, int32 InSummonedID, const struct FVector& CustomLocation_0, const struct FRotator& CustomRotation_0)
@@ -1422,8 +1422,8 @@ class UGATask_SpawnSummoned* UGATask_SpawnSummoned::SpawnProjectileWithObject(cl
 // Parameters:
 // class UGameplayAbility*                 OwningAbility                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   InSummonedID                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          CustomLocation_0                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FRotator                         CustomRotation_0                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, NativeAccessSpecifierPublic)
+// const struct FVector&                   CustomLocation_0                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FRotator&                  CustomRotation_0                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, NativeAccessSpecifierPublic)
 // class UGATask_SpawnSummoned*            ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class UGATask_SpawnSummoned* UGATask_SpawnSummoned::SpawnSummoned(class UGameplayAbility* OwningAbility, int32 InSummonedID, const struct FVector& CustomLocation_0, const struct FRotator& CustomRotation_0)
@@ -1457,8 +1457,8 @@ class UGATask_SpawnSummoned* UGATask_SpawnSummoned::SpawnSummoned(class UGamepla
 // class UGameplayAbility*                 OwningAbility                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   InSummonedID                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           Source                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          CustomLocation_0                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FRotator                         CustomRotation_0                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, NativeAccessSpecifierPublic)
+// const struct FVector&                   CustomLocation_0                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FRotator&                  CustomRotation_0                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, NativeAccessSpecifierPublic)
 // class UGATask_SpawnSummoned*            ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class UGATask_SpawnSummoned* UGATask_SpawnSummoned::SpawnSummonedWithSource(class UGameplayAbility* OwningAbility, int32 InSummonedID, class AActor* Source, const struct FVector& CustomLocation_0, const struct FRotator& CustomRotation_0)
@@ -1591,7 +1591,7 @@ void UGATask_SpawnSummoned::OnSummonedDeath(class AActor* TargetActor)
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class UGameplayAbility*                 OwningAbility                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayAttribute               Attribute_0                                            (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayAttribute&        Attribute_0                                            (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   MinValue_0                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bIncludeMin_0                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   MaxValue_0                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -1633,7 +1633,7 @@ class UGATask_WaitAttributeChange* UGATask_WaitAttributeChange::WaitAttributeCha
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class UGameplayAbility*                 OwningAbility                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayAttribute               Attribute_0                                            (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayAttribute&        Attribute_0                                            (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   CompareValue                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // EAttrCompareType                        Comparison                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bTriggerOnce_0                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -1700,7 +1700,7 @@ class UGATask_WaitBuffEvent* UGATask_WaitBuffEvent::WaitBuffEvent(class UGamepla
 // Function GraphAbility.GATask_WaitBuffEvent.OnAppliedReplicatedCallback
 // (Final, Native, Private, HasOutParams)
 // Parameters:
-// struct FGameplayAbilityTargetDataHandle Data                                                   (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FGameplayAbilityTargetDataHandle&Data                                                   (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UGATask_WaitBuffEvent::OnAppliedReplicatedCallback(const struct FGameplayAbilityTargetDataHandle& Data)
 {
@@ -1725,7 +1725,7 @@ void UGATask_WaitBuffEvent::OnAppliedReplicatedCallback(const struct FGameplayAb
 // Function GraphAbility.GATask_WaitBuffEvent.OnRemovedReplicatedCallback
 // (Final, Native, Private, HasOutParams)
 // Parameters:
-// struct FGameplayAbilityTargetDataHandle Data                                                   (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FGameplayAbilityTargetDataHandle&Data                                                   (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UGATask_WaitBuffEvent::OnRemovedReplicatedCallback(const struct FGameplayAbilityTargetDataHandle& Data)
 {
@@ -2007,7 +2007,7 @@ void UGATask_WaitDamageEvent::EndWaiting()
 // Parameters:
 // class AActor*                           InSourceAvatar                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           InTargetAvatar                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FAttributeModifierHandle         ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FAttributeModifierHandle&  ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UGATask_WaitDamageEvent::OnDamageCallback(class AActor* InSourceAvatar, class AActor* InTargetAvatar, const struct FAttributeModifierHandle& ModifierParameterHandle)
 {
@@ -2085,7 +2085,7 @@ void UGATask_WaitKillEvent::EndWaiting()
 // Function GraphAbility.GATask_WaitKillEvent.OnKillCallback
 // (Final, Native, Public, HasOutParams)
 // Parameters:
-// struct FUIKillInfo                      KillInfo                                               (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FUIKillInfo&               KillInfo                                               (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UGATask_WaitKillEvent::OnKillCallback(const struct FUIKillInfo& KillInfo)
 {
@@ -2179,7 +2179,7 @@ class UGATask_WaitInput* UGATask_WaitInput::WaitConfirm(class UGameplayAbility* 
 // bool                                    bSkipNowTrigger_0                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   MaxWaitTime                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bTriggerOnce_0                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FActionTipsParam                 ActionTipsParam_0                                      (Parm, NativeAccessSpecifierPublic)
+// const struct FActionTipsParam&          ActionTipsParam_0                                      (Parm, NativeAccessSpecifierPublic)
 // class UGATask_WaitInput*                ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class UGATask_WaitInput* UGATask_WaitInput::WaitInput(class UGameplayAbility* OwningAbility, EAbilityInputBinds Input, bool bSkipNowTrigger_0, float MaxWaitTime, bool bTriggerOnce_0, const struct FActionTipsParam& ActionTipsParam_0)
@@ -2360,7 +2360,7 @@ class UGATask_WaitOwnerKillOther* UGATask_WaitOwnerKillOther::WaitCharacterKillO
 // Parameters:
 // class AActor*                           InSourceAvatar                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           InTargetAvatar                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FAttributeModifierHandle         ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FAttributeModifierHandle&  ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UGATask_WaitOwnerKillOther::InternalOnCharacterKillOther(class AActor* InSourceAvatar, class AActor* InTargetAvatar, const struct FAttributeModifierHandle& ModifierParameterHandle)
 {
@@ -2441,8 +2441,8 @@ void UGATask_WaitSignal::EndWaitingSignal()
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class UGameplayAbility*                 OwningAbility                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FFindGroundParam                 TraceParams_0                                          (Parm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-// struct FGameplayTag                     PlacementCueTag_0                                      (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FFindGroundParam&          TraceParams_0                                          (Parm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              PlacementCueTag_0                                      (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UGATask_WaitTargetData*           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class UGATask_WaitTargetData* UGATask_WaitTargetData::WaitTargetData_PawnPlacement(class UGameplayAbility* OwningAbility, const struct FFindGroundParam& TraceParams_0, const struct FGameplayTag& PlacementCueTag_0)
@@ -2472,7 +2472,7 @@ class UGATask_WaitTargetData* UGATask_WaitTargetData::WaitTargetData_PawnPlaceme
 // Function GraphAbility.GATask_WaitTargetData.OnCancelledCallback
 // (Final, Native, Protected, HasOutParams)
 // Parameters:
-// struct FGameplayAbilityTargetDataHandle Data                                                   (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FGameplayAbilityTargetDataHandle&Data                                                   (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UGATask_WaitTargetData::OnCancelledCallback(const struct FGameplayAbilityTargetDataHandle& Data)
 {
@@ -2497,7 +2497,7 @@ void UGATask_WaitTargetData::OnCancelledCallback(const struct FGameplayAbilityTa
 // Function GraphAbility.GATask_WaitTargetData.OnValidDataCallback
 // (Final, Native, Protected, HasOutParams)
 // Parameters:
-// struct FGameplayAbilityTargetDataHandle Data                                                   (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FGameplayAbilityTargetDataHandle&Data                                                   (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UGATask_WaitTargetData::OnValidDataCallback(const struct FGameplayAbilityTargetDataHandle& Data)
 {
@@ -2573,7 +2573,7 @@ void UGATask_WaitTime::OnTimeFinish()
 // Parameters:
 // class UGameplayAbility*                 OwningAbility                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   WeaponID_0                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<int32>                           ShootModes_0                                           (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+// const TArray<int32>&                    ShootModes_0                                           (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 // int32                                   ShootCount_0                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   ShootDelay_0                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   ReloadAbilityID_0                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -2668,7 +2668,7 @@ void UGATask_WeaponFireOnce::Shoot()
 // Parameters:
 // class UGameplayAbility*                 OwningAbility                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   WeaponID_0                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<int32>                           ShootModes_0                                           (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+// const TArray<int32>&                    ShootModes_0                                           (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 // bool                                    bIsRoundRobin_0                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   ReloadAbilityID_0                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   DelayEndTask_0                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -2744,7 +2744,7 @@ class UGATask_WeaponFiring* UGATask_WeaponFiring::WeaponFiring_SingleMode(class 
 // Function GraphAbility.GATask_WeaponFiring.OnFireReplicatedCallback
 // (Final, Native, Protected, HasOutParams)
 // Parameters:
-// struct FGameplayAbilityTargetDataHandle Data                                                   (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FGameplayAbilityTargetDataHandle&Data                                                   (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UGATask_WeaponFiring::OnFireReplicatedCallback(const struct FGameplayAbilityTargetDataHandle& Data)
 {
@@ -3067,7 +3067,7 @@ void UGraphAbilityFuncLibrary::OnTargetActorCallAbilityTask(class UObject* TaskC
 // class UObject*                          InObj                                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UAbilityTask*                     AbilityTask                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   IsWithAbility                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           GATaskName                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    GATaskName                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bCancelAbilityWhenFailed                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UGraphAbilityFuncLibrary::SetAbilityTaskBeforeActivation(class UObject* InObj, class UAbilityTask* AbilityTask, int32 IsWithAbility, const class FString& GATaskName, bool bCancelAbilityWhenFailed)
@@ -3128,9 +3128,9 @@ void UGraphAbilityFuncNodes::ApplyBuffToTarget(class UObject* SelfObj, int32 Buf
 // Function GraphAbility.GraphAbilityFuncNodes.GetAttributeValue
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// class AActor*                           Actor                                                  (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayAttribute               Attribute                                              (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bSuccessfullyFoundAttribute                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class AActor*                     Actor                                                  (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayAttribute&        Attribute                                              (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool*                                   bSuccessfullyFoundAttribute                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 float UGraphAbilityFuncNodes::GetAttributeValue(const class AActor* Actor, const struct FGameplayAttribute& Attribute, bool* bSuccessfullyFoundAttribute)
@@ -3281,7 +3281,7 @@ bool UGraphAbilityFuncNodes::HasOwnedBuff_Target(class UObject* SelfObj, int32 B
 // (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
 // class UObject*                          SelfObj                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayTag                     InTag                                                  (ConstParm, Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              InTag                                                  (ConstParm, Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           Target                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -3314,7 +3314,7 @@ bool UGraphAbilityFuncNodes::HasOwnedTag_Target(class UObject* SelfObj, const st
 // Parameters:
 // class UObject*                          SelfObj                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           Target                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FMarvelTraceRule                 TraceRule                                              (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FMarvelTraceRule&          TraceRule                                              (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UGraphAbilityFuncNodes::IsActorValidAbilityTarget_Filter(class UObject* SelfObj, class AActor* Target, const struct FMarvelTraceRule& TraceRule)
@@ -3345,8 +3345,8 @@ bool UGraphAbilityFuncNodes::IsActorValidAbilityTarget_Filter(class UObject* Sel
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
 // class UObject*                          SelfObj                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FHitResult                       HitResult                                              (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-// struct FMarvelTraceRule                 TraceRule                                              (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FHitResult&                HitResult                                              (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FMarvelTraceRule&          TraceRule                                              (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UGraphAbilityFuncNodes::IsHitResultValidAbilityTarget_Filter(class UObject* SelfObj, const struct FHitResult& HitResult, const struct FMarvelTraceRule& TraceRule)
@@ -3376,8 +3376,8 @@ bool UGraphAbilityFuncNodes::IsHitResultValidAbilityTarget_Filter(class UObject*
 // Function GraphAbility.GraphAbilityFuncNodes.SetAttributeValue
 // (Final, BlueprintAuthorityOnly, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class AActor*                           Actor                                                  (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayAttribute               Attribute                                              (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class AActor*                     Actor                                                  (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayAttribute&        Attribute                                              (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UGraphAbilityFuncNodes::SetAttributeValue(const class AActor* Actor, const struct FGameplayAttribute& Attribute, float NewValue)
@@ -3438,7 +3438,7 @@ void UGraphAbilityFuncNodes::TeleportTargetWithDir(class UObject* SelfObj, class
 // Parameters:
 // class UObject*                          SelfObj                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           Target                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          Location                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   Location                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UGraphAbilityFuncNodes::TeleportTargetWithLocation(class UObject* SelfObj, class AActor* Target, const struct FVector& Location)
 {
@@ -3685,11 +3685,11 @@ void UGraphAbilityFuncNodes_Ability::CustomEndSelectTarget(class UGameplayAbilit
 // (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
 // class UObject*                          SelfObj                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          OutLocation                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FRotator                         OutRotation                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// struct FVector*                         OutLocation                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FRotator*                        OutRotation                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 // int32                                   ProjectileID                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          OffsetLocation                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FRotator                         OffsetRotation                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FVector&                   OffsetLocation                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FRotator&                  OffsetRotation                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 // EMarvelPawnBodyType                     LocationType                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UGraphAbilityFuncNodes_Ability::DefaultProjectileStart(class UObject* SelfObj, struct FVector* OutLocation, struct FRotator* OutRotation, int32 ProjectileID, const struct FVector& OffsetLocation, const struct FRotator& OffsetRotation, EMarvelPawnBodyType LocationType)
@@ -3726,7 +3726,7 @@ void UGraphAbilityFuncNodes_Ability::DefaultProjectileStart(class UObject* SelfO
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class UGameplayAbility*                 SelfAbility                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayTag                     CueTag                                                 (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              CueTag                                                 (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UGraphAbilityFuncNodes_Ability::ExecuteAbilityCue(class UGameplayAbility* SelfAbility, const struct FGameplayTag& CueTag)
 {
@@ -3753,7 +3753,7 @@ void UGraphAbilityFuncNodes_Ability::ExecuteAbilityCue(class UGameplayAbility* S
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // class UGameplayAbility*                 SelfAbility                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FPortalSegments                  OutPortalSegment                                       (Parm, OutParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+// struct FPortalSegments*                 OutPortalSegment                                       (Parm, OutParm, AdvancedDisplay, NativeAccessSpecifierPublic)
 // bool                                    bGetPortalSegment                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -3817,7 +3817,7 @@ bool UGraphAbilityFuncNodes_Ability::HasOwnedBuff(class UGameplayAbility* SelfAb
 // (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
 // class UGameplayAbility*                 SelfAbility                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayTag                     InTag                                                  (ConstParm, Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              InTag                                                  (ConstParm, Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UGraphAbilityFuncNodes_Ability::HasOwnedTag(class UGameplayAbility* SelfAbility, const struct FGameplayTag& InTag)
@@ -3960,7 +3960,7 @@ void UGraphAbilityFuncNodes_Ability::RecycleAbilityTargetByObject(class UObject*
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class UGameplayAbility*                 SelfAbility                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayTag                     CueTag                                                 (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              CueTag                                                 (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UGraphAbilityFuncNodes_Ability::RemoveAbilityCue(class UGameplayAbility* SelfAbility, const struct FGameplayTag& CueTag)
 {
@@ -4153,7 +4153,7 @@ void UGraphAbilityTaskMgr::OnActorEndPlay(class AActor* Target, EEndPlayReason E
 // Parameters:
 // class AActor*                           DamageCauser                                           (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           TargetActor                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FAttributeModifierHandle         ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FAttributeModifierHandle&  ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UGraphAbilityTaskMgr::OnCharacterDeath(class AActor* DamageCauser, class AActor* TargetActor, const struct FAttributeModifierHandle& ModifierParameterHandle)
 {

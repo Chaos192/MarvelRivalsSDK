@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "SlateCore_structs.hpp"
 #include "Marvel_structs.hpp"
+#include "SlateCore_structs.hpp"
 #include "PyMarvelUserWidget_classes.hpp"
 #include "PyWidget_Button_classes.hpp"
 

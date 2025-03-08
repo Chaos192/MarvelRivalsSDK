@@ -20,30 +20,12 @@
 namespace SDK
 {
 
-// PythonClass PyAbility_103761.PyTraceComponent_10376102
-// 0x0000 (0x1710 - 0x1710)
-class UPyTraceComponent_10376102 final : public UMarvelAgentTraceComponent
-{
-public:
-	void K2_Initialize();
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"PyTraceComponent_10376102">();
-	}
-	static class UPyTraceComponent_10376102* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UPyTraceComponent_10376102>();
-	}
-};
-
 // PythonClass PyAbility_103761.PySummoned_10376101
-// 0x0010 (0x0950 - 0x0940)
+// 0x0010 (0x0980 - 0x0970)
 class APySummoned_10376101 : public ASummoned_10376101
 {
 public:
-	TMulticastInlineDelegate<void()>              OnSummonedLaunch;                                  // 0x0940(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void()>              OnSummonedLaunch;                                  // 0x0970(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 
 public:
 	void SummonedLaunched();
@@ -60,12 +42,46 @@ public:
 	}
 };
 
+// PythonClass PyAbility_103761.PyEffectiveComponent_10376102
+// 0x0000 (0x1C00 - 0x1C00)
+class UPyEffectiveComponent_10376102 final : public UEffectiveComponent_10376102
+{
+public:
+	void K2_Initialize();
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PyEffectiveComponent_10376102">();
+	}
+	static class UPyEffectiveComponent_10376102* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPyEffectiveComponent_10376102>();
+	}
+};
+
+// PythonClass PyAbility_103761.PyWidget3D_SummonedWarning_10376101
+// 0x0000 (0x08A0 - 0x08A0)
+class UPyWidget3D_SummonedWarning_10376101 final : public UMarvel3DWidget
+{
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PyWidget3D_SummonedWarning_10376101">();
+	}
+	static class UPyWidget3D_SummonedWarning_10376101* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPyWidget3D_SummonedWarning_10376101>();
+	}
+};
+
 // PythonClass PyAbility_103761.PyProjectile_10376105
-// 0x0010 (0x3060 - 0x3050)
+// 0x0010 (0x3120 - 0x3110)
 class APyProjectile_10376105 final : public AMarvelAbilityTargetActor_Projectile
 {
 public:
-	class AActor*                                 SourceSummoned;                                    // 0x3050(0x0008)(BlueprintVisible, Net, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3108[0x8];                                     // 0x3108(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	class AActor*                                 SourceSummoned;                                    // 0x3110(0x0008)(BlueprintVisible, Net, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void K2_OnInitializeData();
@@ -110,24 +126,6 @@ public:
 	}
 };
 
-// PythonClass PyAbility_103761.PySummonedComp_10376102
-// 0x0000 (0x0CC0 - 0x0CC0)
-class UPySummonedComp_10376102 final : public USummonedComp_10376102
-{
-public:
-	void K2_OnEndAgentTask();
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"PySummonedComp_10376102">();
-	}
-	static class UPySummonedComp_10376102* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UPySummonedComp_10376102>();
-	}
-};
-
 // PythonClass PyAbility_103761.PyEffectiveComponent_10376101
 // 0x0000 (0x1C00 - 0x1C00)
 class UPyEffectiveComponent_10376101 final : public UMarvelAgentEffectiveComponent
@@ -146,9 +144,27 @@ public:
 	}
 };
 
-// PythonClass PyAbility_103761.PyEffectiveComponent_10376102
-// 0x0000 (0x1C00 - 0x1C00)
-class UPyEffectiveComponent_10376102 final : public UEffectiveComponent_10376102
+// PythonClass PyAbility_103761.PySummonedComp_10376102
+// 0x0000 (0x0CC0 - 0x0CC0)
+class UPySummonedComp_10376102 final : public USummonedComp_10376102
+{
+public:
+	void K2_OnEndAgentTask();
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PySummonedComp_10376102">();
+	}
+	static class UPySummonedComp_10376102* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPySummonedComp_10376102>();
+	}
+};
+
+// PythonClass PyAbility_103761.PyTraceComponent_10376102
+// 0x0000 (0x1710 - 0x1710)
+class UPyTraceComponent_10376102 final : public UMarvelAgentTraceComponent
 {
 public:
 	void K2_Initialize();
@@ -156,11 +172,11 @@ public:
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"PyEffectiveComponent_10376102">();
+		return StaticClassImpl<"PyTraceComponent_10376102">();
 	}
-	static class UPyEffectiveComponent_10376102* GetDefaultObj()
+	static class UPyTraceComponent_10376102* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UPyEffectiveComponent_10376102>();
+		return GetDefaultObjImpl<UPyTraceComponent_10376102>();
 	}
 };
 
@@ -200,21 +216,21 @@ public:
 };
 
 // PythonClass PyAbility_103761.PyAbility_103761
-// 0x0090 (0x26A0 - 0x2610)
+// 0x0090 (0x26A8 - 0x2618)
 class UPyAbility_103761 : public UAbility_103761
 {
 public:
-	bool                                          EnterThrowState;                                   // 0x2610(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2611[0x7];                                     // 0x2611(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                LaunchVel;                                         // 0x2618(0x0018)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                SummonedLocation;                                  // 0x2630(0x0018)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         CountNum;                                          // 0x2648(0x0004)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_264C[0x4];                                     // 0x264C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TMulticastInlineDelegate<void()>              OnSummonExploded;                                  // 0x2650(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void()>              OnOwnerSummonedRepDelegate;                        // 0x2660(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void()>              OnInputPress;                                      // 0x2670(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(bool bIsThrow)> OnThrowSummoner;                                   // 0x2680(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void()>              OnBeginBindInputPress;                             // 0x2690(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	bool                                          EnterThrowState;                                   // 0x2618(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2619[0x7];                                     // 0x2619(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                LaunchVel;                                         // 0x2620(0x0018)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                SummonedLocation;                                  // 0x2638(0x0018)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         CountNum;                                          // 0x2650(0x0004)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2654[0x4];                                     // 0x2654(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TMulticastInlineDelegate<void()>              OnSummonExploded;                                  // 0x2658(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void()>              OnOwnerSummonedRepDelegate;                        // 0x2668(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void()>              OnInputPress;                                      // 0x2678(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(bool bIsThrow)> OnThrowSummoner;                                   // 0x2688(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void()>              OnBeginBindInputPress;                             // 0x2698(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 
 public:
 	void BeginPlay();
@@ -251,21 +267,6 @@ public:
 	static class UPyAbility_103761* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UPyAbility_103761>();
-	}
-};
-
-// PythonClass PyAbility_103761.PyWidget3D_SummonedWarning_10376101
-// 0x0000 (0x08A0 - 0x08A0)
-class UPyWidget3D_SummonedWarning_10376101 final : public UMarvel3DWidget
-{
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"PyWidget3D_SummonedWarning_10376101">();
-	}
-	static class UPyWidget3D_SummonedWarning_10376101* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UPyWidget3D_SummonedWarning_10376101>();
 	}
 };
 
@@ -377,7 +378,7 @@ public:
 };
 
 // PythonClass PyAbility_103761.PyUIController_103761
-// 0x0000 (0x0C60 - 0x0C60)
+// 0x0000 (0x0C50 - 0x0C50)
 class UPyUIController_103761 final : public UUIC_Ability
 {
 public:

@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass NotTreatShield_10409101_BP.NotTreatShield_10409101_BP_C
-// 0x0000 (0x1208 - 0x1208)
+// 0x0000 (0x1218 - 0x1218)
 class UNotTreatShield_10409101_BP_C final : public UNotTreatShield_NonOverflow
 {
 public:

@@ -115,14 +115,14 @@ public:
 class alignas(0x10) UOSCServer final : public UObject
 {
 public:
-	TMulticastInlineDelegate<void(struct FOSCMessage& Message, const class FString& IPAddress, int32 Port)> OnOscMessageReceived;                              // 0x0030(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const struct FOSCMessage& Message, const class FString& IPAddress, int32 Port)> OnOscMessageReceived; // 0x0030(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	uint8                                         Pad_40[0x18];                                      // 0x0040(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
-	TMulticastInlineDelegate<void(struct FOSCBundle& Bundle, const class FString& IPAddress, int32 Port)> OnOscBundleReceived;                               // 0x0058(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const struct FOSCBundle& Bundle, const class FString& IPAddress, int32 Port)> OnOscBundleReceived; // 0x0058(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	uint8                                         Pad_68[0x88];                                      // 0x0068(0x0088)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void AddAllowlistedClient(const class FString& IPAddress);
-	void BindEventToOnOSCAddressPatternMatchesPath(const struct FOSCAddress& OSCAddressPattern, const TDelegate<void(struct FOSCAddress& AddressPattern, struct FOSCMessage& Message, const class FString& IPAddress, int32 Port)>& Event);
+	void BindEventToOnOSCAddressPatternMatchesPath(const struct FOSCAddress& OSCAddressPattern, const TDelegate<void(const struct FOSCAddress& AddressPattern, const struct FOSCMessage& Message, const class FString& IPAddress, int32 Port)>& Event);
 	void ClearAllowlistedClients();
 	void Listen();
 	void RemoveAllowlistedClient(const class FString& IPAddress);
@@ -132,7 +132,7 @@ public:
 	void Stop();
 	void UnbindAllEventsFromOnOSCAddressPatternMatchesPath(const struct FOSCAddress& OSCAddressPattern);
 	void UnbindAllEventsFromOnOSCAddressPatternMatching();
-	void UnbindEventFromOnOSCAddressPatternMatchesPath(const struct FOSCAddress& OSCAddressPattern, const TDelegate<void(struct FOSCAddress& AddressPattern, struct FOSCMessage& Message, const class FString& IPAddress, int32 Port)>& Event);
+	void UnbindEventFromOnOSCAddressPatternMatchesPath(const struct FOSCAddress& OSCAddressPattern, const TDelegate<void(const struct FOSCAddress& AddressPattern, const struct FOSCMessage& Message, const class FString& IPAddress, int32 Port)>& Event);
 
 	TSet<class FString> GetAllowlistedClients() const;
 	TArray<struct FOSCAddress> GetBoundOSCAddressPatterns() const;

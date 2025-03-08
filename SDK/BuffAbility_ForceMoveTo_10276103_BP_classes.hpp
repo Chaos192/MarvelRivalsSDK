@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BuffAbility_ForceMoveTo_10276103_BP.BuffAbility_ForceMoveTo_10276103_BP_C
-// 0x0000 (0x1E50 - 0x1E50)
+// 0x0000 (0x1E58 - 0x1E58)
 class UBuffAbility_ForceMoveTo_10276103_BP_C final : public UBuffAbility_ForceMoveTo_10276103
 {
 public:

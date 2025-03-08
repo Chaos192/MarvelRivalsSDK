@@ -159,7 +159,7 @@ void UPyWidget_GameSubtitleItem::Destruct()
 // PythonFunction PyGameSubtitles.PyWidget_GameSubtitleItem.OnAnimationFinished
 // (BlueprintCosmetic, Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UWidgetAnimation*                 Animation                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// const class UWidgetAnimation*           Animation                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 void UPyWidget_GameSubtitleItem::OnAnimationFinished(const class UWidgetAnimation* Animation)
 {

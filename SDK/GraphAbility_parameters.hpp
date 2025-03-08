@@ -14,8 +14,8 @@
 #include "Marvel_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "GameplayTags_structs.hpp"
-#include "GraphAbility_structs.hpp"
 #include "GameplayAbilities_structs.hpp"
+#include "GraphAbility_structs.hpp"
 
 
 namespace SDK::Params
@@ -61,7 +61,7 @@ struct GASpecTask_SelectTarget_AsSelectTargetAbility final
 {
 public:
 	class UGameplayAbility*                       OwningAbility;                                     // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(struct FHitResult& HitInfo, bool* bResult)> FilterDelegate;                                    // 0x0008(0x0014)(Parm, ZeroConstructor, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FHitResult& HitInfo, bool* bResult)> FilterDelegate;                 // 0x0008(0x0014)(Parm, ZeroConstructor, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSelectTaskParam                       SelectParam;                                       // 0x0020(0x10A0)(ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 	bool                                          bAutoBeginSelect;                                  // 0x10C0(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)

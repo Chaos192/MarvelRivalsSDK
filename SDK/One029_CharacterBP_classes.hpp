@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass 1029_CharacterBP.1029_CharacterBP_C
-// 0x0000 (0x1840 - 0x1840)
+// 0x0000 (0x18A0 - 0x18A0)
 class AOne029_CharacterBP_C final : public APyMagikCharacter
 {
 public:

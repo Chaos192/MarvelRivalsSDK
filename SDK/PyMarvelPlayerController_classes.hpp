@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "python_enums_structs.hpp"
 #include "Marvel_structs.hpp"
 #include "Marvel_classes.hpp"
 #include "InputRecord_structs.hpp"
+#include "python_enums_structs.hpp"
 #include "Engine_structs.hpp"
 
 
@@ -28,8 +28,8 @@ public:
 	class APyMarvelAIController*                  ClientAIController;                                // 0x1168(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UInputMappingContext*                   AbilityActionMappingContextBP;                     // 0x1170(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UInputMappingContext*                   OneSubmitActionMappingContextBP;                   // 0x1178(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(const class FString& Key, const class FString& json_str)> OnClientReceiveJson;                               // 0x1180(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class AActor* npc_actor)> OnLevelNPCVoice;                                   // 0x1190(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const class FString& Key, const class FString& json_str)> OnClientReceiveJson; // 0x1180(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class AActor* npc_actor)> OnLevelNPCVoice;                         // 0x1190(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 
 public:
 	void ReceiveBeginPlay();
@@ -43,6 +43,7 @@ public:
 	void C_NotifySelectingResourceLoaded();
 	void C_NotifyServerTryEnterSelect();
 	void C_ChangeHero(int32 HeroID, int32 SkinID);
+	void C_NotifySelectedHeroPanelLoaded();
 	void C_ChangeHeroIgnoreLimit(int32 HeroID);
 	void C_ChangeAudioAi(int32 HeroID);
 	void C_ThrowIC();
@@ -89,6 +90,10 @@ public:
 	class FString GetStatsSavePath(int32 DataLength, bool bHistory);
 	void ClientPlayerSurrenderSuccess();
 	void ClientShowTutorialTips(int32 TipsID);
+	void OnServerReceiveMovementStatData(const struct FMovementStatData& stat);
+	void ClientEnableRecordMovementStat(bool bEnable);
+	void ClientCheckTraceCacheStat(const class FString& ActorName, bool bInValid);
+	void ClientStartRecordMovementStat(bool bForce);
 
 	void SendMessageToChatPanel(const class FString& Name_0, const class FString& Message, int32 MessageSide, int32 Timestamp, int32 ChannelType, int32 SpecialType) const;
 

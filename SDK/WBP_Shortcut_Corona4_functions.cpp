@@ -68,7 +68,7 @@ void UWBP_Shortcut_Corona4_C::Reset()
 // Function WBP_Shortcut_Corona4.WBP_Shortcut_Corona4_C.SetCoronas
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TArray<int32>                           InCoronas                                              (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// const TArray<int32>&                    InCoronas                                              (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 
 void UWBP_Shortcut_Corona4_C::SetCoronas(const TArray<int32>& InCoronas)
 {
@@ -110,7 +110,7 @@ void UWBP_Shortcut_Corona4_C::SetCoronaVisible(int32 InPos, bool Invisible)
 // Function WBP_Shortcut_Corona4.WBP_Shortcut_Corona4_C.Tick
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// struct FGeometry                        MyGeometry                                             (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
+// const struct FGeometry&                 MyGeometry                                             (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
 // float                                   InDeltaTime                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UWBP_Shortcut_Corona4_C::Tick(const struct FGeometry& MyGeometry, float InDeltaTime)

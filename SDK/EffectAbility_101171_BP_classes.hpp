@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass EffectAbility_101171_BP.EffectAbility_101171_BP_C
-// 0x0000 (0x1128 - 0x1128)
+// 0x0000 (0x1130 - 0x1130)
 class UEffectAbility_101171_BP_C final : public UEffectAbility_101171
 {
 public:

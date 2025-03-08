@@ -18,11 +18,11 @@ namespace SDK
 {
 
 // PythonClass PyVenomCharacter.PyVenomChildActor
-// 0x0010 (0x1D40 - 0x1D30)
+// 0x0010 (0x1D50 - 0x1D40)
 class APyVenomChildActor final : public AVenomChildActor
 {
 public:
-	struct FGameplayTag                           SymbioteTag;                                       // 0x1D30(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGameplayTag                           SymbioteTag;                                       // 0x1D40(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void ReceivePoolBeginPlay();
@@ -40,11 +40,11 @@ public:
 };
 
 // PythonClass PyVenomCharacter.PyVenomCharacter
-// 0x0010 (0x18A0 - 0x1890)
+// 0x0010 (0x1900 - 0x18F0)
 class APyVenomCharacter : public AVenomCharacter
 {
 public:
-	struct FGameplayTag                           ClearVelocityTag;                                  // 0x1890(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGameplayTag                           ClearVelocityTag;                                  // 0x18F0(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void ReceiveBeginPlay();

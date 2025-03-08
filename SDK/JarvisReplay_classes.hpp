@@ -11,15 +11,15 @@
 #include "Basic.hpp"
 
 #include "Engine_classes.hpp"
-#include "OnlineSubsystemUtils_classes.hpp"
 #include "CoreUObject_classes.hpp"
+#include "OnlineSubsystemUtils_classes.hpp"
 
 
 namespace SDK
 {
 
 // Class JarvisReplay.JarvisDemoNetConnection
-// 0x0000 (0x21E8 - 0x21E8)
+// 0x0000 (0x2228 - 0x2228)
 class UJarvisDemoNetConnection final : public UDemoNetConnection
 {
 public:
@@ -53,8 +53,8 @@ public:
 };
 
 // Class JarvisReplay.JarvisReplayCharacterInterface
-// 0x0000 (0x0030 - 0x0030)
-class IJarvisReplayCharacterInterface final : public IInterface
+// 0x0000 (0x0000 - 0x0000)
+class IJarvisReplayCharacterInterface final
 {
 public:
 	static class UClass* StaticClass()
@@ -64,6 +64,15 @@ public:
 	static class IJarvisReplayCharacterInterface* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<IJarvisReplayCharacterInterface>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
 	}
 };
 
@@ -91,11 +100,11 @@ public:
 };
 
 // Class JarvisReplay.JarvisReplayConnection
-// 0x0010 (0x2250 - 0x2240)
+// 0x0010 (0x2290 - 0x2280)
 class UJarvisReplayConnection final : public UIpConnection
 {
 public:
-	uint8                                         Pad_2240[0x10];                                    // 0x2240(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2280[0x10];                                    // 0x2280(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -109,7 +118,7 @@ public:
 };
 
 // Class JarvisReplay.JarvisReplayGameInstance
-// 0x0000 (0x0340 - 0x0340)
+// 0x0000 (0x0358 - 0x0358)
 class UJarvisReplayGameInstance final : public UPlatformGameInstance
 {
 public:
@@ -139,11 +148,11 @@ public:
 };
 
 // Class JarvisReplay.JarvisReplayNetDriver
-// 0x0040 (0x0BD0 - 0x0B90)
+// 0x0040 (0x0C40 - 0x0C00)
 class UJarvisReplayNetDriver final : public UIpNetDriver
 {
 public:
-	uint8                                         Pad_B90[0x40];                                     // 0x0B90(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C00[0x40];                                     // 0x0C00(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -172,11 +181,11 @@ public:
 };
 
 // Class JarvisReplay.JarvisReplayDemoNetDriver
-// 0x0030 (0x1AA0 - 0x1A70)
+// 0x0030 (0x1B10 - 0x1AE0)
 class UJarvisReplayDemoNetDriver : public UDemoNetDriver
 {
 public:
-	uint8                                         Pad_1A70[0x30];                                    // 0x1A70(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1AE0[0x30];                                    // 0x1AE0(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -190,11 +199,11 @@ public:
 };
 
 // Class JarvisReplay.JarvisReplaySubsystem
-// 0x0068 (0x00B0 - 0x0048)
+// 0x0068 (0x00C8 - 0x0060)
 class UJarvisReplaySubsystem final : public UReplaySubsystem
 {
 public:
-	uint8                                         Pad_48[0x68];                                      // 0x0048(0x0068)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_60[0x68];                                      // 0x0060(0x0068)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void LocalRecordJarvisReplay(const class FString& Name_0, const class FString& FriendlyName);

@@ -34,6 +34,24 @@ public:
 	}
 };
 
+// PythonClass DataBaseEvents.EmojiEvent
+// 0x0008 (0x0038 - 0x0030)
+class UEmojiEvent final : public UPyDataBaseEvent
+{
+public:
+	int32                                         EmojiID;                                           // 0x0030(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"EmojiEvent">();
+	}
+	static class UEmojiEvent* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UEmojiEvent>();
+	}
+};
+
 // PythonClass DataBaseEvents.WinterQKillEvent
 // 0x0008 (0x0038 - 0x0030)
 class UWinterQKillEvent final : public UPyDataBaseEvent
@@ -78,21 +96,6 @@ public:
 	}
 };
 
-// PythonClass DataBaseEvents.IronSubDamage
-// 0x0000 (0x0030 - 0x0030)
-class UIronSubDamage final : public UPyDataBaseEvent
-{
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"IronSubDamage">();
-	}
-	static class UIronSubDamage* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UIronSubDamage>();
-	}
-};
-
 // PythonClass DataBaseEvents.SpecialBuffNumEvent
 // 0x0058 (0x0088 - 0x0030)
 class USpecialBuffNumEvent final : public UPyDataBaseEvent
@@ -118,23 +121,18 @@ public:
 	}
 };
 
-// PythonClass DataBaseEvents.BuffDamageResistEvent
-// 0x0018 (0x0048 - 0x0030)
-class UBuffDamageResistEvent final : public UPyDataBaseEvent
+// PythonClass DataBaseEvents.BuffDamageToCurrentEvent
+// 0x0000 (0x0030 - 0x0030)
+class UBuffDamageToCurrentEvent final : public UPyDataBaseEvent
 {
-public:
-	TArray<int32>                                 BuffIDList;                                        // 0x0030(0x0010)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	bool                                          IsImmunity;                                        // 0x0040(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          IsTreat;                                           // 0x0041(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"BuffDamageResistEvent">();
+		return StaticClassImpl<"BuffDamageToCurrentEvent">();
 	}
-	static class UBuffDamageResistEvent* GetDefaultObj()
+	static class UBuffDamageToCurrentEvent* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UBuffDamageResistEvent>();
+		return GetDefaultObjImpl<UBuffDamageToCurrentEvent>();
 	}
 };
 
@@ -159,6 +157,26 @@ public:
 	static class UActivateAbilityEvent* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UActivateAbilityEvent>();
+	}
+};
+
+// PythonClass DataBaseEvents.BuffDamageResistEvent
+// 0x0018 (0x0048 - 0x0030)
+class UBuffDamageResistEvent final : public UPyDataBaseEvent
+{
+public:
+	TArray<int32>                                 BuffIDList;                                        // 0x0030(0x0010)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	bool                                          IsImmunity;                                        // 0x0040(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsTreat;                                           // 0x0041(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"BuffDamageResistEvent">();
+	}
+	static class UBuffDamageResistEvent* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UBuffDamageResistEvent>();
 	}
 };
 
@@ -200,6 +218,21 @@ public:
 	}
 };
 
+// PythonClass DataBaseEvents.AimPointEvent
+// 0x0000 (0x0030 - 0x0030)
+class UAimPointEvent final : public UPyDataBaseEvent
+{
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"AimPointEvent">();
+	}
+	static class UAimPointEvent* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UAimPointEvent>();
+	}
+};
+
 // PythonClass DataBaseEvents.CriticalEvent
 // 0x0020 (0x0050 - 0x0030)
 class UCriticalEvent : public UPyDataBaseEvent
@@ -222,22 +255,18 @@ public:
 	}
 };
 
-// PythonClass DataBaseEvents.HearVoice
-// 0x0020 (0x0050 - 0x0030)
-class UHearVoice final : public UPyDataBaseEvent
+// PythonClass DataBaseEvents.VenomCorrosionBreakEvent
+// 0x0000 (0x0030 - 0x0030)
+class UVenomCorrosionBreakEvent final : public UPyDataBaseEvent
 {
-public:
-	TArray<int32>                                 HeroIDs;                                           // 0x0030(0x0010)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	TArray<class FString>                         VoiceIDs;                                          // 0x0040(0x0010)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"HearVoice">();
+		return StaticClassImpl<"VenomCorrosionBreakEvent">();
 	}
-	static class UHearVoice* GetDefaultObj()
+	static class UVenomCorrosionBreakEvent* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UHearVoice>();
+		return GetDefaultObjImpl<UVenomCorrosionBreakEvent>();
 	}
 };
 
@@ -253,6 +282,21 @@ public:
 	static class UCriticalNumEvent* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UCriticalNumEvent>();
+	}
+};
+
+// PythonClass DataBaseEvents.AnkaEvent
+// 0x0000 (0x0030 - 0x0030)
+class UAnkaEvent final : public UPyDataBaseEvent
+{
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"AnkaEvent">();
+	}
+	static class UAnkaEvent* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UAnkaEvent>();
 	}
 };
 
@@ -340,6 +384,21 @@ public:
 	static class UAbilityRefresh* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UAbilityRefresh>();
+	}
+};
+
+// PythonClass DataBaseEvents.SingleDeath
+// 0x0000 (0x0030 - 0x0030)
+class USingleDeath final : public UPyDataBaseEvent
+{
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"SingleDeath">();
+	}
+	static class USingleDeath* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<USingleDeath>();
 	}
 };
 
@@ -471,29 +530,6 @@ public:
 	}
 };
 
-// PythonClass DataBaseEvents.OccupyCamp
-// 0x0028 (0x0058 - 0x0030)
-class UOccupyCamp final : public UPyDataBaseEvent
-{
-public:
-	TArray<EBattleSide>                           SpecSides;                                         // 0x0030(0x0010)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	TSubclassOf<class APyCamp>                    CampType;                                          // 0x0040(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<int32>                                 LevelIDs;                                          // 0x0048(0x0010)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-
-public:
-	TSet<class FString> GetEventMapIDsAll();
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"OccupyCamp">();
-	}
-	static class UOccupyCamp* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UOccupyCamp>();
-	}
-};
-
 // PythonClass DataBaseEvents.DamageTakenEvent
 // 0x0000 (0x0038 - 0x0038)
 class UDamageTakenEvent final : public UDamageEvent
@@ -552,6 +588,25 @@ public:
 	}
 };
 
+// PythonClass DataBaseEvents.QuickSignalEvent
+// 0x0008 (0x0038 - 0x0030)
+class UQuickSignalEvent final : public UPyDataBaseEvent
+{
+public:
+	int32                                         SignalID;                                          // 0x0030(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EDataBaseBool                                 NeedResponse;                                      // 0x0034(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"QuickSignalEvent">();
+	}
+	static class UQuickSignalEvent* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UQuickSignalEvent>();
+	}
+};
+
 // PythonClass DataBaseEvents.ApplyBuffEvent
 // 0x0028 (0x0058 - 0x0030)
 class UApplyBuffEvent final : public UPyDataBaseEvent
@@ -599,18 +654,21 @@ public:
 	}
 };
 
-// PythonClass DataBaseEvents.BuffDamageShareEvent
-// 0x0000 (0x0030 - 0x0030)
-class UBuffDamageShareEvent final : public UPyDataBaseEvent
+// PythonClass DataBaseEvents.TransitionEvent
+// 0x0008 (0x0038 - 0x0030)
+class UTransitionEvent final : public UPyDataBaseEvent
 {
+public:
+	int32                                         AbilityID;                                         // 0x0030(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"BuffDamageShareEvent">();
+		return StaticClassImpl<"TransitionEvent">();
 	}
-	static class UBuffDamageShareEvent* GetDefaultObj()
+	static class UTransitionEvent* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UBuffDamageShareEvent>();
+		return GetDefaultObjImpl<UTransitionEvent>();
 	}
 };
 
@@ -632,18 +690,54 @@ public:
 	}
 };
 
-// PythonClass DataBaseEvents.BuffDamageToCurrentEvent
+// PythonClass DataBaseEvents.LevelPartInfoChange
+// 0x0018 (0x0048 - 0x0030)
+class ULevelPartInfoChange final : public UPyDataBaseEvent
+{
+public:
+	EDataBaseBool                                 bAttack;                                           // 0x0030(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EDataBaseBool                                 bDefend;                                           // 0x0031(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_32[0x6];                                       // 0x0032(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 PartName;                                          // 0x0038(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"LevelPartInfoChange">();
+	}
+	static class ULevelPartInfoChange* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<ULevelPartInfoChange>();
+	}
+};
+
+// PythonClass DataBaseEvents.CarDistance
 // 0x0000 (0x0030 - 0x0030)
-class UBuffDamageToCurrentEvent final : public UPyDataBaseEvent
+class UCarDistance final : public UPyDataBaseEvent
 {
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"BuffDamageToCurrentEvent">();
+		return StaticClassImpl<"CarDistance">();
 	}
-	static class UBuffDamageToCurrentEvent* GetDefaultObj()
+	static class UCarDistance* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UBuffDamageToCurrentEvent>();
+		return GetDefaultObjImpl<UCarDistance>();
+	}
+};
+
+// PythonClass DataBaseEvents.DeathAssistEvent
+// 0x0000 (0x0030 - 0x0030)
+class UDeathAssistEvent final : public UPyDataBaseEvent
+{
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"DeathAssistEvent">();
+	}
+	static class UDeathAssistEvent* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UDeathAssistEvent>();
 	}
 };
 
@@ -700,88 +794,18 @@ public:
 	}
 };
 
-// PythonClass DataBaseEvents.QuickSignalEvent
-// 0x0008 (0x0038 - 0x0030)
-class UQuickSignalEvent final : public UPyDataBaseEvent
-{
-public:
-	int32                                         SignalID;                                          // 0x0030(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EDataBaseBool                                 NeedResponse;                                      // 0x0034(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"QuickSignalEvent">();
-	}
-	static class UQuickSignalEvent* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UQuickSignalEvent>();
-	}
-};
-
-// PythonClass DataBaseEvents.EmojiEvent
-// 0x0008 (0x0038 - 0x0030)
-class UEmojiEvent final : public UPyDataBaseEvent
-{
-public:
-	int32                                         EmojiID;                                           // 0x0030(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"EmojiEvent">();
-	}
-	static class UEmojiEvent* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UEmojiEvent>();
-	}
-};
-
-// PythonClass DataBaseEvents.TransitionEvent
-// 0x0008 (0x0038 - 0x0030)
-class UTransitionEvent final : public UPyDataBaseEvent
-{
-public:
-	int32                                         AbilityID;                                         // 0x0030(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"TransitionEvent">();
-	}
-	static class UTransitionEvent* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UTransitionEvent>();
-	}
-};
-
-// PythonClass DataBaseEvents.AimPointEvent
+// PythonClass DataBaseEvents.BuffDamageShareEvent
 // 0x0000 (0x0030 - 0x0030)
-class UAimPointEvent final : public UPyDataBaseEvent
+class UBuffDamageShareEvent final : public UPyDataBaseEvent
 {
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"AimPointEvent">();
+		return StaticClassImpl<"BuffDamageShareEvent">();
 	}
-	static class UAimPointEvent* GetDefaultObj()
+	static class UBuffDamageShareEvent* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UAimPointEvent>();
-	}
-};
-
-// PythonClass DataBaseEvents.CarDistance
-// 0x0000 (0x0030 - 0x0030)
-class UCarDistance final : public UPyDataBaseEvent
-{
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"CarDistance">();
-	}
-	static class UCarDistance* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UCarDistance>();
+		return GetDefaultObjImpl<UBuffDamageShareEvent>();
 	}
 };
 
@@ -821,33 +845,60 @@ public:
 	}
 };
 
-// PythonClass DataBaseEvents.VenomCorrosionBreakEvent
+// PythonClass DataBaseEvents.IronSubDamage
 // 0x0000 (0x0030 - 0x0030)
-class UVenomCorrosionBreakEvent final : public UPyDataBaseEvent
+class UIronSubDamage final : public UPyDataBaseEvent
 {
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"VenomCorrosionBreakEvent">();
+		return StaticClassImpl<"IronSubDamage">();
 	}
-	static class UVenomCorrosionBreakEvent* GetDefaultObj()
+	static class UIronSubDamage* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UVenomCorrosionBreakEvent>();
+		return GetDefaultObjImpl<UIronSubDamage>();
 	}
 };
 
-// PythonClass DataBaseEvents.AnkaEvent
-// 0x0000 (0x0030 - 0x0030)
-class UAnkaEvent final : public UPyDataBaseEvent
+// PythonClass DataBaseEvents.HearVoice
+// 0x0020 (0x0050 - 0x0030)
+class UHearVoice final : public UPyDataBaseEvent
 {
+public:
+	TArray<int32>                                 HeroIDs;                                           // 0x0030(0x0010)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	TArray<class FString>                         VoiceIDs;                                          // 0x0040(0x0010)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"AnkaEvent">();
+		return StaticClassImpl<"HearVoice">();
 	}
-	static class UAnkaEvent* GetDefaultObj()
+	static class UHearVoice* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UAnkaEvent>();
+		return GetDefaultObjImpl<UHearVoice>();
+	}
+};
+
+// PythonClass DataBaseEvents.OccupyCamp
+// 0x0028 (0x0058 - 0x0030)
+class UOccupyCamp final : public UPyDataBaseEvent
+{
+public:
+	TArray<EBattleSide>                           SpecSides;                                         // 0x0030(0x0010)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	TSubclassOf<class APyCamp>                    CampType;                                          // 0x0040(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<int32>                                 LevelIDs;                                          // 0x0048(0x0010)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+
+public:
+	TSet<class FString> GetEventMapIDsAll();
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"OccupyCamp">();
+	}
+	static class UOccupyCamp* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UOccupyCamp>();
 	}
 };
 
@@ -909,21 +960,6 @@ public:
 	static class UWinterFestivalFinishEvent* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UWinterFestivalFinishEvent>();
-	}
-};
-
-// PythonClass DataBaseEvents.SingleDeath
-// 0x0000 (0x0030 - 0x0030)
-class USingleDeath final : public UPyDataBaseEvent
-{
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"SingleDeath">();
-	}
-	static class USingleDeath* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<USingleDeath>();
 	}
 };
 

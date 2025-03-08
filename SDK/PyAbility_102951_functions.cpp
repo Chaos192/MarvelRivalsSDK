@@ -20,7 +20,7 @@ namespace SDK
 // PythonFunction PyAbility_102951.PyTraceComponent_10295101_Base.K2_OnGetTraceStart
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FVector                          Location                                               (Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FVector&                         Location                                               (Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 struct FVector UPyTraceComponent_10295101_Base::K2_OnGetTraceStart(struct FVector& Location)

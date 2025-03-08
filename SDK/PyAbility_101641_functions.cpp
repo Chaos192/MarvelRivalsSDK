@@ -109,7 +109,7 @@ void UPyAbility_101641::K2_OnEndAbility(bool bWasCancelled)
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int32                                   SocketId                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FMarvelAbilitySocketInfo         SocketInfo                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
+// const struct FMarvelAbilitySocketInfo&  SocketInfo                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
 
 void UPyAbility_101641::HandleAnimSocketInfo(int32 SocketId, const struct FMarvelAbilitySocketInfo& SocketInfo)
 {
@@ -135,7 +135,7 @@ void UPyAbility_101641::HandleAnimSocketInfo(int32 SocketId, const struct FMarve
 // PythonFunction PyAbility_101641.PyAbility_101641.NativeOnMontageEvent
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_101641::NativeOnMontageEvent(const class FString& Tag)
 {

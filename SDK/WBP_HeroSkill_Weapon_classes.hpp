@@ -12,8 +12,8 @@
 
 #include "UMG_structs.hpp"
 #include "Engine_structs.hpp"
-#include "PyWidget_LobbyHero_classes.hpp"
 #include "Marvel_structs.hpp"
+#include "PyWidget_LobbyHero_0_classes.hpp"
 
 
 namespace SDK

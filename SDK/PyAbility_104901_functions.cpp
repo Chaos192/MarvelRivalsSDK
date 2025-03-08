@@ -90,7 +90,7 @@ void UPyAbility_104901::BindNotTreatShieldChanged(bool bBind)
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // class AActor*                           SourceAcatar                                           (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FAttributeModifierHandle         ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
+// const struct FAttributeModifierHandle&  ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
 
 void UPyAbility_104901::OnNotTreatShieldhanged(class AActor* SourceAcatar, const struct FAttributeModifierHandle& ModifierParameterHandle)
 {

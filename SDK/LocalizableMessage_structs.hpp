@@ -32,7 +32,7 @@ struct FLocalizableMessage final
 public:
 	class FString                                 Key;                                               // 0x0000(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 DefaultText;                                       // 0x0010(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<struct FLocalizableMessageParameterEntry> Substitutions;                                     // 0x0020(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FLocalizableMessageParameterEntry> Substitutions;                                  // 0x0020(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 };
 
 // ScriptStruct LocalizableMessage.LocalizableMessageParameterInt

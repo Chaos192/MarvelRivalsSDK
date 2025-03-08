@@ -96,7 +96,7 @@ void UPyWidget_RankStar::Construct()
 // PythonFunction PyWidget_RankInfo.PyWidget_RankStar.OnAnimationFinished
 // (BlueprintCosmetic, Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UWidgetAnimation*                 Animation                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// const class UWidgetAnimation*           Animation                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 void UPyWidget_RankStar::OnAnimationFinished(const class UWidgetAnimation* Animation)
 {
@@ -121,7 +121,7 @@ void UPyWidget_RankStar::OnAnimationFinished(const class UWidgetAnimation* Anima
 // PythonFunction PyWidget_RankInfo.PyWidget_Settlement_RankUp_Icon_VX.OnAnimationFinished
 // (BlueprintCosmetic, Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UWidgetAnimation*                 Animation                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// const class UWidgetAnimation*           Animation                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 void UPyWidget_Settlement_RankUp_Icon_VX::OnAnimationFinished(const class UWidgetAnimation* Animation)
 {
@@ -190,7 +190,7 @@ void UPyWidget_RankIcon::Construct()
 // PythonFunction PyWidget_RankInfo.PyWidget_RankIcon.OnAnimationFinished
 // (BlueprintCosmetic, Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UWidgetAnimation*                 Animation                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// const class UWidgetAnimation*           Animation                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 void UPyWidget_RankIcon::OnAnimationFinished(const class UWidgetAnimation* Animation)
 {
@@ -215,7 +215,7 @@ void UPyWidget_RankIcon::OnAnimationFinished(const class UWidgetAnimation* Anima
 // PythonFunction PyWidget_RankInfo.PyWidget_Settlement_RankUp_Star_Protection.OnAnimationFinished
 // (BlueprintCosmetic, Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UWidgetAnimation*                 Animation                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// const class UWidgetAnimation*           Animation                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 void UPyWidget_Settlement_RankUp_Star_Protection::OnAnimationFinished(const class UWidgetAnimation* Animation)
 {
@@ -278,7 +278,7 @@ void UPyWidget_Settlement_Rank_Score_Bar::Destruct()
 // PythonFunction PyWidget_RankInfo.PyWidget_Settlement_Rank_Score_Bar.Tick
 // (BlueprintCosmetic, Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGeometry                        MyGeometry                                             (Parm, IsPlainOldData, NoDestructor)
+// const struct FGeometry&                 MyGeometry                                             (Parm, IsPlainOldData, NoDestructor)
 // float                                   InDeltaTime                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UPyWidget_Settlement_Rank_Score_Bar::Tick(const struct FGeometry& MyGeometry, float InDeltaTime)

@@ -12,8 +12,8 @@
 
 #include "Marvel_structs.hpp"
 #include "CoreUObject_structs.hpp"
-#include "SlateCore_structs.hpp"
 #include "PyWidget_ModuleMainPanel_classes.hpp"
+#include "SlateCore_structs.hpp"
 #include "Engine_structs.hpp"
 
 

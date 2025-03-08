@@ -17,14 +17,14 @@ namespace SDK
 {
 
 // PythonClass PyInvisibleWomanCharacter.PyInvisibleWomanCharacter
-// 0x0020 (0x1840 - 0x1820)
+// 0x0020 (0x1890 - 0x1870)
 class APyInvisibleWomanCharacter : public AInvisibleWomanCharacter
 {
 public:
-	int32                                         EnergyAbility;                                     // 0x1820(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1824[0x4];                                     // 0x1824(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class AMarvelAbilityTargetActor_Projectile*   RegisteredProjectile_105051;                       // 0x1828(0x0008)(ZeroConstructor, Transient, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class AMarvelAbilityTargetActor_Projectile* NewProjectile)> OnRegisteredProjectileChanged;                     // 0x1830(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	int32                                         EnergyAbility;                                     // 0x1870(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1874[0x4];                                     // 0x1874(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class AMarvelAbilityTargetActor_Projectile*   RegisteredProjectile_105051;                       // 0x1878(0x0008)(ZeroConstructor, Transient, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class AMarvelAbilityTargetActor_Projectile* NewProjectile)> OnRegisteredProjectileChanged; // 0x1880(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 
 public:
 	void RegenSkillEnergy(float AddEnergy);

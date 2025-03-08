@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass 9999_CharacterBP.9999_CharacterBP_C
-// 0x0000 (0x1810 - 0x1810)
+// 0x0000 (0x1870 - 0x1870)
 class ANine999_CharacterBP_C final : public AMarvelBaseCharacter
 {
 public:

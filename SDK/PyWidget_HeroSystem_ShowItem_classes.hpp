@@ -12,11 +12,27 @@
 
 #include "Marvel_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "CoreUObject_classes.hpp"
 #include "PyWidget_Common_Button_classes.hpp"
 
 
 namespace SDK
 {
+
+// PythonClass PyWidget_HeroSystem_ShowItem.ShowItemObject
+// 0x0000 (0x0030 - 0x0030)
+class UShowItemObject final : public UObject
+{
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"ShowItemObject">();
+	}
+	static class UShowItemObject* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UShowItemObject>();
+	}
+};
 
 // PythonClass PyWidget_HeroSystem_ShowItem.PyWidget_HeroSystem_ShowItem
 // 0x0040 (0x0930 - 0x08F0)
@@ -39,8 +55,10 @@ public:
 
 public:
 	void OnInitialized();
+	void Destruct();
+	void PreConstruct(bool IsDesignTime);
 	void OnAnimationFinished(const class UWidgetAnimation* Animation);
-	void OnItemRefreshFunc();
+	void SetShowItemData(class UObject* ItemObject);
 	void SetIsHover(bool IsHover_0);
 
 public:

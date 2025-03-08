@@ -17,11 +17,11 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Summoned_10187101_BP.Summoned_10187101_BP_C
-// 0x0010 (0x08B0 - 0x08A0)
+// 0x0010 (0x08E0 - 0x08D0)
 class ASummoned_10187101_BP_C final : public ASummoned_10187101
 {
 public:
-	class USummonedMovementComponent_10187101*    SummonedMovementComponent_10187101;                // 0x08A0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class USummonedMovementComponent_10187101*    SummonedMovementComponent_10187101;                // 0x08D0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

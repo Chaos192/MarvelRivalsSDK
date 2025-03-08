@@ -64,7 +64,7 @@ void UPyEffectAbility_GravityChange_103342::ReceiveTick(float DeltaTime)
 // PythonFunction PyAbility_103342.PyEffectAbility_GravityChange_103342.OnLanded
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FHitResult                       Hit                                                    (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FHitResult&                Hit                                                    (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyEffectAbility_GravityChange_103342::OnLanded(const struct FHitResult& Hit)
 {

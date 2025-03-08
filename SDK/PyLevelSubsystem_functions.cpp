@@ -567,7 +567,7 @@ void UPyLevelSubsystem::ForceKillPlayer(class AMarvelBaseCharacter* Target)
 // PythonFunction PyLevelSubsystem.PyLevelSubsystem.PyIsInBorder
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FVector                          InLocation                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVector&                   InLocation                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 bool UPyLevelSubsystem::PyIsInBorder(const struct FVector& InLocation)
@@ -599,7 +599,7 @@ bool UPyLevelSubsystem::PyIsInBorder(const struct FVector& InLocation)
 // bool                                    ForceSpawn                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // ESpawnMethod                            Method                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // int32                                   HeroID                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FAttributeModifierParameter      ModifierParam                                          (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FAttributeModifierParameter&ModifierParam                                          (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyLevelSubsystem::TrySpawnPlayer(class AMarvelPlayerState* PlayerState, bool ForceSpawn, ESpawnMethod Method, int32 HeroID, const struct FAttributeModifierParameter& ModifierParam)
 {
@@ -656,7 +656,7 @@ void UPyLevelSubsystem::GetBirthBase(EBattleSide battle_side, bool acitve)
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // class UMarvelSplineComponent*           MarvelSpline                                           (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FVector                          Color                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVector&                   Color                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UPyLevelSubsystem::SetMarvelSplineColor(class UMarvelSplineComponent* MarvelSpline, const struct FVector& Color)
 {

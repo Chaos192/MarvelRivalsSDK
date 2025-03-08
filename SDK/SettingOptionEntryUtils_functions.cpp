@@ -21,7 +21,7 @@ namespace SDK
 // (Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // class UObject*                          Obj                                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// TArray<class FString>                   refresh_tags                                           (ConstParm, Parm, OutParm, ReferenceParm)
+// const TArray<class FString>&            refresh_tags                                           (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPySettingOptionEntryUtilsBluePrintLib::request_tag_refresh(class UObject* Obj, const TArray<class FString>& refresh_tags)
 {

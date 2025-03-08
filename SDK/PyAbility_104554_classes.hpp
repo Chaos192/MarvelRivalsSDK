@@ -38,11 +38,12 @@ public:
 };
 
 // PythonClass PyAbility_104554.PyAbility_104554
-// 0x0F90 (0x3530 - 0x25A0)
+// 0x0F98 (0x3540 - 0x25A8)
 class UPyAbility_104554 : public UAbility_104554
 {
 public:
-	struct FMarvelAbilityTraceContext             LineTraceContext;                                  // 0x25A0(0x0F90)(BlueprintVisible, NativeAccessSpecifierPublic)
+	uint8                                         Pad_25A8[0x8];                                     // 0x25A8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FMarvelAbilityTraceContext             LineTraceContext;                                  // 0x25B0(0x0F90)(BlueprintVisible, NativeAccessSpecifierPublic)
 
 public:
 	void BeginPlay();

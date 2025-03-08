@@ -183,7 +183,7 @@ bool UAbility_104131::IsAbilityHit()
 // Function Hero_1041.Ability_104131.IsMainTarget
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class AActor*                           CheckTarget                                            (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class AActor*                     CheckTarget                                            (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UAbility_104131::IsMainTarget(const class AActor* CheckTarget)
@@ -211,7 +211,7 @@ bool UAbility_104131::IsMainTarget(const class AActor* CheckTarget)
 // Function Hero_1041.Ability_104131.IsSubTarget
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class AActor*                           CheckTarget                                            (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class AActor*                     CheckTarget                                            (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UAbility_104131::IsSubTarget(const class AActor* CheckTarget)
@@ -260,7 +260,7 @@ void UAbility_104131::K2_EnterEndSection()
 // Parameters:
 // class AActor*                           InSourceAvatar                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           InTargetAvatar                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FAttributeModifierHandle         ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FAttributeModifierHandle&  ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UAbility_104131::OnMainTargetDeath(class AActor* InSourceAvatar, class AActor* InTargetAvatar, const struct FAttributeModifierHandle& ModifierParameterHandle)
 {
@@ -344,8 +344,8 @@ void UAbility_104131::OnTargetDizzyBuffRemoved()
 // Function Hero_1041.Ability_104131.OnWinterSoldierPortal
 // (Final, Native, Protected, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FVector                          LastPosition                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          NewPosition                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   LastPosition                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   NewPosition                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UAbility_104131::OnWinterSoldierPortal(const struct FVector& LastPosition, const struct FVector& NewPosition)
 {
@@ -536,8 +536,8 @@ float UDragAbility_104131::GetCurrentYaw()
 // Parameters:
 // class AActor*                           SelfActor                                              (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           OtherActor                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          NormalImpulse                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FHitResult                       Hit                                                    (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FVector&                   NormalImpulse                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FHitResult&                Hit                                                    (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 void UDragAbility_104131::OnActorHitDuringDash(class AActor* SelfActor, class AActor* OtherActor, const struct FVector& NormalImpulse, const struct FHitResult& Hit)
 {
@@ -755,7 +755,7 @@ void UUIController_104131::PlayWarningAnim()
 // Function Hero_1041.MarvelDragAbility_10414102.ApplyDash
 // (Final, Native, Public, HasOutParams, HasDefaults)
 // Parameters:
-// struct FVector                          DragTargetLocation                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   DragTargetLocation                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UMarvelDragAbility_10414102::ApplyDash(const struct FVector& DragTargetLocation)
 {
@@ -895,7 +895,7 @@ void UAbility_104141::OnClientReceivePinTaskReject()
 // Parameters:
 // class AActor*                           Causer                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           HitActor                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FHitResult                       Hit                                                    (Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// struct FHitResult&                      Hit                                                    (Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 // bool                                    bIsNetAuthority                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UAbility_104141::OnHitMajorTarget(class AActor* Causer, class AActor* HitActor, struct FHitResult& Hit, bool bIsNetAuthority)
@@ -928,7 +928,7 @@ void UAbility_104141::OnHitMajorTarget(class AActor* Causer, class AActor* HitAc
 // Parameters:
 // class AActor*                           Causer                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           HitActor                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FHitResult                       Hit                                                    (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FHitResult&                Hit                                                    (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 // bool                                    bIsNetAuthority                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UAbility_104141::OnHitMinorTarget(class AActor* Causer, class AActor* HitActor, const struct FHitResult& Hit, bool bIsNetAuthority)
@@ -957,7 +957,7 @@ void UAbility_104141::OnHitMinorTarget(class AActor* Causer, class AActor* HitAc
 // Function Hero_1041.Ability_104141.OnPinnedActorGameTagUpdate
 // (Final, Native, Protected, HasOutParams)
 // Parameters:
-// struct FGameplayTag                     Tag                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              Tag                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    TagExists                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UAbility_104141::OnPinnedActorGameTagUpdate(const struct FGameplayTag& Tag, bool TagExists)
@@ -986,8 +986,8 @@ void UAbility_104141::OnPinnedActorGameTagUpdate(const struct FGameplayTag& Tag,
 // Parameters:
 // class AActor*                           SelfActor                                              (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           OtherActor                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          NormalImpulse                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FHitResult                       Hit                                                    (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FVector&                   NormalImpulse                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FHitResult&                Hit                                                    (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 void UAbility_104141::OnPinnedActorHit(class AActor* SelfActor, class AActor* OtherActor, const struct FVector& NormalImpulse, const struct FHitResult& Hit)
 {
@@ -1059,7 +1059,7 @@ void UAbility_104141::OnPinnedTaskFinish(EDashStopReason Reason)
 // Function Hero_1041.Ability_104141.OnServerReceiveMajorTarget
 // (Native, Public, HasOutParams)
 // Parameters:
-// struct FGameplayAbilityTargetDataHandle Data                                                   (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FGameplayAbilityTargetDataHandle&Data                                                   (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UAbility_104141::OnServerReceiveMajorTarget(const struct FGameplayAbilityTargetDataHandle& Data)
 {
@@ -1166,7 +1166,7 @@ void UAbility_104141::SetAbilityState(EAbilityState_104141 NewAbilityState)
 // Function Hero_1041.Ability_104141.GetDashMajorTarget
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// class AActor*                           OutTarget                                              (Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor**                          OutTarget                                              (Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UAbility_104141::GetDashMajorTarget(class AActor** OutTarget) const
@@ -1401,7 +1401,7 @@ void UAbility_104161_Delay_CheckKill::CheckIfCanKill()
 // Parameters:
 // class AActor*                           DamageCauser                                           (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           TargetActor                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FAttributeModifierHandle         ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FAttributeModifierHandle&  ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UAbility_104161_Delay_CheckKill::OnSourceActorDeath(class AActor* DamageCauser, class AActor* TargetActor, const struct FAttributeModifierHandle& ModifierParameterHandle)
 {
@@ -1455,7 +1455,7 @@ void UAbility_104161_Delay_CheckKill::OnSummonedDeath(class AActor* InActor)
 // Parameters:
 // class AActor*                           DamageCauser                                           (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           TargetActor                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FAttributeModifierHandle         ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FAttributeModifierHandle&  ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UAbility_104161_Delay_CheckKill::OnTargetActorDeath(class AActor* DamageCauser, class AActor* TargetActor, const struct FAttributeModifierHandle& ModifierParameterHandle)
 {
@@ -1529,7 +1529,7 @@ struct FVector UAbility_104161::GetJumpInitialDirection(bool bIsUp)
 // Function Hero_1041.Ability_104161.GetSelectAimDirection
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FMarvelAbilityTargetFilter       InFilter                                               (Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// struct FMarvelAbilityTargetFilter&      InFilter                                               (Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 // struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 struct FVector UAbility_104161::GetSelectAimDirection(struct FMarvelAbilityTargetFilter& InFilter)
@@ -1661,7 +1661,7 @@ void UAbility_104161::LaunchUpEnded()
 // Parameters:
 // class AActor*                           DamageCauser                                           (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           TargetActor                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FAttributeModifierHandle         ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FAttributeModifierHandle&  ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UAbility_104161::OnEarlyCheckKillCharacterPreDeath(class AActor* DamageCauser, class AActor* TargetActor, const struct FAttributeModifierHandle& ModifierParameterHandle)
 {
@@ -1745,7 +1745,7 @@ void UAbility_104161::OnRep_ContinuousRefreshCount()
 // Function Hero_1041.Ability_104161.OnServerReceiveLaunchVelocity
 // (Final, Native, Public, HasOutParams)
 // Parameters:
-// struct FGameplayAbilityTargetDataHandle Data                                                   (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FGameplayAbilityTargetDataHandle&Data                                                   (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UAbility_104161::OnServerReceiveLaunchVelocity(const struct FGameplayAbilityTargetDataHandle& Data)
 {
@@ -1770,7 +1770,7 @@ void UAbility_104161::OnServerReceiveLaunchVelocity(const struct FGameplayAbilit
 // Function Hero_1041.Ability_104161.OnSlayCountDownTagUpdated
 // (Final, Native, Protected, HasOutParams)
 // Parameters:
-// struct FGameplayTag                     TagUpdated                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              TagUpdated                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bTagExists                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UAbility_104161::OnSlayCountDownTagUpdated(const struct FGameplayTag& TagUpdated, bool bTagExists)
@@ -1816,7 +1816,7 @@ void UAbility_104161::ResetGravity()
 // Function Hero_1041.Ability_104161.ServerSetClientHoverLocation
 // (Net, NetReliable, Native, Event, Protected, NetServer, HasDefaults)
 // Parameters:
-// struct FVector                          NewLocation                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   NewLocation                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UAbility_104161::ServerSetClientHoverLocation(const struct FVector& NewLocation)
 {
@@ -1867,8 +1867,8 @@ void UAbility_104161::SetHoverGravityScale(bool bSet)
 // (Final, Native, Public, HasDefaults)
 // Parameters:
 // float                                   DeltaTime                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          OldLocation                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          OldVelocity                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   OldLocation                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   OldVelocity                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UAbility_104161::TryEnterHover(float DeltaTime, const struct FVector& OldLocation, const struct FVector& OldVelocity)
 {
@@ -1896,8 +1896,8 @@ void UAbility_104161::TryEnterHover(float DeltaTime, const struct FVector& OldLo
 // (Final, Native, Public, HasDefaults)
 // Parameters:
 // float                                   DeltaTime                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          OldLocation                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          OldVelocity                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   OldLocation                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   OldVelocity                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UAbility_104161::TryEnterWindow(float DeltaTime, const struct FVector& OldLocation, const struct FVector& OldVelocity)
 {
@@ -1924,7 +1924,7 @@ void UAbility_104161::TryEnterWindow(float DeltaTime, const struct FVector& OldL
 // Function Hero_1041.Ability_104161.UpdateCheckEarlyKillActors
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<struct FHitResult>               HitResults                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const TArray<struct FHitResult>&        HitResults                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 void UAbility_104161::UpdateCheckEarlyKillActors(const TArray<struct FHitResult>& HitResults)
 {
@@ -2051,7 +2051,7 @@ void AWinterSoldierCharacter::SetQuickReloadingState(bool bInState)
 // Function Hero_1041.WinterSoldierChildActor.OnOwnerTagUpdate
 // (Final, Native, Protected, HasOutParams)
 // Parameters:
-// struct FGameplayTag                     TagUpdated                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              TagUpdated                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bTagExists                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void AWinterSoldierChildActor::OnOwnerTagUpdate(const struct FGameplayTag& TagUpdated, bool bTagExists)

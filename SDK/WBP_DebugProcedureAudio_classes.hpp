@@ -34,7 +34,7 @@ public:
 	EProcedureDataType                            DataType;                                          // 0x03F0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_3F1[0x3];                                      // 0x03F1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FGameplayTag                           ModeType;                                          // 0x03F4(0x000C)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
-	TMap<class FString, class UWBP_DebugProcedureLine_C*> ProcedureLines;                                    // 0x0400(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
+	TMap<class FString, class UWBP_DebugProcedureLine_C*> ProcedureLines;                            // 0x0400(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
 	class UMarvelProcedureData*                   ProcedureData;                                     // 0x0450(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 
 public:

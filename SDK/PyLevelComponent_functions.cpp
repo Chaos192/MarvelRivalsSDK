@@ -140,7 +140,7 @@ void UPyLevelComponent::OnRep_MatchState()
 // PythonFunction PyLevelComponent.PyLevelComponent.BroadcastFullScreenMessage
 // (Net, NetReliable, Native, NetMulticast, Public, BlueprintCallable)
 // Parameters:
-// class FString                           Tips                                                   (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tips                                                   (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyLevelComponent::BroadcastFullScreenMessage(const class FString& Tips)
 {
@@ -298,7 +298,7 @@ void UPyLevelComponent::TransitionPanelFadeOut()
 // (Net, NetReliable, Native, NetMulticast, Public, BlueprintCallable)
 // Parameters:
 // int32                                   UID                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           Text                                                   (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Text                                                   (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyLevelComponent::ShowCommonText(int32 UID, const class FString& Text)
 {

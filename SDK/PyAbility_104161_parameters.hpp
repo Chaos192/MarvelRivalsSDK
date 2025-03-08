@@ -19,14 +19,6 @@
 namespace SDK::Params
 {
 
-// PythonFunction PyAbility_104161.PyUIController_104161.UpdateUIActionTips
-// 0x0001 (0x0001 - 0x0000)
-struct PyUIController_104161_UpdateUIActionTips final
-{
-public:
-	bool                                          is_need;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-
 // PythonFunction PyAbility_104161.PyEffectiveComponent_10416101.K2_OnPreApplyContainer
 // 0x0020 (0x0020 - 0x0000)
 struct PyEffectiveComponent_10416101_K2_OnPreApplyContainer final
@@ -36,9 +28,9 @@ public:
 	TArray<struct FHitResult>                     ReturnValue;                                       // 0x0010(0x0010)(Parm, OutParm, ReturnParm)
 };
 
-// PythonFunction PyAbility_104161.PyCue_Ability_Loop_10416101.WhileActive
+// PythonFunction PyAbility_104161.PyCue_Buff_10416105.WhileActive
 // 0x01C8 (0x01C8 - 0x0000)
-struct PyCue_Ability_Loop_10416101_WhileActive final
+struct PyCue_Buff_10416105_WhileActive final
 {
 public:
 	class AActor*                                 MyTarget;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
@@ -46,9 +38,9 @@ public:
 	bool                                          ReturnValue;                                       // 0x01C0(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 
-// PythonFunction PyAbility_104161.PyCue_Ability_Loop_10416101.OnRemove
+// PythonFunction PyAbility_104161.PyCue_Buff_10416105.OnRemove
 // 0x01C8 (0x01C8 - 0x0000)
-struct PyCue_Ability_Loop_10416101_OnRemove final
+struct PyCue_Buff_10416105_OnRemove final
 {
 public:
 	class AActor*                                 MyTarget;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
@@ -56,12 +48,52 @@ public:
 	bool                                          ReturnValue;                                       // 0x01C0(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 
-// PythonFunction PyAbility_104161.PyCue_Ability_Loop_10416101.OnMontageNotifyBegin
-// 0x000C (0x000C - 0x0000)
-struct PyCue_Ability_Loop_10416101_OnMontageNotifyBegin final
+// PythonFunction PyAbility_104161.PyCue_Buff_10416105.OnCharacterDeath
+// 0x0028 (0x0028 - 0x0000)
+struct PyCue_Buff_10416105_OnCharacterDeath final
 {
 public:
-	class FName                                   NotifyName;                                        // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 DamageCauser;                                      // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 TargetActor;                                       // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	struct FAttributeModifierHandle               ParamHandle;                                       // 0x0010(0x0018)(ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
+};
+
+// PythonFunction PyAbility_104161.PyCue_Buff_10416105.WhileActiveAudio
+// 0x01C0 (0x01C0 - 0x0000)
+struct PyCue_Buff_10416105_WhileActiveAudio final
+{
+public:
+	class AActor*                                 MyTarget;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	struct FGameplayCueParameters                 Parameters;                                        // 0x0008(0x01B8)(ConstParm, Parm, OutParm, ReferenceParm)
+};
+
+// PythonFunction PyAbility_104161.PyCue_Buff_10416105.OnRemoveAudio
+// 0x01C0 (0x01C0 - 0x0000)
+struct PyCue_Buff_10416105_OnRemoveAudio final
+{
+public:
+	class AActor*                                 MyTarget;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	struct FGameplayCueParameters                 Parameters;                                        // 0x0008(0x01B8)(ConstParm, Parm, OutParm, ReferenceParm)
+};
+
+// PythonFunction PyAbility_104161.PyCue_Buff_10416201.WhileActive
+// 0x01C8 (0x01C8 - 0x0000)
+struct PyCue_Buff_10416201_WhileActive final
+{
+public:
+	class AActor*                                 MyTarget;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	struct FGameplayCueParameters                 Parameters;                                        // 0x0008(0x01B8)(ConstParm, Parm, OutParm, ReferenceParm)
+	bool                                          ReturnValue;                                       // 0x01C0(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+
+// PythonFunction PyAbility_104161.PyCue_Buff_10416201.OnRemove
+// 0x01C8 (0x01C8 - 0x0000)
+struct PyCue_Buff_10416201_OnRemove final
+{
+public:
+	class AActor*                                 MyTarget;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	struct FGameplayCueParameters                 Parameters;                                        // 0x0008(0x01B8)(ConstParm, Parm, OutParm, ReferenceParm)
+	bool                                          ReturnValue;                                       // 0x01C0(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 
 // PythonFunction PyAbility_104161.PyAbility_104161.CanActivate
@@ -174,9 +206,17 @@ public:
 	class FString                                 Tag;                                               // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash)
 };
 
-// PythonFunction PyAbility_104161.PyCue_Buff_10416201.WhileActive
+// PythonFunction PyAbility_104161.PyUIController_104161.UpdateUIActionTips
+// 0x0001 (0x0001 - 0x0000)
+struct PyUIController_104161_UpdateUIActionTips final
+{
+public:
+	bool                                          is_need;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+
+// PythonFunction PyAbility_104161.PyCue_Ability_Loop_10416101.WhileActive
 // 0x01C8 (0x01C8 - 0x0000)
-struct PyCue_Buff_10416201_WhileActive final
+struct PyCue_Ability_Loop_10416101_WhileActive final
 {
 public:
 	class AActor*                                 MyTarget;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
@@ -184,9 +224,9 @@ public:
 	bool                                          ReturnValue;                                       // 0x01C0(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 
-// PythonFunction PyAbility_104161.PyCue_Buff_10416201.OnRemove
+// PythonFunction PyAbility_104161.PyCue_Ability_Loop_10416101.OnRemove
 // 0x01C8 (0x01C8 - 0x0000)
-struct PyCue_Buff_10416201_OnRemove final
+struct PyCue_Ability_Loop_10416101_OnRemove final
 {
 public:
 	class AActor*                                 MyTarget;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
@@ -194,52 +234,12 @@ public:
 	bool                                          ReturnValue;                                       // 0x01C0(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 
-// PythonFunction PyAbility_104161.PyCue_Buff_10416105.WhileActive
-// 0x01C8 (0x01C8 - 0x0000)
-struct PyCue_Buff_10416105_WhileActive final
+// PythonFunction PyAbility_104161.PyCue_Ability_Loop_10416101.OnMontageNotifyBegin
+// 0x000C (0x000C - 0x0000)
+struct PyCue_Ability_Loop_10416101_OnMontageNotifyBegin final
 {
 public:
-	class AActor*                                 MyTarget;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	struct FGameplayCueParameters                 Parameters;                                        // 0x0008(0x01B8)(ConstParm, Parm, OutParm, ReferenceParm)
-	bool                                          ReturnValue;                                       // 0x01C0(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-
-// PythonFunction PyAbility_104161.PyCue_Buff_10416105.OnRemove
-// 0x01C8 (0x01C8 - 0x0000)
-struct PyCue_Buff_10416105_OnRemove final
-{
-public:
-	class AActor*                                 MyTarget;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	struct FGameplayCueParameters                 Parameters;                                        // 0x0008(0x01B8)(ConstParm, Parm, OutParm, ReferenceParm)
-	bool                                          ReturnValue;                                       // 0x01C0(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-
-// PythonFunction PyAbility_104161.PyCue_Buff_10416105.OnCharacterDeath
-// 0x0028 (0x0028 - 0x0000)
-struct PyCue_Buff_10416105_OnCharacterDeath final
-{
-public:
-	class AActor*                                 DamageCauser;                                      // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class AActor*                                 TargetActor;                                       // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	struct FAttributeModifierHandle               ParamHandle;                                       // 0x0010(0x0018)(ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
-};
-
-// PythonFunction PyAbility_104161.PyCue_Buff_10416105.WhileActiveAudio
-// 0x01C0 (0x01C0 - 0x0000)
-struct PyCue_Buff_10416105_WhileActiveAudio final
-{
-public:
-	class AActor*                                 MyTarget;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	struct FGameplayCueParameters                 Parameters;                                        // 0x0008(0x01B8)(ConstParm, Parm, OutParm, ReferenceParm)
-};
-
-// PythonFunction PyAbility_104161.PyCue_Buff_10416105.OnRemoveAudio
-// 0x01C0 (0x01C0 - 0x0000)
-struct PyCue_Buff_10416105_OnRemoveAudio final
-{
-public:
-	class AActor*                                 MyTarget;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	struct FGameplayCueParameters                 Parameters;                                        // 0x0008(0x01B8)(ConstParm, Parm, OutParm, ReferenceParm)
+	class FName                                   NotifyName;                                        // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 
 }

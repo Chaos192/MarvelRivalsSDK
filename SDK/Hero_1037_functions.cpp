@@ -137,10 +137,10 @@ void UAbility_103701::DisableIronRecover()
 // Function Hero_1037.Ability_103701.DrawDebugShape
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FTraceShape                      ShapeA                                                 (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FTraceShape                      ShapeB                                                 (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FTransform                       TransformA                                             (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FTransform                       TransformB                                             (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FTraceShape&               ShapeA                                                 (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FTraceShape&               ShapeB                                                 (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FTransform&                TransformA                                             (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FTransform&                TransformB                                             (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UAbility_103701::DrawDebugShape(const struct FTraceShape& ShapeA, const struct FTraceShape& ShapeB, const struct FTransform& TransformA, const struct FTransform& TransformB)
 {
@@ -385,7 +385,7 @@ bool ACue_Summoned_Loop_10373101::CanHandleMagicNoEntityActorType(class AActor* 
 // Function Hero_1037.Cue_Summoned_Loop_10373101.CheckIfNeedSetEnergyFieldActive
 // (Final, Native, Protected, HasDefaults)
 // Parameters:
-// struct FVector                          InHitLocation                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   InHitLocation                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool ACue_Summoned_Loop_10373101::CheckIfNeedSetEnergyFieldActive(const struct FVector& InHitLocation)
@@ -438,7 +438,7 @@ void ACue_Summoned_Loop_10373101::FXBeginFadeOut(class UFXSystemComponent* FXCom
 // Function Hero_1037.Cue_Summoned_Loop_10373101.HandleActiveFXComponentOnExecute
 // (Final, Native, Protected, HasOutParams)
 // Parameters:
-// struct FManipulationActiveSimulation    InActiveSimulation                                     (Parm, OutParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// struct FManipulationActiveSimulation*   InActiveSimulation                                     (Parm, OutParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 void ACue_Summoned_Loop_10373101::HandleActiveFXComponentOnExecute(struct FManipulationActiveSimulation* InActiveSimulation)
 {
@@ -571,8 +571,8 @@ void ACue_Summoned_Loop_10373101::OnProjectileRecycle(class AActor* ProjectileAc
 // class UPrimitiveComponent*              InComponent                                            (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           OtherActor                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UPrimitiveComponent*              OtherComp                                              (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          NormalImpulse                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FHitResult                       InHit                                                  (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FVector&                   NormalImpulse                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FHitResult&                InHit                                                  (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 void ACue_Summoned_Loop_10373101::OnSimColliderHit(class UPrimitiveComponent* InComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, const struct FVector& NormalImpulse, const struct FHitResult& InHit)
 {
@@ -846,7 +846,7 @@ void UMeteoriteInteractorSubsystem::CheckInteractorAutoDestroy()
 // (Final, Native, Public, HasOutParams)
 // Parameters:
 // class AActor*                           InActor                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<class AMarvelBaseCharacter*>     InCharacters                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TArray<class AMarvelBaseCharacter*>&InCharacters                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 float UMeteoriteInteractorSubsystem::GetMinDistToCharacter(class AActor* InActor, const TArray<class AMarvelBaseCharacter*>& InCharacters)
@@ -1023,8 +1023,8 @@ void ASummoned_10376101::AddCollisionToSummoned()
 // Function Hero_1037.Summoned_10376101.OnCharacterTranslatedByPortal
 // (Final, Native, Public, HasDefaults)
 // Parameters:
-// struct FVector                          LastPos                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          NewPos                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   LastPos                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   NewPos                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void ASummoned_10376101::OnCharacterTranslatedByPortal(const struct FVector& LastPos, const struct FVector& NewPos)
 {
@@ -1417,7 +1417,7 @@ void ACue_Loop_103761::StopSteelStonAnim()
 // Function Hero_1037.Ability_103781.OnGameTagUpdate
 // (Final, Native, Public, HasOutParams)
 // Parameters:
-// struct FGameplayTag                     Tag                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              Tag                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    TagExists                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UAbility_103781::OnGameTagUpdate(const struct FGameplayTag& Tag, bool TagExists)
@@ -1471,8 +1471,8 @@ bool UAbility_103781::CheckCanEnterDescendResult() const
 // Parameters:
 // class AActor*                           Instigator                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           Target                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FAttributeModifierHandle         ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGlobalEventExtraData            ExtraData                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FAttributeModifierHandle&  ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGlobalEventExtraData&     ExtraData                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
 void UEpicMomentAction_1037::OnActorTakeDamage(class AActor* Instigator, class AActor* Target, const struct FAttributeModifierHandle& ModifierParameterHandle, const struct FGlobalEventExtraData& ExtraData)
 {
@@ -1503,7 +1503,7 @@ void UEpicMomentAction_1037::OnActorTakeDamage(class AActor* Instigator, class A
 // class AActor*                           SourceActor                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UMarvelGameplayAbility*           SourceAbility                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           Projectile                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FMarvelTargetActorGenerateInfo   GenerateInfo                                           (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FMarvelTargetActorGenerateInfo&GenerateInfo                                           (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UEpicMomentAction_1037::OnProjectileBegin(class AActor* SourceActor, class UMarvelGameplayAbility* SourceAbility, class AActor* Projectile, const struct FMarvelTargetActorGenerateInfo& GenerateInfo)
 {
@@ -1583,7 +1583,7 @@ bool AMagnetoCharacter::IsPhantom() const
 // Parameters:
 // class AActor*                           InSourceAvatar                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           InTargetAvatar                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FAttributeModifierHandle         ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FAttributeModifierHandle&  ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void ASummoned_103792::OnAbilitySystemDeath(class AActor* InSourceAvatar, class AActor* InTargetAvatar, const struct FAttributeModifierHandle& ModifierParameterHandle)
 {
@@ -1637,8 +1637,8 @@ class UMarvelSummonedComponent* ASummoned_103792::GetSummonedComponent() const
 // Parameters:
 // class AActor*                           Instigator                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           Target                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FAttributeModifierHandle         ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGlobalEventExtraData            ExtraData                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FAttributeModifierHandle&  ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGlobalEventExtraData&     ExtraData                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
 void UTabData_1037::OnActorTakeDamage(class AActor* Instigator, class AActor* Target, const struct FAttributeModifierHandle& ModifierParameterHandle, const struct FGlobalEventExtraData& ExtraData)
 {

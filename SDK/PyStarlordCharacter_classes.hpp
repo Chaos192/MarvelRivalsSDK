@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // PythonClass PyStarlordCharacter.PyStarlordCharacter
-// 0x0000 (0x1870 - 0x1870)
+// 0x0000 (0x18C0 - 0x18C0)
 class APyStarlordCharacter : public AStarlordCharacter
 {
 public:

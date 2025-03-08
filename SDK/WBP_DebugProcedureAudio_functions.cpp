@@ -20,7 +20,7 @@ namespace SDK
 // Function WBP_DebugProcedureAudio.WBP_DebugProcedureAudio_C.AddEventLine
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FProcedureNotifyEvent            Event                                                  (BlueprintVisible, BlueprintReadOnly, Parm)
+// const struct FProcedureNotifyEvent&     Event                                                  (BlueprintVisible, BlueprintReadOnly, Parm)
 
 void UWBP_DebugProcedureAudio_C::AddEventLine(const struct FProcedureNotifyEvent& Event)
 {
@@ -42,7 +42,7 @@ void UWBP_DebugProcedureAudio_C::AddEventLine(const struct FProcedureNotifyEvent
 // Parameters:
 // class FName                             Desc                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UAkAudioEvent*                    AkEvent                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class FString                           EventName                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    EventName                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UWBP_DebugProcedureAudio_C::AddLine(class FName Desc, class UAkAudioEvent* AkEvent, const class FString& EventName)
 {
@@ -64,7 +64,7 @@ void UWBP_DebugProcedureAudio_C::AddLine(class FName Desc, class UAkAudioEvent* 
 // Function WBP_DebugProcedureAudio.WBP_DebugProcedureAudio_C.AddStateLine
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FProcedureNotifyState            State                                                  (BlueprintVisible, BlueprintReadOnly, Parm)
+// const struct FProcedureNotifyState&     State                                                  (BlueprintVisible, BlueprintReadOnly, Parm)
 
 void UWBP_DebugProcedureAudio_C::AddStateLine(const struct FProcedureNotifyState& State)
 {
@@ -85,7 +85,7 @@ void UWBP_DebugProcedureAudio_C::AddStateLine(const struct FProcedureNotifyState
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class FName                             Desc                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FProcedureNotifyDataUISound      DataUI                                                 (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
+// const struct FProcedureNotifyDataUISound&DataUI                                                 (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
 
 void UWBP_DebugProcedureAudio_C::AddUILine(class FName Desc, const struct FProcedureNotifyDataUISound& DataUI)
 {
@@ -107,7 +107,7 @@ void UWBP_DebugProcedureAudio_C::AddUILine(class FName Desc, const struct FProce
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class FName                             Desc                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FProcedureNotifyDataVoice        DataVoice                                              (BlueprintVisible, BlueprintReadOnly, Parm)
+// const struct FProcedureNotifyDataVoice& DataVoice                                              (BlueprintVisible, BlueprintReadOnly, Parm)
 
 void UWBP_DebugProcedureAudio_C::AddVoiceLine(class FName Desc, const struct FProcedureNotifyDataVoice& DataVoice)
 {
@@ -233,8 +233,8 @@ void UWBP_DebugProcedureAudio_C::ExecuteUbergraph_WBP_DebugProcedureAudio(int32 
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
 // class UAkAudioEvent*                    AkEvent                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class FString                           Name_0                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-// class FString                           Out                                                    (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Name_0                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// class FString*                          Out                                                    (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
 
 void UWBP_DebugProcedureAudio_C::GetEventName(class UAkAudioEvent* AkEvent, const class FString& Name_0, class FString* Out)
 {
@@ -258,7 +258,7 @@ void UWBP_DebugProcedureAudio_C::GetEventName(class UAkAudioEvent* AkEvent, cons
 // Function WBP_DebugProcedureAudio.WBP_DebugProcedureAudio_C.GetMode
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayTag                     ModeType_0                                             (Parm, OutParm, NoDestructor, HasGetValueTypeHash)
+// struct FGameplayTag*                    ModeType_0                                             (Parm, OutParm, NoDestructor, HasGetValueTypeHash)
 
 void UWBP_DebugProcedureAudio_C::GetMode(struct FGameplayTag* ModeType_0)
 {
@@ -279,7 +279,7 @@ void UWBP_DebugProcedureAudio_C::GetMode(struct FGameplayTag* ModeType_0)
 // Function WBP_DebugProcedureAudio.WBP_DebugProcedureAudio_C.GetProcedureData
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UMarvelProcedureData*             Array_Element                                          (Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class UMarvelProcedureData**            Array_Element                                          (Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 void UWBP_DebugProcedureAudio_C::GetProcedureData(class UMarvelProcedureData** Array_Element)
 {
@@ -322,7 +322,7 @@ void UWBP_DebugProcedureAudio_C::Initialize(EProcedureDataType Type)
 // Parameters:
 // class UAkComponent*                     AkComponent                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 // class UAkAudioEvent*                    Event                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class FString                           EventName                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    EventName                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UWBP_DebugProcedureAudio_C::OnPostAkEvent(class UAkComponent* AkComponent, class UAkAudioEvent* Event, const class FString& EventName)
 {

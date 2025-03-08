@@ -18,7 +18,7 @@ namespace SDK
 
 // BlueprintGeneratedClass SummonedComp_10424103_BP.SummonedComp_10424103_BP_C
 // 0x0000 (0x0CC0 - 0x0CC0)
-class USummonedComp_10424103_BP_C : public UPySummonedComp_10424103
+class USummonedComp_10424103_BP_C final : public UPySummonedComp_10424103
 {
 public:
 	static class UClass* StaticClass()

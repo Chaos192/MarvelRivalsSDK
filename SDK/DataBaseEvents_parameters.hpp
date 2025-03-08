@@ -96,17 +96,17 @@ public:
 	TArray<struct FDependencyHeroIDSet>           ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ReturnParm)
 };
 
-// PythonFunction DataBaseEvents.OccupyCamp.GetEventMapIDsAll
+// PythonFunction DataBaseEvents.FinishEvent.GetEventMapIDsAll
 // 0x0050 (0x0050 - 0x0000)
-struct OccupyCamp_GetEventMapIDsAll final
+struct FinishEvent_GetEventMapIDsAll final
 {
 public:
 	TSet<class FString>                           ReturnValue;                                       // 0x0000(0x0050)(Parm, OutParm, ReturnParm)
 };
 
-// PythonFunction DataBaseEvents.FinishEvent.GetEventMapIDsAll
+// PythonFunction DataBaseEvents.OccupyCamp.GetEventMapIDsAll
 // 0x0050 (0x0050 - 0x0000)
-struct FinishEvent_GetEventMapIDsAll final
+struct OccupyCamp_GetEventMapIDsAll final
 {
 public:
 	TSet<class FString>                           ReturnValue;                                       // 0x0000(0x0050)(Parm, OutParm, ReturnParm)

@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass 1052_CharacterBP.1052_CharacterBP_C
-// 0x0000 (0x1860 - 0x1860)
+// 0x0000 (0x18B0 - 0x18B0)
 class AOne052_CharacterBP_C final : public ALinLieCharacter
 {
 public:

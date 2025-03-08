@@ -14,14 +14,6 @@
 namespace SDK::Params
 {
 
-// PythonFunction PyWidget_GMCmd_SelectParameters.PyWidget_GMCmd_SelectParameters_Item.SetParametersData
-// 0x0008 (0x0008 - 0x0000)
-struct PyWidget_GMCmd_SelectParameters_Item_SetParametersData final
-{
-public:
-	class UObject*                                ItemObject_0;                                      // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-};
-
 // PythonFunction PyWidget_GMCmd_SelectParameters.PyWidget_GMCmd_SelectParameters.OnClickedBtn
 // 0x0020 (0x0020 - 0x0000)
 struct PyWidget_GMCmd_SelectParameters_OnClickedBtn final
@@ -46,6 +38,14 @@ struct PyWidget_GMCmd_SelectParameters_MarvelSetVisible final
 {
 public:
 	bool                                          Visible;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+
+// PythonFunction PyWidget_GMCmd_SelectParameters.PyWidget_GMCmd_SelectParameters_Item.SetParametersData
+// 0x0008 (0x0008 - 0x0000)
+struct PyWidget_GMCmd_SelectParameters_Item_SetParametersData final
+{
+public:
+	class UObject*                                ItemObject_0;                                      // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 };
 
 }

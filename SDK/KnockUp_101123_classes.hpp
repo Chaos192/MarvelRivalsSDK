@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass KnockUp_101123.KnockUp_101123_C
-// 0x0000 (0x1D98 - 0x1D98)
+// 0x0000 (0x1DA8 - 0x1DA8)
 class UKnockUp_101123_C final : public UPyKnockUp_101122
 {
 public:

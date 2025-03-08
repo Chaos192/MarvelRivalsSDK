@@ -38,8 +38,8 @@ public:
 };
 
 // Class OnlineSubsystem.TurnBasedMatchInterface
-// 0x0000 (0x0030 - 0x0030)
-class ITurnBasedMatchInterface final : public IInterface
+// 0x0000 (0x0000 - 0x0000)
+class ITurnBasedMatchInterface final
 {
 public:
 	void OnMatchEnded(const class FString& Match);
@@ -53,6 +53,15 @@ public:
 	static class ITurnBasedMatchInterface* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<ITurnBasedMatchInterface>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
 	}
 };
 

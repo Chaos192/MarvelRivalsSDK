@@ -152,7 +152,7 @@ void UPyAbility_101862::K2_OnEndAbility(bool bWasCancelled)
 // PythonFunction PyAbility_101862.PyAbility_101862.OnTagUpdate
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FGameplayTag                     Tag                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              Tag                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
 // bool                                    Exist                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UPyAbility_101862::OnTagUpdate(const struct FGameplayTag& Tag, bool Exist)

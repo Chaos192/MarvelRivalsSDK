@@ -19,59 +19,6 @@
 namespace SDK
 {
 
-// PythonClass PyLevelSummoned_MonsterEgg.PyTraceComponent_MonsterInsect
-// 0x0000 (0x1710 - 0x1710)
-class UPyTraceComponent_MonsterInsect final : public UMarvelAgentTraceComponent
-{
-public:
-	void K2_Initialize();
-	void K2_Finalize();
-	void OnTrace(class UObject* TraceSource, const TArray<struct FHitResult>& HitResults);
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"PyTraceComponent_MonsterInsect">();
-	}
-	static class UPyTraceComponent_MonsterInsect* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UPyTraceComponent_MonsterInsect>();
-	}
-};
-
-// PythonClass PyLevelSummoned_MonsterEgg.PySummoned_MonsterInsect_Manager
-// 0x0000 (0x0030 - 0x0030)
-class UPySummoned_MonsterInsect_Manager final : public UObject
-{
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"PySummoned_MonsterInsect_Manager">();
-	}
-	static class UPySummoned_MonsterInsect_Manager* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UPySummoned_MonsterInsect_Manager>();
-	}
-};
-
-// PythonClass PyLevelSummoned_MonsterEgg.PyLevelSummoned_MonsterEgg
-// 0x0000 (0x0920 - 0x0920)
-class APyLevelSummoned_MonsterEgg final : public APyLevelSummoned_20000006
-{
-public:
-	void OnDeath(class AController* InSource, class AActor* InSourceAvatar, const struct FAttributeModifierHandle& ModifierParameter);
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"PyLevelSummoned_MonsterEgg">();
-	}
-	static class APyLevelSummoned_MonsterEgg* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<APyLevelSummoned_MonsterEgg>();
-	}
-};
-
 // PythonClass PyLevelSummoned_MonsterEgg.PyCue_Buff_MonsterInsect
 // 0x0010 (0x1048 - 0x1038)
 class APyCue_Buff_MonsterInsect final : public AMarvelCueNotify_Buff
@@ -97,53 +44,18 @@ public:
 	}
 };
 
-// PythonClass PyLevelSummoned_MonsterEgg.PyLevelSummonedComponent_MonsterEgg
-// 0x0010 (0x0CB0 - 0x0CA0)
-class UPyLevelSummonedComponent_MonsterEgg final : public ULevelSummonedComponent
+// PythonClass PyLevelSummoned_MonsterEgg.PySummoned_MonsterInsect_Manager
+// 0x0000 (0x0030 - 0x0030)
+class UPySummoned_MonsterInsect_Manager final : public UObject
 {
-public:
-	int32                                         MaxSummonedNum;                                    // 0x0CA0(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"PyLevelSummonedComponent_MonsterEgg">();
+		return StaticClassImpl<"PySummoned_MonsterInsect_Manager">();
 	}
-	static class UPyLevelSummonedComponent_MonsterEgg* GetDefaultObj()
+	static class UPySummoned_MonsterInsect_Manager* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UPyLevelSummonedComponent_MonsterEgg>();
-	}
-};
-
-// PythonClass PyLevelSummoned_MonsterEgg.PyLevelSummoned_MonsterInsect
-// 0x0040 (0x08D0 - 0x0890)
-class APyLevelSummoned_MonsterInsect final : public AMarvelSummonerBase
-{
-public:
-	int32                                         SearchScopeID;                                     // 0x0890(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         ExplodeScopeID;                                    // 0x0894(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MaxSurvivalTime;                                   // 0x0898(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         BuffID;                                            // 0x089C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                StartLocation;                                     // 0x08A0(0x0018)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Index_0;                                           // 0x08B8(0x0004)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_8BC[0x4];                                      // 0x08BC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TMulticastInlineDelegate<void()>              OnSummonedAttached;                                // 0x08C0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-
-public:
-	void K2_OnSummonedBeginAgentTask();
-	void K2_OnSummonedEndAgentTask();
-	void OnInstigatorDeath(class AActor* InSource, class AActor* InTarget, const struct FAttributeModifierHandle& Modifier);
-	void OnInstigatorEndPlay();
-	void ReceiveTick(float DeltaSeconds);
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"PyLevelSummoned_MonsterInsect">();
-	}
-	static class APyLevelSummoned_MonsterInsect* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<APyLevelSummoned_MonsterInsect>();
+		return GetDefaultObjImpl<UPySummoned_MonsterInsect_Manager>();
 	}
 };
 
@@ -163,6 +75,94 @@ public:
 	static class APyCue_Summoner_Loop_MonsterInsect* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<APyCue_Summoner_Loop_MonsterInsect>();
+	}
+};
+
+// PythonClass PyLevelSummoned_MonsterEgg.PyLevelSummoned_MonsterEgg
+// 0x0000 (0x0950 - 0x0950)
+class APyLevelSummoned_MonsterEgg final : public APyLevelSummoned_20000006
+{
+public:
+	void OnDeath(class AController* InSource, class AActor* InSourceAvatar, const struct FAttributeModifierHandle& ModifierParameter);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PyLevelSummoned_MonsterEgg">();
+	}
+	static class APyLevelSummoned_MonsterEgg* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<APyLevelSummoned_MonsterEgg>();
+	}
+};
+
+// PythonClass PyLevelSummoned_MonsterEgg.PyTraceComponent_MonsterInsect
+// 0x0000 (0x1710 - 0x1710)
+class UPyTraceComponent_MonsterInsect final : public UMarvelAgentTraceComponent
+{
+public:
+	void K2_Initialize();
+	void K2_Finalize();
+	void OnTrace(class UObject* TraceSource, const TArray<struct FHitResult>& HitResults);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PyTraceComponent_MonsterInsect">();
+	}
+	static class UPyTraceComponent_MonsterInsect* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPyTraceComponent_MonsterInsect>();
+	}
+};
+
+// PythonClass PyLevelSummoned_MonsterEgg.PyLevelSummonedComponent_MonsterEgg
+// 0x0010 (0x0CB0 - 0x0CA0)
+class UPyLevelSummonedComponent_MonsterEgg final : public ULevelSummonedComponent
+{
+public:
+	int32                                         MaxSummonedNum;                                    // 0x0CA0(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PyLevelSummonedComponent_MonsterEgg">();
+	}
+	static class UPyLevelSummonedComponent_MonsterEgg* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPyLevelSummonedComponent_MonsterEgg>();
+	}
+};
+
+// PythonClass PyLevelSummoned_MonsterEgg.PyLevelSummoned_MonsterInsect
+// 0x0040 (0x0900 - 0x08C0)
+class APyLevelSummoned_MonsterInsect final : public AMarvelSummonerBase
+{
+public:
+	int32                                         SearchScopeID;                                     // 0x08C0(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ExplodeScopeID;                                    // 0x08C4(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MaxSurvivalTime;                                   // 0x08C8(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         BuffID;                                            // 0x08CC(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                StartLocation;                                     // 0x08D0(0x0018)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Index_0;                                           // 0x08E8(0x0004)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_8EC[0x4];                                      // 0x08EC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TMulticastInlineDelegate<void()>              OnSummonedAttached;                                // 0x08F0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+
+public:
+	void K2_OnSummonedBeginAgentTask();
+	void K2_OnSummonedEndAgentTask();
+	void OnInstigatorDeath(class AActor* InSource, class AActor* InTarget, const struct FAttributeModifierHandle& Modifier);
+	void OnInstigatorEndPlay();
+	void ReceiveTick(float DeltaSeconds);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PyLevelSummoned_MonsterInsect">();
+	}
+	static class APyLevelSummoned_MonsterInsect* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<APyLevelSummoned_MonsterInsect>();
 	}
 };
 

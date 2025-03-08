@@ -60,7 +60,7 @@ void UPyTabData_1046::K2_Shutdown()
 // Parameters:
 // class AActor*                           Instigator                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // class AActor*                           Target                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FAttributeModifierParameter      ModifierParameter                                      (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FAttributeModifierParameter&ModifierParameter                                      (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyTabData_1046::OnActorResurrected(class AActor* Instigator, class AActor* Target, const struct FAttributeModifierParameter& ModifierParameter)
 {

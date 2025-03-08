@@ -12,16 +12,16 @@
 
 #include "UMG_classes.hpp"
 #include "Engine_structs.hpp"
-#include "Marvel_structs.hpp"
 #include "AssetRegistry_structs.hpp"
 #include "SlateCore_structs.hpp"
+#include "Marvel_structs.hpp"
 
 
 namespace SDK
 {
 
 // WidgetBlueprintGeneratedClass WBP_DebugAudioAbilityLine.WBP_DebugAudioAbilityLine_C
-// 0x0120 (0x04D8 - 0x03B8)
+// 0x0110 (0x04C8 - 0x03B8)
 class UWBP_DebugAudioAbilityLine_C final : public UUserWidget
 {
 public:
@@ -39,7 +39,7 @@ public:
 	struct FMargin                                UnitMargin;                                        // 0x0410(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 	struct FAssetRegistryDependencyOptions        OPTIONS;                                           // 0x0420(0x0005)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor)
 	uint8                                         Pad_425[0x3];                                      // 0x0425(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FMarvelAbilityAudioPack                Config;                                            // 0x0428(0x00B0)(Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FMarvelAbilityAudioPack                Config;                                            // 0x0428(0x00A0)(Edit, BlueprintVisible, DisableEditOnInstance)
 
 public:
 	void BndEvt__WBP_DebugAudioAbilityLine_Btn_Solo_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature();

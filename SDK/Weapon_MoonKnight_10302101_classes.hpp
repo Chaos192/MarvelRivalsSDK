@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Weapon_MoonKnight_10302101.Weapon_MoonKnight_10302101_C
-// 0x0000 (0x0C90 - 0x0C90)
+// 0x0000 (0x0C80 - 0x0C80)
 class AWeapon_MoonKnight_10302101_C final : public AShootingWeapon
 {
 public:

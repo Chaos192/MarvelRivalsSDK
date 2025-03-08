@@ -30,6 +30,14 @@ public:
 	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash)
 };
 
+// PythonFunction device_check_utils.DeviceFunctionLibrary.GetDisplayDevicesInfo
+// 0x0010 (0x0010 - 0x0000)
+struct DeviceFunctionLibrary_GetDisplayDevicesInfo final
+{
+public:
+	TArray<class FString>                         ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ReturnParm)
+};
+
 // PythonFunction device_check_utils.DeviceFunctionLibrary.QueryCpuVendor
 // 0x0020 (0x0020 - 0x0000)
 struct DeviceFunctionLibrary_QueryCpuVendor final

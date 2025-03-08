@@ -20,8 +20,8 @@ namespace SDK
 // Function OSC.OSCClient.GetSendIPAddress
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class FString                           IPAddress                                              (Parm, OutParm, ZeroConstructor, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   Port                                                   (Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString&                          IPAddress                                              (Parm, OutParm, ZeroConstructor, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32&                                  Port                                                   (Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UOSCClient::GetSendIPAddress(class FString& IPAddress, int32& Port)
 {
@@ -50,7 +50,7 @@ void UOSCClient::GetSendIPAddress(class FString& IPAddress, int32& Port)
 // Function OSC.OSCClient.SendOSCBundle
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FOSCBundle                       Bundle                                                 (Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// struct FOSCBundle&                      Bundle                                                 (Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UOSCClient::SendOSCBundle(struct FOSCBundle& Bundle)
 {
@@ -77,7 +77,7 @@ void UOSCClient::SendOSCBundle(struct FOSCBundle& Bundle)
 // Function OSC.OSCClient.SendOSCMessage
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FOSCMessage                      Message                                                (Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// struct FOSCMessage&                     Message                                                (Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UOSCClient::SendOSCMessage(struct FOSCMessage& Message)
 {
@@ -104,8 +104,8 @@ void UOSCClient::SendOSCMessage(struct FOSCMessage& Message)
 // Function OSC.OSCClient.SetSendIPAddress
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FString                           IPAddress                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   Port                                                   (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    IPAddress                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int32                             Port                                                   (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UOSCClient::SetSendIPAddress(const class FString& IPAddress, const int32 Port)
@@ -134,8 +134,8 @@ bool UOSCClient::SetSendIPAddress(const class FString& IPAddress, const int32 Po
 // Function OSC.OSCManager.AddAddress
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FOSCMessage                      Message                                                (Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FOSCAddress                      Value                                                  (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FOSCMessage&                     Message                                                (Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FOSCAddress&               Value                                                  (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FOSCMessage                      ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
 struct FOSCMessage UOSCManager::AddAddress(struct FOSCMessage& Message, const struct FOSCAddress& Value)
@@ -166,8 +166,8 @@ struct FOSCMessage UOSCManager::AddAddress(struct FOSCMessage& Message, const st
 // Function OSC.OSCManager.AddBlob
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FOSCMessage                      Message                                                (Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// TArray<uint8>                           Value                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// struct FOSCMessage&                     Message                                                (Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const TArray<uint8>&                    Value                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 // struct FOSCMessage                      ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
 struct FOSCMessage UOSCManager::AddBlob(struct FOSCMessage& Message, const TArray<uint8>& Value)
@@ -198,7 +198,7 @@ struct FOSCMessage UOSCManager::AddBlob(struct FOSCMessage& Message, const TArra
 // Function OSC.OSCManager.AddBool
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FOSCMessage                      Message                                                (Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// struct FOSCMessage&                     Message                                                (Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // bool                                    Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FOSCMessage                      ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
@@ -230,8 +230,8 @@ struct FOSCMessage UOSCManager::AddBool(struct FOSCMessage& Message, bool Value)
 // Function OSC.OSCManager.AddBundleToBundle
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FOSCBundle                       InBundle                                               (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FOSCBundle                       OutBundle                                              (Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FOSCBundle&                InBundle                                               (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// struct FOSCBundle&                      OutBundle                                              (Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // struct FOSCBundle                       ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
 struct FOSCBundle UOSCManager::AddBundleToBundle(const struct FOSCBundle& InBundle, struct FOSCBundle& OutBundle)
@@ -262,7 +262,7 @@ struct FOSCBundle UOSCManager::AddBundleToBundle(const struct FOSCBundle& InBund
 // Function OSC.OSCManager.AddFloat
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FOSCMessage                      Message                                                (Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// struct FOSCMessage&                     Message                                                (Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // float                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FOSCMessage                      ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
@@ -294,7 +294,7 @@ struct FOSCMessage UOSCManager::AddFloat(struct FOSCMessage& Message, float Valu
 // Function OSC.OSCManager.AddInt32
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FOSCMessage                      Message                                                (Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// struct FOSCMessage&                     Message                                                (Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // int32                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FOSCMessage                      ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
@@ -326,7 +326,7 @@ struct FOSCMessage UOSCManager::AddInt32(struct FOSCMessage& Message, int32 Valu
 // Function OSC.OSCManager.AddInt64
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FOSCMessage                      Message                                                (Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// struct FOSCMessage&                     Message                                                (Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // int64                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FOSCMessage                      ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
@@ -358,8 +358,8 @@ struct FOSCMessage UOSCManager::AddInt64(struct FOSCMessage& Message, int64 Valu
 // Function OSC.OSCManager.AddMessageToBundle
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FOSCMessage                      Message                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FOSCBundle                       Bundle                                                 (Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FOSCMessage&               Message                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// struct FOSCBundle&                      Bundle                                                 (Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // struct FOSCBundle                       ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
 struct FOSCBundle UOSCManager::AddMessageToBundle(const struct FOSCMessage& Message, struct FOSCBundle& Bundle)
@@ -390,8 +390,8 @@ struct FOSCBundle UOSCManager::AddMessageToBundle(const struct FOSCMessage& Mess
 // Function OSC.OSCManager.AddString
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FOSCMessage                      Message                                                (Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// class FString                           Value                                                  (Parm, OutParm, ZeroConstructor, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FOSCMessage&                     Message                                                (Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// class FString&                          Value                                                  (Parm, OutParm, ZeroConstructor, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FOSCMessage                      ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
 struct FOSCMessage UOSCManager::AddString(struct FOSCMessage& Message, class FString& Value)
@@ -423,7 +423,7 @@ struct FOSCMessage UOSCManager::AddString(struct FOSCMessage& Message, class FSt
 // Function OSC.OSCManager.ClearBundle
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FOSCBundle                       Bundle                                                 (Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// struct FOSCBundle&                      Bundle                                                 (Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // struct FOSCBundle                       ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
 struct FOSCBundle UOSCManager::ClearBundle(struct FOSCBundle& Bundle)
@@ -453,7 +453,7 @@ struct FOSCBundle UOSCManager::ClearBundle(struct FOSCBundle& Bundle)
 // Function OSC.OSCManager.ClearMessage
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FOSCMessage                      Message                                                (Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// struct FOSCMessage&                     Message                                                (Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // struct FOSCMessage                      ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
 struct FOSCMessage UOSCManager::ClearMessage(struct FOSCMessage& Message)
@@ -483,7 +483,7 @@ struct FOSCMessage UOSCManager::ClearMessage(struct FOSCMessage& Message)
 // Function OSC.OSCManager.ClearOSCAddressContainers
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FOSCAddress                      address                                                (Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FOSCAddress&                     address                                                (Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FOSCAddress                      ReturnValue                                            (Parm, OutParm, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 struct FOSCAddress UOSCManager::ClearOSCAddressContainers(struct FOSCAddress& address)
@@ -513,7 +513,7 @@ struct FOSCAddress UOSCManager::ClearOSCAddressContainers(struct FOSCAddress& ad
 // Function OSC.OSCManager.ConvertStringToOSCAddress
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           String                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    String                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FOSCAddress                      ReturnValue                                            (Parm, OutParm, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 struct FOSCAddress UOSCManager::ConvertStringToOSCAddress(const class FString& String)
@@ -541,9 +541,9 @@ struct FOSCAddress UOSCManager::ConvertStringToOSCAddress(const class FString& S
 // Function OSC.OSCManager.CreateOSCClient
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           SendIPAddress                                          (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    SendIPAddress                                          (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   Port                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           ClientName                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    ClientName                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UObject*                          Outer_0                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UOSCClient*                       ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -575,11 +575,11 @@ class UOSCClient* UOSCManager::CreateOSCClient(const class FString& SendIPAddres
 // Function OSC.OSCManager.CreateOSCServer
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           ReceiveIPAddress                                       (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    ReceiveIPAddress                                       (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   Port                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bMulticastLoopback                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bStartListening                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           ServerName                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    ServerName                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UObject*                          Outer_0                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UOSCServer*                       ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -613,7 +613,7 @@ class UOSCServer* UOSCManager::CreateOSCServer(const class FString& ReceiveIPAdd
 // Function OSC.OSCManager.FindObjectAtOSCAddress
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FOSCAddress                      address                                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FOSCAddress&               address                                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UObject*                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class UObject* UOSCManager::FindObjectAtOSCAddress(const struct FOSCAddress& address)
@@ -641,9 +641,9 @@ class UObject* UOSCManager::FindObjectAtOSCAddress(const struct FOSCAddress& add
 // Function OSC.OSCManager.GetAddress
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FOSCMessage                      Message                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// int32                                   Index_0                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FOSCAddress                      Value                                                  (Parm, OutParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FOSCMessage&               Message                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const int32                             Index_0                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FOSCAddress*                     Value                                                  (Parm, OutParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UOSCManager::GetAddress(const struct FOSCMessage& Message, const int32 Index_0, struct FOSCAddress* Value)
@@ -675,8 +675,8 @@ bool UOSCManager::GetAddress(const struct FOSCMessage& Message, const int32 Inde
 // Function OSC.OSCManager.GetAllAddresses
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FOSCMessage                      Message                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// TArray<struct FOSCAddress>              Values                                                 (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+// const struct FOSCMessage&               Message                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// TArray<struct FOSCAddress>*             Values                                                 (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 
 void UOSCManager::GetAllAddresses(const struct FOSCMessage& Message, TArray<struct FOSCAddress>* Values)
 {
@@ -704,8 +704,8 @@ void UOSCManager::GetAllAddresses(const struct FOSCMessage& Message, TArray<stru
 // Function OSC.OSCManager.GetAllBools
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FOSCMessage                      Message                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// TArray<bool>                            Values                                                 (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+// const struct FOSCMessage&               Message                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// TArray<bool>*                           Values                                                 (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 
 void UOSCManager::GetAllBools(const struct FOSCMessage& Message, TArray<bool>* Values)
 {
@@ -733,8 +733,8 @@ void UOSCManager::GetAllBools(const struct FOSCMessage& Message, TArray<bool>* V
 // Function OSC.OSCManager.GetAllFloats
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FOSCMessage                      Message                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// TArray<float>                           Values                                                 (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+// const struct FOSCMessage&               Message                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// TArray<float>*                          Values                                                 (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 
 void UOSCManager::GetAllFloats(const struct FOSCMessage& Message, TArray<float>* Values)
 {
@@ -762,8 +762,8 @@ void UOSCManager::GetAllFloats(const struct FOSCMessage& Message, TArray<float>*
 // Function OSC.OSCManager.GetAllInt32s
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FOSCMessage                      Message                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// TArray<int32>                           Values                                                 (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+// const struct FOSCMessage&               Message                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// TArray<int32>*                          Values                                                 (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 
 void UOSCManager::GetAllInt32s(const struct FOSCMessage& Message, TArray<int32>* Values)
 {
@@ -791,8 +791,8 @@ void UOSCManager::GetAllInt32s(const struct FOSCMessage& Message, TArray<int32>*
 // Function OSC.OSCManager.GetAllInt64s
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FOSCMessage                      Message                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// TArray<int64>                           Values                                                 (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+// const struct FOSCMessage&               Message                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// TArray<int64>*                          Values                                                 (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 
 void UOSCManager::GetAllInt64s(const struct FOSCMessage& Message, TArray<int64>* Values)
 {
@@ -820,8 +820,8 @@ void UOSCManager::GetAllInt64s(const struct FOSCMessage& Message, TArray<int64>*
 // Function OSC.OSCManager.GetAllStrings
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FOSCMessage                      Message                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// TArray<class FString>                   Values                                                 (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+// const struct FOSCMessage&               Message                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// TArray<class FString>*                  Values                                                 (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 
 void UOSCManager::GetAllStrings(const struct FOSCMessage& Message, TArray<class FString>* Values)
 {
@@ -849,9 +849,9 @@ void UOSCManager::GetAllStrings(const struct FOSCMessage& Message, TArray<class 
 // Function OSC.OSCManager.GetBlob
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FOSCMessage                      Message                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// int32                                   Index_0                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<uint8>                           Value                                                  (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+// const struct FOSCMessage&               Message                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const int32                             Index_0                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TArray<uint8>*                          Value                                                  (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UOSCManager::GetBlob(const struct FOSCMessage& Message, const int32 Index_0, TArray<uint8>* Value)
@@ -883,9 +883,9 @@ bool UOSCManager::GetBlob(const struct FOSCMessage& Message, const int32 Index_0
 // Function OSC.OSCManager.GetBool
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FOSCMessage                      Message                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// int32                                   Index_0                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    Value                                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FOSCMessage&               Message                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const int32                             Index_0                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool*                                   Value                                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UOSCManager::GetBool(const struct FOSCMessage& Message, const int32 Index_0, bool* Value)
@@ -917,7 +917,7 @@ bool UOSCManager::GetBool(const struct FOSCMessage& Message, const int32 Index_0
 // Function OSC.OSCManager.GetBundlesFromBundle
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FOSCBundle                       Bundle                                                 (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FOSCBundle&                Bundle                                                 (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // TArray<struct FOSCBundle>               ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
 TArray<struct FOSCBundle> UOSCManager::GetBundlesFromBundle(const struct FOSCBundle& Bundle)
@@ -945,9 +945,9 @@ TArray<struct FOSCBundle> UOSCManager::GetBundlesFromBundle(const struct FOSCBun
 // Function OSC.OSCManager.GetFloat
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FOSCMessage                      Message                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// int32                                   Index_0                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   Value                                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FOSCMessage&               Message                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const int32                             Index_0                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float*                                  Value                                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UOSCManager::GetFloat(const struct FOSCMessage& Message, const int32 Index_0, float* Value)
@@ -979,9 +979,9 @@ bool UOSCManager::GetFloat(const struct FOSCMessage& Message, const int32 Index_
 // Function OSC.OSCManager.GetInt32
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FOSCMessage                      Message                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// int32                                   Index_0                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   Value                                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FOSCMessage&               Message                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const int32                             Index_0                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32*                                  Value                                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UOSCManager::GetInt32(const struct FOSCMessage& Message, const int32 Index_0, int32* Value)
@@ -1013,9 +1013,9 @@ bool UOSCManager::GetInt32(const struct FOSCMessage& Message, const int32 Index_
 // Function OSC.OSCManager.GetInt64
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FOSCMessage                      Message                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// int32                                   Index_0                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int64                                   Value                                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FOSCMessage&               Message                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const int32                             Index_0                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int64*                                  Value                                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UOSCManager::GetInt64(const struct FOSCMessage& Message, const int32 Index_0, int64* Value)
@@ -1047,9 +1047,9 @@ bool UOSCManager::GetInt64(const struct FOSCMessage& Message, const int32 Index_
 // Function OSC.OSCManager.GetMessageFromBundle
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FOSCBundle                       Bundle                                                 (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FOSCBundle&                Bundle                                                 (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bSucceeded                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool*                                   bSucceeded                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FOSCMessage                      ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
 struct FOSCMessage UOSCManager::GetMessageFromBundle(const struct FOSCBundle& Bundle, int32 Index_0, bool* bSucceeded)
@@ -1081,7 +1081,7 @@ struct FOSCMessage UOSCManager::GetMessageFromBundle(const struct FOSCBundle& Bu
 // Function OSC.OSCManager.GetMessagesFromBundle
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FOSCBundle                       Bundle                                                 (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FOSCBundle&                Bundle                                                 (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // TArray<struct FOSCMessage>              ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
 TArray<struct FOSCMessage> UOSCManager::GetMessagesFromBundle(const struct FOSCBundle& Bundle)
@@ -1109,8 +1109,8 @@ TArray<struct FOSCMessage> UOSCManager::GetMessagesFromBundle(const struct FOSCB
 // Function OSC.OSCManager.GetOSCAddressContainer
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FOSCAddress                      address                                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   Index_0                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FOSCAddress&               address                                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int32                             Index_0                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class FString UOSCManager::GetOSCAddressContainer(const struct FOSCAddress& address, const int32 Index_0)
@@ -1139,7 +1139,7 @@ class FString UOSCManager::GetOSCAddressContainer(const struct FOSCAddress& addr
 // Function OSC.OSCManager.GetOSCAddressContainerPath
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FOSCAddress                      address                                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FOSCAddress&               address                                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class FString UOSCManager::GetOSCAddressContainerPath(const struct FOSCAddress& address)
@@ -1167,7 +1167,7 @@ class FString UOSCManager::GetOSCAddressContainerPath(const struct FOSCAddress& 
 // Function OSC.OSCManager.GetOSCAddressContainers
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FOSCAddress                      address                                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FOSCAddress&               address                                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<class FString>                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
 TArray<class FString> UOSCManager::GetOSCAddressContainers(const struct FOSCAddress& address)
@@ -1195,7 +1195,7 @@ TArray<class FString> UOSCManager::GetOSCAddressContainers(const struct FOSCAddr
 // Function OSC.OSCManager.GetOSCAddressFullPath
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FOSCAddress                      address                                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FOSCAddress&               address                                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class FString UOSCManager::GetOSCAddressFullPath(const struct FOSCAddress& address)
@@ -1223,7 +1223,7 @@ class FString UOSCManager::GetOSCAddressFullPath(const struct FOSCAddress& addre
 // Function OSC.OSCManager.GetOSCAddressMethod
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FOSCAddress                      address                                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FOSCAddress&               address                                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class FString UOSCManager::GetOSCAddressMethod(const struct FOSCAddress& address)
@@ -1251,7 +1251,7 @@ class FString UOSCManager::GetOSCAddressMethod(const struct FOSCAddress& address
 // Function OSC.OSCManager.GetOSCMessageAddress
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FOSCMessage                      Message                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FOSCMessage&               Message                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // struct FOSCAddress                      ReturnValue                                            (Parm, OutParm, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 struct FOSCAddress UOSCManager::GetOSCMessageAddress(const struct FOSCMessage& Message)
@@ -1279,9 +1279,9 @@ struct FOSCAddress UOSCManager::GetOSCMessageAddress(const struct FOSCMessage& M
 // Function OSC.OSCManager.GetString
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FOSCMessage                      Message                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// int32                                   Index_0                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           Value                                                  (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FOSCMessage&               Message                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const int32                             Index_0                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString*                          Value                                                  (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UOSCManager::GetString(const struct FOSCMessage& Message, const int32 Index_0, class FString* Value)
@@ -1313,7 +1313,7 @@ bool UOSCManager::GetString(const struct FOSCMessage& Message, const int32 Index
 // Function OSC.OSCManager.ObjectPathFromOSCAddress
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FOSCAddress                      address                                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FOSCAddress&               address                                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class FString UOSCManager::ObjectPathFromOSCAddress(const struct FOSCAddress& address)
@@ -1369,7 +1369,7 @@ struct FOSCAddress UOSCManager::OSCAddressFromObjectPath(class UObject* Object)
 // Function OSC.OSCManager.OSCAddressFromObjectPathString
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           PathName                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    PathName                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FOSCAddress                      ReturnValue                                            (Parm, OutParm, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 struct FOSCAddress UOSCManager::OSCAddressFromObjectPathString(const class FString& PathName)
@@ -1397,7 +1397,7 @@ struct FOSCAddress UOSCManager::OSCAddressFromObjectPathString(const class FStri
 // Function OSC.OSCManager.OSCAddressIsValidPath
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FOSCAddress                      address                                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FOSCAddress&               address                                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UOSCManager::OSCAddressIsValidPath(const struct FOSCAddress& address)
@@ -1425,7 +1425,7 @@ bool UOSCManager::OSCAddressIsValidPath(const struct FOSCAddress& address)
 // Function OSC.OSCManager.OSCAddressIsValidPattern
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FOSCAddress                      address                                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FOSCAddress&               address                                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UOSCManager::OSCAddressIsValidPattern(const struct FOSCAddress& address)
@@ -1453,8 +1453,8 @@ bool UOSCManager::OSCAddressIsValidPattern(const struct FOSCAddress& address)
 // Function OSC.OSCManager.OSCAddressPathMatchesPattern
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FOSCAddress                      Pattern                                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FOSCAddress                      Path                                                   (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FOSCAddress&               Pattern                                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FOSCAddress&               Path                                                   (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UOSCManager::OSCAddressPathMatchesPattern(const struct FOSCAddress& Pattern, const struct FOSCAddress& Path)
@@ -1483,7 +1483,7 @@ bool UOSCManager::OSCAddressPathMatchesPattern(const struct FOSCAddress& Pattern
 // Function OSC.OSCManager.OSCAddressPopContainer
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FOSCAddress                      address                                                (Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FOSCAddress&                     address                                                (Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class FString UOSCManager::OSCAddressPopContainer(struct FOSCAddress& address)
@@ -1513,7 +1513,7 @@ class FString UOSCManager::OSCAddressPopContainer(struct FOSCAddress& address)
 // Function OSC.OSCManager.OSCAddressPopContainers
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FOSCAddress                      address                                                (Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FOSCAddress&                     address                                                (Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   NumContainers                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<class FString>                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
@@ -1545,8 +1545,8 @@ TArray<class FString> UOSCManager::OSCAddressPopContainers(struct FOSCAddress& a
 // Function OSC.OSCManager.OSCAddressPushContainer
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FOSCAddress                      address                                                (Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           Container                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FOSCAddress&                     address                                                (Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Container                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FOSCAddress                      ReturnValue                                            (Parm, OutParm, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 struct FOSCAddress UOSCManager::OSCAddressPushContainer(struct FOSCAddress& address, const class FString& Container)
@@ -1577,8 +1577,8 @@ struct FOSCAddress UOSCManager::OSCAddressPushContainer(struct FOSCAddress& addr
 // Function OSC.OSCManager.OSCAddressPushContainers
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FOSCAddress                      address                                                (Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<class FString>                   Containers                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// struct FOSCAddress&                     address                                                (Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<class FString>&            Containers                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 // struct FOSCAddress                      ReturnValue                                            (Parm, OutParm, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 struct FOSCAddress UOSCManager::OSCAddressPushContainers(struct FOSCAddress& address, const TArray<class FString>& Containers)
@@ -1609,7 +1609,7 @@ struct FOSCAddress UOSCManager::OSCAddressPushContainers(struct FOSCAddress& add
 // Function OSC.OSCManager.OSCAddressRemoveContainers
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FOSCAddress                      address                                                (Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FOSCAddress&                     address                                                (Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   Count                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FOSCAddress                      ReturnValue                                            (Parm, OutParm, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -1643,8 +1643,8 @@ struct FOSCAddress UOSCManager::OSCAddressRemoveContainers(struct FOSCAddress& a
 // Function OSC.OSCManager.SetOSCAddressMethod
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FOSCAddress                      address                                                (Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           Method                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FOSCAddress&                     address                                                (Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Method                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FOSCAddress                      ReturnValue                                            (Parm, OutParm, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 struct FOSCAddress UOSCManager::SetOSCAddressMethod(struct FOSCAddress& address, const class FString& Method)
@@ -1675,8 +1675,8 @@ struct FOSCAddress UOSCManager::SetOSCAddressMethod(struct FOSCAddress& address,
 // Function OSC.OSCManager.SetOSCMessageAddress
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FOSCMessage                      Message                                                (Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FOSCAddress                      address                                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FOSCMessage&                     Message                                                (Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FOSCAddress&               address                                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FOSCMessage                      ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
 struct FOSCMessage UOSCManager::SetOSCMessageAddress(struct FOSCMessage& Message, const struct FOSCAddress& address)
@@ -1707,7 +1707,7 @@ struct FOSCMessage UOSCManager::SetOSCMessageAddress(struct FOSCMessage& Message
 // Function OSC.OSCServer.AddAllowlistedClient
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FString                           IPAddress                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    IPAddress                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UOSCServer::AddAllowlistedClient(const class FString& IPAddress)
 {
@@ -1732,10 +1732,10 @@ void UOSCServer::AddAllowlistedClient(const class FString& IPAddress)
 // Function OSC.OSCServer.BindEventToOnOSCAddressPatternMatchesPath
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FOSCAddress                      OSCAddressPattern                                      (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TDelegate<void(struct FOSCAddress& AddressPattern, struct FOSCMessage& Message, const class FString& IPAddress, int32 Port)>Event                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FOSCAddress&               OSCAddressPattern                                      (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TDelegate<void(const struct FOSCAddress& AddressPattern, const struct FOSCMessage& Message, const class FString& IPAddress, int32 Port)>&Event                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UOSCServer::BindEventToOnOSCAddressPatternMatchesPath(const struct FOSCAddress& OSCAddressPattern, const TDelegate<void(struct FOSCAddress& AddressPattern, struct FOSCMessage& Message, const class FString& IPAddress, int32 Port)>& Event)
+void UOSCServer::BindEventToOnOSCAddressPatternMatchesPath(const struct FOSCAddress& OSCAddressPattern, const TDelegate<void(const struct FOSCAddress& AddressPattern, const struct FOSCMessage& Message, const class FString& IPAddress, int32 Port)>& Event)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1797,7 +1797,7 @@ void UOSCServer::Listen()
 // Function OSC.OSCServer.RemoveAllowlistedClient
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FString                           IPAddress                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    IPAddress                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UOSCServer::RemoveAllowlistedClient(const class FString& IPAddress)
 {
@@ -1822,7 +1822,7 @@ void UOSCServer::RemoveAllowlistedClient(const class FString& IPAddress)
 // Function OSC.OSCServer.SetAddress
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FString                           ReceiveIPAddress                                       (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    ReceiveIPAddress                                       (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   Port                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -1921,7 +1921,7 @@ void UOSCServer::Stop()
 // Function OSC.OSCServer.UnbindAllEventsFromOnOSCAddressPatternMatchesPath
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FOSCAddress                      OSCAddressPattern                                      (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FOSCAddress&               OSCAddressPattern                                      (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UOSCServer::UnbindAllEventsFromOnOSCAddressPatternMatchesPath(const struct FOSCAddress& OSCAddressPattern)
 {
@@ -1965,10 +1965,10 @@ void UOSCServer::UnbindAllEventsFromOnOSCAddressPatternMatching()
 // Function OSC.OSCServer.UnbindEventFromOnOSCAddressPatternMatchesPath
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FOSCAddress                      OSCAddressPattern                                      (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TDelegate<void(struct FOSCAddress& AddressPattern, struct FOSCMessage& Message, const class FString& IPAddress, int32 Port)>Event                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FOSCAddress&               OSCAddressPattern                                      (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TDelegate<void(const struct FOSCAddress& AddressPattern, const struct FOSCMessage& Message, const class FString& IPAddress, int32 Port)>&Event                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UOSCServer::UnbindEventFromOnOSCAddressPatternMatchesPath(const struct FOSCAddress& OSCAddressPattern, const TDelegate<void(struct FOSCAddress& AddressPattern, struct FOSCMessage& Message, const class FString& IPAddress, int32 Port)>& Event)
+void UOSCServer::UnbindEventFromOnOSCAddressPatternMatchesPath(const struct FOSCAddress& OSCAddressPattern, const TDelegate<void(const struct FOSCAddress& AddressPattern, const struct FOSCMessage& Message, const class FString& IPAddress, int32 Port)>& Event)
 {
 	static class UFunction* Func = nullptr;
 

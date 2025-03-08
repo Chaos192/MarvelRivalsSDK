@@ -102,7 +102,7 @@ void UPyWidget_HeroSystem_Proficiency::Destruct()
 // PythonFunction PyWidget_HeroSystem_Proficiency.PyWidget_HeroSystem_Proficiency.OnAnimationFinished
 // (BlueprintCosmetic, Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UWidgetAnimation*                 Animation                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// const class UWidgetAnimation*           Animation                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 void UPyWidget_HeroSystem_Proficiency::OnAnimationFinished(const class UWidgetAnimation* Animation)
 {

@@ -36,11 +36,11 @@ public:
 };
 
 // PythonClass PyAbility_10001201.PyBuffAbility_10001201
-// 0x0010 (0x1108 - 0x10F8)
+// 0x0010 (0x1110 - 0x1100)
 class UPyBuffAbility_10001201 : public UMarvelEffectGameplayAbility
 {
 public:
-	TArray<int32>                                 GiftedAbilityIDs;                                  // 0x10F8(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, EditConst, NativeAccessSpecifierPublic)
+	TArray<int32>                                 GiftedAbilityIDs;                                  // 0x1100(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, EditConst, NativeAccessSpecifierPublic)
 
 public:
 	void K2_ActivateAbility();

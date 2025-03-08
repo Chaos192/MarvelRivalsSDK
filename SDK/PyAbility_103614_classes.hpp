@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "PyCue_AbilityLoop_Cable_Base_classes.hpp"
 #include "Marvel_structs.hpp"
 #include "Marvel_classes.hpp"
+#include "PyCue_AbilityLoop_Cable_Base_classes.hpp"
 #include "Hero_1036_structs.hpp"
 #include "Hero_1036_classes.hpp"
 #include "GameplayTags_structs.hpp"
@@ -106,7 +106,7 @@ public:
 };
 
 // PythonClass PyAbility_103614.PyAbility_103614
-// 0x0000 (0x25A0 - 0x25A0)
+// 0x0000 (0x25A8 - 0x25A8)
 class UPyAbility_103614 : public UAbility_103614
 {
 public:

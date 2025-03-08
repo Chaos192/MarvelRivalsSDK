@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Drag_10414102_BP.Drag_10414102_BP_C
-// 0x0000 (0x1D10 - 0x1D10)
+// 0x0000 (0x1D18 - 0x1D18)
 class UDrag_10414102_BP_C final : public UMarvelDragAbility_10414102
 {
 public:

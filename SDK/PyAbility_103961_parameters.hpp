@@ -16,32 +16,6 @@
 namespace SDK::Params
 {
 
-// PythonFunction PyAbility_103961.PyUIController_103961.OnAbilityStateChange
-// 0x0004 (0x0004 - 0x0000)
-struct PyUIController_103961_OnAbilityStateChange final
-{
-public:
-	int32                                         ST;                                                // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-
-// PythonFunction PyAbility_103961.PyCue_Ability_Loop_10396104.WhileActiveFX
-// 0x01C0 (0x01C0 - 0x0000)
-struct PyCue_Ability_Loop_10396104_WhileActiveFX final
-{
-public:
-	class AActor*                                 MyTarget;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	struct FGameplayCueParameters                 Parameters;                                        // 0x0008(0x01B8)(ConstParm, Parm, OutParm, ReferenceParm)
-};
-
-// PythonFunction PyAbility_103961.PyCue_Ability_Loop_10396104.OnRemoveFX
-// 0x01C0 (0x01C0 - 0x0000)
-struct PyCue_Ability_Loop_10396104_OnRemoveFX final
-{
-public:
-	class AActor*                                 MyTarget;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	struct FGameplayCueParameters                 Parameters;                                        // 0x0008(0x01B8)(ConstParm, Parm, OutParm, ReferenceParm)
-};
-
 // PythonFunction PyAbility_103961.PyAbility_103961.NativeOnMontageCompleted
 // 0x0010 (0x0010 - 0x0000)
 struct PyAbility_103961_NativeOnMontageCompleted final
@@ -125,6 +99,32 @@ struct PyCue_Ability_Loop_10396103_WhileActiveFX final
 public:
 	class AActor*                                 MyTarget;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	struct FGameplayCueParameters                 Parameters;                                        // 0x0008(0x01B8)(ConstParm, Parm, OutParm, ReferenceParm)
+};
+
+// PythonFunction PyAbility_103961.PyCue_Ability_Loop_10396104.WhileActiveFX
+// 0x01C0 (0x01C0 - 0x0000)
+struct PyCue_Ability_Loop_10396104_WhileActiveFX final
+{
+public:
+	class AActor*                                 MyTarget;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	struct FGameplayCueParameters                 Parameters;                                        // 0x0008(0x01B8)(ConstParm, Parm, OutParm, ReferenceParm)
+};
+
+// PythonFunction PyAbility_103961.PyCue_Ability_Loop_10396104.OnRemoveFX
+// 0x01C0 (0x01C0 - 0x0000)
+struct PyCue_Ability_Loop_10396104_OnRemoveFX final
+{
+public:
+	class AActor*                                 MyTarget;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	struct FGameplayCueParameters                 Parameters;                                        // 0x0008(0x01B8)(ConstParm, Parm, OutParm, ReferenceParm)
+};
+
+// PythonFunction PyAbility_103961.PyUIController_103961.OnAbilityStateChange
+// 0x0004 (0x0004 - 0x0000)
+struct PyUIController_103961_OnAbilityStateChange final
+{
+public:
+	int32                                         ST;                                                // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 
 }

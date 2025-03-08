@@ -76,7 +76,7 @@ class UPyWidget_ChatItemEntry : public UWidget_ListEntry
 public:
 	EChatCustomMsgType                            CurrentCustomWidget;                               // 0x05B0(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_5B1[0x7];                                      // 0x05B1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<EChatCustomMsgType, struct FSoftClassPath> CustomWidgets;                                     // 0x05B8(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	TMap<EChatCustomMsgType, struct FSoftClassPath> CustomWidgets;                                   // 0x05B8(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NativeAccessSpecifierPublic)
 
 public:
 	void Construct();

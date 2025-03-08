@@ -41,7 +41,7 @@ public:
 };
 
 // PythonClass PyAbility_102731.PyAbility_102731
-// 0x0000 (0x2580 - 0x2580)
+// 0x0000 (0x2588 - 0x2588)
 class UPyAbility_102731 : public UMarvelGameplayAbility
 {
 public:
@@ -65,7 +65,7 @@ public:
 };
 
 // PythonClass PyAbility_102731.PyProjectile_10273101
-// 0x0000 (0x3050 - 0x3050)
+// 0x0000 (0x3110 - 0x3110)
 class APyProjectile_10273101 : public AProjectile_10273101
 {
 public:

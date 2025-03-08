@@ -21,14 +21,14 @@ namespace SDK
 {
 
 // PythonClass PyAbility_103701.PyAbility_103701
-// 0x0038 (0x2638 - 0x2600)
+// 0x0038 (0x2640 - 0x2608)
 class UPyAbility_103701 : public UAbility_103701
 {
 public:
-	class AActor*                                 ShootingTarget;                                    // 0x2600(0x0008)(Net, ZeroConstructor, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(float Value)>   OnAddIronByValue;                                  // 0x2608(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void()>              OnShieldSummonHit;                                 // 0x2618(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class AActor* NewTarget)> OnShootingTargetChangeDelegate;                    // 0x2628(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	class AActor*                                 ShootingTarget;                                    // 0x2608(0x0008)(Net, ZeroConstructor, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(float Value)>   OnAddIronByValue;                                  // 0x2610(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void()>              OnShieldSummonHit;                                 // 0x2620(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class AActor* NewTarget)> OnShootingTargetChangeDelegate;          // 0x2630(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 
 public:
 	void BeginPlay();
@@ -48,6 +48,25 @@ public:
 	static class UPyAbility_103701* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UPyAbility_103701>();
+	}
+};
+
+// PythonClass PyAbility_103701.PyUIController_103701
+// 0x0000 (0x0C50 - 0x0C50)
+class UPyUIController_103701 final : public UUIC_Ability
+{
+public:
+	void SetAbility(int32 InAbilityId, class UGameplayAbility* InAbility);
+	void OnDestruct();
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PyUIController_103701">();
+	}
+	static class UPyUIController_103701* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPyUIController_103701>();
 	}
 };
 
@@ -86,11 +105,12 @@ public:
 };
 
 // PythonClass PyAbility_103701.PyProjectile_103701
-// 0x0010 (0x3060 - 0x3050)
+// 0x0010 (0x3120 - 0x3110)
 class APyProjectile_103701 : public AMarvelAbilityTargetActor_Projectile
 {
 public:
-	class UProjectileHomingComponent*             HomingComp;                                        // 0x3050(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3108[0x8];                                     // 0x3108(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	class UProjectileHomingComponent*             HomingComp;                                        // 0x3110(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void OnAbilityShootingTargetChange(class AActor* NewTarget);
@@ -140,7 +160,7 @@ public:
 	float                                         FadeInInterval;                                    // 0x05A8(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_5AC[0x4];                                      // 0x05AC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FWidgetStyle_AbilityCharge             DefaultStyle;                                      // 0x05B0(0x0110)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(int32 InCurrentValue)> OnCurSegmentChanged;                               // 0x06C0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(int32 InCurrentValue)> OnCurSegmentChanged;                        // 0x06C0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 
 public:
 	void OnInitialized();
@@ -164,25 +184,6 @@ public:
 	static class UPyWidget_AbilityCharge_103701* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UPyWidget_AbilityCharge_103701>();
-	}
-};
-
-// PythonClass PyAbility_103701.PyUIController_103701
-// 0x0000 (0x0C60 - 0x0C60)
-class UPyUIController_103701 final : public UUIC_Ability
-{
-public:
-	void SetAbility(int32 InAbilityId, class UGameplayAbility* InAbility);
-	void OnDestruct();
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"PyUIController_103701">();
-	}
-	static class UPyUIController_103701* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UPyUIController_103701>();
 	}
 };
 

@@ -64,82 +64,82 @@ public:
 };
 
 // Class HoudiniEngineRuntime.HoudiniAssetComponent
-// 0x0580 (0x0DC0 - 0x0840)
+// 0x0580 (0x0E50 - 0x08D0)
 class UHoudiniAssetComponent : public UPrimitiveComponent
 {
 public:
-	uint8                                         Pad_838[0x8];                                      // 0x0838(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	class UHoudiniAsset*                          HoudiniAsset;                                      // 0x0840(0x0008)(Edit, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bCookOnParameterChange;                            // 0x0848(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bUploadTransformsToHoudiniEngine;                  // 0x0849(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bCookOnTransformChange;                            // 0x084A(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bCookOnAssetInputCook;                             // 0x084B(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bOutputless;                                       // 0x084C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bOutputTemplateGeos;                               // 0x084D(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bUseOutputNodes;                                   // 0x084E(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_84F[0x1];                                      // 0x084F(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FDirectoryPath                         TemporaryCookFolder;                               // 0x0850(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FDirectoryPath                         BakeFolder;                                        // 0x0860(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EHoudiniStaticMeshMethod                      StaticMeshMethod;                                  // 0x0870(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_871[0x7];                                      // 0x0871(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FHoudiniStaticMeshGenerationProperties StaticMeshGenerationProperties;                    // 0x0878(0x0200)(Edit, ContainsInstancedReference, NativeAccessSpecifierPublic)
-	struct FMeshBuildSettings                     StaticMeshBuildSettings;                           // 0x0A78(0x0048)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	bool                                          bOverrideGlobalProxyStaticMeshSettings;            // 0x0AC0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bEnableProxyStaticMeshOverride;                    // 0x0AC1(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bEnableProxyStaticMeshRefinementByTimerOverride;   // 0x0AC2(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_AC3[0x1];                                      // 0x0AC3(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         ProxyMeshAutoRefineTimeoutSecondsOverride;         // 0x0AC4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bEnableProxyStaticMeshRefinementOnPreSaveWorldOverride; // 0x0AC8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bEnableProxyStaticMeshRefinementOnPreBeginPIEOverride; // 0x0AC9(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bLandscapeUseTempLayers;                           // 0x0ACA(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_ACB[0x1];                                      // 0x0ACB(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         AssetId;                                           // 0x0ACC(0x0004)(ZeroConstructor, DuplicateTransient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	TArray<int32>                                 NodeIdsToCook;                                     // 0x0AD0(0x0010)(ZeroConstructor, Transient, DuplicateTransient, Protected, NativeAccessSpecifierProtected)
-	TMap<int32, int32>                            OutputNodeCookCounts;                              // 0x0AE0(0x0050)(Transient, DuplicateTransient, Protected, NativeAccessSpecifierProtected)
-	TSet<class UHoudiniAssetComponent*>           DownstreamHoudiniAssets;                           // 0x0B30(0x0050)(ExportObject, DuplicateTransient, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
-	struct FGuid                                  ComponentGUID;                                     // 0x0B80(0x0010)(ZeroConstructor, DuplicateTransient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FGuid                                  HapiGUID;                                          // 0x0B90(0x0010)(ZeroConstructor, DuplicateTransient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class FString                                 HapiAssetName;                                     // 0x0BA0(0x0010)(ZeroConstructor, DuplicateTransient, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	EHoudiniAssetState                            AssetState;                                        // 0x0BB0(0x0001)(ZeroConstructor, DuplicateTransient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	EHoudiniAssetState                            DebugLastAssetState;                               // 0x0BB1(0x0001)(ZeroConstructor, DuplicateTransient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	EHoudiniAssetStateResult                      AssetStateResult;                                  // 0x0BB2(0x0001)(ZeroConstructor, DuplicateTransient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_BB3[0xD];                                      // 0x0BB3(0x000D)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTransform                             LastComponentTransform;                            // 0x0BC0(0x0060)(DuplicateTransient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint32                                        SubAssetIndex;                                     // 0x0C20(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	int32                                         AssetCookCount;                                    // 0x0C24(0x0004)(ZeroConstructor, DuplicateTransient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bHasBeenLoaded;                                    // 0x0C28(0x0001)(ZeroConstructor, DuplicateTransient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bHasBeenDuplicated;                                // 0x0C29(0x0001)(ZeroConstructor, DuplicateTransient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bPendingDelete;                                    // 0x0C2A(0x0001)(ZeroConstructor, DuplicateTransient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bRecookRequested;                                  // 0x0C2B(0x0001)(ZeroConstructor, DuplicateTransient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bRebuildRequested;                                 // 0x0C2C(0x0001)(ZeroConstructor, DuplicateTransient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bEnableCooking;                                    // 0x0C2D(0x0001)(ZeroConstructor, DuplicateTransient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bForceNeedUpdate;                                  // 0x0C2E(0x0001)(ZeroConstructor, DuplicateTransient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bLastCookSuccess;                                  // 0x0C2F(0x0001)(ZeroConstructor, DuplicateTransient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bParameterDefinitionUpdateNeeded;                  // 0x0C30(0x0001)(ZeroConstructor, DuplicateTransient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bBlueprintStructureModified;                       // 0x0C31(0x0001)(ZeroConstructor, DuplicateTransient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bBlueprintModified;                                // 0x0C32(0x0001)(ZeroConstructor, DuplicateTransient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_C33[0x5];                                      // 0x0C33(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class UHoudiniParameter*>              Parameters;                                        // 0x0C38(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
-	TArray<class UHoudiniInput*>                  Inputs;                                            // 0x0C48(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
-	TArray<class UHoudiniOutput*>                 Outputs;                                           // 0x0C58(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
-	TArray<struct FHoudiniBakedOutput>            BakedOutputs;                                      // 0x0C68(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
-	TArray<TWeakObjectPtr<class AActor>>          UntrackedOutputs;                                  // 0x0C78(0x0010)(ZeroConstructor, Protected, UObjectWrapper, NativeAccessSpecifierProtected)
-	TArray<class UHoudiniHandleComponent*>        HandleComponents;                                  // 0x0C88(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
-	bool                                          bHasComponentTransformChanged;                     // 0x0C98(0x0001)(ZeroConstructor, Transient, DuplicateTransient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bFullyLoaded;                                      // 0x0C99(0x0001)(ZeroConstructor, Transient, DuplicateTransient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_C9A[0x6];                                      // 0x0C9A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	class UHoudiniPDGAssetLink*                   PDGAssetLink;                                      // 0x0CA0(0x0008)(ZeroConstructor, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FTimerHandle                           RefineMeshesTimer;                                 // 0x0CA8(0x0018)(Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_CC0[0x18];                                     // 0x0CC0(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
-	bool                                          bNoProxyMeshNextCookRequested;                     // 0x0CD8(0x0001)(ZeroConstructor, DuplicateTransient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_CD9[0x7];                                      // 0x0CD9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<class UObject*, int32>                   InputPresets;                                      // 0x0CE0(0x0050)(Transient, DuplicateTransient, Protected, NativeAccessSpecifierProtected)
-	bool                                          bBakeAfterNextCook;                                // 0x0D30(0x0001)(ZeroConstructor, DuplicateTransient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_D31[0x5F];                                     // 0x0D31(0x005F)(Fixing Size After Last Property [ Dumper-7 ])
-	bool                                          bCachedIsPreview;                                  // 0x0D90(0x0001)(ZeroConstructor, Transient, DuplicateTransient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_D91[0xF];                                      // 0x0D91(0x000F)(Fixing Size After Last Property [ Dumper-7 ])
-	double                                        LastTickTime;                                      // 0x0DA0(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_DA8[0x18];                                     // 0x0DA8(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_8C8[0x8];                                      // 0x08C8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	class UHoudiniAsset*                          HoudiniAsset;                                      // 0x08D0(0x0008)(Edit, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bCookOnParameterChange;                            // 0x08D8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bUploadTransformsToHoudiniEngine;                  // 0x08D9(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bCookOnTransformChange;                            // 0x08DA(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bCookOnAssetInputCook;                             // 0x08DB(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bOutputless;                                       // 0x08DC(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bOutputTemplateGeos;                               // 0x08DD(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bUseOutputNodes;                                   // 0x08DE(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_8DF[0x1];                                      // 0x08DF(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FDirectoryPath                         TemporaryCookFolder;                               // 0x08E0(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FDirectoryPath                         BakeFolder;                                        // 0x08F0(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EHoudiniStaticMeshMethod                      StaticMeshMethod;                                  // 0x0900(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_901[0x7];                                      // 0x0901(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FHoudiniStaticMeshGenerationProperties StaticMeshGenerationProperties;                    // 0x0908(0x0200)(Edit, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	struct FMeshBuildSettings                     StaticMeshBuildSettings;                           // 0x0B08(0x0048)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	bool                                          bOverrideGlobalProxyStaticMeshSettings;            // 0x0B50(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bEnableProxyStaticMeshOverride;                    // 0x0B51(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bEnableProxyStaticMeshRefinementByTimerOverride;   // 0x0B52(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_B53[0x1];                                      // 0x0B53(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         ProxyMeshAutoRefineTimeoutSecondsOverride;         // 0x0B54(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bEnableProxyStaticMeshRefinementOnPreSaveWorldOverride; // 0x0B58(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bEnableProxyStaticMeshRefinementOnPreBeginPIEOverride; // 0x0B59(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bLandscapeUseTempLayers;                           // 0x0B5A(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_B5B[0x1];                                      // 0x0B5B(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         AssetId;                                           // 0x0B5C(0x0004)(ZeroConstructor, DuplicateTransient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	TArray<int32>                                 NodeIdsToCook;                                     // 0x0B60(0x0010)(ZeroConstructor, Transient, DuplicateTransient, Protected, NativeAccessSpecifierProtected)
+	TMap<int32, int32>                            OutputNodeCookCounts;                              // 0x0B70(0x0050)(Transient, DuplicateTransient, Protected, NativeAccessSpecifierProtected)
+	TSet<class UHoudiniAssetComponent*>           DownstreamHoudiniAssets;                           // 0x0BC0(0x0050)(ExportObject, DuplicateTransient, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
+	struct FGuid                                  ComponentGUID;                                     // 0x0C10(0x0010)(ZeroConstructor, DuplicateTransient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FGuid                                  HapiGUID;                                          // 0x0C20(0x0010)(ZeroConstructor, DuplicateTransient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class FString                                 HapiAssetName;                                     // 0x0C30(0x0010)(ZeroConstructor, DuplicateTransient, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	EHoudiniAssetState                            AssetState;                                        // 0x0C40(0x0001)(ZeroConstructor, DuplicateTransient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	EHoudiniAssetState                            DebugLastAssetState;                               // 0x0C41(0x0001)(ZeroConstructor, DuplicateTransient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	EHoudiniAssetStateResult                      AssetStateResult;                                  // 0x0C42(0x0001)(ZeroConstructor, DuplicateTransient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_C43[0xD];                                      // 0x0C43(0x000D)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             LastComponentTransform;                            // 0x0C50(0x0060)(DuplicateTransient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint32                                        SubAssetIndex;                                     // 0x0CB0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	int32                                         AssetCookCount;                                    // 0x0CB4(0x0004)(ZeroConstructor, DuplicateTransient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bHasBeenLoaded;                                    // 0x0CB8(0x0001)(ZeroConstructor, DuplicateTransient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bHasBeenDuplicated;                                // 0x0CB9(0x0001)(ZeroConstructor, DuplicateTransient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bPendingDelete;                                    // 0x0CBA(0x0001)(ZeroConstructor, DuplicateTransient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bRecookRequested;                                  // 0x0CBB(0x0001)(ZeroConstructor, DuplicateTransient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bRebuildRequested;                                 // 0x0CBC(0x0001)(ZeroConstructor, DuplicateTransient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bEnableCooking;                                    // 0x0CBD(0x0001)(ZeroConstructor, DuplicateTransient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bForceNeedUpdate;                                  // 0x0CBE(0x0001)(ZeroConstructor, DuplicateTransient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bLastCookSuccess;                                  // 0x0CBF(0x0001)(ZeroConstructor, DuplicateTransient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bParameterDefinitionUpdateNeeded;                  // 0x0CC0(0x0001)(ZeroConstructor, DuplicateTransient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bBlueprintStructureModified;                       // 0x0CC1(0x0001)(ZeroConstructor, DuplicateTransient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bBlueprintModified;                                // 0x0CC2(0x0001)(ZeroConstructor, DuplicateTransient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_CC3[0x5];                                      // 0x0CC3(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class UHoudiniParameter*>              Parameters;                                        // 0x0CC8(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
+	TArray<class UHoudiniInput*>                  Inputs;                                            // 0x0CD8(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
+	TArray<class UHoudiniOutput*>                 Outputs;                                           // 0x0CE8(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
+	TArray<struct FHoudiniBakedOutput>            BakedOutputs;                                      // 0x0CF8(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
+	TArray<TWeakObjectPtr<class AActor>>          UntrackedOutputs;                                  // 0x0D08(0x0010)(ZeroConstructor, Protected, UObjectWrapper, NativeAccessSpecifierProtected)
+	TArray<class UHoudiniHandleComponent*>        HandleComponents;                                  // 0x0D18(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
+	bool                                          bHasComponentTransformChanged;                     // 0x0D28(0x0001)(ZeroConstructor, Transient, DuplicateTransient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bFullyLoaded;                                      // 0x0D29(0x0001)(ZeroConstructor, Transient, DuplicateTransient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_D2A[0x6];                                      // 0x0D2A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class UHoudiniPDGAssetLink*                   PDGAssetLink;                                      // 0x0D30(0x0008)(ZeroConstructor, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FTimerHandle                           RefineMeshesTimer;                                 // 0x0D38(0x0018)(Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_D50[0x18];                                     // 0x0D50(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          bNoProxyMeshNextCookRequested;                     // 0x0D68(0x0001)(ZeroConstructor, DuplicateTransient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_D69[0x7];                                      // 0x0D69(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<class UObject*, int32>                   InputPresets;                                      // 0x0D70(0x0050)(Transient, DuplicateTransient, Protected, NativeAccessSpecifierProtected)
+	bool                                          bBakeAfterNextCook;                                // 0x0DC0(0x0001)(ZeroConstructor, DuplicateTransient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_DC1[0x5F];                                     // 0x0DC1(0x005F)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          bCachedIsPreview;                                  // 0x0E20(0x0001)(ZeroConstructor, Transient, DuplicateTransient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_E21[0xF];                                      // 0x0E21(0x000F)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        LastTickTime;                                      // 0x0E30(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_E38[0x18];                                     // 0x0E38(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -153,21 +153,21 @@ public:
 };
 
 // Class HoudiniEngineRuntime.HoudiniAssetBlueprintComponent
-// 0x0100 (0x0EC0 - 0x0DC0)
+// 0x0100 (0x0F50 - 0x0E50)
 class UHoudiniAssetBlueprintComponent final : public UHoudiniAssetComponent
 {
 public:
-	uint8                                         Pad_DC0[0x48];                                     // 0x0DC0(0x0048)(Fixing Size After Last Property [ Dumper-7 ])
-	bool                                          FauxBPProperty;                                    // 0x0E08(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bHoudiniAssetChanged;                              // 0x0E09(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bUpdatedFromTemplate;                              // 0x0E0A(0x0001)(ZeroConstructor, Transient, DuplicateTransient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bIsInBlueprintEditor;                              // 0x0E0B(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bCanDeleteHoudiniNodes;                            // 0x0E0C(0x0001)(ZeroConstructor, Transient, DuplicateTransient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bHasRegisteredComponentTemplate;                   // 0x0E0D(0x0001)(ZeroConstructor, Transient, DuplicateTransient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_E0E[0xA];                                      // 0x0E0E(0x000A)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<struct FHoudiniOutputObjectIdentifier, struct FGuid> CachedOutputNodes;                                 // 0x0E18(0x0050)(Protected, NativeAccessSpecifierProtected)
-	TMap<struct FGuid, struct FGuid>              CachedInputNodes;                                  // 0x0E68(0x0050)(Protected, NativeAccessSpecifierProtected)
-	uint8                                         Pad_EB8[0x8];                                      // 0x0EB8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_E50[0x48];                                     // 0x0E50(0x0048)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          FauxBPProperty;                                    // 0x0E98(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bHoudiniAssetChanged;                              // 0x0E99(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bUpdatedFromTemplate;                              // 0x0E9A(0x0001)(ZeroConstructor, Transient, DuplicateTransient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bIsInBlueprintEditor;                              // 0x0E9B(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bCanDeleteHoudiniNodes;                            // 0x0E9C(0x0001)(ZeroConstructor, Transient, DuplicateTransient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bHasRegisteredComponentTemplate;                   // 0x0E9D(0x0001)(ZeroConstructor, Transient, DuplicateTransient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_E9E[0xA];                                      // 0x0E9E(0x000A)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<struct FHoudiniOutputObjectIdentifier, struct FGuid> CachedOutputNodes;                     // 0x0EA8(0x0050)(Protected, NativeAccessSpecifierProtected)
+	TMap<struct FGuid, struct FGuid>              CachedInputNodes;                                  // 0x0EF8(0x0050)(Protected, NativeAccessSpecifierProtected)
+	uint8                                         Pad_F48[0x8];                                      // 0x0F48(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	bool HasParameter(const class FString& Name_0);
@@ -549,28 +549,28 @@ public:
 };
 
 // Class HoudiniEngineRuntime.HoudiniAssetComponent_V1
-// 0x0570 (0x0DB0 - 0x0840)
+// 0x0570 (0x0E40 - 0x08D0)
 class UHoudiniAssetComponent_V1 final : public UPrimitiveComponent
 {
 public:
-	uint8                                         bGeneratedDoubleSidedGeometry : 1;                 // 0x0838(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_839[0x7];                                      // 0x0839(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UPhysicalMaterial*                      GeneratedPhysMaterial;                             // 0x0840(0x0008)(Edit, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FBodyInstance                          DefaultBodyInstance;                               // 0x0848(0x01B0)(Edit, NativeAccessSpecifierPublic)
-	ECollisionTraceFlag                           GeneratedCollisionTraceFlag;                       // 0x09F8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9F9[0x3];                                      // 0x09F9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         GeneratedLightMapResolution;                       // 0x09FC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         GeneratedDistanceFieldResolutionScale;             // 0x0A00(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FWalkableSlopeOverride                 GeneratedWalkableSlopeOverride;                    // 0x0A04(0x0010)(Edit, IsPlainOldData, NoDestructor, AdvancedDisplay, NativeAccessSpecifierPublic)
-	int32                                         GeneratedLightMapCoordinateIndex;                  // 0x0A14(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         bGeneratedUseMaximumStreamingTexelRatio : 1;       // 0x0A18(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_A19[0x3];                                      // 0x0A19(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         GeneratedStreamingDistanceMultiplier;              // 0x0A1C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UFoliageType_InstancedStaticMesh*       GeneratedFoliageDefaultSettings;                   // 0x0A20(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, AdvancedDisplay, PersistentInstance, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<class UAssetUserData*>                 GeneratedAssetUserData;                            // 0x0A28(0x0010)(Edit, ExportObject, ZeroConstructor, ContainsInstancedReference, AdvancedDisplay, NativeAccessSpecifierPublic)
-	class FText                                   BakeFolder;                                        // 0x0A38(0x0018)(NativeAccessSpecifierPublic)
-	class FText                                   TempCookFolder;                                    // 0x0A50(0x0018)(NativeAccessSpecifierPublic)
-	uint8                                         Pad_A68[0x348];                                    // 0x0A68(0x0348)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         bGeneratedDoubleSidedGeometry : 1;                 // 0x08C8(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_8C9[0x7];                                      // 0x08C9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UPhysicalMaterial*                      GeneratedPhysMaterial;                             // 0x08D0(0x0008)(Edit, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FBodyInstance                          DefaultBodyInstance;                               // 0x08D8(0x01B0)(Edit, NativeAccessSpecifierPublic)
+	ECollisionTraceFlag                           GeneratedCollisionTraceFlag;                       // 0x0A88(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_A89[0x3];                                      // 0x0A89(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         GeneratedLightMapResolution;                       // 0x0A8C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         GeneratedDistanceFieldResolutionScale;             // 0x0A90(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FWalkableSlopeOverride                 GeneratedWalkableSlopeOverride;                    // 0x0A94(0x0010)(Edit, IsPlainOldData, NoDestructor, AdvancedDisplay, NativeAccessSpecifierPublic)
+	int32                                         GeneratedLightMapCoordinateIndex;                  // 0x0AA4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         bGeneratedUseMaximumStreamingTexelRatio : 1;       // 0x0AA8(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_AA9[0x3];                                      // 0x0AA9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         GeneratedStreamingDistanceMultiplier;              // 0x0AAC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UFoliageType_InstancedStaticMesh*       GeneratedFoliageDefaultSettings;                   // 0x0AB0(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, AdvancedDisplay, PersistentInstance, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<class UAssetUserData*>                 GeneratedAssetUserData;                            // 0x0AB8(0x0010)(Edit, ExportObject, ZeroConstructor, ContainsInstancedReference, AdvancedDisplay, NativeAccessSpecifierPublic)
+	class FText                                   BakeFolder;                                        // 0x0AC8(0x0018)(NativeAccessSpecifierPublic)
+	class FText                                   TempCookFolder;                                    // 0x0AE0(0x0018)(NativeAccessSpecifierPublic)
+	uint8                                         Pad_AF8[0x348];                                    // 0x0AF8(0x0348)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -620,8 +620,8 @@ public:
 };
 
 // Class HoudiniEngineRuntime.HoudiniEngineCopyPropertiesInterface
-// 0x0000 (0x0030 - 0x0030)
-class IHoudiniEngineCopyPropertiesInterface final : public IInterface
+// 0x0000 (0x0000 - 0x0000)
+class IHoudiniEngineCopyPropertiesInterface final
 {
 public:
 	static class UClass* StaticClass()
@@ -631,6 +631,15 @@ public:
 	static class IHoudiniEngineCopyPropertiesInterface* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<IHoudiniEngineCopyPropertiesInterface>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
 	}
 };
 
@@ -737,7 +746,7 @@ public:
 	TArray<class UHoudiniInputObject*>            GeometryCollectionInputObjects;                    // 0x0170(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
 	TSet<class ULandscapeComponent*>              LandscapeSelectedComponents;                       // 0x0180(0x0050)(ExportObject, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
 	TSet<int32>                                   InputNodesPendingDelete;                           // 0x01D0(0x0050)(Transient, DuplicateTransient, NonTransactional, Protected, NativeAccessSpecifierProtected)
-	TArray<class UHoudiniInputHoudiniSplineComponent*> LastInsertedInputs;                                // 0x0220(0x0010)(ZeroConstructor, Transient, DuplicateTransient, NativeAccessSpecifierPublic)
+	TArray<class UHoudiniInputHoudiniSplineComponent*> LastInsertedInputs;                           // 0x0220(0x0010)(ZeroConstructor, Transient, DuplicateTransient, NativeAccessSpecifierPublic)
 	TArray<class UHoudiniInputObject*>            LastUndoDeletedInputs;                             // 0x0230(0x0010)(ZeroConstructor, Transient, DuplicateTransient, NonTransactional, NativeAccessSpecifierPublic)
 	bool                                          bUpdateInputLandscape;                             // 0x0240(0x0001)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EHoudiniLandscapeExportType                   LandscapeExportType;                               // 0x0241(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -1233,7 +1242,7 @@ class UHoudiniLandscapeOutput final : public UObject
 public:
 	class ALandscape*                             Landscape;                                         // 0x0030(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 BakedName;                                         // 0x0038(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<class UHoudiniLandscapeTargetLayerOutput*> Layers;                                            // 0x0048(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<class UHoudiniLandscapeTargetLayerOutput*> Layers;                                        // 0x0048(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 	bool                                          bCreated;                                          // 0x0058(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_59[0x7];                                       // 0x0059(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
@@ -1256,10 +1265,10 @@ public:
 	EHoudiniOutputType                            Type;                                              // 0x0030(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	uint8                                         Pad_31[0x7];                                       // 0x0031(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<struct FHoudiniGeoPartObject>          HoudiniGeoPartObjects;                             // 0x0038(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
-	TMap<struct FHoudiniOutputObjectIdentifier, struct FHoudiniOutputObject> OutputObjects;                                     // 0x0048(0x0050)(DuplicateTransient, Protected, NativeAccessSpecifierProtected)
-	TMap<struct FHoudiniOutputObjectIdentifier, struct FHoudiniInstancedOutput> InstancedOutputs;                                  // 0x0098(0x0050)(Protected, NativeAccessSpecifierProtected)
-	TMap<class FString, class UMaterialInterface*> AssignementMaterials;                              // 0x00E8(0x0050)(Protected, NativeAccessSpecifierProtected)
-	TMap<class FString, class UMaterialInterface*> ReplacementMaterials;                              // 0x0138(0x0050)(Protected, NativeAccessSpecifierProtected)
+	TMap<struct FHoudiniOutputObjectIdentifier, struct FHoudiniOutputObject> OutputObjects;          // 0x0048(0x0050)(DuplicateTransient, Protected, NativeAccessSpecifierProtected)
+	TMap<struct FHoudiniOutputObjectIdentifier, struct FHoudiniInstancedOutput> InstancedOutputs;    // 0x0098(0x0050)(Protected, NativeAccessSpecifierProtected)
+	TMap<class FString, class UMaterialInterface*> AssignementMaterials;                             // 0x00E8(0x0050)(Protected, NativeAccessSpecifierProtected)
+	TMap<class FString, class UMaterialInterface*> ReplacementMaterials;                             // 0x0138(0x0050)(Protected, NativeAccessSpecifierProtected)
 	uint8                                         Pad_188[0x4];                                      // 0x0188(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	bool                                          bLandscapeWorldComposition;                        // 0x018C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	uint8                                         Pad_18D[0x3];                                      // 0x018D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
@@ -1693,15 +1702,15 @@ public:
 class UHoudiniParameterRampFloat final : public UHoudiniParameterMultiParm
 {
 public:
-	TArray<class UHoudiniParameterRampFloatPoint*> Points;                                            // 0x0158(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
-	TArray<class UHoudiniParameterRampFloatPoint*> CachedPoints;                                      // 0x0168(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	TArray<class UHoudiniParameterRampFloatPoint*> Points;                                           // 0x0158(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	TArray<class UHoudiniParameterRampFloatPoint*> CachedPoints;                                     // 0x0168(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 	TArray<float>                                 DefaultPositions;                                  // 0x0178(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 	TArray<float>                                 DefaultValues;                                     // 0x0188(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 	TArray<int32>                                 DefaultChoices;                                    // 0x0198(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 	int32                                         NumDefaultPoints;                                  // 0x01A8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bCaching;                                          // 0x01AC(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_1AD[0x3];                                      // 0x01AD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class UHoudiniParameterRampModificationEvent*> ModificationEvents;                                // 0x01B0(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	TArray<class UHoudiniParameterRampModificationEvent*> ModificationEvents;                        // 0x01B0(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -1719,16 +1728,16 @@ public:
 class UHoudiniParameterRampColor final : public UHoudiniParameterMultiParm
 {
 public:
-	TArray<class UHoudiniParameterRampColorPoint*> Points;                                            // 0x0158(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	TArray<class UHoudiniParameterRampColorPoint*> Points;                                           // 0x0158(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 	bool                                          bCaching;                                          // 0x0168(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_169[0x7];                                      // 0x0169(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class UHoudiniParameterRampColorPoint*> CachedPoints;                                      // 0x0170(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	TArray<class UHoudiniParameterRampColorPoint*> CachedPoints;                                     // 0x0170(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 	TArray<float>                                 DefaultPositions;                                  // 0x0180(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 	TArray<struct FLinearColor>                   DefaultValues;                                     // 0x0190(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 	TArray<int32>                                 DefaultChoices;                                    // 0x01A0(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 	int32                                         NumDefaultPoints;                                  // 0x01B0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_1B4[0x4];                                      // 0x01B4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class UHoudiniParameterRampModificationEvent*> ModificationEvents;                                // 0x01B8(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	TArray<class UHoudiniParameterRampModificationEvent*> ModificationEvents;                        // 0x01B8(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -1819,7 +1828,7 @@ public:
 	TSet<class FString>                           ClearedLandscapeLayers;                            // 0x0088(0x0050)(NativeAccessSpecifierPublic)
 	bool                                          bShow;                                             // 0x00D8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	uint8                                         Pad_D9[0x7];                                       // 0x00D9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<class FString, struct FHoudiniPDGWorkResultObjectBakedOutput> BakedWorkResultObjectOutputs;                      // 0x00E0(0x0050)(Protected, NativeAccessSpecifierProtected)
+	TMap<class FString, struct FHoudiniPDGWorkResultObjectBakedOutput> BakedWorkResultObjectOutputs; // 0x00E0(0x0050)(Protected, NativeAccessSpecifierProtected)
 	struct FWorkItemTally                         WorkItemTally;                                     // 0x0130(0x0238)(Transient, NonTransactional, Protected, NativeAccessSpecifierProtected)
 	struct FAggregatedWorkItemTally               AggregatedWorkItemTally;                           // 0x0368(0x0028)(Transient, NonTransactional, Protected, NativeAccessSpecifierProtected)
 	bool                                          bHasReceivedCookCompleteEvent;                     // 0x0390(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NonTransactional, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
@@ -2130,14 +2139,14 @@ public:
 };
 
 // Class HoudiniEngineRuntime.HoudiniStaticMeshComponent
-// 0x0040 (0x08F0 - 0x08B0)
+// 0x0040 (0x0980 - 0x0940)
 class UHoudiniStaticMeshComponent final : public UMeshComponent
 {
 public:
-	class UHoudiniStaticMesh*                     Mesh;                                              // 0x08A8(0x0008)(Edit, ZeroConstructor, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FBox                                   LocalBounds;                                       // 0x08B0(0x0038)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, NativeAccessSpecifierProtected)
-	bool                                          bHoudiniIconVisible;                               // 0x08E8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_8E9[0x7];                                      // 0x08E9(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class UHoudiniStaticMesh*                     Mesh;                                              // 0x0938(0x0008)(Edit, ZeroConstructor, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FBox                                   LocalBounds;                                       // 0x0940(0x0038)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, NativeAccessSpecifierProtected)
+	bool                                          bHoudiniIconVisible;                               // 0x0978(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_979[0x7];                                      // 0x0979(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	class UHoudiniStaticMesh* GetMesh();
@@ -2159,8 +2168,8 @@ public:
 };
 
 // Class HoudiniEngineRuntime.HoudiniAssetStateEvents
-// 0x0000 (0x0030 - 0x0030)
-class IHoudiniAssetStateEvents final : public IInterface
+// 0x0000 (0x0000 - 0x0000)
+class IHoudiniAssetStateEvents final
 {
 public:
 	static class UClass* StaticClass()
@@ -2170,6 +2179,15 @@ public:
 	static class IHoudiniAssetStateEvents* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<IHoudiniAssetStateEvents>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
 	}
 };
 

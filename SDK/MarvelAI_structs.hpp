@@ -13,8 +13,8 @@
 #include "CoreUObject_structs.hpp"
 #include "Marvel_structs.hpp"
 #include "GameplayTags_structs.hpp"
-#include "Engine_structs.hpp"
 #include "AIModule_structs.hpp"
+#include "Engine_structs.hpp"
 
 
 namespace SDK
@@ -747,106 +747,6 @@ enum class EWayPointMark : uint8
 	EWayPointMark_MAX                        = 2,
 };
 
-// ScriptStruct MarvelAI.TacticsTaskParam
-// 0x00B0 (0x00B0 - 0x0000)
-struct FTacticsTaskParam final
-{
-public:
-	int32                                         TaskIndex;                                         // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class AController*                            TaskOwner;                                         // 0x0008(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGameplayTagContainer                  TaskTags;                                          // 0x0010(0x0068)(NativeAccessSpecifierPublic)
-	int64                                         AbilityID;                                         // 0x0078(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int64                                         AbilityUsage;                                      // 0x0080(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EAIIntentionType                              Intention;                                         // 0x0088(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_8C[0x1C];                                      // 0x008C(0x001C)(Fixing Size After Last Property [ Dumper-7 ])
-	TSubclassOf<class UAIAbilitySelectCheckBase>  OverrideSelectCheckClass;                          // 0x00A8(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// ScriptStruct MarvelAI.AbilityUsagePointCollection
-// 0x0010 (0x0010 - 0x0000)
-struct FAbilityUsagePointCollection final
-{
-public:
-	TArray<class AAbilityUsageStandPoint*>        ListOfValidPointForUsage;                          // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-
-// ScriptStruct MarvelAI.AIEventArgs
-// 0x0028 (0x0028 - 0x0000)
-struct FAIEventArgs final
-{
-public:
-	class AActor*                                 Instigator;                                        // 0x0000(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class AActor*                                 Target;                                            // 0x0008(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FAttributeModifierHandle               ModifierParameterHandle;                           // 0x0010(0x0018)(HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// ScriptStruct MarvelAI.AbilityTacticsRequest
-// 0x00B8 (0x00B8 - 0x0000)
-struct FAbilityTacticsRequest final
-{
-public:
-	class UAbilityTacticsTask*                    TaskObject;                                        // 0x0000(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FTacticsTaskParam                      RequestParam;                                      // 0x0008(0x00B0)(NativeAccessSpecifierPublic)
-};
-
-// ScriptStruct MarvelAI.TargetChangeConfig
-// 0x0050 (0x0050 - 0x0000)
-struct FTargetChangeConfig final
-{
-public:
-	TMap<float, float>                            TargetChangeProbabilities;                         // 0x0000(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-};
-
-// ScriptStruct MarvelAI.Range_FloatValue
-// 0x0008 (0x0008 - 0x0000)
-struct FRange_FloatValue final
-{
-public:
-	float                                         Min;                                               // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Max;                                               // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// ScriptStruct MarvelAI.AIAbilityButtonActivationConfig
-// 0x0090 (0x0090 - 0x0000)
-struct FAIAbilityButtonActivationConfig final
-{
-public:
-	EAbilityInputBinds                            Button;                                            // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FRange_FloatValue                      ButtonPressTime;                                   // 0x0004(0x0008)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<TSubclassOf<class UAIAbilityActivationLogic>> PressLogicList;                                    // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
-	TSubclassOf<class UAIAbilityExitStageLogic>   PressCheckLogic;                                   // 0x0020(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bHavePreWait;                                      // 0x0028(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_29[0x3];                                       // 0x0029(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FRange_FloatValue                      PreWaitTime;                                       // 0x002C(0x0008)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<TSubclassOf<class UAIAbilityActivationLogic>> PreWaitLogicList;                                  // 0x0038(0x0010)(Edit, BlueprintVisible, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
-	TSubclassOf<class UAIAbilityExitStageLogic>   PreWaitCheckLogic;                                 // 0x0048(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bHaveAfterWait;                                    // 0x0050(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_51[0x3];                                       // 0x0051(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FRange_FloatValue                      AfterWaitTime;                                     // 0x0054(0x0008)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5C[0x4];                                       // 0x005C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<TSubclassOf<class UAIAbilityActivationLogic>> AfterWaitLogicList;                                // 0x0060(0x0010)(Edit, BlueprintVisible, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
-	TSubclassOf<class UAIAbilityExitStageLogic>   AfterWaitCheckLogic;                               // 0x0070(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bLoopButton;                                       // 0x0078(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_79[0x3];                                       // 0x0079(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         LoopNum;                                           // 0x007C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         LoopTime;                                          // 0x0080(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_84[0x4];                                       // 0x0084(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TSubclassOf<class UAIAbilityExitStageLogic>   LoopCheckLogic;                                    // 0x0088(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// ScriptStruct MarvelAI.AbilityList
-// 0x00A0 (0x00A0 - 0x0000)
-struct FAbilityList final
-{
-public:
-	TSet<class UMarvelGameplayAbility*>           Ability;                                           // 0x0000(0x0050)(NativeAccessSpecifierPublic)
-	TSet<int32>                                   AbilityID;                                         // 0x0050(0x0050)(NativeAccessSpecifierPublic)
-};
-
 // ScriptStruct MarvelAI.MarvelAITarget
 // 0x0060 (0x0060 - 0x0000)
 struct FMarvelAITarget final
@@ -908,6 +808,406 @@ public:
 	uint8                                         Pad_E1[0x7];                                       // 0x00E1(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 
+// ScriptStruct MarvelAI.AIServerIntentionProtocol
+// 0x0004 (0x0004 - 0x0000)
+struct FAIServerIntentionProtocol final
+{
+public:
+	EAIIntentionType                              Intention;                                         // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// ScriptStruct MarvelAI.AbilityCheckInfo
+// 0x0008 (0x0008 - 0x0000)
+struct FAbilityCheckInfo final
+{
+public:
+	float                                         SenseDistance;                                     // 0x0000(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         AvoidDistance;                                     // 0x0004(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// ScriptStruct MarvelAI.AIEventArgs
+// 0x0028 (0x0028 - 0x0000)
+struct FAIEventArgs final
+{
+public:
+	class AActor*                                 Instigator;                                        // 0x0000(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AActor*                                 Target;                                            // 0x0008(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FAttributeModifierHandle               ModifierParameterHandle;                           // 0x0010(0x0018)(HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// ScriptStruct MarvelAI.TileRef
+// 0x0008 (0x0008 - 0x0000)
+struct FTileRef final
+{
+public:
+	int32                                         X;                                                 // 0x0000(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Y;                                                 // 0x0004(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// ScriptStruct MarvelAI.NavLinkList
+// 0x0010 (0x0010 - 0x0000)
+struct FNavLinkList final
+{
+public:
+	TArray<class ANavLinkProxy*>                  LinkListData;                                      // 0x0000(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+};
+
+// ScriptStruct MarvelAI.TileData
+// 0x00D0 (0x00D0 - 0x0000)
+struct FTileData final
+{
+public:
+	struct FTileRef                               MyTileRef;                                         // 0x0000(0x0008)(NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FBox                                   MyBound;                                           // 0x0008(0x0038)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, NativeAccessSpecifierProtected)
+	uint8                                         Pad_40[0x10];                                      // 0x0040(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FNavLinkList                           InnerTileLinks;                                    // 0x0050(0x0010)(Protected, NativeAccessSpecifierProtected)
+	TMap<struct FTileRef, struct FNavLinkList>    CrossTileLinks;                                    // 0x0060(0x0050)(Protected, NativeAccessSpecifierProtected)
+	uint8                                         Pad_B0[0x20];                                      // 0x00B0(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+
+// ScriptStruct MarvelAI.MyStruct1
+// 0x0001 (0x0001 - 0x0000)
+struct FMyStruct1
+{
+public:
+	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+
+// ScriptStruct MarvelAI.Range_FloatValue
+// 0x0008 (0x0008 - 0x0000)
+struct FRange_FloatValue final
+{
+public:
+	float                                         Min;                                               // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Max;                                               // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// ScriptStruct MarvelAI.TacticsTaskParam
+// 0x00B0 (0x00B0 - 0x0000)
+struct FTacticsTaskParam final
+{
+public:
+	int32                                         TaskIndex;                                         // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class AController*                            TaskOwner;                                         // 0x0008(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGameplayTagContainer                  TaskTags;                                          // 0x0010(0x0068)(NativeAccessSpecifierPublic)
+	int64                                         AbilityID;                                         // 0x0078(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int64                                         AbilityUsage;                                      // 0x0080(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EAIIntentionType                              Intention;                                         // 0x0088(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_8C[0x1C];                                      // 0x008C(0x001C)(Fixing Size After Last Property [ Dumper-7 ])
+	TSubclassOf<class UAIAbilitySelectCheckBase>  OverrideSelectCheckClass;                          // 0x00A8(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// ScriptStruct MarvelAI.AILabProtoBuffData
+// 0x0008 (0x0008 - 0x0000)
+struct FAILabProtoBuffData final
+{
+public:
+	int32                                         ID;                                                // 0x0000(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Duration;                                          // 0x0004(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// ScriptStruct MarvelAI.AILabProtoAbilityData
+// 0x00A0 (0x00A0 - 0x0000)
+struct FAILabProtoAbilityData final
+{
+public:
+	TSet<int32>                                   ActivatedAbility;                                  // 0x0000(0x0050)(BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	TSet<int32>                                   CoolDownAbility;                                   // 0x0050(0x0050)(BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+};
+
+// ScriptStruct MarvelAI.AILabProtoEnvironmentData
+// 0x0040 (0x0040 - 0x0000)
+struct FAILabProtoEnvironmentData final
+{
+public:
+	TArray<int32>                                 AllyInViewCharacterUID;                            // 0x0000(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<int32>                                 EnemyInViewCharacterUID;                           // 0x0010(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<int32>                                 AllyJustDisappearedCharacterUID;                   // 0x0020(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<int32>                                 EnemyJustDisappearedCharacterUID;                  // 0x0030(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+
+// ScriptStruct MarvelAI.AILabProtoWeaponClipData
+// 0x001C (0x001C - 0x0000)
+struct FAILabProtoWeaponClipData final
+{
+public:
+	int32                                         Weapon1;                                           // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Weapon2;                                           // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Weapon3;                                           // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         SkillEnergy;                                       // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         SkillEnergy2;                                      // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         SkillEnergy3;                                      // 0x0014(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         UltimateAbility;                                   // 0x0018(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// ScriptStruct MarvelAI.AILabProtoBattleRecordData
+// 0x001C (0x001C - 0x0000)
+struct FAILabProtoBattleRecordData final
+{
+public:
+	int32                                         KillCount;                                         // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         DeathCount;                                        // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         AssistCount;                                       // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         HitRate;                                           // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Damage;                                            // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Injured;                                           // 0x0014(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Heal;                                              // 0x0018(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// ScriptStruct MarvelAI.AILabProtoCharacterData
+// 0x01B0 (0x01B0 - 0x0000)
+struct FAILabProtoCharacterData final
+{
+public:
+	int32                                         UID;                                               // 0x0000(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ID;                                                // 0x0004(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsRobot;                                           // 0x0008(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         MoveMode;                                          // 0x000C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         SculptID;                                          // 0x0010(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsDeath;                                           // 0x0014(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         Health;                                            // 0x0018(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Other;                                             // 0x001C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                Location;                                          // 0x0020(0x0018)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                Velocity;                                          // 0x0038(0x0018)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                Rotation;                                          // 0x0050(0x0018)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         BattleSide;                                        // 0x0068(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_6C[0x4];                                       // 0x006C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FAILabProtoBuffData>            BuffData;                                          // 0x0070(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
+	struct FAILabProtoAbilityData                 AbilityUsageData;                                  // 0x0080(0x00A0)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	struct FAILabProtoEnvironmentData             EnvironmentData;                                   // 0x0120(0x0040)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	struct FAILabProtoWeaponClipData              WeaponClip;                                        // 0x0160(0x001C)(NoDestructor, NativeAccessSpecifierPublic)
+	struct FAILabProtoBattleRecordData            BattleRecordBoard;                                 // 0x017C(0x001C)(NoDestructor, NativeAccessSpecifierPublic)
+	TArray<int32>                                 CurrentAmmoTypes;                                  // 0x0198(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	int32                                         AllyTargetUID;                                     // 0x01A8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         EnemyTargetUID;                                    // 0x01AC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// ScriptStruct MarvelAI.AILabProtoBarrierData
+// 0x0030 (0x0030 - 0x0000)
+struct FAILabProtoBarrierData final
+{
+public:
+	int32                                         ID;                                                // 0x0000(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                Location;                                          // 0x0008(0x0018)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsSmash;                                          // 0x0020(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsPickUp;                                         // 0x0021(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_22[0x2];                                       // 0x0022(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         Health;                                            // 0x0024(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         SummonerWeaponType;                                // 0x0028(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+
+// ScriptStruct MarvelAI.AILabProtoSummonedData
+// 0x0038 (0x0038 - 0x0000)
+struct FAILabProtoSummonedData final
+{
+public:
+	int32                                         ID;                                                // 0x0000(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint32                                        UID;                                               // 0x0004(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         OwnerID;                                           // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         BattleSide;                                        // 0x000C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Health;                                            // 0x0010(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                Location;                                          // 0x0018(0x0018)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Duration;                                          // 0x0030(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+
+// ScriptStruct MarvelAI.AILabProtoSceneData
+// 0x0030 (0x0030 - 0x0000)
+struct FAILabProtoSceneData final
+{
+public:
+	class FString                                 MapName;                                           // 0x0000(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FAILabProtoBarrierData>         BarrierData;                                       // 0x0010(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FAILabProtoSummonedData>        SummonedData;                                      // 0x0020(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+
+// ScriptStruct MarvelAI.AILabProtoTickData
+// 0x0090 (0x0090 - 0x0000)
+struct FAILabProtoTickData final
+{
+public:
+	int64                                         Timestamp;                                         // 0x0000(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 BattleID;                                          // 0x0008(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 MapID;                                             // 0x0018(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 GameMode;                                          // 0x0028(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         WinnerSide;                                        // 0x0038(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsGameOver;                                        // 0x003C(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3D[0x3];                                       // 0x003D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FAILabProtoCharacterData>       CharacterData;                                     // 0x0040(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
+	struct FAILabProtoSceneData                   SceneData;                                         // 0x0050(0x0030)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	TArray<float>                                 LevelParams;                                       // 0x0080(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+
+// ScriptStruct MarvelAI.MarvelAIStandPointTable
+// 0x0050 (0x0060 - 0x0010)
+struct FMarvelAIStandPointTable final : public FTableRowBase
+{
+public:
+	class FString                                 Desc;                                              // 0x0010(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 LevelName;                                         // 0x0020(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         HeroID;                                            // 0x0030(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EMarvelStandPointShareType                    ShareType;                                         // 0x0034(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_35[0x3];                                       // 0x0035(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class FName                                   BattleAreaName;                                    // 0x0038(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EEscortProgress                               EscortProgress;                                    // 0x0044(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_45[0x3];                                       // 0x0045(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FRange_FloatValue                      SubProgressRange;                                  // 0x0048(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, NativeAccessSpecifierPublic)
+	TArray<class FName>                           StandPointNames;                                   // 0x0050(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+
+// ScriptStruct MarvelAI.AbilityTacticsRequest
+// 0x00B8 (0x00B8 - 0x0000)
+struct FAbilityTacticsRequest final
+{
+public:
+	class UAbilityTacticsTask*                    TaskObject;                                        // 0x0000(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FTacticsTaskParam                      RequestParam;                                      // 0x0008(0x00B0)(NativeAccessSpecifierPublic)
+};
+
+// ScriptStruct MarvelAI.AIAbilityButtonActivationConfig
+// 0x0090 (0x0090 - 0x0000)
+struct FAIAbilityButtonActivationConfig final
+{
+public:
+	EAbilityInputBinds                            Button;                                            // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FRange_FloatValue                      ButtonPressTime;                                   // 0x0004(0x0008)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<TSubclassOf<class UAIAbilityActivationLogic>> PressLogicList;                             // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
+	TSubclassOf<class UAIAbilityExitStageLogic>   PressCheckLogic;                                   // 0x0020(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bHavePreWait;                                      // 0x0028(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_29[0x3];                                       // 0x0029(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FRange_FloatValue                      PreWaitTime;                                       // 0x002C(0x0008)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<TSubclassOf<class UAIAbilityActivationLogic>> PreWaitLogicList;                           // 0x0038(0x0010)(Edit, BlueprintVisible, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
+	TSubclassOf<class UAIAbilityExitStageLogic>   PreWaitCheckLogic;                                 // 0x0048(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bHaveAfterWait;                                    // 0x0050(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_51[0x3];                                       // 0x0051(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FRange_FloatValue                      AfterWaitTime;                                     // 0x0054(0x0008)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5C[0x4];                                       // 0x005C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<TSubclassOf<class UAIAbilityActivationLogic>> AfterWaitLogicList;                         // 0x0060(0x0010)(Edit, BlueprintVisible, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
+	TSubclassOf<class UAIAbilityExitStageLogic>   AfterWaitCheckLogic;                               // 0x0070(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bLoopButton;                                       // 0x0078(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_79[0x3];                                       // 0x0079(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         LoopNum;                                           // 0x007C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         LoopTime;                                          // 0x0080(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_84[0x4];                                       // 0x0084(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TSubclassOf<class UAIAbilityExitStageLogic>   LoopCheckLogic;                                    // 0x0088(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// ScriptStruct MarvelAI.CoupleActorStruct
+// 0x0068 (0x0068 - 0x0000)
+struct FCoupleActorStruct final
+{
+public:
+	struct FBlackboardKeySelector                 SourceActor;                                       // 0x0000(0x0030)(Edit, NativeAccessSpecifierPublic)
+	struct FBlackboardKeySelector                 TargetActor;                                       // 0x0030(0x0030)(Edit, NativeAccessSpecifierPublic)
+	float                                         MultipleNum;                                       // 0x0060(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_64[0x4];                                       // 0x0064(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+
+// ScriptStruct MarvelAI.AISpawnParam
+// 0x00A8 (0x00A8 - 0x0000)
+struct FAISpawnParam final
+{
+public:
+	int32                                         UID;                                               // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         HeroID;                                            // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EBattleSide                                   BattleSide;                                        // 0x0008(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 AIName;                                            // 0x0010(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EAIDifficultyMode                             DifficultyMode;                                    // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_21[0x3];                                       // 0x0021(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         DifficultyLevel;                                   // 0x0024(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                SpawnLocation;                                     // 0x0028(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                RebornLocation;                                    // 0x0040(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FRotator                               SpawnRotation;                                     // 0x0058(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	struct FRotator                               RebornRotation;                                    // 0x0070(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	float                                         RebornTime;                                        // 0x0088(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_8C[0x4];                                       // 0x008C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UBehaviorTree*                          BehaviorTree;                                      // 0x0090(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsTrainingTarget;                                  // 0x0098(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsWoodPile;                                        // 0x0099(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9A[0x2];                                       // 0x009A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         SkinID;                                            // 0x009C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         RecordUID;                                         // 0x00A0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          UsePreciseReachLogic;                              // 0x00A4(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_A5[0x3];                                       // 0x00A5(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+
+// ScriptStruct MarvelAI.AbilityList
+// 0x00A0 (0x00A0 - 0x0000)
+struct FAbilityList final
+{
+public:
+	TSet<class UMarvelGameplayAbility*>           Ability;                                           // 0x0000(0x0050)(NativeAccessSpecifierPublic)
+	TSet<int32>                                   AbilityID;                                         // 0x0050(0x0050)(NativeAccessSpecifierPublic)
+};
+
+// ScriptStruct MarvelAI.EdgeRef
+// 0x000C (0x000C - 0x0000)
+struct FEdgeRef final
+{
+public:
+	struct FTileRef                               TileRef;                                           // 0x0000(0x0008)(Edit, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint32                                        EdgeIndex;                                         // 0x0008(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+};
+
+// ScriptStruct MarvelAI.HeightToNavArea
+// 0x0010 (0x0010 - 0x0000)
+struct FHeightToNavArea final
+{
+public:
+	float                                         Height;                                            // 0x0000(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TSubclassOf<class UNavArea>                   NavAreaClass;                                      // 0x0008(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// ScriptStruct MarvelAI.AbilityUsagePointCollection
+// 0x0010 (0x0010 - 0x0000)
+struct FAbilityUsagePointCollection final
+{
+public:
+	TArray<class AAbilityUsageStandPoint*>        ListOfValidPointForUsage;                          // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+
+// ScriptStruct MarvelAI.RequiredAIDataForAutoAbility
+// 0x0038 (0x0038 - 0x0000)
+struct FRequiredAIDataForAutoAbility final
+{
+public:
+	class AMarvelAIController*                    AIController;                                      // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AActor*                                 TeammateTarget;                                    // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AActor*                                 TeammateIncludeMeTarget;                           // 0x0010(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AActor*                                 EnemyTarget;                                       // 0x0018(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EAIIntentionType                              Intention;                                         // 0x0020(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x14];                                      // 0x0024(0x0014)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+
+// ScriptStruct MarvelAI.AIHeroTag
+// 0x0068 (0x0068 - 0x0000)
+struct FAIHeroTag final
+{
+public:
+	struct FGameplayTagContainer                  AIHeroTag;                                         // 0x0000(0x0068)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+};
+
+// ScriptStruct MarvelAI.HeroTagMatch
+// 0x0070 (0x0070 - 0x0000)
+struct FHeroTagMatch final
+{
+public:
+	struct FAIHeroTag                             AIHeroTag;                                         // 0x0000(0x0068)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	EGameplayContainerMatchType                   TagMatchType;                                      // 0x0068(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_69[0x7];                                       // 0x0069(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+
 // ScriptStruct MarvelAI.AbilityUsagePriorityConfig
 // 0x0058 (0x0058 - 0x0000)
 struct FAbilityUsagePriorityConfig final
@@ -918,6 +1218,23 @@ public:
 	TMap<struct FGameplayTag, int32>              TagToPriority;                                     // 0x0008(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, EditConst, NativeAccessSpecifierPublic)
 };
 
+// ScriptStruct MarvelAI.AIImpressionBase
+// 0x0008 (0x0008 - 0x0000)
+struct alignas(0x08) FAIImpressionBase
+{
+public:
+	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+
+// ScriptStruct MarvelAI.AIImpressionProjectileData
+// 0x0010 (0x0018 - 0x0008)
+struct FAIImpressionProjectileData final : public FAIImpressionBase
+{
+public:
+	class AActor*                                 Instigator;                                        // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AMarvelAbilityTargetActor_Projectile*   Projectile;                                        // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
 // ScriptStruct MarvelAI.AIAbilityResourcePriorityPair
 // 0x0008 (0x0008 - 0x0000)
 struct FAIAbilityResourcePriorityPair final
@@ -925,6 +1242,25 @@ struct FAIAbilityResourcePriorityPair final
 public:
 	int32                                         UsageID;                                           // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         Priority;                                          // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// ScriptStruct MarvelAI.TileDebugDrawConfig
+// 0x0008 (0x0008 - 0x0000)
+struct FTileDebugDrawConfig final
+{
+public:
+	uint8                                         bDrawEdgeData : 1;                                 // 0x0000(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bDrawEdgeLine : 1;                                 // 0x0000(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bDrawEdgeSamplePoints : 1;                         // 0x0000(0x0001)(BitIndex: 0x02, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bDrawEdgeBackDir : 1;                              // 0x0000(0x0001)(BitIndex: 0x03, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bDrawEdgeBound : 1;                                // 0x0000(0x0001)(BitIndex: 0x04, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bDrawEdgeIndexInTile : 1;                          // 0x0000(0x0001)(BitIndex: 0x05, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bDrawPendingLinks : 1;                             // 0x0000(0x0001)(BitIndex: 0x06, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bDrawDebugForLinkCheck : 1;                        // 0x0000(0x0001)(BitIndex: 0x07, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_1[0x1];                                        // 0x0001(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         DrawDebugDepthPriority;                            // 0x0002(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3[0x1];                                        // 0x0003(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         DrawDebugLifeTime;                                 // 0x0004(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
 // ScriptStruct MarvelAI.AIAbilityResourceQueue
@@ -937,6 +1273,24 @@ public:
 	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 
+// ScriptStruct MarvelAI.MyStruct2
+// 0x0000 (0x0001 - 0x0001)
+struct FMyStruct2 : public FMyStruct1
+{
+};
+
+// ScriptStruct MarvelAI.MyStruct3
+// 0x0000 (0x0001 - 0x0001)
+struct FMyStruct3 : public FMyStruct2
+{
+};
+
+// ScriptStruct MarvelAI.MyStruct5
+// 0x0000 (0x0001 - 0x0001)
+struct FMyStruct5 final : public FMyStruct3
+{
+};
+
 // ScriptStruct MarvelAI.AutoAbilityGroup
 // 0x0018 (0x0018 - 0x0000)
 struct FAutoAbilityGroup final
@@ -945,6 +1299,16 @@ public:
 	class AMarvelBaseCharacter*                   Character;                                         // 0x0000(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FGameplayTag                           GroupTag;                                          // 0x0008(0x000C)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+
+// ScriptStruct MarvelAI.SteeringWithWeight
+// 0x0010 (0x0010 - 0x0000)
+struct FSteeringWithWeight final
+{
+public:
+	float                                         Weight;                                            // 0x0000(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class USteeringBehavior*                      SteeringBehavior;                                  // 0x0008(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, PersistentInstance, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
 // ScriptStruct MarvelAI.AIChangeHeroDebugInfo
@@ -963,35 +1327,26 @@ public:
 	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 
-// ScriptStruct MarvelAI.MyStruct1
-// 0x0001 (0x0001 - 0x0000)
-struct FMyStruct1
+// ScriptStruct MarvelAI.AIImpressionAbilityData
+// 0x0010 (0x0018 - 0x0008)
+struct FAIImpressionAbilityData final : public FAIImpressionBase
 {
 public:
-	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class AActor*                                 Instigator;                                        // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UMarvelGameplayAbility*                 Ability;                                           // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
-// ScriptStruct MarvelAI.MyStruct2
-// 0x0000 (0x0001 - 0x0001)
-struct FMyStruct2 : public FMyStruct1
+// ScriptStruct MarvelAI.PathSelectorData
+// 0x0050 (0x0050 - 0x0000)
+struct FPathSelectorData final
 {
-};
-
-// ScriptStruct MarvelAI.MyStruct3
-// 0x0000 (0x0001 - 0x0001)
-struct FMyStruct3 : public FMyStruct2
-{
+public:
+	TMap<TSoftObjectPtr<class AActor>, TSoftObjectPtr<class AStartWayPoint>> TargetToPathStart;      // 0x0000(0x0050)(Edit, UObjectWrapper, NativeAccessSpecifierPublic)
 };
 
 // ScriptStruct MarvelAI.MyStruct4
 // 0x0000 (0x0001 - 0x0001)
 struct FMyStruct4 final : public FMyStruct3
-{
-};
-
-// ScriptStruct MarvelAI.MyStruct5
-// 0x0000 (0x0001 - 0x0001)
-struct FMyStruct5 final : public FMyStruct3
 {
 };
 
@@ -1011,23 +1366,6 @@ public:
 	uint8                                         Pad_0[0x50];                                       // 0x0000(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 
-// ScriptStruct MarvelAI.AIImpressionBase
-// 0x0008 (0x0008 - 0x0000)
-struct alignas(0x08) FAIImpressionBase
-{
-public:
-	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-
-// ScriptStruct MarvelAI.AIImpressionAbilityData
-// 0x0010 (0x0018 - 0x0008)
-struct FAIImpressionAbilityData final : public FAIImpressionBase
-{
-public:
-	class AActor*                                 Instigator;                                        // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UMarvelGameplayAbility*                 Ability;                                           // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
 // ScriptStruct MarvelAI.AIImpressionSummonedData
 // 0x0010 (0x0018 - 0x0008)
 struct FAIImpressionSummonedData final : public FAIImpressionBase
@@ -1035,15 +1373,6 @@ struct FAIImpressionSummonedData final : public FAIImpressionBase
 public:
 	class AActor*                                 Instigator;                                        // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UMarvelSummonedComponent*               Summoned;                                          // 0x0010(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// ScriptStruct MarvelAI.AIImpressionProjectileData
-// 0x0010 (0x0018 - 0x0008)
-struct FAIImpressionProjectileData final : public FAIImpressionBase
-{
-public:
-	class AActor*                                 Instigator;                                        // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class AMarvelAbilityTargetActor_Projectile*   Projectile;                                        // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
 // ScriptStruct MarvelAI.AIImpressionScopeData
@@ -1097,7 +1426,7 @@ public:
 	TSet<struct FAIImpressionScopeData>           ScopeData;                                         // 0x00F0(0x0050)(BlueprintVisible, BlueprintReadOnly, Protected, NativeAccessSpecifierProtected)
 	TSet<struct FAIImpressionAgentTraceData>      AgentTraceData;                                    // 0x0140(0x0050)(BlueprintVisible, BlueprintReadOnly, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
 	TSet<struct FAIImpressionFireLine>            FireLineData;                                      // 0x0190(0x0050)(BlueprintVisible, Protected, NativeAccessSpecifierProtected)
-	TMap<struct FGameplayTag, struct FAIImpressionGamePlayTagData> GamePlayTagData;                                   // 0x01E0(0x0050)(BlueprintVisible, BlueprintReadOnly, Protected, NativeAccessSpecifierProtected)
+	TMap<struct FGameplayTag, struct FAIImpressionGamePlayTagData> GamePlayTagData;                  // 0x01E0(0x0050)(BlueprintVisible, BlueprintReadOnly, Protected, NativeAccessSpecifierProtected)
 };
 
 // ScriptStruct MarvelAI.AbilityDangerous
@@ -1137,14 +1466,6 @@ struct FAIServerTargetProtocol final
 public:
 	TArray<struct FAIServerTargetType>            AllyTarget;                                        // 0x0000(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 	TArray<struct FAIServerTargetType>            EnemyTarget;                                       // 0x0010(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-};
-
-// ScriptStruct MarvelAI.AIServerIntentionProtocol
-// 0x0004 (0x0004 - 0x0000)
-struct FAIServerIntentionProtocol final
-{
-public:
-	EAIIntentionType                              Intention;                                         // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
 // ScriptStruct MarvelAI.AIServerAbilityProtocol
@@ -1196,152 +1517,6 @@ struct FAIServerResponseCode final
 {
 public:
 	EResponseState                                ResponseCode;                                      // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// ScriptStruct MarvelAI.AILabProtoWeaponClipData
-// 0x001C (0x001C - 0x0000)
-struct FAILabProtoWeaponClipData final
-{
-public:
-	int32                                         Weapon1;                                           // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Weapon2;                                           // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Weapon3;                                           // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         SkillEnergy;                                       // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         SkillEnergy2;                                      // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         SkillEnergy3;                                      // 0x0014(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         UltimateAbility;                                   // 0x0018(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// ScriptStruct MarvelAI.AILabProtoBattleRecordData
-// 0x001C (0x001C - 0x0000)
-struct FAILabProtoBattleRecordData final
-{
-public:
-	int32                                         KillCount;                                         // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         DeathCount;                                        // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         AssistCount;                                       // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         HitRate;                                           // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Damage;                                            // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Injured;                                           // 0x0014(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Heal;                                              // 0x0018(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// ScriptStruct MarvelAI.AILabProtoBuffData
-// 0x0008 (0x0008 - 0x0000)
-struct FAILabProtoBuffData final
-{
-public:
-	int32                                         ID;                                                // 0x0000(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Duration;                                          // 0x0004(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// ScriptStruct MarvelAI.AILabProtoAbilityData
-// 0x00A0 (0x00A0 - 0x0000)
-struct FAILabProtoAbilityData final
-{
-public:
-	TSet<int32>                                   ActivatedAbility;                                  // 0x0000(0x0050)(BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	TSet<int32>                                   CoolDownAbility;                                   // 0x0050(0x0050)(BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-};
-
-// ScriptStruct MarvelAI.AILabProtoEnvironmentData
-// 0x0040 (0x0040 - 0x0000)
-struct FAILabProtoEnvironmentData final
-{
-public:
-	TArray<int32>                                 AllyInViewCharacterUID;                            // 0x0000(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<int32>                                 EnemyInViewCharacterUID;                           // 0x0010(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<int32>                                 AllyJustDisappearedCharacterUID;                   // 0x0020(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<int32>                                 EnemyJustDisappearedCharacterUID;                  // 0x0030(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-
-// ScriptStruct MarvelAI.AILabProtoCharacterData
-// 0x01B0 (0x01B0 - 0x0000)
-struct FAILabProtoCharacterData final
-{
-public:
-	int32                                         UID;                                               // 0x0000(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         ID;                                                // 0x0004(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          IsRobot;                                           // 0x0008(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         MoveMode;                                          // 0x000C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         SculptID;                                          // 0x0010(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          IsDeath;                                           // 0x0014(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         Health;                                            // 0x0018(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Other;                                             // 0x001C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                Location;                                          // 0x0020(0x0018)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                Velocity;                                          // 0x0038(0x0018)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                Rotation;                                          // 0x0050(0x0018)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         BattleSide;                                        // 0x0068(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_6C[0x4];                                       // 0x006C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FAILabProtoBuffData>            BuffData;                                          // 0x0070(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
-	struct FAILabProtoAbilityData                 AbilityUsageData;                                  // 0x0080(0x00A0)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	struct FAILabProtoEnvironmentData             EnvironmentData;                                   // 0x0120(0x0040)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	struct FAILabProtoWeaponClipData              WeaponClip;                                        // 0x0160(0x001C)(NoDestructor, NativeAccessSpecifierPublic)
-	struct FAILabProtoBattleRecordData            BattleRecordBoard;                                 // 0x017C(0x001C)(NoDestructor, NativeAccessSpecifierPublic)
-	TArray<int32>                                 CurrentAmmoTypes;                                  // 0x0198(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	int32                                         AllyTargetUID;                                     // 0x01A8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         EnemyTargetUID;                                    // 0x01AC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// ScriptStruct MarvelAI.AILabProtoSummonedData
-// 0x0038 (0x0038 - 0x0000)
-struct FAILabProtoSummonedData final
-{
-public:
-	int32                                         ID;                                                // 0x0000(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint32                                        UID;                                               // 0x0004(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         OwnerID;                                           // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         BattleSide;                                        // 0x000C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Health;                                            // 0x0010(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                Location;                                          // 0x0018(0x0018)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Duration;                                          // 0x0030(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-
-// ScriptStruct MarvelAI.AILabProtoBarrierData
-// 0x0030 (0x0030 - 0x0000)
-struct FAILabProtoBarrierData final
-{
-public:
-	int32                                         ID;                                                // 0x0000(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                Location;                                          // 0x0008(0x0018)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIsSmash;                                          // 0x0020(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIsPickUp;                                         // 0x0021(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_22[0x2];                                       // 0x0022(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         Health;                                            // 0x0024(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         SummonerWeaponType;                                // 0x0028(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-
-// ScriptStruct MarvelAI.AILabProtoSceneData
-// 0x0030 (0x0030 - 0x0000)
-struct FAILabProtoSceneData final
-{
-public:
-	class FString                                 MapName;                                           // 0x0000(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<struct FAILabProtoBarrierData>         BarrierData;                                       // 0x0010(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FAILabProtoSummonedData>        SummonedData;                                      // 0x0020(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-
-// ScriptStruct MarvelAI.AILabProtoTickData
-// 0x0090 (0x0090 - 0x0000)
-struct FAILabProtoTickData final
-{
-public:
-	int64                                         Timestamp;                                         // 0x0000(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 BattleID;                                          // 0x0008(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 MapID;                                             // 0x0018(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 GameMode;                                          // 0x0028(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         WinnerSide;                                        // 0x0038(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          IsGameOver;                                        // 0x003C(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_3D[0x3];                                       // 0x003D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FAILabProtoCharacterData>       CharacterData;                                     // 0x0040(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
-	struct FAILabProtoSceneData                   SceneData;                                         // 0x0050(0x0030)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	TArray<float>                                 LevelParams;                                       // 0x0080(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
 };
 
 // ScriptStruct MarvelAI.RequestParamData
@@ -1405,17 +1580,12 @@ public:
 	uint8                                         Pad_5C[0x4];                                       // 0x005C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 
-// ScriptStruct MarvelAI.RequiredAIDataForAutoAbility
-// 0x0038 (0x0038 - 0x0000)
-struct FRequiredAIDataForAutoAbility final
+// ScriptStruct MarvelAI.TargetChangeConfig
+// 0x0050 (0x0050 - 0x0000)
+struct FTargetChangeConfig final
 {
 public:
-	class AMarvelAIController*                    AIController;                                      // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class AActor*                                 TeammateTarget;                                    // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class AActor*                                 TeammateIncludeMeTarget;                           // 0x0010(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class AActor*                                 EnemyTarget;                                       // 0x0018(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EAIIntentionType                              Intention;                                         // 0x0020(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_24[0x14];                                      // 0x0024(0x0014)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	TMap<float, float>                            TargetChangeProbabilities;                         // 0x0000(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 };
 
 // ScriptStruct MarvelAI.CheckFrontCharacterData
@@ -1424,17 +1594,6 @@ struct FCheckFrontCharacterData final
 {
 public:
 	bool                                          bIsRunning;                                        // 0x0000(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// ScriptStruct MarvelAI.CoupleActorStruct
-// 0x0068 (0x0068 - 0x0000)
-struct FCoupleActorStruct final
-{
-public:
-	struct FBlackboardKeySelector                 SourceActor;                                       // 0x0000(0x0030)(Edit, NativeAccessSpecifierPublic)
-	struct FBlackboardKeySelector                 TargetActor;                                       // 0x0030(0x0030)(Edit, NativeAccessSpecifierPublic)
-	float                                         MultipleNum;                                       // 0x0060(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_64[0x4];                                       // 0x0064(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 
 // ScriptStruct MarvelAI.SideScoreConfig
@@ -1532,11 +1691,11 @@ public:
 };
 
 // ScriptStruct MarvelAI.AICommunicateRow
-// 0x0018 (0x0038 - 0x0020)
+// 0x0018 (0x0028 - 0x0010)
 struct FAICommunicateRow final : public FTableRowBase
 {
 public:
-	class FText                                   AICommunicate;                                     // 0x0020(0x0018)(Edit, NativeAccessSpecifierPublic)
+	class FText                                   AICommunicate;                                     // 0x0010(0x0018)(Edit, NativeAccessSpecifierPublic)
 };
 
 // ScriptStruct MarvelAI.MapPoint
@@ -1640,14 +1799,14 @@ public:
 };
 
 // ScriptStruct MarvelAI.MarvelAIAbilityCounterTable
-// 0x0028 (0x0048 - 0x0020)
+// 0x0028 (0x0038 - 0x0010)
 struct FMarvelAIAbilityCounterTable final : public FTableRowBase
 {
 public:
-	class FString                                 Description;                                       // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EAIFilterSide                                 FilterSide;                                        // 0x0030(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_31[0x7];                                       // 0x0031(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FAIAbilityCounterConfig>        CounterConfigList;                                 // 0x0038(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	class FString                                 Description;                                       // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EAIFilterSide                                 FilterSide;                                        // 0x0020(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FAIAbilityCounterConfig>        CounterConfigList;                                 // 0x0028(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
 };
 
 // ScriptStruct MarvelAI.AIAbilityActivateConfig
@@ -1747,29 +1906,29 @@ public:
 };
 
 // ScriptStruct MarvelAI.MarvelAIAutoAbilityTable
-// 0x0248 (0x0268 - 0x0020)
+// 0x0248 (0x0258 - 0x0010)
 struct FMarvelAIAutoAbilityTable final : public FTableRowBase
 {
 public:
-	uint8                                         Pad_20[0x10];                                      // 0x0020(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FAIAbilityUsageTag                     AbilityUsageTag;                                   // 0x0030(0x0068)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FAIHitRateTagContainer                 HitRateTagContainer;                               // 0x0098(0x0068)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	float                                         ChanceToHit;                                       // 0x0100(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_104[0x4];                                      // 0x0104(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FAIAbilityActivateConfig               ActivateConfig;                                    // 0x0108(0x00B8)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	struct FAIAbilityConditionConfig              ConditionConfig;                                   // 0x01C0(0x0064)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, NativeAccessSpecifierPublic)
-	float                                         PriorityScore;                                     // 0x0224(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FComboConfig                           ComboConfig;                                       // 0x0228(0x0008)(BlueprintVisible, BlueprintReadOnly, NoDestructor, NativeAccessSpecifierPublic)
-	EAbilityCheckType                             AbilityCheckType;                                  // 0x0230(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_231[0x7];                                      // 0x0231(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FAIAbilityButtonActivationConfig> ButtonConfig;                                      // 0x0238(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	bool                                          bHasCancelButton;                                  // 0x0248(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EAbilityInputBinds                            CancelButton;                                      // 0x0249(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_24A[0x6];                                      // 0x024A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	TSubclassOf<class UAIAbilityFlowCheckLogicBase> FlowCheckLogic;                                    // 0x0250(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UAIAbilityUsageAsset*                   UsageAsset;                                        // 0x0258(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FAIServerIntentionProtocol             Intention;                                         // 0x0260(0x0004)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_264[0x4];                                      // 0x0264(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_10[0x10];                                      // 0x0010(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FAIAbilityUsageTag                     AbilityUsageTag;                                   // 0x0020(0x0068)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FAIHitRateTagContainer                 HitRateTagContainer;                               // 0x0088(0x0068)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	float                                         ChanceToHit;                                       // 0x00F0(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_F4[0x4];                                       // 0x00F4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FAIAbilityActivateConfig               ActivateConfig;                                    // 0x00F8(0x00B8)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	struct FAIAbilityConditionConfig              ConditionConfig;                                   // 0x01B0(0x0064)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, NativeAccessSpecifierPublic)
+	float                                         PriorityScore;                                     // 0x0214(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FComboConfig                           ComboConfig;                                       // 0x0218(0x0008)(BlueprintVisible, BlueprintReadOnly, NoDestructor, NativeAccessSpecifierPublic)
+	EAbilityCheckType                             AbilityCheckType;                                  // 0x0220(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_221[0x7];                                      // 0x0221(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FAIAbilityButtonActivationConfig> ButtonConfig;                                    // 0x0228(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	bool                                          bHasCancelButton;                                  // 0x0238(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EAbilityInputBinds                            CancelButton;                                      // 0x0239(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_23A[0x6];                                      // 0x023A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	TSubclassOf<class UAIAbilityFlowCheckLogicBase> FlowCheckLogic;                                  // 0x0240(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UAIAbilityUsageAsset*                   UsageAsset;                                        // 0x0248(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FAIServerIntentionProtocol             Intention;                                         // 0x0250(0x0004)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_254[0x4];                                      // 0x0254(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 
 // ScriptStruct MarvelAI.AIRolePriority
@@ -1855,15 +2014,6 @@ public:
 	struct FRange_FloatValue                      SubProgressRange;                                  // 0x0004(0x0008)(Edit, NoDestructor, NativeAccessSpecifierPublic)
 };
 
-// ScriptStruct MarvelAI.AbilityCheckInfo
-// 0x0008 (0x0008 - 0x0000)
-struct FAbilityCheckInfo final
-{
-public:
-	float                                         SenseDistance;                                     // 0x0000(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         AvoidDistance;                                     // 0x0004(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
 // ScriptStruct MarvelAI.AIAbilityCheckInfo
 // 0x0190 (0x0190 - 0x0000)
 struct FAIAbilityCheckInfo final
@@ -1873,7 +2023,7 @@ public:
 	TMap<int32, struct FAbilityCheckInfo>         SummonerCheckInfos;                                // 0x0050(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	TMap<int32, struct FAbilityCheckInfo>         ProjectileCheckInfos;                              // 0x00A0(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	TMap<int32, struct FAbilityCheckInfo>         ScopeCheckInfos;                                   // 0x00F0(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	TMap<struct FGameplayTag, struct FAbilityCheckInfo> TagCheckInfos;                                     // 0x0140(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	TMap<struct FGameplayTag, struct FAbilityCheckInfo> TagCheckInfos;                               // 0x0140(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 };
 
 // ScriptStruct MarvelAI.AbilityCheckConfig
@@ -1929,33 +2079,33 @@ public:
 };
 
 // ScriptStruct MarvelAI.MarvelAIDifficultyTable
-// 0x01F8 (0x0218 - 0x0020)
+// 0x01F8 (0x0208 - 0x0010)
 struct FMarvelAIDifficultyTable final : public FTableRowBase
 {
 public:
-	EAIDifficultyMode                             DifficultyMode;                                    // 0x0020(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_21[0x3];                                       // 0x0021(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         DifficultyLevel;                                   // 0x0024(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         ForbiddenSkillLevel;                               // 0x0028(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FAIDifficultyAttributeConfig           ApplyDamageRatio;                                  // 0x0030(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	struct FAIDifficultyAttributeConfig           TakingDamageRatio;                                 // 0x0080(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	struct FAIDifficultyAttributeConfig           ApplyTreatRatio;                                   // 0x00D0(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	struct FAIDifficultyAttributeConfig           TakingTreatRatio;                                  // 0x0120(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	struct FAIDifficultyAttributeConfig           MaxHealthRatio;                                    // 0x0170(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	float                                         MoveWaitTime;                                      // 0x01C0(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         RandomJumpInterval;                                // 0x01C4(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ChangeToJump;                                      // 0x01C8(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MoveRefreshInterval;                               // 0x01CC(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MoveCloseRadiusRatio;                              // 0x01D0(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FAILowHealthMarkConfig                 LowHealthMarkConfig;                               // 0x01D4(0x000C)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	class UAIDifficultyExtendAsset*               ExtendAsset;                                       // 0x01E0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UAIDynamicDifficultyAsset*              DynamicDifficultyAsset;                            // 0x01E8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          IsSelected;                                        // 0x01F0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1F1[0x7];                                      // 0x01F1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FText                                   AILevelText;                                       // 0x01F8(0x0018)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	float                                         AILABRequestFrequency;                             // 0x0210(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_214[0x4];                                      // 0x0214(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	EAIDifficultyMode                             DifficultyMode;                                    // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         DifficultyLevel;                                   // 0x0014(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ForbiddenSkillLevel;                               // 0x0018(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FAIDifficultyAttributeConfig           ApplyDamageRatio;                                  // 0x0020(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	struct FAIDifficultyAttributeConfig           TakingDamageRatio;                                 // 0x0070(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	struct FAIDifficultyAttributeConfig           ApplyTreatRatio;                                   // 0x00C0(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	struct FAIDifficultyAttributeConfig           TakingTreatRatio;                                  // 0x0110(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	struct FAIDifficultyAttributeConfig           MaxHealthRatio;                                    // 0x0160(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	float                                         MoveWaitTime;                                      // 0x01B0(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         RandomJumpInterval;                                // 0x01B4(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ChangeToJump;                                      // 0x01B8(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MoveRefreshInterval;                               // 0x01BC(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MoveCloseRadiusRatio;                              // 0x01C0(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FAILowHealthMarkConfig                 LowHealthMarkConfig;                               // 0x01C4(0x000C)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	class UAIDifficultyExtendAsset*               ExtendAsset;                                       // 0x01D0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UAIDynamicDifficultyAsset*              DynamicDifficultyAsset;                            // 0x01D8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsSelected;                                        // 0x01E0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1E1[0x7];                                      // 0x01E1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FText                                   AILevelText;                                       // 0x01E8(0x0018)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	float                                         AILABRequestFrequency;                             // 0x0200(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_204[0x4];                                      // 0x0204(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 
 // ScriptStruct MarvelAI.AIChangeHeroConfig
@@ -2021,49 +2171,32 @@ public:
 };
 
 // ScriptStruct MarvelAI.MarvelAISprayTable
-// 0x0020 (0x0040 - 0x0020)
+// 0x0020 (0x0030 - 0x0010)
 struct FMarvelAISprayTable final : public FTableRowBase
 {
 public:
-	int32                                         SprayID;                                           // 0x0020(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   SprayDesc;                                         // 0x0024(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         SprayWeight;                                       // 0x0030(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FDateTime                              SprayValidTime;                                    // 0x0038(0x0008)(Edit, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         SprayID;                                           // 0x0010(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   SprayDesc;                                         // 0x0014(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         SprayWeight;                                       // 0x0020(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FDateTime                              SprayValidTime;                                    // 0x0028(0x0008)(Edit, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
 // ScriptStruct MarvelAI.MarvelAIStandPointGroupTable
-// 0x0048 (0x0068 - 0x0020)
+// 0x0048 (0x0058 - 0x0010)
 struct FMarvelAIStandPointGroupTable final : public FTableRowBase
 {
 public:
-	int32                                         GroupId;                                           // 0x0020(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 LevelName;                                         // 0x0028(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Desc;                                              // 0x0038(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<class FName>                           StandPointNames;                                   // 0x0048(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
-	EAssaultProgress                              AssaultProgress;                                   // 0x0058(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EEscortProgress                               EscortProgress;                                    // 0x0059(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5A[0x2];                                       // 0x005A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FRange_FloatValue                      SubProgressRange;                                  // 0x005C(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_64[0x4];                                       // 0x0064(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-
-// ScriptStruct MarvelAI.MarvelAIStandPointTable
-// 0x0050 (0x0070 - 0x0020)
-struct FMarvelAIStandPointTable final : public FTableRowBase
-{
-public:
-	class FString                                 Desc;                                              // 0x0020(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 LevelName;                                         // 0x0030(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         HeroID;                                            // 0x0040(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EMarvelStandPointShareType                    ShareType;                                         // 0x0044(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_45[0x3];                                       // 0x0045(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class FName                                   BattleAreaName;                                    // 0x0048(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EEscortProgress                               EscortProgress;                                    // 0x0054(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_55[0x3];                                       // 0x0055(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FRange_FloatValue                      SubProgressRange;                                  // 0x0058(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, NativeAccessSpecifierPublic)
-	TArray<class FName>                           StandPointNames;                                   // 0x0060(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
+	int32                                         GroupId;                                           // 0x0010(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 LevelName;                                         // 0x0018(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Desc;                                              // 0x0028(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<class FName>                           StandPointNames;                                   // 0x0038(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
+	EAssaultProgress                              AssaultProgress;                                   // 0x0048(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EEscortProgress                               EscortProgress;                                    // 0x0049(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4A[0x2];                                       // 0x004A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FRange_FloatValue                      SubProgressRange;                                  // 0x004C(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_54[0x4];                                       // 0x0054(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 
 // ScriptStruct MarvelAI.MarvelAITeamInfo
@@ -2098,14 +2231,6 @@ public:
 	struct FGameplayTag                           GameplayTag;                                       // 0x0000(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
-// ScriptStruct MarvelAI.AIHeroTag
-// 0x0068 (0x0068 - 0x0000)
-struct FAIHeroTag final
-{
-public:
-	struct FGameplayTagContainer                  AIHeroTag;                                         // 0x0000(0x0068)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-};
-
 // ScriptStruct MarvelAI.AIMoveTypeTag
 // 0x0068 (0x0068 - 0x0000)
 struct FAIMoveTypeTag final
@@ -2123,16 +2248,6 @@ public:
 	struct FMarvelFloatRange                      MistakeRate;                                       // 0x0010(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, NativeAccessSpecifierPublic)
 };
 
-// ScriptStruct MarvelAI.HeroTagMatch
-// 0x0070 (0x0070 - 0x0000)
-struct FHeroTagMatch final
-{
-public:
-	struct FAIHeroTag                             AIHeroTag;                                         // 0x0000(0x0068)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	EGameplayContainerMatchType                   TagMatchType;                                      // 0x0068(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_69[0x7];                                       // 0x0069(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-
 // ScriptStruct MarvelAI.HeroFilter
 // 0x0080 (0x0080 - 0x0000)
 struct FHeroFilter final
@@ -2145,43 +2260,14 @@ public:
 	struct FHeroTagMatch                          HeroTagMatch;                                      // 0x0010(0x0070)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 };
 
-// ScriptStruct MarvelAI.AISpawnParam
-// 0x00A8 (0x00A8 - 0x0000)
-struct FAISpawnParam final
-{
-public:
-	int32                                         UID;                                               // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         HeroID;                                            // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EBattleSide                                   BattleSide;                                        // 0x0008(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 AIName;                                            // 0x0010(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EAIDifficultyMode                             DifficultyMode;                                    // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_21[0x3];                                       // 0x0021(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         DifficultyLevel;                                   // 0x0024(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                SpawnLocation;                                     // 0x0028(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                RebornLocation;                                    // 0x0040(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FRotator                               SpawnRotation;                                     // 0x0058(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	struct FRotator                               RebornRotation;                                    // 0x0070(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	float                                         RebornTime;                                        // 0x0088(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_8C[0x4];                                       // 0x008C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UBehaviorTree*                          BehaviorTree;                                      // 0x0090(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          IsTrainingTarget;                                  // 0x0098(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          IsWoodPile;                                        // 0x0099(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9A[0x2];                                       // 0x009A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         SkinID;                                            // 0x009C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         RecordUID;                                         // 0x00A0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          UsePreciseReachLogic;                              // 0x00A4(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_A5[0x3];                                       // 0x00A5(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-
 // ScriptStruct MarvelAI.MarvelHeroAutoAITable
-// 0x0010 (0x0030 - 0x0020)
+// 0x0010 (0x0020 - 0x0010)
 struct FMarvelHeroAutoAITable final : public FTableRowBase
 {
 public:
-	int32                                         HeroID;                                            // 0x0020(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UBehaviorTree*                          BehaviorTree;                                      // 0x0028(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         HeroID;                                            // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UBehaviorTree*                          BehaviorTree;                                      // 0x0018(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
 // ScriptStruct MarvelAI.AIBattleConfig
@@ -2193,31 +2279,21 @@ public:
 };
 
 // ScriptStruct MarvelAI.MarvelHeroBehaviorTreeTable
-// 0x00F0 (0x0110 - 0x0020)
+// 0x00F0 (0x0100 - 0x0010)
 struct FMarvelHeroBehaviorTreeTable final : public FTableRowBase
 {
 public:
-	int32                                         HeroID;                                            // 0x0020(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FAIHeroTag                             AIHeroType;                                        // 0x0028(0x0068)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	int32                                         NormalJumpAbilityID;                               // 0x0090(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_94[0x4];                                       // 0x0094(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<int32, int32>                            HeroSculptDataRemap;                               // 0x0098(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FAIBattleConfig                        BattleConfig;                                      // 0x00E8(0x0004)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_EC[0x4];                                       // 0x00EC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FAIHeroNavigationConfig                NavigationConfig;                                  // 0x00F0(0x0018)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	bool                                          bSelectable;                                       // 0x0108(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_109[0x7];                                      // 0x0109(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-
-// ScriptStruct MarvelAI.HeightToNavArea
-// 0x0010 (0x0010 - 0x0000)
-struct FHeightToNavArea final
-{
-public:
-	float                                         Height;                                            // 0x0000(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TSubclassOf<class UNavArea>                   NavAreaClass;                                      // 0x0008(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         HeroID;                                            // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FAIHeroTag                             AIHeroType;                                        // 0x0018(0x0068)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	int32                                         NormalJumpAbilityID;                               // 0x0080(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_84[0x4];                                       // 0x0084(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<int32, int32>                            HeroSculptDataRemap;                               // 0x0088(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FAIBattleConfig                        BattleConfig;                                      // 0x00D8(0x0004)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_DC[0x4];                                       // 0x00DC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FAIHeroNavigationConfig                NavigationConfig;                                  // 0x00E0(0x0018)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	bool                                          bSelectable;                                       // 0x00F8(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_F9[0x7];                                       // 0x00F9(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 
 // ScriptStruct MarvelAI.WallAttachCheckConfig
@@ -2237,42 +2313,6 @@ public:
 	uint8                                         Pad_1E[0x2];                                       // 0x001E(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 
-// ScriptStruct MarvelAI.PathSelectorData
-// 0x0050 (0x0050 - 0x0000)
-struct FPathSelectorData final
-{
-public:
-	TMap<TSoftObjectPtr<class AActor>, TSoftObjectPtr<class AStartWayPoint>> TargetToPathStart;                                 // 0x0000(0x0050)(Edit, UObjectWrapper, NativeAccessSpecifierPublic)
-};
-
-// ScriptStruct MarvelAI.TileRef
-// 0x0008 (0x0008 - 0x0000)
-struct FTileRef final
-{
-public:
-	int32                                         X;                                                 // 0x0000(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Y;                                                 // 0x0004(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// ScriptStruct MarvelAI.TileDebugDrawConfig
-// 0x0008 (0x0008 - 0x0000)
-struct FTileDebugDrawConfig final
-{
-public:
-	uint8                                         bDrawEdgeData : 1;                                 // 0x0000(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bDrawEdgeLine : 1;                                 // 0x0000(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bDrawEdgeSamplePoints : 1;                         // 0x0000(0x0001)(BitIndex: 0x02, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bDrawEdgeBackDir : 1;                              // 0x0000(0x0001)(BitIndex: 0x03, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bDrawEdgeBound : 1;                                // 0x0000(0x0001)(BitIndex: 0x04, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bDrawEdgeIndexInTile : 1;                          // 0x0000(0x0001)(BitIndex: 0x05, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bDrawPendingLinks : 1;                             // 0x0000(0x0001)(BitIndex: 0x06, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bDrawDebugForLinkCheck : 1;                        // 0x0000(0x0001)(BitIndex: 0x07, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_1[0x1];                                        // 0x0001(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	uint8                                         DrawDebugDepthPriority;                            // 0x0002(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_3[0x1];                                        // 0x0003(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         DrawDebugLifeTime;                                 // 0x0004(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
 // ScriptStruct MarvelAI.DebugEdge
 // 0x0048 (0x0048 - 0x0000)
 struct FDebugEdge final
@@ -2281,36 +2321,6 @@ public:
 	struct FVector                                StartLocation;                                     // 0x0000(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                                EndLocation;                                       // 0x0018(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                                AnotherPoint;                                      // 0x0030(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// ScriptStruct MarvelAI.EdgeRef
-// 0x000C (0x000C - 0x0000)
-struct FEdgeRef final
-{
-public:
-	struct FTileRef                               TileRef;                                           // 0x0000(0x0008)(Edit, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint32                                        EdgeIndex;                                         // 0x0008(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-};
-
-// ScriptStruct MarvelAI.NavLinkList
-// 0x0010 (0x0010 - 0x0000)
-struct FNavLinkList final
-{
-public:
-	TArray<class ANavLinkProxy*>                  LinkListData;                                      // 0x0000(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-};
-
-// ScriptStruct MarvelAI.TileData
-// 0x00D0 (0x00D0 - 0x0000)
-struct FTileData final
-{
-public:
-	struct FTileRef                               MyTileRef;                                         // 0x0000(0x0008)(NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FBox                                   MyBound;                                           // 0x0008(0x0038)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, NativeAccessSpecifierProtected)
-	uint8                                         Pad_40[0x10];                                      // 0x0040(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FNavLinkList                           InnerTileLinks;                                    // 0x0050(0x0010)(Protected, NativeAccessSpecifierProtected)
-	TMap<struct FTileRef, struct FNavLinkList>    CrossTileLinks;                                    // 0x0060(0x0050)(Protected, NativeAccessSpecifierProtected)
-	uint8                                         Pad_B0[0x20];                                      // 0x00B0(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 
 // ScriptStruct MarvelAI.NavLinkGenerateConfig
@@ -2380,16 +2390,6 @@ public:
 	uint8                                         Pad_36[0x2];                                       // 0x0036(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         InvisibleCostFactor;                               // 0x0038(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         DrawDebugDuration;                                 // 0x003C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// ScriptStruct MarvelAI.SteeringWithWeight
-// 0x0010 (0x0010 - 0x0000)
-struct FSteeringWithWeight final
-{
-public:
-	float                                         Weight;                                            // 0x0000(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class USteeringBehavior*                      SteeringBehavior;                                  // 0x0008(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, PersistentInstance, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
 // ScriptStruct MarvelAI.ShelterInstanceData

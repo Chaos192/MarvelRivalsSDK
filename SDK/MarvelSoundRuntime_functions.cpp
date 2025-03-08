@@ -22,7 +22,7 @@ namespace SDK
 // Parameters:
 // class UAkComponent*                     AkComponent                                            (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UAkAudioEvent*                    AkEvent                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           in_EventName                                           (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    in_EventName                                           (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UAudioAutoShowLog::ShowPostEventLog(class UAkComponent* AkComponent, class UAkAudioEvent* AkEvent, const class FString& in_EventName)
 {

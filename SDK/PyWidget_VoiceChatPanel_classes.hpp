@@ -65,7 +65,7 @@ public:
 
 // PythonClass PyWidget_VoiceChatPanel.PyWidget_VoiceChatPanel
 // 0x0008 (0x05F8 - 0x05F0)
-class UPyWidget_VoiceChatPanel final : public UPyMarvelUserWidget
+class UPyWidget_VoiceChatPanel : public UPyMarvelUserWidget
 {
 public:
 	uint8                                         Pad_5E9[0x7];                                      // 0x05E9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
@@ -140,7 +140,7 @@ public:
 
 // PythonClass PyWidget_VoiceChatPanel.PyWidget_BattleVoice_PlayerUnit
 // 0x0018 (0x0608 - 0x05F0)
-class UPyWidget_BattleVoice_PlayerUnit final : public UPyMarvelUserWidget
+class UPyWidget_BattleVoice_PlayerUnit : public UPyMarvelUserWidget
 {
 public:
 	bool                                          bCustomColorPreview;                               // 0x05E9(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)

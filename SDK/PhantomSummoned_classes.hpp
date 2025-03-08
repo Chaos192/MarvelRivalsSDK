@@ -21,8 +21,8 @@ namespace SDK
 {
 
 // Class PhantomSummoned.PhantomAbilityInterface
-// 0x0000 (0x0030 - 0x0030)
-class IPhantomAbilityInterface final : public IInterface
+// 0x0000 (0x0000 - 0x0000)
+class IPhantomAbilityInterface final
 {
 public:
 	class UGameplayAbility* GetSourceAbility();
@@ -37,6 +37,15 @@ public:
 	static class IPhantomAbilityInterface* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<IPhantomAbilityInterface>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
 	}
 };
 
@@ -59,12 +68,12 @@ public:
 };
 
 // Class PhantomSummoned.PhantomInputSyncAbility
-// 0x0018 (0x2598 - 0x2580)
+// 0x0018 (0x25A0 - 0x2588)
 class UPhantomInputSyncAbility final : public UMarvelGameplayAbility
 {
 public:
-	uint8                                         Pad_2580[0x8];                                     // 0x2580(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<TScriptInterface<class IPhantomInterface>> Phantoms;                                          // 0x2588(0x0010)(ZeroConstructor, Protected, UObjectWrapper, NativeAccessSpecifierProtected)
+	uint8                                         Pad_2588[0x8];                                     // 0x2588(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<TScriptInterface<class IPhantomInterface>> Phantoms;                                      // 0x2590(0x0010)(ZeroConstructor, Protected, UObjectWrapper, NativeAccessSpecifierProtected)
 
 public:
 	void ServerNotifyInputToPhantom(EAbilityActionBindingType InActionBindingType, int32 InInputId, int32 InAbilityId);
@@ -107,8 +116,8 @@ public:
 };
 
 // Class PhantomSummoned.PhantomInterface
-// 0x0000 (0x0030 - 0x0030)
-class IPhantomInterface final : public IInterface
+// 0x0000 (0x0000 - 0x0000)
+class IPhantomInterface final
 {
 public:
 	static class UClass* StaticClass()
@@ -118,6 +127,15 @@ public:
 	static class IPhantomInterface* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<IPhantomInterface>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
 	}
 };
 

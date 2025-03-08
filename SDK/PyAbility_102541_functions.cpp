@@ -20,7 +20,7 @@ namespace SDK
 // PythonFunction PyAbility_102541.PyProjectile_10254101.K2_OnProcessHit
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FHitResult                       ImpactResult                                           (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FHitResult&                ImpactResult                                           (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyProjectile_10254101::K2_OnProcessHit(const struct FHitResult& ImpactResult)
 {
@@ -65,7 +65,7 @@ void UPyAbility_102541::BeginPlay()
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int32                                   SocketId                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FMarvelAbilitySocketInfo         SocketInfo                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
+// const struct FMarvelAbilitySocketInfo&  SocketInfo                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
 
 void UPyAbility_102541::HandleAnimSocketInfo(int32 SocketId, const struct FMarvelAbilitySocketInfo& SocketInfo)
 {

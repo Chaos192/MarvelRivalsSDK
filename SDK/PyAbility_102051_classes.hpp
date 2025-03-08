@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Hero_1020_classes.hpp"
 #include "Marvel_classes.hpp"
+#include "Hero_1020_classes.hpp"
 
 
 namespace SDK
@@ -45,7 +45,7 @@ class APyScope_10205101 final : public AMarvelAbilityTargetActor_Scope
 {
 public:
 	class AActor*                                 TracedTarget;                                      // 0x1700(0x0008)(Net, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class AActor* TracedTarget)> OnTracedTargetDelegate;                            // 0x1708(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class AActor* TracedTarget)> OnTracedTargetDelegate;               // 0x1708(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 
 public:
 	void K2_OnBeginAgentTask();

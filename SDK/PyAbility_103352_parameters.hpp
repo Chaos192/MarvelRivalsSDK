@@ -18,40 +18,12 @@
 namespace SDK::Params
 {
 
-// PythonFunction PyAbility_103352.PyCue_Scope_Start_10335201.OnExecuteFX
-// 0x01C0 (0x01C0 - 0x0000)
-struct PyCue_Scope_Start_10335201_OnExecuteFX final
-{
-public:
-	class AActor*                                 MyTarget;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	struct FGameplayCueParameters                 Parameters;                                        // 0x0008(0x01B8)(ConstParm, Parm, OutParm, ReferenceParm)
-};
-
-// PythonFunction PyAbility_103352.PyCue_Scope_Start_10335201.SetFXParameter
-// 0x01C8 (0x01C8 - 0x0000)
-struct PyCue_Scope_Start_10335201_SetFXParameter final
-{
-public:
-	class UNiagaraComponent*                      InFXComponent;                                     // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	const class AActor*                           MyTarget;                                          // 0x0008(0x0008)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	struct FGameplayCueParameters                 Parameters;                                        // 0x0010(0x01B8)(ConstParm, Parm, OutParm, ReferenceParm)
-};
-
 // PythonFunction PyAbility_103352.PyProjectile_10335201.K2_OnProcessHit
 // 0x0170 (0x0170 - 0x0000)
 struct PyProjectile_10335201_K2_OnProcessHit final
 {
 public:
 	struct FHitResult                             ImpactResult;                                      // 0x0000(0x0170)(ConstParm, Parm, OutParm, ReferenceParm)
-};
-
-// PythonFunction PyAbility_103352.PyProjectile_10335202.K2_OnBounce
-// 0x0188 (0x0188 - 0x0000)
-struct PyProjectile_10335202_K2_OnBounce final
-{
-public:
-	struct FHitResult                             ImpactResult;                                      // 0x0000(0x0170)(ConstParm, Parm, OutParm, ReferenceParm)
-	struct FVector                                ImpactVelocity;                                    // 0x0170(0x0018)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 
 // PythonFunction PyAbility_103352.PyAbility_103352.CanActivate
@@ -84,6 +56,34 @@ struct PyAbility_103352_NativeOnMontageEvent final
 {
 public:
 	class FString                                 Tag;                                               // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash)
+};
+
+// PythonFunction PyAbility_103352.PyCue_Scope_Start_10335201.OnExecuteFX
+// 0x01C0 (0x01C0 - 0x0000)
+struct PyCue_Scope_Start_10335201_OnExecuteFX final
+{
+public:
+	class AActor*                                 MyTarget;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	struct FGameplayCueParameters                 Parameters;                                        // 0x0008(0x01B8)(ConstParm, Parm, OutParm, ReferenceParm)
+};
+
+// PythonFunction PyAbility_103352.PyCue_Scope_Start_10335201.SetFXParameter
+// 0x01C8 (0x01C8 - 0x0000)
+struct PyCue_Scope_Start_10335201_SetFXParameter final
+{
+public:
+	class UNiagaraComponent*                      InFXComponent;                                     // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	const class AActor*                           MyTarget;                                          // 0x0008(0x0008)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	struct FGameplayCueParameters                 Parameters;                                        // 0x0010(0x01B8)(ConstParm, Parm, OutParm, ReferenceParm)
+};
+
+// PythonFunction PyAbility_103352.PyProjectile_10335202.K2_OnBounce
+// 0x0188 (0x0188 - 0x0000)
+struct PyProjectile_10335202_K2_OnBounce final
+{
+public:
+	struct FHitResult                             ImpactResult;                                      // 0x0000(0x0170)(ConstParm, Parm, OutParm, ReferenceParm)
+	struct FVector                                ImpactVelocity;                                    // 0x0170(0x0018)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 
 // PythonFunction PyAbility_103352.PyCue_Ability_Loop_10335201.WhileActive

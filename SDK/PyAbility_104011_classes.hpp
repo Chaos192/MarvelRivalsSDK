@@ -18,26 +18,26 @@
 namespace SDK
 {
 
-// PythonClass PyAbility_104011.PyCue_Ability_Loop_10401101
-// 0x0008 (0x0E58 - 0x0E50)
-class APyCue_Ability_Loop_10401101 final : public AMarvelCueNotify_Ability
+// PythonClass PyAbility_104011.PyCue_Scope_HitImpact_10401101
+// 0x0028 (0x04F8 - 0x04D0)
+class UPyCue_Scope_HitImpact_10401101 final : public UMarvelCueNotify_HitImpact
 {
 public:
-	float                                         MaxRTPCValue;                                      // 0x0E50(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          Is104011Impact;                                    // 0x04D0(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4D1[0x7];                                      // 0x04D1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FCue_NiagaraAsset_Hit                  HitNiagaraWithCustomTransform;                     // 0x04D8(0x0020)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
 
 public:
-	void ReceiveBeginPlay();
-	void WhileActiveAudio(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters);
-	void OnRemoveAudio(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters);
+	void OnExecuteFX(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters) const;
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"PyCue_Ability_Loop_10401101">();
+		return StaticClassImpl<"PyCue_Scope_HitImpact_10401101">();
 	}
-	static class APyCue_Ability_Loop_10401101* GetDefaultObj()
+	static class UPyCue_Scope_HitImpact_10401101* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<APyCue_Ability_Loop_10401101>();
+		return GetDefaultObjImpl<UPyCue_Scope_HitImpact_10401101>();
 	}
 };
 
@@ -61,34 +61,35 @@ public:
 	}
 };
 
-// PythonClass PyAbility_104011.PyCue_Ability_Instant_10401101
-// 0x0008 (0x0370 - 0x0368)
-class UPyCue_Ability_Instant_10401101 final : public UMarvelCueNotify_Base
+// PythonClass PyAbility_104011.PyCue_Ability_Loop_10401102
+// 0x0008 (0x0E58 - 0x0E50)
+class APyCue_Ability_Loop_10401102 final : public AMarvelCueNotify_Ability
 {
 public:
-	float                                         MinDistToSpawnFX;                                  // 0x0368(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MinDistToSpawnFX;                                  // 0x0E50(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
-	void OnExecuteFX(class AActor* MyTarget, const struct FGameplayCueParameters& Parameter) const;
+	void OnActiveFX(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters);
+	void OnRemoveFX(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters);
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"PyCue_Ability_Instant_10401101">();
+		return StaticClassImpl<"PyCue_Ability_Loop_10401102">();
 	}
-	static class UPyCue_Ability_Instant_10401101* GetDefaultObj()
+	static class APyCue_Ability_Loop_10401102* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UPyCue_Ability_Instant_10401101>();
+		return GetDefaultObjImpl<APyCue_Ability_Loop_10401102>();
 	}
 };
 
 // PythonClass PyAbility_104011.PyAbility_104011
-// 0x0018 (0x2608 - 0x25F0)
+// 0x0018 (0x2610 - 0x25F8)
 class UPyAbility_104011 : public UAbility_104011
 {
 public:
-	class UPrimitiveComponent*                    HitComp;                                           // 0x25F0(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, Net, ZeroConstructor, EditConst, InstancedReference, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class UPrimitiveComponent* HitComp)> AbilityHitDispatcher;                              // 0x25F8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	class UPrimitiveComponent*                    HitComp;                                           // 0x25F8(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, Net, ZeroConstructor, EditConst, InstancedReference, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class UPrimitiveComponent* HitComp)> AbilityHitDispatcher;         // 0x2600(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 
 public:
 	void BeginPlay();
@@ -116,26 +117,26 @@ public:
 	}
 };
 
-// PythonClass PyAbility_104011.PyCue_Scope_HitImpact_10401101
-// 0x0028 (0x04F8 - 0x04D0)
-class UPyCue_Scope_HitImpact_10401101 final : public UMarvelCueNotify_HitImpact
+// PythonClass PyAbility_104011.PyCue_Ability_Loop_10401101
+// 0x0008 (0x0E58 - 0x0E50)
+class APyCue_Ability_Loop_10401101 final : public AMarvelCueNotify_Ability
 {
 public:
-	bool                                          Is104011Impact;                                    // 0x04D0(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4D1[0x7];                                      // 0x04D1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FCue_NiagaraAsset_Hit                  HitNiagaraWithCustomTransform;                     // 0x04D8(0x0020)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	float                                         MaxRTPCValue;                                      // 0x0E50(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
-	void OnExecuteFX(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters) const;
+	void ReceiveBeginPlay();
+	void WhileActiveAudio(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters);
+	void OnRemoveAudio(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters);
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"PyCue_Scope_HitImpact_10401101">();
+		return StaticClassImpl<"PyCue_Ability_Loop_10401101">();
 	}
-	static class UPyCue_Scope_HitImpact_10401101* GetDefaultObj()
+	static class APyCue_Ability_Loop_10401101* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UPyCue_Scope_HitImpact_10401101>();
+		return GetDefaultObjImpl<APyCue_Ability_Loop_10401101>();
 	}
 };
 

@@ -14,29 +14,52 @@
 #include "CoreUObject_structs.hpp"
 #include "Marvel_structs.hpp"
 #include "PyWidget_Common_Button_classes.hpp"
-#include "SlateCore_structs.hpp"
 #include "PyWidget_ModuleMainPanel_classes.hpp"
+#include "SlateCore_structs.hpp"
 
 
 namespace SDK
 {
 
-// PythonClass PyWidget_BattlePass_PropView.PyWidget_BattlePass_PageItem
-// 0x0000 (0x08F0 - 0x08F0)
-class UPyWidget_BattlePass_PageItem final : public UPyWidget_BaseCommonButton
+// PythonClass PyWidget_BattlePass_PropView.PyWidget_BattlePass_CuttingItemList
+// 0x0028 (0x0618 - 0x05F0)
+class UPyWidget_BattlePass_CuttingItemList : public UPyMarvelUserWidget
 {
 public:
-	void SetIsHover(bool IsHover_0);
-	void SetBtnIsPressed(bool IsBtnPressed_0);
+	uint8                                         Pad_5E9[0x7];                                      // 0x05E9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FMarvelBattlePassCuttingItemStyle> ItemStyleList;                                  // 0x05F0(0x0010)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	TArray<int32>                                 ItemFocusConfigList;                               // 0x0600(0x0010)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	int32                                         PrePageBtnFocusItemIndex;                          // 0x0610(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         NextPageBtnFocusItemIndex;                         // 0x0614(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	void OnInitialized();
+	void MarvelSetVisible(bool Visible);
+	void Destruct();
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"PyWidget_BattlePass_PageItem">();
+		return StaticClassImpl<"PyWidget_BattlePass_CuttingItemList">();
 	}
-	static class UPyWidget_BattlePass_PageItem* GetDefaultObj()
+	static class UPyWidget_BattlePass_CuttingItemList* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UPyWidget_BattlePass_PageItem>();
+		return GetDefaultObjImpl<UPyWidget_BattlePass_CuttingItemList>();
+	}
+};
+
+// PythonClass PyWidget_BattlePass_PropView.PyWidget_BattlePass_CuttingItemList_Currency
+// 0x0000 (0x0618 - 0x0618)
+class UPyWidget_BattlePass_CuttingItemList_Currency : public UPyWidget_BattlePass_CuttingItemList
+{
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PyWidget_BattlePass_CuttingItemList_Currency">();
+	}
+	static class UPyWidget_BattlePass_CuttingItemList_Currency* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPyWidget_BattlePass_CuttingItemList_Currency>();
 	}
 };
 
@@ -52,6 +75,26 @@ public:
 	static class UPyWidget_BattlePass_CuttingItemPrice* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UPyWidget_BattlePass_CuttingItemPrice>();
+	}
+};
+
+// PythonClass PyWidget_BattlePass_PropView.PyWidget_BattlePass_PageItem
+// 0x0000 (0x08F0 - 0x08F0)
+class UPyWidget_BattlePass_PageItem final : public UPyWidget_BaseCommonButton
+{
+public:
+	void OnCascadingVisibleChanged(bool Visible);
+	void SetIsHover(bool IsHover_0);
+	void SetBtnIsPressed(bool IsBtnPressed_0);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PyWidget_BattlePass_PageItem">();
+	}
+	static class UPyWidget_BattlePass_PageItem* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPyWidget_BattlePass_PageItem>();
 	}
 };
 
@@ -86,33 +129,6 @@ public:
 };
 #pragma pack(pop)
 
-// PythonClass PyWidget_BattlePass_PropView.PyWidget_BattlePass_CuttingItemList
-// 0x0028 (0x0618 - 0x05F0)
-class UPyWidget_BattlePass_CuttingItemList : public UPyMarvelUserWidget
-{
-public:
-	uint8                                         Pad_5E9[0x7];                                      // 0x05E9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FMarvelBattlePassCuttingItemStyle> ItemStyleList;                                     // 0x05F0(0x0010)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	TArray<int32>                                 ItemFocusConfigList;                               // 0x0600(0x0010)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	int32                                         PrePageBtnFocusItemIndex;                          // 0x0610(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         NextPageBtnFocusItemIndex;                         // 0x0614(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-public:
-	void OnInitialized();
-	void MarvelSetVisible(bool Visible);
-	void Destruct();
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"PyWidget_BattlePass_CuttingItemList">();
-	}
-	static class UPyWidget_BattlePass_CuttingItemList* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UPyWidget_BattlePass_CuttingItemList>();
-	}
-};
-
 // PythonClass PyWidget_BattlePass_PropView.PyWidget_BattlePass_Confirm_Popup
 // 0x00D8 (0x06C8 - 0x05F0)
 class UPyWidget_BattlePass_Confirm_Popup final : public UPyMarvelUserWidget
@@ -124,7 +140,7 @@ public:
 	struct FUIActionData                          ConfirmHotKey;                                     // 0x0600(0x0058)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FUIActionData                          CancelHotKey;                                      // 0x0658(0x0058)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	class UInputAction*                           CloseInputAction;                                  // 0x06B0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(const class FString& anim_name)> OnConfirmPopupAnimFinish;                          // 0x06B8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const class FString& anim_name)> OnConfirmPopupAnimFinish;         // 0x06B8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 
 public:
 	void OnInitialized();
@@ -147,7 +163,7 @@ class UPyWidget_BattlePass_PropView final : public UPyWidget_ModuleMainPanel
 {
 public:
 	uint8                                         Pad_611[0x7];                                      // 0x0611(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<EBattlePassCuttingPlateLayout, TSubclassOf<class UUserWidget>> CuttingPlateClasses;                               // 0x0618(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	TMap<EBattlePassCuttingPlateLayout, TSubclassOf<class UUserWidget>> CuttingPlateClasses;         // 0x0618(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	TArray<struct FGuideTipsStyle>                AppreciationReturnTipsStyle;                       // 0x0668(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NativeAccessSpecifierPublic)
 	TArray<struct FGuideTipsStyle>                SwitchPageTipsStyle;                               // 0x0678(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NativeAccessSpecifierPublic)
 	TArray<struct FGuideTipsStyle>                AppreciationTipsStyle;                             // 0x0688(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NativeAccessSpecifierPublic)
@@ -178,6 +194,7 @@ public:
 	void Construct();
 	void Destruct();
 	void MarvelSetVisible(bool Visible);
+	void OnCascadingVisibleChanged(bool Visible);
 	class UWidget* OnNavLeft_Confirm_Popup(EUINavigation Navigation_0);
 	class UWidget* OnNavRight_Confirm_Popup(EUINavigation Navigation_0);
 	class UWidget* OnNavRight_Btn_GetBattlePass(EUINavigation Navigation_0);

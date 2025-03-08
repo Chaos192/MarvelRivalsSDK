@@ -12,8 +12,8 @@
 
 #include "Marvel_structs.hpp"
 #include "GameplayTags_structs.hpp"
-#include "GameplayAbilities_structs.hpp"
 #include "AkAudio_structs.hpp"
+#include "GameplayAbilities_structs.hpp"
 
 
 namespace SDK::Params
@@ -58,6 +58,16 @@ struct PyAbility_103701_K2_OnEndAbility final
 {
 public:
 	bool                                          bCancelled;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+
+// PythonFunction PyAbility_103701.PyUIController_103701.SetAbility
+// 0x0010 (0x0010 - 0x0000)
+struct PyUIController_103701_SetAbility final
+{
+public:
+	int32                                         InAbilityId;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UGameplayAbility*                       InAbility;                                         // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 };
 
 // PythonFunction PyAbility_103701.PyCue_Ability_Loop_10370100.IronCountChanged
@@ -197,16 +207,6 @@ public:
 	EAkCallbackType                               CallbackType;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UAkCallbackInfo*                        CallbackInfo;                                      // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-};
-
-// PythonFunction PyAbility_103701.PyUIController_103701.SetAbility
-// 0x0010 (0x0010 - 0x0000)
-struct PyUIController_103701_SetAbility final
-{
-public:
-	int32                                         InAbilityId;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UGameplayAbility*                       InAbility;                                         // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 };
 
 }

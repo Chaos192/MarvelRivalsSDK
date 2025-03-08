@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "Engine_classes.hpp"
 #include "GameplayTasks_structs.hpp"
 #include "CoreUObject_classes.hpp"
+#include "Engine_classes.hpp"
 
 
 namespace SDK
@@ -49,8 +49,8 @@ public:
 };
 
 // Class GameplayTasks.GameplayTaskOwnerInterface
-// 0x0000 (0x0030 - 0x0030)
-class IGameplayTaskOwnerInterface final : public IInterface
+// 0x0000 (0x0000 - 0x0000)
+class IGameplayTaskOwnerInterface final
 {
 public:
 	static class UClass* StaticClass()
@@ -60,6 +60,15 @@ public:
 	static class IGameplayTaskOwnerInterface* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<IGameplayTaskOwnerInterface>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
 	}
 };
 
@@ -95,7 +104,7 @@ public:
 	uint8                                         Pad_118[0x10];                                     // 0x0118(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class UGameplayTask*>                  TickingTasks;                                      // 0x0128(0x0010)(ZeroConstructor, Protected, UObjectWrapper, NativeAccessSpecifierProtected)
 	TArray<class UGameplayTask*>                  KnownTasks;                                        // 0x0138(0x0010)(ZeroConstructor, Transient, Protected, UObjectWrapper, NativeAccessSpecifierProtected)
-	TMulticastInlineDelegate<void(const struct FGameplayResourceSet& NewlyClaimed, const struct FGameplayResourceSet& FreshlyReleased)> OnClaimedResourcesChange;                          // 0x0148(0x0010)(BlueprintVisible, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const struct FGameplayResourceSet& NewlyClaimed, const struct FGameplayResourceSet& FreshlyReleased)> OnClaimedResourcesChange; // 0x0148(0x0010)(BlueprintVisible, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
 	TArray<class UGameplayTask*>                  SimulatedTasks;                                    // 0x0158(0x0010)(Net, ZeroConstructor, RepNotify, UObjectWrapper, NativeAccessSpecifierPrivate)
 	uint8                                         Pad_168[0x10];                                     // 0x0168(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
@@ -139,8 +148,8 @@ public:
 class UGameplayTask_SpawnActor final : public UGameplayTask
 {
 public:
-	TMulticastInlineDelegate<void(class AActor* SpawnedActor)> Success;                                           // 0x0078(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class AActor* SpawnedActor)> DidNotSpawn;                                       // 0x0088(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class AActor* SpawnedActor)> Success;                              // 0x0078(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class AActor* SpawnedActor)> DidNotSpawn;                          // 0x0088(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	uint8                                         Pad_98[0x30];                                      // 0x0098(0x0030)(Fixing Size After Last Property [ Dumper-7 ])
 	TSubclassOf<class AActor>                     ClassToSpawn;                                      // 0x00C8(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 

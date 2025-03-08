@@ -64,7 +64,7 @@ void UPyCareerInfoController::OnShutdown()
 // bool                                    is_head_kill                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    is_last_kill                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    is_terrain_kill                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FAttributeModifierHandle         modifier_parameter_handler                             (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
+// const struct FAttributeModifierHandle&  modifier_parameter_handler                             (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
 
 void UPyCareerInfoController::PyOnActorKillOther(int32 player_uid, int32 hero_id, bool is_solo_kill, bool is_head_kill, bool is_last_kill, bool is_terrain_kill, const struct FAttributeModifierHandle& modifier_parameter_handler)
 {

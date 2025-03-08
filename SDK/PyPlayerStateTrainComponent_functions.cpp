@@ -243,7 +243,7 @@ void UPyPlayerStateTrainComponent::OnRep_TracePointTotal()
 // PythonFunction PyPlayerStateTrainComponent.PyPlayerStateTrainComponent.train_tips
 // (Net, NetReliable, Native, Public, NetClient, BlueprintCallable)
 // Parameters:
-// class FString                           Text                                                   (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Text                                                   (Parm, ZeroConstructor, HasGetValueTypeHash)
 // ETipsPriority                           Priority                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UPyPlayerStateTrainComponent::train_tips(const class FString& Text, ETipsPriority Priority)
@@ -270,8 +270,8 @@ void UPyPlayerStateTrainComponent::train_tips(const class FString& Text, ETipsPr
 // PythonFunction PyPlayerStateTrainComponent.PyPlayerStateTrainComponent.train_tips_bykey
 // (Net, NetReliable, Native, Public, HasOutParams, NetClient, BlueprintCallable)
 // Parameters:
-// class FString                           Key                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
-// TArray<class FString>                   replace_list                                           (ConstParm, Parm, OutParm, ReferenceParm)
+// const class FString&                    Key                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const TArray<class FString>&            replace_list                                           (ConstParm, Parm, OutParm, ReferenceParm)
 // ETipsPriority                           Priority                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UPyPlayerStateTrainComponent::train_tips_bykey(const class FString& Key, const TArray<class FString>& replace_list, ETipsPriority Priority)
@@ -587,7 +587,7 @@ void UPyPlayerStateTrainComponent::set_entry_play_state(class AActor* entry_cont
 // (Net, NetReliable, Native, Public, NetServer, BlueprintCallable)
 // Parameters:
 // class AActor*                           entry_controller                                       (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class FString                           actor_name                                             (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    actor_name                                             (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyPlayerStateTrainComponent::trigger_entry_chaos_destruction(class AActor* entry_controller, const class FString& actor_name)
 {
@@ -614,7 +614,7 @@ void UPyPlayerStateTrainComponent::trigger_entry_chaos_destruction(class AActor*
 // (Net, NetReliable, Native, Public, NetServer, BlueprintCallable)
 // Parameters:
 // class AActor*                           entry_controller                                       (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class FString                           actor_name                                             (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    actor_name                                             (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyPlayerStateTrainComponent::trigger_entry_chaos_recovery(class AActor* entry_controller, const class FString& actor_name)
 {
@@ -666,8 +666,8 @@ void UPyPlayerStateTrainComponent::start_limit_time_train(class AActor* limit_ti
 // (Net, NetReliable, Native, Public, NetServer, HasOutParams, BlueprintCallable)
 // Parameters:
 // class AActor*                           limit_time_train_computer                              (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// TArray<class FString>                   key_list                                               (ConstParm, Parm, OutParm, ReferenceParm)
-// TArray<int32>                           value_list                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const TArray<class FString>&            key_list                                               (ConstParm, Parm, OutParm, ReferenceParm)
+// const TArray<int32>&                    value_list                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyPlayerStateTrainComponent::set_limit_time_train_config(class AActor* limit_time_train_computer, const TArray<class FString>& key_list, const TArray<int32>& value_list)
 {

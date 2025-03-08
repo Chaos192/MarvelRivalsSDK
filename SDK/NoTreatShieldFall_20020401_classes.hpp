@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass NoTreatShieldFall_20020401.NoTreatShieldFall_20020401_C
-// 0x0000 (0x12B8 - 0x12B8)
+// 0x0000 (0x12C8 - 0x12C8)
 class UNoTreatShieldFall_20020401_C final : public UMarvelNotTreatFallAbility
 {
 public:

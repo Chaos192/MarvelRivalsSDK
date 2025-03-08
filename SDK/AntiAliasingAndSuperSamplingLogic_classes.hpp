@@ -34,6 +34,41 @@ public:
 	}
 };
 
+// PythonClass AntiAliasingAndSuperSamplingLogic._UISettingEntryLowLatencyHandler
+// 0x0000 (0x0030 - 0x0030)
+class U_UISettingEntryLowLatencyHandler : public UUISettingEntrySettingHandler
+{
+public:
+	void BP_OnApply(class UObject* Obj, const class FString& setting_key, const TMap<class FString, class FString>& P, const TMap<int32, class FText>& OPTIONS, float Value);
+	float BP_GetCurrentValue(class UObject* Obj, const class FString& setting_key, const TMap<class FString, class FString>& P, const TMap<int32, class FText>& O);
+	TMap<class FString, int32> BP_OnChanged(class UObject* Obj, const class FString& setting_key, const TMap<class FString, class FString>& Params_0, const TMap<int32, class FText>& OPTIONS, float Value, const TMap<class FString, int32>& Tags);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"_UISettingEntryLowLatencyHandler">();
+	}
+	static class U_UISettingEntryLowLatencyHandler* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<U_UISettingEntryLowLatencyHandler>();
+	}
+};
+
+// PythonClass AntiAliasingAndSuperSamplingLogic.UISettingEntryLowLatencyFSRHandler
+// 0x0000 (0x0030 - 0x0030)
+class UUISettingEntryLowLatencyFSRHandler final : public U_UISettingEntryLowLatencyHandler
+{
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"UISettingEntryLowLatencyFSRHandler">();
+	}
+	static class UUISettingEntryLowLatencyFSRHandler* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UUISettingEntryLowLatencyFSRHandler>();
+	}
+};
+
 // PythonClass AntiAliasingAndSuperSamplingLogic.UISettingEntryAntiAliasingHandler
 // 0x0000 (0x0030 - 0x0030)
 class UUISettingEntryAntiAliasingHandler final : public UUISettingEntrySettingHandler
@@ -169,6 +204,89 @@ public:
 	}
 };
 
+// PythonClass AntiAliasingAndSuperSamplingLogic.UISettingEntryFrameGenerationDLSSOptionsGenerator
+// 0x0000 (0x0030 - 0x0030)
+class UUISettingEntryFrameGenerationDLSSOptionsGenerator final : public UUISettingEntryOptionsGenerator
+{
+public:
+	TMap<int32, class FText> BP_Gen(class UObject* Obj, const class FString& setting_key, const TMap<int32, class FText>& OPTIONS);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"UISettingEntryFrameGenerationDLSSOptionsGenerator">();
+	}
+	static class UUISettingEntryFrameGenerationDLSSOptionsGenerator* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UUISettingEntryFrameGenerationDLSSOptionsGenerator>();
+	}
+};
+
+// PythonClass AntiAliasingAndSuperSamplingLogic._UISettingEntryFrameGenerationHandler
+// 0x0000 (0x0030 - 0x0030)
+class U_UISettingEntryFrameGenerationHandler : public UUISettingEntrySettingHandler
+{
+public:
+	void BP_OnApply(class UObject* Obj, const class FString& setting_key, const TMap<class FString, class FString>& P, const TMap<int32, class FText>& OPTIONS, float Value);
+	float BP_GetCurrentValue(class UObject* Obj, const class FString& setting_key, const TMap<class FString, class FString>& P, const TMap<int32, class FText>& O);
+	TMap<class FString, int32> BP_OnChanged(class UObject* Obj, const class FString& setting_key, const TMap<class FString, class FString>& Params_0, const TMap<int32, class FText>& OPTIONS, float Value, const TMap<class FString, int32>& Tags);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"_UISettingEntryFrameGenerationHandler">();
+	}
+	static class U_UISettingEntryFrameGenerationHandler* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<U_UISettingEntryFrameGenerationHandler>();
+	}
+};
+
+// PythonClass AntiAliasingAndSuperSamplingLogic.UISettingEntryFrameGenerationDLSSHandler
+// 0x0000 (0x0030 - 0x0030)
+class UUISettingEntryFrameGenerationDLSSHandler final : public U_UISettingEntryFrameGenerationHandler
+{
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"UISettingEntryFrameGenerationDLSSHandler">();
+	}
+	static class UUISettingEntryFrameGenerationDLSSHandler* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UUISettingEntryFrameGenerationDLSSHandler>();
+	}
+};
+
+// PythonClass AntiAliasingAndSuperSamplingLogic.UISettingEntryFrameGenerationFSRHandler
+// 0x0000 (0x0030 - 0x0030)
+class UUISettingEntryFrameGenerationFSRHandler final : public U_UISettingEntryFrameGenerationHandler
+{
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"UISettingEntryFrameGenerationFSRHandler">();
+	}
+	static class UUISettingEntryFrameGenerationFSRHandler* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UUISettingEntryFrameGenerationFSRHandler>();
+	}
+};
+
+// PythonClass AntiAliasingAndSuperSamplingLogic.UISettingEntryFrameGenerationXeSSHandler
+// 0x0000 (0x0030 - 0x0030)
+class UUISettingEntryFrameGenerationXeSSHandler final : public U_UISettingEntryFrameGenerationHandler
+{
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"UISettingEntryFrameGenerationXeSSHandler">();
+	}
+	static class UUISettingEntryFrameGenerationXeSSHandler* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UUISettingEntryFrameGenerationXeSSHandler>();
+	}
+};
+
 // PythonClass AntiAliasingAndSuperSamplingLogic.UISetingentryLowLatencyModeOptionsGenerator
 // 0x0000 (0x0030 - 0x0030)
 class UUISetingentryLowLatencyModeOptionsGenerator final : public UUISettingEntryOptionsGenerator
@@ -204,6 +322,36 @@ public:
 	static class UUISetingentryLowLatencyModeHandler* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UUISetingentryLowLatencyModeHandler>();
+	}
+};
+
+// PythonClass AntiAliasingAndSuperSamplingLogic.UISettingEntryLowLatencyDLSSHandler
+// 0x0000 (0x0030 - 0x0030)
+class UUISettingEntryLowLatencyDLSSHandler final : public U_UISettingEntryLowLatencyHandler
+{
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"UISettingEntryLowLatencyDLSSHandler">();
+	}
+	static class UUISettingEntryLowLatencyDLSSHandler* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UUISettingEntryLowLatencyDLSSHandler>();
+	}
+};
+
+// PythonClass AntiAliasingAndSuperSamplingLogic.UISettingEntryLowLatencyXeSSHandler
+// 0x0000 (0x0030 - 0x0030)
+class UUISettingEntryLowLatencyXeSSHandler final : public U_UISettingEntryLowLatencyHandler
+{
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"UISettingEntryLowLatencyXeSSHandler">();
+	}
+	static class UUISettingEntryLowLatencyXeSSHandler* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UUISettingEntryLowLatencyXeSSHandler>();
 	}
 };
 

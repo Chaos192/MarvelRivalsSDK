@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass SquirrelGirl_103211Ability_Weapon.SquirrelGirl_103211Ability_Weapon_C
-// 0x0000 (0x0C90 - 0x0C90)
+// 0x0000 (0x0C80 - 0x0C80)
 class ASquirrelGirl_103211Ability_Weapon_C final : public AShootingWeapon
 {
 public:

@@ -171,7 +171,7 @@ void UPyUIController_103141::Destruct()
 // Parameters:
 // class UNiagaraComponent*                InFXComponent                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyCue_Scope_HitImpact_10314201::OnNiagaraSpawned(class UNiagaraComponent* InFXComponent, class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
 {

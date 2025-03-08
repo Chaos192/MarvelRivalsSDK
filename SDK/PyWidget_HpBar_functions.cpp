@@ -89,7 +89,7 @@ void UPyWidget_ScreenFXManager::SetTargetTreatPercentageCur(float InPercentage)
 // PythonFunction PyWidget_HpBar.PyWidget_ScreenFXManager.ShouldShowBuff
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 bool UPyWidget_ScreenFXManager::ShouldShowBuff(const class FString& Tag)
@@ -117,7 +117,7 @@ bool UPyWidget_ScreenFXManager::ShouldShowBuff(const class FString& Tag)
 // PythonFunction PyWidget_HpBar.PyWidget_ScreenFXManager.OnTagUpdated
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayTag                     Tag                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              Tag                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
 // bool                                    TagExist                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UPyWidget_ScreenFXManager::OnTagUpdated(const struct FGameplayTag& Tag, bool TagExist)
@@ -209,7 +209,7 @@ void UPyWidget_HpBar_V3::SetTargetActor(class AActor* InActor)
 // Parameters:
 // class AActor*                           Source                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // class AActor*                           Target                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FAttributeModifierHandle         ModifierHandle                                         (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
+// const struct FAttributeModifierHandle&  ModifierHandle                                         (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
 
 void UPyWidget_HpBar_V3::OnTargetTakeTreat(class AActor* Source, class AActor* Target, const struct FAttributeModifierHandle& ModifierHandle)
 {
@@ -261,7 +261,7 @@ void UPyWidget_HpBar_V3::SetIsFullHp(bool bInFullHp)
 // PythonFunction PyWidget_HpBar.PyWidget_HpBar_V3.SetHpColor
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FLinearColor                     Color                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FLinearColor&              Color                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UPyWidget_HpBar_V3::SetHpColor(const struct FLinearColor& Color)
 {
@@ -286,7 +286,7 @@ void UPyWidget_HpBar_V3::SetHpColor(const struct FLinearColor& Color)
 // PythonFunction PyWidget_HpBar.PyWidget_HpBar_V3.SetShieldColor
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FLinearColor                     Color                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FLinearColor&              Color                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UPyWidget_HpBar_V3::SetShieldColor(const struct FLinearColor& Color)
 {
@@ -311,7 +311,7 @@ void UPyWidget_HpBar_V3::SetShieldColor(const struct FLinearColor& Color)
 // PythonFunction PyWidget_HpBar.PyWidget_HpBar_V3.SetHpDeductColor
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FLinearColor                     DeductColor                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FLinearColor&              DeductColor                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UPyWidget_HpBar_V3::SetHpDeductColor(const struct FLinearColor& DeductColor)
 {
@@ -390,7 +390,7 @@ void UPyWidget_HpBar_V3::SetTargetTreatPercentageCur(float InPercentage)
 // PythonFunction PyWidget_HpBar.PyWidget_HpBar_V3.ShouldShowBuff
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 bool UPyWidget_HpBar_V3::ShouldShowBuff(const class FString& Tag)
@@ -418,7 +418,7 @@ bool UPyWidget_HpBar_V3::ShouldShowBuff(const class FString& Tag)
 // PythonFunction PyWidget_HpBar.PyWidget_HpBar_V3.OnTagUpdated
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayTag                     Tag                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              Tag                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
 // bool                                    TagExist                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UPyWidget_HpBar_V3::OnTagUpdated(const struct FGameplayTag& Tag, bool TagExist)
@@ -445,7 +445,7 @@ void UPyWidget_HpBar_V3::OnTagUpdated(const struct FGameplayTag& Tag, bool TagEx
 // PythonFunction PyWidget_HpBar.PyWidget_HpBar_V3.SetAllExistingTags
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TArray<struct FGameplayTag>             InTags                                                 (ConstParm, Parm, OutParm, ReferenceParm)
+// const TArray<struct FGameplayTag>&      InTags                                                 (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyWidget_HpBar_V3::SetAllExistingTags(const TArray<struct FGameplayTag>& InTags)
 {
@@ -470,7 +470,7 @@ void UPyWidget_HpBar_V3::SetAllExistingTags(const TArray<struct FGameplayTag>& I
 // PythonFunction PyWidget_HpBar.PyWidget_HpBar_V3.OnAnimationFinished
 // (BlueprintCosmetic, Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UWidgetAnimation*                 Animation                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// const class UWidgetAnimation*           Animation                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 void UPyWidget_HpBar_V3::OnAnimationFinished(const class UWidgetAnimation* Animation)
 {
@@ -665,7 +665,7 @@ void UPyWidget_HpBarVX_V3::Destruct()
 // PythonFunction PyWidget_HpBar.PyWidget_HpBarVX_V3.OnAnimationFinished
 // (BlueprintCosmetic, Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UWidgetAnimation*                 Animation                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// const class UWidgetAnimation*           Animation                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 void UPyWidget_HpBarVX_V3::OnAnimationFinished(const class UWidgetAnimation* Animation)
 {
@@ -859,7 +859,7 @@ void UPyWidget_BattleHpBar_V3::OnMovementModeChanged(class ACharacter* Char, EMo
 // Parameters:
 // class AActor*                           Source                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // class AActor*                           Dest                                                   (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FAttributeModifierHandle         Parm                                                   (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
+// const struct FAttributeModifierHandle&  Parm                                                   (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
 
 void UPyWidget_BattleHpBar_V3::OnTakeDamage(class AActor* Source, class AActor* Dest, const struct FAttributeModifierHandle& Parm)
 {
@@ -986,7 +986,7 @@ void UPyWidget_BattleHpBar_V3::SetTargetTreatPercentageCur(float InPercentage)
 // PythonFunction PyWidget_HpBar.PyWidget_BattleHpBar_V3.ShouldShowBuff
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 bool UPyWidget_BattleHpBar_V3::ShouldShowBuff(const class FString& Tag)
@@ -1014,7 +1014,7 @@ bool UPyWidget_BattleHpBar_V3::ShouldShowBuff(const class FString& Tag)
 // PythonFunction PyWidget_HpBar.PyWidget_BattleHpBar_V3.OnTagUpdated
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayTag                     Tag                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              Tag                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
 // bool                                    TagExist                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UPyWidget_BattleHpBar_V3::OnTagUpdated(const struct FGameplayTag& Tag, bool TagExist)
@@ -1167,7 +1167,7 @@ void UPyWidget_ScreenFXHealing::SetBuffExistence(bool bInExist)
 // PythonFunction PyWidget_HpBar.PyWidget_ScreenFXHealing.OnTagUpdated
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FGameplayTag                     Tag                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              Tag                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
 // bool                                    TagExist                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UPyWidget_ScreenFXHealing::OnTagUpdated(const struct FGameplayTag& Tag, bool TagExist)

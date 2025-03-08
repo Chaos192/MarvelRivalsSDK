@@ -108,7 +108,7 @@ void UPyAbility_101551::K2_OnEndAbility(bool bWasCancelled)
 // PythonFunction PyAbility_101551.PyAbility_101551.OnTagUpdate
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FGameplayTag                     TagUpdated                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              TagUpdated                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
 // bool                                    TagExists                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UPyAbility_101551::OnTagUpdate(const struct FGameplayTag& TagUpdated, bool TagExists)
@@ -156,7 +156,7 @@ void UPyAbility_101551::MissileEventNotify()
 // Parameters:
 // class AActor*                           InDamageCauser                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // class AActor*                           TargetActor                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FAttributeModifierHandle         ParameterHandle                                        (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
+// const struct FAttributeModifierHandle&  ParameterHandle                                        (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
 
 void UPyAbility_101551::OnPlayerApplyDamage(class AActor* InDamageCauser, class AActor* TargetActor, const struct FAttributeModifierHandle& ParameterHandle)
 {
@@ -248,7 +248,7 @@ void UPyUIController_101551::Destruct()
 // PythonFunction PyAbility_101551.PyUIController_101551.OnOwnedTagUpdate
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FGameplayTag                     InTag                                                  (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              InTag                                                  (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
 // bool                                    bInExist                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UPyUIController_101551::OnOwnedTagUpdate(const struct FGameplayTag& InTag, bool bInExist)
@@ -333,7 +333,7 @@ void UPyUIController_101551::OnDestruct()
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyCue_Ability_Loop_10155102::OnActiveAudio(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
 {
@@ -360,7 +360,7 @@ void APyCue_Ability_Loop_10155102::OnActiveAudio(class AActor* MyTarget, const s
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyCue_Ability_Loop_10155102::OnRemoveAudio(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
 {

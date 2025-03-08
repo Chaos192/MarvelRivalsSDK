@@ -20,7 +20,7 @@ namespace SDK
 // Function MediaIOCore.MediaCapture.CaptureActiveSceneViewport
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// struct FMediaCaptureOptions             CaptureOptions                                         (Parm, NativeAccessSpecifierPublic)
+// const struct FMediaCaptureOptions&      CaptureOptions                                         (Parm, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UMediaCapture::CaptureActiveSceneViewport(const struct FMediaCaptureOptions& CaptureOptions)
@@ -49,7 +49,7 @@ bool UMediaCapture::CaptureActiveSceneViewport(const struct FMediaCaptureOptions
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // class UTextureRenderTarget2D*           RenderTarget                                           (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FMediaCaptureOptions             CaptureOptions                                         (Parm, NativeAccessSpecifierPublic)
+// const struct FMediaCaptureOptions&      CaptureOptions                                         (Parm, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UMediaCapture::CaptureTextureRenderTarget2D(class UTextureRenderTarget2D* RenderTarget, const struct FMediaCaptureOptions& CaptureOptions)
@@ -256,7 +256,7 @@ class UMediaCapture* UMediaOutput::CreateMediaCapture()
 // Function MediaIOCore.MediaOutput.Validate
 // (Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// class FString                           OutFailureReason                                       (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString*                          OutFailureReason                                       (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UMediaOutput::Validate(class FString* OutFailureReason) const

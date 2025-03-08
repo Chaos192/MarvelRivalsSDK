@@ -34,16 +34,6 @@ public:
 	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 
-// PythonFunction BTS_PyStrategyActionSelect.Requirement_Timeout.Requirement
-// 0x0018 (0x0018 - 0x0000)
-struct Requirement_Timeout_Requirement final
-{
-public:
-	class AAIController*                          OwnerController;                                   // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class AActor*                                 ControlledPawn;                                    // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-
 // PythonFunction BTS_PyStrategyActionSelect.Requirement_ControlSide.Requirement
 // 0x0018 (0x0018 - 0x0000)
 struct Requirement_ControlSide_Requirement final
@@ -57,6 +47,16 @@ public:
 // PythonFunction BTS_PyStrategyActionSelect.Requirement_ControlSideProgress.Requirement
 // 0x0018 (0x0018 - 0x0000)
 struct Requirement_ControlSideProgress_Requirement final
+{
+public:
+	class AAIController*                          OwnerController;                                   // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 ControlledPawn;                                    // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+
+// PythonFunction BTS_PyStrategyActionSelect.Requirement_Timeout.Requirement
+// 0x0018 (0x0018 - 0x0000)
+struct Requirement_Timeout_Requirement final
 {
 public:
 	class AAIController*                          OwnerController;                                   // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)

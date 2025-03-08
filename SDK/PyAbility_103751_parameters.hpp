@@ -16,25 +16,6 @@
 namespace SDK::Params
 {
 
-// PythonFunction PyAbility_103751.PyCue_AbilityLoop_103751.WhileActiveFX
-// 0x01C0 (0x01C0 - 0x0000)
-struct PyCue_AbilityLoop_103751_WhileActiveFX final
-{
-public:
-	class AActor*                                 MyTarget;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	struct FGameplayCueParameters                 Parameters;                                        // 0x0008(0x01B8)(ConstParm, Parm, OutParm, ReferenceParm)
-};
-
-// PythonFunction PyAbility_103751.PyCue_AbilityLoop_103751.OnRemove
-// 0x01C8 (0x01C8 - 0x0000)
-struct PyCue_AbilityLoop_103751_OnRemove final
-{
-public:
-	class AActor*                                 MyTarget;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	struct FGameplayCueParameters                 Parameters;                                        // 0x0008(0x01B8)(ConstParm, Parm, OutParm, ReferenceParm)
-	bool                                          ReturnValue;                                       // 0x01C0(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-
 // PythonFunction PyAbility_103751.PyAbility_103751.K2_ActivateAbilityFromEvent
 // 0x0290 (0x0290 - 0x0000)
 struct PyAbility_103751_K2_ActivateAbilityFromEvent final
@@ -107,6 +88,25 @@ struct PyAbility_103751_GetSelectTarget final
 {
 public:
 	class APhysicsSummoner*                       ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash)
+};
+
+// PythonFunction PyAbility_103751.PyCue_AbilityLoop_103751.WhileActiveFX
+// 0x01C0 (0x01C0 - 0x0000)
+struct PyCue_AbilityLoop_103751_WhileActiveFX final
+{
+public:
+	class AActor*                                 MyTarget;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	struct FGameplayCueParameters                 Parameters;                                        // 0x0008(0x01B8)(ConstParm, Parm, OutParm, ReferenceParm)
+};
+
+// PythonFunction PyAbility_103751.PyCue_AbilityLoop_103751.OnRemove
+// 0x01C8 (0x01C8 - 0x0000)
+struct PyCue_AbilityLoop_103751_OnRemove final
+{
+public:
+	class AActor*                                 MyTarget;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	struct FGameplayCueParameters                 Parameters;                                        // 0x0008(0x01B8)(ConstParm, Parm, OutParm, ReferenceParm)
+	bool                                          ReturnValue;                                       // 0x01C0(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 
 // PythonFunction PyAbility_103751.PyUIC_SelectTarget_103751.GetTargets

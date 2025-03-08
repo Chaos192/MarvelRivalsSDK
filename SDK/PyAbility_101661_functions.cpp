@@ -58,7 +58,7 @@ void UPyUIController_101661::OnDestruct()
 // PythonFunction PyAbility_101661.PyUIController_101661.OnOwnerTagUpdate
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FGameplayTag                     InTag                                                  (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              InTag                                                  (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
 // bool                                    InExist                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UPyUIController_101661::OnOwnerTagUpdate(const struct FGameplayTag& InTag, bool InExist)
@@ -85,7 +85,7 @@ void UPyUIController_101661::OnOwnerTagUpdate(const struct FGameplayTag& InTag, 
 // PythonFunction PyAbility_101661.PyAbility_101661.K2_ActivateAbilityFromEvent
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayEventData               EventData                                              (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayEventData&        EventData                                              (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyAbility_101661::K2_ActivateAbilityFromEvent(const struct FGameplayEventData& EventData)
 {

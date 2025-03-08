@@ -10,23 +10,23 @@
 
 #include "Basic.hpp"
 
+#include "Hero_1033_structs.hpp"
 #include "Marvel_structs.hpp"
 #include "Engine_structs.hpp"
-#include "Hero_1033_structs.hpp"
 
 
 namespace SDK::Params
 {
 
 // Function Hero_1033.Ability_103303.OnWeaponSwitchedReplicated
-// 0x02D0 (0x02D0 - 0x0000)
+// 0x02C0 (0x02C0 - 0x0000)
 struct Ability_103303_OnWeaponSwitchedReplicated final
 {
 public:
 	class AShootingWeapon*                        Weapon;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FMarvelEquipmentTable                  WeaponInfo;                                        // 0x0008(0x02C0)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	bool                                          bState;                                            // 0x02C8(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2C9[0x7];                                      // 0x02C9(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FMarvelEquipmentTable                  WeaponInfo;                                        // 0x0008(0x02B0)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	bool                                          bState;                                            // 0x02B8(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2B9[0x7];                                      // 0x02B9(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 
 // Function Hero_1033.Ability_103303.SetNextAbilityID
@@ -107,28 +107,6 @@ struct Ability_103331_HasValidHitActors final
 {
 public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function Hero_1033.EpicMomentAction_1033.OnProjectileBegin
-// 0x0060 (0x0060 - 0x0000)
-struct EpicMomentAction_1033_OnProjectileBegin final
-{
-public:
-	class AActor*                                 SourceActor;                                       // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UMarvelGameplayAbility*                 SourceAbility;                                     // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class AActor*                                 Projectile;                                        // 0x0010(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FMarvelTargetActorGenerateInfo         GenerateInfo;                                      // 0x0018(0x0048)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-};
-
-// Function Hero_1033.EpicMomentAction_1033.OnSummonerBegin
-// 0x0060 (0x0060 - 0x0000)
-struct EpicMomentAction_1033_OnSummonerBegin final
-{
-public:
-	class AActor*                                 SourceActor;                                       // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UMarvelGameplayAbility*                 SourceAbility;                                     // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class AActor*                                 Summoned;                                          // 0x0010(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FMarvelTargetActorGenerateInfo         GenerateInfo;                                      // 0x0018(0x0048)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 };
 
 // Function Hero_1033.Ability_103332.FilterValidHitResult
@@ -227,50 +205,6 @@ struct Ability_103341_OnStopMovingForward final
 {
 public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function Hero_1033.BlackWidowSniperGun.OnOwnerCharacterRespawned
-// 0x0740 (0x0740 - 0x0000)
-struct BlackWidowSniperGun_OnOwnerCharacterRespawned final
-{
-public:
-	class AActor*                                 TargetActor;                                       // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_8[0x8];                                        // 0x0008(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FCharacterRebornParam                  RebornParam;                                       // 0x0010(0x0730)(ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-};
-
-// Function Hero_1033.BlackWidowSniperGun.SetBulletLoaded
-// 0x0001 (0x0001 - 0x0000)
-struct BlackWidowSniperGun_SetBulletLoaded final
-{
-public:
-	bool                                          bLoaded;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function Hero_1033.BlackWidowSniperGun.GetPullBulletDuration
-// 0x0004 (0x0004 - 0x0000)
-struct BlackWidowSniperGun_GetPullBulletDuration final
-{
-public:
-	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function Hero_1033.BlackWidowSniperGun.IsBulletLoaded
-// 0x0001 (0x0001 - 0x0000)
-struct BlackWidowSniperGun_IsBulletLoaded final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function Hero_1033.BlackWidowSniperGun.ShouldPassPullBulletSafeCheck
-// 0x0008 (0x0008 - 0x0000)
-struct BlackWidowSniperGun_ShouldPassPullBulletSafeCheck final
-{
-public:
-	float                                         Tolerance;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0004(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 
 // Function Hero_1033.Ability_103352.GetChargeStrength
@@ -449,12 +383,78 @@ public:
 	class USkeletalMeshComponent*                 ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
+// Function Hero_1033.BlackWidowSniperGun.OnOwnerCharacterRespawned
+// 0x0740 (0x0740 - 0x0000)
+struct BlackWidowSniperGun_OnOwnerCharacterRespawned final
+{
+public:
+	class AActor*                                 TargetActor;                                       // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_8[0x8];                                        // 0x0008(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FCharacterRebornParam                  RebornParam;                                       // 0x0010(0x0730)(ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+};
+
+// Function Hero_1033.BlackWidowSniperGun.SetBulletLoaded
+// 0x0001 (0x0001 - 0x0000)
+struct BlackWidowSniperGun_SetBulletLoaded final
+{
+public:
+	bool                                          bLoaded;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function Hero_1033.BlackWidowSniperGun.GetPullBulletDuration
+// 0x0004 (0x0004 - 0x0000)
+struct BlackWidowSniperGun_GetPullBulletDuration final
+{
+public:
+	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function Hero_1033.BlackWidowSniperGun.IsBulletLoaded
+// 0x0001 (0x0001 - 0x0000)
+struct BlackWidowSniperGun_IsBulletLoaded final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function Hero_1033.BlackWidowSniperGun.ShouldPassPullBulletSafeCheck
+// 0x0008 (0x0008 - 0x0000)
+struct BlackWidowSniperGun_ShouldPassPullBulletSafeCheck final
+{
+public:
+	float                                         Tolerance;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0004(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+
 // Function Hero_1033.BlackWidowStickMeshComponent.SetHiddenWhile_103333
 // 0x0001 (0x0001 - 0x0000)
 struct BlackWidowStickMeshComponent_SetHiddenWhile_103333 final
 {
 public:
 	bool                                          bInHiddenWhile_103333;                             // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function Hero_1033.EpicMomentAction_1033.OnProjectileBegin
+// 0x0060 (0x0060 - 0x0000)
+struct EpicMomentAction_1033_OnProjectileBegin final
+{
+public:
+	class AActor*                                 SourceActor;                                       // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UMarvelGameplayAbility*                 SourceAbility;                                     // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AActor*                                 Projectile;                                        // 0x0010(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FMarvelTargetActorGenerateInfo         GenerateInfo;                                      // 0x0018(0x0048)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+
+// Function Hero_1033.EpicMomentAction_1033.OnSummonerBegin
+// 0x0060 (0x0060 - 0x0000)
+struct EpicMomentAction_1033_OnSummonerBegin final
+{
+public:
+	class AActor*                                 SourceActor;                                       // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UMarvelGameplayAbility*                 SourceAbility;                                     // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AActor*                                 Summoned;                                          // 0x0010(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FMarvelTargetActorGenerateInfo         GenerateInfo;                                      // 0x0018(0x0048)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 };
 
 }

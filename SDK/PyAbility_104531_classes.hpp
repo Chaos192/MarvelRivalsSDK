@@ -17,11 +17,11 @@ namespace SDK
 {
 
 // PythonClass PyAbility_104531.PyAbility_104531
-// 0x0010 (0x25A0 - 0x2590)
+// 0x0010 (0x25A8 - 0x2598)
 class UPyAbility_104531 : public UAbility_104531
 {
 public:
-	TMulticastInlineDelegate<void()>              OnWeaponRecalled;                                  // 0x2590(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void()>              OnWeaponRecalled;                                  // 0x2598(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 
 public:
 	void BeginPlay();

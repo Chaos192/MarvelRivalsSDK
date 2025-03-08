@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Ability_103071_Gravity_BP.Ability_103071_Gravity_BP_C
-// 0x0000 (0x11B0 - 0x11B0)
+// 0x0000 (0x11B8 - 0x11B8)
 class UAbility_103071_Gravity_BP_C final : public UMarvelChangeGravityAbility
 {
 public:

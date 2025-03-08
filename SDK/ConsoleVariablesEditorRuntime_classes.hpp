@@ -25,7 +25,7 @@ class UConsoleVariablesAsset final : public UObject
 public:
 	uint8                                         Pad_30[0x8];                                       // 0x0030(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 VariableCollectionDescription;                     // 0x0038(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, AssetRegistrySearchable, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	TArray<struct FConsoleVariablesEditorAssetSaveData> SavedCommands;                                     // 0x0048(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
+	TArray<struct FConsoleVariablesEditorAssetSaveData> SavedCommands;                               // 0x0048(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
 
 public:
 	void AddOrSetConsoleObjectSavedData(const struct FConsoleVariablesEditorAssetSaveData& InData);

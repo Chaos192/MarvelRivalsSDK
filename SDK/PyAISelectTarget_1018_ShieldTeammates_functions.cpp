@@ -21,8 +21,8 @@ namespace SDK
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AMarvelAIController*              AIController                                           (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FMarvelAITarget                  OutAITarget                                            (Parm, OutParm, ReferenceParm, NoDestructor)
-// struct FAIAbilityUsage                  AbilityUsage                                           (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
+// struct FMarvelAITarget&                 OutAITarget                                            (Parm, OutParm, ReferenceParm, NoDestructor)
+// const struct FAIAbilityUsage&           AbilityUsage                                           (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 bool UPyAISelectTarget_1018_ShieldTeammates::SelectTargetOrLocation(class AMarvelAIController* AIController, struct FMarvelAITarget& OutAITarget, const struct FAIAbilityUsage& AbilityUsage)

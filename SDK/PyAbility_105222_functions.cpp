@@ -64,7 +64,7 @@ bool UPyAbility_105222::CanActivate()
 // PythonFunction PyAbility_105222.PyAbility_105222.NativeOnMontageEvent
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_105222::NativeOnMontageEvent(const class FString& Tag)
 {

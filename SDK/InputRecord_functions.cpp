@@ -20,7 +20,7 @@ namespace SDK
 // Function InputRecord.InputRecordComponent.Client_LoadRecord
 // (Net, NetReliable, Native, Event, Public, NetClient)
 // Parameters:
-// class FString                           RecordName                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    RecordName                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // EInputRecordPath                        RecordPath                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UInputRecordComponent::Client_LoadRecord(const class FString& RecordName, EInputRecordPath RecordPath)
@@ -47,7 +47,7 @@ void UInputRecordComponent::Client_LoadRecord(const class FString& RecordName, E
 // Function InputRecord.InputRecordComponent.Client_LockDeltaTime
 // (Net, NetReliable, Native, Event, Public, NetClient)
 // Parameters:
-// class FString                           InDeltaTime                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    InDeltaTime                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UInputRecordComponent::Client_LockDeltaTime(const class FString& InDeltaTime)
 {
@@ -72,7 +72,7 @@ void UInputRecordComponent::Client_LockDeltaTime(const class FString& InDeltaTim
 // Function InputRecord.InputRecordComponent.Client_LockFPS
 // (Net, NetReliable, Native, Event, Public, NetClient)
 // Parameters:
-// class FString                           InFPS                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    InFPS                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UInputRecordComponent::Client_LockFPS(const class FString& InFPS)
 {
@@ -141,7 +141,7 @@ void UInputRecordComponent::Client_PlayRecord()
 // Function InputRecord.InputRecordComponent.Client_SaveRecord
 // (Net, NetReliable, Native, Event, Public, NetClient)
 // Parameters:
-// class FString                           RecordName                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    RecordName                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // EInputRecordPath                        RecordPath                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UInputRecordComponent::Client_SaveRecord(const class FString& RecordName, EInputRecordPath RecordPath)
@@ -168,7 +168,7 @@ void UInputRecordComponent::Client_SaveRecord(const class FString& RecordName, E
 // Function InputRecord.InputRecordComponent.Client_Setting
 // (Net, NetReliable, Native, Event, Public, NetClient)
 // Parameters:
-// struct FInputRecordSetting              Setting                                                (ConstParm, Parm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FInputRecordSetting&       Setting                                                (ConstParm, Parm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
 void UInputRecordComponent::Client_Setting(const struct FInputRecordSetting& Setting)
 {
@@ -375,7 +375,7 @@ bool UInputRecordComponent::IsUseFrameCounter()
 // Function InputRecord.InputRecordComponent.LoadRecord
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FString                           RecordName                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    RecordName                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // EInputRecordPath                        RecordPath                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UInputRecordComponent::LoadRecord(const class FString& RecordName, EInputRecordPath RecordPath)
@@ -402,7 +402,7 @@ void UInputRecordComponent::LoadRecord(const class FString& RecordName, EInputRe
 // Function InputRecord.InputRecordComponent.LockDeltaTime
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// float                                   InDeltaTime                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             InDeltaTime                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UInputRecordComponent::LockDeltaTime(const float InDeltaTime)
 {
@@ -492,7 +492,7 @@ void UInputRecordComponent::PlayRecord()
 // Function InputRecord.InputRecordComponent.SaveRecord
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FString                           RecordName                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    RecordName                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // EInputRecordPath                        RecordPath                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UInputRecordComponent::SaveRecord(const class FString& RecordName, EInputRecordPath RecordPath)
@@ -519,7 +519,7 @@ void UInputRecordComponent::SaveRecord(const class FString& RecordName, EInputRe
 // Function InputRecord.InputRecordComponent.ServerSetActorTransform
 // (Net, NetReliable, Native, Event, Public, NetServer, HasDefaults)
 // Parameters:
-// struct FTransform                       NewTransform                                           (ConstParm, Parm, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FTransform&                NewTransform                                           (ConstParm, Parm, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UInputRecordComponent::ServerSetActorTransform(const struct FTransform& NewTransform)
 {
@@ -719,8 +719,8 @@ void UInputRecordComponent::SetLockInputDeltaTimeEnabled(bool bLock)
 // Function InputRecord.InputRecordComponent.SetRecordPath
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// EInputRecordPath                        InPathType                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           InNewPath                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const EInputRecordPath                  InPathType                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    InNewPath                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UInputRecordComponent::SetRecordPath(const EInputRecordPath InPathType, const class FString& InNewPath)
 {
@@ -746,7 +746,7 @@ void UInputRecordComponent::SetRecordPath(const EInputRecordPath InPathType, con
 // Function InputRecord.InputRecordComponent.SetRecordSetting
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FInputRecordSetting              InRecordSetting                                        (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FInputRecordSetting&       InRecordSetting                                        (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
 void UInputRecordComponent::SetRecordSetting(const struct FInputRecordSetting& InRecordSetting)
 {
@@ -1384,7 +1384,7 @@ class FString UInputRecordSubsystem::GetCurRecordPath()
 // Function InputRecord.InputRecordSubsystem.LoadRecord
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FString                           RecordName                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    RecordName                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UInputRecordSubsystem::LoadRecord(const class FString& RecordName)
 {
@@ -1409,7 +1409,7 @@ void UInputRecordSubsystem::LoadRecord(const class FString& RecordName)
 // Function InputRecord.InputRecordSubsystem.LoadRecordSync
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FString                           RecordName                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    RecordName                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UInputRecordSubsystem::LoadRecordSync(const class FString& RecordName)
 {
@@ -1453,7 +1453,7 @@ void UInputRecordSubsystem::PlayRecord()
 // Function InputRecord.InputRecordSubsystem.SaveRecord
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FString                           RecordName                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    RecordName                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UInputRecordSubsystem::SaveRecord(const class FString& RecordName)
 {
@@ -1478,7 +1478,7 @@ void UInputRecordSubsystem::SaveRecord(const class FString& RecordName)
 // Function InputRecord.InputRecordSubsystem.SaveRecordSync
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FString                           RecordName                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    RecordName                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UInputRecordSubsystem::SaveRecordSync(const class FString& RecordName)
 {
@@ -1503,8 +1503,8 @@ void UInputRecordSubsystem::SaveRecordSync(const class FString& RecordName)
 // Function InputRecord.InputRecordSubsystem.SetRecordPath
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// EInputRecordPath                        InPathType                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           InNewPath                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const EInputRecordPath                  InPathType                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    InNewPath                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UInputRecordSubsystem::SetRecordPath(const EInputRecordPath InPathType, const class FString& InNewPath)
 {

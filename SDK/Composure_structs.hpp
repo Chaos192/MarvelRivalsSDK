@@ -107,7 +107,7 @@ struct FCompositingMaterial final : public FCompositingParamPayload
 public:
 	class UMaterialInterface*                     Material;                                          // 0x00F0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TMap<class FName, class FName>                ParamPassMappings;                                 // 0x00F8(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	TMap<class FName, struct FNamedCompMaterialParam> RequiredMaterialParams;                            // 0x0148(0x0050)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	TMap<class FName, struct FNamedCompMaterialParam> RequiredMaterialParams;                        // 0x0148(0x0050)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
 	uint8                                         Pad_198[0x8];                                      // 0x0198(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	class UMaterialInstanceDynamic*               CachedMID;                                         // 0x01A0(0x0008)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 };

@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Weapon_PunisherShotgun.Weapon_PunisherShotgun_C
-// 0x0000 (0x0C90 - 0x0C90)
+// 0x0000 (0x0C80 - 0x0C80)
 class AWeapon_PunisherShotgun_C final : public AShootingWeapon
 {
 public:

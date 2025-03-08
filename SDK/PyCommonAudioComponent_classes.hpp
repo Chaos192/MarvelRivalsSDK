@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
+#include "Marvel_structs.hpp"
 #include "MarvelLevel_structs.hpp"
 #include "MarvelLevel_classes.hpp"
 #include "PyBaseAudioComponent_classes.hpp"
-#include "Marvel_structs.hpp"
 
 
 namespace SDK

@@ -17,12 +17,12 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Summoned_10234103_BP.Summoned_10234103_BP_C
-// 0x0000 (0x0900 - 0x0900)
+// 0x0000 (0x0930 - 0x0930)
 class ASummoned_10234103_BP_C final : public APySummoned_102341_Item
 {
 public:
-	uint8                                         Pad_8F1[0x7];                                      // 0x08F1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class USummonedMovementComponent*             SummonedMovement;                                  // 0x08F8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_921[0x7];                                      // 0x0921(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class USummonedMovementComponent*             SummonedMovement;                                  // 0x0928(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

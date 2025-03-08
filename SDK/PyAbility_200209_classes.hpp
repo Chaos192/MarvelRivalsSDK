@@ -11,19 +11,19 @@
 #include "Basic.hpp"
 
 #include "Marvel_classes.hpp"
-#include "DeclarativeUnreal_structs.hpp"
 #include "Engine_structs.hpp"
+#include "DeclarativeUnreal_structs.hpp"
 
 
 namespace SDK
 {
 
 // PythonClass PyAbility_200209.PyAbility_200209
-// 0x0008 (0x1188 - 0x1180)
+// 0x0008 (0x1190 - 0x1188)
 class UPyAbility_200209 : public UMarvelBlindAbility
 {
 public:
-	int32                                         Scope;                                             // 0x1180(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Scope;                                             // 0x1188(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void K2_ActivateAbility();

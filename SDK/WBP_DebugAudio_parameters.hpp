@@ -273,7 +273,7 @@ public:
 };
 
 // Function WBP_DebugAudio.WBP_DebugAudio_C.GetHeroName
-// 0x01A0 (0x01A0 - 0x0000)
+// 0x0190 (0x0190 - 0x0000)
 struct WBP_DebugAudio_C_GetHeroName final
 {
 public:
@@ -281,11 +281,11 @@ public:
 	class FString                                 TName;                                             // 0x0008(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
 	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0018(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FMarvelHeroTable                       CallFunc_GetHeroTable_ReturnValue;                 // 0x0020(0x0150)(ConstParm)
-	bool                                          CallFunc_Greater_IntInt_ReturnValue;               // 0x0170(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_171[0x7];                                      // 0x0171(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FText                                   CallFunc_Conv_StringToText_ReturnValue;            // 0x0178(0x0018)()
-	class FString                                 CallFunc_Conv_TextToString_ReturnValue;            // 0x0190(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	struct FMarvelHeroTable                       CallFunc_GetHeroTable_ReturnValue;                 // 0x0020(0x0140)(ConstParm)
+	bool                                          CallFunc_Greater_IntInt_ReturnValue;               // 0x0160(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_161[0x7];                                      // 0x0161(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FText                                   CallFunc_Conv_StringToText_ReturnValue;            // 0x0168(0x0018)()
+	class FString                                 CallFunc_Conv_TextToString_ReturnValue;            // 0x0180(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 };
 
 // Function WBP_DebugAudio.WBP_DebugAudio_C.GetStateStrings

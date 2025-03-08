@@ -330,7 +330,7 @@ public:
 struct FDatasmithMeshSectionInfoMapTemplate final
 {
 public:
-	TMap<uint32, struct FDatasmithMeshSectionInfoTemplate> Map;                                               // 0x0000(0x0050)(NativeAccessSpecifierPublic)
+	TMap<uint32, struct FDatasmithMeshSectionInfoTemplate> Map;                                      // 0x0000(0x0050)(NativeAccessSpecifierPublic)
 };
 
 }

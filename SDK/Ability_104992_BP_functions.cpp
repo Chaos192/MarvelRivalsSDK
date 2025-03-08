@@ -206,7 +206,7 @@ void UAbility_104992_BP_C::OnRep_AttachToChar()
 // Function Ability_104992_BP.Ability_104992_BP_C.OnTriggerEvent_6652776B49CB6AD6273A8582D31B00B8
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayTag                     TriggerNotifyTagEventDelegate__DelegateSignature_EventTag(BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              TriggerNotifyTagEventDelegate__DelegateSignature_EventTag(BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
 
 void UAbility_104992_BP_C::OnTriggerEvent_6652776B49CB6AD6273A8582D31B00B8(const struct FGameplayTag& TriggerNotifyTagEventDelegate__DelegateSignature_EventTag)
 {

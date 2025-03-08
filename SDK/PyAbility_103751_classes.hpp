@@ -20,25 +20,6 @@
 namespace SDK
 {
 
-// PythonClass PyAbility_103751.PyCue_AbilityLoop_103751
-// 0x0000 (0x0E50 - 0x0E50)
-class APyCue_AbilityLoop_103751 final : public AMarvelCueNotify_Ability
-{
-public:
-	void WhileActiveFX(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters);
-	bool OnRemove(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters);
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"PyCue_AbilityLoop_103751">();
-	}
-	static class APyCue_AbilityLoop_103751* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<APyCue_AbilityLoop_103751>();
-	}
-};
-
 // PythonClass PyAbility_103751.PyConfig_103751
 // 0x00D0 (0x1300 - 0x1230)
 class UPyConfig_103751 final : public UConfig_103751
@@ -64,11 +45,11 @@ public:
 };
 
 // PythonClass PyAbility_103751.PyAbility_103751
-// 0x0008 (0x2760 - 0x2758)
+// 0x0008 (0x2768 - 0x2760)
 class UPyAbility_103751 : public UAbility_103751
 {
 public:
-	class APhysicsSummoner*                       SelectTarget;                                      // 0x2758(0x0008)(Edit, BlueprintVisible, ZeroConstructor, EditConst, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class APhysicsSummoner*                       SelectTarget;                                      // 0x2760(0x0008)(Edit, BlueprintVisible, ZeroConstructor, EditConst, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void BeginPlay();
@@ -92,6 +73,25 @@ public:
 	static class UPyAbility_103751* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UPyAbility_103751>();
+	}
+};
+
+// PythonClass PyAbility_103751.PyCue_AbilityLoop_103751
+// 0x0000 (0x0E50 - 0x0E50)
+class APyCue_AbilityLoop_103751 final : public AMarvelCueNotify_Ability
+{
+public:
+	void WhileActiveFX(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters);
+	bool OnRemove(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PyCue_AbilityLoop_103751">();
+	}
+	static class APyCue_AbilityLoop_103751* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<APyCue_AbilityLoop_103751>();
 	}
 };
 

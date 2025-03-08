@@ -10,21 +10,21 @@
 
 #include "Basic.hpp"
 
+#include "Engine_structs.hpp"
 #include "Marvel_classes.hpp"
 #include "CoreUObject_structs.hpp"
-#include "Engine_structs.hpp"
 
 
 namespace SDK
 {
 
 // BlueprintGeneratedClass Ability_103342_BP.Ability_103342_BP_C
-// 0x0020 (0x25A0 - 0x2580)
+// 0x0020 (0x25A8 - 0x2588)
 class UAbility_103342_BP_C final : public UMarvelGameplayAbility
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x2580(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	struct FVector                                跳跃速度;                                          // 0x2588(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x2588(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FVector                                跳跃速度;                                          // 0x2590(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	bool CanActivate();

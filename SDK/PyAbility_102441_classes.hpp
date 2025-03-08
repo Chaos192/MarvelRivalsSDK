@@ -79,7 +79,7 @@ public:
 };
 
 // PythonClass PyAbility_102441.PyAbility_102441
-// 0x0000 (0x2588 - 0x2588)
+// 0x0000 (0x2590 - 0x2590)
 class UPyAbility_102441 : public UAbility_108
 {
 public:
@@ -94,7 +94,7 @@ public:
 };
 
 // PythonClass PyAbility_102441.PyProjectile_10244101
-// 0x0000 (0x3050 - 0x3050)
+// 0x0000 (0x3110 - 0x3110)
 class APyProjectile_10244101 final : public AProjectile_10244101
 {
 public:

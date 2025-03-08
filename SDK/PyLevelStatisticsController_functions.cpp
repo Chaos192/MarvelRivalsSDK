@@ -254,7 +254,7 @@ void UPyLevelStatisticsController::OnCampPlayerChanged(class AActor* Camp)
 // PythonFunction PyLevelStatisticsController.PyLevelStatisticsController.K2_OnPresetDestructionLevel
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FPresetDestructionStatistics     Statistics                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FPresetDestructionStatistics&Statistics                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyLevelStatisticsController::K2_OnPresetDestructionLevel(const struct FPresetDestructionStatistics& Statistics)
 {

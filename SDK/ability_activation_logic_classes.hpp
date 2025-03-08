@@ -58,6 +58,26 @@ public:
 	}
 };
 
+// PythonClass ability_activation_logic.PyAIAbilityActivation_TryActiveAbility
+// 0x0008 (0x0040 - 0x0038)
+class UPyAIAbilityActivation_TryActiveAbility : public UPyAIAbilityActivationLogicBase
+{
+public:
+	int32                                         AbilityID;                                         // 0x0038(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          TryActiveAtBegin;                                  // 0x003C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          TryActiveAtEnd;                                    // 0x003D(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PyAIAbilityActivation_TryActiveAbility">();
+	}
+	static class UPyAIAbilityActivation_TryActiveAbility* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPyAIAbilityActivation_TryActiveAbility>();
+	}
+};
+
 // PythonClass ability_activation_logic.PyAIAbilityActivation_DebugLog
 // 0x0000 (0x0038 - 0x0038)
 class UPyAIAbilityActivation_DebugLog final : public UPyAIAbilityActivationLogicBase
@@ -583,26 +603,6 @@ public:
 	static class UPyAIAbilityActivation_DetachAIInfoTag* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UPyAIAbilityActivation_DetachAIInfoTag>();
-	}
-};
-
-// PythonClass ability_activation_logic.PyAIAbilityActivation_TryActiveAbility
-// 0x0008 (0x0040 - 0x0038)
-class UPyAIAbilityActivation_TryActiveAbility : public UPyAIAbilityActivationLogicBase
-{
-public:
-	int32                                         AbilityID;                                         // 0x0038(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          TryActiveAtBegin;                                  // 0x003C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          TryActiveAtEnd;                                    // 0x003D(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"PyAIAbilityActivation_TryActiveAbility">();
-	}
-	static class UPyAIAbilityActivation_TryActiveAbility* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UPyAIAbilityActivation_TryActiveAbility>();
 	}
 };
 

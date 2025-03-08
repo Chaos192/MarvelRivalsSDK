@@ -40,7 +40,7 @@ void UAbility_104821_BP_C::ExecuteUbergraph_Ability_104821_BP(int32 EntryPoint)
 // Function Ability_104821_BP.Ability_104821_BP_C.OnGameplayAbilityHit
 // (Event, Public, HasOutParams, BlueprintEvent)
 // Parameters:
-// TArray<struct FHitResult>               HitResults                                             (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, ContainsInstancedReference)
+// const TArray<struct FHitResult>&        HitResults                                             (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, ContainsInstancedReference)
 
 void UAbility_104821_BP_C::OnGameplayAbilityHit(const TArray<struct FHitResult>& HitResults)
 {

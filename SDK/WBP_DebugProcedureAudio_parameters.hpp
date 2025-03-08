@@ -74,7 +74,7 @@ public:
 };
 
 // Function WBP_DebugProcedureAudio.WBP_DebugProcedureAudio_C.AddVoiceLine
-// 0x00D8 (0x00D8 - 0x0000)
+// 0x00C8 (0x00C8 - 0x0000)
 struct WBP_DebugProcedureAudio_C_AddVoiceLine final
 {
 public:
@@ -85,7 +85,7 @@ public:
 	int32                                         CallFunc_Array_Get_Item;                           // 0x0064(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_Greater_IntInt_ReturnValue;               // 0x0068(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_69[0x7];                                       // 0x0069(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FMarvelVoiceRow                        CallFunc_GetMarvelVoiceRow_ReturnValue;            // 0x0070(0x0068)()
+	struct FMarvelVoiceRow                        CallFunc_GetMarvelVoiceRow_ReturnValue;            // 0x0070(0x0058)()
 };
 
 // Function WBP_DebugProcedureAudio.WBP_DebugProcedureAudio_C.ExecuteUbergraph_WBP_DebugProcedureAudio
@@ -175,7 +175,7 @@ public:
 	int32                                         CallFunc_Add_IntInt_ReturnValue_25;                // 0x013C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UAudioGlobalSubSystem*                  CallFunc_GetGameInstanceSubsystem_ReturnValue;     // 0x0140(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	int32                                         Temp_int_Array_Index_Variable_27;                  // 0x0148(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TDelegate<void(class UAkComponent* AkComponent, class UAkAudioEvent* Event, const class FString& EventName)> K2Node_CreateDelegate_OutputDelegate;              // 0x014C(0x0014)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	TDelegate<void(class UAkComponent* AkComponent, class UAkAudioEvent* Event, const class FString& EventName)> K2Node_CreateDelegate_OutputDelegate; // 0x014C(0x0014)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	int32                                         Temp_int_Array_Index_Variable_28;                  // 0x0160(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0164(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_165[0x3];                                      // 0x0165(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
@@ -386,7 +386,7 @@ public:
 };
 
 // Function WBP_DebugProcedureAudio.WBP_DebugProcedureAudio_C.GetMode
-// 0x0208 (0x0208 - 0x0000)
+// 0x01F8 (0x01F8 - 0x0000)
 struct WBP_DebugProcedureAudio_C_GetMode final
 {
 public:
@@ -395,11 +395,11 @@ public:
 	class FString                                 CallFunc_GetCurrentLevelName_ReturnValue;          // 0x0010(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 	int32                                         Temp_int_Variable;                                 // 0x0020(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0024(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FMarvelModeConfigTable                 CallFunc_GetModeConfigTable_ReturnValue;           // 0x0028(0x01C8)(ConstParm)
-	class FString                                 CallFunc_Conv_NameToString_ReturnValue;            // 0x01F0(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	bool                                          CallFunc_EqualEqual_IntInt_ReturnValue;            // 0x0200(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_EqualEqual_StrStr_ReturnValue;            // 0x0201(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_LessEqual_IntInt_ReturnValue;             // 0x0202(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FMarvelModeConfigTable                 CallFunc_GetModeConfigTable_ReturnValue;           // 0x0028(0x01B8)(ConstParm)
+	class FString                                 CallFunc_Conv_NameToString_ReturnValue;            // 0x01E0(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	bool                                          CallFunc_EqualEqual_IntInt_ReturnValue;            // 0x01F0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_EqualEqual_StrStr_ReturnValue;            // 0x01F1(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_LessEqual_IntInt_ReturnValue;             // 0x01F2(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 
 // Function WBP_DebugProcedureAudio.WBP_DebugProcedureAudio_C.GetProcedureData

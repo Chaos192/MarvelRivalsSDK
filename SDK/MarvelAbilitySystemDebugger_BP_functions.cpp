@@ -40,11 +40,11 @@ void AMarvelAbilitySystemDebugger_BP_C::AddDebugWidget(class UWidgetComponent* I
 // Function MarvelAbilitySystemDebugger_BP.MarvelAbilitySystemDebugger_BP_C.ClientDrawArrawAt
 // (Net, NetClient, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FVector                          Start                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FVector                          End                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVector&                   Start                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVector&                   End                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // double                                  Size                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // double                                  Thickness                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FLinearColor                     Color                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FLinearColor&              Color                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // double                                  Duration                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void AMarvelAbilitySystemDebugger_BP_C::ClientDrawArrawAt(const struct FVector& Start, const struct FVector& End, double Size, double Thickness, const struct FLinearColor& Color, double Duration)
@@ -70,9 +70,9 @@ void AMarvelAbilitySystemDebugger_BP_C::ClientDrawArrawAt(const struct FVector& 
 // Function MarvelAbilitySystemDebugger_BP.MarvelAbilitySystemDebugger_BP_C.ClientDrawPointAt
 // (Net, NetClient, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FVector                          Location                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVector&                   Location                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // double                                  Size                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FLinearColor                     Color                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FLinearColor&              Color                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // double                                  Duration                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void AMarvelAbilitySystemDebugger_BP_C::ClientDrawPointAt(const struct FVector& Location, double Size, const struct FLinearColor& Color, double Duration)
@@ -96,10 +96,10 @@ void AMarvelAbilitySystemDebugger_BP_C::ClientDrawPointAt(const struct FVector& 
 // Function MarvelAbilitySystemDebugger_BP.MarvelAbilitySystemDebugger_BP_C.ClientDrawSphereAt
 // (Net, NetClient, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FVector                          Location                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVector&                   Location                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // double                                  Radius                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // double                                  Tickness                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FLinearColor                     Color                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FLinearColor&              Color                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // double                                  Duration                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void AMarvelAbilitySystemDebugger_BP_C::ClientDrawSphereAt(const struct FVector& Location, double Radius, double Tickness, const struct FLinearColor& Color, double Duration)
@@ -124,9 +124,9 @@ void AMarvelAbilitySystemDebugger_BP_C::ClientDrawSphereAt(const struct FVector&
 // Function MarvelAbilitySystemDebugger_BP.MarvelAbilitySystemDebugger_BP_C.ClientDrawStringAt
 // (Net, NetClient, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FVector                          Location                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           Text                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-// struct FLinearColor                     Color                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVector&                   Location                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const class FString&                    Text                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const struct FLinearColor&              Color                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // double                                  Duration                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void AMarvelAbilitySystemDebugger_BP_C::ClientDrawStringAt(const struct FVector& Location, const class FString& Text, const struct FLinearColor& Color, double Duration)
@@ -150,9 +150,9 @@ void AMarvelAbilitySystemDebugger_BP_C::ClientDrawStringAt(const struct FVector&
 // Function MarvelAbilitySystemDebugger_BP.MarvelAbilitySystemDebugger_BP_C.ClientDrawStringWidgetAt
 // (Net, NetClient, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FVector                          Location                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           Text                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-// struct FLinearColor                     Color                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVector&                   Location                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const class FString&                    Text                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const struct FLinearColor&              Color                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // double                                  Duration                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    IsServer                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
@@ -180,7 +180,7 @@ void AMarvelAbilitySystemDebugger_BP_C::ClientDrawStringWidgetAt(const struct FV
 // Parameters:
 // class AMarvelAbilityTargetActor_Projectile*InProjectile                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // int32                                   ProjectileID                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FHitResult                       InHit                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ContainsInstancedReference)
+// const struct FHitResult&                InHit                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ContainsInstancedReference)
 
 void AMarvelAbilitySystemDebugger_BP_C::DebugProjectileHit(class AMarvelAbilityTargetActor_Projectile* InProjectile, int32 ProjectileID, const struct FHitResult& InHit)
 {
@@ -283,8 +283,8 @@ void AMarvelAbilitySystemDebugger_BP_C::OnAbilityActorAdded(class AActor* Gamepl
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UGameplayAbility*                 InAbility                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FMarvelAbilityHitParams          HitParams                                              (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, ContainsInstancedReference)
-// TArray<struct FHitResult>               HitResults                                             (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, ContainsInstancedReference)
+// const struct FMarvelAbilityHitParams&   HitParams                                              (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, ContainsInstancedReference)
+// const TArray<struct FHitResult>&        HitResults                                             (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, ContainsInstancedReference)
 
 void AMarvelAbilitySystemDebugger_BP_C::OnAbilityHit(class UGameplayAbility* InAbility, const struct FMarvelAbilityHitParams& HitParams, const TArray<struct FHitResult>& HitResults)
 {

@@ -39,7 +39,7 @@ void UPyAbility_104231::OnRep_CurrentWebNum()
 // PythonFunction PyAbility_104231.PyProjectile_10423101.K2_OnProcessHit
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FHitResult                       ImpactResult                                           (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FHitResult&                ImpactResult                                           (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyProjectile_10423101::K2_OnProcessHit(const struct FHitResult& ImpactResult)
 {
@@ -186,7 +186,7 @@ void UPySummonedComp_10423101::QuoteSourceEnd(class AActor* QuoteSource)
 // Parameters:
 // class AActor*                           InSourceAvatar                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // class AActor*                           InTargetAvatar                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FAttributeModifierHandle         ModifierParameter                                      (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
+// const struct FAttributeModifierHandle&  ModifierParameter                                      (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
 
 void UPySummonedComp_10423101::K2_OnSummonedDeath(class AActor* InSourceAvatar, class AActor* InTargetAvatar, const struct FAttributeModifierHandle& ModifierParameter)
 {

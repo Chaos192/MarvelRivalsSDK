@@ -17,12 +17,12 @@ namespace SDK
 {
 
 // PythonClass PyAbility_103361.PyAbility_103361
-// 0x0008 (0x2588 - 0x2580)
+// 0x0008 (0x2590 - 0x2588)
 class UPyAbility_103361 : public UMarvelGameplayAbility
 {
 public:
-	bool                                          IsAmmoReady;                                       // 0x2580(0x0001)(BlueprintVisible, Net, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          OpenDetectionState;                                // 0x2581(0x0001)(BlueprintVisible, Net, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsAmmoReady;                                       // 0x2588(0x0001)(BlueprintVisible, Net, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          OpenDetectionState;                                // 0x2589(0x0001)(BlueprintVisible, Net, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	bool CanActivate();

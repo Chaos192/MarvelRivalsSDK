@@ -22,7 +22,7 @@ public:
 	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UAkComponent*                           CallFunc_GetWorldPlayerListener_ReturnValue;       // 0x0008(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	TDelegate<void(class UAkComponent* AkComponent, class UAkAudioEvent* Event, const class FString& EventName)> K2Node_CreateDelegate_OutputDelegate;              // 0x0010(0x0014)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	TDelegate<void(class UAkComponent* AkComponent, class UAkAudioEvent* Event, const class FString& EventName)> K2Node_CreateDelegate_OutputDelegate; // 0x0010(0x0014)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UAkComponent*                           K2Node_CustomEvent_AkComponent;                    // 0x0028(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 	class UAkAudioEvent*                          K2Node_CustomEvent_Event;                          // 0x0030(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)

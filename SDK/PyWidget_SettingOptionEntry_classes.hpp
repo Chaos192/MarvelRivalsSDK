@@ -23,7 +23,7 @@ class UPyWidget_SettingOptionEntryBase : public UPyMarvelUserWidget
 {
 public:
 	uint8                                         Pad_5E9[0x7];                                      // 0x05E9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TMulticastInlineDelegate<void(class UWidget* HoveredWidget)> OnHovered;                                         // 0x05F0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class UWidget* HoveredWidget)> OnHovered;                          // 0x05F0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 	TMulticastInlineDelegate<void()>              OnUnhovered;                                       // 0x0600(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 
 public:
@@ -89,6 +89,7 @@ public:
 	void OnMouseLeave(const struct FPointerEvent& MouseEvent);
 	void Construct();
 	void OnCascadingVisibleChanged(bool Visible);
+	void Destruct();
 
 public:
 	static class UClass* StaticClass()

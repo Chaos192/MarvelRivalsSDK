@@ -96,8 +96,8 @@ void UPyWidget_SettingOptionEntry::OnInitialized()
 // PythonFunction PyWidget_SettingOptionEntry.PyWidget_SettingOptionEntry.OnMouseEnter
 // (BlueprintCosmetic, Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGeometry                        MyGeometry                                             (Parm, IsPlainOldData, NoDestructor)
-// struct FPointerEvent                    MouseEvent                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGeometry&                 MyGeometry                                             (Parm, IsPlainOldData, NoDestructor)
+// const struct FPointerEvent&             MouseEvent                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyWidget_SettingOptionEntry::OnMouseEnter(const struct FGeometry& MyGeometry, const struct FPointerEvent& MouseEvent)
 {
@@ -123,7 +123,7 @@ void UPyWidget_SettingOptionEntry::OnMouseEnter(const struct FGeometry& MyGeomet
 // PythonFunction PyWidget_SettingOptionEntry.PyWidget_SettingOptionEntry.OnMouseLeave
 // (BlueprintCosmetic, Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FPointerEvent                    MouseEvent                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FPointerEvent&             MouseEvent                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyWidget_SettingOptionEntry::OnMouseLeave(const struct FPointerEvent& MouseEvent)
 {
@@ -184,6 +184,25 @@ void UPyWidget_SettingOptionEntry::OnCascadingVisibleChanged(bool Visible)
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// PythonFunction PyWidget_SettingOptionEntry.PyWidget_SettingOptionEntry.Destruct
+// (BlueprintCosmetic, Native, Event, Protected, BlueprintCallable, BlueprintEvent)
+
+void UPyWidget_SettingOptionEntry::Destruct()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyWidget_SettingOptionEntry", "Destruct");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
 }

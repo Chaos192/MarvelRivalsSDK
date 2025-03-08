@@ -22,8 +22,8 @@ namespace SDK
 // Parameters:
 // class AActor*                           Instance                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // class UNiagaraSystem*                   Niagara                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FVector                          Location                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FRotator                         Rotation                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor)
+// const struct FVector&                   Location                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FRotator&                  Rotation                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor)
 
 void UPyLevelVoiceNodes::PlayNiagaraEffect(class AActor* Instance, class UNiagaraSystem* Niagara, const struct FVector& Location, const struct FRotator& Rotation)
 {

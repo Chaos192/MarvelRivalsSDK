@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass 1042_CharacterBP.1042_CharacterBP_C
-// 0x0000 (0x1860 - 0x1860)
+// 0x0000 (0x18B0 - 0x18B0)
 class AOne042_CharacterBP_C final : public APyPeniParkerCharacter
 {
 public:

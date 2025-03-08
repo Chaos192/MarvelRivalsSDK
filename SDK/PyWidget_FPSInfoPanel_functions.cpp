@@ -58,7 +58,7 @@ void UPyWidget_FPSInfoPanel::Construct()
 // PythonFunction PyWidget_FPSInfoPanel.PyWidget_FPSInfoPanel.Tick
 // (BlueprintCosmetic, Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGeometry                        MyGeometry                                             (Parm, IsPlainOldData, NoDestructor)
+// const struct FGeometry&                 MyGeometry                                             (Parm, IsPlainOldData, NoDestructor)
 // float                                   InDeltaTime                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UPyWidget_FPSInfoPanel::Tick(const struct FGeometry& MyGeometry, float InDeltaTime)

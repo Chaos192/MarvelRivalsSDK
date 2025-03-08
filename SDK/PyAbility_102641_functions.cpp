@@ -40,7 +40,7 @@ void UPyTraceComponent_10264101::ReceiveBeginPlay()
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // class UObject*                          TraceSource                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// TArray<struct FHitResult>               HitResults                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const TArray<struct FHitResult>&        HitResults                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyTraceComponent_10264101::TracedHitResults(class UObject* TraceSource, const TArray<struct FHitResult>& HitResults)
 {
@@ -110,7 +110,7 @@ void APyScope_10264101::ReceiveBeginPlay()
 // PythonFunction PyAbility_102641.PyScope_10264101.TracedHitResults
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<struct FHitResult>               HitResults                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const TArray<struct FHitResult>&        HitResults                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyScope_10264101::TracedHitResults(const TArray<struct FHitResult>& HitResults)
 {
@@ -223,7 +223,7 @@ void UPyAbility_102641::K2_OnEndAbility(bool bWasCancelled)
 // PythonFunction PyAbility_102641.PyAbility_102641.NativeOnMontageEvent
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_102641::NativeOnMontageEvent(const class FString& Tag)
 {

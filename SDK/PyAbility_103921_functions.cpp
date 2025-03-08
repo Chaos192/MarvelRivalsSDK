@@ -21,7 +21,7 @@ namespace SDK
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 bool APyCue_Projectile_Loop_10392102::WhileActive(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
@@ -51,7 +51,7 @@ bool APyCue_Projectile_Loop_10392102::WhileActive(class AActor* MyTarget, const 
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 bool APyCue_Projectile_Loop_10392102::OnRemove(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
@@ -81,7 +81,7 @@ bool APyCue_Projectile_Loop_10392102::OnRemove(class AActor* MyTarget, const str
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyCue_Projectile_Loop_10392102::OnExecuteFX(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
 {
@@ -208,7 +208,7 @@ void UPyAbility_103921::K2_OnEndAbility(bool bWasCancelled)
 // PythonFunction PyAbility_103921.PyAbility_103921.NativeOnMontageCompleted
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_103921::NativeOnMontageCompleted(const class FString& Tag)
 {
@@ -227,6 +227,53 @@ void UPyAbility_103921::NativeOnMontageCompleted(const class FString& Tag)
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+}
+
+
+// PythonFunction PyAbility_103921.PyEffectiveComponent_10392101.K2_Initialize
+// (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
+
+void UPyEffectiveComponent_10392101::K2_Initialize()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyEffectiveComponent_10392101", "K2_Initialize");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// PythonFunction PyAbility_103921.PyEffectiveComponent_10392101.K2_OnPreApplyContainer
+// (Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const TArray<struct FHitResult>&        HitResults                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// TArray<struct FHitResult>               ReturnValue                                            (Parm, OutParm, ReturnParm)
+
+TArray<struct FHitResult> UPyEffectiveComponent_10392101::K2_OnPreApplyContainer(const TArray<struct FHitResult>& HitResults)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyEffectiveComponent_10392101", "K2_OnPreApplyContainer");
+
+	Params::PyEffectiveComponent_10392101_K2_OnPreApplyContainer Parms{};
+
+	Parms.HitResults = std::move(HitResults);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
@@ -303,53 +350,6 @@ void APyProjectile_10392102::K2_OnBeginAgentTask()
 	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
-}
-
-
-// PythonFunction PyAbility_103921.PyEffectiveComponent_10392101.K2_Initialize
-// (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
-
-void UPyEffectiveComponent_10392101::K2_Initialize()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PyEffectiveComponent_10392101", "K2_Initialize");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// PythonFunction PyAbility_103921.PyEffectiveComponent_10392101.K2_OnPreApplyContainer
-// (Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// TArray<struct FHitResult>               HitResults                                             (ConstParm, Parm, OutParm, ReferenceParm)
-// TArray<struct FHitResult>               ReturnValue                                            (Parm, OutParm, ReturnParm)
-
-TArray<struct FHitResult> UPyEffectiveComponent_10392101::K2_OnPreApplyContainer(const TArray<struct FHitResult>& HitResults)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PyEffectiveComponent_10392101", "K2_OnPreApplyContainer");
-
-	Params::PyEffectiveComponent_10392101_K2_OnPreApplyContainer Parms{};
-
-	Parms.HitResults = std::move(HitResults);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 }

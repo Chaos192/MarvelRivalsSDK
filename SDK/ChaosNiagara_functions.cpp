@@ -112,7 +112,7 @@ class UNiagaraComponent* UChaosNiagaraFunctionLibrary::GetNormalCombineEffectCom
 // Function ChaosNiagara.ChaosNiagaraFunctionLibrary.InitDefaultToEventData
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FChaosEffectEventData            EventData                                              (Parm, OutParm, NativeAccessSpecifierPublic)
+// struct FChaosEffectEventData*           EventData                                              (Parm, OutParm, NativeAccessSpecifierPublic)
 
 void UChaosNiagaraFunctionLibrary::InitDefaultToEventData(struct FChaosEffectEventData* EventData)
 {
@@ -139,8 +139,8 @@ void UChaosNiagaraFunctionLibrary::InitDefaultToEventData(struct FChaosEffectEve
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // class UNiagaraComponent*                TargetComponent                                        (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   Index_0                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FChaosEffectEventData            InInstanceData                                         (Parm, OutParm, NativeAccessSpecifierPublic)
+// const int32                             Index_0                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FChaosEffectEventData*           InInstanceData                                         (Parm, OutParm, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UChaosNiagaraFunctionLibrary::ModifyChaosEffectInstanceData(class UNiagaraComponent* TargetComponent, const int32 Index_0, struct FChaosEffectEventData* InInstanceData)
@@ -173,7 +173,7 @@ bool UChaosNiagaraFunctionLibrary::ModifyChaosEffectInstanceData(class UNiagaraC
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class UNiagaraComponent*                TargetComponent                                        (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FChaosEffectEventData            InInstanceData                                         (Parm, NativeAccessSpecifierPublic)
+// const struct FChaosEffectEventData&     InInstanceData                                         (Parm, NativeAccessSpecifierPublic)
 
 void UChaosNiagaraFunctionLibrary::PySendSpawnEventToNiagara(class UNiagaraComponent* TargetComponent, const struct FChaosEffectEventData& InInstanceData)
 {
@@ -200,7 +200,7 @@ void UChaosNiagaraFunctionLibrary::PySendSpawnEventToNiagara(class UNiagaraCompo
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // class UNiagaraComponent*                TargetComponent                                        (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FChaosEffectEventData            InInstanceData                                         (Parm, OutParm, NativeAccessSpecifierPublic)
+// struct FChaosEffectEventData*           InInstanceData                                         (Parm, OutParm, NativeAccessSpecifierPublic)
 
 void UChaosNiagaraFunctionLibrary::SendSpawnEventToNiagara(class UNiagaraComponent* TargetComponent, struct FChaosEffectEventData* InInstanceData)
 {
@@ -247,8 +247,8 @@ void UNiagaraDataInterfaceChaosEffect::ClearRecordedData()
 // Function ChaosNiagara.NiagaraDataInterfaceChaosEffect.ModifyInstanceData
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// int32                                   Index_0                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FChaosEffectEventData            InDatas                                                (Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const int32                             Index_0                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FChaosEffectEventData&           InDatas                                                (Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UNiagaraDataInterfaceChaosEffect::ModifyInstanceData(const int32 Index_0, struct FChaosEffectEventData& InDatas)
@@ -279,7 +279,7 @@ bool UNiagaraDataInterfaceChaosEffect::ModifyInstanceData(const int32 Index_0, s
 // Function ChaosNiagara.NiagaraDataInterfaceChaosEffect.ReceiveChaosEvents
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FChaosEffectEventData            InDatas                                                (Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// struct FChaosEffectEventData&           InDatas                                                (Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UNiagaraDataInterfaceChaosEffect::ReceiveChaosEvents(struct FChaosEffectEventData& InDatas)
 {

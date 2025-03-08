@@ -64,8 +64,8 @@ void UPyLevelNodeAudioComponent::ReceiveEndPlay(EEndPlayReason EndPlayReason)
 // PythonFunction PyLevelNodeAudioComponent.PyLevelNodeAudioComponent.PlayAmbientSound
 // (Net, NetReliable, Native, NetMulticast, Public, BlueprintCallable)
 // Parameters:
-// class FString                           InstanceName                                           (Parm, ZeroConstructor, HasGetValueTypeHash)
-// class FString                           NodeName                                               (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    InstanceName                                           (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    NodeName                                               (Parm, ZeroConstructor, HasGetValueTypeHash)
 // TSoftObjectPtr<class UAkAudioEvent>     AudioEvent                                             (Parm, UObjectWrapper, HasGetValueTypeHash)
 
 void UPyLevelNodeAudioComponent::PlayAmbientSound(const class FString& InstanceName, const class FString& NodeName, TSoftObjectPtr<class UAkAudioEvent> AudioEvent)
@@ -93,8 +93,8 @@ void UPyLevelNodeAudioComponent::PlayAmbientSound(const class FString& InstanceN
 // PythonFunction PyLevelNodeAudioComponent.PyLevelNodeAudioComponent.PlayAudioByID
 // (Net, NetReliable, Native, NetMulticast, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class FString                           InstanceName                                           (Parm, ZeroConstructor, HasGetValueTypeHash)
-// TArray<int32>                           VoiceIDList                                            (ConstParm, Parm, OutParm, ReferenceParm)
+// const class FString&                    InstanceName                                           (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const TArray<int32>&                    VoiceIDList                                            (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyLevelNodeAudioComponent::PlayAudioByID(const class FString& InstanceName, const TArray<int32>& VoiceIDList)
 {
@@ -120,8 +120,8 @@ void UPyLevelNodeAudioComponent::PlayAudioByID(const class FString& InstanceName
 // PythonFunction PyLevelNodeAudioComponent.PyLevelNodeAudioComponent.PlayAudioByIDAndBattleSide
 // (Net, Native, NetMulticast, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class FString                           InstanceName                                           (Parm, ZeroConstructor, HasGetValueTypeHash)
-// TArray<int32>                           VoiceIDList                                            (ConstParm, Parm, OutParm, ReferenceParm)
+// const class FString&                    InstanceName                                           (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const TArray<int32>&                    VoiceIDList                                            (ConstParm, Parm, OutParm, ReferenceParm)
 // EBattleSide                             BattleSide                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UPyLevelNodeAudioComponent::PlayAudioByIDAndBattleSide(const class FString& InstanceName, const TArray<int32>& VoiceIDList, EBattleSide BattleSide)
@@ -149,7 +149,7 @@ void UPyLevelNodeAudioComponent::PlayAudioByIDAndBattleSide(const class FString&
 // PythonFunction PyLevelNodeAudioComponent.PyLevelNodeAudioComponent.PlayAudioByEvent
 // (Net, NetReliable, Native, NetMulticast, Public, BlueprintCallable)
 // Parameters:
-// class FString                           InstanceName                                           (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    InstanceName                                           (Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UAkAudioEvent*                    AudioEvent                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 void UPyLevelNodeAudioComponent::PlayAudioByEvent(const class FString& InstanceName, class UAkAudioEvent* AudioEvent)

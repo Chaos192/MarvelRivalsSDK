@@ -83,7 +83,7 @@ void UPyAbility_105231::K2_ActivateAbility()
 // PythonFunction PyAbility_105231.PyAbility_105231.NativeOnMontageEvent
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_105231::NativeOnMontageEvent(const class FString& Tag)
 {
@@ -171,7 +171,7 @@ void UPyAbility_105231::OnDurationEnd()
 // PythonFunction PyAbility_105231.PyAbility_105231.NativeOnMontageCompleted
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_105231::NativeOnMontageCompleted(const class FString& Tag)
 {
@@ -196,7 +196,7 @@ void UPyAbility_105231::NativeOnMontageCompleted(const class FString& Tag)
 // PythonFunction PyAbility_105231.PyAbility_105231.NativeOnMontageInterrupted
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_105231::NativeOnMontageInterrupted(const class FString& Tag)
 {
@@ -221,7 +221,7 @@ void UPyAbility_105231::NativeOnMontageInterrupted(const class FString& Tag)
 // PythonFunction PyAbility_105231.PyAbility_105231.NativeOnMontageCancelled
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_105231::NativeOnMontageCancelled(const class FString& Tag)
 {
@@ -272,7 +272,7 @@ void UPyAbility_105231::K2_OnImmunityBlockGameplayEffect(float Magnitude) const
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyCue_Buff_Loop_10523101::WhileActiveFX(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
 {
@@ -299,7 +299,7 @@ void APyCue_Buff_Loop_10523101::WhileActiveFX(class AActor* MyTarget, const stru
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 bool APyCue_Buff_Loop_10523101::OnRemove(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)

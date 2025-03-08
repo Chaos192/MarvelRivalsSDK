@@ -116,7 +116,7 @@ bool UPyAbility_102972::CanActivate()
 // PythonFunction PyAbility_102972.PyAbility_102972.TryMakeTriggerContext
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayEventData               EventData                                              (Parm, OutParm, ReferenceParm)
+// struct FGameplayEventData&              EventData                                              (Parm, OutParm, ReferenceParm)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 bool UPyAbility_102972::TryMakeTriggerContext(struct FGameplayEventData& EventData)
@@ -146,7 +146,7 @@ bool UPyAbility_102972::TryMakeTriggerContext(struct FGameplayEventData& EventDa
 // PythonFunction PyAbility_102972.PyAbility_102972.K2_ActivateAbilityFromEvent
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayEventData               EventData                                              (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayEventData&        EventData                                              (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyAbility_102972::K2_ActivateAbilityFromEvent(const struct FGameplayEventData& EventData)
 {
@@ -216,7 +216,7 @@ void UPyAbility_102972::MissileEventNotify()
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyCue_Buff_10297201::WhileActiveFX(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
 {

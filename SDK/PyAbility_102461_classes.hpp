@@ -18,11 +18,12 @@ namespace SDK
 {
 
 // PythonClass PyAbility_102461.PyProjectile_102461
-// 0x0010 (0x3060 - 0x3050)
+// 0x0010 (0x3120 - 0x3110)
 class APyProjectile_102461 : public AMarvelAbilityTargetActor_Projectile
 {
 public:
-	int32                                         ScopeId;                                           // 0x3050(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3108[0x8];                                     // 0x3108(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         ScopeId;                                           // 0x3110(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void K2_OnBeginAgentTask();
@@ -84,11 +85,11 @@ public:
 };
 
 // PythonClass PyAbility_102461.PyAbility_102461
-// 0x0010 (0x2598 - 0x2588)
+// 0x0010 (0x25A0 - 0x2590)
 class UPyAbility_102461 : public UAbility_108
 {
 public:
-	TMulticastInlineDelegate<void(TArray<class AActor*>& TargetList)> OnSoulLinkEnemy;                                   // 0x2588(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const TArray<class AActor*>& TargetList)> OnSoulLinkEnemy;         // 0x2590(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 
 public:
 	void BeginPlay();

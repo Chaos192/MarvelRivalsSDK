@@ -13,8 +13,9 @@
 #include "Marvel_structs.hpp"
 #include "Marvel_classes.hpp"
 #include "GameplayTags_structs.hpp"
-#include "Hero_1050_classes.hpp"
 #include "PyAbility_105071_structs.hpp"
+#include "Hero_1050_structs.hpp"
+#include "Hero_1050_classes.hpp"
 
 
 namespace SDK
@@ -41,7 +42,7 @@ public:
 };
 
 // PythonClass PyAbility_105071.PyAbility_105071
-// 0x0000 (0x2628 - 0x2628)
+// 0x0000 (0x2630 - 0x2630)
 class UPyAbility_105071 : public UAbility_105071
 {
 public:
@@ -109,6 +110,29 @@ public:
 	static class APyCueNotify_Buff_10507101* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<APyCueNotify_Buff_10507101>();
+	}
+};
+
+// PythonClass PyAbility_105071.PyUIController_105071
+// 0x0050 (0x0CA0 - 0x0C50)
+class UPyUIController_105071 final : public UUIC_Ability
+{
+public:
+	TMap<EScopeEnableType_105071, struct FCueHintData> AbilityFailedTips;                            // 0x0C50(0x0050)(Edit, NativeAccessSpecifierPublic)
+
+public:
+	void OnInit();
+	void OnDestruct();
+	void OnAbilityActivateFailed(const struct FGameplayTagContainer& FailedTags);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PyUIController_105071">();
+	}
+	static class UPyUIController_105071* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPyUIController_105071>();
 	}
 };
 

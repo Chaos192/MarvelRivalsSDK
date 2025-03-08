@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // PythonClass PySquirrelGirlCharacter.PySquirrelGirlCharacter
-// 0x0000 (0x1830 - 0x1830)
+// 0x0000 (0x1880 - 0x1880)
 class APySquirrelGirlCharacter : public ASquirrelGirlCharacter
 {
 public:

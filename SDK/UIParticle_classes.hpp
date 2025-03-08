@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "UMG_classes.hpp"
 #include "UIParticle_structs.hpp"
+#include "UMG_classes.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
 

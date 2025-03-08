@@ -10,11 +10,11 @@
 
 #include "Basic.hpp"
 
+#include "CommonUI_classes.hpp"
 #include "GameplayTags_structs.hpp"
 #include "Engine_classes.hpp"
 #include "UMG_classes.hpp"
 #include "CoreUObject_structs.hpp"
-#include "CommonUI_classes.hpp"
 
 
 namespace SDK

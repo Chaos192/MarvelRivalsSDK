@@ -58,7 +58,7 @@ void UPyAbility_102742::K2_ActivateAbility()
 // PythonFunction PyAbility_102742.PyAbility_102742.OnTargetTaskValidData
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FGameplayAbilityTargetDataHandle Data                                                   (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayAbilityTargetDataHandle&Data                                                   (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyAbility_102742::OnTargetTaskValidData(const struct FGameplayAbilityTargetDataHandle& Data)
 {

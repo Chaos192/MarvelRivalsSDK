@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "PyWidget_Common_NavigationBar_Button_classes.hpp"
 #include "Engine_structs.hpp"
+#include "PyWidget_Common_NavigationBar_Button_classes.hpp"
 
 
 namespace SDK

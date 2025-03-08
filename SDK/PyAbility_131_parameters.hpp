@@ -17,24 +17,6 @@
 namespace SDK::Params
 {
 
-// PythonFunction PyAbility_131.PyUIController_131.SetAbility
-// 0x0010 (0x0010 - 0x0000)
-struct PyUIController_131_SetAbility final
-{
-public:
-	int32                                         InAbilityId;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UGameplayAbility*                       InAbility;                                         // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-};
-
-// PythonFunction PyAbility_131.PyUIController_131.OnWallRunningEnd
-// 0x0020 (0x0020 - 0x0000)
-struct PyUIController_131_OnWallRunningEnd final
-{
-public:
-	struct FWallRunningEndInfo                    InWallRunningEndInfo;                              // 0x0000(0x0020)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
-};
-
 // PythonFunction PyAbility_131.PyCue_AbilityLoop_13101.WhileActive
 // 0x01C8 (0x01C8 - 0x0000)
 struct PyCue_AbilityLoop_13101_WhileActive final
@@ -142,6 +124,24 @@ struct PyAbility_131_OnDashFinish_ReachTop final
 {
 public:
 	EDashStopReason                               Reason;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+
+// PythonFunction PyAbility_131.PyUIController_131.SetAbility
+// 0x0010 (0x0010 - 0x0000)
+struct PyUIController_131_SetAbility final
+{
+public:
+	int32                                         InAbilityId;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UGameplayAbility*                       InAbility;                                         // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+};
+
+// PythonFunction PyAbility_131.PyUIController_131.OnWallRunningEnd
+// 0x0020 (0x0020 - 0x0000)
+struct PyUIController_131_OnWallRunningEnd final
+{
+public:
+	struct FWallRunningEndInfo                    InWallRunningEndInfo;                              // 0x0000(0x0020)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
 };
 
 }

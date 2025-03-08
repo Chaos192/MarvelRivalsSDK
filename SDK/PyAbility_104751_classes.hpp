@@ -19,7 +19,7 @@ namespace SDK
 {
 
 // PythonClass PyAbility_104751.PyProjectile_10475101
-// 0x0000 (0x3050 - 0x3050)
+// 0x0000 (0x3110 - 0x3110)
 class APyProjectile_10475101 : public AProjectile_10475101
 {
 public:
@@ -40,7 +40,7 @@ public:
 };
 
 // PythonClass PyAbility_104751.PyProjectile_10475201
-// 0x0000 (0x3050 - 0x3050)
+// 0x0000 (0x3110 - 0x3110)
 class APyProjectile_10475201 final : public APyProjectile_10475101
 {
 public:
@@ -75,7 +75,7 @@ public:
 };
 
 // PythonClass PyAbility_104751.PyAbility_104751
-// 0x0000 (0x2580 - 0x2580)
+// 0x0000 (0x2588 - 0x2588)
 class UPyAbility_104751 : public UMarvelGameplayAbility
 {
 public:

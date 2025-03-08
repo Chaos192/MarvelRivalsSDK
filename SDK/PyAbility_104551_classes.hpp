@@ -20,13 +20,13 @@ namespace SDK
 {
 
 // PythonClass PyAbility_104551.PySummoned_10455101
-// 0x0030 (0x1020 - 0x0FF0)
+// 0x0030 (0x1050 - 0x1020)
 class APySummoned_10455101 : public ASummoned_10455101
 {
 public:
-	TMulticastInlineDelegate<void(EOctopusState CurrentOctopusState, EOctopusState LastOctopusState)> OnOctopusStateChangedDelegate;                     // 0x0FF0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void()>              OnOctopusTargetChangedDelegate;                    // 0x1000(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void()>              OnSummonedBeginAgentTaskDelegate;                  // 0x1010(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(EOctopusState CurrentOctopusState, EOctopusState LastOctopusState)> OnOctopusStateChangedDelegate; // 0x1020(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void()>              OnOctopusTargetChangedDelegate;                    // 0x1030(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void()>              OnSummonedBeginAgentTaskDelegate;                  // 0x1040(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 
 public:
 	void OnRep_OnOctopusStateChanged();
@@ -46,7 +46,7 @@ public:
 };
 
 // PythonClass PyAbility_104551.PyProjectile_10455101
-// 0x0000 (0x3050 - 0x3050)
+// 0x0000 (0x3110 - 0x3110)
 class APyProjectile_10455101 : public AMarvelAbilityTargetActor_Projectile
 {
 public:
@@ -67,7 +67,7 @@ public:
 };
 
 // PythonClass PyAbility_104551.PyProjectile_10455102
-// 0x0000 (0x3050 - 0x3050)
+// 0x0000 (0x3110 - 0x3110)
 class APyProjectile_10455102 final : public APyProjectile_10455101
 {
 public:
@@ -108,7 +108,7 @@ public:
 };
 
 // PythonClass PyAbility_104551.PyAbility_104551
-// 0x0000 (0x2588 - 0x2588)
+// 0x0000 (0x2590 - 0x2590)
 class UPyAbility_104551 : public UAbility_104551
 {
 public:

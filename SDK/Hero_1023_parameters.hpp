@@ -74,6 +74,14 @@ public:
 	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 
+// Function Hero_1023.SummonedComp_10234101.GetClientCachedRespawningCharacter
+// 0x0008 (0x0008 - 0x0000)
+struct SummonedComp_10234101_GetClientCachedRespawningCharacter final
+{
+public:
+	class AMarvelBaseCharacter*                   ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
 // Function Hero_1023.SummonedComp_10234101.GetRespawningCharacter
 // 0x0008 (0x0008 - 0x0000)
 struct SummonedComp_10234101_GetRespawningCharacter final

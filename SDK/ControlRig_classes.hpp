@@ -10,16 +10,16 @@
 
 #include "Basic.hpp"
 
-#include "RigVM_classes.hpp"
-#include "ControlRig_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
-#include "AnimationCore_structs.hpp"
+#include "RigVM_classes.hpp"
 #include "DeveloperSettings_classes.hpp"
 #include "MovieScene_structs.hpp"
 #include "MovieScene_classes.hpp"
 #include "Constraints_structs.hpp"
 #include "Constraints_classes.hpp"
+#include "ControlRig_structs.hpp"
+#include "AnimationCore_structs.hpp"
 #include "Engine_classes.hpp"
 #include "MovieSceneTracks_structs.hpp"
 #include "MovieSceneTracks_classes.hpp"
@@ -52,13 +52,31 @@ public:
 	}
 };
 
+// Class ControlRig.ControlRigPoseProjectSettings
+// 0x0010 (0x0040 - 0x0030)
+class UControlRigPoseProjectSettings final : public UObject
+{
+public:
+	TArray<struct FDirectoryPath>                 RootSaveDirs;                                      // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, Config, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"ControlRigPoseProjectSettings">();
+	}
+	static class UControlRigPoseProjectSettings* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UControlRigPoseProjectSettings>();
+	}
+};
+
 // Class ControlRig.RigHierarchy
 // 0x0360 (0x0390 - 0x0030)
 class alignas(0x10) URigHierarchy final : public UObject
 {
 public:
 	uint8                                         Pad_30[0x18];                                      // 0x0030(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
-	TMulticastInlineDelegate<void(ERigHierarchyNotification NotifType, class URigHierarchy* Hierarchy, const struct FRigElementKey& Subject)> ModifiedEventDynamic;                              // 0x0048(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, InstancedReference, NativeAccessSpecifierPrivate)
+	TMulticastInlineDelegate<void(ERigHierarchyNotification NotifType, class URigHierarchy* Hierarchy, const struct FRigElementKey& Subject)> ModifiedEventDynamic; // 0x0048(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, InstancedReference, NativeAccessSpecifierPrivate)
 	uint8                                         Pad_58[0x48];                                      // 0x0058(0x0048)(Fixing Size After Last Property [ Dumper-7 ])
 	uint16                                        TopologyVersion;                                   // 0x00A0(0x0002)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	uint16                                        MetadataVersion;                                   // 0x00A2(0x0002)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
@@ -69,7 +87,7 @@ public:
 	uint8                                         Pad_144[0x74];                                     // 0x0144(0x0074)(Fixing Size After Last Property [ Dumper-7 ])
 	class URigHierarchyController*                HierarchyController;                               // 0x01B8(0x0008)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	uint8                                         Pad_1C0[0x58];                                     // 0x01C0(0x0058)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<struct FRigElementKey, struct FRigElementKey> PreviousNameMap;                                   // 0x0218(0x0050)(NativeAccessSpecifierPrivate)
+	TMap<struct FRigElementKey, struct FRigElementKey> PreviousNameMap;                              // 0x0218(0x0050)(NativeAccessSpecifierPrivate)
 	uint8                                         Pad_268[0x80];                                     // 0x0268(0x0080)(Fixing Size After Last Property [ Dumper-7 ])
 	class URigHierarchy*                          HierarchyForCacheValidation;                       // 0x02E8(0x0008)(ZeroConstructor, Transient, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	uint8                                         Pad_2F0[0xA0];                                     // 0x02F0(0x00A0)(Fixing Struct Size After Last Property [ Dumper-7 ])
@@ -279,9 +297,9 @@ public:
 	ERigExecutionType                             ExecutionType;                                     // 0x0350(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_351[0x3];                                      // 0x0351(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FRigHierarchySettings                  HierarchySettings;                                 // 0x0354(0x0004)(NoDestructor, NativeAccessSpecifierPublic)
-	TMap<struct FRigElementKey, struct FRigControlElementCustomization> ControlCustomizations;                             // 0x0358(0x0050)(Protected, NativeAccessSpecifierProtected)
+	TMap<struct FRigElementKey, struct FRigControlElementCustomization> ControlCustomizations;       // 0x0358(0x0050)(Protected, NativeAccessSpecifierProtected)
 	class URigHierarchy*                          DynamicHierarchy;                                  // 0x03A8(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	TArray<TSoftObjectPtr<class UControlRigShapeLibrary>> ShapeLibraries;                                    // 0x03B0(0x0010)(ZeroConstructor, Protected, UObjectWrapper, NativeAccessSpecifierProtected)
+	TArray<TSoftObjectPtr<class UControlRigShapeLibrary>> ShapeLibraries;                            // 0x03B0(0x0010)(ZeroConstructor, Protected, UObjectWrapper, NativeAccessSpecifierProtected)
 	TMap<class FString, class FString>            ShapeLibraryNameMap;                               // 0x03C0(0x0050)(Transient, Protected, NativeAccessSpecifierProtected)
 	uint8                                         Pad_410[0x18];                                     // 0x0410(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
 	class UAnimationDataSourceRegistry*           DataSourceRegistry;                                // 0x0428(0x0008)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
@@ -354,33 +372,33 @@ public:
 };
 
 // Class ControlRig.ControlRigComponent
-// 0x0160 (0x09A0 - 0x0840)
+// 0x0160 (0x0A30 - 0x08D0)
 class UControlRigComponent final : public UPrimitiveComponent
 {
 public:
-	TSubclassOf<class UControlRig>                ControlRigClass;                                   // 0x0838(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class UControlRigComponent* Component)> OnPreInitializeDelegate;                           // 0x0840(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class UControlRigComponent* Component)> OnPostInitializeDelegate;                          // 0x0850(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class UControlRigComponent* Component)> OnPreConstructionDelegate;                         // 0x0860(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class UControlRigComponent* Component)> OnPostConstructionDelegate;                        // 0x0870(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class UControlRigComponent* Component)> OnPreForwardsSolveDelegate;                        // 0x0880(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class UControlRigComponent* Component)> OnPostForwardsSolveDelegate;                       // 0x0890(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TArray<struct FControlRigComponentMappedElement> UserDefinedElements;                               // 0x08A0(0x0010)(Edit, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
-	TArray<struct FControlRigComponentMappedElement> MappedElements;                                    // 0x08B0(0x0010)(Edit, ZeroConstructor, EditConst, ContainsInstancedReference, NativeAccessSpecifierPublic)
-	bool                                          bEnableLazyEvaluation;                             // 0x08C0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_8C1[0x3];                                      // 0x08C1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         LazyEvaluationPositionThreshold;                   // 0x08C4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         LazyEvaluationRotationThreshold;                   // 0x08C8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         LazyEvaluationScaleThreshold;                      // 0x08CC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bResetTransformBeforeTick;                         // 0x08D0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bResetInitialsBeforeConstruction;                  // 0x08D1(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bUpdateRigOnTick;                                  // 0x08D2(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bUpdateInEditor;                                   // 0x08D3(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bDrawBones;                                        // 0x08D4(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bShowDebugDrawing;                                 // 0x08D5(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_8D6[0x2];                                      // 0x08D6(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	class UControlRig*                            ControlRig;                                        // 0x08D8(0x0008)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_8E0[0xC0];                                     // 0x08E0(0x00C0)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	TSubclassOf<class UControlRig>                ControlRigClass;                                   // 0x08C8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class UControlRigComponent* Component)> OnPreInitializeDelegate;   // 0x08D0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class UControlRigComponent* Component)> OnPostInitializeDelegate;  // 0x08E0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class UControlRigComponent* Component)> OnPreConstructionDelegate; // 0x08F0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class UControlRigComponent* Component)> OnPostConstructionDelegate; // 0x0900(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class UControlRigComponent* Component)> OnPreForwardsSolveDelegate; // 0x0910(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class UControlRigComponent* Component)> OnPostForwardsSolveDelegate; // 0x0920(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TArray<struct FControlRigComponentMappedElement> UserDefinedElements;                            // 0x0930(0x0010)(Edit, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	TArray<struct FControlRigComponentMappedElement> MappedElements;                                 // 0x0940(0x0010)(Edit, ZeroConstructor, EditConst, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	bool                                          bEnableLazyEvaluation;                             // 0x0950(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_951[0x3];                                      // 0x0951(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         LazyEvaluationPositionThreshold;                   // 0x0954(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         LazyEvaluationRotationThreshold;                   // 0x0958(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         LazyEvaluationScaleThreshold;                      // 0x095C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bResetTransformBeforeTick;                         // 0x0960(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bResetInitialsBeforeConstruction;                  // 0x0961(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bUpdateRigOnTick;                                  // 0x0962(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bUpdateInEditor;                                   // 0x0963(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bDrawBones;                                        // 0x0964(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bShowDebugDrawing;                                 // 0x0965(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_966[0x2];                                      // 0x0966(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	class UControlRig*                            ControlRig;                                        // 0x0968(0x0008)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_970[0xC0];                                     // 0x0970(0x00C0)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void AddMappedCompleteSkeletalMesh(class USkeletalMeshComponent* SkeletalMeshComponent);
@@ -787,7 +805,7 @@ public:
 	TArray<class UMovieSceneSection*>             Sections;                                          // 0x00F0(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPrivate)
 	class FName                                   TrackName;                                         // 0x0100(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	uint8                                         Pad_10C[0x4];                                      // 0x010C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<class FName, struct FControlRotationOrder> ControlsRotationOrder;                             // 0x0110(0x0050)(NativeAccessSpecifierPrivate)
+	TMap<class FName, struct FControlRotationOrder> ControlsRotationOrder;                           // 0x0110(0x0050)(NativeAccessSpecifierPrivate)
 
 public:
 	static class UClass* StaticClass()
@@ -877,24 +895,6 @@ public:
 	static class UControlRigPoseMirrorSettings* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UControlRigPoseMirrorSettings>();
-	}
-};
-
-// Class ControlRig.ControlRigPoseProjectSettings
-// 0x0010 (0x0040 - 0x0030)
-class UControlRigPoseProjectSettings final : public UObject
-{
-public:
-	TArray<struct FDirectoryPath>                 RootSaveDirs;                                      // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, Config, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"ControlRigPoseProjectSettings">();
-	}
-	static class UControlRigPoseProjectSettings* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UControlRigPoseProjectSettings>();
 	}
 };
 

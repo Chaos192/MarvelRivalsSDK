@@ -35,12 +35,12 @@ public:
 };
 
 // PythonClass PyAbility_103322.PyAbility_103322
-// 0x0008 (0x26A0 - 0x2698)
+// 0x0008 (0x26A8 - 0x26A0)
 class UPyAbility_103322 : public UAbility_106
 {
 public:
-	int32                                         SniperRifleID;                                     // 0x2698(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         LoadBulletAbilityID;                               // 0x269C(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         SniperRifleID;                                     // 0x26A0(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         LoadBulletAbilityID;                               // 0x26A4(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void BeginPlay();

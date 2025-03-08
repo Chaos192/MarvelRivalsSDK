@@ -20,7 +20,7 @@ namespace SDK
 // Function Hero_1034.Cue_Ability_Loop_10340101.OnOwnerTagUpdated
 // (Final, Native, Protected, HasOutParams)
 // Parameters:
-// struct FGameplayTag                     TagUpdated                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              TagUpdated                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bTagExists                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void ACue_Ability_Loop_10340101::OnOwnerTagUpdated(const struct FGameplayTag& TagUpdated, bool bTagExists)
@@ -148,7 +148,7 @@ void UAbility_103401_V2::OnHoveringAbilityEnd(class UGameplayAbility* Ability)
 // (Final, Native, Public, HasOutParams)
 // Parameters:
 // class AActor*                           TargetActor                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FCharacterRebornParam            Param                                                  (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FCharacterRebornParam&     Param                                                  (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 void UAbility_103401_V2::OnOwnerCharBorn103401(class AActor* TargetActor, const struct FCharacterRebornParam& Param)
 {
@@ -176,7 +176,7 @@ void UAbility_103401_V2::OnOwnerCharBorn103401(class AActor* TargetActor, const 
 // Parameters:
 // class AActor*                           DamageCauser                                           (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           TargetActor                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FAttributeModifierHandle         ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FAttributeModifierHandle&  ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UAbility_103401_V2::OnOwnerCharDeath103401(class AActor* DamageCauser, class AActor* TargetActor, const struct FAttributeModifierHandle& ModifierParameterHandle)
 {
@@ -204,7 +204,7 @@ void UAbility_103401_V2::OnOwnerCharDeath103401(class AActor* DamageCauser, clas
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // class UGameplayAbility*                 Ability                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bAbilityActivate                                       (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bAbilityActivate                                       (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UAbility_103401_V2::UpdateAeroStateByOtherAbility(class UGameplayAbility* Ability, const bool bAbilityActivate)
 {
@@ -301,8 +301,8 @@ void UAbility_103421::OnReleaseRight(float TimeWaited)
 // Parameters:
 // class UAbilitySystemComponent*          Source                                                 (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UAbilitySystemComponent*          Target                                                 (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayEffectSpecStackHandle   EffectSpecHandle                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-// struct FActiveGameplayEffectHandle      EffectHandle                                           (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayEffectSpecStackHandle&EffectSpecHandle                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FActiveGameplayEffectHandle&EffectHandle                                           (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UAbility_103421::TryCancelOnGameplayEffectAppliedToSelf(class UAbilitySystemComponent* Source, class UAbilitySystemComponent* Target, const struct FGameplayEffectSpecStackHandle& EffectSpecHandle, const struct FActiveGameplayEffectHandle& EffectHandle)
 {
@@ -664,7 +664,7 @@ void UAbility_103431::ServerSetADState(int32 PredictionSerial, int8 ADState)
 // Function Hero_1034.Cue_Ability_Loop_10343101.OnOwnedTagUpdate
 // (Native, Event, Public, HasOutParams, BlueprintEvent)
 // Parameters:
-// struct FGameplayTag                     TagUpdated                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              TagUpdated                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bTagExists                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void ACue_Ability_Loop_10343101::OnOwnedTagUpdate(const struct FGameplayTag& TagUpdated, bool bTagExists)
@@ -768,7 +768,7 @@ void AProjectile_10344901::OnRep_Straight()
 // (Final, Native, Public, HasOutParams)
 // Parameters:
 // class AActor*                           SpawnActor                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayAbilityTargetDataHandle Data                                                   (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FGameplayAbilityTargetDataHandle&Data                                                   (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UAbility_103449::OnFireSucceed(class AActor* SpawnActor, const struct FGameplayAbilityTargetDataHandle& Data)
 {
@@ -813,7 +813,7 @@ void UAbility_103449::OnNeedSpawn()
 // Function Hero_1034.Ability_103451.OnExitNanoState
 // (Final, Native, Public)
 // Parameters:
-// struct FGameplayEventData               Payload                                                (Parm, NativeAccessSpecifierPublic)
+// const struct FGameplayEventData&        Payload                                                (Parm, NativeAccessSpecifierPublic)
 
 void UAbility_103451::OnExitNanoState(const struct FGameplayEventData& Payload)
 {
@@ -865,7 +865,7 @@ void UAbility_103451::OnUltimateAbilityActivate(class UGameplayAbility* Ability)
 // Parameters:
 // class AActor*                           InSourceAvatar                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           InTargetAvatar                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FAttributeModifierHandle         ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FAttributeModifierHandle&  ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UTraceComponent_10346101::OnApplyDamage(class AActor* InSourceAvatar, class AActor* InTargetAvatar, const struct FAttributeModifierHandle& ModifierParameterHandle)
 {
@@ -894,7 +894,7 @@ void UTraceComponent_10346101::OnApplyDamage(class AActor* InSourceAvatar, class
 // Parameters:
 // class UNiagaraComponent*                InNiagaraComponent                                     (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 void UCue_Instant_HitImpact_10346101::OnCustomHitNiagaraSpawned(class UNiagaraComponent* InNiagaraComponent, class AActor* MyTarget, const struct FGameplayCueParameters& Parameters) const
 {
@@ -971,7 +971,7 @@ struct FGameplayTagContainer UNanoAbilityStatics::GetNanoWeaponTags()
 // Function Hero_1034.NanoAbilityStatics.HasAnyNanoCanActivateTags
 // (Final, Native, Static, Public)
 // Parameters:
-// class UAbilitySystemComponent*          ASC                                                    (ConstParm, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UAbilitySystemComponent*    ASC                                                    (ConstParm, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UNanoAbilityStatics::HasAnyNanoCanActivateTags(const class UAbilitySystemComponent* ASC)
@@ -999,7 +999,7 @@ bool UNanoAbilityStatics::HasAnyNanoCanActivateTags(const class UAbilitySystemCo
 // Function Hero_1034.NanoAbilityStatics.HasAnyNanoWeaponTags
 // (Final, Native, Static, Public)
 // Parameters:
-// class UAbilitySystemComponent*          ASC                                                    (ConstParm, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UAbilitySystemComponent*    ASC                                                    (ConstParm, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UNanoAbilityStatics::HasAnyNanoWeaponTags(const class UAbilitySystemComponent* ASC)
@@ -1027,7 +1027,7 @@ bool UNanoAbilityStatics::HasAnyNanoWeaponTags(const class UAbilitySystemCompone
 // Function Hero_1034.NanoAbilityStatics.IsNanoWeaponTags
 // (Final, Native, Static, Public, HasOutParams)
 // Parameters:
-// struct FGameplayTag                     InTag                                                  (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              InTag                                                  (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UNanoAbilityStatics::IsNanoWeaponTags(const struct FGameplayTag& InTag)

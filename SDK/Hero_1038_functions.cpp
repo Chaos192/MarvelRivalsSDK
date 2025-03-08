@@ -97,7 +97,7 @@ void ACue_Scope_Loop_10381101::OnGetInstigator(class AActor* InstigatorActor)
 // Parameters:
 // class AActor*                           InSourceAvatar                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           InTargetAvatar                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FAttributeModifierHandle         ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FAttributeModifierHandle&  ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void ACue_Scope_Loop_10381101::OnTakeDamage(class AActor* InSourceAvatar, class AActor* InTargetAvatar, const struct FAttributeModifierHandle& ModifierParameterHandle)
 {
@@ -125,7 +125,7 @@ void ACue_Scope_Loop_10381101::OnTakeDamage(class AActor* InSourceAvatar, class 
 // (Final, Native, Protected, HasOutParams)
 // Parameters:
 // class UObject*                          TraceSource                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<struct FHitResult>               HitResults                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const TArray<struct FHitResult>&        HitResults                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 void ACue_Scope_Loop_10381101::OnTraceHitResult(class UObject* TraceSource, const TArray<struct FHitResult>& HitResults)
 {
@@ -151,7 +151,7 @@ void ACue_Scope_Loop_10381101::OnTraceHitResult(class UObject* TraceSource, cons
 // Function Hero_1038.UIController_103831.OnTagUpdate
 // (Final, Native, Public, HasOutParams)
 // Parameters:
-// struct FGameplayTag                     TagUpdated                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              TagUpdated                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    TagExists                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UUIController_103831::OnTagUpdate(const struct FGameplayTag& TagUpdated, bool TagExists)
@@ -253,7 +253,7 @@ void ACue_Ability_Loop_10386301::OnPlayerViewSideChanged(EClientPlayerViewSide I
 // Function Hero_1038.UIController_103871.OnTagUpdate
 // (Final, Native, Public, HasOutParams)
 // Parameters:
-// struct FGameplayTag                     TagUpdated                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              TagUpdated                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    TagExists                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UUIController_103871::OnTagUpdate(const struct FGameplayTag& TagUpdated, bool TagExists)
@@ -280,7 +280,7 @@ void UUIController_103871::OnTagUpdate(const struct FGameplayTag& TagUpdated, bo
 // Function Hero_1038.Cue_Ability_Loop_10387101.OnOwnerTagUpdate
 // (Final, Native, Public)
 // Parameters:
-// struct FGameplayTag                     Tag                                                    (ConstParm, Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              Tag                                                    (ConstParm, Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   Count                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void ACue_Ability_Loop_10387101::OnOwnerTagUpdate(const struct FGameplayTag& Tag, int32 Count)
@@ -304,31 +304,12 @@ void ACue_Ability_Loop_10387101::OnOwnerTagUpdate(const struct FGameplayTag& Tag
 }
 
 
-// Function Hero_1038.ScarletWitchAnimInstance.HandleTeleportAnim
-// (Final, Native, Public, BlueprintCallable)
-
-void UScarletWitchAnimInstance::HandleTeleportAnim()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ScarletWitchAnimInstance", "HandleTeleportAnim");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // Function Hero_1038.ScarletWitchChildActor.OnOwnerDeath
 // (Final, Native, Public, HasOutParams)
 // Parameters:
 // class AActor*                           InSourceAvatar                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           InTargetAvatar                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FAttributeModifierHandle         ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FAttributeModifierHandle&  ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void AScarletWitchChildActor::OnOwnerDeath(class AActor* InSourceAvatar, class AActor* InTargetAvatar, const struct FAttributeModifierHandle& ModifierParameterHandle)
 {
@@ -355,7 +336,7 @@ void AScarletWitchChildActor::OnOwnerDeath(class AActor* InSourceAvatar, class A
 // Function Hero_1038.TabData_1038.OnAbilityUse
 // (Final, Native, Public, HasOutParams)
 // Parameters:
-// struct FActionLogAbilityRecord          Record                                                 (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FActionLogAbilityRecord&   Record                                                 (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UTabData_1038::OnAbilityUse(const struct FActionLogAbilityRecord& Record)
 {

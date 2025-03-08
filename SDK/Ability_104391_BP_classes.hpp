@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Ability_104391_BP.Ability_104391_BP_C
-// 0x0000 (0x25A0 - 0x25A0)
+// 0x0000 (0x25A8 - 0x25A8)
 class UAbility_104391_BP_C final : public UAbility_ThrowBall_BP_C
 {
 public:

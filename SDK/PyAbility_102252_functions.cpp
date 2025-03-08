@@ -108,7 +108,7 @@ void UPyAbility_102252::K2_OnEndAbility(bool bWasCancelled)
 // PythonFunction PyAbility_102252.PyAbility_102252.OnOwnerLand
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FHitResult                       Hit                                                    (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FHitResult&                Hit                                                    (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyAbility_102252::OnOwnerLand(const struct FHitResult& Hit)
 {

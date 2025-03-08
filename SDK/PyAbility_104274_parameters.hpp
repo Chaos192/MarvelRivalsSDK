@@ -32,6 +32,14 @@ public:
 	struct FGameplayEventData                     EventData;                                         // 0x0000(0x0290)(ConstParm, Parm, OutParm, ReferenceParm)
 };
 
+// PythonFunction PyAbility_104274.PyAbility_104274.OnWebSummonedSpawnSucceed
+// 0x0008 (0x0008 - 0x0000)
+struct PyAbility_104274_OnWebSummonedSpawnSucceed final
+{
+public:
+	class AActor*                                 SpawnActor;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+};
+
 // PythonFunction PyAbility_104274.PyAbility_104274.K2_OnEndAbility
 // 0x0001 (0x0001 - 0x0000)
 struct PyAbility_104274_K2_OnEndAbility final

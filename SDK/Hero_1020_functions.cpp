@@ -41,7 +41,7 @@ void AMarvelCueNotify_Phantom::InitPhantomMaterial() const
 // Parameters:
 // class AActor*                           Source                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   AbilityID                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           SessionID                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    SessionID                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UMarvelGameplayAbility*           SourceAbility                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UEpicMomentAction_1020::OnActorAbilityCancel(class AActor* Source, int32 AbilityID, const class FString& SessionID, class UMarvelGameplayAbility* SourceAbility)
@@ -71,8 +71,8 @@ void UEpicMomentAction_1020::OnActorAbilityCancel(class AActor* Source, int32 Ab
 // (Final, Native, Public, HasOutParams)
 // Parameters:
 // class UAbilitySystemComponent*          ASC                                                    (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayEffectSpecStackHandle   GameplayEffectSpecHandle                               (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-// struct FActiveGameplayEffectHandle      ActiveGameplayEffectHandle                             (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayEffectSpecStackHandle&GameplayEffectSpecHandle                               (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FActiveGameplayEffectHandle&ActiveGameplayEffectHandle                             (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UEpicMomentAction_1020::OnGameplayEffectAppliedToTarget(class UAbilitySystemComponent* ASC, const struct FGameplayEffectSpecStackHandle& GameplayEffectSpecHandle, const struct FActiveGameplayEffectHandle& ActiveGameplayEffectHandle)
 {
@@ -99,7 +99,7 @@ void UEpicMomentAction_1020::OnGameplayEffectAppliedToTarget(class UAbilitySyste
 // Function Hero_1020.MantisCharacter.AssignDeathCueTag
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FGameplayTag                     InDeathCue                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              InDeathCue                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void AMantisCharacter::AssignDeathCueTag(const struct FGameplayTag& InDeathCue)
 {
@@ -126,8 +126,8 @@ void AMantisCharacter::AssignDeathCueTag(const struct FGameplayTag& InDeathCue)
 // Parameters:
 // class AActor*                           Instigator                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           Target                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FAttributeModifierHandle         ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGlobalEventExtraData            ExtraData                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FAttributeModifierHandle&  ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGlobalEventExtraData&     ExtraData                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
 void UTabData_1020::OnActorTakeHealth(class AActor* Instigator, class AActor* Target, const struct FAttributeModifierHandle& ModifierParameterHandle, const struct FGlobalEventExtraData& ExtraData)
 {
@@ -157,8 +157,8 @@ void UTabData_1020::OnActorTakeHealth(class AActor* Instigator, class AActor* Ta
 // Parameters:
 // class UAbilitySystemComponent*          Source                                                 (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UAbilitySystemComponent*          Target                                                 (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayEffectSpecStackHandle   EffectSpecStackHandle                                  (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-// struct FActiveGameplayEffectHandle      EffectHandle                                           (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayEffectSpecStackHandle&EffectSpecStackHandle                                  (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FActiveGameplayEffectHandle&EffectHandle                                           (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UTabData_1020::OnBuffAddEvent(class UAbilitySystemComponent* Source, class UAbilitySystemComponent* Target, const struct FGameplayEffectSpecStackHandle& EffectSpecStackHandle, const struct FActiveGameplayEffectHandle& EffectHandle)
 {

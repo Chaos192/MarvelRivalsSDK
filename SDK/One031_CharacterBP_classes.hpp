@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass 1031_CharacterBP.1031_CharacterBP_C
-// 0x0000 (0x1820 - 0x1820)
+// 0x0000 (0x1870 - 0x1870)
 class AOne031_CharacterBP_C final : public ALunaSnowCharacter
 {
 public:

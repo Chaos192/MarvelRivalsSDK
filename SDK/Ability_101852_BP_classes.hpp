@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Ability_101852_BP.Ability_101852_BP_C
-// 0x0000 (0x2590 - 0x2590)
+// 0x0000 (0x2598 - 0x2598)
 class UAbility_101852_BP_C final : public UAbility_101851_BP_C
 {
 public:

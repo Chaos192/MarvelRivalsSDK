@@ -10,25 +10,26 @@
 
 #include "Basic.hpp"
 
+#include "PyAbility_103332_classes.hpp"
 #include "Engine_structs.hpp"
 #include "Marvel_structs.hpp"
-#include "PyAbility_103332_classes.hpp"
 
 
 namespace SDK
 {
 
 // BlueprintGeneratedClass Ability_103332_BP.Ability_103332_BP_C
-// 0x10C8 (0x36B0 - 0x25E8)
+// 0x10D0 (0x36C0 - 0x25F0)
 class UAbility_103332_BP_C final : public UPyAbility_103332
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x25E8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	struct FSelectTaskParam                       选取参数;                                          // 0x25F0(0x10A0)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
-	class UGATask_WaitInput*                      等待选中目标输入Task;                              // 0x3690(0x0008)(Edit, BlueprintVisible, ZeroConstructor, Transient, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
-	class UGASpecTask_SelectTarget*               目标选取task;                                      // 0x3698(0x0008)(Edit, BlueprintVisible, ZeroConstructor, Transient, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
-	float                                         选取敌人的时间区间;                                // 0x36A0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          是否成功激活第三段技能;                            // 0x36A4(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x25F0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	uint8                                         Pad_25F8[0x8];                                     // 0x25F8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSelectTaskParam                       选取参数;                                          // 0x2600(0x10A0)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
+	class UGATask_WaitInput*                      等待选中目标输入Task;                              // 0x36A0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, Transient, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	class UGASpecTask_SelectTarget*               目标选取task;                                      // 0x36A8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, Transient, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	float                                         选取敌人的时间区间;                                // 0x36B0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          是否成功激活第三段技能;                            // 0x36B4(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void AE_OnAbilityInitialized();

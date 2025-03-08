@@ -117,6 +117,68 @@ void UAbility_103111::OnStopSkating(float TimeWaited)
 }
 
 
+// Function Hero_1031.TabData_1031.OnActorTakeHealth
+// (Final, Native, Public, HasOutParams)
+// Parameters:
+// class AActor*                           Instigator                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           Target                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FAttributeModifierHandle&  ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGlobalEventExtraData&     ExtraData                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+
+void UTabData_1031::OnActorTakeHealth(class AActor* Instigator, class AActor* Target, const struct FAttributeModifierHandle& ModifierParameterHandle, const struct FGlobalEventExtraData& ExtraData)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TabData_1031", "OnActorTakeHealth");
+
+	Params::TabData_1031_OnActorTakeHealth Parms{};
+
+	Parms.Instigator = Instigator;
+	Parms.Target = Target;
+	Parms.ModifierParameterHandle = std::move(ModifierParameterHandle);
+	Parms.ExtraData = std::move(ExtraData);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Hero_1031.TabData_1031.OnBuffAddEvent
+// (Final, Native, Public, HasOutParams)
+// Parameters:
+// class UAbilitySystemComponent*          Source                                                 (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UAbilitySystemComponent*          Target                                                 (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayEffectSpecStackHandle&EffectSpecStackHandle                                  (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FActiveGameplayEffectHandle&EffectHandle                                           (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UTabData_1031::OnBuffAddEvent(class UAbilitySystemComponent* Source, class UAbilitySystemComponent* Target, const struct FGameplayEffectSpecStackHandle& EffectSpecStackHandle, const struct FActiveGameplayEffectHandle& EffectHandle)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TabData_1031", "OnBuffAddEvent");
+
+	Params::TabData_1031_OnBuffAddEvent Parms{};
+
+	Parms.Source = Source;
+	Parms.Target = Target;
+	Parms.EffectSpecStackHandle = std::move(EffectSpecStackHandle);
+	Parms.EffectHandle = std::move(EffectHandle);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function Hero_1031.Cue_Ability_Loop_10315101.UpdateRayFx
 // (Final, Native, Public, BlueprintCallable)
 
@@ -500,7 +562,7 @@ void ACue_Scope_Loop_10314201::HandleLaserFX()
 // Function Hero_1031.Cue_Scope_Loop_10314201.OnScopeTraceHitRes
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<struct FHitResult>               HitResults                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const TArray<struct FHitResult>&        HitResults                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 void ACue_Scope_Loop_10314201::OnScopeTraceHitRes(const TArray<struct FHitResult>& HitResults)
 {
@@ -525,8 +587,8 @@ void ACue_Scope_Loop_10314201::OnScopeTraceHitRes(const TArray<struct FHitResult
 // Function Hero_1031.Cue_Scope_Loop_10314201.SpawnLaserFX
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FVector                          InFXStart                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          InFXEnd                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   InFXStart                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   InFXEnd                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void ACue_Scope_Loop_10314201::SpawnLaserFX(const struct FVector& InFXStart, const struct FVector& InFXEnd)
 {
@@ -699,7 +761,7 @@ class ACharacter* UAbility_103162::GetOwningChar()
 // Function Hero_1031.Ability_103162.IsTargetCanBeSelected
 // (Final, Native, Public)
 // Parameters:
-// class AActor*                           TargetActor                                            (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class AActor*                     TargetActor                                            (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UAbility_103162::IsTargetCanBeSelected(const class AActor* TargetActor)
@@ -792,7 +854,7 @@ void UAbility_103162::SetDefendTarget(class AActor* InActor)
 // Parameters:
 // class AActor*                           Source                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           InTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FAttributeModifierHandle         ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FAttributeModifierHandle&  ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UDefendTreatAbility::OnApplyTreatToOther(class AActor* Source, class AActor* InTarget, const struct FAttributeModifierHandle& ModifierParameterHandle)
 {
@@ -838,7 +900,7 @@ void UDefendTreatAbility::OnTimeSliceArrive()
 // Function Hero_1031.CueNotify_103192.OnJeffTagUpdate
 // (Final, Native, Private, HasOutParams)
 // Parameters:
-// struct FGameplayTag                     TagUpdated                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              TagUpdated                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bTagExists                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void ACueNotify_103192::OnJeffTagUpdate(const struct FGameplayTag& TagUpdated, bool bTagExists)
@@ -867,7 +929,7 @@ void ACueNotify_103192::OnJeffTagUpdate(const struct FGameplayTag& TagUpdated, b
 // Parameters:
 // class AActor*                           Source                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   AbilityID                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           SessionID                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    SessionID                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UMarvelGameplayAbility*           SourceAbility                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UEpicMomentAction_1031::OnActorAbilityCancel(class AActor* Source, int32 AbilityID, const class FString& SessionID, class UMarvelGameplayAbility* SourceAbility)
@@ -897,8 +959,8 @@ void UEpicMomentAction_1031::OnActorAbilityCancel(class AActor* Source, int32 Ab
 // (Final, Native, Public, HasOutParams)
 // Parameters:
 // class UAbilitySystemComponent*          ASC                                                    (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayEffectSpecStackHandle   GameplayEffectSpecHandle                               (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-// struct FActiveGameplayEffectHandle      ActiveGameplayEffectHandle                             (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayEffectSpecStackHandle&GameplayEffectSpecHandle                               (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FActiveGameplayEffectHandle&ActiveGameplayEffectHandle                             (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UEpicMomentAction_1031::OnGameplayEffectAppliedToTarget(class UAbilitySystemComponent* ASC, const struct FGameplayEffectSpecStackHandle& GameplayEffectSpecHandle, const struct FActiveGameplayEffectHandle& ActiveGameplayEffectHandle)
 {
@@ -937,68 +999,6 @@ void ULunaSnowAnimInstance::ChangeGroundMotionTo103141(bool IsOn)
 	Params::LunaSnowAnimInstance_ChangeGroundMotionTo103141 Parms{};
 
 	Parms.IsOn = IsOn;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Hero_1031.TabData_1031.OnActorTakeHealth
-// (Final, Native, Public, HasOutParams)
-// Parameters:
-// class AActor*                           Instigator                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class AActor*                           Target                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FAttributeModifierHandle         ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGlobalEventExtraData            ExtraData                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-
-void UTabData_1031::OnActorTakeHealth(class AActor* Instigator, class AActor* Target, const struct FAttributeModifierHandle& ModifierParameterHandle, const struct FGlobalEventExtraData& ExtraData)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TabData_1031", "OnActorTakeHealth");
-
-	Params::TabData_1031_OnActorTakeHealth Parms{};
-
-	Parms.Instigator = Instigator;
-	Parms.Target = Target;
-	Parms.ModifierParameterHandle = std::move(ModifierParameterHandle);
-	Parms.ExtraData = std::move(ExtraData);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Hero_1031.TabData_1031.OnBuffAddEvent
-// (Final, Native, Public, HasOutParams)
-// Parameters:
-// class UAbilitySystemComponent*          Source                                                 (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UAbilitySystemComponent*          Target                                                 (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayEffectSpecStackHandle   EffectSpecStackHandle                                  (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-// struct FActiveGameplayEffectHandle      EffectHandle                                           (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UTabData_1031::OnBuffAddEvent(class UAbilitySystemComponent* Source, class UAbilitySystemComponent* Target, const struct FGameplayEffectSpecStackHandle& EffectSpecStackHandle, const struct FActiveGameplayEffectHandle& EffectHandle)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TabData_1031", "OnBuffAddEvent");
-
-	Params::TabData_1031_OnBuffAddEvent Parms{};
-
-	Parms.Source = Source;
-	Parms.Target = Target;
-	Parms.EffectSpecStackHandle = std::move(EffectSpecStackHandle);
-	Parms.EffectHandle = std::move(EffectHandle);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

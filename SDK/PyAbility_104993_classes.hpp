@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "GameplayTags_structs.hpp"
 #include "PyAbility_104971_classes.hpp"
+#include "GameplayTags_structs.hpp"
 #include "Engine_structs.hpp"
 
 
@@ -41,7 +41,7 @@ public:
 };
 
 // PythonClass PyAbility_104993.PyAbility_104993
-// 0x0000 (0x2768 - 0x2768)
+// 0x0000 (0x28B0 - 0x28B0)
 class UPyAbility_104993 : public UPyAbility_104971
 {
 public:

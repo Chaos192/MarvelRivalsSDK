@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass NotTreatShield_10520301_BP.NotTreatShield_10520301_BP_C
-// 0x0000 (0x12C0 - 0x12C0)
+// 0x0000 (0x12D0 - 0x12D0)
 class UNotTreatShield_10520301_BP_C final : public UAbility_NotTreatKillFall_C
 {
 public:

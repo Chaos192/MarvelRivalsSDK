@@ -17,6 +17,36 @@
 namespace SDK
 {
 
+// PythonFunction PyAbility_104061.PyCue_Scope_HitImpact_10406101.GetAbilityHitAudioID
+// (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
+// Parameters:
+// class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+int32 UPyCue_Scope_HitImpact_10406101::GetAbilityHitAudioID(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyCue_Scope_HitImpact_10406101", "GetAbilityHitAudioID");
+
+	Params::PyCue_Scope_HitImpact_10406101_GetAbilityHitAudioID Parms{};
+
+	Parms.MyTarget = MyTarget;
+	Parms.Parameters = std::move(Parameters);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // PythonFunction PyAbility_104061.PyAbility_104061.CheckIsWalking
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
@@ -88,8 +118,8 @@ void UPyAbility_104061::K2_ActivateAbility()
 // Parameters:
 // class AActor*                           SelfActor                                              (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // class AActor*                           OtherActor                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FVector                          NormalImpulse                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FHitResult                       Hit                                                    (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FVector&                   NormalImpulse                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FHitResult&                Hit                                                    (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyAbility_104061::OnFallActorHit(class AActor* SelfActor, class AActor* OtherActor, const struct FVector& NormalImpulse, const struct FHitResult& Hit)
 {
@@ -219,7 +249,7 @@ void UPyAbility_104061::K2_OnEndAbility(bool bWasCancelled)
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyCue_Ability_Instant_10406103::DelayExecuteFX(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
 {
@@ -246,7 +276,7 @@ void APyCue_Ability_Instant_10406103::DelayExecuteFX(class AActor* MyTarget, con
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 bool APyCue_Ability_Instant_10406103::WhileActive(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
@@ -257,36 +287,6 @@ bool APyCue_Ability_Instant_10406103::WhileActive(class AActor* MyTarget, const 
 		Func = Class->GetFunction("PyCue_Ability_Instant_10406103", "WhileActive");
 
 	Params::PyCue_Ability_Instant_10406103_WhileActive Parms{};
-
-	Parms.MyTarget = MyTarget;
-	Parms.Parameters = std::move(Parameters);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// PythonFunction PyAbility_104061.PyCue_Scope_HitImpact_10406101.GetAbilityHitAudioID
-// (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
-// Parameters:
-// class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-int32 UPyCue_Scope_HitImpact_10406101::GetAbilityHitAudioID(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PyCue_Scope_HitImpact_10406101", "GetAbilityHitAudioID");
-
-	Params::PyCue_Scope_HitImpact_10406101_GetAbilityHitAudioID Parms{};
 
 	Parms.MyTarget = MyTarget;
 	Parms.Parameters = std::move(Parameters);

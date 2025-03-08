@@ -21,9 +21,9 @@ namespace SDK
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UObject*                          Obj                                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class FString                           setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
-// struct FUISettingEntryValueRange        value_range                                            (ConstParm, Parm, OutParm, ReferenceParm)
-// class FText                             platform_name                                          (ConstParm, Parm, OutParm, ReferenceParm)
+// const class FString&                    setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const struct FUISettingEntryValueRange& value_range                                            (ConstParm, Parm, OutParm, ReferenceParm)
+// const class FText&                      platform_name                                          (ConstParm, Parm, OutParm, ReferenceParm)
 // int32                                   Level                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 

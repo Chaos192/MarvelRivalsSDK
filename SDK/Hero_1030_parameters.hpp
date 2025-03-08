@@ -13,11 +13,29 @@
 #include "Engine_structs.hpp"
 #include "Marvel_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "GameplayAbilities_structs.hpp"
 #include "GameplayTags_structs.hpp"
 
 
 namespace SDK::Params
 {
+
+// Function Hero_1030.ProjectileConductBase.OnLocalConductBounceTargetDataCallback
+// 0x0168 (0x0168 - 0x0000)
+struct ProjectileConductBase_OnLocalConductBounceTargetDataCallback final
+{
+public:
+	struct FGameplayAbilityTargetDataHandle       LocalDataHandle;                                   // 0x0000(0x0168)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+
+// Function Hero_1030.ProjectileConductBase.OnMergeConductBounceTargetDataCallback
+// 0x02D0 (0x02D0 - 0x0000)
+struct ProjectileConductBase_OnMergeConductBounceTargetDataCallback final
+{
+public:
+	struct FGameplayAbilityTargetDataHandle       RemoteDataHandle;                                  // 0x0000(0x0168)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	struct FGameplayAbilityTargetDataHandle       LocalDataHandle;                                   // 0x0168(0x0168)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
 
 // Function Hero_1030.ProjectileConductBase.OnOwnerApplyDamage
 // 0x0028 (0x0028 - 0x0000)

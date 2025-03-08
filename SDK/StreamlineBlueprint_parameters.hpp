@@ -74,12 +74,29 @@ public:
 	int32                                         FramesPresented;                                   // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
+// Function StreamlineBlueprint.StreamlineLibraryDLSSG.GetDLSSGGeneratedFramesRange
+// 0x0008 (0x0008 - 0x0000)
+struct StreamlineLibraryDLSSG_GetDLSSGGeneratedFramesRange final
+{
+public:
+	int32                                         MinNumGeneratedFrames;                             // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         MaxNumGeneratedFrames;                             // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
 // Function StreamlineBlueprint.StreamlineLibraryDLSSG.GetDLSSGMode
 // 0x0001 (0x0001 - 0x0000)
 struct StreamlineLibraryDLSSG_GetDLSSGMode final
 {
 public:
 	EUStreamlineDLSSGMode                         ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function StreamlineBlueprint.StreamlineLibraryDLSSG.GetDLSSGNumberOfFramestoGenerate
+// 0x0004 (0x0004 - 0x0000)
+struct StreamlineLibraryDLSSG_GetDLSSGNumberOfFramestoGenerate final
+{
+public:
+	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
 // Function StreamlineBlueprint.StreamlineLibraryDLSSG.GetSupportedDLSSGModes
@@ -121,6 +138,14 @@ struct StreamlineLibraryDLSSG_SetDLSSGMode final
 {
 public:
 	EUStreamlineDLSSGMode                         DLSSGMode;                                         // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function StreamlineBlueprint.StreamlineLibraryDLSSG.SetDLSSGNumberOfFramestoGenerate
+// 0x0004 (0x0004 - 0x0000)
+struct StreamlineLibraryDLSSG_SetDLSSGNumberOfFramestoGenerate final
+{
+public:
+	int32                                         NumberOfFrames;                                    // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
 // Function StreamlineBlueprint.StreamlineLibraryReflex.GetDefaultReflexMode

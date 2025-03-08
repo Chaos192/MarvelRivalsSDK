@@ -323,49 +323,6 @@ public:
 	struct FGroomConversionSettings               ConversionSettings;                                // 0x0040(0x0030)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
 };
 
-// ScriptStruct HairStrandsCore.HairGroupCardsTextures
-// 0x0038 (0x0038 - 0x0000)
-struct FHairGroupCardsTextures final
-{
-public:
-	class UTexture2D*                             DepthTexture;                                      // 0x0000(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UTexture2D*                             CoverageTexture;                                   // 0x0008(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UTexture2D*                             TangentTexture;                                    // 0x0010(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UTexture2D*                             AttributeTexture;                                  // 0x0018(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UTexture2D*                             AuxilaryDataTexture;                               // 0x0020(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UTexture2D*                             MaterialTexture;                                   // 0x0028(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_30[0x8];                                       // 0x0030(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-
-// ScriptStruct HairStrandsCore.HairGroupsMeshesSourceDescription
-// 0x0070 (0x0070 - 0x0000)
-struct FHairGroupsMeshesSourceDescription final
-{
-public:
-	class UMaterialInterface*                     Material;                                          // 0x0000(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   MaterialSlotName;                                  // 0x0008(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UStaticMesh*                            ImportedMesh;                                      // 0x0018(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FHairGroupCardsTextures                Textures;                                          // 0x0020(0x0038)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	int32                                         GroupIndex;                                        // 0x0058(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         LODIndex;                                          // 0x005C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 ImportedMeshKey;                                   // 0x0060(0x0010)(ZeroConstructor, Transient, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// ScriptStruct HairStrandsCore.GroomBuildSettings
-// 0x000C (0x000C - 0x0000)
-struct FGroomBuildSettings final
-{
-public:
-	bool                                          bOverrideGuides;                                   // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         HairToGuideDensity;                                // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EGroomInterpolationQuality                    InterpolationQuality;                              // 0x0008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EGroomInterpolationWeight                     InterpolationDistance;                             // 0x0009(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bRandomizeGuide;                                   // 0x000A(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bUseUniqueGuide;                                   // 0x000B(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
 // ScriptStruct HairStrandsCore.HairGroupDesc
 // 0x0040 (0x0040 - 0x0000)
 struct FHairGroupDesc final
@@ -400,60 +357,6 @@ public:
 	float                                         HairLengthScale;                                   // 0x0038(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          HairLengthScale_Override;                          // 0x003C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_3D[0x3];                                       // 0x003D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-
-// ScriptStruct HairStrandsCore.HairBendConstraint
-// 0x0098 (0x0098 - 0x0000)
-struct FHairBendConstraint final
-{
-public:
-	bool                                          SolveBend;                                         // 0x0000(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ProjectBend;                                       // 0x0001(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2[0x2];                                        // 0x0002(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         BendDamping;                                       // 0x0004(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         BendStiffness;                                     // 0x0008(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FRuntimeFloatCurve                     BendScale;                                         // 0x0010(0x0088)(Edit, NativeAccessSpecifierPublic)
-};
-
-// ScriptStruct HairStrandsCore.HairStretchConstraint
-// 0x0098 (0x0098 - 0x0000)
-struct FHairStretchConstraint final
-{
-public:
-	bool                                          SolveStretch;                                      // 0x0000(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ProjectStretch;                                    // 0x0001(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2[0x2];                                        // 0x0002(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         StretchDamping;                                    // 0x0004(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         StretchStiffness;                                  // 0x0008(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FRuntimeFloatCurve                     StretchScale;                                      // 0x0010(0x0088)(Edit, NativeAccessSpecifierPublic)
-};
-
-// ScriptStruct HairStrandsCore.HairCollisionConstraint
-// 0x00A8 (0x00A8 - 0x0000)
-struct FHairCollisionConstraint final
-{
-public:
-	bool                                          SolveCollision;                                    // 0x0000(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ProjectCollision;                                  // 0x0001(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2[0x2];                                        // 0x0002(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         StaticFriction;                                    // 0x0004(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         KineticFriction;                                   // 0x0008(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         StrandsViscosity;                                  // 0x000C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FIntVector                             GridDimension;                                     // 0x0010(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         CollisionRadius;                                   // 0x001C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FRuntimeFloatCurve                     RadiusScale;                                       // 0x0020(0x0088)(Edit, NativeAccessSpecifierPublic)
-};
-
-// ScriptStruct HairStrandsCore.HairMaterialConstraints
-// 0x01D8 (0x01D8 - 0x0000)
-struct FHairMaterialConstraints final
-{
-public:
-	struct FHairBendConstraint                    BendConstraint;                                    // 0x0000(0x0098)(Edit, NativeAccessSpecifierPublic)
-	struct FHairStretchConstraint                 StretchConstraint;                                 // 0x0098(0x0098)(Edit, NativeAccessSpecifierPublic)
-	struct FHairCollisionConstraint               CollisionConstraint;                               // 0x0130(0x00A8)(Edit, NativeAccessSpecifierPublic)
 };
 
 // ScriptStruct HairStrandsCore.HairGroupLODInfo
@@ -529,57 +432,6 @@ public:
 	float                                         MaxCardsLength;                                    // 0x0018(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
-// ScriptStruct HairStrandsCore.HairSolverSettings
-// 0x0048 (0x0048 - 0x0000)
-struct FHairSolverSettings final
-{
-public:
-	bool                                          EnableSimulation;                                  // 0x0000(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EGroomNiagaraSolvers                          NiagaraSolver;                                     // 0x0001(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2[0x6];                                        // 0x0002(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	TSoftObjectPtr<class UNiagaraSystem>          CustomSystem;                                      // 0x0008(0x0030)(Edit, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         GravityPreloading;                                 // 0x0038(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         SubSteps;                                          // 0x003C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         IterationCount;                                    // 0x0040(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bForceVisible;                                     // 0x0044(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_45[0x3];                                       // 0x0045(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-
-// ScriptStruct HairStrandsCore.HairExternalForces
-// 0x0038 (0x0038 - 0x0000)
-struct FHairExternalForces final
-{
-public:
-	struct FVector                                GravityVector;                                     // 0x0000(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         AirDrag;                                           // 0x0018(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                AirVelocity;                                       // 0x0020(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// ScriptStruct HairStrandsCore.HairStrandsParameters
-// 0x0098 (0x0098 - 0x0000)
-struct FHairStrandsParameters final
-{
-public:
-	EGroomStrandsSize                             StrandsSize;                                       // 0x0000(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         StrandsDensity;                                    // 0x0004(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         StrandsSmoothing;                                  // 0x0008(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         StrandsThickness;                                  // 0x000C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FRuntimeFloatCurve                     ThicknessScale;                                    // 0x0010(0x0088)(Edit, NativeAccessSpecifierPublic)
-};
-
-// ScriptStruct HairStrandsCore.HairGroupsPhysics
-// 0x02F0 (0x02F0 - 0x0000)
-struct FHairGroupsPhysics final
-{
-public:
-	struct FHairSolverSettings                    SolverSettings;                                    // 0x0000(0x0048)(Edit, NativeAccessSpecifierPublic)
-	struct FHairExternalForces                    ExternalForces;                                    // 0x0048(0x0038)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FHairMaterialConstraints               MaterialConstraints;                               // 0x0080(0x01D8)(Edit, NativeAccessSpecifierPublic)
-	struct FHairStrandsParameters                 StrandsParameters;                                 // 0x0258(0x0098)(Edit, NativeAccessSpecifierPublic)
-};
-
 // ScriptStruct HairStrandsCore.HairCardsTextureSettings
 // 0x0010 (0x0010 - 0x0000)
 struct FHairCardsTextureSettings final
@@ -602,18 +454,6 @@ public:
 	int32                                         Version;                                           // 0x0034(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
-// ScriptStruct HairStrandsCore.HairGeometrySettings
-// 0x0010 (0x0010 - 0x0000)
-struct FHairGeometrySettings final
-{
-public:
-	float                                         HairWidth;                                         // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          HairWidth_Override;                                // 0x0004(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         HairRootScale;                                     // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         HairTipScale;                                      // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
 // ScriptStruct HairStrandsCore.HairGroupCardsInfo
 // 0x0008 (0x0008 - 0x0000)
 struct FHairGroupCardsInfo final
@@ -621,6 +461,20 @@ struct FHairGroupCardsInfo final
 public:
 	int32                                         NumCards;                                          // 0x0000(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         NumCardVertices;                                   // 0x0004(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// ScriptStruct HairStrandsCore.HairGroupCardsTextures
+// 0x0038 (0x0038 - 0x0000)
+struct FHairGroupCardsTextures final
+{
+public:
+	class UTexture2D*                             DepthTexture;                                      // 0x0000(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UTexture2D*                             CoverageTexture;                                   // 0x0008(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UTexture2D*                             TangentTexture;                                    // 0x0010(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UTexture2D*                             AttributeTexture;                                  // 0x0018(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UTexture2D*                             AuxilaryDataTexture;                               // 0x0020(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UTexture2D*                             MaterialTexture;                                   // 0x0028(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_30[0x8];                                       // 0x0030(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 
 // ScriptStruct HairStrandsCore.HairGroupsCardsSourceDescription
@@ -641,21 +495,6 @@ public:
 	int32                                         LODIndex;                                          // 0x00AC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FHairGroupCardsInfo                    CardsInfo;                                         // 0x00B0(0x0008)(Edit, Transient, EditConst, NoDestructor, NativeAccessSpecifierPublic)
 	class FString                                 ImportedMeshKey;                                   // 0x00B8(0x0010)(ZeroConstructor, Transient, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// ScriptStruct HairStrandsCore.HairSimulationConstraints
-// 0x0020 (0x0020 - 0x0000)
-struct FHairSimulationConstraints final
-{
-public:
-	float                                         BendDamping;                                       // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         BendStiffness;                                     // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         StretchDamping;                                    // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         StretchStiffness;                                  // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         StaticFriction;                                    // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         KineticFriction;                                   // 0x0014(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         StrandsViscosity;                                  // 0x0018(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         CollisionRadius;                                   // 0x001C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
 // ScriptStruct HairStrandsCore.HairLODSettings
@@ -702,15 +541,6 @@ public:
 	bool                                          bUseUniqueGuide;                                   // 0x0013(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
-// ScriptStruct HairStrandsCore.HairAdvancedRenderingSettings
-// 0x0002 (0x0002 - 0x0000)
-struct FHairAdvancedRenderingSettings final
-{
-public:
-	bool                                          bUseStableRasterization;                           // 0x0000(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bScatterSceneLighting;                             // 0x0001(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
 // ScriptStruct HairStrandsCore.HairDeformationSettings
 // 0x000C (0x000C - 0x0000)
 struct FHairDeformationSettings final
@@ -732,21 +562,6 @@ public:
 	struct FHairDeformationSettings               RiggingSettings;                                   // 0x001C(0x000C)(NoDestructor, NativeAccessSpecifierPublic)
 };
 
-// ScriptStruct HairStrandsCore.GroomHairGroupPreview
-// 0x004C (0x004C - 0x0000)
-struct FGroomHairGroupPreview final
-{
-public:
-	class FName                                   GroupName;                                         // 0x0000(0x000C)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         GroupId;                                           // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         CurveCount;                                        // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         GuideCount;                                        // 0x0014(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint32                                        Attributes;                                        // 0x0018(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint32                                        AttributeFlags;                                    // 0x001C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint32                                        Flags;                                             // 0x0020(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FHairGroupsInterpolation               InterpolationSettings;                             // 0x0024(0x0028)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-};
-
 // ScriptStruct HairStrandsCore.HairGroupsLOD
 // 0x0018 (0x0018 - 0x0000)
 struct FHairGroupsLOD final
@@ -755,6 +570,126 @@ public:
 	EGroomLODType                                 LODType;                                           // 0x0000(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<struct FHairLODSettings>               LODs;                                              // 0x0008(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+
+// ScriptStruct HairStrandsCore.HairGroupsMeshesSourceDescription
+// 0x0070 (0x0070 - 0x0000)
+struct FHairGroupsMeshesSourceDescription final
+{
+public:
+	class UMaterialInterface*                     Material;                                          // 0x0000(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   MaterialSlotName;                                  // 0x0008(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UStaticMesh*                            ImportedMesh;                                      // 0x0018(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FHairGroupCardsTextures                Textures;                                          // 0x0020(0x0038)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	int32                                         GroupIndex;                                        // 0x0058(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         LODIndex;                                          // 0x005C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ImportedMeshKey;                                   // 0x0060(0x0010)(ZeroConstructor, Transient, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// ScriptStruct HairStrandsCore.HairSolverSettings
+// 0x0048 (0x0048 - 0x0000)
+struct FHairSolverSettings final
+{
+public:
+	bool                                          EnableSimulation;                                  // 0x0000(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EGroomNiagaraSolvers                          NiagaraSolver;                                     // 0x0001(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2[0x6];                                        // 0x0002(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	TSoftObjectPtr<class UNiagaraSystem>          CustomSystem;                                      // 0x0008(0x0030)(Edit, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         GravityPreloading;                                 // 0x0038(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         SubSteps;                                          // 0x003C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         IterationCount;                                    // 0x0040(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bForceVisible;                                     // 0x0044(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_45[0x3];                                       // 0x0045(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+
+// ScriptStruct HairStrandsCore.HairExternalForces
+// 0x0038 (0x0038 - 0x0000)
+struct FHairExternalForces final
+{
+public:
+	struct FVector                                GravityVector;                                     // 0x0000(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         AirDrag;                                           // 0x0018(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                AirVelocity;                                       // 0x0020(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// ScriptStruct HairStrandsCore.HairBendConstraint
+// 0x0098 (0x0098 - 0x0000)
+struct FHairBendConstraint final
+{
+public:
+	bool                                          SolveBend;                                         // 0x0000(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ProjectBend;                                       // 0x0001(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2[0x2];                                        // 0x0002(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         BendDamping;                                       // 0x0004(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         BendStiffness;                                     // 0x0008(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FRuntimeFloatCurve                     BendScale;                                         // 0x0010(0x0088)(Edit, NativeAccessSpecifierPublic)
+};
+
+// ScriptStruct HairStrandsCore.HairStretchConstraint
+// 0x0098 (0x0098 - 0x0000)
+struct FHairStretchConstraint final
+{
+public:
+	bool                                          SolveStretch;                                      // 0x0000(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ProjectStretch;                                    // 0x0001(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2[0x2];                                        // 0x0002(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         StretchDamping;                                    // 0x0004(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         StretchStiffness;                                  // 0x0008(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FRuntimeFloatCurve                     StretchScale;                                      // 0x0010(0x0088)(Edit, NativeAccessSpecifierPublic)
+};
+
+// ScriptStruct HairStrandsCore.HairCollisionConstraint
+// 0x00A8 (0x00A8 - 0x0000)
+struct FHairCollisionConstraint final
+{
+public:
+	bool                                          SolveCollision;                                    // 0x0000(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ProjectCollision;                                  // 0x0001(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2[0x2];                                        // 0x0002(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         StaticFriction;                                    // 0x0004(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         KineticFriction;                                   // 0x0008(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         StrandsViscosity;                                  // 0x000C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FIntVector                             GridDimension;                                     // 0x0010(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         CollisionRadius;                                   // 0x001C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FRuntimeFloatCurve                     RadiusScale;                                       // 0x0020(0x0088)(Edit, NativeAccessSpecifierPublic)
+};
+
+// ScriptStruct HairStrandsCore.HairMaterialConstraints
+// 0x01D8 (0x01D8 - 0x0000)
+struct FHairMaterialConstraints final
+{
+public:
+	struct FHairBendConstraint                    BendConstraint;                                    // 0x0000(0x0098)(Edit, NativeAccessSpecifierPublic)
+	struct FHairStretchConstraint                 StretchConstraint;                                 // 0x0098(0x0098)(Edit, NativeAccessSpecifierPublic)
+	struct FHairCollisionConstraint               CollisionConstraint;                               // 0x0130(0x00A8)(Edit, NativeAccessSpecifierPublic)
+};
+
+// ScriptStruct HairStrandsCore.HairStrandsParameters
+// 0x0098 (0x0098 - 0x0000)
+struct FHairStrandsParameters final
+{
+public:
+	EGroomStrandsSize                             StrandsSize;                                       // 0x0000(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         StrandsDensity;                                    // 0x0004(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         StrandsSmoothing;                                  // 0x0008(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         StrandsThickness;                                  // 0x000C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FRuntimeFloatCurve                     ThicknessScale;                                    // 0x0010(0x0088)(Edit, NativeAccessSpecifierPublic)
+};
+
+// ScriptStruct HairStrandsCore.HairGroupsPhysics
+// 0x02F0 (0x02F0 - 0x0000)
+struct FHairGroupsPhysics final
+{
+public:
+	struct FHairSolverSettings                    SolverSettings;                                    // 0x0000(0x0048)(Edit, NativeAccessSpecifierPublic)
+	struct FHairExternalForces                    ExternalForces;                                    // 0x0048(0x0038)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FHairMaterialConstraints               MaterialConstraints;                               // 0x0080(0x01D8)(Edit, NativeAccessSpecifierPublic)
+	struct FHairStrandsParameters                 StrandsParameters;                                 // 0x0258(0x0098)(Edit, NativeAccessSpecifierPublic)
 };
 
 // ScriptStruct HairStrandsCore.HairSimulationSolver
@@ -774,6 +709,21 @@ public:
 	float                                         AirDrag;                                           // 0x0018(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector                                AirVelocity;                                       // 0x0020(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// ScriptStruct HairStrandsCore.HairSimulationConstraints
+// 0x0020 (0x0020 - 0x0000)
+struct FHairSimulationConstraints final
+{
+public:
+	float                                         BendDamping;                                       // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         BendStiffness;                                     // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         StretchDamping;                                    // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         StretchStiffness;                                  // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         StaticFriction;                                    // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         KineticFriction;                                   // 0x0014(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         StrandsViscosity;                                  // 0x0018(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         CollisionRadius;                                   // 0x001C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
 // ScriptStruct HairStrandsCore.HairSimulationSetup
@@ -807,6 +757,18 @@ public:
 	struct FHairSimulationConstraints             MaterialConstraints;                               // 0x0070(0x0020)(Edit, BlueprintVisible, Interp, NoDestructor, NativeAccessSpecifierPublic)
 };
 
+// ScriptStruct HairStrandsCore.HairGeometrySettings
+// 0x0010 (0x0010 - 0x0000)
+struct FHairGeometrySettings final
+{
+public:
+	float                                         HairWidth;                                         // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          HairWidth_Override;                                // 0x0004(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         HairRootScale;                                     // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         HairTipScale;                                      // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
 // ScriptStruct HairStrandsCore.HairShadowSettings
 // 0x000C (0x000C - 0x0000)
 struct FHairShadowSettings final
@@ -817,6 +779,15 @@ public:
 	bool                                          bUseHairRaytracingGeometry;                        // 0x0008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bVoxelize;                                         // 0x0009(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_A[0x2];                                        // 0x000A(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+
+// ScriptStruct HairStrandsCore.HairAdvancedRenderingSettings
+// 0x0002 (0x0002 - 0x0000)
+struct FHairAdvancedRenderingSettings final
+{
+public:
+	bool                                          bUseStableRasterization;                           // 0x0000(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bScatterSceneLighting;                             // 0x0001(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
 // ScriptStruct HairStrandsCore.HairGroupsRendering
@@ -881,6 +852,35 @@ public:
 	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 
+// ScriptStruct HairStrandsCore.GroomHairGroupPreview
+// 0x004C (0x004C - 0x0000)
+struct FGroomHairGroupPreview final
+{
+public:
+	class FName                                   GroupName;                                         // 0x0000(0x000C)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         GroupId;                                           // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         CurveCount;                                        // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         GuideCount;                                        // 0x0014(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint32                                        Attributes;                                        // 0x0018(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint32                                        AttributeFlags;                                    // 0x001C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint32                                        Flags;                                             // 0x0020(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FHairGroupsInterpolation               InterpolationSettings;                             // 0x0024(0x0028)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+};
+
+// ScriptStruct HairStrandsCore.GroomBuildSettings
+// 0x000C (0x000C - 0x0000)
+struct FGroomBuildSettings final
+{
+public:
+	bool                                          bOverrideGuides;                                   // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         HairToGuideDensity;                                // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EGroomInterpolationQuality                    InterpolationQuality;                              // 0x0008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EGroomInterpolationWeight                     InterpolationDistance;                             // 0x0009(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bRandomizeGuide;                                   // 0x000A(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bUseUniqueGuide;                                   // 0x000B(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
 // ScriptStruct HairStrandsCore.MovieSceneGroomCacheParams
 // 0x0020 (0x0020 - 0x0000)
 struct FMovieSceneGroomCacheParams
@@ -909,7 +909,7 @@ public:
 struct FMovieSceneGroomCacheSectionTemplate final : public FMovieSceneEvalTemplate
 {
 public:
-	struct FMovieSceneGroomCacheSectionTemplateParameters Params;                                            // 0x0020(0x0028)(NoDestructor, NativeAccessSpecifierPublic)
+	struct FMovieSceneGroomCacheSectionTemplateParameters Params;                                    // 0x0020(0x0028)(NoDestructor, NativeAccessSpecifierPublic)
 };
 
 }

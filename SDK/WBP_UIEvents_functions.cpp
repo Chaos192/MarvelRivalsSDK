@@ -55,7 +55,7 @@ void UWBP_UIEvents_C::ExecuteUbergraph_WBP_UIEvents(int32 EntryPoint)
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
 // class UAkAudioEvent*                    AkEvent                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class FString                           EventName                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    EventName                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash)
 
 class FString UWBP_UIEvents_C::GetEventName(class UAkAudioEvent* AkEvent, const class FString& EventName)
@@ -81,7 +81,7 @@ class FString UWBP_UIEvents_C::GetEventName(class UAkAudioEvent* AkEvent, const 
 // Parameters:
 // class UAkComponent*                     AkComponent                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 // class UAkAudioEvent*                    Event                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class FString                           EventName                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    EventName                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UWBP_UIEvents_C::OnPostAkEvent(class UAkComponent* AkComponent, class UAkAudioEvent* Event, const class FString& EventName)
 {

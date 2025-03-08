@@ -20,8 +20,8 @@ namespace SDK
 // PythonFunction PyLokiCharacter.PyLokiCharacter.SpawnLokiPhantom
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FTransform                       InTransform                                            (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class UMarvelGameplayAbility*           InAbility                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// const struct FTransform&                InTransform                                            (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const class UMarvelGameplayAbility*     InAbility                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 void APyLokiCharacter::SpawnLokiPhantom(const struct FTransform& InTransform, const class UMarvelGameplayAbility* InAbility)
 {

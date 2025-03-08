@@ -10,32 +10,13 @@
 
 #include "Basic.hpp"
 
+#include "PyMarvelHUD_classes.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
-#include "PyMarvelHUD_classes.hpp"
 
 
 namespace SDK
 {
-
-// PythonClass PyMarvelLobbyHUD.PyMarvelLobbyHUD
-// 0x0000 (0x0700 - 0x0700)
-class APyMarvelLobbyHUD : public APyMarvelHUD
-{
-public:
-	void ReceiveEndPlay(EEndPlayReason Reason);
-	void ReceiveBeginPlay();
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"PyMarvelLobbyHUD">();
-	}
-	static class APyMarvelLobbyHUD* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<APyMarvelLobbyHUD>();
-	}
-};
 
 // PythonClass PyMarvelLobbyHUD.PyLobbyAudioComponent
 // 0x0030 (0x0120 - 0x00F0)
@@ -50,8 +31,8 @@ public:
 	class UAkAudioEvent*                          AkEvent_BackgroundMain;                            // 0x0118(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
-	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
 	void ReceiveBeginPlay();
+	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
 
 public:
 	static class UClass* StaticClass()
@@ -61,6 +42,25 @@ public:
 	static class UPyLobbyAudioComponent* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UPyLobbyAudioComponent>();
+	}
+};
+
+// PythonClass PyMarvelLobbyHUD.PyMarvelLobbyHUD
+// 0x0000 (0x0700 - 0x0700)
+class APyMarvelLobbyHUD : public APyMarvelHUD
+{
+public:
+	void ReceiveBeginPlay();
+	void ReceiveEndPlay(EEndPlayReason Reason);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PyMarvelLobbyHUD">();
+	}
+	static class APyMarvelLobbyHUD* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<APyMarvelLobbyHUD>();
 	}
 };
 

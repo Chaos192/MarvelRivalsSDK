@@ -23,7 +23,7 @@ namespace SDK
 class UMarvelOnlineServicesEventSubsystem : public UGameInstanceSubsystem
 {
 public:
-	TMulticastInlineDelegate<void(int32 LocalUserNum, EMarvelLoginStatus OldStatus, EMarvelLoginStatus NewStatus, struct FUniqueNetIdWrapper& NewId)> OnLoginStatusChanged;                              // 0x0038(0x0010)(ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(int32 LocalUserNum, EMarvelLoginStatus OldStatus, EMarvelLoginStatus NewStatus, const struct FUniqueNetIdWrapper& NewId)> OnLoginStatusChanged; // 0x0038(0x0010)(ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
 	uint8                                         Pad_48[0x18];                                      // 0x0048(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:

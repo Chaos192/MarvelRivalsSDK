@@ -233,7 +233,7 @@ public:
 
 // PythonClass PyWidget_RankInfo.PyWidget_Settlement_Rank_Score_Bar
 // 0x0050 (0x0640 - 0x05F0)
-class UPyWidget_Settlement_Rank_Score_Bar final : public UPyMarvelUserWidget
+class UPyWidget_Settlement_Rank_Score_Bar : public UPyMarvelUserWidget
 {
 public:
 	uint8                                         Pad_5E9[0x3];                                      // 0x05E9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
@@ -260,7 +260,7 @@ public:
 
 // PythonClass PyWidget_RankInfo.PyWidget_Settlement_Rank_Protection
 // 0x0000 (0x05F0 - 0x05F0)
-class UPyWidget_Settlement_Rank_Protection final : public UPyMarvelUserWidget
+class UPyWidget_Settlement_Rank_Protection : public UPyMarvelUserWidget
 {
 public:
 	void Construct();

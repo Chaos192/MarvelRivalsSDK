@@ -485,10 +485,10 @@ public:
 struct RemoteControlInterceptionTestObject_TestFunction final
 {
 public:
-	struct FRemoteControlInterceptionFunctionParamStruct InStruct;                                          // 0x0000(0x0028)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	struct FRemoteControlInterceptionFunctionParamStruct InStruct;                                   // 0x0000(0x0028)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	int32                                         InTestFactor;                                      // 0x0028(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FRemoteControlInterceptionFunctionParamStruct ReturnValue;                                       // 0x0030(0x0028)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+	struct FRemoteControlInterceptionFunctionParamStruct ReturnValue;                                // 0x0030(0x0028)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
 
 }

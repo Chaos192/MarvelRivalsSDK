@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass 1040_CharacterBP.1040_CharacterBP_C
-// 0x0000 (0x1950 - 0x1950)
+// 0x0000 (0x19A0 - 0x19A0)
 class AOne040_CharacterBP_C final : public APyMisterFantasticCharacter
 {
 public:

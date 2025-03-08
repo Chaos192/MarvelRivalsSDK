@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass 1024_CharacterBP.1024_CharacterBP_C
-// 0x0000 (0x1850 - 0x1850)
+// 0x0000 (0x18B0 - 0x18B0)
 class AOne024_CharacterBP_C final : public APyHelaCharacter
 {
 public:

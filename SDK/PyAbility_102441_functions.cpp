@@ -21,7 +21,7 @@ namespace SDK
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyCue_Projectile_HitImpact_10244101::OnExecuteAudio(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters) const
 {
@@ -47,7 +47,7 @@ void UPyCue_Projectile_HitImpact_10244101::OnExecuteAudio(class AActor* MyTarget
 // PythonFunction PyAbility_102441.PyEffectiveComponent_10244101.K2_OnPreApplyContainer
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<struct FHitResult>               HitResults                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const TArray<struct FHitResult>&        HitResults                                             (ConstParm, Parm, OutParm, ReferenceParm)
 // TArray<struct FHitResult>               ReturnValue                                            (Parm, OutParm, ReturnParm)
 
 TArray<struct FHitResult> UPyEffectiveComponent_10244101::K2_OnPreApplyContainer(const TArray<struct FHitResult>& HitResults)
@@ -94,7 +94,7 @@ void APyProjectile_10244101::K2_OnBeginAgentTask()
 // PythonFunction PyAbility_102441.PyProjectile_10244101.K2_OnProcessHit
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FHitResult                       Hit                                                    (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FHitResult&                Hit                                                    (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyProjectile_10244101::K2_OnProcessHit(const struct FHitResult& Hit)
 {
@@ -215,7 +215,7 @@ void APyProjectile_10244101::OnHitComponentCollisionChanged(class UPrimitiveComp
 // PythonFunction PyAbility_102441.PyProjectile_10244101.OnRemoveAttachBuff
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FGameplayEffectRemovalInfo       InGameplayEffectRemovalInfo                            (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayEffectRemovalInfo&InGameplayEffectRemovalInfo                            (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyProjectile_10244101::OnRemoveAttachBuff(const struct FGameplayEffectRemovalInfo& InGameplayEffectRemovalInfo)
 {
@@ -297,7 +297,7 @@ void APyProjectile_10244101::K2_OnRecycleAgentTask()
 // PythonFunction PyAbility_102441.PyTraceComponent_10244101.K2_OnGetTraceStart
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FVector                          Location                                               (Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FVector&                         Location                                               (Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 struct FVector UPyTraceComponent_10244101::K2_OnGetTraceStart(struct FVector& Location)
@@ -328,7 +328,7 @@ struct FVector UPyTraceComponent_10244101::K2_OnGetTraceStart(struct FVector& Lo
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyCue_Projectile_Loop_10244101::OnExecuteFX(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
 {
@@ -355,7 +355,7 @@ void APyCue_Projectile_Loop_10244101::OnExecuteFX(class AActor* MyTarget, const 
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyCue_Projectile_Loop_10244101::OnRemoveFX(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
 {
@@ -382,7 +382,7 @@ void APyCue_Projectile_Loop_10244101::OnRemoveFX(class AActor* MyTarget, const s
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyCue_Ability_Loop_10244101::WhileActiveFX(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
 {
@@ -408,7 +408,7 @@ void APyCue_Ability_Loop_10244101::WhileActiveFX(class AActor* MyTarget, const s
 // PythonFunction PyAbility_102441.PyCue_Ability_Loop_10244101.SetFXEnableTick0
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FHelaFXInfo                      Info                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
+// const struct FHelaFXInfo&               Info                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
 
 void APyCue_Ability_Loop_10244101::SetFXEnableTick0(const struct FHelaFXInfo& Info)
 {
@@ -433,7 +433,7 @@ void APyCue_Ability_Loop_10244101::SetFXEnableTick0(const struct FHelaFXInfo& In
 // PythonFunction PyAbility_102441.PyCue_Ability_Loop_10244101.SetFXEnableTick1
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FHelaFXInfo                      Info                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
+// const struct FHelaFXInfo&               Info                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
 
 void APyCue_Ability_Loop_10244101::SetFXEnableTick1(const struct FHelaFXInfo& Info)
 {
@@ -458,7 +458,7 @@ void APyCue_Ability_Loop_10244101::SetFXEnableTick1(const struct FHelaFXInfo& In
 // PythonFunction PyAbility_102441.PyCue_Ability_Loop_10244101.SetFXEnableTick2
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FHelaFXInfo                      Info                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
+// const struct FHelaFXInfo&               Info                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
 
 void APyCue_Ability_Loop_10244101::SetFXEnableTick2(const struct FHelaFXInfo& Info)
 {
@@ -483,7 +483,7 @@ void APyCue_Ability_Loop_10244101::SetFXEnableTick2(const struct FHelaFXInfo& In
 // PythonFunction PyAbility_102441.PyCue_Ability_Loop_10244101.SetFXEnableTick3
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FHelaFXInfo                      Info                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
+// const struct FHelaFXInfo&               Info                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
 
 void APyCue_Ability_Loop_10244101::SetFXEnableTick3(const struct FHelaFXInfo& Info)
 {
@@ -509,7 +509,7 @@ void APyCue_Ability_Loop_10244101::SetFXEnableTick3(const struct FHelaFXInfo& In
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyCue_Ability_Loop_10244101::OnRemoveFX(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
 {
@@ -536,7 +536,7 @@ void APyCue_Ability_Loop_10244101::OnRemoveFX(class AActor* MyTarget, const stru
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // class UNiagaraComponent*                Fx                                                     (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FRotator                         NewRotate                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor)
+// const struct FRotator&                  NewRotate                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor)
 
 void APyCue_Ability_Loop_10244101::RecoverFXState(class UNiagaraComponent* Fx, const struct FRotator& NewRotate)
 {

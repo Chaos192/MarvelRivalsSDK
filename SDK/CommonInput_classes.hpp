@@ -10,12 +10,12 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_classes.hpp"
+#include "DeveloperSettings_structs.hpp"
+#include "DeveloperSettings_classes.hpp"
 #include "CommonInput_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
-#include "DeveloperSettings_structs.hpp"
-#include "DeveloperSettings_classes.hpp"
+#include "CoreUObject_classes.hpp"
 
 
 namespace SDK
@@ -121,8 +121,8 @@ public:
 	TArray<struct FInputDeviceIdentifierPair>     GamepadHardwareIdMapping;                          // 0x0088(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPublic)
 	TSoftObjectPtr<class UTexture2D>              ControllerTexture;                                 // 0x0098(0x0030)(Edit, DisableEditOnInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TSoftObjectPtr<class UTexture2D>              ControllerButtonMaskTexture;                       // 0x00C8(0x0030)(Edit, DisableEditOnInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<struct FCommonInputKeyBrushConfiguration> InputBrushDataMap;                                 // 0x00F8(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPublic)
-	TArray<struct FCommonInputKeySetBrushConfiguration> InputBrushKeySets;                                 // 0x0108(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	TArray<struct FCommonInputKeyBrushConfiguration> InputBrushDataMap;                              // 0x00F8(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	TArray<struct FCommonInputKeySetBrushConfiguration> InputBrushKeySets;                           // 0x0108(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPublic)
 
 public:
 	static const TArray<class FName> GetRegisteredGamepads();
@@ -151,7 +151,7 @@ public:
 	bool                                          bCanChangeGamepadType;                             // 0x0060(0x0001)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	uint8                                         Pad_61[0x7];                                       // 0x0061(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<TSoftClassPtr<class UClass>>           ControllerData;                                    // 0x0068(0x0010)(Edit, ZeroConstructor, Config, Protected, UObjectWrapper, NativeAccessSpecifierProtected)
-	TArray<TSubclassOf<class UCommonInputBaseControllerData>> ControllerDataClasses;                             // 0x0078(0x0010)(ZeroConstructor, Transient, Protected, UObjectWrapper, NativeAccessSpecifierProtected)
+	TArray<TSubclassOf<class UCommonInputBaseControllerData>> ControllerDataClasses;                 // 0x0078(0x0010)(ZeroConstructor, Transient, Protected, UObjectWrapper, NativeAccessSpecifierProtected)
 
 public:
 	static class UClass* StaticClass()
@@ -171,7 +171,7 @@ class UCommonInputSettings final : public UDeveloperSettings
 public:
 	TSoftClassPtr<class UClass>                   InputData;                                         // 0x0048(0x0030)(Edit, Config, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	struct FPerPlatformSettings                   PlatformInput;                                     // 0x0078(0x0010)(Edit, ContainsInstancedReference, NativeAccessSpecifierPrivate)
-	TMap<class FName, struct FCommonInputPlatformBaseData> CommonInputPlatformData;                           // 0x0088(0x0050)(Config, Deprecated, NativeAccessSpecifierPrivate)
+	TMap<class FName, struct FCommonInputPlatformBaseData> CommonInputPlatformData;                  // 0x0088(0x0050)(Config, Deprecated, NativeAccessSpecifierPrivate)
 	bool                                          bEnableInputMethodThrashingProtection;             // 0x00D8(0x0001)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	uint8                                         Pad_D9[0x3];                                       // 0x00D9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         InputMethodThrashingLimit;                         // 0x00DC(0x0004)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
@@ -181,7 +181,7 @@ public:
 	bool                                          bEnableDefaultInputConfig;                         // 0x00F1(0x0001)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	bool                                          bEnableEnhancedInputSupport;                       // 0x00F2(0x0001)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	uint8                                         Pad_F3[0x5];                                       // 0x00F3(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
-	TSoftObjectPtr<class UCommonInputActionDomainTable> ActionDomainTable;                                 // 0x00F8(0x0030)(Edit, Config, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	TSoftObjectPtr<class UCommonInputActionDomainTable> ActionDomainTable;                           // 0x00F8(0x0030)(Edit, Config, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	uint8                                         Pad_128[0x8];                                      // 0x0128(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	TSubclassOf<class UCommonUIInputData>         InputDataClass;                                    // 0x0130(0x0008)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	class UCommonInputActionDomainTable*          ActionDomainTablePtr;                              // 0x0138(0x0008)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
@@ -206,7 +206,7 @@ class UCommonInputSubsystem final : public ULocalPlayerSubsystem
 {
 public:
 	uint8                                         Pad_38[0x38];                                      // 0x0038(0x0038)(Fixing Size After Last Property [ Dumper-7 ])
-	TMulticastInlineDelegate<void(ECommonInputType bNewInputType)> OnInputMethodChanged;                              // 0x0070(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPrivate)
+	TMulticastInlineDelegate<void(ECommonInputType bNewInputType)> OnInputMethodChanged;             // 0x0070(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPrivate)
 	int32                                         NumberOfInputMethodChangesRecently;                // 0x0080(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	uint8                                         Pad_84[0x4];                                       // 0x0084(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	double                                        LastInputMethodChangeTime;                         // 0x0088(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)

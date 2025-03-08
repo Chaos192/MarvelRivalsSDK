@@ -39,7 +39,7 @@ void APyVenomChildActor::ReceivePoolBeginPlay()
 // PythonFunction PyVenomCharacter.PyVenomChildActor.OnGenericGameplayTagUpdate
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayTag                     InTag                                                  (ConstParm, Parm, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              InTag                                                  (ConstParm, Parm, NoDestructor, HasGetValueTypeHash)
 // int32                                   Count                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void APyVenomChildActor::OnGenericGameplayTagUpdate(const struct FGameplayTag& InTag, int32 Count)
@@ -110,7 +110,7 @@ void APyVenomCharacter::OnAbilityInit(int32 AbilityID)
 // PythonFunction PyVenomCharacter.PyVenomCharacter.OnLaunched
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FVector                          LaunchVelocity                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVector&                   LaunchVelocity                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    bXYOverride                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    bZOverride                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 

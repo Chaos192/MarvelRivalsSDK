@@ -53,6 +53,26 @@ public:
 	}
 };
 
+// Class ModelingOperators.RecomputeUVsOpFactory
+// 0x0120 (0x0150 - 0x0030)
+class alignas(0x10) URecomputeUVsOpFactory final : public UObject
+{
+public:
+	uint8                                         Pad_30[0x8];                                       // 0x0030(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	class URecomputeUVsToolProperties*            Settings;                                          // 0x0038(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_40[0x110];                                     // 0x0040(0x0110)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"RecomputeUVsOpFactory">();
+	}
+	static class URecomputeUVsOpFactory* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<URecomputeUVsOpFactory>();
+	}
+};
+
 // Class ModelingOperators.UVLayoutProperties
 // 0x0028 (0x00D8 - 0x00B0)
 class UUVLayoutProperties final : public UInteractiveToolPropertySet
@@ -76,26 +96,6 @@ public:
 	static class UUVLayoutProperties* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UUVLayoutProperties>();
-	}
-};
-
-// Class ModelingOperators.RecomputeUVsOpFactory
-// 0x0120 (0x0150 - 0x0030)
-class alignas(0x10) URecomputeUVsOpFactory final : public UObject
-{
-public:
-	uint8                                         Pad_30[0x8];                                       // 0x0030(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	class URecomputeUVsToolProperties*            Settings;                                          // 0x0038(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_40[0x110];                                     // 0x0040(0x0110)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"RecomputeUVsOpFactory">();
-	}
-	static class URecomputeUVsOpFactory* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<URecomputeUVsOpFactory>();
 	}
 };
 

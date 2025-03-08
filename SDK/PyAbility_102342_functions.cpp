@@ -108,7 +108,7 @@ bool UPyAbility_102342::CanActivate()
 // PythonFunction PyAbility_102342.PyAbility_102342.TryMakeTriggerContext
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayEventData               EventData                                              (Parm, OutParm, ReferenceParm)
+// struct FGameplayEventData&              EventData                                              (Parm, OutParm, ReferenceParm)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 bool UPyAbility_102342::TryMakeTriggerContext(struct FGameplayEventData& EventData)
@@ -138,7 +138,7 @@ bool UPyAbility_102342::TryMakeTriggerContext(struct FGameplayEventData& EventDa
 // PythonFunction PyAbility_102342.PyAbility_102342.K2_ActivateAbilityFromEvent
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayEventData               EventData                                              (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayEventData&        EventData                                              (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyAbility_102342::K2_ActivateAbilityFromEvent(const struct FGameplayEventData& EventData)
 {

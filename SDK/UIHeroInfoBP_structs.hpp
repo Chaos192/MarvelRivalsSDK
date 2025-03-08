@@ -11,13 +11,13 @@
 #include "Basic.hpp"
 
 #include "HeroBasicBP_structs.hpp"
-#include "AbilityIntroBP_structs.hpp"
-#include "HeroHeadBP_structs.hpp"
-#include "HeroGalleryBP_structs.hpp"
-#include "HpBarBP_structs.hpp"
 #include "SelectHeroBP_structs.hpp"
-#include "HeroResultBP_structs.hpp"
+#include "HeroHeadBP_structs.hpp"
+#include "HpBarBP_structs.hpp"
+#include "HeroGalleryBP_structs.hpp"
+#include "AbilityIntroBP_structs.hpp"
 #include "Bond_InfoBP_structs.hpp"
+#include "HeroResultBP_structs.hpp"
 #include "HeroHighLightBP_structs.hpp"
 
 

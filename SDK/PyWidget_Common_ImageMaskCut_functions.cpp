@@ -108,7 +108,7 @@ void UPyWidget_Common_ImageMaskCut::SetImageScale(float Image_Scale_0)
 // PythonFunction PyWidget_Common_ImageMaskCut.PyWidget_Common_ImageMaskCut.SetImageOffsetUV
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FVector2D                        Image_OffsetUV_0                                       (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVector2D&                 Image_OffsetUV_0                                       (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UPyWidget_Common_ImageMaskCut::SetImageOffsetUV(const struct FVector2D& Image_OffsetUV_0)
 {

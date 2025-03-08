@@ -21,11 +21,11 @@ namespace SDK
 // (Final, RequiredAPI, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
 // EUStreamlineFeatureRequirementsFlags    Requirements                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    D3D11Supported                                         (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    D3D12Supported                                         (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    VulkanSupported                                        (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    VSyncOffRequired                                       (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    HardwareSchedulingRequired                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool*                                   D3D11Supported                                         (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool*                                   D3D12Supported                                         (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool*                                   VulkanSupported                                        (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool*                                   VSyncOffRequired                                       (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool*                                   HardwareSchedulingRequired                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UStreamlineLibrary::BreakStreamlineFeatureRequirements(EUStreamlineFeatureRequirementsFlags Requirements, bool* D3D11Supported, bool* D3D12Supported, bool* VulkanSupported, bool* VSyncOffRequired, bool* HardwareSchedulingRequired)
 {
@@ -174,8 +174,8 @@ EUStreamlineDLSSGMode UStreamlineLibraryDLSSG::GetDefaultDLSSGMode()
 // Function StreamlineBlueprint.StreamlineLibraryDLSSG.GetDLSSGFrameTiming
 // (Final, RequiredAPI, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// float                                   FrameRateInHertz                                       (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   FramesPresented                                        (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float*                                  FrameRateInHertz                                       (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32*                                  FramesPresented                                        (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UStreamlineLibraryDLSSG::GetDLSSGFrameTiming(float* FrameRateInHertz, int32* FramesPresented)
 {
@@ -201,6 +201,36 @@ void UStreamlineLibraryDLSSG::GetDLSSGFrameTiming(float* FrameRateInHertz, int32
 }
 
 
+// Function StreamlineBlueprint.StreamlineLibraryDLSSG.GetDLSSGGeneratedFramesRange
+// (Final, RequiredAPI, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
+// Parameters:
+// int32*                                  MinNumGeneratedFrames                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32*                                  MaxNumGeneratedFrames                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UStreamlineLibraryDLSSG::GetDLSSGGeneratedFramesRange(int32* MinNumGeneratedFrames, int32* MaxNumGeneratedFrames)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("StreamlineLibraryDLSSG", "GetDLSSGGeneratedFramesRange");
+
+	Params::StreamlineLibraryDLSSG_GetDLSSGGeneratedFramesRange Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (MinNumGeneratedFrames != nullptr)
+		*MinNumGeneratedFrames = Parms.MinNumGeneratedFrames;
+
+	if (MaxNumGeneratedFrames != nullptr)
+		*MaxNumGeneratedFrames = Parms.MaxNumGeneratedFrames;
+}
+
+
 // Function StreamlineBlueprint.StreamlineLibraryDLSSG.GetDLSSGMode
 // (Final, RequiredAPI, Native, Static, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
@@ -214,6 +244,31 @@ EUStreamlineDLSSGMode UStreamlineLibraryDLSSG::GetDLSSGMode()
 		Func = StaticClass()->GetFunction("StreamlineLibraryDLSSG", "GetDLSSGMode");
 
 	Params::StreamlineLibraryDLSSG_GetDLSSGMode Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function StreamlineBlueprint.StreamlineLibraryDLSSG.GetDLSSGNumberOfFramestoGenerate
+// (Final, RequiredAPI, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UStreamlineLibraryDLSSG::GetDLSSGNumberOfFramestoGenerate()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("StreamlineLibraryDLSSG", "GetDLSSGNumberOfFramestoGenerate");
+
+	Params::StreamlineLibraryDLSSG_GetDLSSGNumberOfFramestoGenerate Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -344,6 +399,31 @@ void UStreamlineLibraryDLSSG::SetDLSSGMode(EUStreamlineDLSSGMode DLSSGMode)
 	Params::StreamlineLibraryDLSSG_SetDLSSGMode Parms{};
 
 	Parms.DLSSGMode = DLSSGMode;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function StreamlineBlueprint.StreamlineLibraryDLSSG.SetDLSSGNumberOfFramestoGenerate
+// (Final, RequiredAPI, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// int32                                   NumberOfFrames                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UStreamlineLibraryDLSSG::SetDLSSGNumberOfFramestoGenerate(int32 NumberOfFrames)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("StreamlineLibraryDLSSG", "SetDLSSGNumberOfFramestoGenerate");
+
+	Params::StreamlineLibraryDLSSG_SetDLSSGNumberOfFramestoGenerate Parms{};
+
+	Parms.NumberOfFrames = NumberOfFrames;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -532,7 +612,7 @@ EUStreamlineFeatureSupport UStreamlineLibraryReflex::QueryReflexSupport()
 // Function StreamlineBlueprint.StreamlineLibraryReflex.SetReflexMode
 // (Final, RequiredAPI, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// EUStreamlineReflexMode                  Mode                                                   (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const EUStreamlineReflexMode            Mode                                                   (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UStreamlineLibraryReflex::SetReflexMode(const EUStreamlineReflexMode Mode)
 {

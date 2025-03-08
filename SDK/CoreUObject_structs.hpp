@@ -444,102 +444,118 @@ public:
 public:
 	FVector& Normalize()
 	{
-		*this /= Magnitude();
-		return *this;
+	    *this /= Magnitude();
+	    return *this;
 	}
 	FVector& operator*=(const FVector& Other)
 	{
-		*this = *this * Other;
-		return *this;
+	    *this = *this * Other;
+	    return *this;
 	}
 	FVector& operator*=(float Scalar)
 	{
-		*this = *this * Scalar;
-		return *this;
+	    *this = *this * Scalar;
+	    return *this;
 	}
 	FVector& operator+=(const FVector& Other)
 	{
-		*this = *this + Other;
-		return *this;
+	    *this = *this + Other;
+	    return *this;
 	}
 	FVector& operator-=(const FVector& Other)
 	{
-		*this = *this - Other;
-		return *this;
+	    *this = *this - Other;
+	    return *this;
 	}
 	FVector& operator/=(const FVector& Other)
 	{
-		*this = *this / Other;
-		return *this;
+	    *this = *this / Other;
+	    return *this;
 	}
 	FVector& operator/=(float Scalar)
 	{
-		*this = *this / Scalar;
-		return *this;
+	    *this = *this / Scalar;
+	    return *this;
 	}
+	 static const FVector OneVector;
+	
+	 static const FVector ZeroVector;
+	
 
+	float DistTo(const FVector& V) const const
+	{
+	    return (*this - V).Size();
+	}
 	UnderlayingType Dot(const FVector& Other) const
 	{
-		return (X * Other.X) + (Y * Other.Y) + (Z * Other.Z);
+	    return (X * Other.X) + (Y * Other.Y) + (Z * Other.Z);
 	}
 	UnderlayingType GetDistanceTo(const FVector& Other) const
 	{
-		FVector DiffVector = Other - *this;
-		return DiffVector.Magnitude();
+	    FVector DiffVector = Other - *this;
+	    return DiffVector.Magnitude();
 	}
 	UnderlayingType GetDistanceToInMeters(const FVector& Other) const
 	{
-		return GetDistanceTo(Other) * static_cast<UnderlayingType>(0.01);
+	    return GetDistanceTo(Other) * static_cast<UnderlayingType>(0.01);
 	}
 	FVector GetNormalized() const
 	{
-		return *this / Magnitude();
+	    return *this / Magnitude();
 	}
 	bool IsZero() const
 	{
-		return X == 0.0 && Y == 0.0 && Z == 0.0;
+	    return X == 0.0 && Y == 0.0 && Z == 0.0;
 	}
 	UnderlayingType Magnitude() const
 	{
-		return std::sqrt((X * X) + (Y * Y) + (Z * Z));
+	    return std::sqrt((X * X) + (Y * Y) + (Z * Z));
+	}
+	float Size() const const
+	{
+	    return sqrtf(X * X + Y * Y + Z * Z);
 	}
 	bool operator!=(const FVector& Other) const
 	{
-		return X != Other.X || Y != Other.Y || Z != Other.Z;
+	    return X != Other.X || Y != Other.Y || Z != Other.Z;
 	}
 	FVector operator*(const FVector& Other) const
 	{
-		return { X * Other.X, Y * Other.Y, Z * Other.Z };
+	    return { X * Other.X, Y * Other.Y, Z * Other.Z };
 	}
 	FVector operator*(float Scalar) const
 	{
-		return { X * Scalar, Y * Scalar, Z * Scalar };
+	    return { X * Scalar, Y * Scalar, Z * Scalar };
 	}
 	FVector operator+(const FVector& Other) const
 	{
-		return { X + Other.X, Y + Other.Y, Z + Other.Z };
+	    return { X + Other.X, Y + Other.Y, Z + Other.Z };
 	}
 	FVector operator-(const FVector& Other) const
 	{
-		return { X - Other.X, Y - Other.Y, Z - Other.Z };
+	    return { X - Other.X, Y - Other.Y, Z - Other.Z };
 	}
 	FVector operator/(const FVector& Other) const
 	{
-		if (Other.X == 0.0f || Other.Y == 0.0f ||Other.Z == 0.0f)
-			return *this;
+	    if (Other.X == 0.0f || Other.Y == 0.0f ||Other.Z == 0.0f)
+	        return *this;
 	
-		return { X / Other.X, Y / Other.Y, Z / Other.Z };
+	    return { X / Other.X, Y / Other.Y, Z / Other.Z };
 	}
 	FVector operator/(float Scalar) const
 	{
-		if (Scalar == 0.0f)
-			return *this;
+	    if (Scalar == 0.0f)
+	        return *this;
 	
-		return { X / Scalar, Y / Scalar, Z / Scalar };
+	    return { X / Scalar, Y / Scalar, Z / Scalar };
 	}
 	bool operator==(const FVector& Other) const
 	{
-		return X == Other.X && Y == Other.Y && Z == Other.Z;
+	    return X == Other.X && Y == Other.Y && Z == Other.Z;
+	}
+	FVector operator^(const FVector& V) const
+	{
+	    return { Y * V.Z - Z * V.Y, Z * V.X - X * V.Z, X * V.Y - Y * V.X };
 	}
 };
 
@@ -638,103 +654,119 @@ public:
 	using UnderlayingType = double;
 
 	double                                        X;                                                 // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	static const FVector2D                        ZeroVector;                                        // 0x0000(0x0008)()
+	static const FVector2D                        OneVector;                                         // 0x0000(0x0008)()
+	static const FVector2D                        HalfVector;                                        // 0x0000(0x0008)()
 	double                                        Y;                                                 // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
+	inline double Distance(FVector2D v)
+	{
+	        double x = this->X - v.X;
+	        double y = this->Y - v.Y;
+	
+	        return sqrt((x * x) + (y * y)) * 0.03048f;
+	    }
 	FVector2D& Normalize()
 	{
-		*this /= Magnitude();
-		return *this;
+	    *this /= Magnitude();
+	    return *this;
 	}
+	float Size() const { return sqrtf(X * X + Y * Y); }
+	
 	FVector2D& operator*=(const FVector2D& Other)
 	{
-		*this = *this * Other;
-		return *this;
+	    *this = *this * Other;
+	    return *this;
 	}
 	FVector2D& operator*=(float Scalar)
 	{
-		*this = *this * Scalar;
-		return *this;
+	    *this = *this * Scalar;
+	    return *this;
 	}
 	FVector2D& operator+=(const FVector2D& Other)
 	{
-		*this = *this + Other;
-		return *this;
+	    *this = *this + Other;
+	    return *this;
 	}
 	FVector2D& operator-=(const FVector2D& Other)
 	{
-		*this = *this - Other;
-		return *this;
+	    *this = *this - Other;
+	    return *this;
 	}
 	FVector2D& operator/=(const FVector2D& Other)
 	{
-		*this = *this / Other;
-		return *this;
+	    *this = *this / Other;
+	    return *this;
 	}
 	FVector2D& operator/=(float Scalar)
 	{
-		*this = *this / Scalar;
-		return *this;
+	    *this = *this / Scalar;
+	    return *this;
 	}
 
 	UnderlayingType Dot(const FVector2D& Other) const
 	{
-		return (X * Other.X) + (Y * Other.Y);
+	    return (X * Other.X) + (Y * Other.Y);
 	}
 	UnderlayingType GetDistanceTo(const FVector2D& Other) const
 	{
-		FVector2D DiffVector = Other - *this;
-		return DiffVector.Magnitude();
+	    FVector2D DiffVector = Other - *this;
+	    return DiffVector.Magnitude();
+	}
+	UnderlayingType GetDistanceToInMeters(const FVector2D& Other) const
+	{
+	    return GetDistanceTo(Other) * static_cast<UnderlayingType>(0.01);
 	}
 	FVector2D GetNormalized() const
 	{
-		return *this / Magnitude();
+	    return *this / Magnitude();
 	}
 	bool IsZero() const
 	{
-		return X == 0.0 && Y == 0.0;
+	    return X == 0.0 && Y == 0.0;
 	}
 	UnderlayingType Magnitude() const
 	{
-		return std::sqrt((X * X) + (Y * Y));
+	    return std::sqrt((X * X) + (Y * Y));
 	}
 	bool operator!=(const FVector2D& Other) const
 	{
-		return X != Other.X || Y != Other.Y;
+	    return X != Other.X || Y != Other.Y;
 	}
 	FVector2D operator*(const FVector2D& Other) const
 	{
-		return { X * Other.X, Y * Other.Y };
+	    return { X * Other.X, Y * Other.Y };
 	}
 	FVector2D operator*(float Scalar) const
 	{
-		return { X * Scalar, Y * Scalar };
+	    return { X * Scalar, Y * Scalar };
 	}
 	FVector2D operator+(const FVector2D& Other) const
 	{
-		return { X + Other.X, Y + Other.Y };
+	    return { X + Other.X, Y + Other.Y };
 	}
 	FVector2D operator-(const FVector2D& Other) const
 	{
-		return { X - Other.X, Y - Other.Y  };
+	    return { X - Other.X, Y - Other.Y };
 	}
 	FVector2D operator/(const FVector2D& Other) const
 	{
-		if (Other.X == 0.0f || Other.Y == 0.0f)
-			return *this;
+	    if (Other.X == 0.0f || Other.Y == 0.0f)
+	        return *this;
 	
-		return { X / Other.X, Y / Other.Y };
+	    return { X / Other.X, Y / Other.Y };
 	}
 	FVector2D operator/(float Scalar) const
 	{
-		if (Scalar == 0.0f)
-			return *this;
+	    if (Scalar == 0.0f)
+	        return *this;
 	
-		return { X / Scalar, Y / Scalar };
+	    return { X / Scalar, Y / Scalar };
 	}
 	bool operator==(const FVector2D& Other) const
 	{
-		return X == Other.X && Y == Other.Y;
+	    return X == Other.X && Y == Other.Y;
 	}
 };
 
@@ -1208,10 +1240,51 @@ public:
 struct FLinearColor final
 {
 public:
+	static const FLinearColor                     Zero;                                              // 0x0000(0x0010)()
+
 	float                                         R;                                                 // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	static const FLinearColor                     outline;                                           // 0x0000(0x0010)()
 	float                                         G;                                                 // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         B;                                                 // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         A;                                                 // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	static const FLinearColor FromARGB(int A, int R, int G, int B)
+	{
+	    return FLinearColor{ static_cast<float>(RGBToLinear(R)), static_cast<float>(RGBToLinear(G)), static_cast<float>(RGBToLinear(B)), static_cast<float>(A) / 255.0f };
+	}
+	static const FLinearColor FromRGB(int R, int G, int B)
+	{
+	    return FLinearColor{ static_cast<float>(RGBToLinear(R)), static_cast<float>(RGBToLinear(G)), static_cast<float>(RGBToLinear(B)), 1.0f };
+	}
+	static double RGBToLinear(uint8_t color)
+	{
+	    float fColor = static_cast<float>(color) / 255.0f;
+	
+	    if (fColor > 0.04045f)
+	    {
+	        return pow(fColor * (1.0 / 1.055) + 0.0521327, 2.4);
+	    }
+	    else
+	    {
+	        return fColor * (1.0 / 12.92);
+	    }
+	}
+
+	 FLinearColor()
+	 : R(0.f), G(0.f), B(0.f), A(0.f) {}
+	
+	 FLinearColor(float R, float G, float B)
+	 : R(R), G(G), B(B), A(1.0f) {}
+	
+	 FLinearColor(float R, float G, float B, float A)
+	 : R(R), G(G), B(B), A(A) {}
+	
+
+	bool operator!=(const FLinearColor& C) const const
+	{
+	    return R != C.R || G != C.G || B != C.B || A != C.A;
+	}
 };
 
 // ScriptStruct CoreUObject.InterpCurvePointLinearColor
@@ -1247,6 +1320,35 @@ public:
 	double                                        Y;                                                 // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	double                                        Z;                                                 // 0x0010(0x0008)(Edit, BlueprintVisible, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	double                                        W;                                                 // 0x0018(0x0008)(Edit, BlueprintVisible, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	 FQuat operator*(decltype(X) Scalar) const;
+	
+	 FQuat operator+(const FQuat& Other) const;
+	
+	 FQuat operator-(const FQuat& Other) const;
+	
+	 FQuat operator/(decltype(X) Scalar) const;
+	
+	 FVector RotateVector(const struct FVector& V) const;
+	
+	 inline FQuat()
+	 : X(0.0), Y(0.0), Z(0.0), W(0.0) {};
+	    
+	 inline FQuat(decltype(X) Value)
+	 : X(Value), Y(Value), Z(Value), W(Value) {};
+	    
+	 inline FQuat(decltype(X) x, decltype(Y) y, decltype(Z) z, decltype(W) w)
+	 : X(x), Y(y), Z(z), W(w) {};
+	    
+	 inline bool operator!=(const FQuat& Other) const
+	{
+	        return X != Other.X || Y != Other.Y || Z != Other.Z || W != Other.W;
+	        }
+	 inline bool operator==(const FQuat& Other) const
+	{
+	        return X == Other.X && Y == Other.Y && Z == Other.Z && W == Other.W;
+	        }
 };
 
 // ScriptStruct CoreUObject.InterpCurvePointQuat
@@ -1330,6 +1432,7 @@ public:
 	struct FPlane                                 YPlane;                                            // 0x0020(0x0020)(Edit, BlueprintVisible, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FPlane                                 ZPlane;                                            // 0x0040(0x0020)(Edit, BlueprintVisible, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FPlane                                 WPlane;                                            // 0x0060(0x0020)(Edit, BlueprintVisible, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         M[4][4];                                           // 0x0080(0x0040)()
 };
 
 // ScriptStruct CoreUObject.Plane4d
@@ -1547,6 +1650,37 @@ public:
 	double                                        Pitch;                                             // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	double                                        Yaw;                                               // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	double                                        Roll;                                              // 0x0010(0x0008)(Edit, BlueprintVisible, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	 FRotator operator*(decltype(Pitch) Scalar) const;
+	
+	 FRotator operator+(const FRotator& Other) const;
+	
+	 FRotator operator-(const FRotator& Other) const;
+	
+	 FRotator operator/(decltype(Pitch) Scalar) const;
+	
+	 FVector ToVector();
+	
+	 inline FRotator()
+	 : Pitch(0.0), Yaw(0.0), Roll(0.0) {};
+	    
+	 inline FRotator(decltype(Pitch) Value)
+	 : Pitch(Value), Yaw(Value), Roll(Value) {};
+	    
+	 inline FRotator(decltype(Pitch) pitch, decltype(Yaw) yaw, decltype(Roll) roll)
+	 : Pitch(pitch), Yaw(yaw), Roll(roll) {};
+	    
+	 inline bool operator!=(const FRotator& Other) const
+	{
+	        return Pitch != Other.Pitch || Yaw != Other.Yaw || Roll != Other.Roll;
+	        }
+	 inline bool operator==(const FRotator& Other) const
+	{
+	        return Pitch == Other.Pitch && Yaw == Other.Yaw && Roll == Other.Roll;
+	        }
+	 struct FQuat Quaternion() const;
+	
 };
 
 // ScriptStruct CoreUObject.Rotator3d
@@ -1663,6 +1797,18 @@ public:
 	uint8                                         Pad_38[0x8];                                       // 0x0038(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector                                Scale3D;                                           // 0x0040(0x0018)(Edit, BlueprintVisible, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_58[0x8];                                       // 0x0058(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	 FMatrix ToMatrixWithScale() const;
+	
+	 FTransform(): Rotation(0.f, 0.f, 0.f, 1.f), Translation(0.f), Scale3D(FVector::OneVector) {};
+	 
+	    
+	 FTransform(const FRotator& InRotation): Rotation(InRotation.Quaternion()), Translation(FVector::ZeroVector), Scale3D(FVector::OneVector) {};
+	 
+	    
+	 FVector TransformPosition(FVector& V) const;
+	
 };
 
 // ScriptStruct CoreUObject.Transform3d

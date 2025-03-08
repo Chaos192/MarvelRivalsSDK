@@ -72,7 +72,7 @@ void UPyWidget_CommonItem::SetIsNameVisible(bool IsNameVisible_0)
 // PythonFunction PyWidget_CommonItem_V2.PyWidget_CommonItem.SetItemName
 // (Native, Public, BlueprintCallable)
 // Parameters:
-// class FText                             ItemName_0                                             (Parm)
+// const class FText&                      ItemName_0                                             (Parm)
 
 void UPyWidget_CommonItem::SetItemName(const class FText& ItemName_0)
 {
@@ -98,7 +98,7 @@ void UPyWidget_CommonItem::SetItemName(const class FText& ItemName_0)
 // (Native, Public, BlueprintCallable)
 // Parameters:
 // int32                                   ConvertNum                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           CurrencyId                                             (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    CurrencyId                                             (Parm, ZeroConstructor, HasGetValueTypeHash)
 // bool                                    Small                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UPyWidget_CommonItem::SetConvertNum(int32 ConvertNum, const class FString& CurrencyId, bool Small)
@@ -126,7 +126,7 @@ void UPyWidget_CommonItem::SetConvertNum(int32 ConvertNum, const class FString& 
 // PythonFunction PyWidget_CommonItem_V2.PyWidget_CommonItem.SetItemData
 // (Native, Public, BlueprintCallable)
 // Parameters:
-// class FString                           ItemId_0                                               (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    ItemId_0                                               (Parm, ZeroConstructor, HasGetValueTypeHash)
 // EItemType                               ItemType_0                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // int32                                   ItemNum_0                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // int32                                   Multiple                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -228,7 +228,7 @@ void UPyWidget_CommonItem::OnAnimationsDisabled()
 // PythonFunction PyWidget_CommonItem_V2.PyWidget_CommonItem.OnAnimationFinished
 // (BlueprintCosmetic, Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UWidgetAnimation*                 Animation                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// const class UWidgetAnimation*           Animation                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 void UPyWidget_CommonItem::OnAnimationFinished(const class UWidgetAnimation* Animation)
 {
@@ -250,21 +250,21 @@ void UPyWidget_CommonItem::OnAnimationFinished(const class UWidgetAnimation* Ani
 }
 
 
-// PythonFunction PyWidget_CommonItem_V2.PyWidget_CommonItem.SetIsHover
-// (Native, Protected, BlueprintCallable)
+// PythonFunction PyWidget_CommonItem_V2.PyWidget_CommonItem.SetItemIconQuality
+// (Native, Public, BlueprintCallable)
 // Parameters:
-// bool                                    IsHover_0                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// EItemQualityType                        ItemQuality                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UPyWidget_CommonItem::SetIsHover(bool IsHover_0)
+void UPyWidget_CommonItem::SetItemIconQuality(EItemQualityType ItemQuality)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PyWidget_CommonItem", "SetIsHover");
+		Func = Class->GetFunction("PyWidget_CommonItem", "SetItemIconQuality");
 
-	Params::PyWidget_CommonItem_SetIsHover Parms{};
+	Params::PyWidget_CommonItem_SetItemIconQuality Parms{};
 
-	Parms.IsHover_0 = IsHover_0;
+	Parms.ItemQuality = ItemQuality;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -303,8 +303,8 @@ void UPyWidget_CommonItem::SetIsFocusable(bool IsFocusable)
 // PythonFunction PyWidget_CommonItem_V2.PyWidget_CommonItem.OnFocusReceived
 // (BlueprintCosmetic, Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGeometry                        MyGeometry                                             (Parm, IsPlainOldData, NoDestructor)
-// struct FFocusEvent                      InFocusEvent                                           (Parm, NoDestructor)
+// const struct FGeometry&                 MyGeometry                                             (Parm, IsPlainOldData, NoDestructor)
+// const struct FFocusEvent&               InFocusEvent                                           (Parm, NoDestructor)
 // struct FEventReply                      ReturnValue                                            (Parm, OutParm, ReturnParm)
 
 struct FEventReply UPyWidget_CommonItem::OnFocusReceived(const struct FGeometry& MyGeometry, const struct FFocusEvent& InFocusEvent)
@@ -387,21 +387,21 @@ void UPyWidget_CommonItem::OnInitialized()
 }
 
 
-// PythonFunction PyWidget_CommonItem_V2.PyWidget_CommonItem.SetItemIconQuality
-// (Native, Public, BlueprintCallable)
+// PythonFunction PyWidget_CommonItem_V2.PyWidget_CommonItem.SetIsHover
+// (Native, Protected, BlueprintCallable)
 // Parameters:
-// EItemQualityType                        ItemQuality                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    IsHover_0                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UPyWidget_CommonItem::SetItemIconQuality(EItemQualityType ItemQuality)
+void UPyWidget_CommonItem::SetIsHover(bool IsHover_0)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PyWidget_CommonItem", "SetItemIconQuality");
+		Func = Class->GetFunction("PyWidget_CommonItem", "SetIsHover");
 
-	Params::PyWidget_CommonItem_SetItemIconQuality Parms{};
+	Params::PyWidget_CommonItem_SetIsHover Parms{};
 
-	Parms.ItemQuality = ItemQuality;
+	Parms.IsHover_0 = IsHover_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -742,7 +742,7 @@ void UPyWidget_CommonItem::SetIsEquipped(bool IsEquipped_0)
 // PythonFunction PyWidget_CommonItem_V2.PyWidget_CommonItem.SetItemSize
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FVector2D                        ItemSize_0                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVector2D&                 ItemSize_0                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UPyWidget_CommonItem::SetItemSize(const struct FVector2D& ItemSize_0)
 {

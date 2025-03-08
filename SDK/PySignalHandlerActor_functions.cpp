@@ -64,7 +64,7 @@ void APySignalHandlerActor::ReceiveEndPlay(EEndPlayReason EndPlayReason)
 // PythonFunction PySignalHandlerActor.PySignalHandlerActor.SetRequestResult
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FSignalResult                    Result                                                 (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FSignalResult&             Result                                                 (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APySignalHandlerActor::SetRequestResult(const struct FSignalResult& Result)
 {
@@ -183,7 +183,7 @@ void APySignalHandlerActor::OnRep_BeCancelled()
 // PythonFunction PySignalHandlerActor.PySignalHandlerActor.StartHandlerSignal
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FSignalResult                    Result                                                 (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FSignalResult&             Result                                                 (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APySignalHandlerActor::StartHandlerSignal(const struct FSignalResult& Result)
 {
@@ -208,7 +208,7 @@ void APySignalHandlerActor::StartHandlerSignal(const struct FSignalResult& Resul
 // PythonFunction PySignalHandlerActor.PySignalHandlerActor.EndHandlerSignal
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FSignalResult                    Result                                                 (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FSignalResult&             Result                                                 (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APySignalHandlerActor::EndHandlerSignal(const struct FSignalResult& Result)
 {

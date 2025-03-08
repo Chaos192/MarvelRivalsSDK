@@ -42,7 +42,7 @@ public:
 };
 
 // PythonClass PyAbility_104273.PyAbility_104273
-// 0x0000 (0x2580 - 0x2580)
+// 0x0000 (0x2588 - 0x2588)
 class UPyAbility_104273 : public UMarvelGameplayAbility
 {
 public:
@@ -87,11 +87,11 @@ public:
 };
 
 // PythonClass PyAbility_104273.PyUIController_104273
-// 0x0010 (0x0C70 - 0x0C60)
+// 0x0010 (0x0C60 - 0x0C50)
 class UPyUIController_104273 final : public UUIC_Ability
 {
 public:
-	struct FGameplayTag                           UltimateActiveTag;                                 // 0x0C60(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGameplayTag                           UltimateActiveTag;                                 // 0x0C50(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void OnInit();

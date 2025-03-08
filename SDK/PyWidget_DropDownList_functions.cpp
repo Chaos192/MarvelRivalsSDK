@@ -258,7 +258,7 @@ void UPyWidget_DropDownList::SetItemID(int32 ItemId_0)
 // PythonFunction PyWidget_DropDownList.PyWidget_DropDownList.SetItemTextList
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<class FText>                     ItemTextList_0                                         (ConstParm, Parm, OutParm, ReferenceParm)
+// const TArray<class FText>&              ItemTextList_0                                         (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyWidget_DropDownList::SetItemTextList(const TArray<class FText>& ItemTextList_0)
 {
@@ -283,7 +283,7 @@ void UPyWidget_DropDownList::SetItemTextList(const TArray<class FText>& ItemText
 // PythonFunction PyWidget_DropDownList.PyWidget_DropDownList.SetItemIconList
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<class UTexture2D*>               ItemIconList_0                                         (ConstParm, Parm, OutParm, ReferenceParm)
+// const TArray<class UTexture2D*>&        ItemIconList_0                                         (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyWidget_DropDownList::SetItemIconList(const TArray<class UTexture2D*>& ItemIconList_0)
 {
@@ -308,7 +308,7 @@ void UPyWidget_DropDownList::SetItemIconList(const TArray<class UTexture2D*>& It
 // PythonFunction PyWidget_DropDownList.PyWidget_DropDownList.SetItemHeroIDList
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<int32>                           ItemHeroIDList_0                                       (ConstParm, Parm, OutParm, ReferenceParm)
+// const TArray<int32>&                    ItemHeroIDList_0                                       (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyWidget_DropDownList::SetItemHeroIDList(const TArray<int32>& ItemHeroIDList_0)
 {
@@ -333,7 +333,7 @@ void UPyWidget_DropDownList::SetItemHeroIDList(const TArray<int32>& ItemHeroIDLi
 // PythonFunction PyWidget_DropDownList.PyWidget_DropDownList.SetItemColorList
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<struct FLinearColor>             ItemColorList_0                                        (ConstParm, Parm, OutParm, ReferenceParm)
+// const TArray<struct FLinearColor>&      ItemColorList_0                                        (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyWidget_DropDownList::SetItemColorList(const TArray<struct FLinearColor>& ItemColorList_0)
 {
@@ -358,7 +358,7 @@ void UPyWidget_DropDownList::SetItemColorList(const TArray<struct FLinearColor>&
 // PythonFunction PyWidget_DropDownList.PyWidget_DropDownList.SetItemLeftColorList
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<struct FLinearColor>             ItemLeftColorList_0                                    (ConstParm, Parm, OutParm, ReferenceParm)
+// const TArray<struct FLinearColor>&      ItemLeftColorList_0                                    (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyWidget_DropDownList::SetItemLeftColorList(const TArray<struct FLinearColor>& ItemLeftColorList_0)
 {
@@ -383,7 +383,7 @@ void UPyWidget_DropDownList::SetItemLeftColorList(const TArray<struct FLinearCol
 // PythonFunction PyWidget_DropDownList.PyWidget_DropDownList.SetItemCustomeTagList
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<class FString>                   ItemCustomeTagList_0                                   (ConstParm, Parm, OutParm, ReferenceParm)
+// const TArray<class FString>&            ItemCustomeTagList_0                                   (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyWidget_DropDownList::SetItemCustomeTagList(const TArray<class FString>& ItemCustomeTagList_0)
 {

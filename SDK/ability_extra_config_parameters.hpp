@@ -14,14 +14,6 @@
 namespace SDK::Params
 {
 
-// PythonFunction ability_extra_config.PyActivationExtraConfig_ThroughEnemyConfig.InitExtraConfig
-// 0x0008 (0x0008 - 0x0000)
-struct PyActivationExtraConfig_ThroughEnemyConfig_InitExtraConfig final
-{
-public:
-	class UObject*                                ai_owner;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-};
-
 // PythonFunction ability_extra_config.PyActivationExtraConfig_SkillTimeTriggerConfig.InitExtraConfig
 // 0x0008 (0x0008 - 0x0000)
 struct PyActivationExtraConfig_SkillTimeTriggerConfig_InitExtraConfig final
@@ -36,6 +28,14 @@ struct PyActivationExtraConfig_SkillTimeTriggerConfig_GetConfigName final
 {
 public:
 	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash)
+};
+
+// PythonFunction ability_extra_config.PyActivationExtraConfig_ThroughEnemyConfig.InitExtraConfig
+// 0x0008 (0x0008 - 0x0000)
+struct PyActivationExtraConfig_ThroughEnemyConfig_InitExtraConfig final
+{
+public:
+	class UObject*                                ai_owner;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 };
 
 // PythonFunction ability_extra_config.PyActivationExtraConfig_SubSkillConfig.GetConfigName

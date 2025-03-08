@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BuffAbility_10256201_BP.BuffAbility_10256201_BP_C
-// 0x0000 (0x1180 - 0x1180)
+// 0x0000 (0x1188 - 0x1188)
 class UBuffAbility_10256201_BP_C final : public UMarvelBlindAbility
 {
 public:

@@ -93,6 +93,31 @@ void UPyWidget_Common_BondPanel::OnOpenHeroListChange()
 }
 
 
+// PythonFunction PyWidget_Common_BondPanel.PyWidget_Common_BondPanel.OnBanPickStateChanged
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// EBanPickState                           BanPickState                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UPyWidget_Common_BondPanel::OnBanPickStateChanged(EBanPickState BanPickState)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyWidget_Common_BondPanel", "OnBanPickStateChanged");
+
+	Params::PyWidget_Common_BondPanel_OnBanPickStateChanged Parms{};
+
+	Parms.BanPickState = BanPickState;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // PythonFunction PyWidget_Common_BondPanel.PyWidget_Common_BondPanel.MarvelSetVisible
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:

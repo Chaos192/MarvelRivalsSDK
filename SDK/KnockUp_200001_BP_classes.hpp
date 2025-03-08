@@ -18,11 +18,11 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass KnockUp_200001_BP.KnockUp_200001_BP_C
-// 0x0008 (0x1DA0 - 0x1D98)
+// 0x0008 (0x1DB0 - 0x1DA8)
 class UKnockUp_200001_BP_C final : public UMarvelLevelKnockUpAbility
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x1D98(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x1DA8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
 	void ExecuteUbergraph_KnockUp_200001_BP(int32 EntryPoint);

@@ -17,6 +17,21 @@
 namespace SDK
 {
 
+// PythonClass PyAdamWarlockCharacter.PyAdamWarlockCharacter
+// 0x0000 (0x18A0 - 0x18A0)
+class APyAdamWarlockCharacter : public AAdamWarlockCharacter
+{
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PyAdamWarlockCharacter">();
+	}
+	static class APyAdamWarlockCharacter* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<APyAdamWarlockCharacter>();
+	}
+};
+
 // PythonClass PyAdamWarlockCharacter.PyWidget_AdamAbilityTips
 // 0x0000 (0x05A8 - 0x05A8)
 class UPyWidget_AdamAbilityTips final : public UMarvelUserWidget
@@ -33,21 +48,6 @@ public:
 	static class UPyWidget_AdamAbilityTips* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UPyWidget_AdamAbilityTips>();
-	}
-};
-
-// PythonClass PyAdamWarlockCharacter.PyAdamWarlockCharacter
-// 0x0000 (0x1840 - 0x1840)
-class APyAdamWarlockCharacter : public AAdamWarlockCharacter
-{
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"PyAdamWarlockCharacter">();
-	}
-	static class APyAdamWarlockCharacter* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<APyAdamWarlockCharacter>();
 	}
 };
 

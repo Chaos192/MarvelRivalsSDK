@@ -20,7 +20,7 @@ namespace SDK
 // PythonFunction PyAbility_103323.PyWidget_Reticle_103323.OnAnimationFinished
 // (BlueprintCosmetic, Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UWidgetAnimation*                 Animation                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// const class UWidgetAnimation*           Animation                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 void UPyWidget_Reticle_103323::OnAnimationFinished(const class UWidgetAnimation* Animation)
 {
@@ -95,7 +95,7 @@ bool UPyAbility_103323::CanActivate()
 // PythonFunction PyAbility_103323.PyProjectile_10332301.K2_OnProcessHit
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FHitResult                       ImpactResult                                           (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FHitResult&                ImpactResult                                           (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyProjectile_10332301::K2_OnProcessHit(const struct FHitResult& ImpactResult)
 {

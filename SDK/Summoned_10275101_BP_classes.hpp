@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Summoned_10275101_BP.Summoned_10275101_BP_C
-// 0x0000 (0x0ED0 - 0x0ED0)
+// 0x0000 (0x0F00 - 0x0F00)
 class ASummoned_10275101_BP_C final : public ASummoned_10275101
 {
 public:

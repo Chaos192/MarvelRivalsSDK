@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass 1043_CharacterBP.1043_CharacterBP_C
-// 0x0000 (0x1870 - 0x1870)
+// 0x0000 (0x18C0 - 0x18C0)
 class AOne043_CharacterBP_C final : public APyStarlordCharacter
 {
 public:

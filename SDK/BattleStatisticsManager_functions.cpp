@@ -86,7 +86,7 @@ void UPyBattleStatisticsManager::OnShutdown()
 // int32                                   PlayerUID                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // int32                                   HeroID                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // int32                                   AbilityID                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// TMap<class FString, float>              KeyValue                                               (ConstParm, Parm, OutParm, ReferenceParm)
+// const TMap<class FString, float>&       KeyValue                                               (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyBattleStatisticsManager::K2_AbilityNormalLog(int32 PlayerUID, int32 HeroID, int32 AbilityID, const TMap<class FString, float>& KeyValue)
 {
@@ -117,7 +117,7 @@ void UPyBattleStatisticsManager::K2_AbilityNormalLog(int32 PlayerUID, int32 Hero
 // int32                                   PlayerUID                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // int32                                   HeroID                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // int32                                   AbilityID                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           Key                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Key                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 // float                                   LanuchCnt                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                                   HitCnt                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                                   CritCnt                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -203,7 +203,7 @@ void UPyBattleStatisticsManager::K2_ClearStatistics()
 // Parameters:
 // int32                                   UID                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // int32                                   HeroID                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// TArray<class FString>                   FieldList                                              (ConstParm, Parm, OutParm, ReferenceParm)
+// const TArray<class FString>&            FieldList                                              (ConstParm, Parm, OutParm, ReferenceParm)
 // TMap<class FString, float>              ReturnValue                                            (Parm, OutParm, ReturnParm)
 
 TMap<class FString, float> UPyBattleStatisticsManager::GetHeroStatisticsInfo(int32 UID, int32 HeroID, const TArray<class FString>& FieldList)
@@ -357,8 +357,8 @@ struct FMarvelAbilityStatisticsUnit UPyBattleStatisticsManager::K2_GetAbilitySta
 // Parameters:
 // class AActor*                           InInstigator                                           (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // class AActor*                           InTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FAttributeModifierParameter      ModifierParameter                                      (ConstParm, Parm, OutParm, ReferenceParm)
-// struct FGlobalEventExtraData            ExtraData                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
+// const struct FAttributeModifierParameter&ModifierParameter                                      (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGlobalEventExtraData&     ExtraData                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
 
 void UPyBattleStatisticsManager::PyOnActorTakeDamage(class AActor* InInstigator, class AActor* InTarget, const struct FAttributeModifierParameter& ModifierParameter, const struct FGlobalEventExtraData& ExtraData)
 {
@@ -388,8 +388,8 @@ void UPyBattleStatisticsManager::PyOnActorTakeDamage(class AActor* InInstigator,
 // Parameters:
 // class AActor*                           InInstigator                                           (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // class AActor*                           InTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FAttributeModifierParameter      InModifierParameter                                    (ConstParm, Parm, OutParm, ReferenceParm)
-// struct FGlobalEventExtraData            ExtraData                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
+// const struct FAttributeModifierParameter&InModifierParameter                                    (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGlobalEventExtraData&     ExtraData                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
 
 void UPyBattleStatisticsManager::PyOnActorTakeHealth(class AActor* InInstigator, class AActor* InTarget, const struct FAttributeModifierParameter& InModifierParameter, const struct FGlobalEventExtraData& ExtraData)
 {
@@ -419,8 +419,8 @@ void UPyBattleStatisticsManager::PyOnActorTakeHealth(class AActor* InInstigator,
 // Parameters:
 // class AActor*                           Instigator                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // class AActor*                           Target                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FAttributeModifierHandle         ParameterHandle                                        (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
-// struct FGlobalEventExtraData            ExtraData                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
+// const struct FAttributeModifierHandle&  ParameterHandle                                        (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
+// const struct FGlobalEventExtraData&     ExtraData                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
 // int32                                   AbilityShieldID                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // int32                                   ShieldSessionID                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // int32                                   AbilitySourceID                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -486,7 +486,7 @@ void UPyBattleStatisticsManager::PyOnActorDeathForLevel(int32 KillerTeam, int32 
 // (Native, Public, BlueprintCallable)
 // Parameters:
 // class AActor*                           Source                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class FString                           HealPackName                                           (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    HealPackName                                           (Parm, ZeroConstructor, HasGetValueTypeHash)
 // int32                                   HealPackType                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                                   ChargeTime                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                                   HealPackTreat                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -850,7 +850,7 @@ void UPyBattleStatisticsManager::PyOnDelPlayerState(class AMarvelPlayerState* Pl
 // PythonFunction BattleStatisticsManager.PyBattleStatisticsManager.OnHealRefreshed
 // (Native, Public, BlueprintCallable)
 // Parameters:
-// class FString                           heal_name                                              (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    heal_name                                              (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyBattleStatisticsManager::OnHealRefreshed(const class FString& heal_name)
 {
@@ -919,9 +919,9 @@ void UPyBattleStatisticsManager::LogPosition(bool Force)
 // PythonFunction BattleStatisticsManager.PyBattleStatisticsManager.PyOnDestructionTakeDamage
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FDestructionDamageInfoContext    Context                                                (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
-// struct FAttributeModifierParameter      ModifierParameter                                      (ConstParm, Parm, OutParm, ReferenceParm)
-// struct FDestructionExtraInfo            ExtraInfo                                              (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FDestructionDamageInfoContext&Context                                                (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
+// const struct FAttributeModifierParameter&ModifierParameter                                      (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FDestructionExtraInfo&     ExtraInfo                                              (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyBattleStatisticsManager::PyOnDestructionTakeDamage(const struct FDestructionDamageInfoContext& Context, const struct FAttributeModifierParameter& ModifierParameter, const struct FDestructionExtraInfo& ExtraInfo)
 {
@@ -977,7 +977,7 @@ void UPyBattleStatisticsManager::PyOnPresetDestructionLevelChanged(class UPreset
 // PythonFunction BattleStatisticsManager.PyBattleStatisticsManager.OnLevelObjectTrigger
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FLevelObjectEventExtraData       ExtraData                                              (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FLevelObjectEventExtraData&ExtraData                                              (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyBattleStatisticsManager::OnLevelObjectTrigger(const struct FLevelObjectEventExtraData& ExtraData)
 {
@@ -1002,7 +1002,7 @@ void UPyBattleStatisticsManager::OnLevelObjectTrigger(const struct FLevelObjectE
 // PythonFunction BattleStatisticsManager.PyBattleStatisticsManager.PyOnRecordHeroDeathInfo
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FHeroDeathInfoLog                DeathInfo                                              (Parm, OutParm)
+// struct FHeroDeathInfoLog*               DeathInfo                                              (Parm, OutParm)
 
 void UPyBattleStatisticsManager::PyOnRecordHeroDeathInfo(struct FHeroDeathInfoLog* DeathInfo)
 {
@@ -1028,7 +1028,7 @@ void UPyBattleStatisticsManager::PyOnRecordHeroDeathInfo(struct FHeroDeathInfoLo
 // PythonFunction BattleStatisticsManager.PyBattleStatisticsManager.PyOnRecordFirstEnterBattle
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FFirstEnterBattleInfo            BattleInfo                                             (Parm, OutParm, NoDestructor)
+// struct FFirstEnterBattleInfo*           BattleInfo                                             (Parm, OutParm, NoDestructor)
 
 void UPyBattleStatisticsManager::PyOnRecordFirstEnterBattle(struct FFirstEnterBattleInfo* BattleInfo)
 {

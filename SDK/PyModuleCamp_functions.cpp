@@ -294,7 +294,7 @@ void APyModuleCamp::SetMoveSpeed(float NewSpeed)
 // PythonFunction PyModuleCamp.PyModuleCamp.FollowTraceMoveStart
 // (Native, Public, BlueprintCallable)
 // Parameters:
-// class FString                           TraceName                                              (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    TraceName                                              (Parm, ZeroConstructor, HasGetValueTypeHash)
 // float                                   StartPercent                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void APyModuleCamp::FollowTraceMoveStart(const class FString& TraceName, float StartPercent)
@@ -346,7 +346,7 @@ float APyModuleCamp::GetCurLength()
 // PythonFunction PyModuleCamp.PyModuleCamp.ReachCheckPoint
 // (Native, Event, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           EventName                                              (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    EventName                                              (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void APyModuleCamp::ReachCheckPoint(const class FString& EventName)
 {

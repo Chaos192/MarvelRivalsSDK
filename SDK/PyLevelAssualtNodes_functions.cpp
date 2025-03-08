@@ -23,7 +23,7 @@ namespace SDK
 // class APyObjective*                     Objective                                              (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // float                                   LosingSpeed                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                                   TimeToLoseOccupy                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// TMap<int32, float>                      RaisingSpeed                                           (ConstParm, Parm, OutParm, ReferenceParm)
+// const TMap<int32, float>&               RaisingSpeed                                           (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyLevelAssualtNodes::SetPyObjective(class APyObjective* Objective, float LosingSpeed, float TimeToLoseOccupy, const TMap<int32, float>& RaisingSpeed)
 {

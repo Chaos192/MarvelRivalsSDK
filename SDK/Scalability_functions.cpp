@@ -21,9 +21,9 @@ namespace SDK
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UObject*                          Obj                                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class FString                           setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
-// TMap<class FString, class FString>      P                                                      (ConstParm, Parm, OutParm, ReferenceParm)
-// TMap<int32, class FText>                OPTIONS                                                (ConstParm, Parm, OutParm, ReferenceParm)
+// const class FString&                    setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const TMap<class FString, class FString>&P                                                      (ConstParm, Parm, OutParm, ReferenceParm)
+// const TMap<int32, class FText>&         OPTIONS                                                (ConstParm, Parm, OutParm, ReferenceParm)
 // float                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UUISettingEntryViewDistanceQuality::BP_OnApply(class UObject* Obj, const class FString& setting_key, const TMap<class FString, class FString>& P, const TMap<int32, class FText>& OPTIONS, float Value)
@@ -54,9 +54,9 @@ void UUISettingEntryViewDistanceQuality::BP_OnApply(class UObject* Obj, const cl
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UObject*                          Obj                                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class FString                           setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
-// TMap<class FString, class FString>      P                                                      (ConstParm, Parm, OutParm, ReferenceParm)
-// TMap<int32, class FText>                O                                                      (ConstParm, Parm, OutParm, ReferenceParm)
+// const class FString&                    setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const TMap<class FString, class FString>&P                                                      (ConstParm, Parm, OutParm, ReferenceParm)
+// const TMap<int32, class FText>&         O                                                      (ConstParm, Parm, OutParm, ReferenceParm)
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 float UUISettingEntryViewDistanceQuality::BP_GetCurrentValue(class UObject* Obj, const class FString& setting_key, const TMap<class FString, class FString>& P, const TMap<int32, class FText>& O)
@@ -88,11 +88,11 @@ float UUISettingEntryViewDistanceQuality::BP_GetCurrentValue(class UObject* Obj,
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UObject*                          Obj                                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class FString                           setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
-// TMap<class FString, class FString>      Params_0                                               (ConstParm, Parm, OutParm, ReferenceParm)
-// TMap<int32, class FText>                OPTIONS                                                (ConstParm, Parm, OutParm, ReferenceParm)
+// const class FString&                    setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const TMap<class FString, class FString>&Params_0                                               (ConstParm, Parm, OutParm, ReferenceParm)
+// const TMap<int32, class FText>&         OPTIONS                                                (ConstParm, Parm, OutParm, ReferenceParm)
 // float                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// TMap<class FString, int32>              Tags                                                   (ConstParm, Parm, OutParm, ReferenceParm)
+// const TMap<class FString, int32>&       Tags                                                   (ConstParm, Parm, OutParm, ReferenceParm)
 // TMap<class FString, int32>              ReturnValue                                            (Parm, OutParm, ReturnParm)
 
 TMap<class FString, int32> UUISettingEntryViewDistanceQuality::BP_OnChanged(class UObject* Obj, const class FString& setting_key, const TMap<class FString, class FString>& Params_0, const TMap<int32, class FText>& OPTIONS, float Value, const TMap<class FString, int32>& Tags)
@@ -126,8 +126,8 @@ TMap<class FString, int32> UUISettingEntryViewDistanceQuality::BP_OnChanged(clas
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UObject*                          Obj                                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class FString                           setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
-// TMap<int32, class FText>                OPTIONS                                                (ConstParm, Parm, OutParm, ReferenceParm)
+// const class FString&                    setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const TMap<int32, class FText>&         OPTIONS                                                (ConstParm, Parm, OutParm, ReferenceParm)
 // TMap<int32, class FText>                ReturnValue                                            (Parm, OutParm, ReturnParm)
 
 TMap<int32, class FText> UUISettingEntryScalabilityGenerator::BP_Gen(class UObject* Obj, const class FString& setting_key, const TMap<int32, class FText>& OPTIONS)
@@ -158,9 +158,9 @@ TMap<int32, class FText> UUISettingEntryScalabilityGenerator::BP_Gen(class UObje
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UObject*                          Obj                                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class FString                           setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
-// TMap<class FString, class FString>      P                                                      (ConstParm, Parm, OutParm, ReferenceParm)
-// TMap<int32, class FText>                OPTIONS                                                (ConstParm, Parm, OutParm, ReferenceParm)
+// const class FString&                    setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const TMap<class FString, class FString>&P                                                      (ConstParm, Parm, OutParm, ReferenceParm)
+// const TMap<int32, class FText>&         OPTIONS                                                (ConstParm, Parm, OutParm, ReferenceParm)
 // float                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UUISettingEntryScalabilityHandler::BP_OnApply(class UObject* Obj, const class FString& setting_key, const TMap<class FString, class FString>& P, const TMap<int32, class FText>& OPTIONS, float Value)
@@ -191,9 +191,9 @@ void UUISettingEntryScalabilityHandler::BP_OnApply(class UObject* Obj, const cla
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UObject*                          Obj                                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class FString                           setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
-// TMap<class FString, class FString>      P                                                      (ConstParm, Parm, OutParm, ReferenceParm)
-// TMap<int32, class FText>                O                                                      (ConstParm, Parm, OutParm, ReferenceParm)
+// const class FString&                    setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const TMap<class FString, class FString>&P                                                      (ConstParm, Parm, OutParm, ReferenceParm)
+// const TMap<int32, class FText>&         O                                                      (ConstParm, Parm, OutParm, ReferenceParm)
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 float UUISettingEntryScalabilityHandler::BP_GetCurrentValue(class UObject* Obj, const class FString& setting_key, const TMap<class FString, class FString>& P, const TMap<int32, class FText>& O)
@@ -225,11 +225,11 @@ float UUISettingEntryScalabilityHandler::BP_GetCurrentValue(class UObject* Obj, 
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UObject*                          Obj                                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class FString                           setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
-// TMap<class FString, class FString>      Params_0                                               (ConstParm, Parm, OutParm, ReferenceParm)
-// TMap<int32, class FText>                OPTIONS                                                (ConstParm, Parm, OutParm, ReferenceParm)
+// const class FString&                    setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const TMap<class FString, class FString>&Params_0                                               (ConstParm, Parm, OutParm, ReferenceParm)
+// const TMap<int32, class FText>&         OPTIONS                                                (ConstParm, Parm, OutParm, ReferenceParm)
 // float                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// TMap<class FString, int32>              Tags                                                   (ConstParm, Parm, OutParm, ReferenceParm)
+// const TMap<class FString, int32>&       Tags                                                   (ConstParm, Parm, OutParm, ReferenceParm)
 // TMap<class FString, int32>              ReturnValue                                            (Parm, OutParm, ReturnParm)
 
 TMap<class FString, int32> UUISettingEntryScalabilityHandler::BP_OnChanged(class UObject* Obj, const class FString& setting_key, const TMap<class FString, class FString>& Params_0, const TMap<int32, class FText>& OPTIONS, float Value, const TMap<class FString, int32>& Tags)
@@ -263,9 +263,9 @@ TMap<class FString, int32> UUISettingEntryScalabilityHandler::BP_OnChanged(class
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UObject*                          Obj                                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class FString                           setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
-// TMap<class FString, class FString>      P                                                      (ConstParm, Parm, OutParm, ReferenceParm)
-// TMap<int32, class FText>                OPTIONS                                                (ConstParm, Parm, OutParm, ReferenceParm)
+// const class FString&                    setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const TMap<class FString, class FString>&P                                                      (ConstParm, Parm, OutParm, ReferenceParm)
+// const TMap<int32, class FText>&         OPTIONS                                                (ConstParm, Parm, OutParm, ReferenceParm)
 // float                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UUISettingEntryShadowQuality::BP_OnApply(class UObject* Obj, const class FString& setting_key, const TMap<class FString, class FString>& P, const TMap<int32, class FText>& OPTIONS, float Value)
@@ -296,9 +296,9 @@ void UUISettingEntryShadowQuality::BP_OnApply(class UObject* Obj, const class FS
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UObject*                          Obj                                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class FString                           setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
-// TMap<class FString, class FString>      P                                                      (ConstParm, Parm, OutParm, ReferenceParm)
-// TMap<int32, class FText>                O                                                      (ConstParm, Parm, OutParm, ReferenceParm)
+// const class FString&                    setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const TMap<class FString, class FString>&P                                                      (ConstParm, Parm, OutParm, ReferenceParm)
+// const TMap<int32, class FText>&         O                                                      (ConstParm, Parm, OutParm, ReferenceParm)
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 float UUISettingEntryShadowQuality::BP_GetCurrentValue(class UObject* Obj, const class FString& setting_key, const TMap<class FString, class FString>& P, const TMap<int32, class FText>& O)
@@ -330,11 +330,11 @@ float UUISettingEntryShadowQuality::BP_GetCurrentValue(class UObject* Obj, const
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UObject*                          Obj                                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class FString                           setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
-// TMap<class FString, class FString>      Params_0                                               (ConstParm, Parm, OutParm, ReferenceParm)
-// TMap<int32, class FText>                OPTIONS                                                (ConstParm, Parm, OutParm, ReferenceParm)
+// const class FString&                    setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const TMap<class FString, class FString>&Params_0                                               (ConstParm, Parm, OutParm, ReferenceParm)
+// const TMap<int32, class FText>&         OPTIONS                                                (ConstParm, Parm, OutParm, ReferenceParm)
 // float                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// TMap<class FString, int32>              Tags                                                   (ConstParm, Parm, OutParm, ReferenceParm)
+// const TMap<class FString, int32>&       Tags                                                   (ConstParm, Parm, OutParm, ReferenceParm)
 // TMap<class FString, int32>              ReturnValue                                            (Parm, OutParm, ReturnParm)
 
 TMap<class FString, int32> UUISettingEntryShadowQuality::BP_OnChanged(class UObject* Obj, const class FString& setting_key, const TMap<class FString, class FString>& Params_0, const TMap<int32, class FText>& OPTIONS, float Value, const TMap<class FString, int32>& Tags)
@@ -368,9 +368,9 @@ TMap<class FString, int32> UUISettingEntryShadowQuality::BP_OnChanged(class UObj
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UObject*                          Obj                                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class FString                           setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
-// TMap<class FString, class FString>      P                                                      (ConstParm, Parm, OutParm, ReferenceParm)
-// TMap<int32, class FText>                OPTIONS                                                (ConstParm, Parm, OutParm, ReferenceParm)
+// const class FString&                    setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const TMap<class FString, class FString>&P                                                      (ConstParm, Parm, OutParm, ReferenceParm)
+// const TMap<int32, class FText>&         OPTIONS                                                (ConstParm, Parm, OutParm, ReferenceParm)
 // float                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UUISettingEntryGlobalIlluminationQuality::BP_OnApply(class UObject* Obj, const class FString& setting_key, const TMap<class FString, class FString>& P, const TMap<int32, class FText>& OPTIONS, float Value)
@@ -401,9 +401,9 @@ void UUISettingEntryGlobalIlluminationQuality::BP_OnApply(class UObject* Obj, co
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UObject*                          Obj                                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class FString                           setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
-// TMap<class FString, class FString>      P                                                      (ConstParm, Parm, OutParm, ReferenceParm)
-// TMap<int32, class FText>                O                                                      (ConstParm, Parm, OutParm, ReferenceParm)
+// const class FString&                    setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const TMap<class FString, class FString>&P                                                      (ConstParm, Parm, OutParm, ReferenceParm)
+// const TMap<int32, class FText>&         O                                                      (ConstParm, Parm, OutParm, ReferenceParm)
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 float UUISettingEntryGlobalIlluminationQuality::BP_GetCurrentValue(class UObject* Obj, const class FString& setting_key, const TMap<class FString, class FString>& P, const TMap<int32, class FText>& O)
@@ -435,11 +435,11 @@ float UUISettingEntryGlobalIlluminationQuality::BP_GetCurrentValue(class UObject
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UObject*                          Obj                                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class FString                           setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
-// TMap<class FString, class FString>      Params_0                                               (ConstParm, Parm, OutParm, ReferenceParm)
-// TMap<int32, class FText>                OPTIONS                                                (ConstParm, Parm, OutParm, ReferenceParm)
+// const class FString&                    setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const TMap<class FString, class FString>&Params_0                                               (ConstParm, Parm, OutParm, ReferenceParm)
+// const TMap<int32, class FText>&         OPTIONS                                                (ConstParm, Parm, OutParm, ReferenceParm)
 // float                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// TMap<class FString, int32>              Tags                                                   (ConstParm, Parm, OutParm, ReferenceParm)
+// const TMap<class FString, int32>&       Tags                                                   (ConstParm, Parm, OutParm, ReferenceParm)
 // TMap<class FString, int32>              ReturnValue                                            (Parm, OutParm, ReturnParm)
 
 TMap<class FString, int32> UUISettingEntryGlobalIlluminationQuality::BP_OnChanged(class UObject* Obj, const class FString& setting_key, const TMap<class FString, class FString>& Params_0, const TMap<int32, class FText>& OPTIONS, float Value, const TMap<class FString, int32>& Tags)
@@ -473,9 +473,9 @@ TMap<class FString, int32> UUISettingEntryGlobalIlluminationQuality::BP_OnChange
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UObject*                          Obj                                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class FString                           setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
-// TMap<class FString, class FString>      P                                                      (ConstParm, Parm, OutParm, ReferenceParm)
-// TMap<int32, class FText>                OPTIONS                                                (ConstParm, Parm, OutParm, ReferenceParm)
+// const class FString&                    setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const TMap<class FString, class FString>&P                                                      (ConstParm, Parm, OutParm, ReferenceParm)
+// const TMap<int32, class FText>&         OPTIONS                                                (ConstParm, Parm, OutParm, ReferenceParm)
 // float                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UUISettingEntryReflectionQuality::BP_OnApply(class UObject* Obj, const class FString& setting_key, const TMap<class FString, class FString>& P, const TMap<int32, class FText>& OPTIONS, float Value)
@@ -506,9 +506,9 @@ void UUISettingEntryReflectionQuality::BP_OnApply(class UObject* Obj, const clas
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UObject*                          Obj                                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class FString                           setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
-// TMap<class FString, class FString>      P                                                      (ConstParm, Parm, OutParm, ReferenceParm)
-// TMap<int32, class FText>                O                                                      (ConstParm, Parm, OutParm, ReferenceParm)
+// const class FString&                    setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const TMap<class FString, class FString>&P                                                      (ConstParm, Parm, OutParm, ReferenceParm)
+// const TMap<int32, class FText>&         O                                                      (ConstParm, Parm, OutParm, ReferenceParm)
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 float UUISettingEntryReflectionQuality::BP_GetCurrentValue(class UObject* Obj, const class FString& setting_key, const TMap<class FString, class FString>& P, const TMap<int32, class FText>& O)
@@ -540,11 +540,11 @@ float UUISettingEntryReflectionQuality::BP_GetCurrentValue(class UObject* Obj, c
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UObject*                          Obj                                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class FString                           setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
-// TMap<class FString, class FString>      Params_0                                               (ConstParm, Parm, OutParm, ReferenceParm)
-// TMap<int32, class FText>                OPTIONS                                                (ConstParm, Parm, OutParm, ReferenceParm)
+// const class FString&                    setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const TMap<class FString, class FString>&Params_0                                               (ConstParm, Parm, OutParm, ReferenceParm)
+// const TMap<int32, class FText>&         OPTIONS                                                (ConstParm, Parm, OutParm, ReferenceParm)
 // float                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// TMap<class FString, int32>              Tags                                                   (ConstParm, Parm, OutParm, ReferenceParm)
+// const TMap<class FString, int32>&       Tags                                                   (ConstParm, Parm, OutParm, ReferenceParm)
 // TMap<class FString, int32>              ReturnValue                                            (Parm, OutParm, ReturnParm)
 
 TMap<class FString, int32> UUISettingEntryReflectionQuality::BP_OnChanged(class UObject* Obj, const class FString& setting_key, const TMap<class FString, class FString>& Params_0, const TMap<int32, class FText>& OPTIONS, float Value, const TMap<class FString, int32>& Tags)
@@ -578,9 +578,9 @@ TMap<class FString, int32> UUISettingEntryReflectionQuality::BP_OnChanged(class 
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UObject*                          Obj                                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class FString                           setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
-// TMap<class FString, class FString>      P                                                      (ConstParm, Parm, OutParm, ReferenceParm)
-// TMap<int32, class FText>                OPTIONS                                                (ConstParm, Parm, OutParm, ReferenceParm)
+// const class FString&                    setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const TMap<class FString, class FString>&P                                                      (ConstParm, Parm, OutParm, ReferenceParm)
+// const TMap<int32, class FText>&         OPTIONS                                                (ConstParm, Parm, OutParm, ReferenceParm)
 // float                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UUISettingEntryTextureQuality::BP_OnApply(class UObject* Obj, const class FString& setting_key, const TMap<class FString, class FString>& P, const TMap<int32, class FText>& OPTIONS, float Value)
@@ -611,9 +611,9 @@ void UUISettingEntryTextureQuality::BP_OnApply(class UObject* Obj, const class F
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UObject*                          Obj                                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class FString                           setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
-// TMap<class FString, class FString>      P                                                      (ConstParm, Parm, OutParm, ReferenceParm)
-// TMap<int32, class FText>                O                                                      (ConstParm, Parm, OutParm, ReferenceParm)
+// const class FString&                    setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const TMap<class FString, class FString>&P                                                      (ConstParm, Parm, OutParm, ReferenceParm)
+// const TMap<int32, class FText>&         O                                                      (ConstParm, Parm, OutParm, ReferenceParm)
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 float UUISettingEntryTextureQuality::BP_GetCurrentValue(class UObject* Obj, const class FString& setting_key, const TMap<class FString, class FString>& P, const TMap<int32, class FText>& O)
@@ -645,11 +645,11 @@ float UUISettingEntryTextureQuality::BP_GetCurrentValue(class UObject* Obj, cons
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UObject*                          Obj                                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class FString                           setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
-// TMap<class FString, class FString>      Params_0                                               (ConstParm, Parm, OutParm, ReferenceParm)
-// TMap<int32, class FText>                OPTIONS                                                (ConstParm, Parm, OutParm, ReferenceParm)
+// const class FString&                    setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const TMap<class FString, class FString>&Params_0                                               (ConstParm, Parm, OutParm, ReferenceParm)
+// const TMap<int32, class FText>&         OPTIONS                                                (ConstParm, Parm, OutParm, ReferenceParm)
 // float                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// TMap<class FString, int32>              Tags                                                   (ConstParm, Parm, OutParm, ReferenceParm)
+// const TMap<class FString, int32>&       Tags                                                   (ConstParm, Parm, OutParm, ReferenceParm)
 // TMap<class FString, int32>              ReturnValue                                            (Parm, OutParm, ReturnParm)
 
 TMap<class FString, int32> UUISettingEntryTextureQuality::BP_OnChanged(class UObject* Obj, const class FString& setting_key, const TMap<class FString, class FString>& Params_0, const TMap<int32, class FText>& OPTIONS, float Value, const TMap<class FString, int32>& Tags)
@@ -683,9 +683,9 @@ TMap<class FString, int32> UUISettingEntryTextureQuality::BP_OnChanged(class UOb
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UObject*                          Obj                                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class FString                           setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
-// TMap<class FString, class FString>      P                                                      (ConstParm, Parm, OutParm, ReferenceParm)
-// TMap<int32, class FText>                OPTIONS                                                (ConstParm, Parm, OutParm, ReferenceParm)
+// const class FString&                    setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const TMap<class FString, class FString>&P                                                      (ConstParm, Parm, OutParm, ReferenceParm)
+// const TMap<int32, class FText>&         OPTIONS                                                (ConstParm, Parm, OutParm, ReferenceParm)
 // float                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UUISettingEntryVisualEffectQuality::BP_OnApply(class UObject* Obj, const class FString& setting_key, const TMap<class FString, class FString>& P, const TMap<int32, class FText>& OPTIONS, float Value)
@@ -716,9 +716,9 @@ void UUISettingEntryVisualEffectQuality::BP_OnApply(class UObject* Obj, const cl
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UObject*                          Obj                                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class FString                           setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
-// TMap<class FString, class FString>      P                                                      (ConstParm, Parm, OutParm, ReferenceParm)
-// TMap<int32, class FText>                O                                                      (ConstParm, Parm, OutParm, ReferenceParm)
+// const class FString&                    setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const TMap<class FString, class FString>&P                                                      (ConstParm, Parm, OutParm, ReferenceParm)
+// const TMap<int32, class FText>&         O                                                      (ConstParm, Parm, OutParm, ReferenceParm)
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 float UUISettingEntryVisualEffectQuality::BP_GetCurrentValue(class UObject* Obj, const class FString& setting_key, const TMap<class FString, class FString>& P, const TMap<int32, class FText>& O)
@@ -750,11 +750,11 @@ float UUISettingEntryVisualEffectQuality::BP_GetCurrentValue(class UObject* Obj,
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UObject*                          Obj                                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class FString                           setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
-// TMap<class FString, class FString>      Params_0                                               (ConstParm, Parm, OutParm, ReferenceParm)
-// TMap<int32, class FText>                OPTIONS                                                (ConstParm, Parm, OutParm, ReferenceParm)
+// const class FString&                    setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const TMap<class FString, class FString>&Params_0                                               (ConstParm, Parm, OutParm, ReferenceParm)
+// const TMap<int32, class FText>&         OPTIONS                                                (ConstParm, Parm, OutParm, ReferenceParm)
 // float                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// TMap<class FString, int32>              Tags                                                   (ConstParm, Parm, OutParm, ReferenceParm)
+// const TMap<class FString, int32>&       Tags                                                   (ConstParm, Parm, OutParm, ReferenceParm)
 // TMap<class FString, int32>              ReturnValue                                            (Parm, OutParm, ReturnParm)
 
 TMap<class FString, int32> UUISettingEntryVisualEffectQuality::BP_OnChanged(class UObject* Obj, const class FString& setting_key, const TMap<class FString, class FString>& Params_0, const TMap<int32, class FText>& OPTIONS, float Value, const TMap<class FString, int32>& Tags)
@@ -788,9 +788,9 @@ TMap<class FString, int32> UUISettingEntryVisualEffectQuality::BP_OnChanged(clas
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UObject*                          Obj                                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class FString                           setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
-// TMap<class FString, class FString>      P                                                      (ConstParm, Parm, OutParm, ReferenceParm)
-// TMap<int32, class FText>                OPTIONS                                                (ConstParm, Parm, OutParm, ReferenceParm)
+// const class FString&                    setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const TMap<class FString, class FString>&P                                                      (ConstParm, Parm, OutParm, ReferenceParm)
+// const TMap<int32, class FText>&         OPTIONS                                                (ConstParm, Parm, OutParm, ReferenceParm)
 // float                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UUISettingEntryPostProcessingQuality::BP_OnApply(class UObject* Obj, const class FString& setting_key, const TMap<class FString, class FString>& P, const TMap<int32, class FText>& OPTIONS, float Value)
@@ -821,9 +821,9 @@ void UUISettingEntryPostProcessingQuality::BP_OnApply(class UObject* Obj, const 
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UObject*                          Obj                                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class FString                           setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
-// TMap<class FString, class FString>      P                                                      (ConstParm, Parm, OutParm, ReferenceParm)
-// TMap<int32, class FText>                O                                                      (ConstParm, Parm, OutParm, ReferenceParm)
+// const class FString&                    setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const TMap<class FString, class FString>&P                                                      (ConstParm, Parm, OutParm, ReferenceParm)
+// const TMap<int32, class FText>&         O                                                      (ConstParm, Parm, OutParm, ReferenceParm)
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 float UUISettingEntryPostProcessingQuality::BP_GetCurrentValue(class UObject* Obj, const class FString& setting_key, const TMap<class FString, class FString>& P, const TMap<int32, class FText>& O)
@@ -855,11 +855,11 @@ float UUISettingEntryPostProcessingQuality::BP_GetCurrentValue(class UObject* Ob
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UObject*                          Obj                                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class FString                           setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
-// TMap<class FString, class FString>      Params_0                                               (ConstParm, Parm, OutParm, ReferenceParm)
-// TMap<int32, class FText>                OPTIONS                                                (ConstParm, Parm, OutParm, ReferenceParm)
+// const class FString&                    setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const TMap<class FString, class FString>&Params_0                                               (ConstParm, Parm, OutParm, ReferenceParm)
+// const TMap<int32, class FText>&         OPTIONS                                                (ConstParm, Parm, OutParm, ReferenceParm)
 // float                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// TMap<class FString, int32>              Tags                                                   (ConstParm, Parm, OutParm, ReferenceParm)
+// const TMap<class FString, int32>&       Tags                                                   (ConstParm, Parm, OutParm, ReferenceParm)
 // TMap<class FString, int32>              ReturnValue                                            (Parm, OutParm, ReturnParm)
 
 TMap<class FString, int32> UUISettingEntryPostProcessingQuality::BP_OnChanged(class UObject* Obj, const class FString& setting_key, const TMap<class FString, class FString>& Params_0, const TMap<int32, class FText>& OPTIONS, float Value, const TMap<class FString, int32>& Tags)
@@ -893,9 +893,9 @@ TMap<class FString, int32> UUISettingEntryPostProcessingQuality::BP_OnChanged(cl
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UObject*                          Obj                                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class FString                           setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
-// TMap<class FString, class FString>      P                                                      (ConstParm, Parm, OutParm, ReferenceParm)
-// TMap<int32, class FText>                OPTIONS                                                (ConstParm, Parm, OutParm, ReferenceParm)
+// const class FString&                    setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const TMap<class FString, class FString>&P                                                      (ConstParm, Parm, OutParm, ReferenceParm)
+// const TMap<int32, class FText>&         OPTIONS                                                (ConstParm, Parm, OutParm, ReferenceParm)
 // float                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UUISettingEntryFoliageQuality::BP_OnApply(class UObject* Obj, const class FString& setting_key, const TMap<class FString, class FString>& P, const TMap<int32, class FText>& OPTIONS, float Value)
@@ -926,9 +926,9 @@ void UUISettingEntryFoliageQuality::BP_OnApply(class UObject* Obj, const class F
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UObject*                          Obj                                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class FString                           setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
-// TMap<class FString, class FString>      P                                                      (ConstParm, Parm, OutParm, ReferenceParm)
-// TMap<int32, class FText>                O                                                      (ConstParm, Parm, OutParm, ReferenceParm)
+// const class FString&                    setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const TMap<class FString, class FString>&P                                                      (ConstParm, Parm, OutParm, ReferenceParm)
+// const TMap<int32, class FText>&         O                                                      (ConstParm, Parm, OutParm, ReferenceParm)
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 float UUISettingEntryFoliageQuality::BP_GetCurrentValue(class UObject* Obj, const class FString& setting_key, const TMap<class FString, class FString>& P, const TMap<int32, class FText>& O)
@@ -960,11 +960,11 @@ float UUISettingEntryFoliageQuality::BP_GetCurrentValue(class UObject* Obj, cons
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UObject*                          Obj                                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class FString                           setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
-// TMap<class FString, class FString>      Params_0                                               (ConstParm, Parm, OutParm, ReferenceParm)
-// TMap<int32, class FText>                OPTIONS                                                (ConstParm, Parm, OutParm, ReferenceParm)
+// const class FString&                    setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const TMap<class FString, class FString>&Params_0                                               (ConstParm, Parm, OutParm, ReferenceParm)
+// const TMap<int32, class FText>&         OPTIONS                                                (ConstParm, Parm, OutParm, ReferenceParm)
 // float                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// TMap<class FString, int32>              Tags                                                   (ConstParm, Parm, OutParm, ReferenceParm)
+// const TMap<class FString, int32>&       Tags                                                   (ConstParm, Parm, OutParm, ReferenceParm)
 // TMap<class FString, int32>              ReturnValue                                            (Parm, OutParm, ReturnParm)
 
 TMap<class FString, int32> UUISettingEntryFoliageQuality::BP_OnChanged(class UObject* Obj, const class FString& setting_key, const TMap<class FString, class FString>& Params_0, const TMap<int32, class FText>& OPTIONS, float Value, const TMap<class FString, int32>& Tags)
@@ -998,9 +998,9 @@ TMap<class FString, int32> UUISettingEntryFoliageQuality::BP_OnChanged(class UOb
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UObject*                          Obj                                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class FString                           setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
-// TMap<class FString, class FString>      P                                                      (ConstParm, Parm, OutParm, ReferenceParm)
-// TMap<int32, class FText>                OPTIONS                                                (ConstParm, Parm, OutParm, ReferenceParm)
+// const class FString&                    setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const TMap<class FString, class FString>&P                                                      (ConstParm, Parm, OutParm, ReferenceParm)
+// const TMap<int32, class FText>&         OPTIONS                                                (ConstParm, Parm, OutParm, ReferenceParm)
 // float                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UUISettingEntryShadingQuality::BP_OnApply(class UObject* Obj, const class FString& setting_key, const TMap<class FString, class FString>& P, const TMap<int32, class FText>& OPTIONS, float Value)
@@ -1031,9 +1031,9 @@ void UUISettingEntryShadingQuality::BP_OnApply(class UObject* Obj, const class F
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UObject*                          Obj                                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class FString                           setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
-// TMap<class FString, class FString>      P                                                      (ConstParm, Parm, OutParm, ReferenceParm)
-// TMap<int32, class FText>                O                                                      (ConstParm, Parm, OutParm, ReferenceParm)
+// const class FString&                    setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const TMap<class FString, class FString>&P                                                      (ConstParm, Parm, OutParm, ReferenceParm)
+// const TMap<int32, class FText>&         O                                                      (ConstParm, Parm, OutParm, ReferenceParm)
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 float UUISettingEntryShadingQuality::BP_GetCurrentValue(class UObject* Obj, const class FString& setting_key, const TMap<class FString, class FString>& P, const TMap<int32, class FText>& O)
@@ -1065,11 +1065,11 @@ float UUISettingEntryShadingQuality::BP_GetCurrentValue(class UObject* Obj, cons
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UObject*                          Obj                                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class FString                           setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
-// TMap<class FString, class FString>      Params_0                                               (ConstParm, Parm, OutParm, ReferenceParm)
-// TMap<int32, class FText>                OPTIONS                                                (ConstParm, Parm, OutParm, ReferenceParm)
+// const class FString&                    setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const TMap<class FString, class FString>&Params_0                                               (ConstParm, Parm, OutParm, ReferenceParm)
+// const TMap<int32, class FText>&         OPTIONS                                                (ConstParm, Parm, OutParm, ReferenceParm)
 // float                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// TMap<class FString, int32>              Tags                                                   (ConstParm, Parm, OutParm, ReferenceParm)
+// const TMap<class FString, int32>&       Tags                                                   (ConstParm, Parm, OutParm, ReferenceParm)
 // TMap<class FString, int32>              ReturnValue                                            (Parm, OutParm, ReturnParm)
 
 TMap<class FString, int32> UUISettingEntryShadingQuality::BP_OnChanged(class UObject* Obj, const class FString& setting_key, const TMap<class FString, class FString>& Params_0, const TMap<int32, class FText>& OPTIONS, float Value, const TMap<class FString, int32>& Tags)
@@ -1103,9 +1103,9 @@ TMap<class FString, int32> UUISettingEntryShadingQuality::BP_OnChanged(class UOb
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UObject*                          Obj                                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class FString                           setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
-// TMap<class FString, class FString>      P                                                      (ConstParm, Parm, OutParm, ReferenceParm)
-// TMap<int32, class FText>                OPTIONS                                                (ConstParm, Parm, OutParm, ReferenceParm)
+// const class FString&                    setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const TMap<class FString, class FString>&P                                                      (ConstParm, Parm, OutParm, ReferenceParm)
+// const TMap<int32, class FText>&         OPTIONS                                                (ConstParm, Parm, OutParm, ReferenceParm)
 // float                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UUISettingEntryAntiAliasingQualityHandler::BP_OnApply(class UObject* Obj, const class FString& setting_key, const TMap<class FString, class FString>& P, const TMap<int32, class FText>& OPTIONS, float Value)
@@ -1136,9 +1136,9 @@ void UUISettingEntryAntiAliasingQualityHandler::BP_OnApply(class UObject* Obj, c
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UObject*                          Obj                                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class FString                           setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
-// TMap<class FString, class FString>      P                                                      (ConstParm, Parm, OutParm, ReferenceParm)
-// TMap<int32, class FText>                O                                                      (ConstParm, Parm, OutParm, ReferenceParm)
+// const class FString&                    setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const TMap<class FString, class FString>&P                                                      (ConstParm, Parm, OutParm, ReferenceParm)
+// const TMap<int32, class FText>&         O                                                      (ConstParm, Parm, OutParm, ReferenceParm)
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 float UUISettingEntryAntiAliasingQualityHandler::BP_GetCurrentValue(class UObject* Obj, const class FString& setting_key, const TMap<class FString, class FString>& P, const TMap<int32, class FText>& O)
@@ -1170,11 +1170,11 @@ float UUISettingEntryAntiAliasingQualityHandler::BP_GetCurrentValue(class UObjec
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UObject*                          Obj                                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class FString                           setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
-// TMap<class FString, class FString>      Params_0                                               (ConstParm, Parm, OutParm, ReferenceParm)
-// TMap<int32, class FText>                OPTIONS                                                (ConstParm, Parm, OutParm, ReferenceParm)
+// const class FString&                    setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const TMap<class FString, class FString>&Params_0                                               (ConstParm, Parm, OutParm, ReferenceParm)
+// const TMap<int32, class FText>&         OPTIONS                                                (ConstParm, Parm, OutParm, ReferenceParm)
 // float                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// TMap<class FString, int32>              Tags                                                   (ConstParm, Parm, OutParm, ReferenceParm)
+// const TMap<class FString, int32>&       Tags                                                   (ConstParm, Parm, OutParm, ReferenceParm)
 // TMap<class FString, int32>              ReturnValue                                            (Parm, OutParm, ReturnParm)
 
 TMap<class FString, int32> UUISettingEntryAntiAliasingQualityHandler::BP_OnChanged(class UObject* Obj, const class FString& setting_key, const TMap<class FString, class FString>& Params_0, const TMap<int32, class FText>& OPTIONS, float Value, const TMap<class FString, int32>& Tags)

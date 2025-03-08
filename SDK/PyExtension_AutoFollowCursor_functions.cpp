@@ -64,7 +64,7 @@ void UPyExtension_AutoFollowCursor::OnVisibleChanged(bool bVisible)
 // PythonFunction PyExtension_AutoFollowCursor.PyExtension_AutoFollowCursor.BP_Tick
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGeometry                        MyGeometry                                             (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor)
+// const struct FGeometry&                 MyGeometry                                             (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor)
 // float                                   InDeltaTime                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UPyExtension_AutoFollowCursor::BP_Tick(const struct FGeometry& MyGeometry, float InDeltaTime)

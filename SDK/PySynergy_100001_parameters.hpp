@@ -34,12 +34,12 @@ public:
 };
 
 // PythonFunction PySynergy_100001.PyAbility_10000101.OnBondStateChanged
-// 0x00A0 (0x00A0 - 0x0000)
+// 0x00F0 (0x00F0 - 0x0000)
 struct PyAbility_10000101_OnBondStateChanged final
 {
 public:
-	struct FBondInstance                          bind;                                              // 0x0000(0x0090)(ConstParm, Parm, OutParm, ReferenceParm)
-	TArray<class AMarvelBaseCharacter*>           Triggers;                                          // 0x0090(0x0010)(ConstParm, Parm, OutParm, ReferenceParm)
+	struct FBondInstance                          bind;                                              // 0x0000(0x00E0)(ConstParm, Parm, OutParm, ReferenceParm)
+	TArray<class AMarvelBaseCharacter*>           Triggers;                                          // 0x00E0(0x0010)(ConstParm, Parm, OutParm, ReferenceParm)
 };
 
 // PythonFunction PySynergy_100001.PyAbility_10000101.OnPlayerKilled

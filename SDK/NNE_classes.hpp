@@ -35,8 +35,8 @@ public:
 };
 
 // Class NNE.NNERuntime
-// 0x0000 (0x0030 - 0x0030)
-class INNERuntime final : public IInterface
+// 0x0000 (0x0000 - 0x0000)
+class INNERuntime final
 {
 public:
 	static class UClass* StaticClass()
@@ -47,11 +47,20 @@ public:
 	{
 		return GetDefaultObjImpl<INNERuntime>();
 	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
 };
 
 // Class NNE.NNERuntimeCPU
-// 0x0000 (0x0030 - 0x0030)
-class INNERuntimeCPU final : public IInterface
+// 0x0000 (0x0000 - 0x0000)
+class INNERuntimeCPU final
 {
 public:
 	static class UClass* StaticClass()
@@ -62,11 +71,20 @@ public:
 	{
 		return GetDefaultObjImpl<INNERuntimeCPU>();
 	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
 };
 
 // Class NNE.NNERuntimeGPU
-// 0x0000 (0x0030 - 0x0030)
-class INNERuntimeGPU final : public IInterface
+// 0x0000 (0x0000 - 0x0000)
+class INNERuntimeGPU final
 {
 public:
 	static class UClass* StaticClass()
@@ -77,11 +95,20 @@ public:
 	{
 		return GetDefaultObjImpl<INNERuntimeGPU>();
 	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
 };
 
 // Class NNE.NNERuntimeRDG
-// 0x0000 (0x0030 - 0x0030)
-class INNERuntimeRDG final : public IInterface
+// 0x0000 (0x0000 - 0x0000)
+class INNERuntimeRDG final
 {
 public:
 	static class UClass* StaticClass()
@@ -91,6 +118,15 @@ public:
 	static class INNERuntimeRDG* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<INNERuntimeRDG>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
 	}
 };
 

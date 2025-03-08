@@ -60,7 +60,7 @@ void UPyHighLightData_1039::K2_Shutdown()
 // Parameters:
 // class UMarvelGameplayAbility*           Ability                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // float                                   CostValue                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayTag                     CostTag                                                (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              CostTag                                                (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
 
 void UPyHighLightData_1039::OnAbilityConsumeCost(class UMarvelGameplayAbility* Ability, float CostValue, const struct FGameplayTag& CostTag)
 {

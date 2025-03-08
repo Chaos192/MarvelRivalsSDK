@@ -17,6 +17,16 @@
 namespace SDK::Params
 {
 
+// PythonFunction PyAbility_102751.PyUIController_102751.SetAbility
+// 0x0010 (0x0010 - 0x0000)
+struct PyUIController_102751_SetAbility final
+{
+public:
+	int32                                         InAbilityId;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UGameplayAbility*                       InAbility;                                         // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+};
+
 // PythonFunction PyAbility_102751.PyCue_Summoner_Loop_10275101.WhileActive
 // 0x01C8 (0x01C8 - 0x0000)
 struct PyCue_Summoner_Loop_10275101_WhileActive final
@@ -75,16 +85,6 @@ struct PyCue_Summoner_Loop_10275101_OnWallDefenceApplyForWidgetUpdate final
 {
 public:
 	int32                                         LastAttackActorUID;                                // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-
-// PythonFunction PyAbility_102751.PyUIController_102751.SetAbility
-// 0x0010 (0x0010 - 0x0000)
-struct PyUIController_102751_SetAbility final
-{
-public:
-	int32                                         InAbilityId;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UGameplayAbility*                       InAbility;                                         // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 };
 
 }

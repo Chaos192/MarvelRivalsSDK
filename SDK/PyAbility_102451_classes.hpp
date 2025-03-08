@@ -45,11 +45,11 @@ public:
 };
 
 // PythonClass PyAbility_102451.PyAbility_102451
-// 0x0010 (0x2590 - 0x2580)
+// 0x0010 (0x2598 - 0x2588)
 class UPyAbility_102451 : public UAbility_102451
 {
 public:
-	TMulticastInlineDelegate<void(float Distance)> OnHelaShiftTeleportDistance;                       // 0x2580(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(float Distance)> OnHelaShiftTeleportDistance;                      // 0x2588(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 
 public:
 	void BeginPlay();
@@ -83,7 +83,7 @@ public:
 };
 
 // PythonClass PyAbility_102451.PyProjectile_10245101
-// 0x0000 (0x3090 - 0x3090)
+// 0x0000 (0x3140 - 0x3140)
 class APyProjectile_10245101 : public AProjectile_10245101
 {
 public:

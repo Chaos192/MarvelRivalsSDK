@@ -19,7 +19,7 @@ namespace SDK
 {
 
 // PythonClass PyHelaCharacter.PyHelaCharacter
-// 0x0000 (0x1850 - 0x1850)
+// 0x0000 (0x18B0 - 0x18B0)
 class APyHelaCharacter : public AHelaCharacter
 {
 public:

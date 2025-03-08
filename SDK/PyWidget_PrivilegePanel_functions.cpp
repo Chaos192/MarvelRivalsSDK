@@ -140,7 +140,7 @@ void UPyWidget_PrivilegePanel::MarvelSetVisible(bool Visible)
 // PythonFunction PyWidget_PrivilegePanel.PyWidget_PrivilegePanel.OnAnimationFinished
 // (BlueprintCosmetic, Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UWidgetAnimation*                 Animation                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// const class UWidgetAnimation*           Animation                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 void UPyWidget_PrivilegePanel::OnAnimationFinished(const class UWidgetAnimation* Animation)
 {

@@ -58,7 +58,7 @@ void UPyHeroStatisticsUnit::Init()
 // PythonFunction hero_statistics_unit.PyHeroStatisticsUnit.PyOnTakePayloadHeal
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// float                                   HealValue                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const float                             HealValue                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UPyHeroStatisticsUnit::PyOnTakePayloadHeal(const float HealValue)
 {

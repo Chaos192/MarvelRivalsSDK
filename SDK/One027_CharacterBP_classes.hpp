@@ -17,13 +17,13 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass 1027_CharacterBP.1027_CharacterBP_C
-// 0x0010 (0x1850 - 0x1840)
+// 0x0010 (0x18A0 - 0x1890)
 class AOne027_CharacterBP_C final : public APyGrootCharacter
 {
 public:
-	uint8                                         Pad_1831[0x7];                                     // 0x1831(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UMarvelPhysicsHandleComponent*          MarvelPhysicsHandle;                               // 0x1838(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UPhysicalInteractionComponent*          PhysicalInteraction;                               // 0x1840(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1881[0x7];                                     // 0x1881(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UMarvelPhysicsHandleComponent*          MarvelPhysicsHandle;                               // 0x1888(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UPhysicalInteractionComponent*          PhysicalInteraction;                               // 0x1890(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

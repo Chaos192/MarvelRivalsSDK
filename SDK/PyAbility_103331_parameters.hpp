@@ -16,13 +16,22 @@
 namespace SDK::Params
 {
 
-// PythonFunction PyAbility_103331.PyCue_Ability_Instant_10333101.OnExecuteAudio
-// 0x01C0 (0x01C0 - 0x0000)
-struct PyCue_Ability_Instant_10333101_OnExecuteAudio final
+// PythonFunction PyAbility_103331.PyUIController_103331.SetAbility
+// 0x0010 (0x0010 - 0x0000)
+struct PyUIController_103331_SetAbility final
 {
 public:
-	class AActor*                                 MyTarget;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	struct FGameplayCueParameters                 Parameters;                                        // 0x0008(0x01B8)(ConstParm, Parm, OutParm, ReferenceParm)
+	int32                                         InAbilityId;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UGameplayAbility*                       InAbility;                                         // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+};
+
+// PythonFunction PyAbility_103331.PyUIController_103331.ReceiveTick
+// 0x0004 (0x0004 - 0x0000)
+struct PyUIController_103331_ReceiveTick final
+{
+public:
+	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 
 // PythonFunction PyAbility_103331.PyAbility_103331.GetKickTimelineIndex
@@ -41,22 +50,13 @@ public:
 	bool                                          bWasCancelled;                                     // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 
-// PythonFunction PyAbility_103331.PyUIController_103331.SetAbility
-// 0x0010 (0x0010 - 0x0000)
-struct PyUIController_103331_SetAbility final
+// PythonFunction PyAbility_103331.PyCue_Ability_Instant_10333101.OnExecuteAudio
+// 0x01C0 (0x01C0 - 0x0000)
+struct PyCue_Ability_Instant_10333101_OnExecuteAudio final
 {
 public:
-	int32                                         InAbilityId;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UGameplayAbility*                       InAbility;                                         // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-};
-
-// PythonFunction PyAbility_103331.PyUIController_103331.ReceiveTick
-// 0x0004 (0x0004 - 0x0000)
-struct PyUIController_103331_ReceiveTick final
-{
-public:
-	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 MyTarget;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	struct FGameplayCueParameters                 Parameters;                                        // 0x0008(0x01B8)(ConstParm, Parm, OutParm, ReferenceParm)
 };
 
 }

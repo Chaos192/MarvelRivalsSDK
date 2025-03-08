@@ -19,14 +19,28 @@
 namespace SDK::Params
 {
 
-// PythonFunction PyAbility_104251.PyCueScopeStart_10425102.SetFXParameter
-// 0x01C8 (0x01C8 - 0x0000)
-struct PyCueScopeStart_10425102_SetFXParameter final
+// PythonFunction PyAbility_104251.PyAbility_104251.CanActivate
+// 0x0001 (0x0001 - 0x0000)
+struct PyAbility_104251_CanActivate final
 {
 public:
-	class UNiagaraComponent*                      InFXComponent;                                     // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	const class AActor*                           MyTarget;                                          // 0x0008(0x0008)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	struct FGameplayCueParameters                 Parameters;                                        // 0x0010(0x01B8)(ConstParm, Parm, OutParm, ReferenceParm)
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+
+// PythonFunction PyAbility_104251.PyAbility_104251.K2_OnEndAbility
+// 0x0001 (0x0001 - 0x0000)
+struct PyAbility_104251_K2_OnEndAbility final
+{
+public:
+	bool                                          bWasCancelled;                                     // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+
+// PythonFunction PyAbility_104251.PyAbility_104251.NativeOnMontageEvent
+// 0x0010 (0x0010 - 0x0000)
+struct PyAbility_104251_NativeOnMontageEvent final
+{
+public:
+	class FString                                 Tag;                                               // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash)
 };
 
 // PythonFunction PyAbility_104251.PySummonedComp_10425101.MulticastLaunch
@@ -149,30 +163,6 @@ public:
 	struct FAttributeModifierHandle               ParameterHandle;                                   // 0x0010(0x0018)(ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
 };
 
-// PythonFunction PyAbility_104251.PyAbility_104251.CanActivate
-// 0x0001 (0x0001 - 0x0000)
-struct PyAbility_104251_CanActivate final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-
-// PythonFunction PyAbility_104251.PyAbility_104251.K2_OnEndAbility
-// 0x0001 (0x0001 - 0x0000)
-struct PyAbility_104251_K2_OnEndAbility final
-{
-public:
-	bool                                          bWasCancelled;                                     // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-
-// PythonFunction PyAbility_104251.PyAbility_104251.NativeOnMontageEvent
-// 0x0010 (0x0010 - 0x0000)
-struct PyAbility_104251_NativeOnMontageEvent final
-{
-public:
-	class FString                                 Tag;                                               // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash)
-};
-
 // PythonFunction PyAbility_104251.PyUIController_104251.SetAbility
 // 0x0010 (0x0010 - 0x0000)
 struct PyUIController_104251_SetAbility final
@@ -181,6 +171,16 @@ public:
 	int32                                         InAbilityId;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UGameplayAbility*                       InAbility;                                         // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+};
+
+// PythonFunction PyAbility_104251.PyCueScopeStart_10425102.SetFXParameter
+// 0x01C8 (0x01C8 - 0x0000)
+struct PyCueScopeStart_10425102_SetFXParameter final
+{
+public:
+	class UNiagaraComponent*                      InFXComponent;                                     // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	const class AActor*                           MyTarget;                                          // 0x0008(0x0008)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	struct FGameplayCueParameters                 Parameters;                                        // 0x0010(0x01B8)(ConstParm, Parm, OutParm, ReferenceParm)
 };
 
 // PythonFunction PyAbility_104251.PyCue_ScopeLoop_10425101.WhileActive

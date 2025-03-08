@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Weapon_BlackWidowAutoGun.Weapon_BlackWidowAutoGun_C
-// 0x0000 (0x0CB0 - 0x0CB0)
+// 0x0000 (0x0CA0 - 0x0CA0)
 class AWeapon_BlackWidowAutoGun_C final : public ABlackWidowSniperGun
 {
 public:

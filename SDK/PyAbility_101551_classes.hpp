@@ -35,7 +35,7 @@ public:
 };
 
 // PythonClass PyAbility_101551.PyAbility_101551
-// 0x0000 (0x2580 - 0x2580)
+// 0x0000 (0x2588 - 0x2588)
 class UPyAbility_101551 : public UMarvelGameplayAbility
 {
 public:
@@ -59,7 +59,7 @@ public:
 };
 
 // PythonClass PyAbility_101551.PyUIController_101551
-// 0x0000 (0x0C60 - 0x0C60)
+// 0x0000 (0x0C50 - 0x0C50)
 class UPyUIController_101551 final : public UUIC_Ability
 {
 public:

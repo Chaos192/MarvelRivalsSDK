@@ -58,7 +58,7 @@ void UPyAbilityExtraStatistics_102461::K2_OnShutdown()
 // PythonFunction PyAbilityExtraStatistics_102461.PyAbilityExtraStatistics_102461.OnSoulLinkEnemyEvent
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<class AActor*>                   TargetList                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const TArray<class AActor*>&            TargetList                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyAbilityExtraStatistics_102461::OnSoulLinkEnemyEvent(const TArray<class AActor*>& TargetList)
 {

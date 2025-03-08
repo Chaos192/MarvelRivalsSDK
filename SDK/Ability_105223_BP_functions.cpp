@@ -74,7 +74,7 @@ void UAbility_105223_BP_C::ExecuteUbergraph_Ability_105223_BP(int32 EntryPoint)
 // Function Ability_105223_BP.Ability_105223_BP_C.K2_ActivateAbilityFromEvent
 // (Event, Protected, HasOutParams, BlueprintEvent)
 // Parameters:
-// struct FGameplayEventData               EventData                                              (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// const struct FGameplayEventData&        EventData                                              (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 
 void UAbility_105223_BP_C::K2_ActivateAbilityFromEvent(const struct FGameplayEventData& EventData)
 {
@@ -108,7 +108,7 @@ void UAbility_105223_BP_C::MissileEventNotify()
 // Function Ability_105223_BP.Ability_105223_BP_C.TryMakeTriggerContext
 // (Event, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayEventData               EventData                                              (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FGameplayEventData&              EventData                                              (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 bool UAbility_105223_BP_C::TryMakeTriggerContext(struct FGameplayEventData& EventData)

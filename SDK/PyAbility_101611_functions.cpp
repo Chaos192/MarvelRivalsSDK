@@ -20,7 +20,7 @@ namespace SDK
 // PythonFunction PyAbility_101611.PyEffectiveComponent_10161101.K2_OnPreApplyContainer
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<struct FHitResult>               HitResults                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const TArray<struct FHitResult>&        HitResults                                             (ConstParm, Parm, OutParm, ReferenceParm)
 // TArray<struct FHitResult>               ReturnValue                                            (Parm, OutParm, ReturnParm)
 
 TArray<struct FHitResult> UPyEffectiveComponent_10161101::K2_OnPreApplyContainer(const TArray<struct FHitResult>& HitResults)
@@ -86,7 +86,7 @@ void UPyAbility_101611::K2_ActivateAbility()
 // PythonFunction PyAbility_101611.PyAbility_101611.NativeOnMontageCompleted
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_101611::NativeOnMontageCompleted(const class FString& Tag)
 {
@@ -111,7 +111,7 @@ void UPyAbility_101611::NativeOnMontageCompleted(const class FString& Tag)
 // PythonFunction PyAbility_101611.PyAbility_101611.NativeOnMontageBlendOut
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_101611::NativeOnMontageBlendOut(const class FString& Tag)
 {
@@ -136,7 +136,7 @@ void UPyAbility_101611::NativeOnMontageBlendOut(const class FString& Tag)
 // PythonFunction PyAbility_101611.PyAbility_101611.NativeOnMontageInterrupted
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_101611::NativeOnMontageInterrupted(const class FString& Tag)
 {
@@ -161,7 +161,7 @@ void UPyAbility_101611::NativeOnMontageInterrupted(const class FString& Tag)
 // PythonFunction PyAbility_101611.PyAbility_101611.NativeOnMontageCancelled
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_101611::NativeOnMontageCancelled(const class FString& Tag)
 {

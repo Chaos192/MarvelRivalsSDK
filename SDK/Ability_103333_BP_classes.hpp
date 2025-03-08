@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "Engine_structs.hpp"
 #include "Marvel_structs.hpp"
 #include "CoreUObject_structs.hpp"
-#include "Engine_structs.hpp"
 #include "GameplayAbilities_structs.hpp"
 #include "PyAbility_103333_classes.hpp"
 
@@ -21,17 +21,17 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Ability_103333_BP.Ability_103333_BP_C
-// 0x0048 (0x3240 - 0x31F8)
+// 0x0048 (0x3248 - 0x3200)
 class UAbility_103333_BP_C final : public UPyAbility_103333
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x31F8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	float                                         冲撞伤害;                                          // 0x3200(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3204[0x4];                                     // 0x3204(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                冲刺向上的偏移;                                    // 0x3208(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          开始踢击;                                          // 0x3220(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3221[0x7];                                     // 0x3221(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FGameplayEffectContextHandle           Context;                                           // 0x3228(0x0018)(Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x3200(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	float                                         冲撞伤害;                                          // 0x3208(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_320C[0x4];                                     // 0x320C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                冲刺向上的偏移;                                    // 0x3210(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          开始踢击;                                          // 0x3228(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_3229[0x7];                                     // 0x3229(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FGameplayEffectContextHandle           Context;                                           // 0x3230(0x0018)(Edit, BlueprintVisible, DisableEditOnInstance)
 
 public:
 	void Event碰到敌方(class ACharacter* 碰到的敌方);

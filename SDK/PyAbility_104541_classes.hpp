@@ -37,11 +37,11 @@ public:
 };
 
 // PythonClass PyAbility_104541.PyAbility_104541
-// 0x0010 (0x2590 - 0x2580)
+// 0x0010 (0x2598 - 0x2588)
 class UPyAbility_104541 : public UMarvelGameplayAbility
 {
 public:
-	TMulticastInlineDelegate<void()>              OnAbilityReadyEndDelegate;                         // 0x2580(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void()>              OnAbilityReadyEndDelegate;                         // 0x2588(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 
 public:
 	void K2_ActivateAbility();
@@ -61,7 +61,7 @@ public:
 };
 
 // PythonClass PyAbility_104541.PySummoned_10454101
-// 0x0000 (0x0890 - 0x0890)
+// 0x0000 (0x08C0 - 0x08C0)
 class APySummoned_10454101 : public AMarvelSummonerBase
 {
 public:
@@ -80,11 +80,11 @@ public:
 };
 
 // PythonClass PyAbility_104541.PyUIController_104541
-// 0x00E8 (0x0D48 - 0x0C60)
+// 0x00E8 (0x0D38 - 0x0C50)
 class UPyUIController_104541 final : public UUIC_Ability
 {
 public:
-	struct FReticleStyle                          ReticleHideStyle;                                  // 0x0C60(0x00E4)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	struct FReticleStyle                          ReticleHideStyle;                                  // 0x0C50(0x00E4)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
 
 public:
 	void SetAbility(int32 InAbilityId, class UGameplayAbility* InAbility);

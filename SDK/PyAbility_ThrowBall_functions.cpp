@@ -17,266 +17,11 @@
 namespace SDK
 {
 
-// PythonFunction PyAbility_ThrowBall.PyCue_Buff_20050101.WhileActiveFX
-// (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
-
-void APyCue_Buff_20050101::WhileActiveFX(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PyCue_Buff_20050101", "WhileActiveFX");
-
-	Params::PyCue_Buff_20050101_WhileActiveFX Parms{};
-
-	Parms.MyTarget = MyTarget;
-	Parms.Parameters = std::move(Parameters);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// PythonFunction PyAbility_ThrowBall.PyCue_Buff_20050101.OnRemoveFX
-// (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
-
-void APyCue_Buff_20050101::OnRemoveFX(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PyCue_Buff_20050101", "OnRemoveFX");
-
-	Params::PyCue_Buff_20050101_OnRemoveFX Parms{};
-
-	Parms.MyTarget = MyTarget;
-	Parms.Parameters = std::move(Parameters);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// PythonFunction PyAbility_ThrowBall.PySummonedComp_Ball.ReceiveBeginPlay
-// (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
-
-void UPySummonedComp_Ball::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PySummonedComp_Ball", "ReceiveBeginPlay");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// PythonFunction PyAbility_ThrowBall.PySummonedComp_Ball.OnMapLoaded
-// (Native, Public, BlueprintCallable)
-
-void UPySummonedComp_Ball::OnMapLoaded()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PySummonedComp_Ball", "OnMapLoaded");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// PythonFunction PyAbility_ThrowBall.PySummonedComp_Ball.OnRep_ActorStatus
-// (Native, Public, BlueprintCallable)
-
-void UPySummonedComp_Ball::OnRep_ActorStatus()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PySummonedComp_Ball", "OnRep_ActorStatus");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// PythonFunction PyAbility_ThrowBall.PySummonedComp_Ball.OnRep_ThrowTeamID
-// (Native, Public, BlueprintCallable)
-
-void UPySummonedComp_Ball::OnRep_ThrowTeamID()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PySummonedComp_Ball", "OnRep_ThrowTeamID");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// PythonFunction PyAbility_ThrowBall.PySummonedComp_Ball.OnRep_Holder
-// (Native, Public, BlueprintCallable)
-
-void UPySummonedComp_Ball::OnRep_Holder()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PySummonedComp_Ball", "OnRep_Holder");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// PythonFunction PyAbility_ThrowBall.PySummonedComp_Ball.OnComponentHit
-// (Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// class UPrimitiveComponent*              Comp                                                   (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class AActor*                           OtherActor                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class UPrimitiveComponent*              OtherComp                                              (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FVector                          Impulse                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FHitResult                       Result                                                 (ConstParm, Parm, OutParm, ReferenceParm)
-
-void UPySummonedComp_Ball::OnComponentHit(class UPrimitiveComponent* Comp, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, const struct FVector& Impulse, const struct FHitResult& Result)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PySummonedComp_Ball", "OnComponentHit");
-
-	Params::PySummonedComp_Ball_OnComponentHit Parms{};
-
-	Parms.Comp = Comp;
-	Parms.OtherActor = OtherActor;
-	Parms.OtherComp = OtherComp;
-	Parms.Impulse = std::move(Impulse);
-	Parms.Result = std::move(Result);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// PythonFunction PyAbility_ThrowBall.PySummonedComp_Ball.MulticastOnComponentHit
-// (Net, NetReliable, Native, NetMulticast, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// struct FHitResult                       Result                                                 (ConstParm, Parm, OutParm, ReferenceParm)
-// bool                                    bIsThrowing                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FVector                          Impulse                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UPySummonedComp_Ball::MulticastOnComponentHit(const struct FHitResult& Result, bool bIsThrowing, const struct FVector& Impulse)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PySummonedComp_Ball", "MulticastOnComponentHit");
-
-	Params::PySummonedComp_Ball_MulticastOnComponentHit Parms{};
-
-	Parms.Result = std::move(Result);
-	Parms.bIsThrowing = bIsThrowing;
-	Parms.Impulse = std::move(Impulse);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// PythonFunction PyAbility_ThrowBall.PyOverlapHandlerComponent_Ball.ReceiveBeginPlay
-// (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
-
-void UPyOverlapHandlerComponent_Ball::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PyOverlapHandlerComponent_Ball", "ReceiveBeginPlay");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// PythonFunction PyAbility_ThrowBall.PyOverlapHandlerComponent_Ball.ApplyEffectOnActorOverlap
-// (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class AActor*                           InActor                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-
-void UPyOverlapHandlerComponent_Ball::ApplyEffectOnActorOverlap(class AActor* InActor)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PyOverlapHandlerComponent_Ball", "ApplyEffectOnActorOverlap");
-
-	Params::PyOverlapHandlerComponent_Ball_ApplyEffectOnActorOverlap Parms{};
-
-	Parms.InActor = InActor;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // PythonFunction PyAbility_ThrowBall.PyCue_Summoned_Loop_Ball.WhileActiveFX
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyCue_Summoned_Loop_Ball::WhileActiveFX(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
 {
@@ -303,7 +48,7 @@ void APyCue_Summoned_Loop_Ball::WhileActiveFX(class AActor* MyTarget, const stru
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyCue_Summoned_Loop_Ball::OnRemoveFX(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
 {
@@ -429,9 +174,9 @@ void APyCue_Summoned_Loop_Ball::OnHolderChanged(class AMarvelBaseCharacter* NewH
 // PythonFunction PyAbility_ThrowBall.PyCue_Summoned_Loop_Ball.OnCollision
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FHitResult                       InHitResult                                            (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FHitResult&                InHitResult                                            (ConstParm, Parm, OutParm, ReferenceParm)
 // bool                                    bIsThrowing                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FVector                          Impulse                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVector&                   Impulse                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void APyCue_Summoned_Loop_Ball::OnCollision(const struct FHitResult& InHitResult, bool bIsThrowing, const struct FVector& Impulse)
 {
@@ -445,6 +190,324 @@ void APyCue_Summoned_Loop_Ball::OnCollision(const struct FHitResult& InHitResult
 	Parms.InHitResult = std::move(InHitResult);
 	Parms.bIsThrowing = bIsThrowing;
 	Parms.Impulse = std::move(Impulse);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// PythonFunction PyAbility_ThrowBall.PySummonedComp_Ball.ReceiveBeginPlay
+// (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
+
+void UPySummonedComp_Ball::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PySummonedComp_Ball", "ReceiveBeginPlay");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// PythonFunction PyAbility_ThrowBall.PySummonedComp_Ball.OnMapLoaded
+// (Native, Public, BlueprintCallable)
+
+void UPySummonedComp_Ball::OnMapLoaded()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PySummonedComp_Ball", "OnMapLoaded");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// PythonFunction PyAbility_ThrowBall.PySummonedComp_Ball.OnRep_ActorStatus
+// (Native, Public, BlueprintCallable)
+
+void UPySummonedComp_Ball::OnRep_ActorStatus()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PySummonedComp_Ball", "OnRep_ActorStatus");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// PythonFunction PyAbility_ThrowBall.PySummonedComp_Ball.OnRep_ThrowTeamID
+// (Native, Public, BlueprintCallable)
+
+void UPySummonedComp_Ball::OnRep_ThrowTeamID()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PySummonedComp_Ball", "OnRep_ThrowTeamID");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// PythonFunction PyAbility_ThrowBall.PySummonedComp_Ball.OnRep_Holder
+// (Native, Public, BlueprintCallable)
+
+void UPySummonedComp_Ball::OnRep_Holder()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PySummonedComp_Ball", "OnRep_Holder");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// PythonFunction PyAbility_ThrowBall.PySummonedComp_Ball.OnComponentHit
+// (Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// class UPrimitiveComponent*              Comp                                                   (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class AActor*                           OtherActor                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class UPrimitiveComponent*              OtherComp                                              (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// const struct FVector&                   Impulse                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FHitResult&                Result                                                 (ConstParm, Parm, OutParm, ReferenceParm)
+
+void UPySummonedComp_Ball::OnComponentHit(class UPrimitiveComponent* Comp, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, const struct FVector& Impulse, const struct FHitResult& Result)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PySummonedComp_Ball", "OnComponentHit");
+
+	Params::PySummonedComp_Ball_OnComponentHit Parms{};
+
+	Parms.Comp = Comp;
+	Parms.OtherActor = OtherActor;
+	Parms.OtherComp = OtherComp;
+	Parms.Impulse = std::move(Impulse);
+	Parms.Result = std::move(Result);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// PythonFunction PyAbility_ThrowBall.PySummonedComp_Ball.MulticastOnComponentHit
+// (Net, NetReliable, Native, NetMulticast, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const struct FHitResult&                Result                                                 (ConstParm, Parm, OutParm, ReferenceParm)
+// bool                                    bIsThrowing                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVector&                   Impulse                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UPySummonedComp_Ball::MulticastOnComponentHit(const struct FHitResult& Result, bool bIsThrowing, const struct FVector& Impulse)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PySummonedComp_Ball", "MulticastOnComponentHit");
+
+	Params::PySummonedComp_Ball_MulticastOnComponentHit Parms{};
+
+	Parms.Result = std::move(Result);
+	Parms.bIsThrowing = bIsThrowing;
+	Parms.Impulse = std::move(Impulse);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// PythonFunction PyAbility_ThrowBall.PyUIController_ThrowBall.OnInit
+// (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
+
+void UPyUIController_ThrowBall::OnInit()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyUIController_ThrowBall", "OnInit");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// PythonFunction PyAbility_ThrowBall.PyUIController_ThrowBall.ReceiveTick
+// (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// float                                   DeltaTime                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UPyUIController_ThrowBall::ReceiveTick(float DeltaTime)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyUIController_ThrowBall", "ReceiveTick");
+
+	Params::PyUIController_ThrowBall_ReceiveTick Parms{};
+
+	Parms.DeltaTime = DeltaTime;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// PythonFunction PyAbility_ThrowBall.PyUIController_ThrowBall.Destruct
+// (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
+
+void UPyUIController_ThrowBall::Destruct()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyUIController_ThrowBall", "Destruct");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// PythonFunction PyAbility_ThrowBall.PyOverlapHandlerComponent_Ball.ReceiveBeginPlay
+// (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
+
+void UPyOverlapHandlerComponent_Ball::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyOverlapHandlerComponent_Ball", "ReceiveBeginPlay");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// PythonFunction PyAbility_ThrowBall.PyOverlapHandlerComponent_Ball.ApplyEffectOnActorOverlap
+// (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class AActor*                           InActor                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+
+void UPyOverlapHandlerComponent_Ball::ApplyEffectOnActorOverlap(class AActor* InActor)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyOverlapHandlerComponent_Ball", "ApplyEffectOnActorOverlap");
+
+	Params::PyOverlapHandlerComponent_Ball_ApplyEffectOnActorOverlap Parms{};
+
+	Parms.InActor = InActor;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// PythonFunction PyAbility_ThrowBall.PyCue_Buff_20050101.WhileActiveFX
+// (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+
+void APyCue_Buff_20050101::WhileActiveFX(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyCue_Buff_20050101", "WhileActiveFX");
+
+	Params::PyCue_Buff_20050101_WhileActiveFX Parms{};
+
+	Parms.MyTarget = MyTarget;
+	Parms.Parameters = std::move(Parameters);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// PythonFunction PyAbility_ThrowBall.PyCue_Buff_20050101.OnRemoveFX
+// (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+
+void APyCue_Buff_20050101::OnRemoveFX(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyCue_Buff_20050101", "OnRemoveFX");
+
+	Params::PyCue_Buff_20050101_OnRemoveFX Parms{};
+
+	Parms.MyTarget = MyTarget;
+	Parms.Parameters = std::move(Parameters);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -477,7 +540,7 @@ void UPyAbility_ThrowBall::BeginPlay()
 // PythonFunction PyAbility_ThrowBall.PyAbility_ThrowBall.NativeOnMontageCompleted
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_ThrowBall::NativeOnMontageCompleted(const class FString& Tag)
 {
@@ -502,7 +565,7 @@ void UPyAbility_ThrowBall::NativeOnMontageCompleted(const class FString& Tag)
 // PythonFunction PyAbility_ThrowBall.PyAbility_ThrowBall.NativeOnMontageBlendOut
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_ThrowBall::NativeOnMontageBlendOut(const class FString& Tag)
 {
@@ -527,7 +590,7 @@ void UPyAbility_ThrowBall::NativeOnMontageBlendOut(const class FString& Tag)
 // PythonFunction PyAbility_ThrowBall.PyAbility_ThrowBall.NativeOnMontageInterrupted
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_ThrowBall::NativeOnMontageInterrupted(const class FString& Tag)
 {
@@ -552,7 +615,7 @@ void UPyAbility_ThrowBall::NativeOnMontageInterrupted(const class FString& Tag)
 // PythonFunction PyAbility_ThrowBall.PyAbility_ThrowBall.NativeOnMontageCancelled
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_ThrowBall::NativeOnMontageCancelled(const class FString& Tag)
 {
@@ -640,7 +703,7 @@ void UPyAbility_ThrowBall::MissileEventNotify()
 // PythonFunction PyAbility_ThrowBall.PyAbility_ThrowBall.ServerThrowEndPoint
 // (Net, NetReliable, Native, Public, NetServer, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FVector                          TargetPoint                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVector&                   TargetPoint                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                                   HoldTime                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UPyAbility_ThrowBall::ServerThrowEndPoint(const struct FVector& TargetPoint, float HoldTime)
@@ -659,69 +722,6 @@ void UPyAbility_ThrowBall::ServerThrowEndPoint(const struct FVector& TargetPoint
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// PythonFunction PyAbility_ThrowBall.PyUIController_ThrowBall.OnInit
-// (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
-
-void UPyUIController_ThrowBall::OnInit()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PyUIController_ThrowBall", "OnInit");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// PythonFunction PyAbility_ThrowBall.PyUIController_ThrowBall.ReceiveTick
-// (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// float                                   DeltaTime                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UPyUIController_ThrowBall::ReceiveTick(float DeltaTime)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PyUIController_ThrowBall", "ReceiveTick");
-
-	Params::PyUIController_ThrowBall_ReceiveTick Parms{};
-
-	Parms.DeltaTime = DeltaTime;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// PythonFunction PyAbility_ThrowBall.PyUIController_ThrowBall.Destruct
-// (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
-
-void UPyUIController_ThrowBall::Destruct()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PyUIController_ThrowBall", "Destruct");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
 }

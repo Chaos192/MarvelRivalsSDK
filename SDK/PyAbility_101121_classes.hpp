@@ -36,7 +36,7 @@ public:
 };
 
 // PythonClass PyAbility_101121.PyUIController_1011_Base
-// 0x0000 (0x0C60 - 0x0C60)
+// 0x0000 (0x0C50 - 0x0C50)
 class UPyUIController_1011_Base : public UUIC_Ability
 {
 public:
@@ -54,8 +54,49 @@ public:
 	}
 };
 
+// PythonClass PyAbility_101121.PyUIController_101113_101114
+// 0x0000 (0x0C50 - 0x0C50)
+class UPyUIController_101113_101114 final : public UPyUIController_1011_Base
+{
+public:
+	void OnInit();
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PyUIController_101113_101114">();
+	}
+	static class UPyUIController_101113_101114* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPyUIController_101113_101114>();
+	}
+};
+
+// PythonClass PyAbility_101121.PyAbility_101121
+// 0x0000 (0x2588 - 0x2588)
+class UPyAbility_101121 : public UMarvelGameplayAbility
+{
+public:
+	void BeginPlay();
+	void K2_ActivateAbility();
+	void NativeOnMontageCompleted(const class FString& Tag);
+	void NativeOnMontageBlendOut(const class FString& Tag);
+	void NativeOnMontageInterrupted(const class FString& Tag);
+	void NativeOnMontageCancelled(const class FString& Tag);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PyAbility_101121">();
+	}
+	static class UPyAbility_101121* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPyAbility_101121>();
+	}
+};
+
 // PythonClass PyAbility_101121.PyUIController_101151_101152
-// 0x0000 (0x0C60 - 0x0C60)
+// 0x0000 (0x0C50 - 0x0C50)
 class UPyUIController_101151_101152 final : public UPyUIController_1011_Base
 {
 public:
@@ -94,49 +135,8 @@ public:
 	}
 };
 
-// PythonClass PyAbility_101121.PyAbility_101121
-// 0x0000 (0x2580 - 0x2580)
-class UPyAbility_101121 : public UMarvelGameplayAbility
-{
-public:
-	void BeginPlay();
-	void K2_ActivateAbility();
-	void NativeOnMontageCompleted(const class FString& Tag);
-	void NativeOnMontageBlendOut(const class FString& Tag);
-	void NativeOnMontageInterrupted(const class FString& Tag);
-	void NativeOnMontageCancelled(const class FString& Tag);
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"PyAbility_101121">();
-	}
-	static class UPyAbility_101121* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UPyAbility_101121>();
-	}
-};
-
-// PythonClass PyAbility_101121.PyUIController_101113_101114
-// 0x0000 (0x0C60 - 0x0C60)
-class UPyUIController_101113_101114 final : public UPyUIController_1011_Base
-{
-public:
-	void OnInit();
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"PyUIController_101113_101114">();
-	}
-	static class UPyUIController_101113_101114* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UPyUIController_101113_101114>();
-	}
-};
-
 // PythonClass PyAbility_101121.PyUIController_101121
-// 0x0000 (0x0C60 - 0x0C60)
+// 0x0000 (0x0C50 - 0x0C50)
 class UPyUIController_101121 final : public UPyUIController_1011_Base
 {
 public:
@@ -155,7 +155,7 @@ public:
 };
 
 // PythonClass PyAbility_101121.PyUIController_101122_101123
-// 0x0000 (0x0C60 - 0x0C60)
+// 0x0000 (0x0C50 - 0x0C50)
 class UPyUIController_101122_101123 final : public UPyUIController_1011_Base
 {
 public:
@@ -174,7 +174,7 @@ public:
 };
 
 // PythonClass PyAbility_101121.PyUIController_101141
-// 0x0000 (0x0C60 - 0x0C60)
+// 0x0000 (0x0C50 - 0x0C50)
 class UPyUIController_101141 final : public UPyUIController_1011_Base
 {
 public:
@@ -192,7 +192,7 @@ public:
 };
 
 // PythonClass PyAbility_101121.PyUIController_101181
-// 0x0000 (0x0C60 - 0x0C60)
+// 0x0000 (0x0C50 - 0x0C50)
 class UPyUIController_101181 final : public UPyUIController_1011_Base
 {
 public:

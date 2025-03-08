@@ -58,7 +58,7 @@ void UPyWidget_AbilityChargeSingle_v5::Destruct()
 // PythonFunction PyWidget_AbilityCharge_V5.PyWidget_AbilityChargeSingle_v5.SetStyle
 // (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FWidgetStyle_AbilityCharge       Style                                                  (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FWidgetStyle_AbilityCharge&Style                                                  (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyWidget_AbilityChargeSingle_v5::SetStyle(const struct FWidgetStyle_AbilityCharge& Style)
 {
@@ -286,7 +286,7 @@ void UPyWidget_AbilityChargeSingle_v5::ShowSelf()
 // PythonFunction PyWidget_AbilityCharge_V5.PyWidget_CommonChargeSingle_V5.SetStyle
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FWidgetStyle_AbilityCharge       Style                                                  (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FWidgetStyle_AbilityCharge&Style                                                  (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyWidget_CommonChargeSingle_V5::SetStyle(const struct FWidgetStyle_AbilityCharge& Style)
 {
@@ -330,7 +330,7 @@ void UPyWidget_AbilityCharge_V5::OnInitialized()
 // PythonFunction PyWidget_AbilityCharge_V5.PyWidget_AbilityCharge_V5.SetStyle
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FWidgetStyle_AbilityCharge       Style                                                  (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FWidgetStyle_AbilityCharge&Style                                                  (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyWidget_AbilityCharge_V5::SetStyle(const struct FWidgetStyle_AbilityCharge& Style)
 {

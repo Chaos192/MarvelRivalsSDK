@@ -35,11 +35,14 @@ public:
 };
 
 // Function MarvelControlAnalyzer.ControlAnalyzerSubsystem.SendWarning
-// 0x0010 (0x0010 - 0x0000)
+// 0x0040 (0x0040 - 0x0000)
 struct ControlAnalyzerSubsystem_SendWarning final
 {
 public:
-	class FString                                 WarningStr;                                        // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<int32>                                 LSScores;                                          // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TArray<int32>                                 RSScores;                                          // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TArray<int32>                                 LTScores;                                          // 0x0020(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TArray<int32>                                 RTScores;                                          // 0x0030(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 };
 
 // Function MarvelControlAnalyzer.ControlAnalyzerSubsystem.SetDeviceInfo

@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // PythonClass PyAbility_103382.PyAbility_103382
-// 0x0000 (0x2580 - 0x2580)
+// 0x0000 (0x2588 - 0x2588)
 class UPyAbility_103382 : public UPyAbility_135
 {
 public:

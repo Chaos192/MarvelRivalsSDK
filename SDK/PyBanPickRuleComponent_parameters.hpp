@@ -11,19 +11,10 @@
 #include "Basic.hpp"
 
 #include "python_enums_structs.hpp"
-#include "Engine_structs.hpp"
 
 
 namespace SDK::Params
 {
-
-// PythonFunction PyBanPickRuleComponent.PyBanPickRuleComponent.ReceiveEndPlay
-// 0x0001 (0x0001 - 0x0000)
-struct PyBanPickRuleComponent_ReceiveEndPlay final
-{
-public:
-	EEndPlayReason                                EndPlayReason;                                     // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
 
 // PythonFunction PyBanPickRuleComponent.PyBanPickRuleComponent.notify_2c_ban_pickstate_time_change
 // 0x0008 (0x0008 - 0x0000)

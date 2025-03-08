@@ -17,24 +17,6 @@
 namespace SDK::Params
 {
 
-// PythonFunction PyAbility_102092.PyCue_Scope_Loop_10209201.WhileActiveFX
-// 0x01C0 (0x01C0 - 0x0000)
-struct PyCue_Scope_Loop_10209201_WhileActiveFX final
-{
-public:
-	class AActor*                                 MyTarget;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	struct FGameplayCueParameters                 Parameters;                                        // 0x0008(0x01B8)(ConstParm, Parm, OutParm, ReferenceParm)
-};
-
-// PythonFunction PyAbility_102092.PyCue_Scope_Loop_10209201.OnExecuteFX
-// 0x01C0 (0x01C0 - 0x0000)
-struct PyCue_Scope_Loop_10209201_OnExecuteFX final
-{
-public:
-	class AActor*                                 MyTarget;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	struct FGameplayCueParameters                 Parameters;                                        // 0x0008(0x01B8)(ConstParm, Parm, OutParm, ReferenceParm)
-};
-
 // PythonFunction PyAbility_102092.PyAbility_10209_Base.CanActivate
 // 0x0001 (0x0001 - 0x0000)
 struct PyAbility_10209_Base_CanActivate final
@@ -83,6 +65,24 @@ struct PyTraceComponent_10209_Base_OnTrace final
 public:
 	class UObject*                                TraceSource;                                       // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	TArray<struct FHitResult>                     HitResults;                                        // 0x0008(0x0010)(ConstParm, Parm, OutParm, ReferenceParm)
+};
+
+// PythonFunction PyAbility_102092.PyCue_Scope_Loop_10209201.WhileActiveFX
+// 0x01C0 (0x01C0 - 0x0000)
+struct PyCue_Scope_Loop_10209201_WhileActiveFX final
+{
+public:
+	class AActor*                                 MyTarget;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	struct FGameplayCueParameters                 Parameters;                                        // 0x0008(0x01B8)(ConstParm, Parm, OutParm, ReferenceParm)
+};
+
+// PythonFunction PyAbility_102092.PyCue_Scope_Loop_10209201.OnExecuteFX
+// 0x01C0 (0x01C0 - 0x0000)
+struct PyCue_Scope_Loop_10209201_OnExecuteFX final
+{
+public:
+	class AActor*                                 MyTarget;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	struct FGameplayCueParameters                 Parameters;                                        // 0x0008(0x01B8)(ConstParm, Parm, OutParm, ReferenceParm)
 };
 
 }

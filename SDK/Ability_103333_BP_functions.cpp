@@ -60,7 +60,7 @@ void UAbility_103333_BP_C::ExecuteUbergraph_Ability_103333_BP(int32 EntryPoint)
 // Function Ability_103333_BP.Ability_103333_BP_C.K2_ActivateAbilityFromEvent
 // (Event, Protected, HasOutParams, BlueprintEvent)
 // Parameters:
-// struct FGameplayEventData               EventData                                              (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// const struct FGameplayEventData&        EventData                                              (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 
 void UAbility_103333_BP_C::K2_ActivateAbilityFromEvent(const struct FGameplayEventData& EventData)
 {
@@ -100,7 +100,7 @@ void UAbility_103333_BP_C::K2_OnEndAbility(bool bWasCancelled)
 // Function Ability_103333_BP.Ability_103333_BP_C.OnCompletedDelegate_01A13D884592A9848A9FFCB3BB0AB1EA
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayTag                     TriggerNotifyTagEventDelegate__DelegateSignature_EventTag(BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              TriggerNotifyTagEventDelegate__DelegateSignature_EventTag(BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
 
 void UAbility_103333_BP_C::OnCompletedDelegate_01A13D884592A9848A9FFCB3BB0AB1EA(const struct FGameplayTag& TriggerNotifyTagEventDelegate__DelegateSignature_EventTag)
 {
@@ -120,7 +120,7 @@ void UAbility_103333_BP_C::OnCompletedDelegate_01A13D884592A9848A9FFCB3BB0AB1EA(
 // Function Ability_103333_BP.Ability_103333_BP_C.OnCompletedDelegate_7522434648EF68C6DC71409789FEFE1B
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayTag                     TriggerNotifyTagEventDelegate__DelegateSignature_EventTag(BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              TriggerNotifyTagEventDelegate__DelegateSignature_EventTag(BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
 
 void UAbility_103333_BP_C::OnCompletedDelegate_7522434648EF68C6DC71409789FEFE1B(const struct FGameplayTag& TriggerNotifyTagEventDelegate__DelegateSignature_EventTag)
 {
@@ -141,7 +141,7 @@ void UAbility_103333_BP_C::OnCompletedDelegate_7522434648EF68C6DC71409789FEFE1B(
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // EDashStopReason                         OnDashEndEventDelegate__DelegateSignature_Reason       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FHitResult                       OnDashEndEventDelegate__DelegateSignature_HitInfo      (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, ContainsInstancedReference)
+// const struct FHitResult&                OnDashEndEventDelegate__DelegateSignature_HitInfo      (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, ContainsInstancedReference)
 
 void UAbility_103333_BP_C::OnEnd_93D9706B41265374713F3B99480264A7(EDashStopReason OnDashEndEventDelegate__DelegateSignature_Reason, const struct FHitResult& OnDashEndEventDelegate__DelegateSignature_HitInfo)
 {
@@ -162,7 +162,7 @@ void UAbility_103333_BP_C::OnEnd_93D9706B41265374713F3B99480264A7(EDashStopReaso
 // Function Ability_103333_BP.Ability_103333_BP_C.OnTriggerEvent_01A13D884592A9848A9FFCB3BB0AB1EA
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayTag                     TriggerNotifyTagEventDelegate__DelegateSignature_EventTag(BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              TriggerNotifyTagEventDelegate__DelegateSignature_EventTag(BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
 
 void UAbility_103333_BP_C::OnTriggerEvent_01A13D884592A9848A9FFCB3BB0AB1EA(const struct FGameplayTag& TriggerNotifyTagEventDelegate__DelegateSignature_EventTag)
 {
@@ -182,7 +182,7 @@ void UAbility_103333_BP_C::OnTriggerEvent_01A13D884592A9848A9FFCB3BB0AB1EA(const
 // Function Ability_103333_BP.Ability_103333_BP_C.OnTriggerEvent_7522434648EF68C6DC71409789FEFE1B
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayTag                     TriggerNotifyTagEventDelegate__DelegateSignature_EventTag(BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              TriggerNotifyTagEventDelegate__DelegateSignature_EventTag(BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
 
 void UAbility_103333_BP_C::OnTriggerEvent_7522434648EF68C6DC71409789FEFE1B(const struct FGameplayTag& TriggerNotifyTagEventDelegate__DelegateSignature_EventTag)
 {

@@ -12,10 +12,29 @@
 
 #include "Marvel_structs.hpp"
 #include "GameplayTags_structs.hpp"
+#include "GameplayAbilities_structs.hpp"
 
 
 namespace SDK::Params
 {
+
+// PythonFunction PyAbility_104001.PyCue_Buff_Loop_10400103.WhileActiveAudio
+// 0x01C0 (0x01C0 - 0x0000)
+struct PyCue_Buff_Loop_10400103_WhileActiveAudio final
+{
+public:
+	class AActor*                                 MyTarget;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	struct FGameplayCueParameters                 Parameters;                                        // 0x0008(0x01B8)(ConstParm, Parm, OutParm, ReferenceParm)
+};
+
+// PythonFunction PyAbility_104001.PyCue_Buff_Loop_10400103.OnRemoveAudio
+// 0x01C0 (0x01C0 - 0x0000)
+struct PyCue_Buff_Loop_10400103_OnRemoveAudio final
+{
+public:
+	class AActor*                                 MyTarget;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	struct FGameplayCueParameters                 Parameters;                                        // 0x0008(0x01B8)(ConstParm, Parm, OutParm, ReferenceParm)
+};
 
 // PythonFunction PyAbility_104001.PyAbility_104001.OnTagUpdate
 // 0x0010 (0x0010 - 0x0000)

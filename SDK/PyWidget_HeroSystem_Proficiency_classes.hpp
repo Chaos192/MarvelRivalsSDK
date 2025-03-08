@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "PyWidget_ModuleMainPanel_classes.hpp"
 #include "SlateCore_structs.hpp"
+#include "PyWidget_ModuleMainPanel_classes.hpp"
 #include "PyMarvelUserWidget_classes.hpp"
 
 

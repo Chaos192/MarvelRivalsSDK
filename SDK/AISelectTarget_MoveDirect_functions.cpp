@@ -21,8 +21,8 @@ namespace SDK
 // (Event, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AMarvelAIController*              AIController                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FMarvelAITarget                  OutAITarget                                            (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
-// struct FAIAbilityUsage                  AbilityUsage                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
+// struct FMarvelAITarget&                 OutAITarget                                            (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
+// const struct FAIAbilityUsage&           AbilityUsage                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 bool UAISelectTarget_MoveDirect_C::SelectTargetOrLocation(class AMarvelAIController* AIController, struct FMarvelAITarget& OutAITarget, const struct FAIAbilityUsage& AbilityUsage)

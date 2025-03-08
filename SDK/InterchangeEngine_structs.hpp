@@ -63,7 +63,7 @@ struct FInterchangePipelineStack final
 {
 public:
 	TArray<struct FSoftObjectPath>                Pipelines;                                         // 0x0000(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FInterchangeTranslatorPipelines> PerTranslatorPipelines;                            // 0x0010(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FInterchangeTranslatorPipelines> PerTranslatorPipelines;                           // 0x0010(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
 };
 
 // ScriptStruct InterchangeEngine.InterchangeImportSettings
@@ -71,7 +71,7 @@ public:
 struct FInterchangeImportSettings
 {
 public:
-	TMap<class FName, struct FInterchangePipelineStack> PipelineStacks;                                    // 0x0000(0x0050)(Edit, NativeAccessSpecifierPublic)
+	TMap<class FName, struct FInterchangePipelineStack> PipelineStacks;                              // 0x0000(0x0050)(Edit, NativeAccessSpecifierPublic)
 	class FName                                   DefaultPipelineStack;                              // 0x0050(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_5C[0x4];                                       // 0x005C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TSoftClassPtr<class UClass>                   PipelineConfigurationDialogClass;                  // 0x0060(0x0030)(Edit, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -84,7 +84,7 @@ public:
 struct FInterchangeContentImportSettings final : public FInterchangeImportSettings
 {
 public:
-	TMap<EInterchangeTranslatorAssetType, class FName> DefaultPipelineStackOverride;                      // 0x0098(0x0050)(Edit, NativeAccessSpecifierPublic)
+	TMap<EInterchangeTranslatorAssetType, class FName> DefaultPipelineStackOverride;                 // 0x0098(0x0050)(Edit, NativeAccessSpecifierPublic)
 	TMap<EInterchangeTranslatorAssetType, bool>   ShowPipelineStacksConfigurationDialogOverride;     // 0x00E8(0x0050)(Edit, NativeAccessSpecifierPublic)
 };
 
@@ -109,11 +109,11 @@ public:
 	TArray<struct FSoftObjectPath>                OverridePipelines;                                 // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
 	TDelegate<void(class UObject* Object)>        OnAssetDone;                                       // 0x0020(0x0014)(Edit, BlueprintVisible, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_34[0x14];                                      // 0x0034(0x0014)(Fixing Size After Last Property [ Dumper-7 ])
-	TDelegate<void(TArray<class UObject*>& Objects)> OnAssetsImportDone;                                // 0x0048(0x0014)(Edit, BlueprintVisible, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const TArray<class UObject*>& Objects)> OnAssetsImportDone;                       // 0x0048(0x0014)(Edit, BlueprintVisible, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_5C[0x14];                                      // 0x005C(0x0014)(Fixing Size After Last Property [ Dumper-7 ])
 	TDelegate<void(class UObject* Object)>        OnSceneObjectDone;                                 // 0x0070(0x0014)(Edit, BlueprintVisible, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_84[0x14];                                      // 0x0084(0x0014)(Fixing Size After Last Property [ Dumper-7 ])
-	TDelegate<void(TArray<class UObject*>& Objects)> OnSceneImportDone;                                 // 0x0098(0x0014)(Edit, BlueprintVisible, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const TArray<class UObject*>& Objects)> OnSceneImportDone;                        // 0x0098(0x0014)(Edit, BlueprintVisible, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_AC[0x14];                                      // 0x00AC(0x0014)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 

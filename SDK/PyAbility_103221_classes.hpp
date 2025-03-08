@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "Marvel_classes.hpp"
-#include "Hero_1032_classes.hpp"
 #include "CoreUObject_structs.hpp"
+#include "Hero_1032_classes.hpp"
 
 
 namespace SDK
@@ -41,7 +41,7 @@ public:
 };
 
 // PythonClass PyAbility_103221.PyCue_Ability_Loop_10323203
-// 0x0000 (0x1E68 - 0x1E68)
+// 0x0000 (0x1E58 - 0x1E58)
 class APyCue_Ability_Loop_10323203 final : public ACue_Ability_Loop_10322103
 {
 public:
@@ -60,7 +60,7 @@ public:
 };
 
 // PythonClass PyAbility_103221.PyUIController_103221
-// 0x0000 (0x0C60 - 0x0C60)
+// 0x0000 (0x0C50 - 0x0C50)
 class UPyUIController_103221 final : public UUIC_Ability
 {
 public:
@@ -123,11 +123,12 @@ public:
 };
 
 // PythonClass PyAbility_103221.PyProjectile_10322101
-// 0x0010 (0x3060 - 0x3050)
+// 0x0010 (0x3120 - 0x3110)
 class APyProjectile_10322101 final : public AMarvelAbilityTargetActor_Projectile
 {
 public:
-	float                                         ChargeTime;                                        // 0x3050(0x0004)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3108[0x8];                                     // 0x3108(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         ChargeTime;                                        // 0x3110(0x0004)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void K2_OnInitializeData();
@@ -173,11 +174,11 @@ public:
 };
 
 // PythonClass PyAbility_103221.PyAbility_103221
-// 0x0010 (0x2590 - 0x2580)
+// 0x0010 (0x2598 - 0x2588)
 class UPyAbility_103221 : public UAbility_103221
 {
 public:
-	TMulticastInlineDelegate<void()>              OnGatherStop;                                      // 0x2580(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void()>              OnGatherStop;                                      // 0x2588(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 
 public:
 	void K2_ActivateAbility();

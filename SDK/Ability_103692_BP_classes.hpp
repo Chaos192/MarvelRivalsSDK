@@ -18,13 +18,13 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Ability_103692_BP.Ability_103692_BP_C
-// 0x0010 (0x2598 - 0x2588)
+// 0x0010 (0x25A0 - 0x2590)
 class UAbility_103692_BP_C final : public UAbility_108
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x2588(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	float                                         最大持续时间;                                      // 0x2590(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         防误触时间;                                        // 0x2594(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x2590(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	float                                         最大持续时间;                                      // 0x2598(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         防误触时间;                                        // 0x259C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_Ability_103692_BP(int32 EntryPoint);

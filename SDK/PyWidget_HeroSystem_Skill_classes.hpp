@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "SlateCore_structs.hpp"
 #include "PyWidget_ModuleMainPanel_classes.hpp"
+#include "SlateCore_structs.hpp"
 #include "PyMarvelUserWidget_classes.hpp"
 #include "CoreUObject_structs.hpp"
 #include "UMG_classes.hpp"
@@ -51,7 +51,7 @@ public:
 	float                                         NetSpeedThreshold;                                 // 0x06A0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_6A4[0x4];                                      // 0x06A4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 DefaultDownloadTestUrl;                            // 0x06A8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(int32 shape_id)> OnSwitchShape;                                     // 0x06B8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(int32 shape_id)> OnSwitchShape;                                    // 0x06B8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 
 public:
 	void OnInitialized();

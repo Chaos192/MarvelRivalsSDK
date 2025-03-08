@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Marvel_classes.hpp"
 #include "PyAbility_102131_classes.hpp"
+#include "Marvel_classes.hpp"
 
 
 namespace SDK
@@ -36,7 +36,7 @@ public:
 };
 
 // PythonClass PyAbility_102132.PyProjectile_10213201
-// 0x0000 (0x3070 - 0x3070)
+// 0x0000 (0x3130 - 0x3130)
 class APyProjectile_10213201 final : public APyProjectile_10213101
 {
 public:
@@ -54,11 +54,11 @@ public:
 };
 
 // PythonClass PyAbility_102132.PyAbility_102132
-// 0x0008 (0x25C0 - 0x25B8)
+// 0x0008 (0x25C8 - 0x25C0)
 class UPyAbility_102132 : public UPyAbility_102131
 {
 public:
-	bool                                          NeedRedrawSingleWhenLowAmmo;                       // 0x25B8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          NeedRedrawSingleWhenLowAmmo;                       // 0x25C0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	bool CanActivate();
@@ -76,7 +76,7 @@ public:
 };
 
 // PythonClass PyAbility_102132.PyUIController_102132
-// 0x0000 (0x0C60 - 0x0C60)
+// 0x0000 (0x0C50 - 0x0C50)
 class UPyUIController_102132 final : public UUIC_Ability
 {
 public:

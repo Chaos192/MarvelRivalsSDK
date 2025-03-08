@@ -15,8 +15,8 @@
 #include "Marvel_classes.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
-#include "Engine_structs.hpp"
 #include "DeclarativeUnreal_structs.hpp"
+#include "Engine_structs.hpp"
 
 
 namespace SDK
@@ -54,33 +54,12 @@ public:
 	}
 };
 
-// PythonClass PyAbility_104251.PyCueScopeStart_10425102
-// 0x0008 (0x0370 - 0x0368)
-class UPyCueScopeStart_10425102 final : public UMarvelCueNotify_Base
-{
-public:
-	float                                         FxScale;                                           // 0x0368(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-public:
-	void SetFXParameter(class UNiagaraComponent* InFXComponent, const class AActor* MyTarget, const struct FGameplayCueParameters& Parameters) const;
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"PyCueScopeStart_10425102">();
-	}
-	static class UPyCueScopeStart_10425102* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UPyCueScopeStart_10425102>();
-	}
-};
-
 // PythonClass PyAbility_104251.PySummoned_10425101
-// 0x0010 (0x08A0 - 0x0890)
+// 0x0010 (0x08D0 - 0x08C0)
 class APySummoned_10425101 final : public AMarvelSummonerBase
 {
 public:
-	class UMarvelProjectileComponent*             ProjectileMovement;                                // 0x0890(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UMarvelProjectileComponent*             ProjectileMovement;                                // 0x08C0(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -90,6 +69,48 @@ public:
 	static class APySummoned_10425101* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<APySummoned_10425101>();
+	}
+};
+
+// PythonClass PyAbility_104251.PyPeniParkMineUMGAnimationManager
+// 0x0000 (0x0030 - 0x0030)
+class UPyPeniParkMineUMGAnimationManager final : public UObject
+{
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PyPeniParkMineUMGAnimationManager">();
+	}
+	static class UPyPeniParkMineUMGAnimationManager* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPyPeniParkMineUMGAnimationManager>();
+	}
+};
+
+// PythonClass PyAbility_104251.PyAbility_104251
+// 0x0010 (0x25A0 - 0x2590)
+class UPyAbility_104251 : public UAbility_108
+{
+public:
+	TMulticastInlineDelegate<void()>              OnShowHintDispatcher;                              // 0x2590(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+
+public:
+	void BeginPlay();
+	bool CanActivate();
+	void K2_ActivateAbility();
+	void MissileEventNotify();
+	void K2_OnEndAbility(bool bWasCancelled);
+	void NativeOnMontageEvent(const class FString& Tag);
+	void EndPlay();
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PyAbility_104251">();
+	}
+	static class UPyAbility_104251* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPyAbility_104251>();
 	}
 };
 
@@ -146,54 +167,12 @@ public:
 	}
 };
 
-// PythonClass PyAbility_104251.PyPeniParkMineUMGAnimationManager
-// 0x0000 (0x0030 - 0x0030)
-class UPyPeniParkMineUMGAnimationManager final : public UObject
-{
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"PyPeniParkMineUMGAnimationManager">();
-	}
-	static class UPyPeniParkMineUMGAnimationManager* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UPyPeniParkMineUMGAnimationManager>();
-	}
-};
-
-// PythonClass PyAbility_104251.PyAbility_104251
-// 0x0010 (0x2598 - 0x2588)
-class UPyAbility_104251 : public UAbility_108
-{
-public:
-	TMulticastInlineDelegate<void()>              OnShowHintDispatcher;                              // 0x2588(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-
-public:
-	void BeginPlay();
-	bool CanActivate();
-	void K2_ActivateAbility();
-	void MissileEventNotify();
-	void K2_OnEndAbility(bool bWasCancelled);
-	void NativeOnMontageEvent(const class FString& Tag);
-	void EndPlay();
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"PyAbility_104251">();
-	}
-	static class UPyAbility_104251* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UPyAbility_104251>();
-	}
-};
-
 // PythonClass PyAbility_104251.PyUIController_104251
-// 0x0098 (0x0CF8 - 0x0C60)
+// 0x0098 (0x0CE8 - 0x0C50)
 class UPyUIController_104251 final : public UUIC_Ability
 {
 public:
-	struct FCueHintData                           HintData;                                          // 0x0C60(0x0098)(Edit, BlueprintVisible, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	struct FCueHintData                           HintData;                                          // 0x0C50(0x0098)(Edit, BlueprintVisible, DisableEditOnInstance, NativeAccessSpecifierPublic)
 
 public:
 	void SetAbility(int32 InAbilityId, class UGameplayAbility* InAbility);
@@ -207,6 +186,27 @@ public:
 	static class UPyUIController_104251* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UPyUIController_104251>();
+	}
+};
+
+// PythonClass PyAbility_104251.PyCueScopeStart_10425102
+// 0x0008 (0x0370 - 0x0368)
+class UPyCueScopeStart_10425102 final : public UMarvelCueNotify_Base
+{
+public:
+	float                                         FxScale;                                           // 0x0368(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	void SetFXParameter(class UNiagaraComponent* InFXComponent, const class AActor* MyTarget, const struct FGameplayCueParameters& Parameters) const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PyCueScopeStart_10425102">();
+	}
+	static class UPyCueScopeStart_10425102* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPyCueScopeStart_10425102>();
 	}
 };
 

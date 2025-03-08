@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "PhysicsControl_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
 #include "CoreUObject_classes.hpp"
+#include "PhysicsControl_structs.hpp"
 
 
 namespace SDK
@@ -191,8 +191,8 @@ class UPhysicsControlInitializerComponent final : public USceneComponent
 {
 public:
 	struct FInitialCharacterControls              InitialCharacterControls;                          // 0x0470(0x00C8)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	TMap<class FName, struct FInitialPhysicsControl> InitialControls;                                   // 0x0538(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	TMap<class FName, struct FInitialBodyModifier> InitialBodyModifiers;                              // 0x0588(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	TMap<class FName, struct FInitialPhysicsControl> InitialControls;                                // 0x0538(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	TMap<class FName, struct FInitialBodyModifier> InitialBodyModifiers;                             // 0x0588(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	bool                                          bCreateControlsAtBeginPlay;                        // 0x05D8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_5D9[0x7];                                      // 0x05D9(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 

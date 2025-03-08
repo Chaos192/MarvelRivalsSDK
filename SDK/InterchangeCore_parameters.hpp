@@ -1023,7 +1023,7 @@ struct InterchangeUserDefinedAttributesAPI_GetUserDefinedAttributeInfos final
 {
 public:
 	const class UInterchangeBaseNode*             InterchangeNode;                                   // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<struct FInterchangeUserDefinedAttributeInfo> UserDefinedAttributeInfos;                         // 0x0008(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FInterchangeUserDefinedAttributeInfo> UserDefinedAttributeInfos;                   // 0x0008(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 };
 
 // Function InterchangeCore.InterchangeUserDefinedAttributesAPI.RemoveUserDefinedAttribute

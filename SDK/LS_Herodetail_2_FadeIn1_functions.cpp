@@ -40,7 +40,7 @@ void ULS_Herodetail_2_FadeIn1_DirectorBP_C::ExecuteUbergraph_LS_Herodetail_2_Fad
 // Function LS_Herodetail_2_FadeIn1.LS_Herodetail_2_FadeIn1_DirectorBP_C.SequenceEvent
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FMovieSceneObjectBindingID       ObjectBinding                                          (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
+// const struct FMovieSceneObjectBindingID&ObjectBinding                                          (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
 
 void ULS_Herodetail_2_FadeIn1_DirectorBP_C::SequenceEvent(const struct FMovieSceneObjectBindingID& ObjectBinding)
 {

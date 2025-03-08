@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass 1047_CharacterBP.1047_CharacterBP_C
-// 0x0000 (0x1990 - 0x1990)
+// 0x0000 (0x19F0 - 0x19F0)
 class AOne047_CharacterBP_C final : public APyJeffCharacter
 {
 public:

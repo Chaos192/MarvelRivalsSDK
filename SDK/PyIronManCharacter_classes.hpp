@@ -32,7 +32,7 @@ public:
 };
 
 // PythonClass PyIronManCharacter.PyIronManCharacter
-// 0x0000 (0x1850 - 0x1850)
+// 0x0000 (0x18A0 - 0x18A0)
 class APyIronManCharacter : public AIronManCharacter
 {
 public:

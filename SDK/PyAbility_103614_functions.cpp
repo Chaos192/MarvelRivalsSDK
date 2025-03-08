@@ -21,7 +21,7 @@ namespace SDK
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyCue_Buff_10361402::OnActiveFX(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
 {
@@ -48,7 +48,7 @@ void APyCue_Buff_10361402::OnActiveFX(class AActor* MyTarget, const struct FGame
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyCue_Buff_10361402::WhileActiveFX(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
 {
@@ -94,7 +94,7 @@ void APyCue_AbilityLoop_103614::ResetDefault()
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 bool APyCue_AbilityLoop_103614::WhileActive(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
@@ -124,7 +124,7 @@ bool APyCue_AbilityLoop_103614::WhileActive(class AActor* MyTarget, const struct
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 bool APyCue_AbilityLoop_103614::OnRemove(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
@@ -235,7 +235,7 @@ void APyCue_AbilityLoop_103614::OnTimeToShootCable()
 // PythonFunction PyAbility_103614.PyCue_AbilityLoop_103614.K2_OnCableHit
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FVector                          HitLocation                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVector&                   HitLocation                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void APyCue_AbilityLoop_103614::K2_OnCableHit(const struct FVector& HitLocation)
 {
@@ -317,7 +317,7 @@ void UPyAbility_103614::BeginPlay()
 // PythonFunction PyAbility_103614.PyAbility_103614.TryMakeTriggerContext
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayEventData               EventData                                              (Parm, OutParm, ReferenceParm)
+// struct FGameplayEventData&              EventData                                              (Parm, OutParm, ReferenceParm)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 bool UPyAbility_103614::TryMakeTriggerContext(struct FGameplayEventData& EventData)
@@ -391,7 +391,7 @@ void UPyAbility_103614::K2_ActivateAbility()
 // PythonFunction PyAbility_103614.PyAbility_103614.K2_ActivateAbilityFromEvent
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayEventData               EventData                                              (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayEventData&        EventData                                              (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyAbility_103614::K2_ActivateAbilityFromEvent(const struct FGameplayEventData& EventData)
 {
@@ -460,7 +460,7 @@ void UPyAbility_103614::MissileEventNotify()
 // PythonFunction PyAbility_103614.PyAbility_103614.NativeOnMontageEvent
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_103614::NativeOnMontageEvent(const class FString& Tag)
 {
@@ -485,7 +485,7 @@ void UPyAbility_103614::NativeOnMontageEvent(const class FString& Tag)
 // PythonFunction PyAbility_103614.PyAbility_103614.ServerReceiveKnockUpDirection
 // (Net, NetReliable, Native, Public, NetServer, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FVector                          Dir                                                    (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVector&                   Dir                                                    (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UPyAbility_103614::ServerReceiveKnockUpDirection(const struct FVector& Dir)
 {
@@ -510,7 +510,7 @@ void UPyAbility_103614::ServerReceiveKnockUpDirection(const struct FVector& Dir)
 // PythonFunction PyAbility_103614.PyAbility_103614.NativeOnMontageCompleted
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_103614::NativeOnMontageCompleted(const class FString& Tag)
 {

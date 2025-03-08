@@ -10,11 +10,11 @@
 
 #include "Basic.hpp"
 
-#include "python_enums_structs.hpp"
+#include "CoreUObject_structs.hpp"
 #include "Marvel_structs.hpp"
 #include "Marvel_classes.hpp"
-#include "CoreUObject_structs.hpp"
 #include "Engine_structs.hpp"
+#include "python_enums_structs.hpp"
 
 
 namespace SDK
@@ -22,10 +22,10 @@ namespace SDK
 
 // PythonClass PyShowActorBase.PyShowActorBase
 // 0x0A98 (0x0F30 - 0x0498)
-class APyShowActorBase final : public AShowActorBase
+class APyShowActorBase : public AShowActorBase
 {
 public:
-	TArray<TSubclassOf<class UShowActorExtension>> ShowActorExtensionClass;                           // 0x0498(0x0010)(BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	TArray<TSubclassOf<class UShowActorExtension>> ShowActorExtensionClass;                          // 0x0498(0x0010)(BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
 	TMap<class FString, struct FSoftObjectPath>   ShowActorExtensionObjectAssert;                    // 0x04A8(0x0050)(BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
 	TArray<class UObject*>                        ShowActorExtensionObject;                          // 0x04F8(0x0010)(BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
 	bool                                          IsOnlyUseOwnCamera;                                // 0x0508(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -70,7 +70,7 @@ public:
 	float                                         PhysicsBlendWeightMax;                             // 0x0B6C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         PhysicsBlendWeightTime;                            // 0x0B70(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_B74[0x4];                                      // 0x0B74(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FShowActorCustomPhysicsBlendConfig> PhysicsConfigByBoneChain;                          // 0x0B78(0x0010)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	TArray<struct FShowActorCustomPhysicsBlendConfig> PhysicsConfigByBoneChain;                      // 0x0B78(0x0010)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	bool                                          IsEnabledPostProcess;                              // 0x0B88(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          IsUseCommonSHCamera;                               // 0x0B89(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_B8A[0x6];                                      // 0x0B8A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
@@ -142,31 +142,32 @@ public:
 	class UPostProcessComponent*                  PostProcessVFX;                                    // 0x0DA0(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UNiagaraComponent*                      NiagaraFXComponent;                                // 0x0DA8(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TMulticastInlineDelegate<void(bool IsPlay)>   OnPlayShowAnim;                                    // 0x0DB0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(bool IsToggleHalf)> OnPlayToggleAnim;                                  // 0x0DC0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(bool IsToggleHalf)> OnPlayToggleAnim;                              // 0x0DC0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 	TMulticastInlineDelegate<void()>              OnReplayToggleAnim;                                // 0x0DD0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 	TMulticastInlineDelegate<void()>              OnJumpStandIdle;                                   // 0x0DE0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 	TMulticastInlineDelegate<void()>              OnJumpHalfIdle;                                    // 0x0DF0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 	TMulticastInlineDelegate<void()>              OnResetPersonality;                                // 0x0E00(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 	TMulticastInlineDelegate<void()>              OnResetAllAnim;                                    // 0x0E10(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 	TMulticastInlineDelegate<void()>              OnPlayTurnAnim;                                    // 0x0E20(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(const class FString& ItemId)> OnPlayEmoteAnim;                                   // 0x0E30(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const class FString& ItemId)> OnPlayEmoteAnim;                     // 0x0E30(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 	TMulticastInlineDelegate<void()>              OnPlayMVPAnim;                                     // 0x0E40(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 	TMulticastInlineDelegate<void()>              OnPlayLikeAnim;                                    // 0x0E50(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 	TMulticastInlineDelegate<void()>              OnResetHeroGallery;                                // 0x0E60(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 	TMulticastInlineDelegate<void()>              OnPlayHeroGallerAnim;                              // 0x0E70(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(bool IsPlay_CardPose)> OnPlayHeroGaller_CardPose;                         // 0x0E80(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(bool IsPlay_HoverStand)> OnPlayHeroGaller_HoverStand;                       // 0x0E90(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(bool IsPlay_CardPose)> OnPlayHeroGaller_CardPose;                  // 0x0E80(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(bool IsPlay_HoverStand)> OnPlayHeroGaller_HoverStand;              // 0x0E90(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 	TMulticastInlineDelegate<void()>              OnPlayHoverStandFinished;                          // 0x0EA0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class UAnimSequence* VoiceAnim)> OnPlayVoiceAnim;                                   // 0x0EB0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class UAnimSequence* VoiceAnim)> OnPlayVoiceAnim;                  // 0x0EB0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 	TMulticastInlineDelegate<void()>              OnStopVoiceAnim;                                   // 0x0EC0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class AActor* ShowActor)> OnLoadShowAssetFinished;                           // 0x0ED0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(bool TurnCameraGaze, struct FVector& CameraLocation, float OpenBlendTime, float CloseBlendTime)> OnShowActorCameraGaze;                             // 0x0EE0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(EShowActorStage ShowActorStage)> OnShowActorStageChanged;                           // 0x0EF0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(bool IsPlayIdleAnim)> OnPlayIdleAnim;                                    // 0x0F00(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(bool IsToggleHalf)> OnIsHalfChanged;                                   // 0x0F10(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class AActor* ShowActor)> OnLoadShowAssetFinished;                 // 0x0ED0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(bool TurnCameraGaze, const struct FVector& CameraLocation, float OpenBlendTime, float CloseBlendTime)> OnShowActorCameraGaze; // 0x0EE0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(EShowActorStage ShowActorStage)> OnShowActorStageChanged;          // 0x0EF0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(bool IsPlayIdleAnim)> OnPlayIdleAnim;                              // 0x0F00(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(bool IsToggleHalf)> OnIsHalfChanged;                               // 0x0F10(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 	TMulticastInlineDelegate<void(bool bVisible)> OnVisibleChange;                                   // 0x0F20(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 
 public:
+	void PlayTurnAnim();
 	void OnLikeFXFinished();
 	void OnMVPFinished();
 	void OnRotatioFinished();
@@ -191,7 +192,6 @@ public:
 	void OnPlayEmoteAnimItem(const class FString& ItemId);
 	void PlayEmoteAnim(const class FString& ItemId);
 	void StopTurnAnim();
-	void PlayTurnAnim();
 	void JumpHalfIdle();
 	void JumpStandIdle();
 	void PlayToggleAnim(bool IsToggleHalf_0, bool IsHalfToHalf_0, bool IsDynamic);

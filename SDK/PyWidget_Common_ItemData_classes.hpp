@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "SlateCore_structs.hpp"
-#include "python_enums_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "python_enums_structs.hpp"
 #include "PyMarvelUserWidget_classes.hpp"
 #include "PyWidget_CommonTipsBase_classes.hpp"
 

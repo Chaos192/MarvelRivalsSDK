@@ -21,7 +21,7 @@ namespace SDK
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyCue_Scope_HitImpact_10361101::OnExecuteAudio(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters) const
 {
@@ -72,9 +72,9 @@ bool UPyAbility_103611::CanActivate()
 // PythonFunction PyAbility_103611.PyAbility_103611.ModifyDeathImpulseInfo
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   ImpulseLevel                                           (Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FVector                          DeathDir                                               (Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FAttributeModifierParameter      ModifierParameter                                      (ConstParm, Parm, OutParm, ReferenceParm)
+// int32&                                  ImpulseLevel                                           (Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FVector&                         DeathDir                                               (Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FAttributeModifierParameter&ModifierParameter                                      (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyAbility_103611::ModifyDeathImpulseInfo(int32& ImpulseLevel, struct FVector& DeathDir, const struct FAttributeModifierParameter& ModifierParameter)
 {

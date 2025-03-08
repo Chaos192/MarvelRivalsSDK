@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // PythonClass PyPsylockeCharacter.PyPsylockeCharacter
-// 0x0000 (0x1830 - 0x1830)
+// 0x0000 (0x1890 - 0x1890)
 class APyPsylockeCharacter : public APsylockeCharacter
 {
 public:

@@ -13,8 +13,8 @@
 #include "CoreUObject_structs.hpp"
 #include "Marvel_structs.hpp"
 #include "Marvel_classes.hpp"
-#include "GameplayTags_structs.hpp"
 #include "Hero_1015_classes.hpp"
+#include "GameplayTags_structs.hpp"
 
 
 namespace SDK
@@ -47,16 +47,16 @@ public:
 };
 
 // PythonClass PyAbility_101571.PyAbility_101571
-// 0x00F8 (0x28F0 - 0x27F8)
+// 0x00F8 (0x28F8 - 0x2800)
 class UPyAbility_101571 : public UAbility_101571
 {
 public:
-	struct FGameplayTagContainer                  BlockTagBeforeBreak;                               // 0x27F8(0x0068)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FGameplayTagContainer                  BlockTagThrowing;                                  // 0x2860(0x0068)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	TArray<int32>                                 CancalAbilityIDThrowing;                           // 0x28C8(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	int32                                         AdsorbCount;                                       // 0x28D8(0x0004)(BlueprintVisible, Net, ZeroConstructor, Transient, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_28DC[0x4];                                     // 0x28DC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TMulticastInlineDelegate<void(int32 NewCount)> OnAdsorbCountChangedDelegate;                      // 0x28E0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	struct FGameplayTagContainer                  BlockTagBeforeBreak;                               // 0x2800(0x0068)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FGameplayTagContainer                  BlockTagThrowing;                                  // 0x2868(0x0068)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	TArray<int32>                                 CancalAbilityIDThrowing;                           // 0x28D0(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	int32                                         AdsorbCount;                                       // 0x28E0(0x0004)(BlueprintVisible, Net, ZeroConstructor, Transient, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_28E4[0x4];                                     // 0x28E4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TMulticastInlineDelegate<void(int32 NewCount)> OnAdsorbCountChangedDelegate;                     // 0x28E8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 
 public:
 	void BeginPlay();
@@ -84,13 +84,14 @@ public:
 };
 
 // PythonClass PyAbility_101571.PyProjectile_10157101
-// 0x0020 (0x3070 - 0x3050)
+// 0x0020 (0x3130 - 0x3110)
 class APyProjectile_10157101 final : public AMarvelAbilityTargetActor_Projectile
 {
 public:
-	int32                                         AdsorbCount;                                       // 0x3050(0x0004)(BlueprintVisible, Net, ZeroConstructor, Transient, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_3054[0x4];                                     // 0x3054(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TMulticastInlineDelegate<void(int32 NewCount)> OnAdsorbCountChangedDelegate;                      // 0x3058(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3108[0x8];                                     // 0x3108(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         AdsorbCount;                                       // 0x3110(0x0004)(BlueprintVisible, Net, ZeroConstructor, Transient, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3114[0x4];                                     // 0x3114(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TMulticastInlineDelegate<void(int32 NewCount)> OnAdsorbCountChangedDelegate;                     // 0x3118(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 
 public:
 	void K2_OnInitializeData();

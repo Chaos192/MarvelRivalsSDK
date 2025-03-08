@@ -389,6 +389,15 @@ public:
 	class AMarvelPlayerState*                     InPlayerState;                                     // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
+// Function Hero_1016.Ability_101661.OnMySelfPossessedPawnChanged
+// 0x0010 (0x0010 - 0x0000)
+struct Ability_101661_OnMySelfPossessedPawnChanged final
+{
+public:
+	class APawn*                                  OldPawn;                                           // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class APawn*                                  NewPawn;                                           // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
 // Function Hero_1016.Ability_101661.OnServerControllerPostNewPawn
 // 0x0008 (0x0008 - 0x0000)
 struct Ability_101661_OnServerControllerPostNewPawn final

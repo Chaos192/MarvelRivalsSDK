@@ -160,6 +160,16 @@ enum class EFastArraySerializerDeltaFlags : uint8
 	EFastArraySerializerDeltaFlags_MAX       = 5,
 };
 
+// ScriptStruct NetCore.NetAnalyticsDataConfig
+// 0x0010 (0x0010 - 0x0000)
+struct FNetAnalyticsDataConfig final
+{
+public:
+	class FName                                   DataName;                                          // 0x0000(0x000C)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bEnabled;                                          // 0x000C(0x0001)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+
 // ScriptStruct NetCore.FastArraySerializerItem
 // 0x0018 (0x0018 - 0x0000)
 struct FFastArraySerializerItem
@@ -221,16 +231,6 @@ public:
 	uint8                                         Pad_58[0xB4];                                      // 0x0058(0x00B4)(Fixing Size After Last Property [ Dumper-7 ])
 	EFastArraySerializerDeltaFlags                DeltaFlags;                                        // 0x010C(0x0001)(ZeroConstructor, Transient, IsPlainOldData, RepSkip, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	uint8                                         Pad_10D[0x3];                                      // 0x010D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-
-// ScriptStruct NetCore.NetAnalyticsDataConfig
-// 0x0010 (0x0010 - 0x0000)
-struct FNetAnalyticsDataConfig final
-{
-public:
-	class FName                                   DataName;                                          // 0x0000(0x000C)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bEnabled;                                          // 0x000C(0x0001)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 
 }

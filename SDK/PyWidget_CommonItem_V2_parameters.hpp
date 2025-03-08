@@ -92,12 +92,12 @@ public:
 	const class UWidgetAnimation*                 Animation;                                         // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 };
 
-// PythonFunction PyWidget_CommonItem_V2.PyWidget_CommonItem.SetIsHover
+// PythonFunction PyWidget_CommonItem_V2.PyWidget_CommonItem.SetItemIconQuality
 // 0x0001 (0x0001 - 0x0000)
-struct PyWidget_CommonItem_SetIsHover final
+struct PyWidget_CommonItem_SetItemIconQuality final
 {
 public:
-	bool                                          IsHover_0;                                         // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EItemQualityType                              ItemQuality;                                       // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 
 // PythonFunction PyWidget_CommonItem_V2.PyWidget_CommonItem.SetIsFocusable
@@ -118,12 +118,12 @@ public:
 	struct FEventReply                            ReturnValue;                                       // 0x0040(0x00C0)(Parm, OutParm, ReturnParm)
 };
 
-// PythonFunction PyWidget_CommonItem_V2.PyWidget_CommonItem.SetItemIconQuality
+// PythonFunction PyWidget_CommonItem_V2.PyWidget_CommonItem.SetIsHover
 // 0x0001 (0x0001 - 0x0000)
-struct PyWidget_CommonItem_SetItemIconQuality final
+struct PyWidget_CommonItem_SetIsHover final
 {
 public:
-	EItemQualityType                              ItemQuality;                                       // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          IsHover_0;                                         // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 
 // PythonFunction PyWidget_CommonItem_V2.PyWidget_CommonItem.SetItemNum

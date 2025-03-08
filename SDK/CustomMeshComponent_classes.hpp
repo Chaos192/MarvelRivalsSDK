@@ -17,11 +17,11 @@ namespace SDK
 {
 
 // Class CustomMeshComponent.CustomMeshComponent
-// 0x0010 (0x08C0 - 0x08B0)
+// 0x0010 (0x0950 - 0x0940)
 class UCustomMeshComponent final : public UMeshComponent
 {
 public:
-	uint8                                         Pad_8A8[0x18];                                     // 0x08A8(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_938[0x18];                                     // 0x0938(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void AddCustomMeshTriangles(const TArray<struct FCustomMeshTriangle>& Triangles);

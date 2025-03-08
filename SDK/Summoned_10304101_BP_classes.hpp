@@ -18,12 +18,12 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Summoned_10304101_BP.Summoned_10304101_BP_C
-// 0x0010 (0x08B0 - 0x08A0)
+// 0x0010 (0x08E0 - 0x08D0)
 class ASummoned_10304101_BP_C final : public ASummoned_10304101
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x08A0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class USummonedMovementComponent*             SummonedMovement;                                  // 0x08A8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x08D0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class USummonedMovementComponent*             SummonedMovement;                                  // 0x08D8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_Summoned_10304101_BP(int32 EntryPoint);

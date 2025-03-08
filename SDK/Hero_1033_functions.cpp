@@ -59,7 +59,7 @@ void UAbility_103303::OnEndSync()
 // (Final, Native, Public, HasOutParams)
 // Parameters:
 // class AShootingWeapon*                  Weapon                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FMarvelEquipmentTable            WeaponInfo                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FMarvelEquipmentTable&     WeaponInfo                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // bool                                    bState                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UAbility_103303::OnWeaponSwitchedReplicated(class AShootingWeapon* Weapon, const struct FMarvelEquipmentTable& WeaponInfo, bool bState)
@@ -363,7 +363,7 @@ void UMarvelAbility_AimDownSights::UpdateAimDownSightsSensitivity()
 // Function Hero_1033.Ability_103331.SaveHitActors
 // (Final, Native, Protected, BlueprintCallable)
 // Parameters:
-// TArray<struct FHitResult>               InHitResults                                           (Parm, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const TArray<struct FHitResult>&        InHitResults                                           (Parm, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 void UAbility_103331::SaveHitActors(const TArray<struct FHitResult>& InHitResults)
 {
@@ -410,91 +410,10 @@ bool UAbility_103331::HasValidHitActors() const
 }
 
 
-// Function Hero_1033.EpicMomentAction_1033.OnProjectileBegin
-// (Final, Native, Public, HasOutParams)
-// Parameters:
-// class AActor*                           SourceActor                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UMarvelGameplayAbility*           SourceAbility                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class AActor*                           Projectile                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FMarvelTargetActorGenerateInfo   GenerateInfo                                           (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UEpicMomentAction_1033::OnProjectileBegin(class AActor* SourceActor, class UMarvelGameplayAbility* SourceAbility, class AActor* Projectile, const struct FMarvelTargetActorGenerateInfo& GenerateInfo)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("EpicMomentAction_1033", "OnProjectileBegin");
-
-	Params::EpicMomentAction_1033_OnProjectileBegin Parms{};
-
-	Parms.SourceActor = SourceActor;
-	Parms.SourceAbility = SourceAbility;
-	Parms.Projectile = Projectile;
-	Parms.GenerateInfo = std::move(GenerateInfo);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Hero_1033.EpicMomentAction_1033.OnSummonerBegin
-// (Final, Native, Public, HasOutParams)
-// Parameters:
-// class AActor*                           SourceActor                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UMarvelGameplayAbility*           SourceAbility                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class AActor*                           Summoned                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FMarvelTargetActorGenerateInfo   GenerateInfo                                           (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UEpicMomentAction_1033::OnSummonerBegin(class AActor* SourceActor, class UMarvelGameplayAbility* SourceAbility, class AActor* Summoned, const struct FMarvelTargetActorGenerateInfo& GenerateInfo)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("EpicMomentAction_1033", "OnSummonerBegin");
-
-	Params::EpicMomentAction_1033_OnSummonerBegin Parms{};
-
-	Parms.SourceActor = SourceActor;
-	Parms.SourceAbility = SourceAbility;
-	Parms.Summoned = Summoned;
-	Parms.GenerateInfo = std::move(GenerateInfo);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Hero_1033.EpicMomentAction_1033.OnSummonerEnd
-// (Final, Native, Public)
-
-void UEpicMomentAction_1033::OnSummonerEnd()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("EpicMomentAction_1033", "OnSummonerEnd");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // Function Hero_1033.Ability_103332.FilterValidHitResult
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<struct FHitResult>               InOutHitResults                                        (Parm, OutParm, ZeroConstructor, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// TArray<struct FHitResult>&              InOutHitResults                                        (Parm, OutParm, ZeroConstructor, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 void UAbility_103332::FilterValidHitResult(TArray<struct FHitResult>& InOutHitResults)
 {
@@ -522,7 +441,7 @@ void UAbility_103332::FilterValidHitResult(TArray<struct FHitResult>& InOutHitRe
 // (Final, Native, Protected, BlueprintCallable)
 // Parameters:
 // class AActor*                           InSelectedActor                                        (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FPortalSegments                  InPortalSegments                                       (ConstParm, Parm, NativeAccessSpecifierPublic)
+// const struct FPortalSegments&           InPortalSegments                                       (ConstParm, Parm, NativeAccessSpecifierPublic)
 
 void UAbility_103332::SetSelectedActor(class AActor* InSelectedActor, const struct FPortalSegments& InPortalSegments)
 {
@@ -861,155 +780,6 @@ bool UAbility_103341::OnStopMovingForward()
 		Func = Class->GetFunction("Ability_103341", "OnStopMovingForward");
 
 	Params::Ability_103341_OnStopMovingForward Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Hero_1033.BlackWidowSniperGun.OnOwnerCharacterRespawned
-// (Final, Native, Public, HasOutParams)
-// Parameters:
-// class AActor*                           TargetActor                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FCharacterRebornParam            RebornParam                                            (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-
-void ABlackWidowSniperGun::OnOwnerCharacterRespawned(class AActor* TargetActor, const struct FCharacterRebornParam& RebornParam)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BlackWidowSniperGun", "OnOwnerCharacterRespawned");
-
-	Params::BlackWidowSniperGun_OnOwnerCharacterRespawned Parms{};
-
-	Parms.TargetActor = TargetActor;
-	Parms.RebornParam = std::move(RebornParam);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Hero_1033.BlackWidowSniperGun.OnRep_BulletLoaded
-// (Final, Native, Protected)
-
-void ABlackWidowSniperGun::OnRep_BulletLoaded()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BlackWidowSniperGun", "OnRep_BulletLoaded");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Hero_1033.BlackWidowSniperGun.SetBulletLoaded
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    bLoaded                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ABlackWidowSniperGun::SetBulletLoaded(bool bLoaded)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BlackWidowSniperGun", "SetBulletLoaded");
-
-	Params::BlackWidowSniperGun_SetBulletLoaded Parms{};
-
-	Parms.bLoaded = bLoaded;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Hero_1033.BlackWidowSniperGun.GetPullBulletDuration
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float ABlackWidowSniperGun::GetPullBulletDuration() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BlackWidowSniperGun", "GetPullBulletDuration");
-
-	Params::BlackWidowSniperGun_GetPullBulletDuration Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Hero_1033.BlackWidowSniperGun.IsBulletLoaded
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool ABlackWidowSniperGun::IsBulletLoaded() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BlackWidowSniperGun", "IsBulletLoaded");
-
-	Params::BlackWidowSniperGun_IsBulletLoaded Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Hero_1033.BlackWidowSniperGun.ShouldPassPullBulletSafeCheck
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// float                                   Tolerance                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool ABlackWidowSniperGun::ShouldPassPullBulletSafeCheck(float Tolerance) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BlackWidowSniperGun", "ShouldPassPullBulletSafeCheck");
-
-	Params::BlackWidowSniperGun_ShouldPassPullBulletSafeCheck Parms{};
-
-	Parms.Tolerance = Tolerance;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1572,6 +1342,155 @@ class USkeletalMeshComponent* ACueWeaponLoop_103301::GetWeaponMesh1P()
 }
 
 
+// Function Hero_1033.BlackWidowSniperGun.OnOwnerCharacterRespawned
+// (Final, Native, Public, HasOutParams)
+// Parameters:
+// class AActor*                           TargetActor                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FCharacterRebornParam&     RebornParam                                            (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+
+void ABlackWidowSniperGun::OnOwnerCharacterRespawned(class AActor* TargetActor, const struct FCharacterRebornParam& RebornParam)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BlackWidowSniperGun", "OnOwnerCharacterRespawned");
+
+	Params::BlackWidowSniperGun_OnOwnerCharacterRespawned Parms{};
+
+	Parms.TargetActor = TargetActor;
+	Parms.RebornParam = std::move(RebornParam);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Hero_1033.BlackWidowSniperGun.OnRep_BulletLoaded
+// (Final, Native, Protected)
+
+void ABlackWidowSniperGun::OnRep_BulletLoaded()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BlackWidowSniperGun", "OnRep_BulletLoaded");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Hero_1033.BlackWidowSniperGun.SetBulletLoaded
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    bLoaded                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ABlackWidowSniperGun::SetBulletLoaded(bool bLoaded)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BlackWidowSniperGun", "SetBulletLoaded");
+
+	Params::BlackWidowSniperGun_SetBulletLoaded Parms{};
+
+	Parms.bLoaded = bLoaded;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Hero_1033.BlackWidowSniperGun.GetPullBulletDuration
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float ABlackWidowSniperGun::GetPullBulletDuration() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BlackWidowSniperGun", "GetPullBulletDuration");
+
+	Params::BlackWidowSniperGun_GetPullBulletDuration Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Hero_1033.BlackWidowSniperGun.IsBulletLoaded
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool ABlackWidowSniperGun::IsBulletLoaded() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BlackWidowSniperGun", "IsBulletLoaded");
+
+	Params::BlackWidowSniperGun_IsBulletLoaded Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Hero_1033.BlackWidowSniperGun.ShouldPassPullBulletSafeCheck
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float                                   Tolerance                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool ABlackWidowSniperGun::ShouldPassPullBulletSafeCheck(float Tolerance) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BlackWidowSniperGun", "ShouldPassPullBulletSafeCheck");
+
+	Params::BlackWidowSniperGun_ShouldPassPullBulletSafeCheck Parms{};
+
+	Parms.Tolerance = Tolerance;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function Hero_1033.BlackWidowStickMeshComponent.SetHiddenWhile_103333
 // (Final, Native, Private, BlueprintCallable)
 // Parameters:
@@ -1592,6 +1511,87 @@ void UBlackWidowStickMeshComponent::SetHiddenWhile_103333(bool bInHiddenWhile_10
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Hero_1033.EpicMomentAction_1033.OnProjectileBegin
+// (Final, Native, Public, HasOutParams)
+// Parameters:
+// class AActor*                           SourceActor                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UMarvelGameplayAbility*           SourceAbility                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           Projectile                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FMarvelTargetActorGenerateInfo&GenerateInfo                                           (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UEpicMomentAction_1033::OnProjectileBegin(class AActor* SourceActor, class UMarvelGameplayAbility* SourceAbility, class AActor* Projectile, const struct FMarvelTargetActorGenerateInfo& GenerateInfo)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("EpicMomentAction_1033", "OnProjectileBegin");
+
+	Params::EpicMomentAction_1033_OnProjectileBegin Parms{};
+
+	Parms.SourceActor = SourceActor;
+	Parms.SourceAbility = SourceAbility;
+	Parms.Projectile = Projectile;
+	Parms.GenerateInfo = std::move(GenerateInfo);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Hero_1033.EpicMomentAction_1033.OnSummonerBegin
+// (Final, Native, Public, HasOutParams)
+// Parameters:
+// class AActor*                           SourceActor                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UMarvelGameplayAbility*           SourceAbility                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           Summoned                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FMarvelTargetActorGenerateInfo&GenerateInfo                                           (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UEpicMomentAction_1033::OnSummonerBegin(class AActor* SourceActor, class UMarvelGameplayAbility* SourceAbility, class AActor* Summoned, const struct FMarvelTargetActorGenerateInfo& GenerateInfo)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("EpicMomentAction_1033", "OnSummonerBegin");
+
+	Params::EpicMomentAction_1033_OnSummonerBegin Parms{};
+
+	Parms.SourceActor = SourceActor;
+	Parms.SourceAbility = SourceAbility;
+	Parms.Summoned = Summoned;
+	Parms.GenerateInfo = std::move(GenerateInfo);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Hero_1033.EpicMomentAction_1033.OnSummonerEnd
+// (Final, Native, Public)
+
+void UEpicMomentAction_1033::OnSummonerEnd()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("EpicMomentAction_1033", "OnSummonerEnd");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
 }

@@ -148,7 +148,7 @@ void UPyAbility_104851::K2_OnEndAbility(bool bWasCancelled)
 // Parameters:
 // class AActor*                           InSourceAvatar                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // class AActor*                           InTargetAvatar                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FAttributeModifierHandle         ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
+// const struct FAttributeModifierHandle&  ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
 
 void UPyAbility_104851::OnCharacterTakeDamage(class AActor* InSourceAvatar, class AActor* InTargetAvatar, const struct FAttributeModifierHandle& ModifierParameterHandle)
 {
@@ -175,7 +175,7 @@ void UPyAbility_104851::OnCharacterTakeDamage(class AActor* InSourceAvatar, clas
 // PythonFunction PyAbility_104851.PyAbility_104851.OnBuffRemovedFromSelf
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FGameplayEffectSpecStackHandle   ExpiredEffectHandle                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
+// const struct FGameplayEffectSpecStackHandle&ExpiredEffectHandle                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
 // bool                                    bPrematureRemoval                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UPyAbility_104851::OnBuffRemovedFromSelf(const struct FGameplayEffectSpecStackHandle& ExpiredEffectHandle, bool bPrematureRemoval)
@@ -202,7 +202,7 @@ void UPyAbility_104851::OnBuffRemovedFromSelf(const struct FGameplayEffectSpecSt
 // PythonFunction PyAbility_104851.PyCue_Buff_10485101.K2_UpdateTeamVisualEffect
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FTeamVisual                      NewTeamVisual                                          (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
+// const struct FTeamVisual&               NewTeamVisual                                          (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
 
 void APyCue_Buff_10485101::K2_UpdateTeamVisualEffect(const struct FTeamVisual& NewTeamVisual)
 {
@@ -228,7 +228,7 @@ void APyCue_Buff_10485101::K2_UpdateTeamVisualEffect(const struct FTeamVisual& N
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyCue_Buff_10485101::WhileActiveFX(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
 {
@@ -255,7 +255,7 @@ void APyCue_Buff_10485101::WhileActiveFX(class AActor* MyTarget, const struct FG
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyCue_Buff_10485101::OnRemoveFX(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
 {
@@ -282,7 +282,7 @@ void APyCue_Buff_10485101::OnRemoveFX(class AActor* MyTarget, const struct FGame
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyCue_Buff_10485101::WhileActiveAudio(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
 {
@@ -309,7 +309,7 @@ void APyCue_Buff_10485101::WhileActiveAudio(class AActor* MyTarget, const struct
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyCue_Buff_10485101::OnRemoveAudio(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
 {

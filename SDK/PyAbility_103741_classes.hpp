@@ -35,27 +35,8 @@ public:
 	}
 };
 
-// PythonClass PyAbility_103741.PySummonedComp_10374101
-// 0x0000 (0x0D10 - 0x0D10)
-class UPySummonedComp_10374101 final : public UProtectiveSummonedComponent
-{
-public:
-	void K2_OnBeginAgentTask();
-	void K2_OnEndAgentTask();
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"PySummonedComp_10374101">();
-	}
-	static class UPySummonedComp_10374101* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UPySummonedComp_10374101>();
-	}
-};
-
 // PythonClass PyAbility_103741.PyAbility_103741
-// 0x0000 (0x25F8 - 0x25F8)
+// 0x0000 (0x2600 - 0x2600)
 class UPyAbility_103741 : public UMarvelAbility_SelectTarget
 {
 public:
@@ -79,12 +60,32 @@ public:
 	}
 };
 
+// PythonClass PyAbility_103741.PyAbility_103743
+// 0x0000 (0x2600 - 0x2600)
+class UPyAbility_103743 : public UPyAbility_103741
+{
+public:
+	bool CanActivate();
+	class AActor* GetProperTargetActor(const TArray<class AActor*>& TargetActors);
+	bool CheckViewportTarget(class AActor* InTarget);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PyAbility_103743">();
+	}
+	static class UPyAbility_103743* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPyAbility_103743>();
+	}
+};
+
 // PythonClass PyAbility_103741.PySummoned_10374101
-// 0x0010 (0x0980 - 0x0970)
+// 0x0010 (0x09B0 - 0x09A0)
 class APySummoned_10374101 : public ASummoned_10374101
 {
 public:
-	TMulticastInlineDelegate<void(float new_scale)> OnSummonedScaleChange;                             // 0x0970(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(float new_scale)> OnSummonedScaleChange;                           // 0x09A0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 
 public:
 	void BeginPlay();
@@ -101,6 +102,25 @@ public:
 	static class APySummoned_10374101* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<APySummoned_10374101>();
+	}
+};
+
+// PythonClass PyAbility_103741.PySummonedComp_10374101
+// 0x0000 (0x0D10 - 0x0D10)
+class UPySummonedComp_10374101 final : public UProtectiveSummonedComponent
+{
+public:
+	void K2_OnBeginAgentTask();
+	void K2_OnEndAgentTask();
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PySummonedComp_10374101">();
+	}
+	static class UPySummonedComp_10374101* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPySummonedComp_10374101>();
 	}
 };
 

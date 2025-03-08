@@ -13,9 +13,9 @@
 #include "GameplayTags_structs.hpp"
 #include "Marvel_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "Hero_1011_structs.hpp"
 #include "GameplayAbilities_structs.hpp"
 #include "Engine_structs.hpp"
-#include "Hero_1011_structs.hpp"
 
 
 namespace SDK::Params

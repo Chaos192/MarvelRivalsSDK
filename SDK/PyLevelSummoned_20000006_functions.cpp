@@ -85,7 +85,7 @@ void APyLevelSummoned_20000006::ReceiveTick(float DeltaSeconds)
 // Parameters:
 // class AController*                      InSource                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // class AActor*                           InSourceAvatar                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FAttributeModifierHandle         ParameterHandle                                        (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
+// const struct FAttributeModifierHandle&  ParameterHandle                                        (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
 
 void APyLevelSummoned_20000006::OnDeath(class AController* InSource, class AActor* InSourceAvatar, const struct FAttributeModifierHandle& ParameterHandle)
 {
@@ -259,7 +259,7 @@ void APyLevelRandomEgg::OnSpawnItem(class AActor* Item)
 // Parameters:
 // class AActor*                           InSourceAvatar                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // class AActor*                           InTargetAvatar                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FAttributeModifierHandle         ParameterHandle                                        (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
+// const struct FAttributeModifierHandle&  ParameterHandle                                        (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
 
 void APyLevelRandomEgg::OnSummonedDeath(class AActor* InSourceAvatar, class AActor* InTargetAvatar, const struct FAttributeModifierHandle& ParameterHandle)
 {
@@ -287,7 +287,7 @@ void APyLevelRandomEgg::OnSummonedDeath(class AActor* InSourceAvatar, class AAct
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyCue_Summoner_Loop_20000006::WhileActiveFX(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
 {
@@ -315,7 +315,7 @@ void APyCue_Summoner_Loop_20000006::WhileActiveFX(class AActor* MyTarget, const 
 // Parameters:
 // class AActor*                           InSourceAvatar                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // class AActor*                           InTargetAvatar                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FAttributeModifierHandle         ParameterHandle                                        (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
+// const struct FAttributeModifierHandle&  ParameterHandle                                        (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
 
 void APyCue_Summoner_Loop_20000006::OnSummonedDeath(class AActor* InSourceAvatar, class AActor* InTargetAvatar, const struct FAttributeModifierHandle& ParameterHandle)
 {
@@ -343,7 +343,7 @@ void APyCue_Summoner_Loop_20000006::OnSummonedDeath(class AActor* InSourceAvatar
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // class AActor*                           SourceActor                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FAttributeModifierHandle         Parameter                                              (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
+// const struct FAttributeModifierHandle&  Parameter                                              (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
 
 void APyCue_Summoner_Loop_20000006::OnTargetAttrChanged(class AActor* SourceActor, const struct FAttributeModifierHandle& Parameter)
 {

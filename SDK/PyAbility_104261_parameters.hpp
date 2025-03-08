@@ -20,6 +20,14 @@
 namespace SDK::Params
 {
 
+// PythonFunction PyAbility_104261.PyWBP_Ability_DrawLine.OnPaint
+// 0x0030 (0x0030 - 0x0000)
+struct PyWBP_Ability_DrawLine_OnPaint final
+{
+public:
+	struct FPaintContext                          Context;                                           // 0x0000(0x0030)(Parm, OutParm, ReferenceParm, NoDestructor)
+};
+
 // PythonFunction PyAbility_104261.PyExtraWidget_104261_Arrow.OnPaint
 // 0x0030 (0x0030 - 0x0000)
 struct PyExtraWidget_104261_Arrow_OnPaint final
@@ -36,22 +44,24 @@ public:
 	class UMarvelGameplayAbility*                 ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash)
 };
 
-// PythonFunction PyAbility_104261.PyCue_Ability_Loop_10426101.WhileActiveFX
-// 0x01C0 (0x01C0 - 0x0000)
-struct PyCue_Ability_Loop_10426101_WhileActiveFX final
+// PythonFunction PyAbility_104261.PyCue_Ability_Loop_10426101.WhileActive
+// 0x01C8 (0x01C8 - 0x0000)
+struct PyCue_Ability_Loop_10426101_WhileActive final
 {
 public:
 	class AActor*                                 MyTarget;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	struct FGameplayCueParameters                 Parameters;                                        // 0x0008(0x01B8)(ConstParm, Parm, OutParm, ReferenceParm)
+	bool                                          ReturnValue;                                       // 0x01C0(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 
-// PythonFunction PyAbility_104261.PyCue_Ability_Loop_10426101.OnRemoveFX
-// 0x01C0 (0x01C0 - 0x0000)
-struct PyCue_Ability_Loop_10426101_OnRemoveFX final
+// PythonFunction PyAbility_104261.PyCue_Ability_Loop_10426101.OnRemove
+// 0x01C8 (0x01C8 - 0x0000)
+struct PyCue_Ability_Loop_10426101_OnRemove final
 {
 public:
 	class AActor*                                 MyTarget;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	struct FGameplayCueParameters                 Parameters;                                        // 0x0008(0x01B8)(ConstParm, Parm, OutParm, ReferenceParm)
+	bool                                          ReturnValue;                                       // 0x01C0(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 
 // PythonFunction PyAbility_104261.PyCue_Ability_Loop_10426101.WhileActiveAudio
@@ -179,6 +189,14 @@ public:
 	class FString                                 Tag;                                               // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash)
 };
 
+// PythonFunction PyAbility_104261.PyAbility_104261.NativeOnMontageCancelled
+// 0x0010 (0x0010 - 0x0000)
+struct PyAbility_104261_NativeOnMontageCancelled final
+{
+public:
+	class FString                                 Tag;                                               // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash)
+};
+
 // PythonFunction PyAbility_104261.PyAbility_104261.NativeOnMontageCompleted
 // 0x0010 (0x0010 - 0x0000)
 struct PyAbility_104261_NativeOnMontageCompleted final
@@ -193,14 +211,6 @@ struct PyAbility_104261_K2_OnEndAbility final
 {
 public:
 	bool                                          bWasCancelled;                                     // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-
-// PythonFunction PyAbility_104261.PyWBP_Ability_DrawLine.OnPaint
-// 0x0030 (0x0030 - 0x0000)
-struct PyWBP_Ability_DrawLine_OnPaint final
-{
-public:
-	struct FPaintContext                          Context;                                           // 0x0000(0x0030)(Parm, OutParm, ReferenceParm, NoDestructor)
 };
 
 // PythonFunction PyAbility_104261.PyExtraWidget_104261.PreConstruct

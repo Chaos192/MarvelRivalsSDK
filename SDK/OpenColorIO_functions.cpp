@@ -20,8 +20,8 @@ namespace SDK
 // Function OpenColorIO.OpenColorIOBlueprintLibrary.ApplyColorSpaceTransform
 // (Final, RequiredAPI, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class UObject*                          WorldContextObject                                     (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FOpenColorIOColorConversionSettingsConversionSettings                                     (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const class UObject*                    WorldContextObject                                     (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FOpenColorIOColorConversionSettings&ConversionSettings                                     (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // class UTexture*                         InputTexture                                           (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UTextureRenderTarget2D*           OutputRenderTarget                                     (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -73,7 +73,7 @@ void UOpenColorIOConfiguration::ReloadExistingColorspaces()
 // Function OpenColorIO.OpenColorIODisplayExtensionWrapper.CreateInGameOpenColorIODisplayExtension
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// struct FOpenColorIODisplayConfiguration InDisplayConfiguration                                 (Parm, NativeAccessSpecifierPublic)
+// const struct FOpenColorIODisplayConfiguration&InDisplayConfiguration                                 (Parm, NativeAccessSpecifierPublic)
 // class UOpenColorIODisplayExtensionWrapper*ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class UOpenColorIODisplayExtensionWrapper* UOpenColorIODisplayExtensionWrapper::CreateInGameOpenColorIODisplayExtension(const struct FOpenColorIODisplayConfiguration& InDisplayConfiguration)
@@ -101,8 +101,8 @@ class UOpenColorIODisplayExtensionWrapper* UOpenColorIODisplayExtensionWrapper::
 // Function OpenColorIO.OpenColorIODisplayExtensionWrapper.CreateOpenColorIODisplayExtension
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FOpenColorIODisplayConfiguration InDisplayConfiguration                                 (Parm, NativeAccessSpecifierPublic)
-// struct FSceneViewExtensionIsActiveFunctorIsActiveFunction                                       (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FOpenColorIODisplayConfiguration&InDisplayConfiguration                                 (Parm, NativeAccessSpecifierPublic)
+// const struct FSceneViewExtensionIsActiveFunctor&IsActiveFunction                                       (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // class UOpenColorIODisplayExtensionWrapper*ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class UOpenColorIODisplayExtensionWrapper* UOpenColorIODisplayExtensionWrapper::CreateOpenColorIODisplayExtension(const struct FOpenColorIODisplayConfiguration& InDisplayConfiguration, const struct FSceneViewExtensionIsActiveFunctor& IsActiveFunction)
@@ -150,7 +150,7 @@ void UOpenColorIODisplayExtensionWrapper::RemoveSceneExtension()
 // Function OpenColorIO.OpenColorIODisplayExtensionWrapper.SetOpenColorIOConfiguration
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// struct FOpenColorIODisplayConfiguration InDisplayConfiguration                                 (Parm, NativeAccessSpecifierPublic)
+// const struct FOpenColorIODisplayConfiguration&InDisplayConfiguration                                 (Parm, NativeAccessSpecifierPublic)
 
 void UOpenColorIODisplayExtensionWrapper::SetOpenColorIOConfiguration(const struct FOpenColorIODisplayConfiguration& InDisplayConfiguration)
 {
@@ -175,7 +175,7 @@ void UOpenColorIODisplayExtensionWrapper::SetOpenColorIOConfiguration(const stru
 // Function OpenColorIO.OpenColorIODisplayExtensionWrapper.SetSceneExtensionIsActiveFunction
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FSceneViewExtensionIsActiveFunctorIsActiveFunction                                       (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FSceneViewExtensionIsActiveFunctor&IsActiveFunction                                       (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UOpenColorIODisplayExtensionWrapper::SetSceneExtensionIsActiveFunction(const struct FSceneViewExtensionIsActiveFunctor& IsActiveFunction)
 {
@@ -200,7 +200,7 @@ void UOpenColorIODisplayExtensionWrapper::SetSceneExtensionIsActiveFunction(cons
 // Function OpenColorIO.OpenColorIODisplayExtensionWrapper.SetSceneExtensionIsActiveFunctions
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<struct FSceneViewExtensionIsActiveFunctor>IsActiveFunctions                                      (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TArray<struct FSceneViewExtensionIsActiveFunctor>&IsActiveFunctions                                      (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UOpenColorIODisplayExtensionWrapper::SetSceneExtensionIsActiveFunctions(const TArray<struct FSceneViewExtensionIsActiveFunctor>& IsActiveFunctions)
 {

@@ -21,7 +21,7 @@ namespace SDK
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 bool APyCue_Buff_10234107::WhileActive(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
@@ -80,7 +80,7 @@ void APyCue_Buff_10234107::OnResurrectStateChanged(class USummonedComp_10234101*
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 bool APyCue_Buff_10234107::OnRemove(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
@@ -166,7 +166,7 @@ void UPySummonedComp_102341_Item::K2_OnRecycleAgentTask()
 // PythonFunction PyAbility_102341.PySummonedComp_102341_Item.OnProjectileStop
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FHitResult                       ImpactResult                                           (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FHitResult&                ImpactResult                                           (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPySummonedComp_102341_Item::OnProjectileStop(const struct FHitResult& ImpactResult)
 {
@@ -283,7 +283,7 @@ bool UPyAbility_102341::CanActivate()
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           TargetActor                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FCharacterRebornParam            Param                                                  (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FCharacterRebornParam&     Param                                                  (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyAbility_102341::OnCharacterReborn(class AActor* TargetActor, const struct FCharacterRebornParam& Param)
 {
@@ -460,7 +460,7 @@ void UPySummonedComp_10234101::K2_OnBeginAgentTask()
 // Parameters:
 // class AActor*                           DamageCauser                                           (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // class AActor*                           TargetActor                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FAttributeModifierHandle         ModifierHandle                                         (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
+// const struct FAttributeModifierHandle&  ModifierHandle                                         (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
 
 void UPySummonedComp_10234101::OnCharacterDead(class AActor* DamageCauser, class AActor* TargetActor, const struct FAttributeModifierHandle& ModifierHandle)
 {
@@ -487,8 +487,8 @@ void UPySummonedComp_10234101::OnCharacterDead(class AActor* DamageCauser, class
 // PythonFunction PyAbility_102341.PySummonedComp_10234101.Launch
 // (Net, NetReliable, Native, NetMulticast, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FVector                          summoned_location                                      (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FVector                          aim_location                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVector&                   summoned_location                                      (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVector&                   aim_location                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UPySummonedComp_10234101::Launch(const struct FVector& summoned_location, const struct FVector& aim_location)
 {
@@ -552,7 +552,7 @@ void UPySummonedComp_10234101::DoEndSummonedAfterDelay()
 // PythonFunction PyAbility_102341.PySummonedComp_10234101.OnProjectileStop
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FHitResult                       Hit                                                    (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FHitResult&                Hit                                                    (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPySummonedComp_10234101::OnProjectileStop(const struct FHitResult& Hit)
 {
@@ -577,7 +577,7 @@ void UPySummonedComp_10234101::OnProjectileStop(const struct FHitResult& Hit)
 // PythonFunction PyAbility_102341.PySummonedComp_10234101.MulticastProjectileStop
 // (Net, NetReliable, Native, NetMulticast, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FTransform                       ServerTransform                                        (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FTransform&                ServerTransform                                        (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UPySummonedComp_10234101::MulticastProjectileStop(const struct FTransform& ServerTransform)
 {
@@ -870,7 +870,7 @@ void UPySummonedComp_10234101::NetMulticast_SpawnedItemSuccess()
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 bool APyCue_Summoner_Loop_10234101_2::WhileActive(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
@@ -900,7 +900,7 @@ bool APyCue_Summoner_Loop_10234101_2::WhileActive(class AActor* MyTarget, const 
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 bool APyCue_Summoner_Loop_10234101_2::OnExecute(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
@@ -930,7 +930,7 @@ bool APyCue_Summoner_Loop_10234101_2::OnExecute(class AActor* MyTarget, const st
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 bool APyCue_Summoner_Loop_10234101_2::OnRemove(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
@@ -960,7 +960,7 @@ bool APyCue_Summoner_Loop_10234101_2::OnRemove(class AActor* MyTarget, const str
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyCue_Summoner_Loop_10234101_2::OnExecuteAudio(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
 {
@@ -1091,7 +1091,7 @@ void UPyWidget_SummonedInfoPanel_RebornBeacon::Construct()
 // PythonFunction PyAbility_102341.PyWidget_ReviveTip_102341.OnAnimationFinished
 // (BlueprintCosmetic, Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UWidgetAnimation*                 Animation                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// const class UWidgetAnimation*           Animation                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 void UPyWidget_ReviveTip_102341::OnAnimationFinished(const class UWidgetAnimation* Animation)
 {

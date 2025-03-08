@@ -83,7 +83,7 @@ bool UPyAbility_104201::CanActivate()
 // PythonFunction PyAbility_104201.PyAbility_104201.K2_ActivateAbilityFromEvent
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayEventData               EventData                                              (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayEventData&        EventData                                              (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyAbility_104201::K2_ActivateAbilityFromEvent(const struct FGameplayEventData& EventData)
 {
@@ -158,7 +158,7 @@ void UPyAbility_104201::K2_OnTick(float DeltaTime)
 // PythonFunction PyAbility_104201.PyAbility_104201.K2_OnWallRunningEnd
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FWallRunningEndInfo              InWallRunningEndInfo                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
+// const struct FWallRunningEndInfo&       InWallRunningEndInfo                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 bool UPyAbility_104201::K2_OnWallRunningEnd(const struct FWallRunningEndInfo& InWallRunningEndInfo)

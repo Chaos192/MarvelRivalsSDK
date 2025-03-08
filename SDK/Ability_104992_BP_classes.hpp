@@ -19,12 +19,11 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Ability_104992_BP.Ability_104992_BP_C
-// 0x10C0 (0x3640 - 0x2580)
+// 0x10B8 (0x3640 - 0x2588)
 class UAbility_104992_BP_C final : public UMarvelGameplayAbility
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x2580(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	uint8                                         Pad_2588[0x8];                                     // 0x2588(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x2588(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 	struct FSelectTaskParam                       选取参数;                                          // 0x2590(0x10A0)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
 	class AActor*                                 AttachToChar;                                      // 0x3630(0x0008)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, RepNotify, NoDestructor, HasGetValueTypeHash)
 

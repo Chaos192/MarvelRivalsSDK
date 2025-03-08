@@ -58,11 +58,11 @@ public:
 };
 
 // PythonClass PyAbility_103921.PyAbility_103921
-// 0x0010 (0x2590 - 0x2580)
+// 0x0010 (0x2598 - 0x2588)
 class UPyAbility_103921 : public UMarvelGameplayAbility
 {
 public:
-	TMulticastInlineDelegate<void()>              Delegate_OnHammerHitEnemy;                         // 0x2580(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void()>              Delegate_OnHammerHitEnemy;                         // 0x2588(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 
 public:
 	void BeginPlay();
@@ -83,8 +83,27 @@ public:
 	}
 };
 
+// PythonClass PyAbility_103921.PyEffectiveComponent_10392101
+// 0x0000 (0x1C00 - 0x1C00)
+class UPyEffectiveComponent_10392101 final : public UMarvelAgentEffectiveComponent
+{
+public:
+	void K2_Initialize();
+	TArray<struct FHitResult> K2_OnPreApplyContainer(const TArray<struct FHitResult>& HitResults);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PyEffectiveComponent_10392101">();
+	}
+	static class UPyEffectiveComponent_10392101* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPyEffectiveComponent_10392101>();
+	}
+};
+
 // PythonClass PyAbility_103921.PyProjectile_10392101
-// 0x0000 (0x30A0 - 0x30A0)
+// 0x0000 (0x3150 - 0x3150)
 class APyProjectile_10392101 final : public AProjectile_10392101
 {
 public:
@@ -103,11 +122,11 @@ public:
 };
 
 // PythonClass PyAbility_103921.PyProjectile_10392102
-// 0x0010 (0x30B0 - 0x30A0)
+// 0x0010 (0x3160 - 0x3150)
 class APyProjectile_10392102 : public AProjectile_10392101
 {
 public:
-	class UProjectileHomingComponent*             HomingComponent;                                   // 0x30A0(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UProjectileHomingComponent*             HomingComponent;                                   // 0x3150(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void ReceiveBeginPlay();
@@ -121,25 +140,6 @@ public:
 	static class APyProjectile_10392102* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<APyProjectile_10392102>();
-	}
-};
-
-// PythonClass PyAbility_103921.PyEffectiveComponent_10392101
-// 0x0000 (0x1C00 - 0x1C00)
-class UPyEffectiveComponent_10392101 final : public UMarvelAgentEffectiveComponent
-{
-public:
-	void K2_Initialize();
-	TArray<struct FHitResult> K2_OnPreApplyContainer(const TArray<struct FHitResult>& HitResults);
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"PyEffectiveComponent_10392101">();
-	}
-	static class UPyEffectiveComponent_10392101* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UPyEffectiveComponent_10392101>();
 	}
 };
 

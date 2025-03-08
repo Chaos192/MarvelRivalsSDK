@@ -17,12 +17,12 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass MarvelGameStateBP.MarvelGameStateBP_C
-// 0x0010 (0x0CD0 - 0x0CC0)
+// 0x0010 (0x0CE8 - 0x0CD8)
 class AMarvelGameStateBP_C final : public APyMarvelGameState
 {
 public:
-	class USceneComponent*                        DefaultSceneRoot;                                  // 0x0CC0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UClass*                                 LevelCustomEventSubsystem;                         // 0x0CC8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	class USceneComponent*                        DefaultSceneRoot;                                  // 0x0CD8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UClass*                                 LevelCustomEventSubsystem;                         // 0x0CE0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

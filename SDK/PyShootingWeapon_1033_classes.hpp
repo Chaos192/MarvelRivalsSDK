@@ -18,14 +18,14 @@ namespace SDK
 {
 
 // PythonClass PyShootingWeapon_1033.PyShootingWeapon_103311
-// 0x0020 (0x0CB0 - 0x0C90)
+// 0x0020 (0x0CA0 - 0x0C80)
 class APyShootingWeapon_103311 : public AShootingWeapon
 {
 public:
-	bool                                          bHideRightStick;                                   // 0x0C90(0x0001)(Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C91[0x3];                                      // 0x0C91(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FGameplayTag                           ShowWeaponEventTag;                                // 0x0C94(0x000C)(Edit, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGameplayTag                           HideWeaponEventTag;                                // 0x0CA0(0x000C)(Edit, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bHideRightStick;                                   // 0x0C80(0x0001)(Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C81[0x3];                                      // 0x0C81(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FGameplayTag                           ShowWeaponEventTag;                                // 0x0C84(0x000C)(Edit, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGameplayTag                           HideWeaponEventTag;                                // 0x0C90(0x000C)(Edit, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void SetHideRightStick(bool bHide);

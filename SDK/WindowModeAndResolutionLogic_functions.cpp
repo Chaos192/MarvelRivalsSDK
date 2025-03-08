@@ -17,44 +17,12 @@
 namespace SDK
 {
 
-// PythonFunction WindowModeAndResolutionLogic.UISettingEntryMonitorSelectionOptionsGenerator.BP_Gen
-// (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UObject*                          Obj                                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class FString                           setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
-// TMap<int32, class FText>                OPTIONS                                                (ConstParm, Parm, OutParm, ReferenceParm)
-// TMap<int32, class FText>                ReturnValue                                            (Parm, OutParm, ReturnParm)
-
-TMap<int32, class FText> UUISettingEntryMonitorSelectionOptionsGenerator::BP_Gen(class UObject* Obj, const class FString& setting_key, const TMap<int32, class FText>& OPTIONS)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISettingEntryMonitorSelectionOptionsGenerator", "BP_Gen");
-
-	Params::UISettingEntryMonitorSelectionOptionsGenerator_BP_Gen Parms{};
-
-	Parms.Obj = Obj;
-	Parms.setting_key = std::move(setting_key);
-	Parms.OPTIONS = std::move(OPTIONS);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
 // PythonFunction WindowModeAndResolutionLogic.UISettingEntryWindowModeOptionsGenerator.BP_Gen
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UObject*                          Obj                                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class FString                           setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
-// TMap<int32, class FText>                OPTIONS                                                (ConstParm, Parm, OutParm, ReferenceParm)
+// const class FString&                    setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const TMap<int32, class FText>&         OPTIONS                                                (ConstParm, Parm, OutParm, ReferenceParm)
 // TMap<int32, class FText>                ReturnValue                                            (Parm, OutParm, ReturnParm)
 
 TMap<int32, class FText> UUISettingEntryWindowModeOptionsGenerator::BP_Gen(class UObject* Obj, const class FString& setting_key, const TMap<int32, class FText>& OPTIONS)
@@ -81,23 +49,23 @@ TMap<int32, class FText> UUISettingEntryWindowModeOptionsGenerator::BP_Gen(class
 }
 
 
-// PythonFunction WindowModeAndResolutionLogic.UISettingEntryMonitorSelection.BP_OnApply
+// PythonFunction WindowModeAndResolutionLogic.UISettingEntryResolutionHandler.BP_OnApply
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UObject*                          Obj                                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class FString                           setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
-// TMap<class FString, class FString>      P                                                      (ConstParm, Parm, OutParm, ReferenceParm)
-// TMap<int32, class FText>                OPTIONS                                                (ConstParm, Parm, OutParm, ReferenceParm)
+// const class FString&                    setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const TMap<class FString, class FString>&P                                                      (ConstParm, Parm, OutParm, ReferenceParm)
+// const TMap<int32, class FText>&         OPTIONS                                                (ConstParm, Parm, OutParm, ReferenceParm)
 // float                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UUISettingEntryMonitorSelection::BP_OnApply(class UObject* Obj, const class FString& setting_key, const TMap<class FString, class FString>& P, const TMap<int32, class FText>& OPTIONS, float Value)
+void UUISettingEntryResolutionHandler::BP_OnApply(class UObject* Obj, const class FString& setting_key, const TMap<class FString, class FString>& P, const TMap<int32, class FText>& OPTIONS, float Value)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UISettingEntryMonitorSelection", "BP_OnApply");
+		Func = Class->GetFunction("UISettingEntryResolutionHandler", "BP_OnApply");
 
-	Params::UISettingEntryMonitorSelection_BP_OnApply Parms{};
+	Params::UISettingEntryResolutionHandler_BP_OnApply Parms{};
 
 	Parms.Obj = Obj;
 	Parms.setting_key = std::move(setting_key);
@@ -114,66 +82,28 @@ void UUISettingEntryMonitorSelection::BP_OnApply(class UObject* Obj, const class
 }
 
 
-// PythonFunction WindowModeAndResolutionLogic.UISettingEntryMonitorSelection.BP_GetCurrentValue
+// PythonFunction WindowModeAndResolutionLogic.UISettingEntryResolutionHandler.BP_GetCurrentValue
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UObject*                          Obj                                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class FString                           setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
-// TMap<class FString, class FString>      P                                                      (ConstParm, Parm, OutParm, ReferenceParm)
-// TMap<int32, class FText>                O                                                      (ConstParm, Parm, OutParm, ReferenceParm)
+// const class FString&                    setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const TMap<class FString, class FString>&Params_0                                               (ConstParm, Parm, OutParm, ReferenceParm)
+// const TMap<int32, class FText>&         OPTIONS                                                (ConstParm, Parm, OutParm, ReferenceParm)
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-float UUISettingEntryMonitorSelection::BP_GetCurrentValue(class UObject* Obj, const class FString& setting_key, const TMap<class FString, class FString>& P, const TMap<int32, class FText>& O)
+float UUISettingEntryResolutionHandler::BP_GetCurrentValue(class UObject* Obj, const class FString& setting_key, const TMap<class FString, class FString>& Params_0, const TMap<int32, class FText>& OPTIONS)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UISettingEntryMonitorSelection", "BP_GetCurrentValue");
+		Func = Class->GetFunction("UISettingEntryResolutionHandler", "BP_GetCurrentValue");
 
-	Params::UISettingEntryMonitorSelection_BP_GetCurrentValue Parms{};
-
-	Parms.Obj = Obj;
-	Parms.setting_key = std::move(setting_key);
-	Parms.P = std::move(P);
-	Parms.O = std::move(O);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// PythonFunction WindowModeAndResolutionLogic.UISettingEntryMonitorSelection.BP_OnChanged
-// (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UObject*                          Obj                                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class FString                           setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
-// TMap<class FString, class FString>      Params_0                                               (ConstParm, Parm, OutParm, ReferenceParm)
-// TMap<int32, class FText>                OPTIONS                                                (ConstParm, Parm, OutParm, ReferenceParm)
-// float                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// TMap<class FString, int32>              Tags                                                   (ConstParm, Parm, OutParm, ReferenceParm)
-// TMap<class FString, int32>              ReturnValue                                            (Parm, OutParm, ReturnParm)
-
-TMap<class FString, int32> UUISettingEntryMonitorSelection::BP_OnChanged(class UObject* Obj, const class FString& setting_key, const TMap<class FString, class FString>& Params_0, const TMap<int32, class FText>& OPTIONS, float Value, const TMap<class FString, int32>& Tags)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISettingEntryMonitorSelection", "BP_OnChanged");
-
-	Params::UISettingEntryMonitorSelection_BP_OnChanged Parms{};
+	Params::UISettingEntryResolutionHandler_BP_GetCurrentValue Parms{};
 
 	Parms.Obj = Obj;
 	Parms.setting_key = std::move(setting_key);
 	Parms.Params_0 = std::move(Params_0);
 	Parms.OPTIONS = std::move(OPTIONS);
-	Parms.Value = Value;
-	Parms.Tags = std::move(Tags);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -234,9 +164,9 @@ TMap<class FString, int32> UUISettingEntryWindowModeHandler::HardcodeSyncTargetM
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UObject*                          Obj                                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class FString                           setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
-// TMap<class FString, class FString>      P                                                      (ConstParm, Parm, OutParm, ReferenceParm)
-// TMap<int32, class FText>                OPTIONS                                                (ConstParm, Parm, OutParm, ReferenceParm)
+// const class FString&                    setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const TMap<class FString, class FString>&P                                                      (ConstParm, Parm, OutParm, ReferenceParm)
+// const TMap<int32, class FText>&         OPTIONS                                                (ConstParm, Parm, OutParm, ReferenceParm)
 // float                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UUISettingEntryWindowModeHandler::BP_OnApply(class UObject* Obj, const class FString& setting_key, const TMap<class FString, class FString>& P, const TMap<int32, class FText>& OPTIONS, float Value)
@@ -267,9 +197,9 @@ void UUISettingEntryWindowModeHandler::BP_OnApply(class UObject* Obj, const clas
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UObject*                          Obj                                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class FString                           setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
-// TMap<class FString, class FString>      P                                                      (ConstParm, Parm, OutParm, ReferenceParm)
-// TMap<int32, class FText>                O                                                      (ConstParm, Parm, OutParm, ReferenceParm)
+// const class FString&                    setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const TMap<class FString, class FString>&P                                                      (ConstParm, Parm, OutParm, ReferenceParm)
+// const TMap<int32, class FText>&         O                                                      (ConstParm, Parm, OutParm, ReferenceParm)
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 float UUISettingEntryWindowModeHandler::BP_GetCurrentValue(class UObject* Obj, const class FString& setting_key, const TMap<class FString, class FString>& P, const TMap<int32, class FText>& O)
@@ -301,11 +231,11 @@ float UUISettingEntryWindowModeHandler::BP_GetCurrentValue(class UObject* Obj, c
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UObject*                          Obj                                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class FString                           setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
-// TMap<class FString, class FString>      Params_0                                               (ConstParm, Parm, OutParm, ReferenceParm)
-// TMap<int32, class FText>                OPTIONS                                                (ConstParm, Parm, OutParm, ReferenceParm)
+// const class FString&                    setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const TMap<class FString, class FString>&Params_0                                               (ConstParm, Parm, OutParm, ReferenceParm)
+// const TMap<int32, class FText>&         OPTIONS                                                (ConstParm, Parm, OutParm, ReferenceParm)
 // float                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// TMap<class FString, int32>              Tags                                                   (ConstParm, Parm, OutParm, ReferenceParm)
+// const TMap<class FString, int32>&       Tags                                                   (ConstParm, Parm, OutParm, ReferenceParm)
 // TMap<class FString, int32>              ReturnValue                                            (Parm, OutParm, ReturnParm)
 
 TMap<class FString, int32> UUISettingEntryWindowModeHandler::BP_OnChanged(class UObject* Obj, const class FString& setting_key, const TMap<class FString, class FString>& Params_0, const TMap<int32, class FText>& OPTIONS, float Value, const TMap<class FString, int32>& Tags)
@@ -335,45 +265,13 @@ TMap<class FString, int32> UUISettingEntryWindowModeHandler::BP_OnChanged(class 
 }
 
 
-// PythonFunction WindowModeAndResolutionLogic.UISettingEntryResolutionAspectOptionsGenerator.BP_Gen
-// (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UObject*                          Obj                                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class FString                           setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
-// TMap<int32, class FText>                OPTIONS                                                (ConstParm, Parm, OutParm, ReferenceParm)
-// TMap<int32, class FText>                ReturnValue                                            (Parm, OutParm, ReturnParm)
-
-TMap<int32, class FText> UUISettingEntryResolutionAspectOptionsGenerator::BP_Gen(class UObject* Obj, const class FString& setting_key, const TMap<int32, class FText>& OPTIONS)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISettingEntryResolutionAspectOptionsGenerator", "BP_Gen");
-
-	Params::UISettingEntryResolutionAspectOptionsGenerator_BP_Gen Parms{};
-
-	Parms.Obj = Obj;
-	Parms.setting_key = std::move(setting_key);
-	Parms.OPTIONS = std::move(OPTIONS);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
 // PythonFunction WindowModeAndResolutionLogic.UISettingEntryResolutionAspectHandler.BP_GetCurrentValue
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UObject*                          Obj                                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class FString                           setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
-// TMap<class FString, class FString>      Params_0                                               (ConstParm, Parm, OutParm, ReferenceParm)
-// TMap<int32, class FText>                OPTIONS                                                (ConstParm, Parm, OutParm, ReferenceParm)
+// const class FString&                    setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const TMap<class FString, class FString>&Params_0                                               (ConstParm, Parm, OutParm, ReferenceParm)
+// const TMap<int32, class FText>&         OPTIONS                                                (ConstParm, Parm, OutParm, ReferenceParm)
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 float UUISettingEntryResolutionAspectHandler::BP_GetCurrentValue(class UObject* Obj, const class FString& setting_key, const TMap<class FString, class FString>& Params_0, const TMap<int32, class FText>& OPTIONS)
@@ -405,11 +303,11 @@ float UUISettingEntryResolutionAspectHandler::BP_GetCurrentValue(class UObject* 
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UObject*                          Obj                                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class FString                           setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
-// TMap<class FString, class FString>      Params_0                                               (ConstParm, Parm, OutParm, ReferenceParm)
-// TMap<int32, class FText>                OPTIONS                                                (ConstParm, Parm, OutParm, ReferenceParm)
+// const class FString&                    setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const TMap<class FString, class FString>&Params_0                                               (ConstParm, Parm, OutParm, ReferenceParm)
+// const TMap<int32, class FText>&         OPTIONS                                                (ConstParm, Parm, OutParm, ReferenceParm)
 // float                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// TMap<class FString, int32>              Tags                                                   (ConstParm, Parm, OutParm, ReferenceParm)
+// const TMap<class FString, int32>&       Tags                                                   (ConstParm, Parm, OutParm, ReferenceParm)
 // TMap<class FString, int32>              ReturnValue                                            (Parm, OutParm, ReturnParm)
 
 TMap<class FString, int32> UUISettingEntryResolutionAspectHandler::BP_OnChanged(class UObject* Obj, const class FString& setting_key, const TMap<class FString, class FString>& Params_0, const TMap<int32, class FText>& OPTIONS, float Value, const TMap<class FString, int32>& Tags)
@@ -439,60 +337,25 @@ TMap<class FString, int32> UUISettingEntryResolutionAspectHandler::BP_OnChanged(
 }
 
 
-// PythonFunction WindowModeAndResolutionLogic.UISettingEntryResolutionHandler.BP_OnApply
+// PythonFunction WindowModeAndResolutionLogic.UISettingEntryResolutionAspectOptionsGenerator.BP_Gen
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UObject*                          Obj                                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class FString                           setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
-// TMap<class FString, class FString>      P                                                      (ConstParm, Parm, OutParm, ReferenceParm)
-// TMap<int32, class FText>                OPTIONS                                                (ConstParm, Parm, OutParm, ReferenceParm)
-// float                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const class FString&                    setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const TMap<int32, class FText>&         OPTIONS                                                (ConstParm, Parm, OutParm, ReferenceParm)
+// TMap<int32, class FText>                ReturnValue                                            (Parm, OutParm, ReturnParm)
 
-void UUISettingEntryResolutionHandler::BP_OnApply(class UObject* Obj, const class FString& setting_key, const TMap<class FString, class FString>& P, const TMap<int32, class FText>& OPTIONS, float Value)
+TMap<int32, class FText> UUISettingEntryResolutionAspectOptionsGenerator::BP_Gen(class UObject* Obj, const class FString& setting_key, const TMap<int32, class FText>& OPTIONS)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UISettingEntryResolutionHandler", "BP_OnApply");
+		Func = Class->GetFunction("UISettingEntryResolutionAspectOptionsGenerator", "BP_Gen");
 
-	Params::UISettingEntryResolutionHandler_BP_OnApply Parms{};
-
-	Parms.Obj = Obj;
-	Parms.setting_key = std::move(setting_key);
-	Parms.P = std::move(P);
-	Parms.OPTIONS = std::move(OPTIONS);
-	Parms.Value = Value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// PythonFunction WindowModeAndResolutionLogic.UISettingEntryResolutionHandler.BP_GetCurrentValue
-// (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UObject*                          Obj                                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class FString                           setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
-// TMap<class FString, class FString>      Params_0                                               (ConstParm, Parm, OutParm, ReferenceParm)
-// TMap<int32, class FText>                OPTIONS                                                (ConstParm, Parm, OutParm, ReferenceParm)
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-float UUISettingEntryResolutionHandler::BP_GetCurrentValue(class UObject* Obj, const class FString& setting_key, const TMap<class FString, class FString>& Params_0, const TMap<int32, class FText>& OPTIONS)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UISettingEntryResolutionHandler", "BP_GetCurrentValue");
-
-	Params::UISettingEntryResolutionHandler_BP_GetCurrentValue Parms{};
+	Params::UISettingEntryResolutionAspectOptionsGenerator_BP_Gen Parms{};
 
 	Parms.Obj = Obj;
 	Parms.setting_key = std::move(setting_key);
-	Parms.Params_0 = std::move(Params_0);
 	Parms.OPTIONS = std::move(OPTIONS);
 
 	auto Flgs = Func->FunctionFlags;
@@ -510,8 +373,8 @@ float UUISettingEntryResolutionHandler::BP_GetCurrentValue(class UObject* Obj, c
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UObject*                          Obj                                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class FString                           setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
-// TMap<int32, class FText>                OPTIONS                                                (ConstParm, Parm, OutParm, ReferenceParm)
+// const class FString&                    setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const TMap<int32, class FText>&         OPTIONS                                                (ConstParm, Parm, OutParm, ReferenceParm)
 // TMap<int32, class FText>                ReturnValue                                            (Parm, OutParm, ReturnParm)
 
 TMap<int32, class FText> UUISettingEntryResolutionOptionsGenerator::BP_Gen(class UObject* Obj, const class FString& setting_key, const TMap<int32, class FText>& OPTIONS)
@@ -526,6 +389,143 @@ TMap<int32, class FText> UUISettingEntryResolutionOptionsGenerator::BP_Gen(class
 	Parms.Obj = Obj;
 	Parms.setting_key = std::move(setting_key);
 	Parms.OPTIONS = std::move(OPTIONS);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// PythonFunction WindowModeAndResolutionLogic.UISettingEntryMonitorSelectionOptionsGenerator.BP_Gen
+// (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UObject*                          Obj                                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// const class FString&                    setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const TMap<int32, class FText>&         OPTIONS                                                (ConstParm, Parm, OutParm, ReferenceParm)
+// TMap<int32, class FText>                ReturnValue                                            (Parm, OutParm, ReturnParm)
+
+TMap<int32, class FText> UUISettingEntryMonitorSelectionOptionsGenerator::BP_Gen(class UObject* Obj, const class FString& setting_key, const TMap<int32, class FText>& OPTIONS)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISettingEntryMonitorSelectionOptionsGenerator", "BP_Gen");
+
+	Params::UISettingEntryMonitorSelectionOptionsGenerator_BP_Gen Parms{};
+
+	Parms.Obj = Obj;
+	Parms.setting_key = std::move(setting_key);
+	Parms.OPTIONS = std::move(OPTIONS);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// PythonFunction WindowModeAndResolutionLogic.UISettingEntryMonitorSelection.BP_OnApply
+// (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UObject*                          Obj                                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// const class FString&                    setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const TMap<class FString, class FString>&P                                                      (ConstParm, Parm, OutParm, ReferenceParm)
+// const TMap<int32, class FText>&         OPTIONS                                                (ConstParm, Parm, OutParm, ReferenceParm)
+// float                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UUISettingEntryMonitorSelection::BP_OnApply(class UObject* Obj, const class FString& setting_key, const TMap<class FString, class FString>& P, const TMap<int32, class FText>& OPTIONS, float Value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISettingEntryMonitorSelection", "BP_OnApply");
+
+	Params::UISettingEntryMonitorSelection_BP_OnApply Parms{};
+
+	Parms.Obj = Obj;
+	Parms.setting_key = std::move(setting_key);
+	Parms.P = std::move(P);
+	Parms.OPTIONS = std::move(OPTIONS);
+	Parms.Value = Value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// PythonFunction WindowModeAndResolutionLogic.UISettingEntryMonitorSelection.BP_GetCurrentValue
+// (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UObject*                          Obj                                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// const class FString&                    setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const TMap<class FString, class FString>&P                                                      (ConstParm, Parm, OutParm, ReferenceParm)
+// const TMap<int32, class FText>&         O                                                      (ConstParm, Parm, OutParm, ReferenceParm)
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+float UUISettingEntryMonitorSelection::BP_GetCurrentValue(class UObject* Obj, const class FString& setting_key, const TMap<class FString, class FString>& P, const TMap<int32, class FText>& O)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISettingEntryMonitorSelection", "BP_GetCurrentValue");
+
+	Params::UISettingEntryMonitorSelection_BP_GetCurrentValue Parms{};
+
+	Parms.Obj = Obj;
+	Parms.setting_key = std::move(setting_key);
+	Parms.P = std::move(P);
+	Parms.O = std::move(O);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// PythonFunction WindowModeAndResolutionLogic.UISettingEntryMonitorSelection.BP_OnChanged
+// (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UObject*                          Obj                                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// const class FString&                    setting_key                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const TMap<class FString, class FString>&Params_0                                               (ConstParm, Parm, OutParm, ReferenceParm)
+// const TMap<int32, class FText>&         OPTIONS                                                (ConstParm, Parm, OutParm, ReferenceParm)
+// float                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const TMap<class FString, int32>&       Tags                                                   (ConstParm, Parm, OutParm, ReferenceParm)
+// TMap<class FString, int32>              ReturnValue                                            (Parm, OutParm, ReturnParm)
+
+TMap<class FString, int32> UUISettingEntryMonitorSelection::BP_OnChanged(class UObject* Obj, const class FString& setting_key, const TMap<class FString, class FString>& Params_0, const TMap<int32, class FText>& OPTIONS, float Value, const TMap<class FString, int32>& Tags)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISettingEntryMonitorSelection", "BP_OnChanged");
+
+	Params::UISettingEntryMonitorSelection_BP_OnChanged Parms{};
+
+	Parms.Obj = Obj;
+	Parms.setting_key = std::move(setting_key);
+	Parms.Params_0 = std::move(Params_0);
+	Parms.OPTIONS = std::move(OPTIONS);
+	Parms.Value = Value;
+	Parms.Tags = std::move(Tags);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

@@ -192,8 +192,8 @@ void UMaskImage::SetMaskUsable(bool usable)
 // Function MarvelWidgets.MaskImage.SetScalarParameterValueOnMaterials
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class FName                             ParameterName                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   ParameterValue                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName&                      ParameterName                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             ParameterValue                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UMaskImage::SetScalarParameterValueOnMaterials(const class FName& ParameterName, const float ParameterValue)
 {
@@ -219,7 +219,7 @@ void UMaskImage::SetScalarParameterValueOnMaterials(const class FName& Parameter
 // Function MarvelWidgets.MaskImage.SetTextureOffsetUV
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FVector2D                        InOffsetUV                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector2D&                 InOffsetUV                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UMaskImage::SetTextureOffsetUV(const struct FVector2D& InOffsetUV)
 {
@@ -244,7 +244,7 @@ void UMaskImage::SetTextureOffsetUV(const struct FVector2D& InOffsetUV)
 // Function MarvelWidgets.MaskImage.SetTextureScale
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// float                                   InScale                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             InScale                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UMaskImage::SetTextureScale(const float InScale)
 {
@@ -269,8 +269,8 @@ void UMaskImage::SetTextureScale(const float InScale)
 // Function MarvelWidgets.MaskImage.SetVectorParameterValueOnMaterials
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
-// class FName                             ParameterName                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FLinearColor                     ParameterValue                                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName&                      ParameterName                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FLinearColor&              ParameterValue                                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UMaskImage::SetVectorParameterValueOnMaterials(const class FName& ParameterName, const struct FLinearColor& ParameterValue)
 {
@@ -315,7 +315,7 @@ void UMaskImage::UpdateMaskParameters()
 // Function MarvelWidgets.PaintContextUtils.GetAllotedLocation
 // (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FPaintContext                    InContext                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FPaintContext&             InContext                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // struct FVector2D                        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 struct FVector2D UPaintContextUtils::GetAllotedLocation(const struct FPaintContext& InContext)
@@ -343,7 +343,7 @@ struct FVector2D UPaintContextUtils::GetAllotedLocation(const struct FPaintConte
 // Function MarvelWidgets.PaintContextUtils.GetAllotedSize
 // (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FPaintContext                    InContext                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FPaintContext&             InContext                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // struct FVector2D                        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 struct FVector2D UPaintContextUtils::GetAllotedSize(const struct FPaintContext& InContext)
@@ -371,7 +371,7 @@ struct FVector2D UPaintContextUtils::GetAllotedSize(const struct FPaintContext& 
 // Function MarvelWidgets.PaintContextUtils.GetColorAndOpacityTint
 // (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FPaintContext                    InContext                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FPaintContext&             InContext                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // struct FLinearColor                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 struct FLinearColor UPaintContextUtils::GetColorAndOpacityTint(const struct FPaintContext& InContext)
@@ -399,7 +399,7 @@ struct FLinearColor UPaintContextUtils::GetColorAndOpacityTint(const struct FPai
 // Function MarvelWidgets.PaintContextUtils.GetLocalLocation
 // (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FPaintContext                    InContext                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FPaintContext&             InContext                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // struct FVector2f                        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 struct FVector2f UPaintContextUtils::GetLocalLocation(const struct FPaintContext& InContext)

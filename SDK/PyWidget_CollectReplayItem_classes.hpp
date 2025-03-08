@@ -34,14 +34,14 @@ public:
 };
 
 // PythonClass PyWidget_CollectReplayItem.PyWidget_CollectReplayItem
-// 0x0140 (0x0DC0 - 0x0C80)
+// 0x0130 (0x0DD0 - 0x0CA0)
 class UPyWidget_CollectReplayItem final : public UPyWidget_CareerPersonalRecord_Item
 {
 public:
-	TArray<class UTexture2D*>                     TopInfoIcons;                                      // 0x0C80(0x0010)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	TArray<class FText>                           TopInfoTexts;                                      // 0x0C90(0x0010)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	class UInputAction*                           PlayDemoAction;                                    // 0x0CA0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGuideTipsStyle                        PlayDemoStyle;                                     // 0x0CA8(0x0110)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	TArray<class UTexture2D*>                     TopInfoIcons;                                      // 0x0C98(0x0010)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	TArray<class FText>                           TopInfoTexts;                                      // 0x0CA8(0x0010)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	class UInputAction*                           PlayDemoAction;                                    // 0x0CB8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGuideTipsStyle                        PlayDemoStyle;                                     // 0x0CC0(0x0110)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NativeAccessSpecifierPublic)
 
 public:
 	void OnInitialized();

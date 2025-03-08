@@ -10,35 +10,35 @@
 
 #include "Basic.hpp"
 
-#include "Marvel_structs.hpp"
 #include "MarvelLevel_classes.hpp"
+#include "Marvel_structs.hpp"
 
 
 namespace SDK
 {
 
 // PythonClass PyLevelSummoned_200009.PyLevelSummoned_200009
-// 0x00C0 (0x0980 - 0x08C0)
+// 0x00C0 (0x09B0 - 0x08F0)
 class APyLevelSummoned_200009 final : public AMarvelLevelSummonedBase
 {
 public:
-	uint8                                         Pad_8B8[0x8];                                      // 0x08B8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	bool                                          IsActivated;                                       // 0x08C0(0x0001)(Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EBattleSide                                   BattleSide;                                        // 0x08C1(0x0001)(Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_8C2[0x2];                                      // 0x08C2(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         PillageStage;                                      // 0x08C4(0x0004)(Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         RecoverStartTime;                                  // 0x08C8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         RecoverInterval;                                   // 0x08CC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         RecoverSpeed;                                      // 0x08D0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ReactivateTime;                                    // 0x08D4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMap<float, float>                            PillageSpeedUpMap;                                 // 0x08D8(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	bool                                          Hittable;                                          // 0x0928(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_929[0x7];                                      // 0x0929(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TMulticastInlineDelegate<void(class AMarvelLevelSummonedBase* Obj)> DispatchPillageSummonerActivated;                  // 0x0930(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class AMarvelLevelSummonedBase* Obj)> DispatchPillageSummonerDeactivated;                // 0x0940(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class AMarvelLevelSummonedBase* Obj)> DispatchPillageSummonerDead;                       // 0x0950(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class AMarvelLevelSummonedBase* Obj)> DispatchPillageSummonerReactivated;                // 0x0960(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class AMarvelLevelSummonedBase* Obj, int32 Stage)> DispatchOnPillageStageChanged;                     // 0x0970(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	uint8                                         Pad_8E8[0x8];                                      // 0x08E8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          IsActivated;                                       // 0x08F0(0x0001)(Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EBattleSide                                   BattleSide;                                        // 0x08F1(0x0001)(Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_8F2[0x2];                                      // 0x08F2(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         PillageStage;                                      // 0x08F4(0x0004)(Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         RecoverStartTime;                                  // 0x08F8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         RecoverInterval;                                   // 0x08FC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         RecoverSpeed;                                      // 0x0900(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ReactivateTime;                                    // 0x0904(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TMap<float, float>                            PillageSpeedUpMap;                                 // 0x0908(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	bool                                          Hittable;                                          // 0x0958(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_959[0x7];                                      // 0x0959(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TMulticastInlineDelegate<void(class AMarvelLevelSummonedBase* Obj)> DispatchPillageSummonerActivated; // 0x0960(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class AMarvelLevelSummonedBase* Obj)> DispatchPillageSummonerDeactivated; // 0x0970(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class AMarvelLevelSummonedBase* Obj)> DispatchPillageSummonerDead; // 0x0980(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class AMarvelLevelSummonedBase* Obj)> DispatchPillageSummonerReactivated; // 0x0990(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class AMarvelLevelSummonedBase* Obj, int32 Stage)> DispatchOnPillageStageChanged; // 0x09A0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 
 public:
 	void ReceiveInit();

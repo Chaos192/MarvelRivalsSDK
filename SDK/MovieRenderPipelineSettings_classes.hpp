@@ -64,11 +64,11 @@ public:
 class UMoviePipelineConsoleVariableSetting final : public UMoviePipelineSetting
 {
 public:
-	TArray<TScriptInterface<class IMovieSceneConsoleVariableTrackInterface>> ConsoleVariablePresets;                            // 0x0050(0x0010)(Edit, BlueprintVisible, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
+	TArray<TScriptInterface<class IMovieSceneConsoleVariableTrackInterface>> ConsoleVariablePresets; // 0x0050(0x0010)(Edit, BlueprintVisible, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
 	TMap<class FString, float>                    ConsoleVariables;                                  // 0x0060(0x0050)(Deprecated, NativeAccessSpecifierPublic)
 	TArray<class FString>                         StartConsoleCommands;                              // 0x00B0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
 	TArray<class FString>                         EndConsoleCommands;                                // 0x00C0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FMoviePipelineConsoleVariableEntry> CVars;                                             // 0x00D0(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPrivate)
+	TArray<struct FMoviePipelineConsoleVariableEntry> CVars;                                         // 0x00D0(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPrivate)
 	uint8                                         Pad_E0[0x20];                                      // 0x00E0(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:

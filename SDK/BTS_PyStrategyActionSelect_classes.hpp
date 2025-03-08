@@ -64,24 +64,6 @@ public:
 	}
 };
 
-// PythonClass BTS_PyStrategyActionSelect.Requirement_Timeout
-// 0x0000 (0x0038 - 0x0038)
-class URequirement_Timeout final : public UActionRequirementBase
-{
-public:
-	bool Requirement(class AAIController* OwnerController, class AActor* ControlledPawn);
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"Requirement_Timeout">();
-	}
-	static class URequirement_Timeout* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<URequirement_Timeout>();
-	}
-};
-
 // PythonClass BTS_PyStrategyActionSelect.Requirement_ControlSide
 // 0x0008 (0x0040 - 0x0038)
 class URequirement_ControlSide final : public UActionRequirementBase
@@ -124,6 +106,24 @@ public:
 	static class URequirement_ControlSideProgress* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<URequirement_ControlSideProgress>();
+	}
+};
+
+// PythonClass BTS_PyStrategyActionSelect.Requirement_Timeout
+// 0x0000 (0x0038 - 0x0038)
+class URequirement_Timeout final : public UActionRequirementBase
+{
+public:
+	bool Requirement(class AAIController* OwnerController, class AActor* ControlledPawn);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"Requirement_Timeout">();
+	}
+	static class URequirement_Timeout* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<URequirement_Timeout>();
 	}
 };
 

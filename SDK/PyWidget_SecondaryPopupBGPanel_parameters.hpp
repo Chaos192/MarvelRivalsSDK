@@ -114,6 +114,14 @@ public:
 	bool                                          Enabled;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 
+// PythonFunction PyWidget_SecondaryPopupBGPanel.PyWidget_SecondaryPopupBGPanel.SetRightButtonEnabled
+// 0x0001 (0x0001 - 0x0000)
+struct PyWidget_SecondaryPopupBGPanel_SetRightButtonEnabled final
+{
+public:
+	bool                                          Enabled;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+
 // PythonFunction PyWidget_SecondaryPopupBGPanel.PyWidget_SecondaryPopupBGPanel.SetRightBtnVisible
 // 0x0001 (0x0001 - 0x0000)
 struct PyWidget_SecondaryPopupBGPanel_SetRightBtnVisible final

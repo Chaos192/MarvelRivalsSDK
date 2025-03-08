@@ -77,8 +77,8 @@ void UJarvisReplayComponent::StopRecord()
 // Function JarvisReplay.JarvisReplaySubsystem.LocalRecordJarvisReplay
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FString                           Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           FriendlyName                                           (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    FriendlyName                                           (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UJarvisReplaySubsystem::LocalRecordJarvisReplay(const class FString& Name_0, const class FString& FriendlyName)
 {
@@ -104,7 +104,7 @@ void UJarvisReplaySubsystem::LocalRecordJarvisReplay(const class FString& Name_0
 // Function JarvisReplay.JarvisReplaySubsystem.PlayJarvisReplay
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FString                           DemoURL                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    DemoURL                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bIsNetFile                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UJarvisReplaySubsystem::PlayJarvisReplay(const class FString& DemoURL, bool bIsNetFile)
@@ -131,7 +131,7 @@ void UJarvisReplaySubsystem::PlayJarvisReplay(const class FString& DemoURL, bool
 // Function JarvisReplay.JarvisReplaySubsystem.PlayJarvisReplaySequence
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<class FString>                   ReplayIDSequence                                       (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TArray<class FString>&            ReplayIDSequence                                       (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 // int32                                   InLoopTimes                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   InReplayInterval                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bInQuitAppOnEnd                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)

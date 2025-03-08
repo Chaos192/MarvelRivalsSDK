@@ -102,7 +102,7 @@ void UPyWidget_TabMenuBase::SetTabID(int32 TabId_0)
 // PythonFunction PyWidget_TabMenuBase.PyWidget_TabMenuBase.AddChild
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<class UUserWidget*>              BtnList                                                (ConstParm, Parm, OutParm, ReferenceParm)
+// const TArray<class UUserWidget*>&       BtnList                                                (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyWidget_TabMenuBase::AddChild(const TArray<class UUserWidget*>& BtnList)
 {

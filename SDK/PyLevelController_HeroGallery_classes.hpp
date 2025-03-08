@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Marvel_structs.hpp"
 #include "python_enums_structs.hpp"
+#include "Marvel_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
 

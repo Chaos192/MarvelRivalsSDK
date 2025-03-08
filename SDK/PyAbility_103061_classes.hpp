@@ -19,6 +19,25 @@
 namespace SDK
 {
 
+// PythonClass PyAbility_103061.PyUIController_103061
+// 0x0000 (0x0C50 - 0x0C50)
+class UPyUIController_103061 final : public UUIC_Ability
+{
+public:
+	void SetAbility(int32 InAbilityId, class UGameplayAbility* InAbility);
+	void Destruct();
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PyUIController_103061">();
+	}
+	static class UPyUIController_103061* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPyUIController_103061>();
+	}
+};
+
 // PythonClass PyAbility_103061.PyConfig_103061
 // 0x0FF8 (0x10B0 - 0x00B8)
 class UPyConfig_103061 final : public UConfig_103061
@@ -42,26 +61,8 @@ public:
 	}
 };
 
-// PythonClass PyAbility_103061.PyCue_Ability_Loop_10306102
-// 0x0000 (0x0E58 - 0x0E58)
-class APyCue_Ability_Loop_10306102 final : public ACue_Ability_Loop_10306102
-{
-public:
-	void WhileActiveFX(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters);
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"PyCue_Ability_Loop_10306102">();
-	}
-	static class APyCue_Ability_Loop_10306102* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<APyCue_Ability_Loop_10306102>();
-	}
-};
-
 // PythonClass PyAbility_103061.PyAbility_103061
-// 0x0000 (0x2590 - 0x2590)
+// 0x0000 (0x2598 - 0x2598)
 class UPyAbility_103061 : public UAbility_103061
 {
 public:
@@ -82,50 +83,21 @@ public:
 	}
 };
 
-// PythonClass PyAbility_103061.PyUIController_103061
-// 0x0000 (0x0C60 - 0x0C60)
-class UPyUIController_103061 final : public UUIC_Ability
+// PythonClass PyAbility_103061.PyCue_Ability_Loop_10306102
+// 0x0000 (0x0E58 - 0x0E58)
+class APyCue_Ability_Loop_10306102 final : public ACue_Ability_Loop_10306102
 {
-public:
-	void SetAbility(int32 InAbilityId, class UGameplayAbility* InAbility);
-	void Destruct();
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"PyUIController_103061">();
-	}
-	static class UPyUIController_103061* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UPyUIController_103061>();
-	}
-};
-
-// PythonClass PyAbility_103061.PyCue_Summoned_Loop_10306101
-// 0x0020 (0x0EC8 - 0x0EA8)
-class APyCue_Summoned_Loop_10306101 final : public ACue_Summoned_Loop_10306101
-{
-public:
-	float                                         SkyHeight;                                         // 0x0EA8(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         SkyRadius;                                         // 0x0EAC(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UMaterialInterface*                     MoonMaterial;                                      // 0x0EB0(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MoonHeight;                                        // 0x0EB8(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MoonRadius;                                        // 0x0EBC(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         MoonEndAudioID;                                    // 0x0EC0(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         SkyDisappearAudioID;                               // 0x0EC4(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
 public:
 	void WhileActiveFX(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters);
-	void OnRemoveFX(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters);
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"PyCue_Summoned_Loop_10306101">();
+		return StaticClassImpl<"PyCue_Ability_Loop_10306102">();
 	}
-	static class APyCue_Summoned_Loop_10306101* GetDefaultObj()
+	static class APyCue_Ability_Loop_10306102* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<APyCue_Summoned_Loop_10306101>();
+		return GetDefaultObjImpl<APyCue_Ability_Loop_10306102>();
 	}
 };
 
@@ -152,6 +124,35 @@ public:
 	static class APyCue_Projectile_Loop_10306101* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<APyCue_Projectile_Loop_10306101>();
+	}
+};
+
+// PythonClass PyAbility_103061.PyCue_Summoned_Loop_10306101
+// 0x0020 (0x0EC8 - 0x0EA8)
+class APyCue_Summoned_Loop_10306101 final : public ACue_Summoned_Loop_10306101
+{
+public:
+	float                                         SkyHeight;                                         // 0x0EA8(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         SkyRadius;                                         // 0x0EAC(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UMaterialInterface*                     MoonMaterial;                                      // 0x0EB0(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MoonHeight;                                        // 0x0EB8(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MoonRadius;                                        // 0x0EBC(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         MoonEndAudioID;                                    // 0x0EC0(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         SkyDisappearAudioID;                               // 0x0EC4(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	void WhileActiveFX(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters);
+	void OnExecuteFX(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters);
+	void OnRemoveFX(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PyCue_Summoned_Loop_10306101">();
+	}
+	static class APyCue_Summoned_Loop_10306101* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<APyCue_Summoned_Loop_10306101>();
 	}
 };
 

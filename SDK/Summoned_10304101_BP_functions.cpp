@@ -54,8 +54,8 @@ void ASummoned_10304101_BP_C::K2_OnBeginAgentTask_GraphAbility()
 // Function Summoned_10304101_BP.Summoned_10304101_BP_C.OnOwnerBuffRemoved
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FActiveGameplayEffectHandle      EffectHandle                                           (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayEffectSpecStackHandle   ExpiredEffectHandle                                    (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
+// const struct FActiveGameplayEffectHandle&EffectHandle                                           (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayEffectSpecStackHandle&ExpiredEffectHandle                                    (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
 
 void ASummoned_10304101_BP_C::OnOwnerBuffRemoved(const struct FActiveGameplayEffectHandle& EffectHandle, const struct FGameplayEffectSpecStackHandle& ExpiredEffectHandle)
 {

@@ -38,13 +38,13 @@ public:
 };
 
 // PythonClass PyAbility_101481.PyAbility_101481
-// 0x0018 (0x2598 - 0x2580)
+// 0x0018 (0x25A0 - 0x2588)
 class UPyAbility_101481 : public UMarvelGameplayAbility
 {
 public:
-	EState_101481                                 AbilityState;                                      // 0x2580(0x0001)(BlueprintVisible, Net, ZeroConstructor, Transient, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2581[0x7];                                     // 0x2581(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TMulticastInlineDelegate<void(EState_101481 NewState)> OnAbilityStateChangedDelegate;                     // 0x2588(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	EState_101481                                 AbilityState;                                      // 0x2588(0x0001)(BlueprintVisible, Net, ZeroConstructor, Transient, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2589[0x7];                                     // 0x2589(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TMulticastInlineDelegate<void(EState_101481 NewState)> OnAbilityStateChangedDelegate;            // 0x2590(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 
 public:
 	void BeginPlay();

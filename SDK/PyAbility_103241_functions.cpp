@@ -21,7 +21,7 @@ namespace SDK
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyCue_Ability_Loop_10324101::WhileActiveFX(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
 {
@@ -48,7 +48,7 @@ void APyCue_Ability_Loop_10324101::WhileActiveFX(class AActor* MyTarget, const s
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyCue_Ability_Loop_10324103::WhileActiveFX(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
 {
@@ -75,7 +75,7 @@ void APyCue_Ability_Loop_10324103::WhileActiveFX(class AActor* MyTarget, const s
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyCue_Ability_Loop_10324103::OnRemoveFX(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
 {
@@ -202,7 +202,7 @@ void UPyAbility_103241::OnDurationEnd()
 // PythonFunction PyAbility_103241.PyAbility_103241.OnCooldownTagUpdated
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FGameplayTag                     TagUpdated                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              TagUpdated                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
 // bool                                    TagExists                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UPyAbility_103241::OnCooldownTagUpdated(const struct FGameplayTag& TagUpdated, bool TagExists)
@@ -298,7 +298,7 @@ void UPyAbility_103241::K2_OnEndAbility(bool bWasCancelled)
 // PythonFunction PyAbility_103241.PyAbility_103241.NativeOnMontageEvent
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_103241::NativeOnMontageEvent(const class FString& Tag)
 {
@@ -350,7 +350,7 @@ void UPyUIController_103241::SetAbility(int32 InAbilityId, class UGameplayAbilit
 // PythonFunction PyAbility_103241.PyUIController_103241.OnCharacterAbilityTagChange
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayTag                     CallbackTag                                            (ConstParm, Parm, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              CallbackTag                                            (ConstParm, Parm, NoDestructor, HasGetValueTypeHash)
 // int32                                   NewCount                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UPyUIController_103241::OnCharacterAbilityTagChange(const struct FGameplayTag& CallbackTag, int32 NewCount)

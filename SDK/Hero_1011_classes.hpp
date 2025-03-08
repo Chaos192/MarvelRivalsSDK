@@ -10,15 +10,15 @@
 
 #include "Basic.hpp"
 
+#include "Hero_Synergy_classes.hpp"
 #include "GameplayTags_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
 #include "CoreUObject_structs.hpp"
 #include "Marvel_structs.hpp"
 #include "Marvel_classes.hpp"
-#include "GameplayAbilities_structs.hpp"
 #include "Hero_1011_structs.hpp"
-#include "Hero_Synergy_classes.hpp"
+#include "GameplayAbilities_structs.hpp"
 
 
 namespace SDK
@@ -74,7 +74,7 @@ public:
 };
 
 // Class Hero_1011.Ability_HulkSculpt
-// 0x0000 (0x2838 - 0x2838)
+// 0x0000 (0x2840 - 0x2840)
 class UAbility_HulkSculpt final : public UAbility_109
 {
 public:
@@ -89,15 +89,15 @@ public:
 };
 
 // Class Hero_1011.Cue_Weapon_Loop_101111
-// 0x0048 (0x10F0 - 0x10A8)
+// 0x0048 (0x10F8 - 0x10B0)
 class ACue_Weapon_Loop_101111 final : public AMarvelCueNotify_Weapon_Loop
 {
 public:
-	class UStaticMeshComponent*                   Container;                                         // 0x10A8(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UMaterialInstanceDynamic*               Mid;                                               // 0x10B0(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class AHulkBannerCharacter*                   BannerChar;                                        // 0x10B8(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FTimerHandle                           LoopTimerHandle;                                   // 0x10C0(0x0018)(HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_10D8[0x18];                                    // 0x10D8(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class UStaticMeshComponent*                   Container;                                         // 0x10B0(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UMaterialInstanceDynamic*               Mid;                                               // 0x10B8(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AHulkBannerCharacter*                   BannerChar;                                        // 0x10C0(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FTimerHandle                           LoopTimerHandle;                                   // 0x10C8(0x0018)(HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_10E0[0x18];                                    // 0x10E0(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void ChangeContainerState();
@@ -172,11 +172,11 @@ public:
 };
 
 // Class Hero_1011.Ability_101171
-// 0x0008 (0x2588 - 0x2580)
+// 0x0008 (0x2590 - 0x2588)
 class UAbility_101171 : public UMarvelGameplayAbility
 {
 public:
-	class UMarvelAbilityTask_SelectTarget*        SelectTask;                                        // 0x2580(0x0008)(ZeroConstructor, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UMarvelAbilityTask_SelectTarget*        SelectTask;                                        // 0x2588(0x0008)(ZeroConstructor, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 
 public:
 	struct FVector CalcSmashLocation(const class AActor* TargetActor, class AMarvelBaseCharacter* OutHulk);
@@ -247,18 +247,18 @@ public:
 };
 
 // Class Hero_1011.EffectAbility_101171
-// 0x0030 (0x1128 - 0x10F8)
+// 0x0030 (0x1130 - 0x1100)
 class UEffectAbility_101171 : public UMarvelEffectGameplayAbility
 {
 public:
-	int32                                         InstigatorAbilityId;                               // 0x10F8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_10FC[0x4];                                     // 0x10FC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class AActor*                                 OwnerCharacter;                                    // 0x1100(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class USkeletalMeshComponent*                 OwnerCharacterMesh;                                // 0x1108(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class AMarvelBaseCharacter*                   InstigatorCharacter;                               // 0x1110(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class USkeletalMeshComponent*                 InstigatorCharacterMesh;                           // 0x1118(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIsReadyToSmash;                                   // 0x1120(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1121[0x7];                                     // 0x1121(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	int32                                         InstigatorAbilityId;                               // 0x1100(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1104[0x4];                                     // 0x1104(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class AActor*                                 OwnerCharacter;                                    // 0x1108(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class USkeletalMeshComponent*                 OwnerCharacterMesh;                                // 0x1110(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AMarvelBaseCharacter*                   InstigatorCharacter;                               // 0x1118(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class USkeletalMeshComponent*                 InstigatorCharacterMesh;                           // 0x1120(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsReadyToSmash;                                   // 0x1128(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1129[0x7];                                     // 0x1129(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -308,14 +308,14 @@ public:
 };
 
 // Class Hero_1011.Ability_101191
-// 0x00B8 (0x2650 - 0x2598)
+// 0x00B8 (0x2658 - 0x25A0)
 class UAbility_101191 : public UMarvelAbility_LongPressTrigger
 {
 public:
-	class UHulkBannerMoveLogicBaseComponent*      MoveLogicCom;                                      // 0x2598(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class AMarvelBaseCharacter*                   OwnerCharacter;                                    // 0x25A0(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FPredictionKey                         LaunchKey;                                         // 0x25A8(0x00A0)(HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UMarvelBaseAbilitySystemComponent*      ASC;                                               // 0x2648(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UHulkBannerMoveLogicBaseComponent*      MoveLogicCom;                                      // 0x25A0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AMarvelBaseCharacter*                   OwnerCharacter;                                    // 0x25A8(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FPredictionKey                         LaunchKey;                                         // 0x25B0(0x00A0)(HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UMarvelBaseAbilitySystemComponent*      ASC;                                               // 0x2650(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void K2_OnShiftJumpLaunched();
@@ -377,32 +377,32 @@ public:
 };
 
 // Class Hero_1011.UIController_101191
-// 0x0120 (0x0D80 - 0x0C60)
+// 0x0120 (0x0D70 - 0x0C50)
 class UUIController_101191 : public UUIC_Ability
 {
 public:
-	struct FTimerHandle                           LoopSetChargePerTimerHandle;                       // 0x0C60(0x0018)(HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FCueHintData                           HintData;                                          // 0x0C78(0x0098)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	class UWidget_AbilityEnergy*                  WidgetAbilityEnergyRight;                          // 0x0D10(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class AHulkBannerCharacter*                   HulkBannerChar;                                    // 0x0D18(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UHulkBannerMoveLogicBaseComponent*      MoveLogic;                                         // 0x0D20(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MinChargeHulk;                                     // 0x0D28(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MaxChargeHulk;                                     // 0x0D2C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MinChargeMonster;                                  // 0x0D30(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MaxChargeMonster;                                  // 0x0D34(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UMarvelGameplayAbility*                 Ability101191;                                     // 0x0D38(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UMarvelGameplayAbility*                 Ability101193;                                     // 0x0D40(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIsCharge;                                         // 0x0D48(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIsClimbing;                                       // 0x0D49(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIsHanging;                                        // 0x0D4A(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bHasShowHint;                                      // 0x0D4B(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bHasInitHulkParam;                                 // 0x0D4C(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bHasInitMonsterParam;                              // 0x0D4D(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_D4E[0x2];                                      // 0x0D4E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	class UMarvelUserWidget*                      WidgetTipLeft;                                     // 0x0D50(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UMarvelUserWidget*                      WidgetTipRight;                                    // 0x0D58(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UWidget_AbilityStatusPanel*             AbilityPanel;                                      // 0x0D60(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FTimerHandle                           LoopCheckTipsAndHintTimerHandle;                   // 0x0D68(0x0018)(HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FTimerHandle                           LoopSetChargePerTimerHandle;                       // 0x0C50(0x0018)(HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FCueHintData                           HintData;                                          // 0x0C68(0x0098)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	class UWidget_AbilityEnergy*                  WidgetAbilityEnergyRight;                          // 0x0D00(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AHulkBannerCharacter*                   HulkBannerChar;                                    // 0x0D08(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UHulkBannerMoveLogicBaseComponent*      MoveLogic;                                         // 0x0D10(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MinChargeHulk;                                     // 0x0D18(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MaxChargeHulk;                                     // 0x0D1C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MinChargeMonster;                                  // 0x0D20(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MaxChargeMonster;                                  // 0x0D24(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UMarvelGameplayAbility*                 Ability101191;                                     // 0x0D28(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UMarvelGameplayAbility*                 Ability101193;                                     // 0x0D30(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsCharge;                                         // 0x0D38(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsClimbing;                                       // 0x0D39(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsHanging;                                        // 0x0D3A(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bHasShowHint;                                      // 0x0D3B(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bHasInitHulkParam;                                 // 0x0D3C(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bHasInitMonsterParam;                              // 0x0D3D(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D3E[0x2];                                      // 0x0D3E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	class UMarvelUserWidget*                      WidgetTipLeft;                                     // 0x0D40(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UMarvelUserWidget*                      WidgetTipRight;                                    // 0x0D48(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UWidget_AbilityStatusPanel*             AbilityPanel;                                      // 0x0D50(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FTimerHandle                           LoopCheckTipsAndHintTimerHandle;                   // 0x0D58(0x0018)(HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	bool CanGetAbility();
@@ -470,7 +470,7 @@ public:
 };
 
 // Class Hero_1011.MovableSplineMeshComponent
-// 0x0000 (0x0A30 - 0x0A30)
+// 0x0000 (0x0AC0 - 0x0AC0)
 class UMovableSplineMeshComponent final : public USplineMeshComponent
 {
 public:
@@ -505,21 +505,22 @@ public:
 };
 
 // Class Hero_1011.Ability_101192
-// 0x0120 (0x26A0 - 0x2580)
+// 0x0128 (0x26B0 - 0x2588)
 class UAbility_101192 : public UMarvelGameplayAbility
 {
 public:
-	class UHulkBannerMoveLogicBaseComponent*      MoveLogicCom;                                      // 0x2580(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class AMarvelBaseCharacter*                   OwnerCharacter;                                    // 0x2588(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UConfigHulkClimb*                       ClimbConfig;                                       // 0x2590(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                ClimbLocation;                                     // 0x2598(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FQuat                                  ClimbOrient;                                       // 0x25B0(0x0020)(IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_25D0[0x8];                                     // 0x25D0(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTimerHandle                           WaitTimeOutTimer;                                  // 0x25D8(0x0018)(HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FPredictionKey                         LeaveClimbKey;                                     // 0x25F0(0x00A0)(HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bNeedCheckKey;                                     // 0x2690(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bClimbKeyDown;                                     // 0x2691(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_2692[0xE];                                     // 0x2692(0x000E)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class UHulkBannerMoveLogicBaseComponent*      MoveLogicCom;                                      // 0x2588(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AMarvelBaseCharacter*                   OwnerCharacter;                                    // 0x2590(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UConfigHulkClimb*                       ClimbConfig;                                       // 0x2598(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                ClimbLocation;                                     // 0x25A0(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_25B8[0x8];                                     // 0x25B8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FQuat                                  ClimbOrient;                                       // 0x25C0(0x0020)(IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_25E0[0x8];                                     // 0x25E0(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTimerHandle                           WaitTimeOutTimer;                                  // 0x25E8(0x0018)(HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FPredictionKey                         LeaveClimbKey;                                     // 0x2600(0x00A0)(HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bNeedCheckKey;                                     // 0x26A0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bClimbKeyDown;                                     // 0x26A1(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_26A2[0xE];                                     // 0x26A2(0x000E)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	bool CanActivateClimb();
@@ -541,15 +542,15 @@ public:
 };
 
 // Class Hero_1011.Ability_101198
-// 0x0018 (0x25F8 - 0x25E0)
+// 0x0018 (0x2600 - 0x25E8)
 class UAbility_101198 : public UAbility_100016
 {
 public:
-	EAbilityState_101198                          CurrentAbilityState;                               // 0x25E0(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EAbilityState_101198                          LastAbilityState;                                  // 0x25E1(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_25E2[0x6];                                     // 0x25E2(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	class AMarvelBaseCharacter*                   OwnerChar;                                         // 0x25E8(0x0008)(BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UMarvelAbilityTask_PlayMontageAndWaitForEvent* TimelineTask;                                      // 0x25F0(0x0008)(BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EAbilityState_101198                          CurrentAbilityState;                               // 0x25E8(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EAbilityState_101198                          LastAbilityState;                                  // 0x25E9(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_25EA[0x6];                                     // 0x25EA(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class AMarvelBaseCharacter*                   OwnerChar;                                         // 0x25F0(0x0008)(BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UMarvelAbilityTask_PlayMontageAndWaitForEvent* TimelineTask;                               // 0x25F8(0x0008)(BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void SwitchTimelineTask(const class FName& SectionName);
@@ -746,33 +747,32 @@ public:
 };
 
 // Class Hero_1011.HulkBannerCharacter
-// 0x00B0 (0x18C0 - 0x1810)
+// 0x00A0 (0x1910 - 0x1870)
 class AHulkBannerCharacter : public AMarvelBaseCharacter
 {
 public:
-	bool                                          bNeedResetRoolbackInfo;                            // 0x1810(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1811[0x7];                                     // 0x1811(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TMulticastInlineDelegate<void()>              OnRecoverBuffApplyFailedDelegate;                  // 0x1818(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	struct FGameplayTag                           BannaerTag;                                        // 0x1828(0x000C)(Edit, DisableEditOnInstance, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FGameplayTag                           HeroHulkTag;                                       // 0x1834(0x000C)(Edit, DisableEditOnInstance, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FGameplayTag                           MonsterHulkTag;                                    // 0x1840(0x000C)(Edit, DisableEditOnInstance, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FGameplayTag                           MorphTag;                                          // 0x184C(0x000C)(Edit, DisableEditOnInstance, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	int32                                         HeroToBannerID;                                    // 0x1858(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	int32                                         MonsterToHeroID;                                   // 0x185C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	int32                                         MonsterToBannerID;                                 // 0x1860(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	int32                                         BannerSculptAbility;                               // 0x1864(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         ServerStartSmashTime;                              // 0x1868(0x0004)(Net, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	int32                                         PreviousSculptID;                                  // 0x186C(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bIsRecoverBuffApplyFailed;                         // 0x1870(0x0001)(Net, ZeroConstructor, Transient, IsPlainOldData, RepNotify, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_1871[0x3];                                     // 0x1871(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         EnergyRegenStartTime;                              // 0x1874(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_1878[0x8];                                     // 0x1878(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	class UHulkBannerMoveLogicBaseComponent*      HulkBannerMoveLogic;                               // 0x1880(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class UMarvelMultiCapsuleComponent*           SynergyExtraCapsuleComponent;                      // 0x1888(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FGameplayTag                           SynergyRideTag;                                    // 0x1890(0x000C)(Edit, DisableEditOnInstance, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_189C[0x4];                                     // 0x189C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                SynergyExtraCapsuleRelativeLocation;               // 0x18A0(0x0018)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_18B8[0x8];                                     // 0x18B8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	bool                                          bNeedResetRoolbackInfo;                            // 0x1868(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1869[0x7];                                     // 0x1869(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TMulticastInlineDelegate<void()>              OnRecoverBuffApplyFailedDelegate;                  // 0x1870(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	struct FGameplayTag                           BannaerTag;                                        // 0x1880(0x000C)(Edit, DisableEditOnInstance, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FGameplayTag                           HeroHulkTag;                                       // 0x188C(0x000C)(Edit, DisableEditOnInstance, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FGameplayTag                           MonsterHulkTag;                                    // 0x1898(0x000C)(Edit, DisableEditOnInstance, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FGameplayTag                           MorphTag;                                          // 0x18A4(0x000C)(Edit, DisableEditOnInstance, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	int32                                         HeroToBannerID;                                    // 0x18B0(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	int32                                         MonsterToHeroID;                                   // 0x18B4(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	int32                                         MonsterToBannerID;                                 // 0x18B8(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	int32                                         BannerSculptAbility;                               // 0x18BC(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         ServerStartSmashTime;                              // 0x18C0(0x0004)(Net, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	int32                                         PreviousSculptID;                                  // 0x18C4(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bIsRecoverBuffApplyFailed;                         // 0x18C8(0x0001)(Net, ZeroConstructor, Transient, IsPlainOldData, RepNotify, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_18C9[0x3];                                     // 0x18C9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         EnergyRegenStartTime;                              // 0x18CC(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_18D0[0x8];                                     // 0x18D0(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	class UHulkBannerMoveLogicBaseComponent*      HulkBannerMoveLogic;                               // 0x18D8(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UMarvelMultiCapsuleComponent*           SynergyExtraCapsuleComponent;                      // 0x18E0(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FGameplayTag                           SynergyRideTag;                                    // 0x18E8(0x000C)(Edit, DisableEditOnInstance, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_18F4[0x4];                                     // 0x18F4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                SynergyExtraCapsuleRelativeLocation;               // 0x18F8(0x0018)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 
 public:
 	float GetServerStartSmashTime();
@@ -849,7 +849,7 @@ public:
 };
 
 // Class Hero_1011.HulkBannerAudioComponent
-// 0x0000 (0x0C90 - 0x0C90)
+// 0x0000 (0x0C80 - 0x0C80)
 class UHulkBannerAudioComponent final : public UCharacterAudioComponent
 {
 public:
@@ -972,7 +972,7 @@ public:
 };
 
 // Class Hero_1011.HulkCharacterMovementComponent
-// 0x0000 (0x1B60 - 0x1B60)
+// 0x0000 (0x1BA0 - 0x1BA0)
 class UHulkCharacterMovementComponent final : public UMarvelCharacterMovementComponent
 {
 public:

@@ -18,11 +18,11 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Ability_102253_BP.Ability_102253_BP_C
-// 0x0008 (0x2778 - 0x2770)
+// 0x0008 (0x2780 - 0x2778)
 class UAbility_102253_BP_C final : public UMarvelAbility_Airdrop
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x2770(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x2778(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
 	void ExecuteUbergraph_Ability_102253_BP(int32 EntryPoint);

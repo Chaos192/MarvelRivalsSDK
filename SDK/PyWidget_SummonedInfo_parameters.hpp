@@ -16,78 +16,6 @@
 namespace SDK::Params
 {
 
-// PythonFunction PyWidget_SummonedInfo.PyWidget_SummonedNum.SetTotalNumCur
-// 0x0004 (0x0004 - 0x0000)
-struct PyWidget_SummonedNum_SetTotalNumCur final
-{
-public:
-	int32                                         InTotalNumCur;                                     // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-
-// PythonFunction PyWidget_SummonedInfo.PyWidget_SummonedNum.SetTotalNumMax
-// 0x0004 (0x0004 - 0x0000)
-struct PyWidget_SummonedNum_SetTotalNumMax final
-{
-public:
-	int32                                         InTotalNumMax;                                     // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-
-// PythonFunction PyWidget_SummonedInfo.PyWidget_SummonedNum.SetSummonedDesc
-// 0x0018 (0x0018 - 0x0000)
-struct PyWidget_SummonedNum_SetSummonedDesc final
-{
-public:
-	class FText                                   InDesc;                                            // 0x0000(0x0018)(Parm)
-};
-
-// PythonFunction PyWidget_SummonedInfo.PyWidget_SummonedNum.SetStyle
-// 0x0030 (0x0030 - 0x0000)
-struct PyWidget_SummonedNum_SetStyle final
-{
-public:
-	struct FWidgetStyle_HealthBar_BattlePanel     WidgetStyle;                                       // 0x0000(0x0030)(ConstParm, Parm, OutParm, ReferenceParm)
-};
-
-// PythonFunction PyWidget_SummonedInfo.PyWidget_SummonedNum.SetIcon
-// 0x0030 (0x0030 - 0x0000)
-struct PyWidget_SummonedNum_SetIcon final
-{
-public:
-	TSoftObjectPtr<class UTexture2D>              InIcon;                                            // 0x0000(0x0030)(Parm, UObjectWrapper, HasGetValueTypeHash)
-};
-
-// PythonFunction PyWidget_SummonedInfo.PyWidget_SummonedHpBar.SetTotalHpCur
-// 0x0004 (0x0004 - 0x0000)
-struct PyWidget_SummonedHpBar_SetTotalHpCur final
-{
-public:
-	float                                         InTotalHpCur;                                      // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-
-// PythonFunction PyWidget_SummonedInfo.PyWidget_SummonedHpBar.SetSummonedDesc
-// 0x0018 (0x0018 - 0x0000)
-struct PyWidget_SummonedHpBar_SetSummonedDesc final
-{
-public:
-	class FText                                   InDesc;                                            // 0x0000(0x0018)(Parm)
-};
-
-// PythonFunction PyWidget_SummonedInfo.PyWidget_SummonedHpBar.SetStyle
-// 0x0030 (0x0030 - 0x0000)
-struct PyWidget_SummonedHpBar_SetStyle final
-{
-public:
-	struct FWidgetStyle_HealthBar_BattlePanel     WidgetStyle;                                       // 0x0000(0x0030)(ConstParm, Parm, OutParm, ReferenceParm)
-};
-
-// PythonFunction PyWidget_SummonedInfo.PyWidget_SummonedHpBar.SetIcon
-// 0x0030 (0x0030 - 0x0000)
-struct PyWidget_SummonedHpBar_SetIcon final
-{
-public:
-	TSoftObjectPtr<class UTexture2D>              InIcon;                                            // 0x0000(0x0030)(Parm, UObjectWrapper, HasGetValueTypeHash)
-};
-
 // PythonFunction PyWidget_SummonedInfo.PyWidget_SummonedInfo.SetIsHp
 // 0x0001 (0x0001 - 0x0000)
 struct PyWidget_SummonedInfo_SetIsHp final
@@ -230,6 +158,78 @@ struct PyWidget_SummonedInfoPanel_MarvelSetVisible final
 {
 public:
 	bool                                          Visible;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+
+// PythonFunction PyWidget_SummonedInfo.PyWidget_SummonedNum.SetTotalNumCur
+// 0x0004 (0x0004 - 0x0000)
+struct PyWidget_SummonedNum_SetTotalNumCur final
+{
+public:
+	int32                                         InTotalNumCur;                                     // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+
+// PythonFunction PyWidget_SummonedInfo.PyWidget_SummonedNum.SetTotalNumMax
+// 0x0004 (0x0004 - 0x0000)
+struct PyWidget_SummonedNum_SetTotalNumMax final
+{
+public:
+	int32                                         InTotalNumMax;                                     // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+
+// PythonFunction PyWidget_SummonedInfo.PyWidget_SummonedNum.SetSummonedDesc
+// 0x0018 (0x0018 - 0x0000)
+struct PyWidget_SummonedNum_SetSummonedDesc final
+{
+public:
+	class FText                                   InDesc;                                            // 0x0000(0x0018)(Parm)
+};
+
+// PythonFunction PyWidget_SummonedInfo.PyWidget_SummonedNum.SetStyle
+// 0x0030 (0x0030 - 0x0000)
+struct PyWidget_SummonedNum_SetStyle final
+{
+public:
+	struct FWidgetStyle_HealthBar_BattlePanel     WidgetStyle;                                       // 0x0000(0x0030)(ConstParm, Parm, OutParm, ReferenceParm)
+};
+
+// PythonFunction PyWidget_SummonedInfo.PyWidget_SummonedNum.SetIcon
+// 0x0030 (0x0030 - 0x0000)
+struct PyWidget_SummonedNum_SetIcon final
+{
+public:
+	TSoftObjectPtr<class UTexture2D>              InIcon;                                            // 0x0000(0x0030)(Parm, UObjectWrapper, HasGetValueTypeHash)
+};
+
+// PythonFunction PyWidget_SummonedInfo.PyWidget_SummonedHpBar.SetTotalHpCur
+// 0x0004 (0x0004 - 0x0000)
+struct PyWidget_SummonedHpBar_SetTotalHpCur final
+{
+public:
+	float                                         InTotalHpCur;                                      // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+
+// PythonFunction PyWidget_SummonedInfo.PyWidget_SummonedHpBar.SetSummonedDesc
+// 0x0018 (0x0018 - 0x0000)
+struct PyWidget_SummonedHpBar_SetSummonedDesc final
+{
+public:
+	class FText                                   InDesc;                                            // 0x0000(0x0018)(Parm)
+};
+
+// PythonFunction PyWidget_SummonedInfo.PyWidget_SummonedHpBar.SetStyle
+// 0x0030 (0x0030 - 0x0000)
+struct PyWidget_SummonedHpBar_SetStyle final
+{
+public:
+	struct FWidgetStyle_HealthBar_BattlePanel     WidgetStyle;                                       // 0x0000(0x0030)(ConstParm, Parm, OutParm, ReferenceParm)
+};
+
+// PythonFunction PyWidget_SummonedInfo.PyWidget_SummonedHpBar.SetIcon
+// 0x0030 (0x0030 - 0x0000)
+struct PyWidget_SummonedHpBar_SetIcon final
+{
+public:
+	TSoftObjectPtr<class UTexture2D>              InIcon;                                            // 0x0000(0x0030)(Parm, UObjectWrapper, HasGetValueTypeHash)
 };
 
 }

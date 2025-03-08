@@ -41,13 +41,14 @@ public:
 	float                                         CameraLengthMax;                                   // 0x04DC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         CameraLengthMin;                                   // 0x04E0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         DecalRaius;                                        // 0x04E4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(int32 NewState)> FogStateChangedDispatcher;                         // 0x04E8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(int32 NewState)> FogStateChangedDispatcher;                        // 0x04E8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 	TMulticastInlineDelegate<void()>              OnStopTakeEffect;                                  // 0x04F8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(bool Enable, class AActor* OtherActor)> ClientToggleBlindBuff;                             // 0x0508(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(bool Enable, class AActor* OtherActor)> ClientToggleBlindBuff;     // 0x0508(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 
 public:
 	void ReceiveInit();
 	void ReceiveBeginPlay();
+	void PostRewindForReplay();
 	void OnLevelStart();
 	void ReceiveTick(float DeltaSeconds);
 	void OnPlayerSpawn(class AMarvelPlayerState* PlayerState);

@@ -36,15 +36,15 @@ public:
 };
 
 // PythonClass PyAbility_102382.PySummoned_102382
-// 0x0020 (0x08B0 - 0x0890)
+// 0x0020 (0x08E0 - 0x08C0)
 #pragma pack(push, 0x1)
 class alignas(0x10) APySummoned_102382 : public AMarvelSummonerBase
 {
 public:
-	float                                         InitialSpeed;                                      // 0x0890(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIsLanded;                                         // 0x0894(0x0001)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_895[0x3];                                      // 0x0895(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	TMulticastInlineDelegate<void()>              OnLand;                                            // 0x0898(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	float                                         InitialSpeed;                                      // 0x08C0(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsLanded;                                         // 0x08C4(0x0001)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_8C5[0x3];                                      // 0x08C5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	TMulticastInlineDelegate<void()>              OnLand;                                            // 0x08C8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 
 public:
 	void ReceiveBeginPlay();

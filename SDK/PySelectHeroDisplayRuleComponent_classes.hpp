@@ -18,7 +18,7 @@ namespace SDK
 {
 
 // PythonClass PySelectHeroDisplayRuleComponent.PySelectHeroDisplayConfig
-// 0x0028 (0x0058 - 0x0030)
+// 0x0078 (0x00A8 - 0x0030)
 class UPySelectHeroDisplayConfig final : public UMarvelRuleConfig
 {
 public:
@@ -32,6 +32,8 @@ public:
 	uint8                                         Pad_37[0x1];                                       // 0x0037(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
 	class FText                                   SelectHeroTipsOverride;                            // 0x0038(0x0018)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	int32                                         MaxSelectHeroPlayersLimit;                         // 0x0050(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_54[0x4];                                       // 0x0054(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<int32, class FText>                      PreviewHeroTips;                                   // 0x0058(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -45,7 +47,7 @@ public:
 };
 
 // PythonClass PySelectHeroDisplayRuleComponent.PySelectHeroDisplayRuleComponent
-// 0x0028 (0x0118 - 0x00F0)
+// 0x0078 (0x0168 - 0x00F0)
 class UPySelectHeroDisplayRuleComponent final : public UPyRuleComponent
 {
 public:
@@ -59,6 +61,8 @@ public:
 	uint8                                         Pad_F7[0x1];                                       // 0x00F7(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
 	class FText                                   SelectHeroTipsOverride;                            // 0x00F8(0x0018)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	int32                                         MaxSelectHeroPlayersLimit;                         // 0x0110(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_114[0x4];                                      // 0x0114(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<int32, class FText>                      PreviewHeroTips;                                   // 0x0118(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()

@@ -195,7 +195,7 @@ public:
 	class FName                                   SourceRetargetPoseName;                            // 0x0014(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bApplyChainSettings;                               // 0x0020(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<class FName, struct FTargetChainSettings> ChainSettings;                                     // 0x0028(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	TMap<class FName, struct FTargetChainSettings> ChainSettings;                                    // 0x0028(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	bool                                          bApplyRootSettings;                                // 0x0078(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_79[0x7];                                       // 0x0079(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FTargetRootSettings                    RootSettings;                                      // 0x0080(0x0068)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)

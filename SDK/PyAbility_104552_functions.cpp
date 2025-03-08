@@ -103,8 +103,8 @@ void UPyAbility_104552::K2_ActivateAbility()
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // class UGameplayAbility*                 Ability                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FMarvelAbilityHitParams          HitParams                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
-// TArray<struct FHitResult>               HitResults                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FMarvelAbilityHitParams&   HitParams                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
+// const TArray<struct FHitResult>&        HitResults                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyAbility_104552::OnAbilityHit(class UGameplayAbility* Ability, const struct FMarvelAbilityHitParams& HitParams, const TArray<struct FHitResult>& HitResults)
 {
@@ -151,7 +151,7 @@ void UPyAbility_104552::OnOwnerSummonedBeginAgentTask()
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // class UPrimitiveComponent*              TargetActorComponent                                   (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FVector                          HitPosition                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVector&                   HitPosition                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UPyAbility_104552::OnCommandOctopusEnhancedAttack(class UPrimitiveComponent* TargetActorComponent, const struct FVector& HitPosition)
 {

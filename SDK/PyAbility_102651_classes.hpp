@@ -18,7 +18,7 @@ namespace SDK
 {
 
 // PythonClass PyAbility_102651.PyAbility_102651
-// 0x0000 (0x2588 - 0x2588)
+// 0x0000 (0x2590 - 0x2590)
 class UPyAbility_102651 : public UAbility_108
 {
 public:
@@ -33,14 +33,15 @@ public:
 };
 
 // PythonClass PyAbility_102651.PyProjectile_10265101
-// 0x0FA0 (0x3FF0 - 0x3050)
+// 0x0FA0 (0x40B0 - 0x3110)
 class APyProjectile_10265101 : public AMarvelAbilityTargetActor_Projectile
 {
 public:
-	int32                                         ScopeId;                                           // 0x3050(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Offset;                                            // 0x3054(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_3058[0x8];                                     // 0x3058(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FMarvelAbilityTraceContext             TraceContext;                                      // 0x3060(0x0F90)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3108[0x8];                                     // 0x3108(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         ScopeId;                                           // 0x3110(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Offset;                                            // 0x3114(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3118[0x8];                                     // 0x3118(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FMarvelAbilityTraceContext             TraceContext;                                      // 0x3120(0x0F90)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NativeAccessSpecifierPublic)
 
 public:
 	void K2_OnBeginAgentTask();
@@ -82,7 +83,7 @@ public:
 };
 
 // PythonClass PyAbility_102651.PyUIController_102651
-// 0x0000 (0x0C60 - 0x0C60)
+// 0x0000 (0x0C50 - 0x0C50)
 class UPyUIController_102651 final : public UUIC_Ability
 {
 public:

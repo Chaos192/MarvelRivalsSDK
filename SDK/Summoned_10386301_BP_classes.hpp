@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Summoned_10386301_BP.Summoned_10386301_BP_C
-// 0x0000 (0x08A0 - 0x08A0)
+// 0x0000 (0x08D0 - 0x08D0)
 class ASummoned_10386301_BP_C final : public APySummoned_10386301
 {
 public:

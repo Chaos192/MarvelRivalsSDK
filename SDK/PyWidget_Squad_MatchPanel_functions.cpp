@@ -17,20 +17,110 @@
 namespace SDK
 {
 
-// PythonFunction PyWidget_Squad_MatchPanel.PyWidget_Squad_RecommendAIDifficulty.OnInitialized
+// PythonFunction PyWidget_Squad_MatchPanel.PyWidget_Squad_MatchPanel.OnInitialized
 // (BlueprintCosmetic, Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 
-void UPyWidget_Squad_RecommendAIDifficulty::OnInitialized()
+void UPyWidget_Squad_MatchPanel::OnInitialized()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PyWidget_Squad_RecommendAIDifficulty", "OnInitialized");
+		Func = Class->GetFunction("PyWidget_Squad_MatchPanel", "OnInitialized");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// PythonFunction PyWidget_Squad_MatchPanel.PyWidget_Squad_MatchPanel.Construct
+// (BlueprintCosmetic, Native, Event, Protected, BlueprintCallable, BlueprintEvent)
+
+void UPyWidget_Squad_MatchPanel::Construct()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyWidget_Squad_MatchPanel", "Construct");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// PythonFunction PyWidget_Squad_MatchPanel.PyWidget_Squad_MatchPanel.Destruct
+// (BlueprintCosmetic, Native, Event, Protected, BlueprintCallable, BlueprintEvent)
+
+void UPyWidget_Squad_MatchPanel::Destruct()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyWidget_Squad_MatchPanel", "Destruct");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// PythonFunction PyWidget_Squad_MatchPanel.PyWidget_Squad_MatchPanel.MarvelSetVisible
+// (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    Visible                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UPyWidget_Squad_MatchPanel::MarvelSetVisible(bool Visible)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyWidget_Squad_MatchPanel", "MarvelSetVisible");
+
+	Params::PyWidget_Squad_MatchPanel_MarvelSetVisible Parms{};
+
+	Parms.Visible = Visible;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// PythonFunction PyWidget_Squad_MatchPanel.PyWidget_Squad_MatchPanel.OnReceiveInputKey
+// (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const struct FKey&                      InKey                                                  (Parm, HasGetValueTypeHash)
+// const EInputEvent                       EventType                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UPyWidget_Squad_MatchPanel::OnReceiveInputKey(const struct FKey& InKey, const EInputEvent EventType)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyWidget_Squad_MatchPanel", "OnReceiveInputKey");
+
+	Params::PyWidget_Squad_MatchPanel_OnReceiveInputKey Parms{};
+
+	Parms.InKey = std::move(InKey);
+	Parms.EventType = EventType;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 }
@@ -165,7 +255,7 @@ void UPyWidget_Squad_MatchInfo_Card::MarvelSetVisible(bool Visible)
 // PythonFunction PyWidget_Squad_MatchPanel.PyWidget_Squad_MatchInfo_Card.OnAnimationFinished
 // (BlueprintCosmetic, Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UWidgetAnimation*                 Animation                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// const class UWidgetAnimation*           Animation                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 void UPyWidget_Squad_MatchInfo_Card::OnAnimationFinished(const class UWidgetAnimation* Animation)
 {
@@ -177,115 +267,6 @@ void UPyWidget_Squad_MatchInfo_Card::OnAnimationFinished(const class UWidgetAnim
 	Params::PyWidget_Squad_MatchInfo_Card_OnAnimationFinished Parms{};
 
 	Parms.Animation = Animation;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// PythonFunction PyWidget_Squad_MatchPanel.PyWidget_Squad_MatchPanel.OnInitialized
-// (BlueprintCosmetic, Native, Event, Protected, BlueprintCallable, BlueprintEvent)
-
-void UPyWidget_Squad_MatchPanel::OnInitialized()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PyWidget_Squad_MatchPanel", "OnInitialized");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// PythonFunction PyWidget_Squad_MatchPanel.PyWidget_Squad_MatchPanel.Construct
-// (BlueprintCosmetic, Native, Event, Protected, BlueprintCallable, BlueprintEvent)
-
-void UPyWidget_Squad_MatchPanel::Construct()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PyWidget_Squad_MatchPanel", "Construct");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// PythonFunction PyWidget_Squad_MatchPanel.PyWidget_Squad_MatchPanel.Destruct
-// (BlueprintCosmetic, Native, Event, Protected, BlueprintCallable, BlueprintEvent)
-
-void UPyWidget_Squad_MatchPanel::Destruct()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PyWidget_Squad_MatchPanel", "Destruct");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// PythonFunction PyWidget_Squad_MatchPanel.PyWidget_Squad_MatchPanel.MarvelSetVisible
-// (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                                    Visible                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UPyWidget_Squad_MatchPanel::MarvelSetVisible(bool Visible)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PyWidget_Squad_MatchPanel", "MarvelSetVisible");
-
-	Params::PyWidget_Squad_MatchPanel_MarvelSetVisible Parms{};
-
-	Parms.Visible = Visible;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// PythonFunction PyWidget_Squad_MatchPanel.PyWidget_Squad_MatchPanel.OnReceiveInputKey
-// (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// struct FKey                             InKey                                                  (Parm, HasGetValueTypeHash)
-// EInputEvent                             EventType                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UPyWidget_Squad_MatchPanel::OnReceiveInputKey(const struct FKey& InKey, const EInputEvent EventType)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PyWidget_Squad_MatchPanel", "OnReceiveInputKey");
-
-	Params::PyWidget_Squad_MatchPanel_OnReceiveInputKey Parms{};
-
-	Parms.InKey = std::move(InKey);
-	Parms.EventType = EventType;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -356,8 +337,8 @@ void UPyWidget_Squad_ModeSelectionBtn::Destruct()
 // PythonFunction PyWidget_Squad_MatchPanel.PyWidget_Squad_ModeSelectionBtn.OnReceiveInputKey
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FKey                             InKey                                                  (Parm, HasGetValueTypeHash)
-// EInputEvent                             EventType                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FKey&                      InKey                                                  (Parm, HasGetValueTypeHash)
+// const EInputEvent                       EventType                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UPyWidget_Squad_ModeSelectionBtn::OnReceiveInputKey(const struct FKey& InKey, const EInputEvent EventType)
 {
@@ -400,6 +381,25 @@ void UPyWidget_Squad_ModeSelectionBtn::OnSoftTextureLoad(class UObject* Texture)
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// PythonFunction PyWidget_Squad_MatchPanel.PyWidget_Squad_RecommendAIDifficulty.OnInitialized
+// (BlueprintCosmetic, Native, Event, Protected, BlueprintCallable, BlueprintEvent)
+
+void UPyWidget_Squad_RecommendAIDifficulty::OnInitialized()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyWidget_Squad_RecommendAIDifficulty", "OnInitialized");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
 }
@@ -534,7 +534,7 @@ void UPyWidget_Squad_MatchInfo::MarvelSetVisible(bool Visible)
 // PythonFunction PyWidget_Squad_MatchPanel.PyWidget_Squad_MatchInfo.OnAnimationFinished
 // (BlueprintCosmetic, Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UWidgetAnimation*                 Animation                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// const class UWidgetAnimation*           Animation                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 void UPyWidget_Squad_MatchInfo::OnAnimationFinished(const class UWidgetAnimation* Animation)
 {

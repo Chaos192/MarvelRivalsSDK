@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass 1048_CharacterBP.1048_CharacterBP_C
-// 0x0000 (0x1830 - 0x1830)
+// 0x0000 (0x1890 - 0x1890)
 class AOne048_CharacterBP_C final : public APyPsylockeCharacter
 {
 public:

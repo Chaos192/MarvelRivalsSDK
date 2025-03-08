@@ -21,7 +21,7 @@ namespace SDK
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // int32                                   round_played_idx                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash)
 // int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 int32 APyMarvelGameState::GetRoundLegacyInfoInt(int32 round_played_idx, const class FString& Name_0)
@@ -366,7 +366,7 @@ void APyMarvelGameState::BroadcastUpvoteOther(int32 Source_UID, int32 Target_UID
 // PythonFunction PyMarvelGameState.PyMarvelGameState.server_notify_ds_traceback
 // (Net, NetReliable, Native, NetMulticast, Public, BlueprintCallable)
 // Parameters:
-// class FString                           Content                                                (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Content                                                (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void APyMarvelGameState::server_notify_ds_traceback(const class FString& Content)
 {
@@ -498,7 +498,7 @@ TArray<int32> APyMarvelGameState::GetOnlinePlayerUids()
 // PythonFunction PyMarvelGameState.PyMarvelGameState.IsInBorder
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FVector                          InLocation                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVector&                   InLocation                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 bool APyMarvelGameState::IsInBorder(const struct FVector& InLocation)
@@ -602,7 +602,7 @@ void APyMarvelGameState::OnRep_SimpleStatClientMs()
 // PythonFunction PyMarvelGameState.PyMarvelGameState.NetMultiCastReceiveBattleResult
 // (Net, Native, NetMulticast, Public, BlueprintCallable)
 // Parameters:
-// class FString                           battle_result                                          (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    battle_result                                          (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void APyMarvelGameState::NetMultiCastReceiveBattleResult(const class FString& battle_result)
 {
@@ -627,7 +627,7 @@ void APyMarvelGameState::NetMultiCastReceiveBattleResult(const class FString& ba
 // PythonFunction PyMarvelGameState.PyMarvelGameState.NetMultiCastReceiveMVPChange
 // (Net, Native, NetMulticast, Public, BlueprintCallable)
 // Parameters:
-// class FString                           mvp_info                                               (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    mvp_info                                               (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void APyMarvelGameState::NetMultiCastReceiveMVPChange(const class FString& mvp_info)
 {

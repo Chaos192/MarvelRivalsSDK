@@ -10,16 +10,16 @@
 
 #include "Basic.hpp"
 
+#include "Marvel_structs.hpp"
 #include "PyAbility_133_classes.hpp"
 #include "Hero_1035_classes.hpp"
-#include "Marvel_structs.hpp"
 
 
 namespace SDK
 {
 
 // PythonClass PyAbility_103551.PyAbility_103551
-// 0x0000 (0x2828 - 0x2828)
+// 0x0000 (0x2830 - 0x2830)
 class UPyAbility_103551 : public UPyAbility_133
 {
 public:
@@ -34,7 +34,7 @@ public:
 };
 
 // PythonClass PyAbility_103551.PyProjectile_10355101
-// 0x0000 (0x3050 - 0x3050)
+// 0x0000 (0x3110 - 0x3110)
 class APyProjectile_10355101 final : public APyProjectile_13301
 {
 public:

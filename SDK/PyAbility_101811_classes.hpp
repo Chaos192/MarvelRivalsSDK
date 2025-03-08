@@ -21,14 +21,14 @@ namespace SDK
 {
 
 // PythonClass PyAbility_101811.PyProjectile_10181111
-// 0x0040 (0x30E0 - 0x30A0)
+// 0x0040 (0x31A0 - 0x3160)
 class APyProjectile_10181111 final : public AProjectile_101811
 {
 public:
-	int32                                         ProjectileIndex;                                   // 0x30A0(0x0004)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_30A4[0x4];                                     // 0x30A4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                AimStartReplicated;                                // 0x30A8(0x0018)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                AimDirectionReplicated;                            // 0x30C0(0x0018)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ProjectileIndex;                                   // 0x3160(0x0004)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3164[0x4];                                     // 0x3164(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                AimStartReplicated;                                // 0x3168(0x0018)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                AimDirectionReplicated;                            // 0x3180(0x0018)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void K2_OnInitializeData();
@@ -68,7 +68,7 @@ public:
 };
 
 // PythonClass PyAbility_101811.PyAbility_101811
-// 0x0000 (0x2588 - 0x2588)
+// 0x0000 (0x2590 - 0x2590)
 class UPyAbility_101811 : public UAbility_108
 {
 public:

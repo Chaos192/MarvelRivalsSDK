@@ -559,7 +559,7 @@ public:
 	bool                                          bRegisteredComponentTemplate;                      // 0x00A8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_A9[0x7];                                       // 0x00A9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 SourceName;                                        // 0x00B0(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMap<struct FHoudiniOutputObjectIdentifier, struct FHoudiniAssetBlueprintOutput> Outputs;                                           // 0x00C0(0x0050)(NativeAccessSpecifierPublic)
+	TMap<struct FHoudiniOutputObjectIdentifier, struct FHoudiniAssetBlueprintOutput> Outputs;        // 0x00C0(0x0050)(NativeAccessSpecifierPublic)
 	TArray<class UHoudiniInput*>                  Inputs;                                            // 0x0110(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 };
 
@@ -751,7 +751,7 @@ public:
 struct FHoudiniBakedOutput final
 {
 public:
-	TMap<struct FHoudiniBakedOutputObjectIdentifier, struct FHoudiniBakedOutputObject> BakedOutputObjects;                                // 0x0000(0x0050)(NativeAccessSpecifierPublic)
+	TMap<struct FHoudiniBakedOutputObjectIdentifier, struct FHoudiniBakedOutputObject> BakedOutputObjects; // 0x0000(0x0050)(NativeAccessSpecifierPublic)
 };
 
 // ScriptStruct HoudiniEngineRuntime.OutputActorOwner

@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass ResurrectionAbility_10466101_BP.ResurrectionAbility_10466101_BP_C
-// 0x0000 (0x11A8 - 0x11A8)
+// 0x0000 (0x11B0 - 0x11B0)
 class UResurrectionAbility_10466101_BP_C final : public UPyResurrectionAbility_10466101
 {
 public:

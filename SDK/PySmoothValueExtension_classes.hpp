@@ -21,7 +21,7 @@ namespace SDK
 class UPySmoothChargePercentExtension final : public UMarvelUserWidgetExtension
 {
 public:
-	TMulticastInlineDelegate<void(float SmoothValue)> OnSmoothValueUpdated;                              // 0x0030(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(float SmoothValue)> OnSmoothValueUpdated;                          // 0x0030(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()

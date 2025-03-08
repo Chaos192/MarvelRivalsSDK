@@ -39,7 +39,7 @@ void UPyEffectiveComponent_10394101::K2_Initialize()
 // PythonFunction PyAbility_103941.PyEffectiveComponent_10394101.K2_OnPreApplyContainer
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<struct FHitResult>               HitResults                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const TArray<struct FHitResult>&        HitResults                                             (ConstParm, Parm, OutParm, ReferenceParm)
 // TArray<struct FHitResult>               ReturnValue                                            (Parm, OutParm, ReturnParm)
 
 TArray<struct FHitResult> UPyEffectiveComponent_10394101::K2_OnPreApplyContainer(const TArray<struct FHitResult>& HitResults)
@@ -130,7 +130,7 @@ void UPyAbility_103941::K2_ActivateAbility()
 // PythonFunction PyAbility_103941.PyAbility_103941.NativeOnSimulatedMontageEvent
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_103941::NativeOnSimulatedMontageEvent(const class FString& Tag)
 {
@@ -155,7 +155,7 @@ void UPyAbility_103941::NativeOnSimulatedMontageEvent(const class FString& Tag)
 // PythonFunction PyAbility_103941.PyAbility_103941.NativeOnMontageEvent
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_103941::NativeOnMontageEvent(const class FString& Tag)
 {
@@ -257,8 +257,8 @@ float UPyAbility_103941::GetCollideKnockDownDamage()
 // Parameters:
 // class AActor*                           SelfActor                                              (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // class AActor*                           OtherActor                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FVector                          NormalImpulse                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FHitResult                       Hit                                                    (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FVector&                   NormalImpulse                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FHitResult&                Hit                                                    (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyAbility_103941::OnActorHit(class AActor* SelfActor, class AActor* OtherActor, const struct FVector& NormalImpulse, const struct FHitResult& Hit)
 {
@@ -338,7 +338,7 @@ void UPyAbility_103941::OnPinnedDashFinish(EDashStopReason Reason)
 // Parameters:
 // class AActor*                           DamageCauser                                           (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // class AActor*                           TargetActor                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FAttributeModifierHandle         ParamHandle                                            (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
+// const struct FAttributeModifierHandle&  ParamHandle                                            (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
 
 void UPyAbility_103941::OnPinnedTargetDeath(class AActor* DamageCauser, class AActor* TargetActor, const struct FAttributeModifierHandle& ParamHandle)
 {
@@ -390,7 +390,7 @@ void UPyAbility_103941::OnPinnedTaskFinish(EDashStopReason Reason)
 // PythonFunction PyAbility_103941.PyAbility_103941.OnPinnedBuffRemove
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FGameplayEffectRemovalInfo       InGameplayEffectRemovalInfo                            (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayEffectRemovalInfo&InGameplayEffectRemovalInfo                            (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyAbility_103941::OnPinnedBuffRemove(const struct FGameplayEffectRemovalInfo& InGameplayEffectRemovalInfo)
 {
@@ -440,7 +440,7 @@ void UPyAbility_103941::K2_OnEndAbility(bool bWasCancelled)
 // PythonFunction PyAbility_103941.PyAbility_103941.NativeOnMontageCompleted
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_103941::NativeOnMontageCompleted(const class FString& Tag)
 {
@@ -465,7 +465,7 @@ void UPyAbility_103941::NativeOnMontageCompleted(const class FString& Tag)
 // PythonFunction PyAbility_103941.PyAbility_103941.NativeOnMontageInterrupted
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_103941::NativeOnMontageInterrupted(const class FString& Tag)
 {
@@ -617,7 +617,7 @@ void UPyWidget_Extra_ThorCharge::BeginMaxCharge()
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyCue_Ability_Loop_10394103::WhileActiveFX(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
 {
@@ -644,7 +644,7 @@ void APyCue_Ability_Loop_10394103::WhileActiveFX(class AActor* MyTarget, const s
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyCue_Ability_Loop_10394103::OnRemoveFX(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
 {
@@ -671,7 +671,7 @@ void APyCue_Ability_Loop_10394103::OnRemoveFX(class AActor* MyTarget, const stru
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyCue_Scope_HitImpact_10394101::OnExecuteCameraShake(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters) const
 {

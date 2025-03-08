@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Ability_NotTreatArmorFall.Ability_NotTreatArmorFall_C
-// 0x0000 (0x12B8 - 0x12B8)
+// 0x0000 (0x12C8 - 0x12C8)
 class UAbility_NotTreatArmorFall_C : public UAbility_NotTreatFall_C
 {
 public:

@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass NotTreatShield_102071_BP.NotTreatShield_102071_BP_C
-// 0x0000 (0x11F0 - 0x11F0)
+// 0x0000 (0x1200 - 0x1200)
 class UNotTreatShield_102071_BP_C final : public UMarvelTreatOverflowConvAbility
 {
 public:

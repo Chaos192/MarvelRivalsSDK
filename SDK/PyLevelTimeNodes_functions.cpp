@@ -21,7 +21,7 @@ namespace SDK
 // (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
 // class UObject*                          Instance                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class FString                           TimeName                                               (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    TimeName                                               (Parm, ZeroConstructor, HasGetValueTypeHash)
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 float UPyLevelTimeNodes::GetTimerElapsedTime(class UObject* Instance, const class FString& TimeName)
@@ -51,7 +51,7 @@ float UPyLevelTimeNodes::GetTimerElapsedTime(class UObject* Instance, const clas
 // (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
 // class UObject*                          Instance                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class FString                           TimeName                                               (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    TimeName                                               (Parm, ZeroConstructor, HasGetValueTypeHash)
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 float UPyLevelTimeNodes::GetTimerRemainingTime(class UObject* Instance, const class FString& TimeName)

@@ -12,8 +12,8 @@
 
 #include "Marvel_structs.hpp"
 #include "PyMarvelUserWidget_classes.hpp"
-#include "PyWidget_ModuleMainPanel_classes.hpp"
 #include "SlateCore_structs.hpp"
+#include "PyWidget_ModuleMainPanel_classes.hpp"
 
 
 namespace SDK

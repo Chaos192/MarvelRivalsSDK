@@ -20,7 +20,7 @@ namespace SDK
 // Function RemoteControl.RCVirtualPropertyBase.SetValueBool
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// bool                                    InBoolValue                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              InBoolValue                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool URCVirtualPropertyBase::SetValueBool(const bool InBoolValue)
@@ -48,7 +48,7 @@ bool URCVirtualPropertyBase::SetValueBool(const bool InBoolValue)
 // Function RemoteControl.RCVirtualPropertyBase.SetValueByte
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// uint8                                   InByte                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const uint8                             InByte                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool URCVirtualPropertyBase::SetValueByte(const uint8 InByte)
@@ -76,7 +76,7 @@ bool URCVirtualPropertyBase::SetValueByte(const uint8 InByte)
 // Function RemoteControl.RCVirtualPropertyBase.SetValueColor
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FColor                           InColor                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FColor&                    InColor                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool URCVirtualPropertyBase::SetValueColor(const struct FColor& InColor)
@@ -104,7 +104,7 @@ bool URCVirtualPropertyBase::SetValueColor(const struct FColor& InColor)
 // Function RemoteControl.RCVirtualPropertyBase.SetValueDouble
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// double                                  InDouble                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const double                            InDouble                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool URCVirtualPropertyBase::SetValueDouble(const double InDouble)
@@ -132,7 +132,7 @@ bool URCVirtualPropertyBase::SetValueDouble(const double InDouble)
 // Function RemoteControl.RCVirtualPropertyBase.SetValueFloat
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// float                                   InFloat                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             InFloat                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool URCVirtualPropertyBase::SetValueFloat(const float InFloat)
@@ -160,7 +160,7 @@ bool URCVirtualPropertyBase::SetValueFloat(const float InFloat)
 // Function RemoteControl.RCVirtualPropertyBase.SetValueInt16
 // (Final, Native, Public)
 // Parameters:
-// int16                                   InInt16                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int16                             InInt16                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool URCVirtualPropertyBase::SetValueInt16(const int16 InInt16)
@@ -188,7 +188,7 @@ bool URCVirtualPropertyBase::SetValueInt16(const int16 InInt16)
 // Function RemoteControl.RCVirtualPropertyBase.SetValueInt32
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// int32                                   InInt32                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int32                             InInt32                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool URCVirtualPropertyBase::SetValueInt32(const int32 InInt32)
@@ -216,7 +216,7 @@ bool URCVirtualPropertyBase::SetValueInt32(const int32 InInt32)
 // Function RemoteControl.RCVirtualPropertyBase.SetValueInt64
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// int64                                   InInt64                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int64                             InInt64                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool URCVirtualPropertyBase::SetValueInt64(const int64 InInt64)
@@ -244,7 +244,7 @@ bool URCVirtualPropertyBase::SetValueInt64(const int64 InInt64)
 // Function RemoteControl.RCVirtualPropertyBase.SetValueInt8
 // (Final, Native, Public)
 // Parameters:
-// int8                                    InInt8                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int8                              InInt8                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool URCVirtualPropertyBase::SetValueInt8(const int8 InInt8)
@@ -272,7 +272,7 @@ bool URCVirtualPropertyBase::SetValueInt8(const int8 InInt8)
 // Function RemoteControl.RCVirtualPropertyBase.SetValueName
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class FName                             InNameValue                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName&                      InNameValue                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool URCVirtualPropertyBase::SetValueName(const class FName& InNameValue)
@@ -300,7 +300,7 @@ bool URCVirtualPropertyBase::SetValueName(const class FName& InNameValue)
 // Function RemoteControl.RCVirtualPropertyBase.SetValueNumericInteger
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// int64                                   InInt64Value                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int64                             InInt64Value                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool URCVirtualPropertyBase::SetValueNumericInteger(const int64 InInt64Value)
@@ -328,7 +328,7 @@ bool URCVirtualPropertyBase::SetValueNumericInteger(const int64 InInt64Value)
 // Function RemoteControl.RCVirtualPropertyBase.SetValueRotator
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FRotator                         InRotator                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FRotator&                  InRotator                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool URCVirtualPropertyBase::SetValueRotator(const struct FRotator& InRotator)
@@ -356,7 +356,7 @@ bool URCVirtualPropertyBase::SetValueRotator(const struct FRotator& InRotator)
 // Function RemoteControl.RCVirtualPropertyBase.SetValueString
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FString                           InStringValue                                          (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    InStringValue                                          (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool URCVirtualPropertyBase::SetValueString(const class FString& InStringValue)
@@ -384,7 +384,7 @@ bool URCVirtualPropertyBase::SetValueString(const class FString& InStringValue)
 // Function RemoteControl.RCVirtualPropertyBase.SetValueText
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class FText                             InTextValue                                            (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const class FText&                      InTextValue                                            (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool URCVirtualPropertyBase::SetValueText(const class FText& InTextValue)
@@ -412,7 +412,7 @@ bool URCVirtualPropertyBase::SetValueText(const class FText& InTextValue)
 // Function RemoteControl.RCVirtualPropertyBase.SetValueUint16
 // (Final, Native, Public)
 // Parameters:
-// uint16                                  InUInt16                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const uint16                            InUInt16                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool URCVirtualPropertyBase::SetValueUint16(const uint16 InUInt16)
@@ -440,7 +440,7 @@ bool URCVirtualPropertyBase::SetValueUint16(const uint16 InUInt16)
 // Function RemoteControl.RCVirtualPropertyBase.SetValueUInt32
 // (Final, Native, Public)
 // Parameters:
-// uint32                                  InUInt32                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const uint32                            InUInt32                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool URCVirtualPropertyBase::SetValueUInt32(const uint32 InUInt32)
@@ -468,7 +468,7 @@ bool URCVirtualPropertyBase::SetValueUInt32(const uint32 InUInt32)
 // Function RemoteControl.RCVirtualPropertyBase.SetValueUint64
 // (Final, Native, Public)
 // Parameters:
-// uint64                                  InUInt64                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const uint64                            InUInt64                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool URCVirtualPropertyBase::SetValueUint64(const uint64 InUInt64)
@@ -496,7 +496,7 @@ bool URCVirtualPropertyBase::SetValueUint64(const uint64 InUInt64)
 // Function RemoteControl.RCVirtualPropertyBase.SetValueVector
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FVector                          InVector                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   InVector                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool URCVirtualPropertyBase::SetValueVector(const struct FVector& InVector)
@@ -574,7 +574,7 @@ class FName URCVirtualPropertyBase::GetPropertyName() const
 // Function RemoteControl.RCVirtualPropertyBase.GetValueBool
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// bool                                    OutBoolValue                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool*                                   OutBoolValue                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool URCVirtualPropertyBase::GetValueBool(bool* OutBoolValue) const
@@ -603,7 +603,7 @@ bool URCVirtualPropertyBase::GetValueBool(bool* OutBoolValue) const
 // Function RemoteControl.RCVirtualPropertyBase.GetValueByte
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// uint8                                   OutByte                                                (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// uint8*                                  OutByte                                                (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool URCVirtualPropertyBase::GetValueByte(uint8* OutByte) const
@@ -632,7 +632,7 @@ bool URCVirtualPropertyBase::GetValueByte(uint8* OutByte) const
 // Function RemoteControl.RCVirtualPropertyBase.GetValueColor
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// struct FColor                           OutColor                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FColor*                          OutColor                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool URCVirtualPropertyBase::GetValueColor(struct FColor* OutColor) const
@@ -661,7 +661,7 @@ bool URCVirtualPropertyBase::GetValueColor(struct FColor* OutColor) const
 // Function RemoteControl.RCVirtualPropertyBase.GetValueDouble
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// double                                  OutDouble                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// double*                                 OutDouble                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool URCVirtualPropertyBase::GetValueDouble(double* OutDouble) const
@@ -690,7 +690,7 @@ bool URCVirtualPropertyBase::GetValueDouble(double* OutDouble) const
 // Function RemoteControl.RCVirtualPropertyBase.GetValueFloat
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// float                                   OutFloat                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float*                                  OutFloat                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool URCVirtualPropertyBase::GetValueFloat(float* OutFloat) const
@@ -719,7 +719,7 @@ bool URCVirtualPropertyBase::GetValueFloat(float* OutFloat) const
 // Function RemoteControl.RCVirtualPropertyBase.GetValueInt16
 // (Final, Native, Public, HasOutParams, Const)
 // Parameters:
-// int16                                   OutInt16                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int16*                                  OutInt16                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool URCVirtualPropertyBase::GetValueInt16(int16* OutInt16) const
@@ -748,7 +748,7 @@ bool URCVirtualPropertyBase::GetValueInt16(int16* OutInt16) const
 // Function RemoteControl.RCVirtualPropertyBase.GetValueInt32
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// int32                                   OutInt32                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32*                                  OutInt32                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool URCVirtualPropertyBase::GetValueInt32(int32* OutInt32) const
@@ -777,7 +777,7 @@ bool URCVirtualPropertyBase::GetValueInt32(int32* OutInt32) const
 // Function RemoteControl.RCVirtualPropertyBase.GetValueInt64
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// int64                                   OuyInt64                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int64*                                  OuyInt64                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool URCVirtualPropertyBase::GetValueInt64(int64* OuyInt64) const
@@ -806,7 +806,7 @@ bool URCVirtualPropertyBase::GetValueInt64(int64* OuyInt64) const
 // Function RemoteControl.RCVirtualPropertyBase.GetValueInt8
 // (Final, Native, Public, HasOutParams, Const)
 // Parameters:
-// int8                                    OutInt8                                                (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int8*                                   OutInt8                                                (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool URCVirtualPropertyBase::GetValueInt8(int8* OutInt8) const
@@ -835,7 +835,7 @@ bool URCVirtualPropertyBase::GetValueInt8(int8* OutInt8) const
 // Function RemoteControl.RCVirtualPropertyBase.GetValueName
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// class FName                             OutNameValue                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FName*                            OutNameValue                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool URCVirtualPropertyBase::GetValueName(class FName* OutNameValue) const
@@ -864,7 +864,7 @@ bool URCVirtualPropertyBase::GetValueName(class FName* OutNameValue) const
 // Function RemoteControl.RCVirtualPropertyBase.GetValueNumericInteger
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// int64                                   OutInt64Value                                          (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int64*                                  OutInt64Value                                          (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool URCVirtualPropertyBase::GetValueNumericInteger(int64* OutInt64Value) const
@@ -918,7 +918,7 @@ class UObject* URCVirtualPropertyBase::GetValueObject() const
 // Function RemoteControl.RCVirtualPropertyBase.GetValueRotator
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// struct FRotator                         OutRotator                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// struct FRotator*                        OutRotator                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool URCVirtualPropertyBase::GetValueRotator(struct FRotator* OutRotator) const
@@ -947,7 +947,7 @@ bool URCVirtualPropertyBase::GetValueRotator(struct FRotator* OutRotator) const
 // Function RemoteControl.RCVirtualPropertyBase.GetValueString
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// class FString                           OutStringValue                                         (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString*                          OutStringValue                                         (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool URCVirtualPropertyBase::GetValueString(class FString* OutStringValue) const
@@ -976,7 +976,7 @@ bool URCVirtualPropertyBase::GetValueString(class FString* OutStringValue) const
 // Function RemoteControl.RCVirtualPropertyBase.GetValueText
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// class FText                             OutTextValue                                           (Parm, OutParm, NativeAccessSpecifierPublic)
+// class FText*                            OutTextValue                                           (Parm, OutParm, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool URCVirtualPropertyBase::GetValueText(class FText* OutTextValue) const
@@ -1005,7 +1005,7 @@ bool URCVirtualPropertyBase::GetValueText(class FText* OutTextValue) const
 // Function RemoteControl.RCVirtualPropertyBase.GetValueUint16
 // (Final, Native, Public, HasOutParams, Const)
 // Parameters:
-// uint16                                  OutUInt16                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// uint16*                                 OutUInt16                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool URCVirtualPropertyBase::GetValueUint16(uint16* OutUInt16) const
@@ -1034,7 +1034,7 @@ bool URCVirtualPropertyBase::GetValueUint16(uint16* OutUInt16) const
 // Function RemoteControl.RCVirtualPropertyBase.GetValueUInt32
 // (Final, Native, Public, HasOutParams, Const)
 // Parameters:
-// uint32                                  OutUInt32                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// uint32*                                 OutUInt32                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool URCVirtualPropertyBase::GetValueUInt32(uint32* OutUInt32) const
@@ -1063,7 +1063,7 @@ bool URCVirtualPropertyBase::GetValueUInt32(uint32* OutUInt32) const
 // Function RemoteControl.RCVirtualPropertyBase.GetValueUint64
 // (Final, Native, Public, HasOutParams, Const)
 // Parameters:
-// uint64                                  OuyUInt64                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// uint64*                                 OuyUInt64                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool URCVirtualPropertyBase::GetValueUint64(uint64* OuyUInt64) const
@@ -1092,7 +1092,7 @@ bool URCVirtualPropertyBase::GetValueUint64(uint64* OuyUInt64) const
 // Function RemoteControl.RCVirtualPropertyBase.GetValueVector
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// struct FVector                          OutVector                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVector*                         OutVector                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool URCVirtualPropertyBase::GetValueVector(struct FVector* OutVector) const
@@ -1146,7 +1146,7 @@ int32 URemoteControlDeltaAPITestObject::GetInt32WithSetterValue()
 // Function RemoteControl.RemoteControlDeltaAPITestObject.SetInt32WithSetterValue
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// int32                                   NewValue                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int32                             NewValue                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void URemoteControlDeltaAPITestObject::SetInt32WithSetterValue(const int32 NewValue)
 {
@@ -1172,9 +1172,9 @@ void URemoteControlDeltaAPITestObject::SetInt32WithSetterValue(const int32 NewVa
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // class UObject*                          TargetObject                                           (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           PropertyName                                           (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FColorGradingWheelColor          DeltaValue                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-// struct FColorGradingWheelColor          ReferenceColor                                         (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const class FString&                    PropertyName                                           (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FColorGradingWheelColor&   DeltaValue                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FColorGradingWheelColor&   ReferenceColor                                         (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // bool                                    bIsInteractive                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   MinValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   MaxValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -1212,9 +1212,9 @@ bool URemoteControlFunctionLibrary::ApplyColorGradingWheelDelta(class UObject* T
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // class UObject*                          TargetObject                                           (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           PropertyName                                           (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FColorWheelColor                 DeltaValue                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-// struct FColorWheelColor                 ReferenceColor                                         (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const class FString&                    PropertyName                                           (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FColorWheelColor&          DeltaValue                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FColorWheelColor&          ReferenceColor                                         (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // bool                                    bIsInteractive                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -1249,7 +1249,7 @@ bool URemoteControlFunctionLibrary::ApplyColorWheelDelta(class UObject* TargetOb
 // Parameters:
 // class URemoteControlPreset*             Preset                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           Actor                                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FRemoteControlOptionalExposeArgs Args                                                   (Parm, NativeAccessSpecifierPublic)
+// const struct FRemoteControlOptionalExposeArgs&Args                                                   (Parm, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool URemoteControlFunctionLibrary::ExposeActor(class URemoteControlPreset* Preset, class AActor* Actor, const struct FRemoteControlOptionalExposeArgs& Args)
@@ -1281,8 +1281,8 @@ bool URemoteControlFunctionLibrary::ExposeActor(class URemoteControlPreset* Pres
 // Parameters:
 // class URemoteControlPreset*             Preset                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UObject*                          SourceObject                                           (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           Function                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FRemoteControlOptionalExposeArgs Args                                                   (Parm, NativeAccessSpecifierPublic)
+// const class FString&                    Function                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FRemoteControlOptionalExposeArgs&Args                                                   (Parm, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool URemoteControlFunctionLibrary::ExposeFunction(class URemoteControlPreset* Preset, class UObject* SourceObject, const class FString& Function, const struct FRemoteControlOptionalExposeArgs& Args)
@@ -1315,8 +1315,8 @@ bool URemoteControlFunctionLibrary::ExposeFunction(class URemoteControlPreset* P
 // Parameters:
 // class URemoteControlPreset*             Preset                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UObject*                          SourceObject                                           (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           Property                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FRemoteControlOptionalExposeArgs Args                                                   (Parm, NativeAccessSpecifierPublic)
+// const class FString&                    Property                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FRemoteControlOptionalExposeArgs&Args                                                   (Parm, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool URemoteControlFunctionLibrary::ExposeProperty(class URemoteControlPreset* Preset, class UObject* SourceObject, const class FString& Property, const struct FRemoteControlOptionalExposeArgs& Args)
@@ -1347,7 +1347,7 @@ bool URemoteControlFunctionLibrary::ExposeProperty(class URemoteControlPreset* P
 // Function RemoteControl.RemoteControlInterceptionTestObject.TestFunction
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FRemoteControlInterceptionFunctionParamStructInStruct                                               (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FRemoteControlInterceptionFunctionParamStruct&InStruct                                               (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // int32                                   InTestFactor                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FRemoteControlInterceptionFunctionParamStructReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 

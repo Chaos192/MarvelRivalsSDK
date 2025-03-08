@@ -36,7 +36,7 @@ public:
 };
 
 // PythonClass PyAbility_101197.PyAbility_101197
-// 0x0000 (0x2BA8 - 0x2BA8)
+// 0x0000 (0x2C50 - 0x2C50)
 class UPyAbility_101197 : public UAbility_100015
 {
 public:

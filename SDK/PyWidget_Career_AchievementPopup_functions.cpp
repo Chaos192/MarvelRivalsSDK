@@ -127,7 +127,7 @@ void UPyWidget_Career_AchievementPopup::MarvelSetVisible(bool Visible)
 // PythonFunction PyWidget_Career_AchievementPopup.PyWidget_Career_AchievementPopup.OnAnimationFinished
 // (BlueprintCosmetic, Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UWidgetAnimation*                 Animation                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// const class UWidgetAnimation*           Animation                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 void UPyWidget_Career_AchievementPopup::OnAnimationFinished(const class UWidgetAnimation* Animation)
 {

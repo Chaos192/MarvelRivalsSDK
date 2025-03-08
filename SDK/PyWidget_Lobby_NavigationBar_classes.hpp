@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // PythonClass PyWidget_Lobby_NavigationBar.PyWidget_Lobby_NavigationBar
-// 0x0000 (0x0780 - 0x0780)
+// 0x0000 (0x0770 - 0x0770)
 class UPyWidget_Lobby_NavigationBar : public UPyWidget_Common_NavigationBar
 {
 public:

@@ -20,7 +20,7 @@ namespace SDK
 // Function CameraCalibrationCore.LensDistortionModelHandlerBase.SetDistortionState
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FLensDistortionState             InNewState                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FLensDistortionState&      InNewState                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 void ULensDistortionModelHandlerBase::SetDistortionState(const struct FLensDistortionState& InNewState)
 {
@@ -95,7 +95,7 @@ class UTextureRenderTarget2D* ULensDistortionModelHandlerBase::GetUndistortionDi
 // Function CameraCalibrationCore.LensDistortionModelHandlerBase.IsModelSupported
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// TSubclassOf<class ULensModel>           ModelToSupport                                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TSubclassOf<class ULensModel>&    ModelToSupport                                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool ULensDistortionModelHandlerBase::IsModelSupported(const TSubclassOf<class ULensModel>& ModelToSupport) const
@@ -142,7 +142,7 @@ void UCalibrationPointComponent::RebuildVertices()
 // Function CameraCalibrationCore.CalibrationPointComponent.GetNamespacedPointNames
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// TArray<class FString>                   OutNamespacedNames                                     (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+// TArray<class FString>*                  OutNamespacedNames                                     (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 
 void UCalibrationPointComponent::GetNamespacedPointNames(TArray<class FString>* OutNamespacedNames) const
 {
@@ -168,8 +168,8 @@ void UCalibrationPointComponent::GetNamespacedPointNames(TArray<class FString>* 
 // Function CameraCalibrationCore.CalibrationPointComponent.GetWorldLocation
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// class FString                           InPointName                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          OutLocation                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    InPointName                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVector*                         OutLocation                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UCalibrationPointComponent::GetWorldLocation(const class FString& InPointName, struct FVector* OutLocation) const
@@ -200,8 +200,8 @@ bool UCalibrationPointComponent::GetWorldLocation(const class FString& InPointNa
 // Function CameraCalibrationCore.CalibrationPointComponent.NamespacedSubpointName
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// class FString                           InSubpointName                                         (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           OutNamespacedName                                      (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    InSubpointName                                         (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString*                          OutNamespacedName                                      (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UCalibrationPointComponent::NamespacedSubpointName(const class FString& InSubpointName, class FString* OutNamespacedName) const
@@ -251,8 +251,8 @@ void ACameraCalibrationCheckerboard::Rebuild()
 // Function CameraCalibrationCore.CameraCalibrationSubsystem.FindOrCreateDistortionModelHandler
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FDistortionHandlerPicker         DistortionHandlerPicker                                (Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-// TSubclassOf<class ULensModel>           LensModelClass                                         (ConstParm, Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FDistortionHandlerPicker&        DistortionHandlerPicker                                (Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const TSubclassOf<class ULensModel>     LensModelClass                                         (ConstParm, Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class ULensDistortionModelHandlerBase*  ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class ULensDistortionModelHandlerBase* UCameraCalibrationSubsystem::FindOrCreateDistortionModelHandler(struct FDistortionHandlerPicker& DistortionHandlerPicker, const TSubclassOf<class ULensModel> LensModelClass)
@@ -363,7 +363,7 @@ void UCameraCalibrationSubsystem::UnregisterDistortionModelHandler(class UCineCa
 // Function CameraCalibrationCore.CameraCalibrationSubsystem.FindDistortionModelHandler
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// struct FDistortionHandlerPicker         DistortionHandlerPicker                                (Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// struct FDistortionHandlerPicker&        DistortionHandlerPicker                                (Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 // bool                                    bUpdatePicker                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class ULensDistortionModelHandlerBase*  ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -579,7 +579,7 @@ class ULensFile* UCameraCalibrationSubsystem::GetDefaultLensFile() const
 // Function CameraCalibrationCore.CameraCalibrationSubsystem.GetLensFile
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// struct FLensFilePicker                  Picker                                                 (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FLensFilePicker&           Picker                                                 (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // class ULensFile*                        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class ULensFile* UCameraCalibrationSubsystem::GetLensFile(const struct FLensFilePicker& Picker) const
@@ -607,7 +607,7 @@ class ULensFile* UCameraCalibrationSubsystem::GetLensFile(const struct FLensFile
 // Function CameraCalibrationCore.CameraCalibrationSubsystem.GetOverlayMaterial
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// class FName                             OverlayName                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName&                      OverlayName                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UMaterialInterface*               ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class UMaterialInterface* UCameraCalibrationSubsystem::GetOverlayMaterial(const class FName& OverlayName) const
@@ -788,7 +788,7 @@ void ULensComponent::SetApplyNodalOffsetOnTick(bool bApplyNodalOffset)
 // Function CameraCalibrationCore.LensComponent.SetCroppedFilmback
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// struct FCameraFilmbackSettings          Filmback                                               (Parm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FCameraFilmbackSettings&   Filmback                                               (Parm, NoDestructor, NativeAccessSpecifierPublic)
 
 void ULensComponent::SetCroppedFilmback(const struct FCameraFilmbackSettings& Filmback)
 {
@@ -838,7 +838,7 @@ void ULensComponent::SetDistortionSource(EDistortionSource Source)
 // Function CameraCalibrationCore.LensComponent.SetDistortionState
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// struct FLensDistortionState             State                                                  (Parm, NativeAccessSpecifierPublic)
+// const struct FLensDistortionState&      State                                                  (Parm, NativeAccessSpecifierPublic)
 
 void ULensComponent::SetDistortionState(const struct FLensDistortionState& State)
 {
@@ -938,7 +938,7 @@ void ULensComponent::SetLensFile(class ULensFile* LensFile)
 // Function CameraCalibrationCore.LensComponent.SetLensFilePicker
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// struct FLensFilePicker                  LensFile                                               (Parm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FLensFilePicker&           LensFile                                               (Parm, NoDestructor, NativeAccessSpecifierPublic)
 
 void ULensComponent::SetLensFilePicker(const struct FLensFilePicker& LensFile)
 {
@@ -1390,8 +1390,8 @@ bool ULensComponent::WasNodalOffsetAppliedThisTick() const
 // Parameters:
 // float                                   NewFocus                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   NewZoom                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FDistortionInfo                  NewPoint                                               (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FFocalLengthInfo                 NewFocalLength                                         (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FDistortionInfo&           NewPoint                                               (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FFocalLengthInfo&          NewFocalLength                                         (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
 void ULensFile::AddDistortionPoint(float NewFocus, float NewZoom, const struct FDistortionInfo& NewPoint, const struct FFocalLengthInfo& NewFocalLength)
 {
@@ -1421,7 +1421,7 @@ void ULensFile::AddDistortionPoint(float NewFocus, float NewZoom, const struct F
 // Parameters:
 // float                                   NewFocus                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   NewZoom                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FFocalLengthInfo                 NewFocalLength                                         (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FFocalLengthInfo&          NewFocalLength                                         (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
 void ULensFile::AddFocalLengthPoint(float NewFocus, float NewZoom, const struct FFocalLengthInfo& NewFocalLength)
 {
@@ -1450,7 +1450,7 @@ void ULensFile::AddFocalLengthPoint(float NewFocus, float NewZoom, const struct 
 // Parameters:
 // float                                   NewFocus                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   NewZoom                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FImageCenterInfo                 NewPoint                                               (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FImageCenterInfo&          NewPoint                                               (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
 void ULensFile::AddImageCenterPoint(float NewFocus, float NewZoom, const struct FImageCenterInfo& NewPoint)
 {
@@ -1479,7 +1479,7 @@ void ULensFile::AddImageCenterPoint(float NewFocus, float NewZoom, const struct 
 // Parameters:
 // float                                   NewFocus                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   NewZoom                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FNodalPointOffset                NewPoint                                               (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FNodalPointOffset&         NewPoint                                               (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
 void ULensFile::AddNodalOffsetPoint(float NewFocus, float NewZoom, const struct FNodalPointOffset& NewPoint)
 {
@@ -1508,7 +1508,7 @@ void ULensFile::AddNodalOffsetPoint(float NewFocus, float NewZoom, const struct 
 // Parameters:
 // float                                   NewFocus                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   NewZoom                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FSTMapInfo                       NewPoint                                               (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FSTMapInfo&                NewPoint                                               (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
 void ULensFile::AddSTMapPoint(float NewFocus, float NewZoom, const struct FSTMapInfo& NewPoint)
 {
@@ -1637,7 +1637,7 @@ void ULensFile::RemoveZoomPoint(ELensDataCategory InDataCategory, float InFocus,
 // Parameters:
 // float                                   InFocus                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   InZoom                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector2D                        InFilmback                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector2D&                 InFilmback                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class ULensDistortionModelHandlerBase*  InLensHandler                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -1671,7 +1671,7 @@ bool ULensFile::EvaluateDistortionData(float InFocus, float InZoom, const struct
 // Parameters:
 // float                                   InFocus                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   InZoom                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FDistortionInfo                  OutEvaluatedValue                                      (Parm, OutParm, NativeAccessSpecifierPublic)
+// struct FDistortionInfo*                 OutEvaluatedValue                                      (Parm, OutParm, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool ULensFile::EvaluateDistortionParameters(float InFocus, float InZoom, struct FDistortionInfo* OutEvaluatedValue) const
@@ -1705,7 +1705,7 @@ bool ULensFile::EvaluateDistortionParameters(float InFocus, float InZoom, struct
 // Parameters:
 // float                                   InFocus                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   InZoom                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FFocalLengthInfo                 OutEvaluatedValue                                      (Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
+// struct FFocalLengthInfo*                OutEvaluatedValue                                      (Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool ULensFile::EvaluateFocalLength(float InFocus, float InZoom, struct FFocalLengthInfo* OutEvaluatedValue) const
@@ -1739,7 +1739,7 @@ bool ULensFile::EvaluateFocalLength(float InFocus, float InZoom, struct FFocalLe
 // Parameters:
 // float                                   InFocus                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   InZoom                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FImageCenterInfo                 OutEvaluatedValue                                      (Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
+// struct FImageCenterInfo*                OutEvaluatedValue                                      (Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool ULensFile::EvaluateImageCenterParameters(float InFocus, float InZoom, struct FImageCenterInfo* OutEvaluatedValue) const
@@ -1773,7 +1773,7 @@ bool ULensFile::EvaluateImageCenterParameters(float InFocus, float InZoom, struc
 // Parameters:
 // float                                   InFocus                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   InZoom                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FNodalPointOffset                OutEvaluatedValue                                      (Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
+// struct FNodalPointOffset*               OutEvaluatedValue                                      (Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool ULensFile::EvaluateNodalPointOffset(float InFocus, float InZoom, struct FNodalPointOffset* OutEvaluatedValue) const
@@ -1863,7 +1863,7 @@ float ULensFile::EvaluateNormalizedIris(float InNormalizedValue) const
 // Parameters:
 // float                                   InFocus                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   InZoom                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FDistortionInfo                  OutDistortionInfo                                      (Parm, OutParm, NativeAccessSpecifierPublic)
+// struct FDistortionInfo*                 OutDistortionInfo                                      (Parm, OutParm, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool ULensFile::GetDistortionPoint(float InFocus, float InZoom, struct FDistortionInfo* OutDistortionInfo) const
@@ -1922,7 +1922,7 @@ TArray<struct FDistortionPointInfo> ULensFile::GetDistortionPoints() const
 // Parameters:
 // float                                   InFocus                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   InZoom                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FFocalLengthInfo                 OutFocalLengthInfo                                     (Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
+// struct FFocalLengthInfo*                OutFocalLengthInfo                                     (Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool ULensFile::GetFocalLengthPoint(float InFocus, float InZoom, struct FFocalLengthInfo* OutFocalLengthInfo) const
@@ -1981,7 +1981,7 @@ TArray<struct FFocalLengthPointInfo> ULensFile::GetFocalLengthPoints() const
 // Parameters:
 // float                                   InFocus                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   InZoom                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FImageCenterInfo                 OutImageCenterInfo                                     (Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
+// struct FImageCenterInfo*                OutImageCenterInfo                                     (Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool ULensFile::GetImageCenterPoint(float InFocus, float InZoom, struct FImageCenterInfo* OutImageCenterInfo) const
@@ -2040,7 +2040,7 @@ TArray<struct FImageCenterPointInfo> ULensFile::GetImageCenterPoints() const
 // Parameters:
 // float                                   InFocus                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   InZoom                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FNodalPointOffset                OutNodalPointOffset                                    (Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
+// struct FNodalPointOffset*               OutNodalPointOffset                                    (Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool ULensFile::GetNodalOffsetPoint(float InFocus, float InZoom, struct FNodalPointOffset* OutNodalPointOffset) const
@@ -2099,7 +2099,7 @@ TArray<struct FNodalOffsetPointInfo> ULensFile::GetNodalOffsetPoints() const
 // Parameters:
 // float                                   InFocus                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   InZoom                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FSTMapInfo                       OutSTMapInfo                                           (Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
+// struct FSTMapInfo*                      OutSTMapInfo                                           (Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool ULensFile::GetSTMapPoint(float InFocus, float InZoom, struct FSTMapInfo* OutSTMapInfo) const

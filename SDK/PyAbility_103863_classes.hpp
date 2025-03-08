@@ -19,7 +19,7 @@ namespace SDK
 {
 
 // PythonClass PyAbility_103863.PyUIController_103863
-// 0x0000 (0x0C60 - 0x0C60)
+// 0x0000 (0x0C50 - 0x0C50)
 class UPyUIController_103863 final : public UUIC_Ability
 {
 public:
@@ -38,14 +38,14 @@ public:
 };
 
 // PythonClass PyAbility_103863.PyAbility_103863
-// 0x0038 (0x2818 - 0x27E0)
+// 0x0038 (0x2820 - 0x27E8)
 class UPyAbility_103863 : public UAbility_113
 {
 public:
-	class AActor*                                 Shield;                                            // 0x27E0(0x0008)(BlueprintVisible, Net, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bCanSpawnProjectile;                               // 0x27E8(0x0001)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_27E9[0x3];                                     // 0x27E9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FStateChangedTaskParam                 ActiveUserSetting;                                 // 0x27EC(0x0028)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	class AActor*                                 Shield;                                            // 0x27E8(0x0008)(BlueprintVisible, Net, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bCanSpawnProjectile;                               // 0x27F0(0x0001)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_27F1[0x3];                                     // 0x27F1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FStateChangedTaskParam                 ActiveUserSetting;                                 // 0x27F4(0x0028)(Edit, NoDestructor, NativeAccessSpecifierPublic)
 
 public:
 	void BeginPlay();
@@ -98,11 +98,11 @@ public:
 };
 
 // PythonClass PyAbility_103863.PySummoned_10386301
-// 0x0010 (0x08A0 - 0x0890)
+// 0x0010 (0x08D0 - 0x08C0)
 class APySummoned_10386301 : public AMarvelSummonerBase
 {
 public:
-	class UBoxComponent*                          BoxShield;                                         // 0x0890(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UBoxComponent*                          BoxShield;                                         // 0x08C0(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()

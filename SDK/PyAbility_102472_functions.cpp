@@ -146,7 +146,7 @@ void UPyAbility_102472::K2_OnEndAbility(bool bWasCancelled)
 // PythonFunction PyAbility_102472.PyAbility_102472.NativeOnMontageCompleted
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_102472::NativeOnMontageCompleted(const class FString& Tag)
 {
@@ -171,7 +171,7 @@ void UPyAbility_102472::NativeOnMontageCompleted(const class FString& Tag)
 // PythonFunction PyAbility_102472.PyAbility_102472.NativeOnMontageBlendOut
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_102472::NativeOnMontageBlendOut(const class FString& Tag)
 {
@@ -196,7 +196,7 @@ void UPyAbility_102472::NativeOnMontageBlendOut(const class FString& Tag)
 // PythonFunction PyAbility_102472.PyAbility_102472.NativeOnMontageInterrupted
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_102472::NativeOnMontageInterrupted(const class FString& Tag)
 {
@@ -221,7 +221,7 @@ void UPyAbility_102472::NativeOnMontageInterrupted(const class FString& Tag)
 // PythonFunction PyAbility_102472.PyAbility_102472.NativeOnMontageCancelled
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_102472::NativeOnMontageCancelled(const class FString& Tag)
 {
@@ -246,7 +246,7 @@ void UPyAbility_102472::NativeOnMontageCancelled(const class FString& Tag)
 // PythonFunction PyAbility_102472.PyAbility_102472.NativeOnMontageEvent
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_102472::NativeOnMontageEvent(const class FString& Tag)
 {
@@ -272,7 +272,7 @@ void UPyAbility_102472::NativeOnMontageEvent(const class FString& Tag)
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 bool APyCue_ProjectileLoop_10247201::WhileActive(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)

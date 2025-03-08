@@ -17,13 +17,13 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass WC_CharacterInfoBP.WC_CharacterInfoBP_C
-// 0x0010 (0x0B20 - 0x0B10)
+// 0x0010 (0x0BB0 - 0x0BA0)
 class UWC_CharacterInfoBP_C final : public UMarvelWidgetComponent
 {
 public:
-	uint8                                         Pad_B08[0x8];                                      // 0x0B08(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	double                                        EnemyNameInvisibleRange;                           // 0x0B10(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        EnemyNameVisibleRange;                             // 0x0B18(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_B98[0x8];                                      // 0x0B98(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        EnemyNameInvisibleRange;                           // 0x0BA0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        EnemyNameVisibleRange;                             // 0x0BA8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

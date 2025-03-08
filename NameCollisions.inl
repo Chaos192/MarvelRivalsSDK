@@ -9,14 +9,44 @@
 // FORWARD DECLARATIONS
 
 
-namespace CameraShake_102472_Hit { class UCameraShake_102472_Hit_C; }
-
 namespace CameraShake_102472_Hit_0 { class UCameraShake_102472_Hit_C; }
 
-namespace MarvelAI { enum class ETargetType : uint8; }
+namespace CameraShake_102472_Hit { class UCameraShake_102472_Hit_C; }
 
 namespace PyWidget_Common_Input { enum class EInputType : uint8; }
 
+namespace MarvelAI { enum class ETargetType : uint8; }
+
+
+namespace WP_Common_SpiderWeb_ShowAnimBP_Medium
+{
+	struct FAnimBlueprintGeneratedMutableData;
+	struct FAnimBlueprintGeneratedConstantData;
+}
+
+namespace ShowAnim_LinkedAnimBP
+{
+	struct FAnimBlueprintGeneratedConstantData;
+	struct FAnimBlueprintGeneratedMutableData;
+}
+
+namespace WP_1029001_Weapon_ShowAnimBP
+{
+	struct FAnimBlueprintGeneratedConstantData;
+	struct FAnimBlueprintGeneratedMutableData;
+}
+
+namespace One029001_ShowAnimBP
+{
+	struct FAnimBlueprintGeneratedMutableData;
+	struct FAnimBlueprintGeneratedConstantData;
+}
+
+namespace ShowAnimBaseBP
+{
+	struct FAnimBlueprintGeneratedMutableData;
+	struct FAnimBlueprintGeneratedConstantData;
+}
 
 namespace Marvel
 {

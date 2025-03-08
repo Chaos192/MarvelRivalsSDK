@@ -139,8 +139,8 @@ struct FNiagaraDataInterfaceGeneratedFunction final
 {
 public:
 	uint8                                         Pad_0[0x38];                                       // 0x0000(0x0038)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FNiagaraVariableCommonReference> VariadicInputs;                                    // 0x0038(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FNiagaraVariableCommonReference> VariadicOutputs;                                   // 0x0048(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FNiagaraVariableCommonReference> VariadicInputs;                                   // 0x0038(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FNiagaraVariableCommonReference> VariadicOutputs;                                  // 0x0048(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 };
 
 // ScriptStruct NiagaraShader.NiagaraDataInterfaceGPUParamInfo
@@ -152,7 +152,7 @@ public:
 	class FString                                 DIClassName;                                       // 0x0010(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint32                                        ShaderParametersOffset;                            // 0x0020(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FNiagaraDataInterfaceGeneratedFunction> GeneratedFunctions;                                // 0x0028(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FNiagaraDataInterfaceGeneratedFunction> GeneratedFunctions;                        // 0x0028(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 };
 
 // ScriptStruct NiagaraShader.NiagaraShaderScriptExternalConstant
@@ -170,11 +170,11 @@ public:
 struct FNiagaraShaderScriptParametersMetadata final
 {
 public:
-	TArray<struct FNiagaraDataInterfaceGPUParamInfo> DataInterfaceParamInfo;                            // 0x0000(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FNiagaraDataInterfaceGPUParamInfo> DataInterfaceParamInfo;                         // 0x0000(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 	TArray<class FString>                         LooseMetadataNames;                                // 0x0010(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 	bool                                          bExternalConstantsInterpolated;                    // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FNiagaraShaderScriptExternalConstant> ExternalConstants;                                 // 0x0028(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FNiagaraShaderScriptExternalConstant> ExternalConstants;                           // 0x0028(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 	uint8                                         Pad_38[0x20];                                      // 0x0038(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 

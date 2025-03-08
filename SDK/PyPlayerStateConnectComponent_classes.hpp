@@ -25,8 +25,8 @@ public:
 	int32                                         CommanderUID;                                      // 0x00F0(0x0004)(Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         DelegateCommand;                                   // 0x00F4(0x0004)(Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<int32>                                 DelegatorUIDArray;                                 // 0x00F8(0x0010)(Net, RepNotify, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(int32 CommanderUID)> CommanderChanged;                                  // 0x0108(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(TArray<int32>& DelegatorUIDArray)> DelegatorChanged;                                  // 0x0118(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(int32 CommanderUID)> CommanderChanged;                             // 0x0108(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const TArray<int32>& DelegatorUIDArray)> DelegatorChanged;         // 0x0118(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 
 public:
 	void ReceiveBeginPlay();

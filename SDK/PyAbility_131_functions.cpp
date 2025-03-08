@@ -17,82 +17,11 @@
 namespace SDK
 {
 
-// PythonFunction PyAbility_131.PyUIController_131.SetAbility
-// (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// int32                                   InAbilityId                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class UGameplayAbility*                 InAbility                                              (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-
-void UPyUIController_131::SetAbility(int32 InAbilityId, class UGameplayAbility* InAbility)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PyUIController_131", "SetAbility");
-
-	Params::PyUIController_131_SetAbility Parms{};
-
-	Parms.InAbilityId = InAbilityId;
-	Parms.InAbility = InAbility;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// PythonFunction PyAbility_131.PyUIController_131.OnDestruct
-// (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
-
-void UPyUIController_131::OnDestruct()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PyUIController_131", "OnDestruct");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// PythonFunction PyAbility_131.PyUIController_131.OnWallRunningEnd
-// (Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// struct FWallRunningEndInfo              InWallRunningEndInfo                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
-
-void UPyUIController_131::OnWallRunningEnd(const struct FWallRunningEndInfo& InWallRunningEndInfo)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PyUIController_131", "OnWallRunningEnd");
-
-	Params::PyUIController_131_OnWallRunningEnd Parms{};
-
-	Parms.InWallRunningEndInfo = std::move(InWallRunningEndInfo);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // PythonFunction PyAbility_131.PyCue_AbilityLoop_13101.WhileActive
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 bool APyCue_AbilityLoop_13101::WhileActive(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
@@ -122,7 +51,7 @@ bool APyCue_AbilityLoop_13101::WhileActive(class AActor* MyTarget, const struct 
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 bool APyCue_AbilityLoop_13101::OnRemove(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
@@ -176,7 +105,7 @@ void APyCue_AbilityLoop_13101::OnSprintRunningStateChange(bool IsSprintRunning)
 // PythonFunction PyAbility_131.PyCue_AbilityLoop_13101.OnWallRunningEnd
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FWallRunningEndInfo              InWallRunningEndInfo                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
+// const struct FWallRunningEndInfo&       InWallRunningEndInfo                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
 
 void APyCue_AbilityLoop_13101::OnWallRunningEnd(const struct FWallRunningEndInfo& InWallRunningEndInfo)
 {
@@ -314,7 +243,7 @@ void UPyAbility_131::ExtractInfoFromEventData(float EventMagnitude)
 // PythonFunction PyAbility_131.PyAbility_131.K2_ActivateAbilityFromEvent
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayEventData               EventData                                              (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayEventData&        EventData                                              (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyAbility_131::K2_ActivateAbilityFromEvent(const struct FGameplayEventData& EventData)
 {
@@ -389,7 +318,7 @@ void UPyAbility_131::K2_OnTick(float DeltaTime)
 // PythonFunction PyAbility_131.PyAbility_131.K2_OnWallRunningEnd
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FWallRunningEndInfo              InWallRunningEndInfo                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
+// const struct FWallRunningEndInfo&       InWallRunningEndInfo                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 bool UPyAbility_131::K2_OnWallRunningEnd(const struct FWallRunningEndInfo& InWallRunningEndInfo)
@@ -478,6 +407,77 @@ void UPyAbility_131::SetWallRunParams()
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// PythonFunction PyAbility_131.PyUIController_131.SetAbility
+// (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   InAbilityId                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UGameplayAbility*                 InAbility                                              (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+
+void UPyUIController_131::SetAbility(int32 InAbilityId, class UGameplayAbility* InAbility)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyUIController_131", "SetAbility");
+
+	Params::PyUIController_131_SetAbility Parms{};
+
+	Parms.InAbilityId = InAbilityId;
+	Parms.InAbility = InAbility;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// PythonFunction PyAbility_131.PyUIController_131.OnDestruct
+// (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
+
+void UPyUIController_131::OnDestruct()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyUIController_131", "OnDestruct");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// PythonFunction PyAbility_131.PyUIController_131.OnWallRunningEnd
+// (Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const struct FWallRunningEndInfo&       InWallRunningEndInfo                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
+
+void UPyUIController_131::OnWallRunningEnd(const struct FWallRunningEndInfo& InWallRunningEndInfo)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyUIController_131", "OnWallRunningEnd");
+
+	Params::PyUIController_131_OnWallRunningEnd Parms{};
+
+	Parms.InWallRunningEndInfo = std::move(InWallRunningEndInfo);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 }

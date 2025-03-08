@@ -13,11 +13,11 @@
 #include "CoreUObject_structs.hpp"
 #include "Marvel_structs.hpp"
 #include "Marvel_classes.hpp"
-#include "GameplayAbilities_structs.hpp"
+#include "GameplayTags_structs.hpp"
 #include "Hero_1015_structs.hpp"
 #include "DeclarativeUnreal_structs.hpp"
 #include "Engine_structs.hpp"
-#include "GameplayTags_structs.hpp"
+#include "GameplayAbilities_structs.hpp"
 
 
 namespace SDK
@@ -139,7 +139,7 @@ public:
 	class UNiagaraComponent*                      NS_StandBy;                                        // 0x0DF0(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	class UNiagaraComponent*                      NS_StandField;                                     // 0x0DF8(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	struct FDeclarationHolder                     ViewSideChangeHolder;                              // 0x0E00(0x0010)(Protected, NativeAccessSpecifierProtected)
-	TDelegate<void(EClientPlayerViewSide InViewSide)> ViewSideDelegate;                                  // 0x0E10(0x0014)(ZeroConstructor, InstancedReference, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	TDelegate<void(EClientPlayerViewSide InViewSide)> ViewSideDelegate;                              // 0x0E10(0x0014)(ZeroConstructor, InstancedReference, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	uint8                                         Pad_E24[0x4];                                      // 0x0E24(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
@@ -175,12 +175,12 @@ public:
 };
 
 // Class Hero_1015.Ability_101541
-// 0x0008 (0x2588 - 0x2580)
+// 0x0008 (0x2590 - 0x2588)
 class UAbility_101541 : public UMarvelGameplayAbility
 {
 public:
-	int32                                         EnemyNum;                                          // 0x2580(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         TeammateNum;                                       // 0x2584(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         EnemyNum;                                          // 0x2588(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         TeammateNum;                                       // 0x258C(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void SetGroupNum(int32 NewEnemyNum, int32 NewTeamNum);
@@ -197,20 +197,20 @@ public:
 };
 
 // Class Hero_1015.UIController_101541
-// 0x0FF0 (0x1C50 - 0x0C60)
+// 0x0FF0 (0x1C40 - 0x0C50)
 class UUIController_101541 : public UUIC_Ability
 {
 public:
-	struct FGameplayTag                           IgnoreAbilityTag;                                  // 0x0C60(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGameplayTag                           StormTag;                                          // 0x0C6C(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGameplayTag                           ThunderTag;                                        // 0x0C78(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         NumTraceScopeID;                                   // 0x0C84(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FTimerHandle                           NumTraceTimerHandle;                               // 0x0C88(0x0018)(BlueprintVisible, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FMarvelAbilityTraceContext             NumTraceContext;                                   // 0x0CA0(0x0F90)(BlueprintVisible, ContainsInstancedReference, NativeAccessSpecifierPublic)
-	class AMarvelBaseCharacter*                   OwningCharacter;                                   // 0x1C30(0x0008)(BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UTextBlock*                             TextEnemyNum;                                      // 0x1C38(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UTextBlock*                             TextTeammateNum;                                   // 0x1C40(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UAbility_101541*                        OwningAbility;                                     // 0x1C48(0x0008)(BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGameplayTag                           IgnoreAbilityTag;                                  // 0x0C50(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGameplayTag                           StormTag;                                          // 0x0C5C(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGameplayTag                           ThunderTag;                                        // 0x0C68(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         NumTraceScopeID;                                   // 0x0C74(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FTimerHandle                           NumTraceTimerHandle;                               // 0x0C78(0x0018)(BlueprintVisible, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FMarvelAbilityTraceContext             NumTraceContext;                                   // 0x0C90(0x0F90)(BlueprintVisible, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	class AMarvelBaseCharacter*                   OwningCharacter;                                   // 0x1C20(0x0008)(BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UTextBlock*                             TextEnemyNum;                                      // 0x1C28(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UTextBlock*                             TextTeammateNum;                                   // 0x1C30(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UAbility_101541*                        OwningAbility;                                     // 0x1C38(0x0008)(BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	bool CanShow();
@@ -313,32 +313,33 @@ public:
 };
 
 // Class Hero_1015.Ability_101561
-// 0x04B8 (0x2A38 - 0x2580)
+// 0x04C0 (0x2A48 - 0x2588)
 class UAbility_101561 : public UMarvelGameplayAbility
 {
 public:
-	class ASelectRegionCameraActor_101561*        CameraActor;                                       // 0x2580(0x0008)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class AStormCharacter*                        Owner;                                             // 0x2588(0x0008)(BlueprintVisible, ZeroConstructor, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class UConfig_101561*                         Config;                                            // 0x2590(0x0008)(ZeroConstructor, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FGameplayTag                           CugTagForWarningUI;                                // 0x2598(0x000C)(Edit, DisableEditOnInstance, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_25A4[0x4];                                     // 0x25A4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UMarvelAbilityTask_PlayMontageAndWaitForEvent* TimeLineTask2;                                     // 0x25A8(0x0008)(ZeroConstructor, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class UMarvelAbilityTask_PlayMontageAndWaitForEvent* TimeLineTask3;                                     // 0x25B0(0x0008)(ZeroConstructor, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class UMarvelAbilityTask_WaitBindInput*       InputTaskActivateHurricane;                        // 0x25B8(0x0008)(ZeroConstructor, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FTimerHandle                           PreActiveTimer;                                    // 0x25C0(0x0018)(Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FTimerHandle                           ActiveTimer;                                       // 0x25D8(0x0018)(Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FStormMoveConfig                       MoveConfigCache;                                   // 0x25F0(0x0020)(BlueprintVisible, NoDestructor, Protected, NativeAccessSpecifierProtected)
-	class UMarvelAbilityTask_WaitDelay*           SelectingDelayTask;                                // 0x2610(0x0008)(ZeroConstructor, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	TArray<TWeakObjectPtr<class AMarvelAbilityTargetActor_Scope>> AbilityScopes;                                     // 0x2618(0x0010)(ZeroConstructor, Protected, UObjectWrapper, NativeAccessSpecifierProtected)
-	uint8                                         Pad_2628[0x30];                                    // 0x2628(0x0030)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FPredictionKey                         PressCameraAnimationKey;                           // 0x2658(0x00A0)(HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FPredictionKey                         ReleaseCameraAnimationKey;                         // 0x26F8(0x00A0)(HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FPredictionKey                         PressActivateHurricaneKey;                         // 0x2798(0x00A0)(HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FPredictionKey                         HurricaneTimeOverKey;                              // 0x2838(0x00A0)(HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FPredictionKey                         RefreshDurationKey;                                // 0x28D8(0x00A0)(HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FPredictionKey                         SelectRegionLandKey;                               // 0x2978(0x00A0)(HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2A18[0x10];                                    // 0x2A18(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
-	TMulticastInlineDelegate<void(int32 Value)>   AbsorbFireTornadoDispatcher;                       // 0x2A28(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	class ASelectRegionCameraActor_101561*        CameraActor;                                       // 0x2588(0x0008)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AStormCharacter*                        Owner;                                             // 0x2590(0x0008)(BlueprintVisible, ZeroConstructor, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UConfig_101561*                         Config;                                            // 0x2598(0x0008)(ZeroConstructor, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FGameplayTag                           CugTagForWarningUI;                                // 0x25A0(0x000C)(Edit, DisableEditOnInstance, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_25AC[0x4];                                     // 0x25AC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UMarvelAbilityTask_PlayMontageAndWaitForEvent* TimeLineTask2;                              // 0x25B0(0x0008)(ZeroConstructor, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UMarvelAbilityTask_PlayMontageAndWaitForEvent* TimeLineTask3;                              // 0x25B8(0x0008)(ZeroConstructor, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UMarvelAbilityTask_WaitBindInput*       InputTaskActivateHurricane;                        // 0x25C0(0x0008)(ZeroConstructor, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FTimerHandle                           PreActiveTimer;                                    // 0x25C8(0x0018)(Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FTimerHandle                           ActiveTimer;                                       // 0x25E0(0x0018)(Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FStormMoveConfig                       MoveConfigCache;                                   // 0x25F8(0x0020)(BlueprintVisible, NoDestructor, Protected, NativeAccessSpecifierProtected)
+	class UMarvelAbilityTask_WaitDelay*           SelectingDelayTask;                                // 0x2618(0x0008)(ZeroConstructor, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	TArray<TWeakObjectPtr<class AMarvelAbilityTargetActor_Scope>> AbilityScopes;                     // 0x2620(0x0010)(ZeroConstructor, Protected, UObjectWrapper, NativeAccessSpecifierProtected)
+	uint8                                         Pad_2630[0x30];                                    // 0x2630(0x0030)(Fixing Size After Last Property [ Dumper-7 ])
+	class AMarvelBaseCharacter*                   BondSourceCharacter;                               // 0x2660(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FPredictionKey                         PressCameraAnimationKey;                           // 0x2668(0x00A0)(HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FPredictionKey                         ReleaseCameraAnimationKey;                         // 0x2708(0x00A0)(HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FPredictionKey                         PressActivateHurricaneKey;                         // 0x27A8(0x00A0)(HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FPredictionKey                         HurricaneTimeOverKey;                              // 0x2848(0x00A0)(HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FPredictionKey                         RefreshDurationKey;                                // 0x28E8(0x00A0)(HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FPredictionKey                         SelectRegionLandKey;                               // 0x2988(0x00A0)(HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2A28[0x10];                                    // 0x2A28(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	TMulticastInlineDelegate<void(int32 Value)>   AbsorbFireTornadoDispatcher;                       // 0x2A38(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 
 public:
 	static class UConfig_101561* GetAbilityConfig();
@@ -513,8 +514,8 @@ public:
 };
 
 // Class Hero_1015.Ability_101562
-// 0x0000 (0x2668 - 0x2668)
-class UAbility_101562 final : public UMarvelAbility_SelectTarget_Bond
+// 0x0000 (0x2670 - 0x2670)
+class UAbility_101562 : public UMarvelAbility_SelectTarget_Bond
 {
 public:
 	static class UClass* StaticClass()
@@ -528,13 +529,13 @@ public:
 };
 
 // Class Hero_1015.Ability_101571
-// 0x0018 (0x27F8 - 0x27E0)
+// 0x0018 (0x2800 - 0x27E8)
 class UAbility_101571 : public UAbility_113
 {
 public:
-	bool                                          bThrowState;                                       // 0x27E0(0x0001)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_27E1[0x7];                                     // 0x27E1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TMulticastInlineDelegate<void(bool Value)>    OnThrowStateChanged;                               // 0x27E8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	bool                                          bThrowState;                                       // 0x27E8(0x0001)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_27E9[0x7];                                     // 0x27E9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TMulticastInlineDelegate<void(bool Value)>    OnThrowStateChanged;                               // 0x27F0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -616,7 +617,7 @@ public:
 };
 
 // Class Hero_1015.UIController_101571
-// 0x0000 (0x0C60 - 0x0C60)
+// 0x0000 (0x0C50 - 0x0C50)
 class UUIController_101571 final : public UUIC_Ability
 {
 public:
@@ -659,11 +660,11 @@ public:
 };
 
 // Class Hero_1015.Ability_101581
-// 0x0028 (0x25B0 - 0x2588)
+// 0x0020 (0x25B0 - 0x2590)
 class alignas(0x10) UAbility_101581 : public UAbility_108
 {
 public:
-	uint8                                         Pad_2588[0x18];                                    // 0x2588(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2590[0x10];                                    // 0x2590(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
 	class UConfig_101581*                         Config;                                            // 0x25A0(0x0008)(ZeroConstructor, Transient, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_25A8[0x8];                                     // 0x25A8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
@@ -892,11 +893,11 @@ public:
 	uint8                                         Pad_A61[0x3];                                      // 0x0A61(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         ParamHandleNumPerTick;                             // 0x0A64(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FMaterialAbilityParams                 WeatherAllParams;                                  // 0x0A68(0x0050)(NativeAccessSpecifierPublic)
-	TMap<class FName, struct FMaterialAbilityParams> WeatherDataDict;                                   // 0x0AB8(0x0050)(NativeAccessSpecifierPublic)
-	TMap<class FName, struct FStormMaterialSlotParamsArray> WeatherDataArray;                                  // 0x0B08(0x0050)(NativeAccessSpecifierPublic)
+	TMap<class FName, struct FMaterialAbilityParams> WeatherDataDict;                                // 0x0AB8(0x0050)(NativeAccessSpecifierPublic)
+	TMap<class FName, struct FStormMaterialSlotParamsArray> WeatherDataArray;                        // 0x0B08(0x0050)(NativeAccessSpecifierPublic)
 	TArray<struct FStormMaterialSlotParams>       ProcessingDataArray;                               // 0x0B58(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 	class UMeshComponent*                         ArchyMesh;                                         // 0x0B68(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	TMap<class FName, struct FStormDynamicSectionMaterials> WeatherMaterials;                                  // 0x0B70(0x0050)(Protected, NativeAccessSpecifierProtected)
+	TMap<class FName, struct FStormDynamicSectionMaterials> WeatherMaterials;                        // 0x0B70(0x0050)(Protected, NativeAccessSpecifierProtected)
 	TMap<int32, struct FMaterialIndexParams>      OriginalMaterialParamDict;                         // 0x0BC0(0x0050)(Protected, NativeAccessSpecifierProtected)
 	TMap<int32, class UMaterialInstanceDynamic*>  DynamicMaterialDict;                               // 0x0C10(0x0050)(Protected, NativeAccessSpecifierProtected)
 	class FName                                   CurrentWeatherStateName;                           // 0x0C60(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
@@ -905,7 +906,7 @@ public:
 	struct FDeclarationHolder                     PlayerViewingSideHolder;                           // 0x0C78(0x0010)(Protected, NativeAccessSpecifierProtected)
 	bool                                          bOpenOptimization;                                 // 0x0C88(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_C89[0x7];                                      // 0x0C89(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<class FName, struct FMaterialAbilityParams> MaterialParamsAbility101541;                       // 0x0C90(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	TMap<class FName, struct FMaterialAbilityParams> MaterialParamsAbility101541;                    // 0x0C90(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NativeAccessSpecifierPublic)
 	TMap<EStormCharState, class UCurveVector*>    CharMaterialCurves;                                // 0x0CE0(0x0050)(Edit, NativeAccessSpecifierPublic)
 	class UCurveVector*                           FireMaterialCurve;                                 // 0x0D30(0x0008)(Edit, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<class FName>                           PhysicRootNames;                                   // 0x0D38(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
@@ -946,35 +947,36 @@ public:
 };
 
 // Class Hero_1015.StormCharacter
-// 0x0080 (0x1890 - 0x1810)
+// 0x0080 (0x18F0 - 0x1870)
 class AStormCharacter : public AMarvelBaseCharacter
 {
 public:
-	EStormCharState                               CurrentCharState;                                  // 0x1810(0x0001)(Net, ZeroConstructor, Transient, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bHurricaneFired;                                   // 0x1811(0x0001)(Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EStormCameraState                             CameraState;                                       // 0x1812(0x0001)(Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1813[0x5];                                     // 0x1813(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
-	TMulticastInlineDelegate<void(float Value)>   OnHeightChangedDispatcher;                         // 0x1818(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(EStormCharState StormState)> OnStormCharStateChangedDispatcher;                 // 0x1828(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	class UStormMoveLogicBaseComponent*           StormMoveLogic;                                    // 0x1838(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         AltitudeUpperLimit;                                // 0x1840(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         AltitudeLowerLimit;                                // 0x1844(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EMovementMode                                 CachedDefaultLandMovementMode;                     // 0x1848(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1849[0x3];                                     // 0x1849(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         CachedSpringArmLength;                             // 0x184C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                CachedSpringArmSorcketOffset;                      // 0x1850(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIsSelectionRegionTopView;                         // 0x1868(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1869[0x3];                                     // 0x1869(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         CachedMaxWalkSpeed;                                // 0x186C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         CachedMaxFlySpeed;                                 // 0x1870(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         CachedMaxWalkAcc;                                  // 0x1874(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         CachedAirControl;                                  // 0x1878(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         PreviousLocationZ;                                 // 0x187C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         StateDuration;                                     // 0x1880(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bDefaultEnableCameraLag;                           // 0x1884(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1885[0x3];                                     // 0x1885(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         BecomeFireHurricaneTime;                           // 0x1888(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ExitFireHurricaneTime;                             // 0x188C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EStormCharState                               CurrentCharState;                                  // 0x1868(0x0001)(Net, ZeroConstructor, Transient, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bHurricaneFired;                                   // 0x1869(0x0001)(Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EStormCameraState                             CameraState;                                       // 0x186A(0x0001)(Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_186B[0x5];                                     // 0x186B(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	TMulticastInlineDelegate<void(float Value)>   OnHeightChangedDispatcher;                         // 0x1870(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(EStormCharState StormState)> OnStormCharStateChangedDispatcher;    // 0x1880(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	class UStormMoveLogicBaseComponent*           StormMoveLogic;                                    // 0x1890(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         AltitudeUpperLimit;                                // 0x1898(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         AltitudeLowerLimit;                                // 0x189C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EMovementMode                                 CachedDefaultLandMovementMode;                     // 0x18A0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_18A1[0x3];                                     // 0x18A1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         CachedSpringArmLength;                             // 0x18A4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                CachedSpringArmSorcketOffset;                      // 0x18A8(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsSelectionRegionTopView;                         // 0x18C0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_18C1[0x3];                                     // 0x18C1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         CachedMaxWalkSpeed;                                // 0x18C4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         CachedMaxFlySpeed;                                 // 0x18C8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         CachedMaxWalkAcc;                                  // 0x18CC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         CachedAirControl;                                  // 0x18D0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         PreviousLocationZ;                                 // 0x18D4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         StateDuration;                                     // 0x18D8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bDefaultEnableCameraLag;                           // 0x18DC(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_18DD[0x3];                                     // 0x18DD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         BecomeFireHurricaneTime;                           // 0x18E0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ExitFireHurricaneTime;                             // 0x18E4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_18E8[0x8];                                     // 0x18E8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	float GetDisToCeiling();
@@ -1014,18 +1016,18 @@ public:
 };
 
 // Class Hero_1015.StormGirlMovementComponent
-// 0x0030 (0x1B90 - 0x1B60)
+// 0x0030 (0x1BD0 - 0x1BA0)
 class UStormGirlMovementComponent final : public UMarvelCharacterMovementComponent
 {
 public:
-	float                                         StepDownOnceHeight;                                // 0x1B60(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MaxStepDownHeight;                                 // 0x1B64(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         TryRiseSpeed;                                      // 0x1B68(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIsFixZCeilMode;                                   // 0x1B6C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_1B6D[0x3];                                     // 0x1B6D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         CeilingZ;                                          // 0x1B70(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         SweepRadius;                                       // 0x1B74(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_1B78[0x18];                                    // 0x1B78(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	float                                         StepDownOnceHeight;                                // 0x1BA0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MaxStepDownHeight;                                 // 0x1BA4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         TryRiseSpeed;                                      // 0x1BA8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsFixZCeilMode;                                   // 0x1BAC(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_1BAD[0x3];                                     // 0x1BAD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         CeilingZ;                                          // 0x1BB0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         SweepRadius;                                       // 0x1BB4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_1BB8[0x18];                                    // 0x1BB8(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()

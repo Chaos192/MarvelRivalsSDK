@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass MarvelDefaultBondAbility.MarvelDefaultBondAbility_C
-// 0x0000 (0x2580 - 0x2580)
+// 0x0000 (0x2588 - 0x2588)
 class UMarvelDefaultBondAbility_C final : public UPyMarvelDefaultBondAbility
 {
 public:

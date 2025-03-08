@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "Engine_classes.hpp"
-#include "Marvel_structs.hpp"
 #include "MarvelLevel_structs.hpp"
+#include "Marvel_structs.hpp"
 
 
 namespace SDK

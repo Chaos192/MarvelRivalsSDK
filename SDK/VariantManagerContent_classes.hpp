@@ -12,8 +12,8 @@
 
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
-#include "Engine_classes.hpp"
 #include "VariantManagerContent_structs.hpp"
+#include "Engine_classes.hpp"
 
 
 namespace SDK
@@ -50,7 +50,7 @@ class ALevelVariantSetsActor final : public AActor
 {
 public:
 	struct FSoftObjectPath                        LevelVariantSets;                                  // 0x0490(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMap<TSubclassOf<class UObject>, class ULevelVariantSetsFunctionDirector*> DirectorInstances;                                 // 0x04B8(0x0050)(Transient, UObjectWrapper, NativeAccessSpecifierPrivate)
+	TMap<TSubclassOf<class UObject>, class ULevelVariantSetsFunctionDirector*> DirectorInstances;    // 0x04B8(0x0050)(Transient, UObjectWrapper, NativeAccessSpecifierPrivate)
 
 public:
 	class ULevelVariantSets* GetLevelVariantSets(bool bLoad);

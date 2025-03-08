@@ -45,7 +45,7 @@ void APyDoctorStrangeCharacter::BindOnLandAudioEvent(int32 AudioID)
 // PythonFunction PyDoctorStrangeCharacter.PyDoctorStrangeCharacter.OnLandedCallback
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FHitResult                       Hit                                                    (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FHitResult&                Hit                                                    (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyDoctorStrangeCharacter::OnLandedCallback(const struct FHitResult& Hit)
 {

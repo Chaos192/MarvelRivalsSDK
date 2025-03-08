@@ -37,7 +37,7 @@ public:
 };
 
 // PythonClass PyAbility_104542.PyAbility_104542
-// 0x0000 (0x2598 - 0x2598)
+// 0x0000 (0x25A0 - 0x25A0)
 class UPyAbility_104542 : public UMarvelAbility_LongPressTrigger
 {
 public:
@@ -79,7 +79,7 @@ public:
 };
 
 // PythonClass PyAbility_104542.PyUIController_104542
-// 0x0000 (0x0C60 - 0x0C60)
+// 0x0000 (0x0C50 - 0x0C50)
 class UPyUIController_104542 final : public UUIC_Ability
 {
 public:

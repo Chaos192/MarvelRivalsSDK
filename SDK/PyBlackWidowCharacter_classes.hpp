@@ -10,21 +10,21 @@
 
 #include "Basic.hpp"
 
-#include "Hero_1033_classes.hpp"
 #include "Marvel_classes.hpp"
+#include "Hero_1033_classes.hpp"
 
 
 namespace SDK
 {
 
 // PythonClass PyBlackWidowCharacter.PyBlackWidowCharacter
-// 0x0020 (0x1890 - 0x1870)
+// 0x0020 (0x18E0 - 0x18C0)
 class APyBlackWidowCharacter : public ABlackWidowCharacter
 {
 public:
-	float                                         ReplicateCapsuleRadiusScale;                       // 0x1870(0x0004)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1874[0x4];                                     // 0x1874(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TMulticastInlineDelegate<void()>              OnNeedTryPullBullet;                               // 0x1878(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	float                                         ReplicateCapsuleRadiusScale;                       // 0x18C0(0x0004)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_18C4[0x4];                                     // 0x18C4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TMulticastInlineDelegate<void()>              OnNeedTryPullBullet;                               // 0x18C8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 
 public:
 	void ReceiveBeginPlay();

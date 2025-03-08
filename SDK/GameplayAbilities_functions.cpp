@@ -17,6 +17,63 @@
 namespace SDK
 {
 
+// Function GameplayAbilities.AbilityAsync.EndAction
+// (Native, Public, BlueprintCallable)
+
+void UAbilityAsync::EndAction()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilityAsync", "EndAction");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilityAsync_WaitGameplayEffectApplied.WaitGameplayEffectAppliedToActor
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class AActor*                           TargetActor                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTargetDataFilterHandle&SourceFilter                                           (ConstParm, Parm, NativeAccessSpecifierPublic)
+// const struct FGameplayTagRequirements&  SourceTagRequirements                                  (Parm, NativeAccessSpecifierPublic)
+// const struct FGameplayTagRequirements&  TargetTagRequirements                                  (Parm, NativeAccessSpecifierPublic)
+// bool                                    TriggerOnce                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ListenForPeriodicEffect                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UAbilityAsync_WaitGameplayEffectApplied*ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UAbilityAsync_WaitGameplayEffectApplied* UAbilityAsync_WaitGameplayEffectApplied::WaitGameplayEffectAppliedToActor(class AActor* TargetActor, const struct FGameplayTargetDataFilterHandle& SourceFilter, const struct FGameplayTagRequirements& SourceTagRequirements, const struct FGameplayTagRequirements& TargetTagRequirements, bool TriggerOnce, bool ListenForPeriodicEffect)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("AbilityAsync_WaitGameplayEffectApplied", "WaitGameplayEffectAppliedToActor");
+
+	Params::AbilityAsync_WaitGameplayEffectApplied_WaitGameplayEffectAppliedToActor Parms{};
+
+	Parms.TargetActor = TargetActor;
+	Parms.SourceFilter = std::move(SourceFilter);
+	Parms.SourceTagRequirements = std::move(SourceTagRequirements);
+	Parms.TargetTagRequirements = std::move(TargetTagRequirements);
+	Parms.TriggerOnce = TriggerOnce;
+	Parms.ListenForPeriodicEffect = ListenForPeriodicEffect;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function GameplayAbilities.AbilityTask.K2_NewAbilityTask
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
@@ -252,24 +309,22 @@ bool UAbilityTask::ShouldBroadcastAbilityTaskDelegates() const
 }
 
 
-// Function GameplayAbilities.AbilityTask_WaitDelay.WaitDelay
+// Function GameplayAbilities.AbilityTask_WaitConfirmCancel.WaitConfirmCancel
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class UGameplayAbility*                 OwningAbility                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   Time_0                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UAbilityTask_WaitDelay*           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UAbilityTask_WaitConfirmCancel*   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UAbilityTask_WaitDelay* UAbilityTask_WaitDelay::WaitDelay(class UGameplayAbility* OwningAbility, float Time_0)
+class UAbilityTask_WaitConfirmCancel* UAbilityTask_WaitConfirmCancel::WaitConfirmCancel(class UGameplayAbility* OwningAbility)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("AbilityTask_WaitDelay", "WaitDelay");
+		Func = StaticClass()->GetFunction("AbilityTask_WaitConfirmCancel", "WaitConfirmCancel");
 
-	Params::AbilityTask_WaitDelay_WaitDelay Parms{};
+	Params::AbilityTask_WaitConfirmCancel_WaitConfirmCancel Parms{};
 
 	Parms.OwningAbility = OwningAbility;
-	Parms.Time_0 = Time_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -282,23 +337,145 @@ class UAbilityTask_WaitDelay* UAbilityTask_WaitDelay::WaitDelay(class UGameplayA
 }
 
 
-// Function GameplayAbilities.AbilityTask_WaitGameplayTag.GameplayTagCallback
-// (Native, Public)
-// Parameters:
-// struct FGameplayTag                     Tag_0                                                  (ConstParm, Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   NewCount                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// Function GameplayAbilities.AbilityTask_WaitConfirmCancel.OnCancelCallback
+// (Final, Native, Public)
 
-void UAbilityTask_WaitGameplayTag::GameplayTagCallback(const struct FGameplayTag& Tag_0, int32 NewCount)
+void UAbilityTask_WaitConfirmCancel::OnCancelCallback()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("AbilityTask_WaitGameplayTag", "GameplayTagCallback");
+		Func = Class->GetFunction("AbilityTask_WaitConfirmCancel", "OnCancelCallback");
 
-	Params::AbilityTask_WaitGameplayTag_GameplayTagCallback Parms{};
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
 
-	Parms.Tag_0 = std::move(Tag_0);
-	Parms.NewCount = NewCount;
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilityTask_WaitConfirmCancel.OnConfirmCallback
+// (Final, Native, Public)
+
+void UAbilityTask_WaitConfirmCancel::OnConfirmCallback()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilityTask_WaitConfirmCancel", "OnConfirmCallback");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilityTask_WaitConfirmCancel.OnLocalCancelCallback
+// (Final, Native, Public)
+// Parameters:
+// int32                                   InputID                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UAbilityTask_WaitConfirmCancel::OnLocalCancelCallback(int32 InputID)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilityTask_WaitConfirmCancel", "OnLocalCancelCallback");
+
+	Params::AbilityTask_WaitConfirmCancel_OnLocalCancelCallback Parms{};
+
+	Parms.InputID = InputID;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilityTask_WaitConfirmCancel.OnLocalConfirmCallback
+// (Final, Native, Public)
+// Parameters:
+// int32                                   InputID                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UAbilityTask_WaitConfirmCancel::OnLocalConfirmCallback(int32 InputID)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilityTask_WaitConfirmCancel", "OnLocalConfirmCallback");
+
+	Params::AbilityTask_WaitConfirmCancel_OnLocalConfirmCallback Parms{};
+
+	Parms.InputID = InputID;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilityTask_WaitOverlap.WaitForOverlap
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UGameplayAbility*                 OwningAbility                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UAbilityTask_WaitOverlap*         ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UAbilityTask_WaitOverlap* UAbilityTask_WaitOverlap::WaitForOverlap(class UGameplayAbility* OwningAbility)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("AbilityTask_WaitOverlap", "WaitForOverlap");
+
+	Params::AbilityTask_WaitOverlap_WaitForOverlap Parms{};
+
+	Parms.OwningAbility = OwningAbility;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilityTask_WaitOverlap.OnHitCallback
+// (Final, Native, Public, HasOutParams, HasDefaults)
+// Parameters:
+// class UPrimitiveComponent*              HitComp                                                (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           OtherActor                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UPrimitiveComponent*              OtherComp                                              (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   NormalImpulse                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FHitResult&                Hit                                                    (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+
+void UAbilityTask_WaitOverlap::OnHitCallback(class UPrimitiveComponent* HitComp, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, const struct FVector& NormalImpulse, const struct FHitResult& Hit)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilityTask_WaitOverlap", "OnHitCallback");
+
+	Params::AbilityTask_WaitOverlap_OnHitCallback Parms{};
+
+	Parms.HitComp = HitComp;
+	Parms.OtherActor = OtherActor;
+	Parms.OtherComp = OtherComp;
+	Parms.NormalImpulse = std::move(NormalImpulse);
+	Parms.Hit = std::move(Hit);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -394,6 +571,86 @@ void AGameplayAbilityTargetActor::OnRep_InitSourceActor()
 	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilityTask_WaitAttributeChange.WaitForAttributeChange
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UGameplayAbility*                 OwningAbility                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayAttribute&        Attribute_0                                            (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              WithSrcTag                                             (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              WithoutSrcTag                                          (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    TriggerOnce                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           OptionalExternalOwner                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UAbilityTask_WaitAttributeChange* ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UAbilityTask_WaitAttributeChange* UAbilityTask_WaitAttributeChange::WaitForAttributeChange(class UGameplayAbility* OwningAbility, const struct FGameplayAttribute& Attribute_0, const struct FGameplayTag& WithSrcTag, const struct FGameplayTag& WithoutSrcTag, bool TriggerOnce, class AActor* OptionalExternalOwner)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("AbilityTask_WaitAttributeChange", "WaitForAttributeChange");
+
+	Params::AbilityTask_WaitAttributeChange_WaitForAttributeChange Parms{};
+
+	Parms.OwningAbility = OwningAbility;
+	Parms.Attribute_0 = std::move(Attribute_0);
+	Parms.WithSrcTag = std::move(WithSrcTag);
+	Parms.WithoutSrcTag = std::move(WithoutSrcTag);
+	Parms.TriggerOnce = TriggerOnce;
+	Parms.OptionalExternalOwner = OptionalExternalOwner;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilityTask_WaitAttributeChange.WaitForAttributeChangeWithComparison
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UGameplayAbility*                 OwningAbility                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayAttribute&        InAttribute                                            (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              InWithTag                                              (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              InWithoutTag                                           (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EWaitAttributeChangeComparison          InComparisonType                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   InComparisonValue                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    TriggerOnce                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           OptionalExternalOwner                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UAbilityTask_WaitAttributeChange* ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UAbilityTask_WaitAttributeChange* UAbilityTask_WaitAttributeChange::WaitForAttributeChangeWithComparison(class UGameplayAbility* OwningAbility, const struct FGameplayAttribute& InAttribute, const struct FGameplayTag& InWithTag, const struct FGameplayTag& InWithoutTag, EWaitAttributeChangeComparison InComparisonType, float InComparisonValue, bool TriggerOnce, class AActor* OptionalExternalOwner)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("AbilityTask_WaitAttributeChange", "WaitForAttributeChangeWithComparison");
+
+	Params::AbilityTask_WaitAttributeChange_WaitForAttributeChangeWithComparison Parms{};
+
+	Parms.OwningAbility = OwningAbility;
+	Parms.InAttribute = std::move(InAttribute);
+	Parms.InWithTag = std::move(InWithTag);
+	Parms.InWithoutTag = std::move(InWithoutTag);
+	Parms.InComparisonType = InComparisonType;
+	Parms.InComparisonValue = InComparisonValue;
+	Parms.TriggerOnce = TriggerOnce;
+	Parms.OptionalExternalOwner = OptionalExternalOwner;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
@@ -533,122 +790,20 @@ void UAbilityTask_PlayMontageAndWait::OnMontageInterrupted()
 }
 
 
-// Function GameplayAbilities.AbilityTask_ApplyRootMotion_Base.CheckRootMotionValidAfterMoveUpdated
-// (Native, Protected, HasDefaults)
-// Parameters:
-// float                                   DeltaSeconds                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          OldLocation                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          OldVelocity                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UAbilityTask_ApplyRootMotion_Base::CheckRootMotionValidAfterMoveUpdated(float DeltaSeconds, const struct FVector& OldLocation, const struct FVector& OldVelocity)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilityTask_ApplyRootMotion_Base", "CheckRootMotionValidAfterMoveUpdated");
-
-	Params::AbilityTask_ApplyRootMotion_Base_CheckRootMotionValidAfterMoveUpdated Parms{};
-
-	Parms.DeltaSeconds = DeltaSeconds;
-	Parms.OldLocation = std::move(OldLocation);
-	Parms.OldVelocity = std::move(OldVelocity);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilityTask_ApplyRootMotion_Base.CheckRootMotionValidBeforeMove
-// (Native, Protected)
-// Parameters:
-// float                                   DeltaSeconds                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UAbilityTask_ApplyRootMotion_Base::CheckRootMotionValidBeforeMove(float DeltaSeconds)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilityTask_ApplyRootMotion_Base", "CheckRootMotionValidBeforeMove");
-
-	Params::AbilityTask_ApplyRootMotion_Base_CheckRootMotionValidBeforeMove Parms{};
-
-	Parms.DeltaSeconds = DeltaSeconds;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilityTask_ApplyRootMotionConstantForce.ApplyRootMotionConstantForce
-// (Final, Native, Static, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// class UGameplayAbility*                 OwningAbility                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             TaskInstanceName                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          WorldDirection_0                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   Strength_0                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   Duration_0                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bIsAdditive_0                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UCurveFloat*                      StrengthOverTime_0                                     (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// ERootMotionFinishVelocityMode           VelocityOnFinishMode                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          SetVelocityOnFinish                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   ClampVelocityOnFinish                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bEnableGravity_0                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UAbilityTask_ApplyRootMotionConstantForce*ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UAbilityTask_ApplyRootMotionConstantForce* UAbilityTask_ApplyRootMotionConstantForce::ApplyRootMotionConstantForce(class UGameplayAbility* OwningAbility, class FName TaskInstanceName, const struct FVector& WorldDirection_0, float Strength_0, float Duration_0, bool bIsAdditive_0, class UCurveFloat* StrengthOverTime_0, ERootMotionFinishVelocityMode VelocityOnFinishMode, const struct FVector& SetVelocityOnFinish, float ClampVelocityOnFinish, bool bEnableGravity_0)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("AbilityTask_ApplyRootMotionConstantForce", "ApplyRootMotionConstantForce");
-
-	Params::AbilityTask_ApplyRootMotionConstantForce_ApplyRootMotionConstantForce Parms{};
-
-	Parms.OwningAbility = OwningAbility;
-	Parms.TaskInstanceName = TaskInstanceName;
-	Parms.WorldDirection_0 = std::move(WorldDirection_0);
-	Parms.Strength_0 = Strength_0;
-	Parms.Duration_0 = Duration_0;
-	Parms.bIsAdditive_0 = bIsAdditive_0;
-	Parms.StrengthOverTime_0 = StrengthOverTime_0;
-	Parms.VelocityOnFinishMode = VelocityOnFinishMode;
-	Parms.SetVelocityOnFinish = std::move(SetVelocityOnFinish);
-	Parms.ClampVelocityOnFinish = ClampVelocityOnFinish;
-	Parms.bEnableGravity_0 = bEnableGravity_0;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilityTask_WaitConfirm.WaitConfirm
+// Function GameplayAbilities.AbilityTask_WaitCancel.WaitCancel
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class UGameplayAbility*                 OwningAbility                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UAbilityTask_WaitConfirm*         ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UAbilityTask_WaitCancel*          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UAbilityTask_WaitConfirm* UAbilityTask_WaitConfirm::WaitConfirm(class UGameplayAbility* OwningAbility)
+class UAbilityTask_WaitCancel* UAbilityTask_WaitCancel::WaitCancel(class UGameplayAbility* OwningAbility)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("AbilityTask_WaitConfirm", "WaitConfirm");
+		Func = StaticClass()->GetFunction("AbilityTask_WaitCancel", "WaitCancel");
 
-	Params::AbilityTask_WaitConfirm_WaitConfirm Parms{};
+	Params::AbilityTask_WaitCancel_WaitCancel Parms{};
 
 	Parms.OwningAbility = OwningAbility;
 
@@ -663,70 +818,15 @@ class UAbilityTask_WaitConfirm* UAbilityTask_WaitConfirm::WaitConfirm(class UGam
 }
 
 
-// Function GameplayAbilities.AbilityTask_WaitConfirm.OnConfirmCallback
-// (Final, Native, Public)
-// Parameters:
-// class UGameplayAbility*                 InAbility                                              (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UAbilityTask_WaitConfirm::OnConfirmCallback(class UGameplayAbility* InAbility)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilityTask_WaitConfirm", "OnConfirmCallback");
-
-	Params::AbilityTask_WaitConfirm_OnConfirmCallback Parms{};
-
-	Parms.InAbility = InAbility;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilityTask_WaitInputPress.WaitInputPress
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class UGameplayAbility*                 OwningAbility                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bTestAlreadyPressed                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UAbilityTask_WaitInputPress*      ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UAbilityTask_WaitInputPress* UAbilityTask_WaitInputPress::WaitInputPress(class UGameplayAbility* OwningAbility, bool bTestAlreadyPressed)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("AbilityTask_WaitInputPress", "WaitInputPress");
-
-	Params::AbilityTask_WaitInputPress_WaitInputPress Parms{};
-
-	Parms.OwningAbility = OwningAbility;
-	Parms.bTestAlreadyPressed = bTestAlreadyPressed;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilityTask_WaitInputPress.OnLocalPressCallback
+// Function GameplayAbilities.AbilityTask_WaitCancel.OnCancelCallback
 // (Final, Native, Public)
 
-void UAbilityTask_WaitInputPress::OnLocalPressCallback()
+void UAbilityTask_WaitCancel::OnCancelCallback()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("AbilityTask_WaitInputPress", "OnLocalPressCallback");
+		Func = Class->GetFunction("AbilityTask_WaitCancel", "OnCancelCallback");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -737,46 +837,21 @@ void UAbilityTask_WaitInputPress::OnLocalPressCallback()
 }
 
 
-// Function GameplayAbilities.AbilityTask_WaitInputPress.OnPressCallback
+// Function GameplayAbilities.AbilityTask_WaitCancel.OnLocalCancelCallback
 // (Final, Native, Public)
 // Parameters:
-// float                                   Duration                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   InputID                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAbilityTask_WaitInputPress::OnPressCallback(float Duration)
+void UAbilityTask_WaitCancel::OnLocalCancelCallback(int32 InputID)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("AbilityTask_WaitInputPress", "OnPressCallback");
+		Func = Class->GetFunction("AbilityTask_WaitCancel", "OnLocalCancelCallback");
 
-	Params::AbilityTask_WaitInputPress_OnPressCallback Parms{};
+	Params::AbilityTask_WaitCancel_OnLocalCancelCallback Parms{};
 
-	Parms.Duration = Duration;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilityTask_WaitInputPress.OnReplicatePressCallback
-// (Final, Native, Public, HasOutParams)
-// Parameters:
-// struct FGameplayAbilityTargetDataHandle Data                                                   (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UAbilityTask_WaitInputPress::OnReplicatePressCallback(const struct FGameplayAbilityTargetDataHandle& Data)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilityTask_WaitInputPress", "OnReplicatePressCallback");
-
-	Params::AbilityTask_WaitInputPress_OnReplicatePressCallback Parms{};
-
-	Parms.Data = std::move(Data);
+	Parms.InputID = InputID;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -790,8 +865,8 @@ void UAbilityTask_WaitInputPress::OnReplicatePressCallback(const struct FGamepla
 // Function GameplayAbilities.PredictionFuncLibrary.GetReplicatedData_ArrayHit
 // (Final, Native, Static, Public, HasOutParams)
 // Parameters:
-// struct FPredictionDynamicParamHandle    InHandle                                               (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// TArray<struct FHitResult>               OutData                                                (Parm, OutParm, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FPredictionDynamicParamHandle&InHandle                                               (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// TArray<struct FHitResult>*              OutData                                                (Parm, OutParm, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UPredictionFuncLibrary::GetReplicatedData_ArrayHit(const struct FPredictionDynamicParamHandle& InHandle, TArray<struct FHitResult>* OutData)
@@ -822,8 +897,8 @@ bool UPredictionFuncLibrary::GetReplicatedData_ArrayHit(const struct FPrediction
 // Function GameplayAbilities.PredictionFuncLibrary.GetReplicatedData_ArrayInt
 // (Final, Native, Static, Public, HasOutParams)
 // Parameters:
-// struct FPredictionDynamicParamHandle    InHandle                                               (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// TArray<int32>                           OutData                                                (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+// const struct FPredictionDynamicParamHandle&InHandle                                               (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// TArray<int32>*                          OutData                                                (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UPredictionFuncLibrary::GetReplicatedData_ArrayInt(const struct FPredictionDynamicParamHandle& InHandle, TArray<int32>* OutData)
@@ -854,8 +929,8 @@ bool UPredictionFuncLibrary::GetReplicatedData_ArrayInt(const struct FPrediction
 // Function GameplayAbilities.PredictionFuncLibrary.GetReplicatedData_ArrayObject
 // (Final, Native, Static, Public, HasOutParams)
 // Parameters:
-// struct FPredictionDynamicParamHandle    InHandle                                               (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// TArray<class UObject*>                  OutData                                                (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+// const struct FPredictionDynamicParamHandle&InHandle                                               (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// TArray<class UObject*>*                 OutData                                                (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UPredictionFuncLibrary::GetReplicatedData_ArrayObject(const struct FPredictionDynamicParamHandle& InHandle, TArray<class UObject*>* OutData)
@@ -886,8 +961,8 @@ bool UPredictionFuncLibrary::GetReplicatedData_ArrayObject(const struct FPredict
 // Function GameplayAbilities.PredictionFuncLibrary.GetReplicatedData_Float
 // (Final, Native, Static, Public, HasOutParams)
 // Parameters:
-// struct FPredictionDynamicParamHandle    InHandle                                               (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// float                                   OutData                                                (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FPredictionDynamicParamHandle&InHandle                                               (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// float*                                  OutData                                                (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UPredictionFuncLibrary::GetReplicatedData_Float(const struct FPredictionDynamicParamHandle& InHandle, float* OutData)
@@ -918,8 +993,8 @@ bool UPredictionFuncLibrary::GetReplicatedData_Float(const struct FPredictionDyn
 // Function GameplayAbilities.PredictionFuncLibrary.GetReplicatedData_Hit
 // (Final, Native, Static, Public, HasOutParams)
 // Parameters:
-// struct FPredictionDynamicParamHandle    InHandle                                               (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FHitResult                       OutData                                                (Parm, OutParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FPredictionDynamicParamHandle&InHandle                                               (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// struct FHitResult*                      OutData                                                (Parm, OutParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UPredictionFuncLibrary::GetReplicatedData_Hit(const struct FPredictionDynamicParamHandle& InHandle, struct FHitResult* OutData)
@@ -950,8 +1025,8 @@ bool UPredictionFuncLibrary::GetReplicatedData_Hit(const struct FPredictionDynam
 // Function GameplayAbilities.PredictionFuncLibrary.GetReplicatedData_Int
 // (Final, Native, Static, Public, HasOutParams)
 // Parameters:
-// struct FPredictionDynamicParamHandle    InHandle                                               (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// int32                                   OutData                                                (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FPredictionDynamicParamHandle&InHandle                                               (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// int32*                                  OutData                                                (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UPredictionFuncLibrary::GetReplicatedData_Int(const struct FPredictionDynamicParamHandle& InHandle, int32* OutData)
@@ -982,8 +1057,8 @@ bool UPredictionFuncLibrary::GetReplicatedData_Int(const struct FPredictionDynam
 // Function GameplayAbilities.PredictionFuncLibrary.GetReplicatedData_Vector
 // (Final, Native, Static, Public, HasOutParams, HasDefaults)
 // Parameters:
-// struct FPredictionDynamicParamHandle    InHandle                                               (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FVector                          OutData                                                (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FPredictionDynamicParamHandle&InHandle                                               (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// struct FVector*                         OutData                                                (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UPredictionFuncLibrary::GetReplicatedData_Vector(const struct FPredictionDynamicParamHandle& InHandle, struct FVector* OutData)
@@ -1014,7 +1089,7 @@ bool UPredictionFuncLibrary::GetReplicatedData_Vector(const struct FPredictionDy
 // Function GameplayAbilities.PredictionFuncLibrary.MakeReplicatedData_ArrayHit
 // (Final, Native, Static, Public, HasOutParams)
 // Parameters:
-// TArray<struct FHitResult>               InParam                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const TArray<struct FHitResult>&        InParam                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 // struct FPredictionDynamicParamHandle    ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
 struct FPredictionDynamicParamHandle UPredictionFuncLibrary::MakeReplicatedData_ArrayHit(const TArray<struct FHitResult>& InParam)
@@ -1042,7 +1117,7 @@ struct FPredictionDynamicParamHandle UPredictionFuncLibrary::MakeReplicatedData_
 // Function GameplayAbilities.PredictionFuncLibrary.MakeReplicatedData_ArrayInt
 // (Final, Native, Static, Public)
 // Parameters:
-// TArray<int32>                           InParam                                                (ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+// const TArray<int32>&                    InParam                                                (ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 // struct FPredictionDynamicParamHandle    ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
 struct FPredictionDynamicParamHandle UPredictionFuncLibrary::MakeReplicatedData_ArrayInt(const TArray<int32>& InParam)
@@ -1070,7 +1145,7 @@ struct FPredictionDynamicParamHandle UPredictionFuncLibrary::MakeReplicatedData_
 // Function GameplayAbilities.PredictionFuncLibrary.MakeReplicatedData_ArrayObject
 // (Final, Native, Static, Public, HasOutParams)
 // Parameters:
-// TArray<class UObject*>                  InParam                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TArray<class UObject*>&           InParam                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 // struct FPredictionDynamicParamHandle    ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
 struct FPredictionDynamicParamHandle UPredictionFuncLibrary::MakeReplicatedData_ArrayObject(const TArray<class UObject*>& InParam)
@@ -1126,7 +1201,7 @@ struct FPredictionDynamicParamHandle UPredictionFuncLibrary::MakeReplicatedData_
 // Function GameplayAbilities.PredictionFuncLibrary.MakeReplicatedData_Hit
 // (Final, Native, Static, Public, HasOutParams)
 // Parameters:
-// struct FHitResult                       InParam                                                (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FHitResult&                InParam                                                (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 // struct FPredictionDynamicParamHandle    ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
 struct FPredictionDynamicParamHandle UPredictionFuncLibrary::MakeReplicatedData_Hit(const struct FHitResult& InParam)
@@ -1182,7 +1257,7 @@ struct FPredictionDynamicParamHandle UPredictionFuncLibrary::MakeReplicatedData_
 // Function GameplayAbilities.PredictionFuncLibrary.MakeReplicatedData_Vector
 // (Final, Native, Static, Public, HasOutParams, HasDefaults)
 // Parameters:
-// struct FVector                          InParam                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   InParam                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FPredictionDynamicParamHandle    ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
 struct FPredictionDynamicParamHandle UPredictionFuncLibrary::MakeReplicatedData_Vector(const struct FVector& InParam)
@@ -1207,89 +1282,11 @@ struct FPredictionDynamicParamHandle UPredictionFuncLibrary::MakeReplicatedData_
 }
 
 
-// Function GameplayAbilities.AbilityTask_WaitGameplayEffectStackChange.WaitForGameplayEffectStackChange
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class UGameplayAbility*                 OwningAbility                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FActiveGameplayEffectHandle      Handle                                                 (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UAbilityTask_WaitGameplayEffectStackChange*ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UAbilityTask_WaitGameplayEffectStackChange* UAbilityTask_WaitGameplayEffectStackChange::WaitForGameplayEffectStackChange(class UGameplayAbility* OwningAbility, const struct FActiveGameplayEffectHandle& Handle)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("AbilityTask_WaitGameplayEffectStackChange", "WaitForGameplayEffectStackChange");
-
-	Params::AbilityTask_WaitGameplayEffectStackChange_WaitForGameplayEffectStackChange Parms{};
-
-	Parms.OwningAbility = OwningAbility;
-	Parms.Handle = std::move(Handle);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilityTask_WaitGameplayEffectStackChange.OnGameplayEffectStackChange
-// (Final, Native, Public)
-// Parameters:
-// struct FActiveGameplayEffectHandle      Handle                                                 (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   NewCount                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   OldCount                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UAbilityTask_WaitGameplayEffectStackChange::OnGameplayEffectStackChange(const struct FActiveGameplayEffectHandle& Handle, int32 NewCount, int32 OldCount)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilityTask_WaitGameplayEffectStackChange", "OnGameplayEffectStackChange");
-
-	Params::AbilityTask_WaitGameplayEffectStackChange_OnGameplayEffectStackChange Parms{};
-
-	Parms.Handle = std::move(Handle);
-	Parms.NewCount = NewCount;
-	Parms.OldCount = OldCount;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilityAsync.EndAction
-// (Native, Public, BlueprintCallable)
-
-void UAbilityAsync::EndAction()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilityAsync", "EndAction");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // Function GameplayAbilities.AbilityAsync_WaitAttributeChanged.WaitForAttributeChanged
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class AActor*                           TargetActor                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayAttribute               Attribute                                              (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayAttribute&        Attribute                                              (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    OnlyTriggerOnce                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UAbilityAsync_WaitAttributeChanged*ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -1317,37 +1314,3241 @@ class UAbilityAsync_WaitAttributeChanged* UAbilityAsync_WaitAttributeChanged::Wa
 }
 
 
-// Function GameplayAbilities.AbilityAsync_WaitGameplayEffectApplied.WaitGameplayEffectAppliedToActor
-// (Final, Native, Static, Public, BlueprintCallable)
+// Function GameplayAbilities.AbilitySystemComponent.AddGameplayTag_Predict
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class AActor*                           TargetActor                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayTargetDataFilterHandle  SourceFilter                                           (ConstParm, Parm, NativeAccessSpecifierPublic)
-// struct FGameplayTagRequirements         SourceTagRequirements                                  (Parm, NativeAccessSpecifierPublic)
-// struct FGameplayTagRequirements         TargetTagRequirements                                  (Parm, NativeAccessSpecifierPublic)
-// bool                                    TriggerOnce                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ListenForPeriodicEffect                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UAbilityAsync_WaitGameplayEffectApplied*ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              GameplayTag                                            (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int32                             Count                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UAbilityAsync_WaitGameplayEffectApplied* UAbilityAsync_WaitGameplayEffectApplied::WaitGameplayEffectAppliedToActor(class AActor* TargetActor, const struct FGameplayTargetDataFilterHandle& SourceFilter, const struct FGameplayTagRequirements& SourceTagRequirements, const struct FGameplayTagRequirements& TargetTagRequirements, bool TriggerOnce, bool ListenForPeriodicEffect)
+void UAbilitySystemComponent::AddGameplayTag_Predict(const struct FGameplayTag& GameplayTag, const int32 Count)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("AbilityAsync_WaitGameplayEffectApplied", "WaitGameplayEffectAppliedToActor");
+		Func = Class->GetFunction("AbilitySystemComponent", "AddGameplayTag_Predict");
 
-	Params::AbilityAsync_WaitGameplayEffectApplied_WaitGameplayEffectAppliedToActor Parms{};
+	Params::AbilitySystemComponent_AddGameplayTag_Predict Parms{};
 
-	Parms.TargetActor = TargetActor;
-	Parms.SourceFilter = std::move(SourceFilter);
-	Parms.SourceTagRequirements = std::move(SourceTagRequirements);
-	Parms.TargetTagRequirements = std::move(TargetTagRequirements);
-	Parms.TriggerOnce = TriggerOnce;
-	Parms.ListenForPeriodicEffect = ListenForPeriodicEffect;
+	Parms.GameplayTag = std::move(GameplayTag);
+	Parms.Count = Count;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.AddGameplayTags_Predict
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const struct FGameplayTagContainer&     GameplayTags                                           (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UAbilitySystemComponent::AddGameplayTags_Predict(const struct FGameplayTagContainer& GameplayTags)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "AddGameplayTags_Predict");
+
+	Params::AbilitySystemComponent_AddGameplayTags_Predict Parms{};
+
+	Parms.GameplayTags = std::move(GameplayTags);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.BP_ApplyGameplayEffectSpecToSelf
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const struct FGameplayEffectSpecHandle& SpecHandle                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// struct FActiveGameplayEffectHandle      ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FActiveGameplayEffectHandle UAbilitySystemComponent::BP_ApplyGameplayEffectSpecToSelf(const struct FGameplayEffectSpecHandle& SpecHandle)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "BP_ApplyGameplayEffectSpecToSelf");
+
+	Params::AbilitySystemComponent_BP_ApplyGameplayEffectSpecToSelf Parms{};
+
+	Parms.SpecHandle = std::move(SpecHandle);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.BP_ApplyGameplayEffectSpecToTarget
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const struct FGameplayEffectSpecHandle& SpecHandle                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// class UAbilitySystemComponent*          Target                                                 (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FActiveGameplayEffectHandle      ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FActiveGameplayEffectHandle UAbilitySystemComponent::BP_ApplyGameplayEffectSpecToTarget(const struct FGameplayEffectSpecHandle& SpecHandle, class UAbilitySystemComponent* Target)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "BP_ApplyGameplayEffectSpecToTarget");
+
+	Params::AbilitySystemComponent_BP_ApplyGameplayEffectSpecToTarget Parms{};
+
+	Parms.SpecHandle = std::move(SpecHandle);
+	Parms.Target = Target;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.BP_ApplyGameplayEffectToSelf
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// TSubclassOf<class UGameplayEffect>      GameplayEffectClass                                    (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   Level                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayEffectContextHandle&EffectContext                                          (Parm, NativeAccessSpecifierPublic)
+// struct FActiveGameplayEffectHandle      ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FActiveGameplayEffectHandle UAbilitySystemComponent::BP_ApplyGameplayEffectToSelf(TSubclassOf<class UGameplayEffect> GameplayEffectClass, float Level, const struct FGameplayEffectContextHandle& EffectContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "BP_ApplyGameplayEffectToSelf");
+
+	Params::AbilitySystemComponent_BP_ApplyGameplayEffectToSelf Parms{};
+
+	Parms.GameplayEffectClass = GameplayEffectClass;
+	Parms.Level = Level;
+	Parms.EffectContext = std::move(EffectContext);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.BP_ApplyGameplayEffectToTarget
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// TSubclassOf<class UGameplayEffect>      GameplayEffectClass                                    (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UAbilitySystemComponent*          Target                                                 (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   Level                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayEffectContextHandle&Context                                                (Parm, NativeAccessSpecifierPublic)
+// struct FActiveGameplayEffectHandle      ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FActiveGameplayEffectHandle UAbilitySystemComponent::BP_ApplyGameplayEffectToTarget(TSubclassOf<class UGameplayEffect> GameplayEffectClass, class UAbilitySystemComponent* Target, float Level, const struct FGameplayEffectContextHandle& Context)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "BP_ApplyGameplayEffectToTarget");
+
+	Params::AbilitySystemComponent_BP_ApplyGameplayEffectToTarget Parms{};
+
+	Parms.GameplayEffectClass = GameplayEffectClass;
+	Parms.Target = Target;
+	Parms.Level = Level;
+	Parms.Context = std::move(Context);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.CheckScopedPredicitionKeyReject
+// (Final, Native, Public)
+// Parameters:
+// bool                                    bCallReject                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UAbilitySystemComponent::CheckScopedPredicitionKeyReject(bool bCallReject)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "CheckScopedPredicitionKeyReject");
+
+	Params::AbilitySystemComponent_CheckScopedPredicitionKeyReject Parms{};
+
+	Parms.bCallReject = bCallReject;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.ClearAbility
+// (Final, BlueprintAuthorityOnly, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const struct FGameplayAbilitySpecHandle&Handle                                                 (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UAbilitySystemComponent::ClearAbility(const struct FGameplayAbilitySpecHandle& Handle)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "ClearAbility");
+
+	Params::AbilitySystemComponent_ClearAbility Parms{};
+
+	Parms.Handle = std::move(Handle);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.ClearAllAbilities
+// (Final, BlueprintAuthorityOnly, Native, Public, BlueprintCallable)
+
+void UAbilitySystemComponent::ClearAllAbilities()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "ClearAllAbilities");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.ClearAllAbilitiesWithInputID
+// (Final, BlueprintAuthorityOnly, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   InputID                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UAbilitySystemComponent::ClearAllAbilitiesWithInputID(int32 InputID)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "ClearAllAbilitiesWithInputID");
+
+	Params::AbilitySystemComponent_ClearAllAbilitiesWithInputID Parms{};
+
+	Parms.InputID = InputID;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.ClientActivateAbilityFailed
+// (Net, NetReliable, Native, Event, Protected, NetClient)
+// Parameters:
+// const struct FGameplayAbilitySpecHandle&AbilityToActivate                                      (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    PredictionKey                                          (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UAbilitySystemComponent::ClientActivateAbilityFailed(const struct FGameplayAbilitySpecHandle& AbilityToActivate, const class FString& PredictionKey)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "ClientActivateAbilityFailed");
+
+	Params::AbilitySystemComponent_ClientActivateAbilityFailed Parms{};
+
+	Parms.AbilityToActivate = std::move(AbilityToActivate);
+	Parms.PredictionKey = std::move(PredictionKey);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.ClientActivateAbilitySucceed
+// (Net, NetReliable, Native, Event, Protected, NetClient)
+// Parameters:
+// const struct FGameplayAbilitySpecHandle&AbilityToActivate                                      (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FPredictionKey&            PredictionKey                                          (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UAbilitySystemComponent::ClientActivateAbilitySucceed(const struct FGameplayAbilitySpecHandle& AbilityToActivate, const struct FPredictionKey& PredictionKey)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "ClientActivateAbilitySucceed");
+
+	Params::AbilitySystemComponent_ClientActivateAbilitySucceed Parms{};
+
+	Parms.AbilityToActivate = std::move(AbilityToActivate);
+	Parms.PredictionKey = std::move(PredictionKey);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.ClientActivateAbilitySucceedWithEventData
+// (Net, NetReliable, Native, Event, Protected, NetClient)
+// Parameters:
+// const struct FGameplayAbilitySpecHandle&AbilityToActivate                                      (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FPredictionKey&            PredictionKey                                          (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayEventData&        TriggerEventData                                       (Parm, NativeAccessSpecifierPublic)
+
+void UAbilitySystemComponent::ClientActivateAbilitySucceedWithEventData(const struct FGameplayAbilitySpecHandle& AbilityToActivate, const struct FPredictionKey& PredictionKey, const struct FGameplayEventData& TriggerEventData)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "ClientActivateAbilitySucceedWithEventData");
+
+	Params::AbilitySystemComponent_ClientActivateAbilitySucceedWithEventData Parms{};
+
+	Parms.AbilityToActivate = std::move(AbilityToActivate);
+	Parms.PredictionKey = std::move(PredictionKey);
+	Parms.TriggerEventData = std::move(TriggerEventData);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.ClientCancelAbility
+// (Net, NetReliable, Native, Event, Protected, NetClient)
+// Parameters:
+// const struct FGameplayAbilitySpecHandle&AbilityToCancel                                        (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayAbilityActivationInfo&ActivationInfo                                         (Parm, NativeAccessSpecifierPublic)
+// const struct FAbilityEndContext&        EndContext                                             (ConstParm, Parm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UAbilitySystemComponent::ClientCancelAbility(const struct FGameplayAbilitySpecHandle& AbilityToCancel, const struct FGameplayAbilityActivationInfo& ActivationInfo, const struct FAbilityEndContext& EndContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "ClientCancelAbility");
+
+	Params::AbilitySystemComponent_ClientCancelAbility Parms{};
+
+	Parms.AbilityToCancel = std::move(AbilityToCancel);
+	Parms.ActivationInfo = std::move(ActivationInfo);
+	Parms.EndContext = std::move(EndContext);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.ClientCatchUpPredictionKey
+// (Net, NetReliable, Native, Event, Public, NetClient)
+// Parameters:
+// const class FString&                    PredictionKey                                          (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UAbilitySystemComponent::ClientCatchUpPredictionKey(const class FString& PredictionKey)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "ClientCatchUpPredictionKey");
+
+	Params::AbilitySystemComponent_ClientCatchUpPredictionKey Parms{};
+
+	Parms.PredictionKey = std::move(PredictionKey);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.ClientEndAbility
+// (Net, NetReliable, Native, Event, Protected, NetClient)
+// Parameters:
+// const struct FGameplayAbilitySpecHandle&AbilityToEnd                                           (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayAbilityActivationInfo&ActivationInfo                                         (Parm, NativeAccessSpecifierPublic)
+// const struct FAbilityEndContext&        EndContext                                             (ConstParm, Parm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UAbilitySystemComponent::ClientEndAbility(const struct FGameplayAbilitySpecHandle& AbilityToEnd, const struct FGameplayAbilityActivationInfo& ActivationInfo, const struct FAbilityEndContext& EndContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "ClientEndAbility");
+
+	Params::AbilitySystemComponent_ClientEndAbility Parms{};
+
+	Parms.AbilityToEnd = std::move(AbilityToEnd);
+	Parms.ActivationInfo = std::move(ActivationInfo);
+	Parms.EndContext = std::move(EndContext);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.ClientInternalReboot_Dynamic
+// (Final, Net, NetReliable, Native, Event, Private, NetClient)
+// Parameters:
+// const struct FPredictionKey&            PredictionKey                                          (ConstParm, Parm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FPredictionDynamicParamHandle&Handle                                                 (ConstParm, Parm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UAbilitySystemComponent::ClientInternalReboot_Dynamic(const struct FPredictionKey& PredictionKey, const struct FPredictionDynamicParamHandle& Handle)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "ClientInternalReboot_Dynamic");
+
+	Params::AbilitySystemComponent_ClientInternalReboot_Dynamic Parms{};
+
+	Parms.PredictionKey = std::move(PredictionKey);
+	Parms.Handle = std::move(Handle);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.ClientInternalRebootChannel_Dynamic
+// (Final, Net, NetReliable, Native, Event, Private, NetClient)
+// Parameters:
+// const struct FPredictionKey&            PredictionKey                                          (ConstParm, Parm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FPredictionDynamicParamHandle&Handle                                                 (ConstParm, Parm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UAbilitySystemComponent::ClientInternalRebootChannel_Dynamic(const struct FPredictionKey& PredictionKey, const struct FPredictionDynamicParamHandle& Handle)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "ClientInternalRebootChannel_Dynamic");
+
+	Params::AbilitySystemComponent_ClientInternalRebootChannel_Dynamic Parms{};
+
+	Parms.PredictionKey = std::move(PredictionKey);
+	Parms.Handle = std::move(Handle);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.ClientPrintDebug_Response
+// (Net, NetReliable, Native, Event, Public, NetClient)
+// Parameters:
+// const TArray<class FString>&            Strings                                                (ConstParm, Parm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// int32                                   GameFlags                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UAbilitySystemComponent::ClientPrintDebug_Response(const TArray<class FString>& Strings, int32 GameFlags)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "ClientPrintDebug_Response");
+
+	Params::AbilitySystemComponent_ClientPrintDebug_Response Parms{};
+
+	Parms.Strings = std::move(Strings);
+	Parms.GameFlags = GameFlags;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.ClientReceivePredictionKey
+// (Net, NetReliable, Native, Event, Public, NetClient)
+// Parameters:
+// const struct FPredictionKey&            Key                                                    (ConstParm, Parm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UAbilitySystemComponent::ClientReceivePredictionKey(const struct FPredictionKey& Key)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "ClientReceivePredictionKey");
+
+	Params::AbilitySystemComponent_ClientReceivePredictionKey Parms{};
+
+	Parms.Key = std::move(Key);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.ClientRejectPredictionKey
+// (Net, NetReliable, Native, Event, Public, NetClient)
+// Parameters:
+// const class FString&                    PredictionKey                                          (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UAbilitySystemComponent::ClientRejectPredictionKey(const class FString& PredictionKey)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "ClientRejectPredictionKey");
+
+	Params::AbilitySystemComponent_ClientRejectPredictionKey Parms{};
+
+	Parms.PredictionKey = std::move(PredictionKey);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.ClientTestReplicateData
+// (Net, NetReliable, Native, Event, Public, NetClient)
+// Parameters:
+// const struct FPredictionKey&            Key                                                    (ConstParm, Parm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UAbilitySystemComponent::ClientTestReplicateData(const struct FPredictionKey& Key)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "ClientTestReplicateData");
+
+	Params::AbilitySystemComponent_ClientTestReplicateData Parms{};
+
+	Parms.Key = std::move(Key);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.ClientTryActivateAbility
+// (Net, NetReliable, Native, Event, Protected, NetClient)
+// Parameters:
+// const struct FGameplayAbilitySpecHandle&AbilityToActivate                                      (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UAbilitySystemComponent::ClientTryActivateAbility(const struct FGameplayAbilitySpecHandle& AbilityToActivate)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "ClientTryActivateAbility");
+
+	Params::AbilitySystemComponent_ClientTryActivateAbility Parms{};
+
+	Parms.AbilityToActivate = std::move(AbilityToActivate);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.ExecuteGameplayCue
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const struct FGameplayTag&              GameplayCueTag                                         (ConstParm, Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayCueParameters&    GameplayCueParameters                                  (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+
+void UAbilitySystemComponent::ExecuteGameplayCue(const struct FGameplayTag& GameplayCueTag, const struct FGameplayCueParameters& GameplayCueParameters)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "ExecuteGameplayCue");
+
+	Params::AbilitySystemComponent_ExecuteGameplayCue Parms{};
+
+	Parms.GameplayCueTag = std::move(GameplayCueTag);
+	Parms.GameplayCueParameters = std::move(GameplayCueParameters);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.GetAllAttributes
+// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure)
+// Parameters:
+// TArray<struct FGameplayAttribute>*      OutAttributes                                          (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+
+void UAbilitySystemComponent::GetAllAttributes(TArray<struct FGameplayAttribute>* OutAttributes)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "GetAllAttributes");
+
+	Params::AbilitySystemComponent_GetAllAttributes Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (OutAttributes != nullptr)
+		*OutAttributes = std::move(Parms.OutAttributes);
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.HandleGameplayCue
+// (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const struct FGameplayTag&              GameplayCueTag                                         (ConstParm, Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EGameplayCueEvent                       EventType                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+
+void UAbilitySystemComponent::HandleGameplayCue(const struct FGameplayTag& GameplayCueTag, EGameplayCueEvent EventType, const struct FGameplayCueParameters& Parameters)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "HandleGameplayCue");
+
+	Params::AbilitySystemComponent_HandleGameplayCue Parms{};
+
+	Parms.GameplayCueTag = std::move(GameplayCueTag);
+	Parms.EventType = EventType;
+	Parms.Parameters = std::move(Parameters);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.InputCancel
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   InputID                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UAbilitySystemComponent::InputCancel(int32 InputID)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "InputCancel");
+
+	Params::AbilitySystemComponent_InputCancel Parms{};
+
+	Parms.InputID = InputID;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.InputConfirm
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   InputID                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UAbilitySystemComponent::InputConfirm(int32 InputID)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "InputConfirm");
+
+	Params::AbilitySystemComponent_InputConfirm Parms{};
+
+	Parms.InputID = InputID;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.K2_GiveAbility
+// (Final, BlueprintAuthorityOnly, Native, Public, BlueprintCallable)
+// Parameters:
+// TSubclassOf<class UGameplayAbility>     AbilityClass                                           (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Level                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   InputID                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FGameplayAbilitySpecHandle       ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FGameplayAbilitySpecHandle UAbilitySystemComponent::K2_GiveAbility(TSubclassOf<class UGameplayAbility> AbilityClass, int32 Level, int32 InputID)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "K2_GiveAbility");
+
+	Params::AbilitySystemComponent_K2_GiveAbility Parms{};
+
+	Parms.AbilityClass = AbilityClass;
+	Parms.Level = Level;
+	Parms.InputID = InputID;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.K2_GiveAbilityAndActivateOnce
+// (Final, BlueprintAuthorityOnly, Native, Public, BlueprintCallable)
+// Parameters:
+// TSubclassOf<class UGameplayAbility>     AbilityClass                                           (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Level                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   InputID                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FGameplayAbilitySpecHandle       ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FGameplayAbilitySpecHandle UAbilitySystemComponent::K2_GiveAbilityAndActivateOnce(TSubclassOf<class UGameplayAbility> AbilityClass, int32 Level, int32 InputID)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "K2_GiveAbilityAndActivateOnce");
+
+	Params::AbilitySystemComponent_K2_GiveAbilityAndActivateOnce Parms{};
+
+	Parms.AbilityClass = AbilityClass;
+	Parms.Level = Level;
+	Parms.InputID = InputID;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.K2_InitStats
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// TSubclassOf<class UAttributeSet>        Attributes                                             (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UDataTable*                 DataTable                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UAbilitySystemComponent::K2_InitStats(TSubclassOf<class UAttributeSet> Attributes, const class UDataTable* DataTable)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "K2_InitStats");
+
+	Params::AbilitySystemComponent_K2_InitStats Parms{};
+
+	Parms.Attributes = Attributes;
+	Parms.DataTable = DataTable;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.KeepAbilityRootKeyAsExpiredPredictionKey
+// (Final, Native, Public)
+// Parameters:
+// class UGameplayAbility*                 Ability                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bWasCancelled                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UAbilitySystemComponent::KeepAbilityRootKeyAsExpiredPredictionKey(class UGameplayAbility* Ability, bool bWasCancelled)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "KeepAbilityRootKeyAsExpiredPredictionKey");
+
+	Params::AbilitySystemComponent_KeepAbilityRootKeyAsExpiredPredictionKey Parms{};
+
+	Parms.Ability = Ability;
+	Parms.bWasCancelled = bWasCancelled;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.KeepExpiredPredictionKey
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// const class FString&                    Key                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UAbilitySystemComponent::KeepExpiredPredictionKey(const class FString& Key)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "KeepExpiredPredictionKey");
+
+	Params::AbilitySystemComponent_KeepExpiredPredictionKey Parms{};
+
+	Parms.Key = std::move(Key);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.NetMulticast_InvokeGameplayCueAdded
+// (Net, Native, Event, NetMulticast, Public)
+// Parameters:
+// const struct FGameplayTag&              GameplayCueTag                                         (ConstParm, Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FPredictionKey&            PredictionKey                                          (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayEffectContextHandle&EffectContext                                          (Parm, NativeAccessSpecifierPublic)
+
+void UAbilitySystemComponent::NetMulticast_InvokeGameplayCueAdded(const struct FGameplayTag& GameplayCueTag, const struct FPredictionKey& PredictionKey, const struct FGameplayEffectContextHandle& EffectContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "NetMulticast_InvokeGameplayCueAdded");
+
+	Params::AbilitySystemComponent_NetMulticast_InvokeGameplayCueAdded Parms{};
+
+	Parms.GameplayCueTag = std::move(GameplayCueTag);
+	Parms.PredictionKey = std::move(PredictionKey);
+	Parms.EffectContext = std::move(EffectContext);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.NetMulticast_InvokeGameplayCueAdded_WithParams
+// (Net, Native, Event, NetMulticast, Public)
+// Parameters:
+// const struct FGameplayTag&              GameplayCueTag                                         (ConstParm, Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FPredictionKey&            PredictionKey                                          (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+
+void UAbilitySystemComponent::NetMulticast_InvokeGameplayCueAdded_WithParams(const struct FGameplayTag& GameplayCueTag, const struct FPredictionKey& PredictionKey, const struct FGameplayCueParameters& Parameters)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "NetMulticast_InvokeGameplayCueAdded_WithParams");
+
+	Params::AbilitySystemComponent_NetMulticast_InvokeGameplayCueAdded_WithParams Parms{};
+
+	Parms.GameplayCueTag = std::move(GameplayCueTag);
+	Parms.PredictionKey = std::move(PredictionKey);
+	Parms.Parameters = std::move(Parameters);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.NetMulticast_InvokeGameplayCueAddedAndWhileActive_FromSpec
+// (Net, Native, Event, NetMulticast, Public)
+// Parameters:
+// const struct FGameplayEffectSpecForRPC& Spec                                                   (ConstParm, Parm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FPredictionKey&            PredictionKey                                          (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UAbilitySystemComponent::NetMulticast_InvokeGameplayCueAddedAndWhileActive_FromSpec(const struct FGameplayEffectSpecForRPC& Spec, const struct FPredictionKey& PredictionKey)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "NetMulticast_InvokeGameplayCueAddedAndWhileActive_FromSpec");
+
+	Params::AbilitySystemComponent_NetMulticast_InvokeGameplayCueAddedAndWhileActive_FromSpec Parms{};
+
+	Parms.Spec = std::move(Spec);
+	Parms.PredictionKey = std::move(PredictionKey);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.NetMulticast_InvokeGameplayCueAddedAndWhileActive_WithParams
+// (Net, Native, Event, NetMulticast, Public)
+// Parameters:
+// const struct FGameplayTag&              GameplayCueTag                                         (ConstParm, Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FPredictionKey&            PredictionKey                                          (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayCueParameters&    GameplayCueParameters                                  (ConstParm, Parm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+
+void UAbilitySystemComponent::NetMulticast_InvokeGameplayCueAddedAndWhileActive_WithParams(const struct FGameplayTag& GameplayCueTag, const struct FPredictionKey& PredictionKey, const struct FGameplayCueParameters& GameplayCueParameters)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "NetMulticast_InvokeGameplayCueAddedAndWhileActive_WithParams");
+
+	Params::AbilitySystemComponent_NetMulticast_InvokeGameplayCueAddedAndWhileActive_WithParams Parms{};
+
+	Parms.GameplayCueTag = std::move(GameplayCueTag);
+	Parms.PredictionKey = std::move(PredictionKey);
+	Parms.GameplayCueParameters = std::move(GameplayCueParameters);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.NetMulticast_InvokeGameplayCueExecuted
+// (Net, Native, Event, NetMulticast, Public)
+// Parameters:
+// const struct FGameplayTag&              GameplayCueTag                                         (ConstParm, Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FPredictionKey&            PredictionKey                                          (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayEffectContextHandle&EffectContext                                          (Parm, NativeAccessSpecifierPublic)
+
+void UAbilitySystemComponent::NetMulticast_InvokeGameplayCueExecuted(const struct FGameplayTag& GameplayCueTag, const struct FPredictionKey& PredictionKey, const struct FGameplayEffectContextHandle& EffectContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "NetMulticast_InvokeGameplayCueExecuted");
+
+	Params::AbilitySystemComponent_NetMulticast_InvokeGameplayCueExecuted Parms{};
+
+	Parms.GameplayCueTag = std::move(GameplayCueTag);
+	Parms.PredictionKey = std::move(PredictionKey);
+	Parms.EffectContext = std::move(EffectContext);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.NetMulticast_InvokeGameplayCueExecuted_FromSpec
+// (Net, Native, Event, NetMulticast, Public)
+// Parameters:
+// const struct FGameplayEffectSpecForRPC& Spec                                                   (ConstParm, Parm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FPredictionKey&            PredictionKey                                          (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UAbilitySystemComponent::NetMulticast_InvokeGameplayCueExecuted_FromSpec(const struct FGameplayEffectSpecForRPC& Spec, const struct FPredictionKey& PredictionKey)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "NetMulticast_InvokeGameplayCueExecuted_FromSpec");
+
+	Params::AbilitySystemComponent_NetMulticast_InvokeGameplayCueExecuted_FromSpec Parms{};
+
+	Parms.Spec = std::move(Spec);
+	Parms.PredictionKey = std::move(PredictionKey);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.NetMulticast_InvokeGameplayCueExecuted_WithParams
+// (Net, Native, Event, NetMulticast, Public)
+// Parameters:
+// const struct FGameplayTag&              GameplayCueTag                                         (ConstParm, Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FPredictionKey&            PredictionKey                                          (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayCueParameters&    GameplayCueParameters                                  (ConstParm, Parm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+
+void UAbilitySystemComponent::NetMulticast_InvokeGameplayCueExecuted_WithParams(const struct FGameplayTag& GameplayCueTag, const struct FPredictionKey& PredictionKey, const struct FGameplayCueParameters& GameplayCueParameters)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "NetMulticast_InvokeGameplayCueExecuted_WithParams");
+
+	Params::AbilitySystemComponent_NetMulticast_InvokeGameplayCueExecuted_WithParams Parms{};
+
+	Parms.GameplayCueTag = std::move(GameplayCueTag);
+	Parms.PredictionKey = std::move(PredictionKey);
+	Parms.GameplayCueParameters = std::move(GameplayCueParameters);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.NetMulticast_InvokeGameplayCuesAddedAndWhileActive_WithParams
+// (Net, Native, Event, NetMulticast, Public)
+// Parameters:
+// const struct FGameplayTagContainer&     GameplayCueTags                                        (ConstParm, Parm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FPredictionKey&            PredictionKey                                          (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayCueParameters&    GameplayCueParameters                                  (ConstParm, Parm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+
+void UAbilitySystemComponent::NetMulticast_InvokeGameplayCuesAddedAndWhileActive_WithParams(const struct FGameplayTagContainer& GameplayCueTags, const struct FPredictionKey& PredictionKey, const struct FGameplayCueParameters& GameplayCueParameters)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "NetMulticast_InvokeGameplayCuesAddedAndWhileActive_WithParams");
+
+	Params::AbilitySystemComponent_NetMulticast_InvokeGameplayCuesAddedAndWhileActive_WithParams Parms{};
+
+	Parms.GameplayCueTags = std::move(GameplayCueTags);
+	Parms.PredictionKey = std::move(PredictionKey);
+	Parms.GameplayCueParameters = std::move(GameplayCueParameters);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.NetMulticast_InvokeGameplayCuesExecuted
+// (Net, Native, Event, NetMulticast, Public)
+// Parameters:
+// const struct FGameplayTagContainer&     GameplayCueTags                                        (ConstParm, Parm, NativeAccessSpecifierPublic)
+// const struct FPredictionKey&            PredictionKey                                          (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayEffectContextHandle&EffectContext                                          (Parm, NativeAccessSpecifierPublic)
+
+void UAbilitySystemComponent::NetMulticast_InvokeGameplayCuesExecuted(const struct FGameplayTagContainer& GameplayCueTags, const struct FPredictionKey& PredictionKey, const struct FGameplayEffectContextHandle& EffectContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "NetMulticast_InvokeGameplayCuesExecuted");
+
+	Params::AbilitySystemComponent_NetMulticast_InvokeGameplayCuesExecuted Parms{};
+
+	Parms.GameplayCueTags = std::move(GameplayCueTags);
+	Parms.PredictionKey = std::move(PredictionKey);
+	Parms.EffectContext = std::move(EffectContext);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.NetMulticast_InvokeGameplayCuesExecuted_WithParams
+// (Net, Native, Event, NetMulticast, Public)
+// Parameters:
+// const struct FGameplayTagContainer&     GameplayCueTags                                        (ConstParm, Parm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FPredictionKey&            PredictionKey                                          (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayCueParameters&    GameplayCueParameters                                  (ConstParm, Parm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+
+void UAbilitySystemComponent::NetMulticast_InvokeGameplayCuesExecuted_WithParams(const struct FGameplayTagContainer& GameplayCueTags, const struct FPredictionKey& PredictionKey, const struct FGameplayCueParameters& GameplayCueParameters)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "NetMulticast_InvokeGameplayCuesExecuted_WithParams");
+
+	Params::AbilitySystemComponent_NetMulticast_InvokeGameplayCuesExecuted_WithParams Parms{};
+
+	Parms.GameplayCueTags = std::move(GameplayCueTags);
+	Parms.PredictionKey = std::move(PredictionKey);
+	Parms.GameplayCueParameters = std::move(GameplayCueParameters);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.NetMulticast_ReplicationActivatableAbilities
+// (Net, NetReliable, Native, Event, NetMulticast, Protected)
+// Parameters:
+// const struct FGameplayAbilitySpec&      Spec                                                   (ConstParm, Parm, NativeAccessSpecifierPublic)
+// uint8                                   Operation                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UAbilitySystemComponent::NetMulticast_ReplicationActivatableAbilities(const struct FGameplayAbilitySpec& Spec, uint8 Operation)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "NetMulticast_ReplicationActivatableAbilities");
+
+	Params::AbilitySystemComponent_NetMulticast_ReplicationActivatableAbilities Parms{};
+
+	Parms.Spec = std::move(Spec);
+	Parms.Operation = Operation;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.OnAvatarActorDestroyed
+// (Final, Native, Public)
+// Parameters:
+// class AActor*                           InActor                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UAbilitySystemComponent::OnAvatarActorDestroyed(class AActor* InActor)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "OnAvatarActorDestroyed");
+
+	Params::AbilitySystemComponent_OnAvatarActorDestroyed Parms{};
+
+	Parms.InActor = InActor;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.OnOwnerActorDestroyed
+// (Final, Native, Public)
+// Parameters:
+// class AActor*                           InActor                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UAbilitySystemComponent::OnOwnerActorDestroyed(class AActor* InActor)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "OnOwnerActorDestroyed");
+
+	Params::AbilitySystemComponent_OnOwnerActorDestroyed Parms{};
+
+	Parms.InActor = InActor;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.OnPredictionKeyRejected
+// (Final, Native, Public)
+// Parameters:
+// const class FString&                    Key                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UAbilitySystemComponent::OnPredictionKeyRejected(const class FString& Key)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "OnPredictionKeyRejected");
+
+	Params::AbilitySystemComponent_OnPredictionKeyRejected Parms{};
+
+	Parms.Key = std::move(Key);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.OnRep_ActivateAbilities
+// (Native, Protected)
+
+void UAbilitySystemComponent::OnRep_ActivateAbilities()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "OnRep_ActivateAbilities");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.OnRep_ClientDebugString
+// (Native, Public)
+
+void UAbilitySystemComponent::OnRep_ClientDebugString()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "OnRep_ClientDebugString");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.OnRep_OwningActor
+// (Final, Native, Public)
+
+void UAbilitySystemComponent::OnRep_OwningActor()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "OnRep_OwningActor");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.OnRep_ReplicatedAnimMontage
+// (Native, Protected)
+
+void UAbilitySystemComponent::OnRep_ReplicatedAnimMontage()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "OnRep_ReplicatedAnimMontage");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.OnRep_ReplicatedAnimTimeline
+// (Native, Protected)
+
+void UAbilitySystemComponent::OnRep_ReplicatedAnimTimeline()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "OnRep_ReplicatedAnimTimeline");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.OnRep_ServerDebugString
+// (Native, Public)
+
+void UAbilitySystemComponent::OnRep_ServerDebugString()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "OnRep_ServerDebugString");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.OnRep_SpawnedAttributes
+// (Final, Native, Private, HasOutParams)
+// Parameters:
+// const TArray<class UAttributeSet*>&     PreviousSpawnedAttributes                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+
+void UAbilitySystemComponent::OnRep_SpawnedAttributes(const TArray<class UAttributeSet*>& PreviousSpawnedAttributes)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "OnRep_SpawnedAttributes");
+
+	Params::AbilitySystemComponent_OnRep_SpawnedAttributes Parms{};
+
+	Parms.PreviousSpawnedAttributes = std::move(PreviousSpawnedAttributes);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.OnSpawnedAttributesEndPlayed
+// (Final, Native, Public)
+// Parameters:
+// class AActor*                           InActor                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EEndPlayReason                          EndPlayReason                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UAbilitySystemComponent::OnSpawnedAttributesEndPlayed(class AActor* InActor, EEndPlayReason EndPlayReason)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "OnSpawnedAttributesEndPlayed");
+
+	Params::AbilitySystemComponent_OnSpawnedAttributesEndPlayed Parms{};
+
+	Parms.InActor = InActor;
+	Parms.EndPlayReason = EndPlayReason;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.PressInputID
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   InputID                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UAbilitySystemComponent::PressInputID(int32 InputID)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "PressInputID");
+
+	Params::AbilitySystemComponent_PressInputID Parms{};
+
+	Parms.InputID = InputID;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.ReleaseInputID
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   InputID                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UAbilitySystemComponent::ReleaseInputID(int32 InputID)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "ReleaseInputID");
+
+	Params::AbilitySystemComponent_ReleaseInputID Parms{};
+
+	Parms.InputID = InputID;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.RemoveActiveEffectsWithAppliedTags
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// const struct FGameplayTagContainer&     Tags                                                   (Parm, NativeAccessSpecifierPublic)
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UAbilitySystemComponent::RemoveActiveEffectsWithAppliedTags(const struct FGameplayTagContainer& Tags)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "RemoveActiveEffectsWithAppliedTags");
+
+	Params::AbilitySystemComponent_RemoveActiveEffectsWithAppliedTags Parms{};
+
+	Parms.Tags = std::move(Tags);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.RemoveActiveEffectsWithGrantedTagRequirements
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const struct FGameplayTagRequirements&  TagRequirements                                        (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UAbilitySystemComponent::RemoveActiveEffectsWithGrantedTagRequirements(const struct FGameplayTagRequirements& TagRequirements)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "RemoveActiveEffectsWithGrantedTagRequirements");
+
+	Params::AbilitySystemComponent_RemoveActiveEffectsWithGrantedTagRequirements Parms{};
+
+	Parms.TagRequirements = std::move(TagRequirements);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.RemoveActiveEffectsWithGrantedTags
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// const struct FGameplayTagContainer&     Tags                                                   (Parm, NativeAccessSpecifierPublic)
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UAbilitySystemComponent::RemoveActiveEffectsWithGrantedTags(const struct FGameplayTagContainer& Tags)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "RemoveActiveEffectsWithGrantedTags");
+
+	Params::AbilitySystemComponent_RemoveActiveEffectsWithGrantedTags Parms{};
+
+	Parms.Tags = std::move(Tags);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.RemoveActiveEffectsWithSourceTags
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// const struct FGameplayTagContainer&     Tags                                                   (Parm, NativeAccessSpecifierPublic)
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UAbilitySystemComponent::RemoveActiveEffectsWithSourceTags(const struct FGameplayTagContainer& Tags)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "RemoveActiveEffectsWithSourceTags");
+
+	Params::AbilitySystemComponent_RemoveActiveEffectsWithSourceTags Parms{};
+
+	Parms.Tags = std::move(Tags);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.RemoveActiveEffectsWithTags
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// const struct FGameplayTagContainer&     Tags                                                   (Parm, NativeAccessSpecifierPublic)
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UAbilitySystemComponent::RemoveActiveEffectsWithTags(const struct FGameplayTagContainer& Tags)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "RemoveActiveEffectsWithTags");
+
+	Params::AbilitySystemComponent_RemoveActiveEffectsWithTags Parms{};
+
+	Parms.Tags = std::move(Tags);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.RemoveActiveGameplayEffect
+// (BlueprintAuthorityOnly, Native, Public, BlueprintCallable)
+// Parameters:
+// const struct FActiveGameplayEffectHandle&Handle                                                 (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   StacksToRemove                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UAbilitySystemComponent::RemoveActiveGameplayEffect(const struct FActiveGameplayEffectHandle& Handle, int32 StacksToRemove)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "RemoveActiveGameplayEffect");
+
+	Params::AbilitySystemComponent_RemoveActiveGameplayEffect Parms{};
+
+	Parms.Handle = std::move(Handle);
+	Parms.StacksToRemove = StacksToRemove;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.RemoveActiveGameplayEffectBySourceEffect
+// (BlueprintAuthorityOnly, Native, Public, BlueprintCallable)
+// Parameters:
+// TSubclassOf<class UGameplayEffect>      GameplayEffect                                         (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UAbilitySystemComponent*          InstigatorAbilitySystemComponent                       (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   StacksToRemove                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UAbilitySystemComponent::RemoveActiveGameplayEffectBySourceEffect(TSubclassOf<class UGameplayEffect> GameplayEffect, class UAbilitySystemComponent* InstigatorAbilitySystemComponent, int32 StacksToRemove)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "RemoveActiveGameplayEffectBySourceEffect");
+
+	Params::AbilitySystemComponent_RemoveActiveGameplayEffectBySourceEffect Parms{};
+
+	Parms.GameplayEffect = GameplayEffect;
+	Parms.InstigatorAbilitySystemComponent = InstigatorAbilitySystemComponent;
+	Parms.StacksToRemove = StacksToRemove;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.RemoveGameplayTag_Predict
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const struct FGameplayTag&              GameplayTag                                            (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int32                             Count                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UAbilitySystemComponent::RemoveGameplayTag_Predict(const struct FGameplayTag& GameplayTag, const int32 Count)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "RemoveGameplayTag_Predict");
+
+	Params::AbilitySystemComponent_RemoveGameplayTag_Predict Parms{};
+
+	Parms.GameplayTag = std::move(GameplayTag);
+	Parms.Count = Count;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.RemoveGameplayTags_Predict
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const struct FGameplayTagContainer&     GameplayTags                                           (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UAbilitySystemComponent::RemoveGameplayTags_Predict(const struct FGameplayTagContainer& GameplayTags)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "RemoveGameplayTags_Predict");
+
+	Params::AbilitySystemComponent_RemoveGameplayTags_Predict Parms{};
+
+	Parms.GameplayTags = std::move(GameplayTags);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.ServerCancelAbility
+// (Net, NetReliable, Native, Event, Protected, NetServer)
+// Parameters:
+// const struct FGameplayAbilitySpecHandle&AbilityToCancel                                        (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayAbilityActivationInfo&ActivationInfo                                         (Parm, NativeAccessSpecifierPublic)
+// const struct FAbilityEndContext&        EndContext                                             (ConstParm, Parm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UAbilitySystemComponent::ServerCancelAbility(const struct FGameplayAbilitySpecHandle& AbilityToCancel, const struct FGameplayAbilityActivationInfo& ActivationInfo, const struct FAbilityEndContext& EndContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "ServerCancelAbility");
+
+	Params::AbilitySystemComponent_ServerCancelAbility Parms{};
+
+	Parms.AbilityToCancel = std::move(AbilityToCancel);
+	Parms.ActivationInfo = std::move(ActivationInfo);
+	Parms.EndContext = std::move(EndContext);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.ServerCatchUpOperation
+// (Net, NetReliable, Native, Event, Public, NetServer)
+// Parameters:
+// const struct FMinimalReplicationTagOperation&InOperation                                            (ConstParm, Parm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UAbilitySystemComponent::ServerCatchUpOperation(const struct FMinimalReplicationTagOperation& InOperation)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "ServerCatchUpOperation");
+
+	Params::AbilitySystemComponent_ServerCatchUpOperation Parms{};
+
+	Parms.InOperation = std::move(InOperation);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.ServerCurrentMontageJumpToSectionName
+// (Net, NetReliable, Native, Event, Protected, NetServer, NetValidate)
+// Parameters:
+// class UAnimMontage*                     ClientAnimMontage                                      (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FName                             SectionName                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UAbilitySystemComponent::ServerCurrentMontageJumpToSectionName(class UAnimMontage* ClientAnimMontage, class FName SectionName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "ServerCurrentMontageJumpToSectionName");
+
+	Params::AbilitySystemComponent_ServerCurrentMontageJumpToSectionName Parms{};
+
+	Parms.ClientAnimMontage = ClientAnimMontage;
+	Parms.SectionName = SectionName;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.ServerCurrentMontageSetNextSectionName
+// (Net, NetReliable, Native, Event, Protected, NetServer, NetValidate)
+// Parameters:
+// class UAnimMontage*                     ClientAnimMontage                                      (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   ClientPosition                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FName                             SectionName                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FName                             NextSectionName                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UAbilitySystemComponent::ServerCurrentMontageSetNextSectionName(class UAnimMontage* ClientAnimMontage, float ClientPosition, class FName SectionName, class FName NextSectionName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "ServerCurrentMontageSetNextSectionName");
+
+	Params::AbilitySystemComponent_ServerCurrentMontageSetNextSectionName Parms{};
+
+	Parms.ClientAnimMontage = ClientAnimMontage;
+	Parms.ClientPosition = ClientPosition;
+	Parms.SectionName = SectionName;
+	Parms.NextSectionName = NextSectionName;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.ServerCurrentMontageSetPlayRate
+// (Net, NetReliable, Native, Event, Protected, NetServer, NetValidate)
+// Parameters:
+// class UAnimMontage*                     ClientAnimMontage                                      (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   InPlayRate                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UAbilitySystemComponent::ServerCurrentMontageSetPlayRate(class UAnimMontage* ClientAnimMontage, float InPlayRate)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "ServerCurrentMontageSetPlayRate");
+
+	Params::AbilitySystemComponent_ServerCurrentMontageSetPlayRate Parms{};
+
+	Parms.ClientAnimMontage = ClientAnimMontage;
+	Parms.InPlayRate = InPlayRate;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.ServerEndAbility
+// (Net, NetReliable, Native, Event, Protected, NetServer)
+// Parameters:
+// const struct FGameplayAbilitySpecHandle&AbilityToEnd                                           (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayAbilityActivationInfo&ActivationInfo                                         (Parm, NativeAccessSpecifierPublic)
+// const struct FPredictionKey&            PredictionKey                                          (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FAbilityEndContext&        EndContext                                             (ConstParm, Parm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UAbilitySystemComponent::ServerEndAbility(const struct FGameplayAbilitySpecHandle& AbilityToEnd, const struct FGameplayAbilityActivationInfo& ActivationInfo, const struct FPredictionKey& PredictionKey, const struct FAbilityEndContext& EndContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "ServerEndAbility");
+
+	Params::AbilitySystemComponent_ServerEndAbility Parms{};
+
+	Parms.AbilityToEnd = std::move(AbilityToEnd);
+	Parms.ActivationInfo = std::move(ActivationInfo);
+	Parms.PredictionKey = std::move(PredictionKey);
+	Parms.EndContext = std::move(EndContext);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.ServerInternalOfferData_Dynamic
+// (Final, Net, NetReliable, Native, Event, Private, NetServer)
+// Parameters:
+// const struct FPredictionKey&            PredictionKey                                          (ConstParm, Parm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   ValidTime                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FPredictionDynamicParamHandle&Handle                                                 (ConstParm, Parm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UAbilitySystemComponent::ServerInternalOfferData_Dynamic(const struct FPredictionKey& PredictionKey, float ValidTime, const struct FPredictionDynamicParamHandle& Handle)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "ServerInternalOfferData_Dynamic");
+
+	Params::AbilitySystemComponent_ServerInternalOfferData_Dynamic Parms{};
+
+	Parms.PredictionKey = std::move(PredictionKey);
+	Parms.ValidTime = ValidTime;
+	Parms.Handle = std::move(Handle);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.ServerInternalReboot_Dynamic
+// (Final, Net, NetReliable, Native, Event, Private, NetServer)
+// Parameters:
+// const struct FPredictionKey&            PredictionKey                                          (ConstParm, Parm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FPredictionDynamicParamHandle&Handle                                                 (ConstParm, Parm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UAbilitySystemComponent::ServerInternalReboot_Dynamic(const struct FPredictionKey& PredictionKey, const struct FPredictionDynamicParamHandle& Handle)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "ServerInternalReboot_Dynamic");
+
+	Params::AbilitySystemComponent_ServerInternalReboot_Dynamic Parms{};
+
+	Parms.PredictionKey = std::move(PredictionKey);
+	Parms.Handle = std::move(Handle);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.ServerInternalRebootChannel_Dynamic
+// (Final, Net, NetReliable, Native, Event, Private, NetServer)
+// Parameters:
+// const struct FPredictionKey&            PredictionKey                                          (ConstParm, Parm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FPredictionDynamicParamHandle&Handle                                                 (ConstParm, Parm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UAbilitySystemComponent::ServerInternalRebootChannel_Dynamic(const struct FPredictionKey& PredictionKey, const struct FPredictionDynamicParamHandle& Handle)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "ServerInternalRebootChannel_Dynamic");
+
+	Params::AbilitySystemComponent_ServerInternalRebootChannel_Dynamic Parms{};
+
+	Parms.PredictionKey = std::move(PredictionKey);
+	Parms.Handle = std::move(Handle);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.ServerPrintDebug_Request
+// (Net, NetReliable, Native, Event, Public, NetServer, NetValidate)
+
+void UAbilitySystemComponent::ServerPrintDebug_Request()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "ServerPrintDebug_Request");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.ServerPrintDebug_RequestWithStrings
+// (Net, NetReliable, Native, Event, Public, NetServer, NetValidate)
+// Parameters:
+// const TArray<class FString>&            Strings                                                (ConstParm, Parm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UAbilitySystemComponent::ServerPrintDebug_RequestWithStrings(const TArray<class FString>& Strings)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "ServerPrintDebug_RequestWithStrings");
+
+	Params::AbilitySystemComponent_ServerPrintDebug_RequestWithStrings Parms{};
+
+	Parms.Strings = std::move(Strings);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.ServerTestDynamicParamHandle
+// (Net, NetReliable, Native, Event, Public, NetServer)
+// Parameters:
+// const struct FPredictionDynamicParamHandle&Handle                                                 (ConstParm, Parm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UAbilitySystemComponent::ServerTestDynamicParamHandle(const struct FPredictionDynamicParamHandle& Handle)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "ServerTestDynamicParamHandle");
+
+	Params::AbilitySystemComponent_ServerTestDynamicParamHandle Parms{};
+
+	Parms.Handle = std::move(Handle);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.ServerTryActivateAbility
+// (Net, NetReliable, Native, Event, Protected, NetServer, NetValidate)
+// Parameters:
+// const struct FGameplayAbilitySpecHandle&AbilityToActivate                                      (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    InputPressed                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FPredictionKey&            PredictionKey                                          (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FAbilityActivationExtraInfo&InActivationInfo                                       (Parm, NativeAccessSpecifierPublic)
+
+void UAbilitySystemComponent::ServerTryActivateAbility(const struct FGameplayAbilitySpecHandle& AbilityToActivate, bool InputPressed, const struct FPredictionKey& PredictionKey, const struct FAbilityActivationExtraInfo& InActivationInfo)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "ServerTryActivateAbility");
+
+	Params::AbilitySystemComponent_ServerTryActivateAbility Parms{};
+
+	Parms.AbilityToActivate = std::move(AbilityToActivate);
+	Parms.InputPressed = InputPressed;
+	Parms.PredictionKey = std::move(PredictionKey);
+	Parms.InActivationInfo = std::move(InActivationInfo);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.ServerTryActivateAbilityWithEventData
+// (Net, NetReliable, Native, Event, Protected, NetServer, NetValidate)
+// Parameters:
+// const struct FGameplayAbilitySpecHandle&AbilityToActivate                                      (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    InputPressed                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FPredictionKey&            PredictionKey                                          (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayEventData&        TriggerEventData                                       (Parm, NativeAccessSpecifierPublic)
+// const struct FAbilityActivationExtraInfo&InActivationInfo                                       (Parm, NativeAccessSpecifierPublic)
+
+void UAbilitySystemComponent::ServerTryActivateAbilityWithEventData(const struct FGameplayAbilitySpecHandle& AbilityToActivate, bool InputPressed, const struct FPredictionKey& PredictionKey, const struct FGameplayEventData& TriggerEventData, const struct FAbilityActivationExtraInfo& InActivationInfo)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "ServerTryActivateAbilityWithEventData");
+
+	Params::AbilitySystemComponent_ServerTryActivateAbilityWithEventData Parms{};
+
+	Parms.AbilityToActivate = std::move(AbilityToActivate);
+	Parms.InputPressed = InputPressed;
+	Parms.PredictionKey = std::move(PredictionKey);
+	Parms.TriggerEventData = std::move(TriggerEventData);
+	Parms.InActivationInfo = std::move(InActivationInfo);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.ServerVerifyPredictionKeys
+// (Net, NetReliable, Native, Event, Public, NetServer)
+// Parameters:
+// const TArray<class FString>&            Keys                                                   (ConstParm, Parm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UAbilitySystemComponent::ServerVerifyPredictionKeys(const TArray<class FString>& Keys)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "ServerVerifyPredictionKeys");
+
+	Params::AbilitySystemComponent_ServerVerifyPredictionKeys Parms{};
+
+	Parms.Keys = std::move(Keys);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.SetActiveGameplayEffectLevel
+// (BlueprintAuthorityOnly, Native, Public, BlueprintCallable)
+// Parameters:
+// const struct FActiveGameplayEffectHandle&ActiveHandle                                           (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   NewLevel                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UAbilitySystemComponent::SetActiveGameplayEffectLevel(const struct FActiveGameplayEffectHandle& ActiveHandle, int32 NewLevel)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "SetActiveGameplayEffectLevel");
+
+	Params::AbilitySystemComponent_SetActiveGameplayEffectLevel Parms{};
+
+	Parms.ActiveHandle = std::move(ActiveHandle);
+	Parms.NewLevel = NewLevel;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.SetActiveGameplayEffectLevelUsingQuery
+// (BlueprintAuthorityOnly, Native, Public, BlueprintCallable)
+// Parameters:
+// const struct FGameplayEffectQuery&      Query                                                  (Parm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// int32                                   NewLevel                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UAbilitySystemComponent::SetActiveGameplayEffectLevelUsingQuery(const struct FGameplayEffectQuery& Query, int32 NewLevel)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "SetActiveGameplayEffectLevelUsingQuery");
+
+	Params::AbilitySystemComponent_SetActiveGameplayEffectLevelUsingQuery Parms{};
+
+	Parms.Query = std::move(Query);
+	Parms.NewLevel = NewLevel;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.SetMontageRepAnimPositionMethod
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// ERepAnimPositionMethod                  InMethod                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UAbilitySystemComponent::SetMontageRepAnimPositionMethod(ERepAnimPositionMethod InMethod)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "SetMontageRepAnimPositionMethod");
+
+	Params::AbilitySystemComponent_SetMontageRepAnimPositionMethod Parms{};
+
+	Parms.InMethod = InMethod;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.SetUserAbilityActivationInhibited
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    NewInhibit                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UAbilitySystemComponent::SetUserAbilityActivationInhibited(bool NewInhibit)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "SetUserAbilityActivationInhibited");
+
+	Params::AbilitySystemComponent_SetUserAbilityActivationInhibited Parms{};
+
+	Parms.NewInhibit = NewInhibit;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.TestDynamicRPC
+// (Final, Native, Public, BlueprintCallable)
+
+void UAbilitySystemComponent::TestDynamicRPC()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "TestDynamicRPC");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.TestFunction
+// (Final, Native, Public)
+// Parameters:
+// int32                                   Data1                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<struct FHitResult>&        Data2                                                  (Parm, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FHitResult&                Data3                                                  (Parm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const class FString&                    Data4                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FName                             Data5                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UAbilitySystemComponent::TestFunction(int32 Data1, const TArray<struct FHitResult>& Data2, const struct FHitResult& Data3, const class FString& Data4, class FName Data5)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "TestFunction");
+
+	Params::AbilitySystemComponent_TestFunction Parms{};
+
+	Parms.Data1 = Data1;
+	Parms.Data2 = std::move(Data2);
+	Parms.Data3 = std::move(Data3);
+	Parms.Data4 = std::move(Data4);
+	Parms.Data5 = Data5;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.TestFunction2
+// (Final, Native, Public)
+// Parameters:
+// const struct FHitResult&                Data1                                                  (Parm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const class FString&                    Data2                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Data3                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<struct FHitResult>&        Data4                                                  (Parm, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// class FName                             Data5                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UAbilitySystemComponent::TestFunction2(const struct FHitResult& Data1, const class FString& Data2, int32 Data3, const TArray<struct FHitResult>& Data4, class FName Data5)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "TestFunction2");
+
+	Params::AbilitySystemComponent_TestFunction2 Parms{};
+
+	Parms.Data1 = std::move(Data1);
+	Parms.Data2 = std::move(Data2);
+	Parms.Data3 = Data3;
+	Parms.Data4 = std::move(Data4);
+	Parms.Data5 = Data5;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.TestFunction3
+// (Final, Native, Public)
+// Parameters:
+// int32                                   Data1                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<struct FHitResult>&        Data2                                                  (Parm, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FHitResult&                Data3                                                  (Parm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const class FString&                    Data4                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UAbilitySystemComponent::TestFunction3(int32 Data1, const TArray<struct FHitResult>& Data2, const struct FHitResult& Data3, const class FString& Data4)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "TestFunction3");
+
+	Params::AbilitySystemComponent_TestFunction3 Parms{};
+
+	Parms.Data1 = Data1;
+	Parms.Data2 = std::move(Data2);
+	Parms.Data3 = std::move(Data3);
+	Parms.Data4 = std::move(Data4);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.TestOfferDataCallback
+// (Final, Native, Public, HasOutParams)
+// Parameters:
+// const struct FPredictionDynamicParamHandle&LocalHandle                                            (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FPredictionDynamicParamHandle&RemoteHandle                                           (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UAbilitySystemComponent::TestOfferDataCallback(const struct FPredictionDynamicParamHandle& LocalHandle, const struct FPredictionDynamicParamHandle& RemoteHandle)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "TestOfferDataCallback");
+
+	Params::AbilitySystemComponent_TestOfferDataCallback Parms{};
+
+	Parms.LocalHandle = std::move(LocalHandle);
+	Parms.RemoteHandle = std::move(RemoteHandle);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.TickUpdatePredictionKey
+// (Final, Native, Public)
+
+void UAbilitySystemComponent::TickUpdatePredictionKey()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "TickUpdatePredictionKey");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.TryActivateAbilitiesByTag
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const struct FGameplayTagContainer&     GameplayTagContainer                                   (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// bool                                    bAllowRemoteActivation                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UAbilitySystemComponent::TryActivateAbilitiesByTag(const struct FGameplayTagContainer& GameplayTagContainer, bool bAllowRemoteActivation)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "TryActivateAbilitiesByTag");
+
+	Params::AbilitySystemComponent_TryActivateAbilitiesByTag Parms{};
+
+	Parms.GameplayTagContainer = std::move(GameplayTagContainer);
+	Parms.bAllowRemoteActivation = bAllowRemoteActivation;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.TryActivateAbility
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// const struct FGameplayAbilitySpecHandle&AbilityToActivate                                      (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bAllowRemoteActivation                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UAbilitySystemComponent::TryActivateAbility(const struct FGameplayAbilitySpecHandle& AbilityToActivate, bool bAllowRemoteActivation)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "TryActivateAbility");
+
+	Params::AbilitySystemComponent_TryActivateAbility Parms{};
+
+	Parms.AbilityToActivate = std::move(AbilityToActivate);
+	Parms.bAllowRemoteActivation = bAllowRemoteActivation;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.TryActivateAbilityByClass
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// TSubclassOf<class UGameplayAbility>     InAbilityToActivate                                    (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bAllowRemoteActivation                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UAbilitySystemComponent::TryActivateAbilityByClass(TSubclassOf<class UGameplayAbility> InAbilityToActivate, bool bAllowRemoteActivation)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "TryActivateAbilityByClass");
+
+	Params::AbilitySystemComponent_TryActivateAbilityByClass Parms{};
+
+	Parms.InAbilityToActivate = InAbilityToActivate;
+	Parms.bAllowRemoteActivation = bAllowRemoteActivation;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.UpdateActiveGameplayEffectSetByCallerMagnitude
+// (BlueprintAuthorityOnly, Native, Public, BlueprintCallable)
+// Parameters:
+// const struct FActiveGameplayEffectHandle&ActiveHandle                                           (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              SetByCallerTag                                         (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UAbilitySystemComponent::UpdateActiveGameplayEffectSetByCallerMagnitude(const struct FActiveGameplayEffectHandle& ActiveHandle, const struct FGameplayTag& SetByCallerTag, float NewValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "UpdateActiveGameplayEffectSetByCallerMagnitude");
+
+	Params::AbilitySystemComponent_UpdateActiveGameplayEffectSetByCallerMagnitude Parms{};
+
+	Parms.ActiveHandle = std::move(ActiveHandle);
+	Parms.SetByCallerTag = std::move(SetByCallerTag);
+	Parms.NewValue = NewValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.UpdateActiveGameplayEffectSetByCallerMagnitudes
+// (BlueprintAuthorityOnly, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const struct FActiveGameplayEffectHandle&ActiveHandle                                           (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TMap<struct FGameplayTag, float>& NewSetByCallerValues                                   (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UAbilitySystemComponent::UpdateActiveGameplayEffectSetByCallerMagnitudes(const struct FActiveGameplayEffectHandle& ActiveHandle, const TMap<struct FGameplayTag, float>& NewSetByCallerValues)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "UpdateActiveGameplayEffectSetByCallerMagnitudes");
+
+	Params::AbilitySystemComponent_UpdateActiveGameplayEffectSetByCallerMagnitudes Parms{};
+
+	Parms.ActiveHandle = std::move(ActiveHandle);
+	Parms.NewSetByCallerValues = std::move(NewSetByCallerValues);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.FindAllAbilitiesMatchingQuery
+// (Final, Native, Public, HasOutParams, BlueprintCallable, Const)
+// Parameters:
+// TArray<struct FGameplayAbilitySpecHandle>*OutAbilityHandles                                      (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+// const struct FGameplayTagQuery&         Query                                                  (Parm, NativeAccessSpecifierPublic)
+
+void UAbilitySystemComponent::FindAllAbilitiesMatchingQuery(TArray<struct FGameplayAbilitySpecHandle>* OutAbilityHandles, const struct FGameplayTagQuery& Query) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "FindAllAbilitiesMatchingQuery");
+
+	Params::AbilitySystemComponent_FindAllAbilitiesMatchingQuery Parms{};
+
+	Parms.Query = std::move(Query);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (OutAbilityHandles != nullptr)
+		*OutAbilityHandles = std::move(Parms.OutAbilityHandles);
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.FindAllAbilitiesWithInputID
+// (Final, Native, Public, HasOutParams, BlueprintCallable, Const)
+// Parameters:
+// TArray<struct FGameplayAbilitySpecHandle>*OutAbilityHandles                                      (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+// int32                                   InputID                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UAbilitySystemComponent::FindAllAbilitiesWithInputID(TArray<struct FGameplayAbilitySpecHandle>* OutAbilityHandles, int32 InputID) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "FindAllAbilitiesWithInputID");
+
+	Params::AbilitySystemComponent_FindAllAbilitiesWithInputID Parms{};
+
+	Parms.InputID = InputID;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (OutAbilityHandles != nullptr)
+		*OutAbilityHandles = std::move(Parms.OutAbilityHandles);
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.FindAllAbilitiesWithTags
+// (Final, Native, Public, HasOutParams, BlueprintCallable, Const)
+// Parameters:
+// TArray<struct FGameplayAbilitySpecHandle>*OutAbilityHandles                                      (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+// const struct FGameplayTagContainer&     Tags                                                   (Parm, NativeAccessSpecifierPublic)
+// bool                                    bExactMatch                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UAbilitySystemComponent::FindAllAbilitiesWithTags(TArray<struct FGameplayAbilitySpecHandle>* OutAbilityHandles, const struct FGameplayTagContainer& Tags, bool bExactMatch) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "FindAllAbilitiesWithTags");
+
+	Params::AbilitySystemComponent_FindAllAbilitiesWithTags Parms{};
+
+	Parms.Tags = std::move(Tags);
+	Parms.bExactMatch = bExactMatch;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (OutAbilityHandles != nullptr)
+		*OutAbilityHandles = std::move(Parms.OutAbilityHandles);
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.GetAbilityActivateDelayTime
+// (Final, Native, Public, Const)
+// Parameters:
+// const class FString&                    InActivationKey                                        (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UAbilitySystemComponent::GetAbilityActivateDelayTime(const class FString& InActivationKey) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "GetAbilityActivateDelayTime");
+
+	Params::AbilitySystemComponent_GetAbilityActivateDelayTime Parms{};
+
+	Parms.InActivationKey = std::move(InActivationKey);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.GetActiveEffects
+// (Final, Native, Public, HasOutParams, BlueprintCallable, Const)
+// Parameters:
+// const struct FGameplayEffectQuery&      Query                                                  (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// TArray<struct FActiveGameplayEffectHandle>ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+
+TArray<struct FActiveGameplayEffectHandle> UAbilitySystemComponent::GetActiveEffects(const struct FGameplayEffectQuery& Query) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "GetActiveEffects");
+
+	Params::AbilitySystemComponent_GetActiveEffects Parms{};
+
+	Parms.Query = std::move(Query);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.GetActiveEffectsWithAllTags
+// (Final, Native, Public, BlueprintCallable, Const)
+// Parameters:
+// const struct FGameplayTagContainer&     Tags                                                   (Parm, NativeAccessSpecifierPublic)
+// TArray<struct FActiveGameplayEffectHandle>ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+
+TArray<struct FActiveGameplayEffectHandle> UAbilitySystemComponent::GetActiveEffectsWithAllTags(const struct FGameplayTagContainer& Tags) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "GetActiveEffectsWithAllTags");
+
+	Params::AbilitySystemComponent_GetActiveEffectsWithAllTags Parms{};
+
+	Parms.Tags = std::move(Tags);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.GetAllAbilities
+// (Final, Native, Public, HasOutParams, BlueprintCallable, Const)
+// Parameters:
+// TArray<struct FGameplayAbilitySpecHandle>*OutAbilityHandles                                      (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+
+void UAbilitySystemComponent::GetAllAbilities(TArray<struct FGameplayAbilitySpecHandle>* OutAbilityHandles) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "GetAllAbilities");
+
+	Params::AbilitySystemComponent_GetAllAbilities Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (OutAbilityHandles != nullptr)
+		*OutAbilityHandles = std::move(Parms.OutAbilityHandles);
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.GetAttributeSet
+// (Final, Native, Public, BlueprintCallable, Const)
+// Parameters:
+// TSubclassOf<class UAttributeSet>        AttributeSetClass                                      (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UAttributeSet*              ReturnValue                                            (ConstParm, ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+const class UAttributeSet* UAbilitySystemComponent::GetAttributeSet(TSubclassOf<class UAttributeSet> AttributeSetClass) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "GetAttributeSet");
+
+	Params::AbilitySystemComponent_GetAttributeSet Parms{};
+
+	Parms.AttributeSetClass = AttributeSetClass;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.GetCurrentAbilityActivateDelayTime
+// (Final, Native, Public, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UAbilitySystemComponent::GetCurrentAbilityActivateDelayTime() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "GetCurrentAbilityActivateDelayTime");
+
+	Params::AbilitySystemComponent_GetCurrentAbilityActivateDelayTime Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.GetGameplayAttributeValue
+// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// const struct FGameplayAttribute&        Attribute                                              (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool*                                   bFound                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UAbilitySystemComponent::GetGameplayAttributeValue(const struct FGameplayAttribute& Attribute, bool* bFound) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "GetGameplayAttributeValue");
+
+	Params::AbilitySystemComponent_GetGameplayAttributeValue Parms{};
+
+	Parms.Attribute = std::move(Attribute);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (bFound != nullptr)
+		*bFound = Parms.bFound;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.GetGameplayEffectCount
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// TSubclassOf<class UGameplayEffect>      SourceGameplayEffect                                   (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UAbilitySystemComponent*          OptionalInstigatorFilterComponent                      (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bEnforceOnGoingCheck                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UAbilitySystemComponent::GetGameplayEffectCount(TSubclassOf<class UGameplayEffect> SourceGameplayEffect, class UAbilitySystemComponent* OptionalInstigatorFilterComponent, bool bEnforceOnGoingCheck) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "GetGameplayEffectCount");
+
+	Params::AbilitySystemComponent_GetGameplayEffectCount Parms{};
+
+	Parms.SourceGameplayEffect = SourceGameplayEffect;
+	Parms.OptionalInstigatorFilterComponent = OptionalInstigatorFilterComponent;
+	Parms.bEnforceOnGoingCheck = bEnforceOnGoingCheck;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.GetGameplayEffectCount_IfLoaded
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// TSoftClassPtr<class UClass>             SoftSourceGameplayEffect                               (Parm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UAbilitySystemComponent*          OptionalInstigatorFilterComponent                      (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bEnforceOnGoingCheck                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UAbilitySystemComponent::GetGameplayEffectCount_IfLoaded(TSoftClassPtr<class UClass> SoftSourceGameplayEffect, class UAbilitySystemComponent* OptionalInstigatorFilterComponent, bool bEnforceOnGoingCheck) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "GetGameplayEffectCount_IfLoaded");
+
+	Params::AbilitySystemComponent_GetGameplayEffectCount_IfLoaded Parms{};
+
+	Parms.SoftSourceGameplayEffect = SoftSourceGameplayEffect;
+	Parms.OptionalInstigatorFilterComponent = OptionalInstigatorFilterComponent;
+	Parms.bEnforceOnGoingCheck = bEnforceOnGoingCheck;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.GetGameplayEffectMagnitude
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// const struct FActiveGameplayEffectHandle&Handle                                                 (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayAttribute&        Attribute                                              (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UAbilitySystemComponent::GetGameplayEffectMagnitude(const struct FActiveGameplayEffectHandle& Handle, const struct FGameplayAttribute& Attribute) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "GetGameplayEffectMagnitude");
+
+	Params::AbilitySystemComponent_GetGameplayEffectMagnitude Parms{};
+
+	Parms.Handle = std::move(Handle);
+	Parms.Attribute = std::move(Attribute);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.GetGameplayTagCount
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// const struct FGameplayTag&              GameplayTag                                            (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UAbilitySystemComponent::GetGameplayTagCount(const struct FGameplayTag& GameplayTag) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "GetGameplayTagCount");
+
+	Params::AbilitySystemComponent_GetGameplayTagCount Parms{};
+
+	Parms.GameplayTag = std::move(GameplayTag);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.GetKeyDebugString
+// (Final, Native, Public, Const)
+// Parameters:
+// const class FString&                    InKey                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString UAbilitySystemComponent::GetKeyDebugString(const class FString& InKey) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "GetKeyDebugString");
+
+	Params::AbilitySystemComponent_GetKeyDebugString Parms{};
+
+	Parms.InKey = std::move(InKey);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.GetUserAbilityActivationInhibited
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UAbilitySystemComponent::GetUserAbilityActivationInhibited() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "GetUserAbilityActivationInhibited");
+
+	Params::AbilitySystemComponent_GetUserAbilityActivationInhibited Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.IsForRemoteClient
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UAbilitySystemComponent::IsForRemoteClient() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "IsForRemoteClient");
+
+	Params::AbilitySystemComponent_IsForRemoteClient Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.IsForRunAlone
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UAbilitySystemComponent::IsForRunAlone() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "IsForRunAlone");
+
+	Params::AbilitySystemComponent_IsForRunAlone Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.IsGameplayCueActive
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// const struct FGameplayTag&              GameplayCueTag                                         (ConstParm, Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UAbilitySystemComponent::IsGameplayCueActive(const struct FGameplayTag& GameplayCueTag) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "IsGameplayCueActive");
+
+	Params::AbilitySystemComponent_IsGameplayCueActive Parms{};
+
+	Parms.GameplayCueTag = std::move(GameplayCueTag);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.IsLocallyControlled
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UAbilitySystemComponent::IsLocallyControlled() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "IsLocallyControlled");
+
+	Params::AbilitySystemComponent_IsLocallyControlled Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.IsNetAuthority
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UAbilitySystemComponent::IsNetAuthority() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "IsNetAuthority");
+
+	Params::AbilitySystemComponent_IsNetAuthority Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.IsPredictingClient
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UAbilitySystemComponent::IsPredictingClient() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "IsPredictingClient");
+
+	Params::AbilitySystemComponent_IsPredictingClient Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.MakeEffectContext
+// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FGameplayEffectContextHandle     ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+
+struct FGameplayEffectContextHandle UAbilitySystemComponent::MakeEffectContext() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "MakeEffectContext");
+
+	Params::AbilitySystemComponent_MakeEffectContext Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilitySystemComponent.MakeOutgoingSpec
+// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// TSubclassOf<class UGameplayEffect>      GameplayEffectClass                                    (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   Level                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayEffectContextHandle&Context                                                (Parm, NativeAccessSpecifierPublic)
+// struct FGameplayEffectSpecHandle        ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+
+struct FGameplayEffectSpecHandle UAbilitySystemComponent::MakeOutgoingSpec(TSubclassOf<class UGameplayEffect> GameplayEffectClass, float Level, const struct FGameplayEffectContextHandle& Context) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemComponent", "MakeOutgoingSpec");
+
+	Params::AbilitySystemComponent_MakeOutgoingSpec Parms{};
+
+	Parms.GameplayEffectClass = GameplayEffectClass;
+	Parms.Level = Level;
+	Parms.Context = std::move(Context);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 
@@ -1359,7 +4560,7 @@ class UAbilityAsync_WaitGameplayEffectApplied* UAbilityAsync_WaitGameplayEffectA
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class AActor*                           TargetActor                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayTag                     EventTag                                               (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              EventTag                                               (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    OnlyTriggerOnce                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    OnlyMatchExact                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UAbilityAsync_WaitGameplayEvent*  ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -1389,11 +4590,110 @@ class UAbilityAsync_WaitGameplayEvent* UAbilityAsync_WaitGameplayEvent::WaitGame
 }
 
 
+// Function GameplayAbilities.AbilityTask_WaitInputRelease.WaitInputRelease
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UGameplayAbility*                 OwningAbility                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bTestAlreadyReleased                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UAbilityTask_WaitInputRelease*    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UAbilityTask_WaitInputRelease* UAbilityTask_WaitInputRelease::WaitInputRelease(class UGameplayAbility* OwningAbility, bool bTestAlreadyReleased)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("AbilityTask_WaitInputRelease", "WaitInputRelease");
+
+	Params::AbilityTask_WaitInputRelease_WaitInputRelease Parms{};
+
+	Parms.OwningAbility = OwningAbility;
+	Parms.bTestAlreadyReleased = bTestAlreadyReleased;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilityTask_WaitInputRelease.OnLocalReleaseCallback
+// (Final, Native, Public)
+
+void UAbilityTask_WaitInputRelease::OnLocalReleaseCallback()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilityTask_WaitInputRelease", "OnLocalReleaseCallback");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilityTask_WaitInputRelease.OnReleaseCallback
+// (Final, Native, Public)
+// Parameters:
+// float                                   Duration                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UAbilityTask_WaitInputRelease::OnReleaseCallback(float Duration)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilityTask_WaitInputRelease", "OnReleaseCallback");
+
+	Params::AbilityTask_WaitInputRelease_OnReleaseCallback Parms{};
+
+	Parms.Duration = Duration;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilityTask_WaitInputRelease.OnReplicateReleaseCallback
+// (Final, Native, Public, HasOutParams)
+// Parameters:
+// const struct FGameplayAbilityTargetDataHandle&Data                                                   (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UAbilityTask_WaitInputRelease::OnReplicateReleaseCallback(const struct FGameplayAbilityTargetDataHandle& Data)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilityTask_WaitInputRelease", "OnReplicateReleaseCallback");
+
+	Params::AbilityTask_WaitInputRelease_OnReplicateReleaseCallback Parms{};
+
+	Parms.Data = std::move(Data);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function GameplayAbilities.AbilityAsync_WaitGameplayTagAdded.WaitGameplayTagAddToActor
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class AActor*                           TargetActor                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayTag                     Tag                                                    (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              Tag                                                    (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    OnlyTriggerOnce                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UAbilityAsync_WaitGameplayTagAdded*ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -1425,7 +4725,7 @@ class UAbilityAsync_WaitGameplayTagAdded* UAbilityAsync_WaitGameplayTagAdded::Wa
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class AActor*                           TargetActor                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayTag                     Tag                                                    (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              Tag                                                    (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    OnlyTriggerOnce                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UAbilityAsync_WaitGameplayTagRemoved*ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -1457,9 +4757,9 @@ class UAbilityAsync_WaitGameplayTagRemoved* UAbilityAsync_WaitGameplayTagRemoved
 // (Final, Native, Static, Protected, BlueprintCallable)
 // Parameters:
 // class AActor*                           TargetActor                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayTagQuery                TagQuery                                               (ConstParm, Parm, NativeAccessSpecifierPublic)
-// EWaitGameplayTagQueryTriggerCondition   TriggerCondition                                       (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bOnlyTriggerOnce                                       (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTagQuery&         TagQuery                                               (ConstParm, Parm, NativeAccessSpecifierPublic)
+// const EWaitGameplayTagQueryTriggerConditionTriggerCondition                                       (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bOnlyTriggerOnce                                       (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UAbilityAsync_WaitGameplayTagQuery*ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class UAbilityAsync_WaitGameplayTagQuery* UAbilityAsync_WaitGameplayTagQuery::WaitGameplayTagQueryOnActor(class AActor* TargetActor, const struct FGameplayTagQuery& TagQuery, const EWaitGameplayTagQueryTriggerCondition TriggerCondition, const bool bOnlyTriggerOnce)
@@ -1490,7 +4790,7 @@ class UAbilityAsync_WaitGameplayTagQuery* UAbilityAsync_WaitGameplayTagQuery::Wa
 // Function GameplayAbilities.GameplayAbility.AddAbilityOperationTag
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FGameplayTag                     InTag                                                  (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              InTag                                                  (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UGameplayAbility::AddAbilityOperationTag(const struct FGameplayTag& InTag)
 {
@@ -1572,7 +4872,7 @@ struct FActiveGameplayEffectHandle UGameplayAbility::BP_ApplyGameplayEffectToOwn
 // Function GameplayAbilities.GameplayAbility.BP_ApplyGameplayEffectToTarget
 // (Final, Native, Protected, BlueprintCallable)
 // Parameters:
-// struct FGameplayAbilityTargetDataHandle TargetData                                             (Parm, NativeAccessSpecifierPublic)
+// const struct FGameplayAbilityTargetDataHandle&TargetData                                             (Parm, NativeAccessSpecifierPublic)
 // TSubclassOf<class UGameplayEffect>      GameplayEffectClass                                    (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   GameplayEffectLevel                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   Stacks                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -1606,7 +4906,7 @@ TArray<struct FActiveGameplayEffectHandle> UGameplayAbility::BP_ApplyGameplayEff
 // Function GameplayAbilities.GameplayAbility.BP_RemoveGameplayEffectFromOwnerWithAssetTags
 // (Final, Native, Protected, BlueprintCallable)
 // Parameters:
-// struct FGameplayTagContainer            WithAssetTags                                          (Parm, NativeAccessSpecifierPublic)
+// const struct FGameplayTagContainer&     WithAssetTags                                          (Parm, NativeAccessSpecifierPublic)
 // int32                                   StacksToRemove                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UGameplayAbility::BP_RemoveGameplayEffectFromOwnerWithAssetTags(const struct FGameplayTagContainer& WithAssetTags, int32 StacksToRemove)
@@ -1633,7 +4933,7 @@ void UGameplayAbility::BP_RemoveGameplayEffectFromOwnerWithAssetTags(const struc
 // Function GameplayAbilities.GameplayAbility.BP_RemoveGameplayEffectFromOwnerWithGrantedTags
 // (Final, Native, Protected, BlueprintCallable)
 // Parameters:
-// struct FGameplayTagContainer            WithGrantedTags                                        (Parm, NativeAccessSpecifierPublic)
+// const struct FGameplayTagContainer&     WithGrantedTags                                        (Parm, NativeAccessSpecifierPublic)
 // int32                                   StacksToRemove                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UGameplayAbility::BP_RemoveGameplayEffectFromOwnerWithGrantedTags(const struct FGameplayTagContainer& WithGrantedTags, int32 StacksToRemove)
@@ -1660,7 +4960,7 @@ void UGameplayAbility::BP_RemoveGameplayEffectFromOwnerWithGrantedTags(const str
 // Function GameplayAbilities.GameplayAbility.BP_RemoveGameplayEffectFromOwnerWithHandle
 // (Final, Native, Protected, BlueprintCallable)
 // Parameters:
-// struct FActiveGameplayEffectHandle      Handle                                                 (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FActiveGameplayEffectHandle&Handle                                                 (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   StacksToRemove                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UGameplayAbility::BP_RemoveGameplayEffectFromOwnerWithHandle(const struct FActiveGameplayEffectHandle& Handle, int32 StacksToRemove)
@@ -1687,7 +4987,7 @@ void UGameplayAbility::BP_RemoveGameplayEffectFromOwnerWithHandle(const struct F
 // Function GameplayAbilities.GameplayAbility.CanAddToActivateBuffer
 // (Native, Event, Public, BlueprintEvent)
 // Parameters:
-// class FString                           ActivateKey                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    ActivateKey                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UGameplayAbility::CanAddToActivateBuffer(const class FString& ActivateKey)
@@ -1906,7 +5206,7 @@ void UGameplayAbility::K2_ActivateAbility()
 // Function GameplayAbilities.GameplayAbility.K2_ActivateAbilityFromEvent
 // (Event, Protected, HasOutParams, BlueprintEvent)
 // Parameters:
-// struct FGameplayEventData               EventData                                              (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FGameplayEventData&        EventData                                              (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UGameplayAbility::K2_ActivateAbilityFromEvent(const struct FGameplayEventData& EventData)
 {
@@ -1926,8 +5226,8 @@ void UGameplayAbility::K2_ActivateAbilityFromEvent(const struct FGameplayEventDa
 // Function GameplayAbilities.GameplayAbility.K2_AddGameplayCue
 // (Native, Protected, BlueprintCallable)
 // Parameters:
-// struct FGameplayTag                     GameplayCueTag                                         (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayEffectContextHandle     Context                                                (Parm, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              GameplayCueTag                                         (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayEffectContextHandle&Context                                                (Parm, NativeAccessSpecifierPublic)
 // bool                                    bRemoveOnAbilityEnd                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UGameplayAbility::K2_AddGameplayCue(const struct FGameplayTag& GameplayCueTag, const struct FGameplayEffectContextHandle& Context, bool bRemoveOnAbilityEnd)
@@ -1955,8 +5255,8 @@ void UGameplayAbility::K2_AddGameplayCue(const struct FGameplayTag& GameplayCueT
 // Function GameplayAbilities.GameplayAbility.K2_AddGameplayCueWithParams
 // (Native, Protected, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FGameplayTag                     GameplayCueTag                                         (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayCueParameters           GameplayCueParameter                                   (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              GameplayCueTag                                         (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayCueParameters&    GameplayCueParameter                                   (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 // bool                                    bRemoveOnAbilityEnd                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UGameplayAbility::K2_AddGameplayCueWithParams(const struct FGameplayTag& GameplayCueTag, const struct FGameplayCueParameters& GameplayCueParameter, bool bRemoveOnAbilityEnd)
@@ -1984,7 +5284,7 @@ void UGameplayAbility::K2_AddGameplayCueWithParams(const struct FGameplayTag& Ga
 // Function GameplayAbilities.GameplayAbility.K2_ApplyGameplayEffectSpecToOwner
 // (Final, Native, Protected, BlueprintCallable)
 // Parameters:
-// struct FGameplayEffectSpecHandle        EffectSpecHandle                                       (ConstParm, Parm, NativeAccessSpecifierPublic)
+// const struct FGameplayEffectSpecHandle& EffectSpecHandle                                       (ConstParm, Parm, NativeAccessSpecifierPublic)
 // struct FActiveGameplayEffectHandle      ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 struct FActiveGameplayEffectHandle UGameplayAbility::K2_ApplyGameplayEffectSpecToOwner(const struct FGameplayEffectSpecHandle& EffectSpecHandle)
@@ -2012,8 +5312,8 @@ struct FActiveGameplayEffectHandle UGameplayAbility::K2_ApplyGameplayEffectSpecT
 // Function GameplayAbilities.GameplayAbility.K2_ApplyGameplayEffectSpecToTarget
 // (Final, Native, Protected, BlueprintCallable)
 // Parameters:
-// struct FGameplayEffectSpecHandle        EffectSpecHandle                                       (ConstParm, Parm, NativeAccessSpecifierPublic)
-// struct FGameplayAbilityTargetDataHandle TargetData                                             (Parm, NativeAccessSpecifierPublic)
+// const struct FGameplayEffectSpecHandle& EffectSpecHandle                                       (ConstParm, Parm, NativeAccessSpecifierPublic)
+// const struct FGameplayAbilityTargetDataHandle&TargetData                                             (Parm, NativeAccessSpecifierPublic)
 // TArray<struct FActiveGameplayEffectHandle>ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
 TArray<struct FActiveGameplayEffectHandle> UGameplayAbility::K2_ApplyGameplayEffectSpecToTarget(const struct FGameplayEffectSpecHandle& EffectSpecHandle, const struct FGameplayAbilityTargetDataHandle& TargetData)
@@ -2264,8 +5564,8 @@ void UGameplayAbility::K2_EndAbilityLocally(EAbilityEndReason EndReason)
 // Function GameplayAbilities.GameplayAbility.K2_ExecuteGameplayCue
 // (Native, Protected, BlueprintCallable)
 // Parameters:
-// struct FGameplayTag                     GameplayCueTag                                         (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayEffectContextHandle     Context                                                (Parm, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              GameplayCueTag                                         (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayEffectContextHandle&Context                                                (Parm, NativeAccessSpecifierPublic)
 
 void UGameplayAbility::K2_ExecuteGameplayCue(const struct FGameplayTag& GameplayCueTag, const struct FGameplayEffectContextHandle& Context)
 {
@@ -2291,8 +5591,8 @@ void UGameplayAbility::K2_ExecuteGameplayCue(const struct FGameplayTag& Gameplay
 // Function GameplayAbilities.GameplayAbility.K2_ExecuteGameplayCueWithParams
 // (Native, Protected, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FGameplayTag                     GameplayCueTag                                         (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayCueParameters           GameplayCueParameters                                  (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              GameplayCueTag                                         (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayCueParameters&    GameplayCueParameters                                  (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 void UGameplayAbility::K2_ExecuteGameplayCueWithParams(const struct FGameplayTag& GameplayCueTag, const struct FGameplayCueParameters& GameplayCueParameters)
 {
@@ -2358,7 +5658,7 @@ void UGameplayAbility::K2_OnEndAbility(bool bWasCancelled)
 // Function GameplayAbilities.GameplayAbility.K2_RemoveGameplayCue
 // (Native, Protected, BlueprintCallable)
 // Parameters:
-// struct FGameplayTag                     GameplayCueTag                                         (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              GameplayCueTag                                         (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UGameplayAbility::K2_RemoveGameplayCue(const struct FGameplayTag& GameplayCueTag)
 {
@@ -2532,8 +5832,8 @@ void UGameplayAbility::RemoveGrantedByEffect()
 // Function GameplayAbilities.GameplayAbility.SendGameplayEvent
 // (Native, Protected, BlueprintCallable)
 // Parameters:
-// struct FGameplayTag                     EventTag                                               (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayEventData               Payload                                                (Parm, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              EventTag                                               (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayEventData&        Payload                                                (Parm, NativeAccessSpecifierPublic)
 
 void UGameplayAbility::SendGameplayEvent(const struct FGameplayTag& EventTag, const struct FGameplayEventData& Payload)
 {
@@ -2686,7 +5986,7 @@ void UGameplayAbility::TimelineJumpToSection(class UAnimTimeline* InTimeline, cl
 // Function GameplayAbilities.GameplayAbility.TryMakeTriggerContext
 // (Native, Event, Public, HasOutParams, BlueprintEvent)
 // Parameters:
-// struct FGameplayEventData               EventData                                              (Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// struct FGameplayEventData&              EventData                                              (Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UGameplayAbility::TryMakeTriggerContext(struct FGameplayEventData& EventData)
@@ -2766,8 +6066,8 @@ int32 UGameplayAbility::GetAbilityLevel() const
 // Function GameplayAbilities.GameplayAbility.GetAbilityLevel_BP
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// struct FGameplayAbilitySpecHandle       Handle                                                 (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayAbilityActorInfo        ActorInfo                                              (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FGameplayAbilitySpecHandle&Handle                                                 (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayAbilityActorInfo& ActorInfo                                              (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 // int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 int32 UGameplayAbility::GetAbilityLevel_BP(const struct FGameplayAbilitySpecHandle& Handle, const struct FGameplayAbilityActorInfo& ActorInfo) const
@@ -2921,7 +6221,7 @@ int32 UGameplayAbility::GetCancelAllowedPolicy() const
 // Function GameplayAbilities.GameplayAbility.GetContextFromOwner
 // (Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// struct FGameplayAbilityTargetDataHandle OptionalTargetData                                     (Parm, NativeAccessSpecifierPublic)
+// const struct FGameplayAbilityTargetDataHandle&OptionalTargetData                                     (Parm, NativeAccessSpecifierPublic)
 // struct FGameplayEffectContextHandle     ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
 struct FGameplayEffectContextHandle UGameplayAbility::GetContextFromOwner(const struct FGameplayAbilityTargetDataHandle& OptionalTargetData) const
@@ -3099,8 +6399,8 @@ class USkeletalMeshComponent* UGameplayAbility::GetOwningComponentFromActorInfo(
 // Function GameplayAbilities.GameplayAbility.GetSourceObject_BP
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// struct FGameplayAbilitySpecHandle       Handle                                                 (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayAbilityActorInfo        ActorInfo                                              (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FGameplayAbilitySpecHandle&Handle                                                 (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayAbilityActorInfo& ActorInfo                                              (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 // class UObject*                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class UObject* UGameplayAbility::GetSourceObject_BP(const struct FGameplayAbilitySpecHandle& Handle, const struct FGameplayAbilityActorInfo& ActorInfo) const
@@ -3129,7 +6429,7 @@ class UObject* UGameplayAbility::GetSourceObject_BP(const struct FGameplayAbilit
 // Function GameplayAbilities.GameplayAbility.HasAbilityOperationTag
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// struct FGameplayTag                     InTag                                                  (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              InTag                                                  (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UGameplayAbility::HasAbilityOperationTag(const struct FGameplayTag& InTag) const
@@ -3351,9 +6651,9 @@ bool UGameplayAbility::IsPredictingClient() const
 // Function GameplayAbilities.GameplayAbility.K2_CanActivateAbility
 // (Event, Protected, HasOutParams, BlueprintEvent, Const)
 // Parameters:
-// struct FGameplayAbilityActorInfo        ActorInfo                                              (Parm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-// struct FGameplayAbilitySpecHandle       Handle                                                 (ConstParm, Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayTagContainer            RelevantTags                                           (Parm, OutParm, NativeAccessSpecifierPublic)
+// const struct FGameplayAbilityActorInfo& ActorInfo                                              (Parm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FGameplayAbilitySpecHandle&Handle                                                 (ConstParm, Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FGameplayTagContainer*           RelevantTags                                           (Parm, OutParm, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UGameplayAbility::K2_CanActivateAbility(const struct FGameplayAbilityActorInfo& ActorInfo, const struct FGameplayAbilitySpecHandle& Handle, struct FGameplayTagContainer* RelevantTags) const
@@ -3405,8 +6705,8 @@ bool UGameplayAbility::K2_HasAuthority() const
 // Function GameplayAbilities.GameplayAbility.K2_ShouldAbilityRespondToEvent
 // (Event, Protected, BlueprintEvent, Const)
 // Parameters:
-// struct FGameplayAbilityActorInfo        ActorInfo                                              (Parm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-// struct FGameplayEventData               Payload                                                (Parm, NativeAccessSpecifierPublic)
+// const struct FGameplayAbilityActorInfo& ActorInfo                                              (Parm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FGameplayEventData&        Payload                                                (Parm, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UGameplayAbility::K2_ShouldAbilityRespondToEvent(const struct FGameplayAbilityActorInfo& ActorInfo, const struct FGameplayEventData& Payload) const
@@ -3460,7 +6760,7 @@ struct FGameplayEffectSpecHandle UGameplayAbility::MakeOutgoingGameplayEffectSpe
 // Function GameplayAbilities.GameplayAbility.RemoteHasAbilityOperationTag
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// struct FGameplayTag                     InTag                                                  (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              InTag                                                  (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UGameplayAbility::RemoteHasAbilityOperationTag(const struct FGameplayTag& InTag) const
@@ -3482,103 +6782,6 @@ bool UGameplayAbility::RemoteHasAbilityOperationTag(const struct FGameplayTag& I
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilityTask_SpawnActor.SpawnActor
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class UGameplayAbility*                 OwningAbility                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayAbilityTargetDataHandle TargetData                                             (Parm, NativeAccessSpecifierPublic)
-// TSubclassOf<class AActor>               Class_0                                                (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UAbilityTask_SpawnActor*          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UAbilityTask_SpawnActor* UAbilityTask_SpawnActor::SpawnActor(class UGameplayAbility* OwningAbility, const struct FGameplayAbilityTargetDataHandle& TargetData, TSubclassOf<class AActor> Class_0)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("AbilityTask_SpawnActor", "SpawnActor");
-
-	Params::AbilityTask_SpawnActor_SpawnActor Parms{};
-
-	Parms.OwningAbility = OwningAbility;
-	Parms.TargetData = std::move(TargetData);
-	Parms.Class_0 = Class_0;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilityTask_SpawnActor.BeginSpawningActor
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// class UGameplayAbility*                 OwningAbility                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayAbilityTargetDataHandle TargetData                                             (Parm, NativeAccessSpecifierPublic)
-// TSubclassOf<class AActor>               Class_0                                                (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class AActor*                           SpawnedActor                                           (Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UAbilityTask_SpawnActor::BeginSpawningActor(class UGameplayAbility* OwningAbility, const struct FGameplayAbilityTargetDataHandle& TargetData, TSubclassOf<class AActor> Class_0, class AActor** SpawnedActor)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilityTask_SpawnActor", "BeginSpawningActor");
-
-	Params::AbilityTask_SpawnActor_BeginSpawningActor Parms{};
-
-	Parms.OwningAbility = OwningAbility;
-	Parms.TargetData = std::move(TargetData);
-	Parms.Class_0 = Class_0;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (SpawnedActor != nullptr)
-		*SpawnedActor = Parms.SpawnedActor;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilityTask_SpawnActor.FinishSpawningActor
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class UGameplayAbility*                 OwningAbility                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayAbilityTargetDataHandle TargetData                                             (Parm, NativeAccessSpecifierPublic)
-// class AActor*                           SpawnedActor                                           (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UAbilityTask_SpawnActor::FinishSpawningActor(class UGameplayAbility* OwningAbility, const struct FGameplayAbilityTargetDataHandle& TargetData, class AActor* SpawnedActor)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilityTask_SpawnActor", "FinishSpawningActor");
-
-	Params::AbilityTask_SpawnActor_FinishSpawningActor Parms{};
-
-	Parms.OwningAbility = OwningAbility;
-	Parms.TargetData = std::move(TargetData);
-	Parms.SpawnedActor = SpawnedActor;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
@@ -3687,7 +6890,7 @@ void AGameplayAbilityWorldReticle::SetReticleMaterialParamFloat(class FName Para
 // (Event, Public, HasDefaults, BlueprintEvent)
 // Parameters:
 // class FName                             ParamName                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void AGameplayAbilityWorldReticle::SetReticleMaterialParamVector(class FName ParamName, const struct FVector& Value)
 {
@@ -3705,42 +6908,134 @@ void AGameplayAbilityWorldReticle::SetReticleMaterialParamVector(class FName Par
 }
 
 
-// Function GameplayAbilities.AbilityTask_ApplyRootMotionMoveToForce.ApplyRootMotionMoveToForce
-// (Final, Native, Static, Public, HasDefaults, BlueprintCallable)
+// Function GameplayAbilities.AbilityTask_ApplyRootMotion_Base.CheckRootMotionValidAfterMoveUpdated
+// (Native, Protected, HasDefaults)
 // Parameters:
-// class UGameplayAbility*                 OwningAbility                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             TaskInstanceName                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          TargetLocation_0                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   Duration_0                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bSetNewMovementMode_0                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EMovementMode                           MovementMode                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bRestrictSpeedToExpected_0                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UCurveVector*                     PathOffsetCurve_0                                      (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// ERootMotionFinishVelocityMode           VelocityOnFinishMode                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          SetVelocityOnFinish                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   ClampVelocityOnFinish                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UAbilityTask_ApplyRootMotionMoveToForce*ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   DeltaSeconds                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   OldLocation                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   OldVelocity                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UAbilityTask_ApplyRootMotionMoveToForce* UAbilityTask_ApplyRootMotionMoveToForce::ApplyRootMotionMoveToForce(class UGameplayAbility* OwningAbility, class FName TaskInstanceName, const struct FVector& TargetLocation_0, float Duration_0, bool bSetNewMovementMode_0, EMovementMode MovementMode, bool bRestrictSpeedToExpected_0, class UCurveVector* PathOffsetCurve_0, ERootMotionFinishVelocityMode VelocityOnFinishMode, const struct FVector& SetVelocityOnFinish, float ClampVelocityOnFinish)
+void UAbilityTask_ApplyRootMotion_Base::CheckRootMotionValidAfterMoveUpdated(float DeltaSeconds, const struct FVector& OldLocation, const struct FVector& OldVelocity)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("AbilityTask_ApplyRootMotionMoveToForce", "ApplyRootMotionMoveToForce");
+		Func = Class->GetFunction("AbilityTask_ApplyRootMotion_Base", "CheckRootMotionValidAfterMoveUpdated");
 
-	Params::AbilityTask_ApplyRootMotionMoveToForce_ApplyRootMotionMoveToForce Parms{};
+	Params::AbilityTask_ApplyRootMotion_Base_CheckRootMotionValidAfterMoveUpdated Parms{};
+
+	Parms.DeltaSeconds = DeltaSeconds;
+	Parms.OldLocation = std::move(OldLocation);
+	Parms.OldVelocity = std::move(OldVelocity);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilityTask_ApplyRootMotion_Base.CheckRootMotionValidBeforeMove
+// (Native, Protected)
+// Parameters:
+// float                                   DeltaSeconds                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UAbilityTask_ApplyRootMotion_Base::CheckRootMotionValidBeforeMove(float DeltaSeconds)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilityTask_ApplyRootMotion_Base", "CheckRootMotionValidBeforeMove");
+
+	Params::AbilityTask_ApplyRootMotion_Base_CheckRootMotionValidBeforeMove Parms{};
+
+	Parms.DeltaSeconds = DeltaSeconds;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilityTask_ApplyRootMotionConstantForce.ApplyRootMotionConstantForce
+// (Final, Native, Static, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// class UGameplayAbility*                 OwningAbility                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FName                             TaskInstanceName                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   WorldDirection_0                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   Strength_0                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   Duration_0                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bIsAdditive_0                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UCurveFloat*                      StrengthOverTime_0                                     (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// ERootMotionFinishVelocityMode           VelocityOnFinishMode                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   SetVelocityOnFinish                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   ClampVelocityOnFinish                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bEnableGravity_0                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UAbilityTask_ApplyRootMotionConstantForce*ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UAbilityTask_ApplyRootMotionConstantForce* UAbilityTask_ApplyRootMotionConstantForce::ApplyRootMotionConstantForce(class UGameplayAbility* OwningAbility, class FName TaskInstanceName, const struct FVector& WorldDirection_0, float Strength_0, float Duration_0, bool bIsAdditive_0, class UCurveFloat* StrengthOverTime_0, ERootMotionFinishVelocityMode VelocityOnFinishMode, const struct FVector& SetVelocityOnFinish, float ClampVelocityOnFinish, bool bEnableGravity_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("AbilityTask_ApplyRootMotionConstantForce", "ApplyRootMotionConstantForce");
+
+	Params::AbilityTask_ApplyRootMotionConstantForce_ApplyRootMotionConstantForce Parms{};
 
 	Parms.OwningAbility = OwningAbility;
 	Parms.TaskInstanceName = TaskInstanceName;
-	Parms.TargetLocation_0 = std::move(TargetLocation_0);
+	Parms.WorldDirection_0 = std::move(WorldDirection_0);
+	Parms.Strength_0 = Strength_0;
 	Parms.Duration_0 = Duration_0;
-	Parms.bSetNewMovementMode_0 = bSetNewMovementMode_0;
-	Parms.MovementMode = MovementMode;
-	Parms.bRestrictSpeedToExpected_0 = bRestrictSpeedToExpected_0;
-	Parms.PathOffsetCurve_0 = PathOffsetCurve_0;
+	Parms.bIsAdditive_0 = bIsAdditive_0;
+	Parms.StrengthOverTime_0 = StrengthOverTime_0;
 	Parms.VelocityOnFinishMode = VelocityOnFinishMode;
 	Parms.SetVelocityOnFinish = std::move(SetVelocityOnFinish);
 	Parms.ClampVelocityOnFinish = ClampVelocityOnFinish;
+	Parms.bEnableGravity_0 = bEnableGravity_0;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilityTask_WaitAttributeChangeThreshold.WaitForAttributeChangeThreshold
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UGameplayAbility*                 OwningAbility                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayAttribute&        Attribute_0                                            (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EWaitAttributeChangeComparison          ComparisonType_0                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   ComparisonValue_0                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bTriggerOnce_0                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           OptionalExternalOwner                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UAbilityTask_WaitAttributeChangeThreshold*ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UAbilityTask_WaitAttributeChangeThreshold* UAbilityTask_WaitAttributeChangeThreshold::WaitForAttributeChangeThreshold(class UGameplayAbility* OwningAbility, const struct FGameplayAttribute& Attribute_0, EWaitAttributeChangeComparison ComparisonType_0, float ComparisonValue_0, bool bTriggerOnce_0, class AActor* OptionalExternalOwner)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("AbilityTask_WaitAttributeChangeThreshold", "WaitForAttributeChangeThreshold");
+
+	Params::AbilityTask_WaitAttributeChangeThreshold_WaitForAttributeChangeThreshold Parms{};
+
+	Parms.OwningAbility = OwningAbility;
+	Parms.Attribute_0 = std::move(Attribute_0);
+	Parms.ComparisonType_0 = ComparisonType_0;
+	Parms.ComparisonValue_0 = ComparisonValue_0;
+	Parms.bTriggerOnce_0 = bTriggerOnce_0;
+	Parms.OptionalExternalOwner = OptionalExternalOwner;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -3758,14 +7053,14 @@ class UAbilityTask_ApplyRootMotionMoveToForce* UAbilityTask_ApplyRootMotionMoveT
 // Parameters:
 // class UGameplayAbility*                 OwningAbility                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FName                             TaskInstanceName                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FRotator                         Rotation_0                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FRotator&                  Rotation_0                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 // float                                   Distance_0                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   Height_0                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   Duration_0                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   MinimumLandedTriggerTime_0                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bFinishOnLanded_0                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // ERootMotionFinishVelocityMode           VelocityOnFinishMode                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          SetVelocityOnFinish                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   SetVelocityOnFinish                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   ClampVelocityOnFinish                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UCurveVector*                     PathOffsetCurve_0                                      (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UCurveFloat*                      TimeMappingCurve_0                                     (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -3827,7 +7122,7 @@ void UAbilityTask_ApplyRootMotionJumpForce::Finish()
 // Function GameplayAbilities.AbilityTask_ApplyRootMotionJumpForce.OnLandedCallback
 // (Final, Native, Public, HasOutParams)
 // Parameters:
-// struct FHitResult                       Hit                                                    (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FHitResult&                Hit                                                    (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 void UAbilityTask_ApplyRootMotionJumpForce::OnLandedCallback(const struct FHitResult& Hit)
 {
@@ -3855,7 +7150,7 @@ void UAbilityTask_ApplyRootMotionJumpForce::OnLandedCallback(const struct FHitRe
 // class UGameplayAbility*                 OwningAbility                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FName                             TaskInstanceName                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           TargetActor_0                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          TargetLocationOffset_0                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   TargetLocationOffset_0                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // ERootMotionMoveToActorTargetOffsetType  OffsetAlignment_0                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   Duration_0                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UCurveFloat*                      TargetLerpSpeedHorizontal                              (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -3866,7 +7161,7 @@ void UAbilityTask_ApplyRootMotionJumpForce::OnLandedCallback(const struct FHitRe
 // class UCurveVector*                     PathOffsetCurve_0                                      (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UCurveFloat*                      TimeMappingCurve_0                                     (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // ERootMotionFinishVelocityMode           VelocityOnFinishMode                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          SetVelocityOnFinish                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   SetVelocityOnFinish                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   ClampVelocityOnFinish                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bDisableDestinationReachedInterrupt_0                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UAbilityTask_ApplyRootMotionMoveToActorForce*ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -3914,10 +7209,10 @@ class UAbilityTask_ApplyRootMotionMoveToActorForce* UAbilityTask_ApplyRootMotion
 // Parameters:
 // class UGameplayAbility*                 OwningAbility                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FName                             TaskInstanceName                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayAbilityTargetDataHandle TargetDataHandle                                       (Parm, NativeAccessSpecifierPublic)
+// const struct FGameplayAbilityTargetDataHandle&TargetDataHandle                                       (Parm, NativeAccessSpecifierPublic)
 // int32                                   TargetDataIndex                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   TargetActorIndex                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          TargetLocationOffset_0                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   TargetLocationOffset_0                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // ERootMotionMoveToActorTargetOffsetType  OffsetAlignment_0                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   Duration_0                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UCurveFloat*                      TargetLerpSpeedHorizontal                              (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -3928,7 +7223,7 @@ class UAbilityTask_ApplyRootMotionMoveToActorForce* UAbilityTask_ApplyRootMotion
 // class UCurveVector*                     PathOffsetCurve_0                                      (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UCurveFloat*                      TimeMappingCurve_0                                     (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // ERootMotionFinishVelocityMode           VelocityOnFinishMode                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          SetVelocityOnFinish                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   SetVelocityOnFinish                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   ClampVelocityOnFinish                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bDisableDestinationReachedInterrupt_0                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UAbilityTask_ApplyRootMotionMoveToActorForce*ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -4019,12 +7314,92 @@ void UAbilityTask_ApplyRootMotionMoveToActorForce::OnTargetActorSwapped(class AA
 }
 
 
+// Function GameplayAbilities.AbilityTask_StartAbilityState.StartAbilityState
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UGameplayAbility*                 OwningAbility                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FName                             StateName                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bEndCurrentState_0                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UAbilityTask_StartAbilityState*   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UAbilityTask_StartAbilityState* UAbilityTask_StartAbilityState::StartAbilityState(class UGameplayAbility* OwningAbility, class FName StateName, bool bEndCurrentState_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("AbilityTask_StartAbilityState", "StartAbilityState");
+
+	Params::AbilityTask_StartAbilityState_StartAbilityState Parms{};
+
+	Parms.OwningAbility = OwningAbility;
+	Parms.StateName = StateName;
+	Parms.bEndCurrentState_0 = bEndCurrentState_0;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilityTask_ApplyRootMotionMoveToForce.ApplyRootMotionMoveToForce
+// (Final, Native, Static, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// class UGameplayAbility*                 OwningAbility                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FName                             TaskInstanceName                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   TargetLocation_0                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   Duration_0                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bSetNewMovementMode_0                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EMovementMode                           MovementMode                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bRestrictSpeedToExpected_0                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UCurveVector*                     PathOffsetCurve_0                                      (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// ERootMotionFinishVelocityMode           VelocityOnFinishMode                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   SetVelocityOnFinish                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   ClampVelocityOnFinish                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UAbilityTask_ApplyRootMotionMoveToForce*ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UAbilityTask_ApplyRootMotionMoveToForce* UAbilityTask_ApplyRootMotionMoveToForce::ApplyRootMotionMoveToForce(class UGameplayAbility* OwningAbility, class FName TaskInstanceName, const struct FVector& TargetLocation_0, float Duration_0, bool bSetNewMovementMode_0, EMovementMode MovementMode, bool bRestrictSpeedToExpected_0, class UCurveVector* PathOffsetCurve_0, ERootMotionFinishVelocityMode VelocityOnFinishMode, const struct FVector& SetVelocityOnFinish, float ClampVelocityOnFinish)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("AbilityTask_ApplyRootMotionMoveToForce", "ApplyRootMotionMoveToForce");
+
+	Params::AbilityTask_ApplyRootMotionMoveToForce_ApplyRootMotionMoveToForce Parms{};
+
+	Parms.OwningAbility = OwningAbility;
+	Parms.TaskInstanceName = TaskInstanceName;
+	Parms.TargetLocation_0 = std::move(TargetLocation_0);
+	Parms.Duration_0 = Duration_0;
+	Parms.bSetNewMovementMode_0 = bSetNewMovementMode_0;
+	Parms.MovementMode = MovementMode;
+	Parms.bRestrictSpeedToExpected_0 = bRestrictSpeedToExpected_0;
+	Parms.PathOffsetCurve_0 = PathOffsetCurve_0;
+	Parms.VelocityOnFinishMode = VelocityOnFinishMode;
+	Parms.SetVelocityOnFinish = std::move(SetVelocityOnFinish);
+	Parms.ClampVelocityOnFinish = ClampVelocityOnFinish;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function GameplayAbilities.AbilityTask_ApplyRootMotionRadialForce.ApplyRootMotionRadialForce
 // (Final, Native, Static, Public, HasDefaults, BlueprintCallable)
 // Parameters:
 // class UGameplayAbility*                 OwningAbility                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FName                             TaskInstanceName                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          Location_0                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   Location_0                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           LocationActor_0                                        (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   Strength_0                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   Duration_0                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -4035,9 +7410,9 @@ void UAbilityTask_ApplyRootMotionMoveToActorForce::OnTargetActorSwapped(class AA
 // class UCurveFloat*                      StrengthDistanceFalloff_0                              (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UCurveFloat*                      StrengthOverTime_0                                     (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bUseFixedWorldDirection_0                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FRotator                         FixedWorldDirection_0                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FRotator&                  FixedWorldDirection_0                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 // ERootMotionFinishVelocityMode           VelocityOnFinishMode                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          SetVelocityOnFinish                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   SetVelocityOnFinish                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   ClampVelocityOnFinish                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UAbilityTask_ApplyRootMotionRadialForce*ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -4083,7 +7458,7 @@ class UAbilityTask_ApplyRootMotionRadialForce* UAbilityTask_ApplyRootMotionRadia
 // (Native, Public, HasDefaults)
 // Parameters:
 // class AActor*                           NewActor                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          NewLocation                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   NewLocation                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UAbilityTask_ApplyRootMotionRadialForce::UpdateTargetAndLocation(class AActor* NewActor, const struct FVector& NewLocation)
 {
@@ -4111,7 +7486,7 @@ void UAbilityTask_ApplyRootMotionRadialForce::UpdateTargetAndLocation(class AAct
 // Parameters:
 // class UGameplayAbility*                 OwningAbility                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FName                             TaskInstanceName                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          Location                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   Location                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   Duration                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UCurveFloat*                      OptionalInterpolationCurve                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UCurveVector*                     OptionalVectorInterpolationCurve                       (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -4196,7 +7571,7 @@ void UAbilityTask_NetworkSyncPoint::OnSignalCallback()
 // Function GameplayAbilities.AbilityTask_NetworkSyncPoint.OnSignalCallbackWithData
 // (Final, Native, Protected, HasOutParams)
 // Parameters:
-// struct FGameplayAbilityTargetDataHandle Data                                                   (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FGameplayAbilityTargetDataHandle&Data                                                   (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UAbilityTask_NetworkSyncPoint::OnSignalCallbackWithData(const struct FGameplayAbilityTargetDataHandle& Data)
 {
@@ -4250,26 +7625,26 @@ class UAbilityTask_Repeat* UAbilityTask_Repeat::RepeatAction(class UGameplayAbil
 }
 
 
-// Function GameplayAbilities.AbilityTask_StartAbilityState.StartAbilityState
+// Function GameplayAbilities.AbilityTask_SpawnActor.SpawnActor
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class UGameplayAbility*                 OwningAbility                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             StateName                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bEndCurrentState_0                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UAbilityTask_StartAbilityState*   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayAbilityTargetDataHandle&TargetData                                             (Parm, NativeAccessSpecifierPublic)
+// TSubclassOf<class AActor>               Class_0                                                (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UAbilityTask_SpawnActor*          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UAbilityTask_StartAbilityState* UAbilityTask_StartAbilityState::StartAbilityState(class UGameplayAbility* OwningAbility, class FName StateName, bool bEndCurrentState_0)
+class UAbilityTask_SpawnActor* UAbilityTask_SpawnActor::SpawnActor(class UGameplayAbility* OwningAbility, const struct FGameplayAbilityTargetDataHandle& TargetData, TSubclassOf<class AActor> Class_0)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("AbilityTask_StartAbilityState", "StartAbilityState");
+		Func = StaticClass()->GetFunction("AbilityTask_SpawnActor", "SpawnActor");
 
-	Params::AbilityTask_StartAbilityState_StartAbilityState Parms{};
+	Params::AbilityTask_SpawnActor_SpawnActor Parms{};
 
 	Parms.OwningAbility = OwningAbility;
-	Parms.StateName = StateName;
-	Parms.bEndCurrentState_0 = bEndCurrentState_0;
+	Parms.TargetData = std::move(TargetData);
+	Parms.Class_0 = Class_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -4279,6 +7654,71 @@ class UAbilityTask_StartAbilityState* UAbilityTask_StartAbilityState::StartAbili
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilityTask_SpawnActor.BeginSpawningActor
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// class UGameplayAbility*                 OwningAbility                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayAbilityTargetDataHandle&TargetData                                             (Parm, NativeAccessSpecifierPublic)
+// TSubclassOf<class AActor>               Class_0                                                (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor**                          SpawnedActor                                           (Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UAbilityTask_SpawnActor::BeginSpawningActor(class UGameplayAbility* OwningAbility, const struct FGameplayAbilityTargetDataHandle& TargetData, TSubclassOf<class AActor> Class_0, class AActor** SpawnedActor)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilityTask_SpawnActor", "BeginSpawningActor");
+
+	Params::AbilityTask_SpawnActor_BeginSpawningActor Parms{};
+
+	Parms.OwningAbility = OwningAbility;
+	Parms.TargetData = std::move(TargetData);
+	Parms.Class_0 = Class_0;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (SpawnedActor != nullptr)
+		*SpawnedActor = Parms.SpawnedActor;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilityTask_SpawnActor.FinishSpawningActor
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UGameplayAbility*                 OwningAbility                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayAbilityTargetDataHandle&TargetData                                             (Parm, NativeAccessSpecifierPublic)
+// class AActor*                           SpawnedActor                                           (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UAbilityTask_SpawnActor::FinishSpawningActor(class UGameplayAbility* OwningAbility, const struct FGameplayAbilityTargetDataHandle& TargetData, class AActor* SpawnedActor)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilityTask_SpawnActor", "FinishSpawningActor");
+
+	Params::AbilityTask_SpawnActor_FinishSpawningActor Parms{};
+
+	Parms.OwningAbility = OwningAbility;
+	Parms.TargetData = std::move(TargetData);
+	Parms.SpawnedActor = SpawnedActor;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 }
 
 
@@ -4355,7 +7795,7 @@ class UAbilityTask_VisualizeTargeting* UAbilityTask_VisualizeTargeting::Visualiz
 // Parameters:
 // class UGameplayAbility*                 OwningAbility                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TSubclassOf<class AGameplayAbilityTargetActor>Class_0                                                (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class AGameplayAbilityTargetActor*      SpawnedActor                                           (Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AGameplayAbilityTargetActor**     SpawnedActor                                           (Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UAbilityTask_VisualizeTargeting::BeginSpawningActor(class UGameplayAbility* OwningAbility, TSubclassOf<class AGameplayAbilityTargetActor> Class_0, class AGameplayAbilityTargetActor** SpawnedActor)
@@ -4415,8 +7855,8 @@ void UAbilityTask_VisualizeTargeting::FinishSpawningActor(class UGameplayAbility
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class UGameplayAbility*                 OwningAbility                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayTag                     WithTag_0                                              (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayTag                     WithoutTag_0                                           (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              WithTag_0                                              (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              WithoutTag_0                                           (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    IncludeTriggeredAbilities_0                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    TriggerOnce_0                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UAbilityTask_WaitAbilityActivate* ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -4451,7 +7891,7 @@ class UAbilityTask_WaitAbilityActivate* UAbilityTask_WaitAbilityActivate::WaitFo
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class UGameplayAbility*                 OwningAbility                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayTagQuery                Query                                                  (Parm, NativeAccessSpecifierPublic)
+// const struct FGameplayTagQuery&         Query                                                  (Parm, NativeAccessSpecifierPublic)
 // bool                                    IncludeTriggeredAbilities_0                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    TriggerOnce_0                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UAbilityTask_WaitAbilityActivate* ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -4485,7 +7925,7 @@ class UAbilityTask_WaitAbilityActivate* UAbilityTask_WaitAbilityActivate::WaitFo
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class UGameplayAbility*                 OwningAbility                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayTagRequirements         TagRequirements_0                                      (Parm, NativeAccessSpecifierPublic)
+// const struct FGameplayTagRequirements&  TagRequirements_0                                      (Parm, NativeAccessSpecifierPublic)
 // bool                                    IncludeTriggeredAbilities_0                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    TriggerOnce_0                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UAbilityTask_WaitAbilityActivate* ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -4544,8 +7984,8 @@ void UAbilityTask_WaitAbilityActivate::OnAbilityActivate(class UGameplayAbility*
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class UGameplayAbility*                 OwningAbility                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayTag                     WithTag_0                                              (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayTag                     WithoutTage                                            (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              WithTag_0                                              (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              WithoutTage                                            (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    TriggerOnce_0                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UAbilityTask_WaitAbilityCommit*   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -4578,7 +8018,7 @@ class UAbilityTask_WaitAbilityCommit* UAbilityTask_WaitAbilityCommit::WaitForAbi
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class UGameplayAbility*                 OwningAbility                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayTagQuery                Query_0                                                (Parm, NativeAccessSpecifierPublic)
+// const struct FGameplayTagQuery&         Query_0                                                (Parm, NativeAccessSpecifierPublic)
 // bool                                    TriggerOnce_0                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UAbilityTask_WaitAbilityCommit*   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -4631,92 +8071,12 @@ void UAbilityTask_WaitAbilityCommit::OnAbilityCommit(class UGameplayAbility* Act
 }
 
 
-// Function GameplayAbilities.AbilityTask_WaitAttributeChange.WaitForAttributeChange
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class UGameplayAbility*                 OwningAbility                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayAttribute               Attribute_0                                            (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayTag                     WithSrcTag                                             (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayTag                     WithoutSrcTag                                          (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    TriggerOnce                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class AActor*                           OptionalExternalOwner                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UAbilityTask_WaitAttributeChange* ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UAbilityTask_WaitAttributeChange* UAbilityTask_WaitAttributeChange::WaitForAttributeChange(class UGameplayAbility* OwningAbility, const struct FGameplayAttribute& Attribute_0, const struct FGameplayTag& WithSrcTag, const struct FGameplayTag& WithoutSrcTag, bool TriggerOnce, class AActor* OptionalExternalOwner)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("AbilityTask_WaitAttributeChange", "WaitForAttributeChange");
-
-	Params::AbilityTask_WaitAttributeChange_WaitForAttributeChange Parms{};
-
-	Parms.OwningAbility = OwningAbility;
-	Parms.Attribute_0 = std::move(Attribute_0);
-	Parms.WithSrcTag = std::move(WithSrcTag);
-	Parms.WithoutSrcTag = std::move(WithoutSrcTag);
-	Parms.TriggerOnce = TriggerOnce;
-	Parms.OptionalExternalOwner = OptionalExternalOwner;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilityTask_WaitAttributeChange.WaitForAttributeChangeWithComparison
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class UGameplayAbility*                 OwningAbility                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayAttribute               InAttribute                                            (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayTag                     InWithTag                                              (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayTag                     InWithoutTag                                           (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EWaitAttributeChangeComparison          InComparisonType                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   InComparisonValue                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    TriggerOnce                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class AActor*                           OptionalExternalOwner                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UAbilityTask_WaitAttributeChange* ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UAbilityTask_WaitAttributeChange* UAbilityTask_WaitAttributeChange::WaitForAttributeChangeWithComparison(class UGameplayAbility* OwningAbility, const struct FGameplayAttribute& InAttribute, const struct FGameplayTag& InWithTag, const struct FGameplayTag& InWithoutTag, EWaitAttributeChangeComparison InComparisonType, float InComparisonValue, bool TriggerOnce, class AActor* OptionalExternalOwner)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("AbilityTask_WaitAttributeChange", "WaitForAttributeChangeWithComparison");
-
-	Params::AbilityTask_WaitAttributeChange_WaitForAttributeChangeWithComparison Parms{};
-
-	Parms.OwningAbility = OwningAbility;
-	Parms.InAttribute = std::move(InAttribute);
-	Parms.InWithTag = std::move(InWithTag);
-	Parms.InWithoutTag = std::move(InWithoutTag);
-	Parms.InComparisonType = InComparisonType;
-	Parms.InComparisonValue = InComparisonValue;
-	Parms.TriggerOnce = TriggerOnce;
-	Parms.OptionalExternalOwner = OptionalExternalOwner;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
 // Function GameplayAbilities.AbilityTask_WaitAttributeChangeRatioThreshold.WaitForAttributeChangeRatioThreshold
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class UGameplayAbility*                 OwningAbility                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayAttribute               AttributeNumerator_0                                   (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayAttribute               AttributeDenominator_0                                 (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayAttribute&        AttributeNumerator_0                                   (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayAttribute&        AttributeDenominator_0                                 (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // EWaitAttributeChangeComparison          ComparisonType_0                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   ComparisonValue_0                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bTriggerOnce_0                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -4755,8 +8115,8 @@ class UAbilityTask_WaitAttributeChangeRatioThreshold* UAbilityTask_WaitAttribute
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class UGameplayAbility*                 OwningAbility                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayAttribute               AttributeNumerator_0                                   (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayAttribute               AttributeDenominator_0                                 (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayAttribute&        AttributeNumerator_0                                   (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayAttribute&        AttributeDenominator_0                                 (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // EWaitAttributeChangeComparison          ComparisonType_0                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // EWaitAttributeChangeComparison          OtherComparisonType_0                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   ComparisonValue_0                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -4795,58 +8155,20 @@ class UAbilityTask_WaitAttributeChangeRatioThreshold* UAbilityTask_WaitAttribute
 }
 
 
-// Function GameplayAbilities.AbilityTask_WaitAttributeChangeThreshold.WaitForAttributeChangeThreshold
+// Function GameplayAbilities.AbilityTask_WaitConfirm.WaitConfirm
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class UGameplayAbility*                 OwningAbility                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayAttribute               Attribute_0                                            (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EWaitAttributeChangeComparison          ComparisonType_0                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   ComparisonValue_0                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bTriggerOnce_0                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class AActor*                           OptionalExternalOwner                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UAbilityTask_WaitAttributeChangeThreshold*ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UAbilityTask_WaitConfirm*         ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UAbilityTask_WaitAttributeChangeThreshold* UAbilityTask_WaitAttributeChangeThreshold::WaitForAttributeChangeThreshold(class UGameplayAbility* OwningAbility, const struct FGameplayAttribute& Attribute_0, EWaitAttributeChangeComparison ComparisonType_0, float ComparisonValue_0, bool bTriggerOnce_0, class AActor* OptionalExternalOwner)
+class UAbilityTask_WaitConfirm* UAbilityTask_WaitConfirm::WaitConfirm(class UGameplayAbility* OwningAbility)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("AbilityTask_WaitAttributeChangeThreshold", "WaitForAttributeChangeThreshold");
+		Func = StaticClass()->GetFunction("AbilityTask_WaitConfirm", "WaitConfirm");
 
-	Params::AbilityTask_WaitAttributeChangeThreshold_WaitForAttributeChangeThreshold Parms{};
-
-	Parms.OwningAbility = OwningAbility;
-	Parms.Attribute_0 = std::move(Attribute_0);
-	Parms.ComparisonType_0 = ComparisonType_0;
-	Parms.ComparisonValue_0 = ComparisonValue_0;
-	Parms.bTriggerOnce_0 = bTriggerOnce_0;
-	Parms.OptionalExternalOwner = OptionalExternalOwner;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilityTask_WaitCancel.WaitCancel
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class UGameplayAbility*                 OwningAbility                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UAbilityTask_WaitCancel*          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UAbilityTask_WaitCancel* UAbilityTask_WaitCancel::WaitCancel(class UGameplayAbility* OwningAbility)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("AbilityTask_WaitCancel", "WaitCancel");
-
-	Params::AbilityTask_WaitCancel_WaitCancel Parms{};
+	Params::AbilityTask_WaitConfirm_WaitConfirm Parms{};
 
 	Parms.OwningAbility = OwningAbility;
 
@@ -4861,40 +8183,21 @@ class UAbilityTask_WaitCancel* UAbilityTask_WaitCancel::WaitCancel(class UGamepl
 }
 
 
-// Function GameplayAbilities.AbilityTask_WaitCancel.OnCancelCallback
-// (Final, Native, Public)
-
-void UAbilityTask_WaitCancel::OnCancelCallback()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilityTask_WaitCancel", "OnCancelCallback");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilityTask_WaitCancel.OnLocalCancelCallback
+// Function GameplayAbilities.AbilityTask_WaitConfirm.OnConfirmCallback
 // (Final, Native, Public)
 // Parameters:
-// int32                                   InputID                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UGameplayAbility*                 InAbility                                              (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAbilityTask_WaitCancel::OnLocalCancelCallback(int32 InputID)
+void UAbilityTask_WaitConfirm::OnConfirmCallback(class UGameplayAbility* InAbility)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("AbilityTask_WaitCancel", "OnLocalCancelCallback");
+		Func = Class->GetFunction("AbilityTask_WaitConfirm", "OnConfirmCallback");
 
-	Params::AbilityTask_WaitCancel_OnLocalCancelCallback Parms{};
+	Params::AbilityTask_WaitConfirm_OnConfirmCallback Parms{};
 
-	Parms.InputID = InputID;
+	Parms.InAbility = InAbility;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -4905,22 +8208,24 @@ void UAbilityTask_WaitCancel::OnLocalCancelCallback(int32 InputID)
 }
 
 
-// Function GameplayAbilities.AbilityTask_WaitConfirmCancel.WaitConfirmCancel
+// Function GameplayAbilities.AbilityTask_WaitDelay.WaitDelay
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class UGameplayAbility*                 OwningAbility                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UAbilityTask_WaitConfirmCancel*   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   Time_0                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UAbilityTask_WaitDelay*           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UAbilityTask_WaitConfirmCancel* UAbilityTask_WaitConfirmCancel::WaitConfirmCancel(class UGameplayAbility* OwningAbility)
+class UAbilityTask_WaitDelay* UAbilityTask_WaitDelay::WaitDelay(class UGameplayAbility* OwningAbility, float Time_0)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("AbilityTask_WaitConfirmCancel", "WaitConfirmCancel");
+		Func = StaticClass()->GetFunction("AbilityTask_WaitDelay", "WaitDelay");
 
-	Params::AbilityTask_WaitConfirmCancel_WaitConfirmCancel Parms{};
+	Params::AbilityTask_WaitDelay_WaitDelay Parms{};
 
 	Parms.OwningAbility = OwningAbility;
+	Parms.Time_0 = Time_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -4930,94 +8235,6 @@ class UAbilityTask_WaitConfirmCancel* UAbilityTask_WaitConfirmCancel::WaitConfir
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilityTask_WaitConfirmCancel.OnCancelCallback
-// (Final, Native, Public)
-
-void UAbilityTask_WaitConfirmCancel::OnCancelCallback()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilityTask_WaitConfirmCancel", "OnCancelCallback");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilityTask_WaitConfirmCancel.OnConfirmCallback
-// (Final, Native, Public)
-
-void UAbilityTask_WaitConfirmCancel::OnConfirmCallback()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilityTask_WaitConfirmCancel", "OnConfirmCallback");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilityTask_WaitConfirmCancel.OnLocalCancelCallback
-// (Final, Native, Public)
-// Parameters:
-// int32                                   InputID                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UAbilityTask_WaitConfirmCancel::OnLocalCancelCallback(int32 InputID)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilityTask_WaitConfirmCancel", "OnLocalCancelCallback");
-
-	Params::AbilityTask_WaitConfirmCancel_OnLocalCancelCallback Parms{};
-
-	Parms.InputID = InputID;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilityTask_WaitConfirmCancel.OnLocalConfirmCallback
-// (Final, Native, Public)
-// Parameters:
-// int32                                   InputID                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UAbilityTask_WaitConfirmCancel::OnLocalConfirmCallback(int32 InputID)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilityTask_WaitConfirmCancel", "OnLocalConfirmCallback");
-
-	Params::AbilityTask_WaitConfirmCancel_OnLocalConfirmCallback Parms{};
-
-	Parms.InputID = InputID;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
@@ -5025,8 +8242,8 @@ void UAbilityTask_WaitConfirmCancel::OnLocalConfirmCallback(int32 InputID)
 // (Final, Native, Public, HasOutParams)
 // Parameters:
 // class UAbilitySystemComponent*          Target                                                 (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayEffectSpecStackHandle   SpecHandleApplied                                      (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-// struct FActiveGameplayEffectHandle      ActiveHandle                                           (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayEffectSpecStackHandle&SpecHandleApplied                                      (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FActiveGameplayEffectHandle&ActiveHandle                                           (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UAbilityTask_WaitGameplayEffectApplied::OnApplyGameplayEffectCallback(class UAbilitySystemComponent* Target, const struct FGameplayEffectSpecStackHandle& SpecHandleApplied, const struct FActiveGameplayEffectHandle& ActiveHandle)
 {
@@ -5054,9 +8271,9 @@ void UAbilityTask_WaitGameplayEffectApplied::OnApplyGameplayEffectCallback(class
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class UGameplayAbility*                 InOwningAbility                                        (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayTargetDataFilterHandle  InSourceFilter                                         (ConstParm, Parm, NativeAccessSpecifierPublic)
-// struct FGameplayTagRequirements         InSourceTagRequirements                                (Parm, NativeAccessSpecifierPublic)
-// struct FGameplayTagRequirements         InTargetTagRequirements                                (Parm, NativeAccessSpecifierPublic)
+// const struct FGameplayTargetDataFilterHandle&InSourceFilter                                         (ConstParm, Parm, NativeAccessSpecifierPublic)
+// const struct FGameplayTagRequirements&  InSourceTagRequirements                                (Parm, NativeAccessSpecifierPublic)
+// const struct FGameplayTagRequirements&  InTargetTagRequirements                                (Parm, NativeAccessSpecifierPublic)
 // bool                                    InTriggerOnce                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           OptionalExternalOwner                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    InListenForPeriodicEffect                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -5094,9 +8311,9 @@ class UAbilityTask_WaitGameplayEffectApplied_Self* UAbilityTask_WaitGameplayEffe
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class UGameplayAbility*                 InOwningAbility                                        (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayTargetDataFilterHandle  InSourceFilter                                         (ConstParm, Parm, NativeAccessSpecifierPublic)
-// struct FGameplayTagQuery                InSourceTagQuery                                       (Parm, NativeAccessSpecifierPublic)
-// struct FGameplayTagQuery                InTargetTagQuery                                       (Parm, NativeAccessSpecifierPublic)
+// const struct FGameplayTargetDataFilterHandle&InSourceFilter                                         (ConstParm, Parm, NativeAccessSpecifierPublic)
+// const struct FGameplayTagQuery&         InSourceTagQuery                                       (Parm, NativeAccessSpecifierPublic)
+// const struct FGameplayTagQuery&         InTargetTagQuery                                       (Parm, NativeAccessSpecifierPublic)
 // bool                                    InTriggerOnce                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           OptionalExternalOwner                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    InListenForPeriodicEffect                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -5134,9 +8351,9 @@ class UAbilityTask_WaitGameplayEffectApplied_Self* UAbilityTask_WaitGameplayEffe
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class UGameplayAbility*                 InOwningAbility                                        (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayTargetDataFilterHandle  InTargetFilter                                         (ConstParm, Parm, NativeAccessSpecifierPublic)
-// struct FGameplayTagRequirements         InSourceTagRequirements                                (Parm, NativeAccessSpecifierPublic)
-// struct FGameplayTagRequirements         InTargetTagRequirements                                (Parm, NativeAccessSpecifierPublic)
+// const struct FGameplayTargetDataFilterHandle&InTargetFilter                                         (ConstParm, Parm, NativeAccessSpecifierPublic)
+// const struct FGameplayTagRequirements&  InSourceTagRequirements                                (Parm, NativeAccessSpecifierPublic)
+// const struct FGameplayTagRequirements&  InTargetTagRequirements                                (Parm, NativeAccessSpecifierPublic)
 // bool                                    InTriggerOnce                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           OptionalExternalOwner                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    InListenForPeriodicEffects                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -5174,9 +8391,9 @@ class UAbilityTask_WaitGameplayEffectApplied_Target* UAbilityTask_WaitGameplayEf
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class UGameplayAbility*                 InOwningAbility                                        (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayTargetDataFilterHandle  InSourceFilter                                         (ConstParm, Parm, NativeAccessSpecifierPublic)
-// struct FGameplayTagQuery                InSourceTagQuery                                       (Parm, NativeAccessSpecifierPublic)
-// struct FGameplayTagQuery                InTargetTagQuery                                       (Parm, NativeAccessSpecifierPublic)
+// const struct FGameplayTargetDataFilterHandle&InSourceFilter                                         (ConstParm, Parm, NativeAccessSpecifierPublic)
+// const struct FGameplayTagQuery&         InSourceTagQuery                                       (Parm, NativeAccessSpecifierPublic)
+// const struct FGameplayTagQuery&         InTargetTagQuery                                       (Parm, NativeAccessSpecifierPublic)
 // bool                                    InTriggerOnce                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           OptionalExternalOwner                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    InListenForPeriodicEffect                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -5214,8 +8431,8 @@ class UAbilityTask_WaitGameplayEffectApplied_Target* UAbilityTask_WaitGameplayEf
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class UGameplayAbility*                 OwningAbility                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayTagRequirements         SourceTagRequirements_0                                (Parm, NativeAccessSpecifierPublic)
-// struct FGameplayTagRequirements         TargetTagRequirements_0                                (Parm, NativeAccessSpecifierPublic)
+// const struct FGameplayTagRequirements&  SourceTagRequirements_0                                (Parm, NativeAccessSpecifierPublic)
+// const struct FGameplayTagRequirements&  TargetTagRequirements_0                                (Parm, NativeAccessSpecifierPublic)
 // class AActor*                           OptionalExternalTarget                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    OnlyTriggerOnce                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UAbilityTask_WaitGameplayEffectBlockedImmunity*ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -5250,7 +8467,7 @@ class UAbilityTask_WaitGameplayEffectBlockedImmunity* UAbilityTask_WaitGameplayE
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class UGameplayAbility*                 OwningAbility                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FActiveGameplayEffectHandle      Handle                                                 (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FActiveGameplayEffectHandle&Handle                                                 (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UAbilityTask_WaitGameplayEffectRemoved*ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class UAbilityTask_WaitGameplayEffectRemoved* UAbilityTask_WaitGameplayEffectRemoved::WaitForGameplayEffectRemoved(class UGameplayAbility* OwningAbility, const struct FActiveGameplayEffectHandle& Handle)
@@ -5279,7 +8496,7 @@ class UAbilityTask_WaitGameplayEffectRemoved* UAbilityTask_WaitGameplayEffectRem
 // Function GameplayAbilities.AbilityTask_WaitGameplayEffectRemoved.OnGameplayEffectRemoved
 // (Final, Native, Public, HasOutParams)
 // Parameters:
-// struct FGameplayEffectRemovalInfo       InGameplayEffectRemovalInfo                            (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FGameplayEffectRemovalInfo&InGameplayEffectRemovalInfo                            (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UAbilityTask_WaitGameplayEffectRemoved::OnGameplayEffectRemoved(const struct FGameplayEffectRemovalInfo& InGameplayEffectRemovalInfo)
 {
@@ -5301,11 +8518,70 @@ void UAbilityTask_WaitGameplayEffectRemoved::OnGameplayEffectRemoved(const struc
 }
 
 
+// Function GameplayAbilities.AbilityTask_WaitGameplayEffectStackChange.WaitForGameplayEffectStackChange
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UGameplayAbility*                 OwningAbility                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FActiveGameplayEffectHandle&Handle                                                 (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UAbilityTask_WaitGameplayEffectStackChange*ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UAbilityTask_WaitGameplayEffectStackChange* UAbilityTask_WaitGameplayEffectStackChange::WaitForGameplayEffectStackChange(class UGameplayAbility* OwningAbility, const struct FActiveGameplayEffectHandle& Handle)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("AbilityTask_WaitGameplayEffectStackChange", "WaitForGameplayEffectStackChange");
+
+	Params::AbilityTask_WaitGameplayEffectStackChange_WaitForGameplayEffectStackChange Parms{};
+
+	Parms.OwningAbility = OwningAbility;
+	Parms.Handle = std::move(Handle);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameplayAbilities.AbilityTask_WaitGameplayEffectStackChange.OnGameplayEffectStackChange
+// (Final, Native, Public)
+// Parameters:
+// const struct FActiveGameplayEffectHandle&Handle                                                 (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   NewCount                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   OldCount                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UAbilityTask_WaitGameplayEffectStackChange::OnGameplayEffectStackChange(const struct FActiveGameplayEffectHandle& Handle, int32 NewCount, int32 OldCount)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilityTask_WaitGameplayEffectStackChange", "OnGameplayEffectStackChange");
+
+	Params::AbilityTask_WaitGameplayEffectStackChange_OnGameplayEffectStackChange Parms{};
+
+	Parms.Handle = std::move(Handle);
+	Parms.NewCount = NewCount;
+	Parms.OldCount = OldCount;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function GameplayAbilities.AbilityTask_WaitGameplayEvent.WaitGameplayEvent
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class UGameplayAbility*                 OwningAbility                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayTag                     EventTag                                               (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              EventTag                                               (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           OptionalExternalTarget_0                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    OnlyTriggerOnce_0                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    OnlyMatchExact_0                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -5337,11 +8613,38 @@ class UAbilityTask_WaitGameplayEvent* UAbilityTask_WaitGameplayEvent::WaitGamepl
 }
 
 
+// Function GameplayAbilities.AbilityTask_WaitGameplayTag.GameplayTagCallback
+// (Native, Public)
+// Parameters:
+// const struct FGameplayTag&              Tag_0                                                  (ConstParm, Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   NewCount                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UAbilityTask_WaitGameplayTag::GameplayTagCallback(const struct FGameplayTag& Tag_0, int32 NewCount)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilityTask_WaitGameplayTag", "GameplayTagCallback");
+
+	Params::AbilityTask_WaitGameplayTag_GameplayTagCallback Parms{};
+
+	Parms.Tag_0 = std::move(Tag_0);
+	Parms.NewCount = NewCount;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function GameplayAbilities.AbilityTask_WaitGameplayTagAdded.WaitGameplayTagAdd
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class UGameplayAbility*                 OwningAbility                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayTag                     InTag                                                  (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              InTag                                                  (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           InOptionalExternalTarget                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    InOnlyTriggerOnce                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UAbilityTask_WaitGameplayTagAdded*ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -5375,7 +8678,7 @@ class UAbilityTask_WaitGameplayTagAdded* UAbilityTask_WaitGameplayTagAdded::Wait
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class UGameplayAbility*                 OwningAbility                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayTag                     InTag                                                  (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              InTag                                                  (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           InOptionalExternalTarget                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    InOnlyTriggerOnce                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UAbilityTask_WaitGameplayTagRemoved*ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -5409,10 +8712,10 @@ class UAbilityTask_WaitGameplayTagRemoved* UAbilityTask_WaitGameplayTagRemoved::
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class UGameplayAbility*                 OwningAbility                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayTagQuery                TagQuery                                               (ConstParm, Parm, NativeAccessSpecifierPublic)
-// class AActor*                           InOptionalExternalTarget                               (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EWaitGameplayTagQueryTriggerCondition   TriggerCondition                                       (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bOnlyTriggerOnce                                       (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTagQuery&         TagQuery                                               (ConstParm, Parm, NativeAccessSpecifierPublic)
+// const class AActor*                     InOptionalExternalTarget                               (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const EWaitGameplayTagQueryTriggerConditionTriggerCondition                                       (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bOnlyTriggerOnce                                       (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UAbilityTask_WaitGameplayTagQuery*ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class UAbilityTask_WaitGameplayTagQuery* UAbilityTask_WaitGameplayTagQuery::WaitGameplayTagQuery(class UGameplayAbility* OwningAbility, const struct FGameplayTagQuery& TagQuery, const class AActor* InOptionalExternalTarget, const EWaitGameplayTagQueryTriggerCondition TriggerCondition, const bool bOnlyTriggerOnce)
@@ -5444,7 +8747,7 @@ class UAbilityTask_WaitGameplayTagQuery* UAbilityTask_WaitGameplayTagQuery::Wait
 // Function GameplayAbilities.AbilityTask_WaitGameplayTagQuery.UpdateTargetTags
 // (Final, Native, Protected)
 // Parameters:
-// struct FGameplayTag                     Tag                                                    (ConstParm, Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              Tag                                                    (ConstParm, Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   NewCount                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UAbilityTask_WaitGameplayTagQuery::UpdateTargetTags(const struct FGameplayTag& Tag, int32 NewCount)
@@ -5468,24 +8771,24 @@ void UAbilityTask_WaitGameplayTagQuery::UpdateTargetTags(const struct FGameplayT
 }
 
 
-// Function GameplayAbilities.AbilityTask_WaitInputRelease.WaitInputRelease
+// Function GameplayAbilities.AbilityTask_WaitInputPress.WaitInputPress
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class UGameplayAbility*                 OwningAbility                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bTestAlreadyReleased                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UAbilityTask_WaitInputRelease*    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bTestAlreadyPressed                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UAbilityTask_WaitInputPress*      ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UAbilityTask_WaitInputRelease* UAbilityTask_WaitInputRelease::WaitInputRelease(class UGameplayAbility* OwningAbility, bool bTestAlreadyReleased)
+class UAbilityTask_WaitInputPress* UAbilityTask_WaitInputPress::WaitInputPress(class UGameplayAbility* OwningAbility, bool bTestAlreadyPressed)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("AbilityTask_WaitInputRelease", "WaitInputRelease");
+		Func = StaticClass()->GetFunction("AbilityTask_WaitInputPress", "WaitInputPress");
 
-	Params::AbilityTask_WaitInputRelease_WaitInputRelease Parms{};
+	Params::AbilityTask_WaitInputPress_WaitInputPress Parms{};
 
 	Parms.OwningAbility = OwningAbility;
-	Parms.bTestAlreadyReleased = bTestAlreadyReleased;
+	Parms.bTestAlreadyPressed = bTestAlreadyPressed;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -5498,15 +8801,15 @@ class UAbilityTask_WaitInputRelease* UAbilityTask_WaitInputRelease::WaitInputRel
 }
 
 
-// Function GameplayAbilities.AbilityTask_WaitInputRelease.OnLocalReleaseCallback
+// Function GameplayAbilities.AbilityTask_WaitInputPress.OnLocalPressCallback
 // (Final, Native, Public)
 
-void UAbilityTask_WaitInputRelease::OnLocalReleaseCallback()
+void UAbilityTask_WaitInputPress::OnLocalPressCallback()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("AbilityTask_WaitInputRelease", "OnLocalReleaseCallback");
+		Func = Class->GetFunction("AbilityTask_WaitInputPress", "OnLocalPressCallback");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -5517,19 +8820,19 @@ void UAbilityTask_WaitInputRelease::OnLocalReleaseCallback()
 }
 
 
-// Function GameplayAbilities.AbilityTask_WaitInputRelease.OnReleaseCallback
+// Function GameplayAbilities.AbilityTask_WaitInputPress.OnPressCallback
 // (Final, Native, Public)
 // Parameters:
 // float                                   Duration                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAbilityTask_WaitInputRelease::OnReleaseCallback(float Duration)
+void UAbilityTask_WaitInputPress::OnPressCallback(float Duration)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("AbilityTask_WaitInputRelease", "OnReleaseCallback");
+		Func = Class->GetFunction("AbilityTask_WaitInputPress", "OnPressCallback");
 
-	Params::AbilityTask_WaitInputRelease_OnReleaseCallback Parms{};
+	Params::AbilityTask_WaitInputPress_OnPressCallback Parms{};
 
 	Parms.Duration = Duration;
 
@@ -5542,19 +8845,19 @@ void UAbilityTask_WaitInputRelease::OnReleaseCallback(float Duration)
 }
 
 
-// Function GameplayAbilities.AbilityTask_WaitInputRelease.OnReplicateReleaseCallback
+// Function GameplayAbilities.AbilityTask_WaitInputPress.OnReplicatePressCallback
 // (Final, Native, Public, HasOutParams)
 // Parameters:
-// struct FGameplayAbilityTargetDataHandle Data                                                   (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FGameplayAbilityTargetDataHandle&Data                                                   (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UAbilityTask_WaitInputRelease::OnReplicateReleaseCallback(const struct FGameplayAbilityTargetDataHandle& Data)
+void UAbilityTask_WaitInputPress::OnReplicatePressCallback(const struct FGameplayAbilityTargetDataHandle& Data)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("AbilityTask_WaitInputRelease", "OnReplicateReleaseCallback");
+		Func = Class->GetFunction("AbilityTask_WaitInputPress", "OnReplicatePressCallback");
 
-	Params::AbilityTask_WaitInputRelease_OnReplicateReleaseCallback Parms{};
+	Params::AbilityTask_WaitInputPress_OnReplicatePressCallback Parms{};
 
 	Parms.Data = std::move(Data);
 
@@ -5616,67 +8919,6 @@ void UAbilityTask_WaitMovementModeChange::OnMovementModeChange(class ACharacter*
 	Parms.Character = Character;
 	Parms.PrevMovementMode = PrevMovementMode;
 	Parms.PreviousCustomMode = PreviousCustomMode;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilityTask_WaitOverlap.WaitForOverlap
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class UGameplayAbility*                 OwningAbility                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UAbilityTask_WaitOverlap*         ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UAbilityTask_WaitOverlap* UAbilityTask_WaitOverlap::WaitForOverlap(class UGameplayAbility* OwningAbility)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("AbilityTask_WaitOverlap", "WaitForOverlap");
-
-	Params::AbilityTask_WaitOverlap_WaitForOverlap Parms{};
-
-	Parms.OwningAbility = OwningAbility;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilityTask_WaitOverlap.OnHitCallback
-// (Final, Native, Public, HasOutParams, HasDefaults)
-// Parameters:
-// class UPrimitiveComponent*              HitComp                                                (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class AActor*                           OtherActor                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UPrimitiveComponent*              OtherComp                                              (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          NormalImpulse                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FHitResult                       Hit                                                    (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-
-void UAbilityTask_WaitOverlap::OnHitCallback(class UPrimitiveComponent* HitComp, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, const struct FVector& NormalImpulse, const struct FHitResult& Hit)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilityTask_WaitOverlap", "OnHitCallback");
-
-	Params::AbilityTask_WaitOverlap_OnHitCallback Parms{};
-
-	Parms.HitComp = HitComp;
-	Parms.OtherActor = OtherActor;
-	Parms.OtherComp = OtherComp;
-	Parms.NormalImpulse = std::move(NormalImpulse);
-	Parms.Hit = std::move(Hit);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -5760,7 +9002,7 @@ class UAbilityTask_WaitTargetData* UAbilityTask_WaitTargetData::WaitTargetDataUs
 // Parameters:
 // class UGameplayAbility*                 OwningAbility                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TSubclassOf<class AGameplayAbilityTargetActor>Class_0                                                (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class AGameplayAbilityTargetActor*      SpawnedActor                                           (Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AGameplayAbilityTargetActor**     SpawnedActor                                           (Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UAbilityTask_WaitTargetData::BeginSpawningActor(class UGameplayAbility* OwningAbility, TSubclassOf<class AGameplayAbilityTargetActor> Class_0, class AGameplayAbilityTargetActor** SpawnedActor)
@@ -5819,7 +9061,7 @@ void UAbilityTask_WaitTargetData::FinishSpawningActor(class UGameplayAbility* Ow
 // Function GameplayAbilities.AbilityTask_WaitTargetData.OnTargetDataCancelledCallback
 // (Native, Public, HasOutParams)
 // Parameters:
-// struct FGameplayAbilityTargetDataHandle Data                                                   (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FGameplayAbilityTargetDataHandle&Data                                                   (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UAbilityTask_WaitTargetData::OnTargetDataCancelledCallback(const struct FGameplayAbilityTargetDataHandle& Data)
 {
@@ -5844,7 +9086,7 @@ void UAbilityTask_WaitTargetData::OnTargetDataCancelledCallback(const struct FGa
 // Function GameplayAbilities.AbilityTask_WaitTargetData.OnTargetDataReadyCallback
 // (Native, Public, HasOutParams)
 // Parameters:
-// struct FGameplayAbilityTargetDataHandle Data                                                   (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FGameplayAbilityTargetDataHandle&Data                                                   (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UAbilityTask_WaitTargetData::OnTargetDataReadyCallback(const struct FGameplayAbilityTargetDataHandle& Data)
 {
@@ -5869,8 +9111,8 @@ void UAbilityTask_WaitTargetData::OnTargetDataReadyCallback(const struct FGamepl
 // Function GameplayAbilities.AbilityTask_WaitTargetData.OnTargetDataReplicatedCallback
 // (Native, Public, HasOutParams)
 // Parameters:
-// struct FGameplayAbilityTargetDataHandle Data                                                   (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FGameplayTag                     ActivationTag                                          (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayAbilityTargetDataHandle&Data                                                   (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              ActivationTag                                          (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UAbilityTask_WaitTargetData::OnTargetDataReplicatedCallback(const struct FGameplayAbilityTargetDataHandle& Data, const struct FGameplayTag& ActivationTag)
 {
@@ -5916,7 +9158,7 @@ void UAbilityTask_WaitTargetData::OnTargetDataReplicatedCancelledCallback()
 // (Final, Native, Static, Public, HasDefaults, BlueprintCallable)
 // Parameters:
 // class UGameplayAbility*                 OwningAbility                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          Direction_0                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   Direction_0                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   MinimumMagnitude_0                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UAbilityTask_WaitVelocityChange*  ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -5975,7 +9217,7 @@ struct FGameplayAbilityTargetDataHandle UAbilitySystemBlueprintLibrary::AbilityT
 // Function GameplayAbilities.AbilitySystemBlueprintLibrary.AbilityTargetDataFromActorArray
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// TArray<class AActor*>                   ActorArray                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TArray<class AActor*>&            ActorArray                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 // bool                                    OneTargetPerHandle                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FGameplayAbilityTargetDataHandle ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
@@ -6005,7 +9247,7 @@ struct FGameplayAbilityTargetDataHandle UAbilitySystemBlueprintLibrary::AbilityT
 // Function GameplayAbilities.AbilitySystemBlueprintLibrary.AbilityTargetDataFromHitResult
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FHitResult                       HitResult                                              (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FHitResult&                HitResult                                              (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 // struct FGameplayAbilityTargetDataHandle ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
 struct FGameplayAbilityTargetDataHandle UAbilitySystemBlueprintLibrary::AbilityTargetDataFromHitResult(const struct FHitResult& HitResult)
@@ -6033,8 +9275,8 @@ struct FGameplayAbilityTargetDataHandle UAbilitySystemBlueprintLibrary::AbilityT
 // Function GameplayAbilities.AbilitySystemBlueprintLibrary.AbilityTargetDataFromLocations
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FGameplayAbilityTargetingLocationInfoSourceLocation                                         (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-// struct FGameplayAbilityTargetingLocationInfoTargetLocation                                         (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FGameplayAbilityTargetingLocationInfo&SourceLocation                                         (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FGameplayAbilityTargetingLocationInfo&TargetLocation                                         (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 // struct FGameplayAbilityTargetDataHandle ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
 struct FGameplayAbilityTargetDataHandle UAbilitySystemBlueprintLibrary::AbilityTargetDataFromLocations(const struct FGameplayAbilityTargetingLocationInfo& SourceLocation, const struct FGameplayAbilityTargetingLocationInfo& TargetLocation)
@@ -6063,8 +9305,8 @@ struct FGameplayAbilityTargetDataHandle UAbilitySystemBlueprintLibrary::AbilityT
 // Function GameplayAbilities.AbilitySystemBlueprintLibrary.AddAssetTag
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// struct FGameplayEffectSpecHandle        SpecHandle                                             (Parm, NativeAccessSpecifierPublic)
-// struct FGameplayTag                     NewGameplayTag                                         (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayEffectSpecHandle& SpecHandle                                             (Parm, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              NewGameplayTag                                         (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FGameplayEffectSpecHandle        ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
 struct FGameplayEffectSpecHandle UAbilitySystemBlueprintLibrary::AddAssetTag(const struct FGameplayEffectSpecHandle& SpecHandle, const struct FGameplayTag& NewGameplayTag)
@@ -6093,8 +9335,8 @@ struct FGameplayEffectSpecHandle UAbilitySystemBlueprintLibrary::AddAssetTag(con
 // Function GameplayAbilities.AbilitySystemBlueprintLibrary.AddAssetTags
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// struct FGameplayEffectSpecHandle        SpecHandle                                             (Parm, NativeAccessSpecifierPublic)
-// struct FGameplayTagContainer            NewGameplayTags                                        (Parm, NativeAccessSpecifierPublic)
+// const struct FGameplayEffectSpecHandle& SpecHandle                                             (Parm, NativeAccessSpecifierPublic)
+// const struct FGameplayTagContainer&     NewGameplayTags                                        (Parm, NativeAccessSpecifierPublic)
 // struct FGameplayEffectSpecHandle        ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
 struct FGameplayEffectSpecHandle UAbilitySystemBlueprintLibrary::AddAssetTags(const struct FGameplayEffectSpecHandle& SpecHandle, const struct FGameplayTagContainer& NewGameplayTags)
@@ -6123,8 +9365,8 @@ struct FGameplayEffectSpecHandle UAbilitySystemBlueprintLibrary::AddAssetTags(co
 // Function GameplayAbilities.AbilitySystemBlueprintLibrary.AddGrantedTag
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// struct FGameplayEffectSpecHandle        SpecHandle                                             (Parm, NativeAccessSpecifierPublic)
-// struct FGameplayTag                     NewGameplayTag                                         (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayEffectSpecHandle& SpecHandle                                             (Parm, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              NewGameplayTag                                         (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FGameplayEffectSpecHandle        ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
 struct FGameplayEffectSpecHandle UAbilitySystemBlueprintLibrary::AddGrantedTag(const struct FGameplayEffectSpecHandle& SpecHandle, const struct FGameplayTag& NewGameplayTag)
@@ -6153,8 +9395,8 @@ struct FGameplayEffectSpecHandle UAbilitySystemBlueprintLibrary::AddGrantedTag(c
 // Function GameplayAbilities.AbilitySystemBlueprintLibrary.AddGrantedTags
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// struct FGameplayEffectSpecHandle        SpecHandle                                             (Parm, NativeAccessSpecifierPublic)
-// struct FGameplayTagContainer            NewGameplayTags                                        (Parm, NativeAccessSpecifierPublic)
+// const struct FGameplayEffectSpecHandle& SpecHandle                                             (Parm, NativeAccessSpecifierPublic)
+// const struct FGameplayTagContainer&     NewGameplayTags                                        (Parm, NativeAccessSpecifierPublic)
 // struct FGameplayEffectSpecHandle        ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
 struct FGameplayEffectSpecHandle UAbilitySystemBlueprintLibrary::AddGrantedTags(const struct FGameplayEffectSpecHandle& SpecHandle, const struct FGameplayTagContainer& NewGameplayTags)
@@ -6183,7 +9425,7 @@ struct FGameplayEffectSpecHandle UAbilitySystemBlueprintLibrary::AddGrantedTags(
 // Function GameplayAbilities.AbilitySystemBlueprintLibrary.AddLinkedGameplayEffect
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// struct FGameplayEffectSpecHandle        SpecHandle                                             (Parm, NativeAccessSpecifierPublic)
+// const struct FGameplayEffectSpecHandle& SpecHandle                                             (Parm, NativeAccessSpecifierPublic)
 // TSubclassOf<class UGameplayEffect>      LinkedGameplayEffect                                   (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FGameplayEffectSpecHandle        ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
@@ -6213,8 +9455,8 @@ struct FGameplayEffectSpecHandle UAbilitySystemBlueprintLibrary::AddLinkedGamepl
 // Function GameplayAbilities.AbilitySystemBlueprintLibrary.AddLinkedGameplayEffectSpec
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// struct FGameplayEffectSpecHandle        SpecHandle                                             (Parm, NativeAccessSpecifierPublic)
-// struct FGameplayEffectSpecHandle        LinkedGameplayEffectSpec                               (Parm, NativeAccessSpecifierPublic)
+// const struct FGameplayEffectSpecHandle& SpecHandle                                             (Parm, NativeAccessSpecifierPublic)
+// const struct FGameplayEffectSpecHandle& LinkedGameplayEffectSpec                               (Parm, NativeAccessSpecifierPublic)
 // struct FGameplayEffectSpecHandle        ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
 struct FGameplayEffectSpecHandle UAbilitySystemBlueprintLibrary::AddLinkedGameplayEffectSpec(const struct FGameplayEffectSpecHandle& SpecHandle, const struct FGameplayEffectSpecHandle& LinkedGameplayEffectSpec)
@@ -6244,7 +9486,7 @@ struct FGameplayEffectSpecHandle UAbilitySystemBlueprintLibrary::AddLinkedGamepl
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // class AActor*                           Actor                                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayTagContainer            GameplayTags                                           (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FGameplayTagContainer&     GameplayTags                                           (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // bool                                    bShouldReplicate                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -6275,8 +9517,8 @@ bool UAbilitySystemBlueprintLibrary::AddLooseGameplayTags(class AActor* Actor, c
 // Function GameplayAbilities.AbilitySystemBlueprintLibrary.AppendTargetDataHandle
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FGameplayAbilityTargetDataHandle TargetHandle                                           (Parm, NativeAccessSpecifierPublic)
-// struct FGameplayAbilityTargetDataHandle HandleToAdd                                            (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FGameplayAbilityTargetDataHandle&TargetHandle                                           (Parm, NativeAccessSpecifierPublic)
+// const struct FGameplayAbilityTargetDataHandle&HandleToAdd                                            (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // struct FGameplayAbilityTargetDataHandle ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
 struct FGameplayAbilityTargetDataHandle UAbilitySystemBlueprintLibrary::AppendTargetDataHandle(const struct FGameplayAbilityTargetDataHandle& TargetHandle, const struct FGameplayAbilityTargetDataHandle& HandleToAdd)
@@ -6305,7 +9547,7 @@ struct FGameplayAbilityTargetDataHandle UAbilitySystemBlueprintLibrary::AppendTa
 // Function GameplayAbilities.AbilitySystemBlueprintLibrary.AssignSetByCallerMagnitude
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// struct FGameplayEffectSpecHandle        SpecHandle                                             (Parm, NativeAccessSpecifierPublic)
+// const struct FGameplayEffectSpecHandle& SpecHandle                                             (Parm, NativeAccessSpecifierPublic)
 // class FName                             DataName                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   Magnitude                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FGameplayEffectSpecHandle        ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
@@ -6337,8 +9579,8 @@ struct FGameplayEffectSpecHandle UAbilitySystemBlueprintLibrary::AssignSetByCall
 // Function GameplayAbilities.AbilitySystemBlueprintLibrary.AssignTagSetByCallerMagnitude
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// struct FGameplayEffectSpecHandle        SpecHandle                                             (Parm, NativeAccessSpecifierPublic)
-// struct FGameplayTag                     DataTag                                                (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayEffectSpecHandle& SpecHandle                                             (Parm, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              DataTag                                                (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   Magnitude                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FGameplayEffectSpecHandle        ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
@@ -6369,27 +9611,27 @@ struct FGameplayEffectSpecHandle UAbilitySystemBlueprintLibrary::AssignTagSetByC
 // Function GameplayAbilities.AbilitySystemBlueprintLibrary.BreakGameplayCueParameters
 // (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-// float                                   NormalizedMagnitude                                    (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   RawMagnitude                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EGameplayEffectDurationType             DurationPolicy                                         (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   Duration                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   Period                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayEffectContextHandle     EffectContext                                          (Parm, OutParm, AdvancedDisplay, NativeAccessSpecifierPublic)
-// struct FGameplayTag                     MatchedTagName                                         (Parm, OutParm, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayTag                     OriginalTag                                            (Parm, OutParm, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayTagContainer            AggregatedSourceTags                                   (Parm, OutParm, AdvancedDisplay, NativeAccessSpecifierPublic)
-// struct FGameplayTagContainer            AggregatedTargetTags                                   (Parm, OutParm, AdvancedDisplay, NativeAccessSpecifierPublic)
-// struct FVector                          Location                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          Normal                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class AActor*                           Instigator                                             (Parm, OutParm, ZeroConstructor, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class AActor*                           EffectCauser                                           (Parm, OutParm, ZeroConstructor, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UObject*                          SourceObject                                           (Parm, OutParm, ZeroConstructor, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UPhysicalMaterial*                PhysicalMaterial                                       (Parm, OutParm, ZeroConstructor, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   GameplayEffectLevel                                    (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   AbilityLevel                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class USceneComponent*                  TargetAttachComponent                                  (Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bReplicateLocationWhenUsingMinimalRepProxy             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// float*                                  NormalizedMagnitude                                    (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float*                                  RawMagnitude                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EGameplayEffectDurationType*            DurationPolicy                                         (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float*                                  Duration                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float*                                  Period                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FGameplayEffectContextHandle*    EffectContext                                          (Parm, OutParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+// struct FGameplayTag*                    MatchedTagName                                         (Parm, OutParm, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FGameplayTag*                    OriginalTag                                            (Parm, OutParm, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FGameplayTagContainer*           AggregatedSourceTags                                   (Parm, OutParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+// struct FGameplayTagContainer*           AggregatedTargetTags                                   (Parm, OutParm, AdvancedDisplay, NativeAccessSpecifierPublic)
+// struct FVector*                         Location                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVector*                         Normal                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor**                          Instigator                                             (Parm, OutParm, ZeroConstructor, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor**                          EffectCauser                                           (Parm, OutParm, ZeroConstructor, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UObject**                         SourceObject                                           (Parm, OutParm, ZeroConstructor, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UPhysicalMaterial**               PhysicalMaterial                                       (Parm, OutParm, ZeroConstructor, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32*                                  GameplayEffectLevel                                    (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32*                                  AbilityLevel                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class USceneComponent**                 TargetAttachComponent                                  (Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool*                                   bReplicateLocationWhenUsingMinimalRepProxy             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UAbilitySystemBlueprintLibrary::BreakGameplayCueParameters(const struct FGameplayCueParameters& Parameters, float* NormalizedMagnitude, float* RawMagnitude, EGameplayEffectDurationType* DurationPolicy, float* Duration, float* Period, struct FGameplayEffectContextHandle* EffectContext, struct FGameplayTag* MatchedTagName, struct FGameplayTag* OriginalTag, struct FGameplayTagContainer* AggregatedSourceTags, struct FGameplayTagContainer* AggregatedTargetTags, struct FVector* Location, struct FVector* Normal, class AActor** Instigator, class AActor** EffectCauser, class UObject** SourceObject, class UPhysicalMaterial** PhysicalMaterial, int32* GameplayEffectLevel, int32* AbilityLevel, class USceneComponent** TargetAttachComponent, bool* bReplicateLocationWhenUsingMinimalRepProxy)
 {
@@ -6476,7 +9718,7 @@ void UAbilitySystemBlueprintLibrary::BreakGameplayCueParameters(const struct FGa
 // Parameters:
 // class AActor*                           InNewInstigator                                        (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           InEffectCauser                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayEffectSpecHandle        GameplayEffectSpecHandle_Clone                         (Parm, NativeAccessSpecifierPublic)
+// const struct FGameplayEffectSpecHandle& GameplayEffectSpecHandle_Clone                         (Parm, NativeAccessSpecifierPublic)
 // struct FGameplayEffectSpecHandle        ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
 struct FGameplayEffectSpecHandle UAbilitySystemBlueprintLibrary::CloneSpecHandle(class AActor* InNewInstigator, class AActor* InEffectCauser, const struct FGameplayEffectSpecHandle& GameplayEffectSpecHandle_Clone)
@@ -6506,9 +9748,9 @@ struct FGameplayEffectSpecHandle UAbilitySystemBlueprintLibrary::CloneSpecHandle
 // Function GameplayAbilities.AbilitySystemBlueprintLibrary.DoesGameplayCueMeetTagRequirements
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-// struct FGameplayTagRequirements         SourceTagReqs                                          (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FGameplayTagRequirements         TargetTagReqs                                          (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FGameplayTagRequirements&  SourceTagReqs                                          (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FGameplayTagRequirements&  TargetTagReqs                                          (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UAbilitySystemBlueprintLibrary::DoesGameplayCueMeetTagRequirements(const struct FGameplayCueParameters& Parameters, const struct FGameplayTagRequirements& SourceTagReqs, const struct FGameplayTagRequirements& TargetTagReqs)
@@ -6538,7 +9780,7 @@ bool UAbilitySystemBlueprintLibrary::DoesGameplayCueMeetTagRequirements(const st
 // Function GameplayAbilities.AbilitySystemBlueprintLibrary.DoesTargetDataContainActor
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FGameplayAbilityTargetDataHandle TargetData                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FGameplayAbilityTargetDataHandle&TargetData                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           Actor                                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -6570,8 +9812,8 @@ bool UAbilitySystemBlueprintLibrary::DoesTargetDataContainActor(const struct FGa
 // Function GameplayAbilities.AbilitySystemBlueprintLibrary.EffectContextAddHitResult
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// struct FGameplayEffectContextHandle     EffectContext                                          (Parm, NativeAccessSpecifierPublic)
-// struct FHitResult                       HitResult                                              (Parm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FGameplayEffectContextHandle&EffectContext                                          (Parm, NativeAccessSpecifierPublic)
+// const struct FHitResult&                HitResult                                              (Parm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 // bool                                    bReset                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UAbilitySystemBlueprintLibrary::EffectContextAddHitResult(const struct FGameplayEffectContextHandle& EffectContext, const struct FHitResult& HitResult, bool bReset)
@@ -6599,7 +9841,7 @@ void UAbilitySystemBlueprintLibrary::EffectContextAddHitResult(const struct FGam
 // Function GameplayAbilities.AbilitySystemBlueprintLibrary.EffectContextGetEffectCauser
 // (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FGameplayEffectContextHandle     EffectContext                                          (Parm, NativeAccessSpecifierPublic)
+// const struct FGameplayEffectContextHandle&EffectContext                                          (Parm, NativeAccessSpecifierPublic)
 // class AActor*                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class AActor* UAbilitySystemBlueprintLibrary::EffectContextGetEffectCauser(const struct FGameplayEffectContextHandle& EffectContext)
@@ -6627,7 +9869,7 @@ class AActor* UAbilitySystemBlueprintLibrary::EffectContextGetEffectCauser(const
 // Function GameplayAbilities.AbilitySystemBlueprintLibrary.EffectContextGetHitResult
 // (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FGameplayEffectContextHandle     EffectContext                                          (Parm, NativeAccessSpecifierPublic)
+// const struct FGameplayEffectContextHandle&EffectContext                                          (Parm, NativeAccessSpecifierPublic)
 // struct FHitResult                       ReturnValue                                            (Parm, OutParm, ReturnParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 struct FHitResult UAbilitySystemBlueprintLibrary::EffectContextGetHitResult(const struct FGameplayEffectContextHandle& EffectContext)
@@ -6655,7 +9897,7 @@ struct FHitResult UAbilitySystemBlueprintLibrary::EffectContextGetHitResult(cons
 // Function GameplayAbilities.AbilitySystemBlueprintLibrary.EffectContextGetInstigatorActor
 // (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FGameplayEffectContextHandle     EffectContext                                          (Parm, NativeAccessSpecifierPublic)
+// const struct FGameplayEffectContextHandle&EffectContext                                          (Parm, NativeAccessSpecifierPublic)
 // class AActor*                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class AActor* UAbilitySystemBlueprintLibrary::EffectContextGetInstigatorActor(const struct FGameplayEffectContextHandle& EffectContext)
@@ -6683,7 +9925,7 @@ class AActor* UAbilitySystemBlueprintLibrary::EffectContextGetInstigatorActor(co
 // Function GameplayAbilities.AbilitySystemBlueprintLibrary.EffectContextGetOrigin
 // (Final, Native, Static, Public, HasDefaults, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FGameplayEffectContextHandle     EffectContext                                          (Parm, NativeAccessSpecifierPublic)
+// const struct FGameplayEffectContextHandle&EffectContext                                          (Parm, NativeAccessSpecifierPublic)
 // struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 struct FVector UAbilitySystemBlueprintLibrary::EffectContextGetOrigin(const struct FGameplayEffectContextHandle& EffectContext)
@@ -6711,7 +9953,7 @@ struct FVector UAbilitySystemBlueprintLibrary::EffectContextGetOrigin(const stru
 // Function GameplayAbilities.AbilitySystemBlueprintLibrary.EffectContextGetOriginalInstigatorActor
 // (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FGameplayEffectContextHandle     EffectContext                                          (Parm, NativeAccessSpecifierPublic)
+// const struct FGameplayEffectContextHandle&EffectContext                                          (Parm, NativeAccessSpecifierPublic)
 // class AActor*                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class AActor* UAbilitySystemBlueprintLibrary::EffectContextGetOriginalInstigatorActor(const struct FGameplayEffectContextHandle& EffectContext)
@@ -6739,7 +9981,7 @@ class AActor* UAbilitySystemBlueprintLibrary::EffectContextGetOriginalInstigator
 // Function GameplayAbilities.AbilitySystemBlueprintLibrary.EffectContextGetSourceObject
 // (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FGameplayEffectContextHandle     EffectContext                                          (Parm, NativeAccessSpecifierPublic)
+// const struct FGameplayEffectContextHandle&EffectContext                                          (Parm, NativeAccessSpecifierPublic)
 // class UObject*                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class UObject* UAbilitySystemBlueprintLibrary::EffectContextGetSourceObject(const struct FGameplayEffectContextHandle& EffectContext)
@@ -6767,7 +10009,7 @@ class UObject* UAbilitySystemBlueprintLibrary::EffectContextGetSourceObject(cons
 // Function GameplayAbilities.AbilitySystemBlueprintLibrary.EffectContextHasHitResult
 // (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FGameplayEffectContextHandle     EffectContext                                          (Parm, NativeAccessSpecifierPublic)
+// const struct FGameplayEffectContextHandle&EffectContext                                          (Parm, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UAbilitySystemBlueprintLibrary::EffectContextHasHitResult(const struct FGameplayEffectContextHandle& EffectContext)
@@ -6795,7 +10037,7 @@ bool UAbilitySystemBlueprintLibrary::EffectContextHasHitResult(const struct FGam
 // Function GameplayAbilities.AbilitySystemBlueprintLibrary.EffectContextIsInstigatorLocallyControlled
 // (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FGameplayEffectContextHandle     EffectContext                                          (Parm, NativeAccessSpecifierPublic)
+// const struct FGameplayEffectContextHandle&EffectContext                                          (Parm, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UAbilitySystemBlueprintLibrary::EffectContextIsInstigatorLocallyControlled(const struct FGameplayEffectContextHandle& EffectContext)
@@ -6823,7 +10065,7 @@ bool UAbilitySystemBlueprintLibrary::EffectContextIsInstigatorLocallyControlled(
 // Function GameplayAbilities.AbilitySystemBlueprintLibrary.EffectContextIsValid
 // (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FGameplayEffectContextHandle     EffectContext                                          (Parm, NativeAccessSpecifierPublic)
+// const struct FGameplayEffectContextHandle&EffectContext                                          (Parm, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UAbilitySystemBlueprintLibrary::EffectContextIsValid(const struct FGameplayEffectContextHandle& EffectContext)
@@ -6851,8 +10093,8 @@ bool UAbilitySystemBlueprintLibrary::EffectContextIsValid(const struct FGameplay
 // Function GameplayAbilities.AbilitySystemBlueprintLibrary.EffectContextSetOrigin
 // (Final, Native, Static, Public, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FGameplayEffectContextHandle     EffectContext                                          (Parm, NativeAccessSpecifierPublic)
-// struct FVector                          Origin                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayEffectContextHandle&EffectContext                                          (Parm, NativeAccessSpecifierPublic)
+// const struct FVector&                   Origin                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UAbilitySystemBlueprintLibrary::EffectContextSetOrigin(const struct FGameplayEffectContextHandle& EffectContext, const struct FVector& Origin)
 {
@@ -6878,8 +10120,8 @@ void UAbilitySystemBlueprintLibrary::EffectContextSetOrigin(const struct FGamepl
 // Function GameplayAbilities.AbilitySystemBlueprintLibrary.EqualEqual_ActiveGameplayEffectHandle
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FActiveGameplayEffectHandle      A                                                      (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FActiveGameplayEffectHandle      B                                                      (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FActiveGameplayEffectHandle&A                                                      (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FActiveGameplayEffectHandle&B                                                      (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UAbilitySystemBlueprintLibrary::EqualEqual_ActiveGameplayEffectHandle(const struct FActiveGameplayEffectHandle& A, const struct FActiveGameplayEffectHandle& B)
@@ -6908,8 +10150,8 @@ bool UAbilitySystemBlueprintLibrary::EqualEqual_ActiveGameplayEffectHandle(const
 // Function GameplayAbilities.AbilitySystemBlueprintLibrary.EqualEqual_GameplayAbilitySpecHandle
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FGameplayAbilitySpecHandle       A                                                      (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayAbilitySpecHandle       B                                                      (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayAbilitySpecHandle&A                                                      (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayAbilitySpecHandle&B                                                      (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UAbilitySystemBlueprintLibrary::EqualEqual_GameplayAbilitySpecHandle(const struct FGameplayAbilitySpecHandle& A, const struct FGameplayAbilitySpecHandle& B)
@@ -6938,8 +10180,8 @@ bool UAbilitySystemBlueprintLibrary::EqualEqual_GameplayAbilitySpecHandle(const 
 // Function GameplayAbilities.AbilitySystemBlueprintLibrary.EqualEqual_GameplayAttributeGameplayAttribute
 // (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FGameplayAttribute               AttributeA                                             (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayAttribute               AttributeB                                             (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayAttribute&        AttributeA                                             (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayAttribute&        AttributeB                                             (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UAbilitySystemBlueprintLibrary::EqualEqual_GameplayAttributeGameplayAttribute(const struct FGameplayAttribute& AttributeA, const struct FGameplayAttribute& AttributeB)
@@ -6969,10 +10211,10 @@ bool UAbilitySystemBlueprintLibrary::EqualEqual_GameplayAttributeGameplayAttribu
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
 // class UAbilitySystemComponent*          AbilitySystem                                          (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayAttribute               Attribute                                              (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayTagContainer            SourceTags                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FGameplayTagContainer            TargetTags                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// bool                                    bSuccess                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayAttribute&        Attribute                                              (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTagContainer&     SourceTags                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FGameplayTagContainer&     TargetTags                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// bool*                                   bSuccess                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 float UAbilitySystemBlueprintLibrary::EvaluateAttributeValueWithTags(class UAbilitySystemComponent* AbilitySystem, const struct FGameplayAttribute& Attribute, const struct FGameplayTagContainer& SourceTags, const struct FGameplayTagContainer& TargetTags, bool* bSuccess)
@@ -7007,11 +10249,11 @@ float UAbilitySystemBlueprintLibrary::EvaluateAttributeValueWithTags(class UAbil
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
 // class UAbilitySystemComponent*          AbilitySystem                                          (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayAttribute               Attribute                                              (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayTagContainer            SourceTags                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FGameplayTagContainer            TargetTags                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FGameplayAttribute&        Attribute                                              (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTagContainer&     SourceTags                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FGameplayTagContainer&     TargetTags                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // float                                   BaseValue                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bSuccess                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool*                                   bSuccess                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 float UAbilitySystemBlueprintLibrary::EvaluateAttributeValueWithTagsAndBase(class UAbilitySystemComponent* AbilitySystem, const struct FGameplayAttribute& Attribute, const struct FGameplayTagContainer& SourceTags, const struct FGameplayTagContainer& TargetTags, float BaseValue, bool* bSuccess)
@@ -7046,8 +10288,8 @@ float UAbilitySystemBlueprintLibrary::EvaluateAttributeValueWithTagsAndBase(clas
 // Function GameplayAbilities.AbilitySystemBlueprintLibrary.FilterTargetData
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FGameplayAbilityTargetDataHandle TargetDataHandle                                       (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FGameplayTargetDataFilterHandle  ActorFilterClass                                       (Parm, NativeAccessSpecifierPublic)
+// const struct FGameplayAbilityTargetDataHandle&TargetDataHandle                                       (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FGameplayTargetDataFilterHandle&ActorFilterClass                                       (Parm, NativeAccessSpecifierPublic)
 // struct FGameplayAbilityTargetDataHandle ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
 struct FGameplayAbilityTargetDataHandle UAbilitySystemBlueprintLibrary::FilterTargetData(const struct FGameplayAbilityTargetDataHandle& TargetDataHandle, const struct FGameplayTargetDataFilterHandle& ActorFilterClass)
@@ -7078,7 +10320,7 @@ struct FGameplayAbilityTargetDataHandle UAbilitySystemBlueprintLibrary::FilterTa
 // Parameters:
 // TScriptInterface<class IGameplayCueInterface>TargetCueInterface                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // EGameplayCueEvent                       EventType                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 void UAbilitySystemBlueprintLibrary::ForwardGameplayCueToTarget(TScriptInterface<class IGameplayCueInterface> TargetCueInterface, EGameplayCueEvent EventType, const struct FGameplayCueParameters& Parameters)
 {
@@ -7105,7 +10347,7 @@ void UAbilitySystemBlueprintLibrary::ForwardGameplayCueToTarget(TScriptInterface
 // Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetAbility
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 // const class UGameplayAbility*           ReturnValue                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 const class UGameplayAbility* UAbilitySystemBlueprintLibrary::GetAbility(const struct FGameplayCueParameters& Parameters)
@@ -7161,7 +10403,7 @@ class UAbilitySystemComponent* UAbilitySystemBlueprintLibrary::GetAbilitySystemC
 // Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetActiveGameplayEffectDebugString
 // (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FActiveGameplayEffectHandle      ActiveHandle                                           (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FActiveGameplayEffectHandle&ActiveHandle                                           (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class FString UAbilitySystemBlueprintLibrary::GetActiveGameplayEffectDebugString(const struct FActiveGameplayEffectHandle& ActiveHandle)
@@ -7189,7 +10431,7 @@ class FString UAbilitySystemBlueprintLibrary::GetActiveGameplayEffectDebugString
 // Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetActiveGameplayEffectExpectedEndTime
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// struct FActiveGameplayEffectHandle      ActiveHandle                                           (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FActiveGameplayEffectHandle&ActiveHandle                                           (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 float UAbilitySystemBlueprintLibrary::GetActiveGameplayEffectExpectedEndTime(const struct FActiveGameplayEffectHandle& ActiveHandle)
@@ -7218,7 +10460,7 @@ float UAbilitySystemBlueprintLibrary::GetActiveGameplayEffectExpectedEndTime(con
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class UObject*                          WorldContextObject                                     (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FActiveGameplayEffectHandle      ActiveHandle                                           (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FActiveGameplayEffectHandle&ActiveHandle                                           (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 float UAbilitySystemBlueprintLibrary::GetActiveGameplayEffectRemainingDuration(class UObject* WorldContextObject, const struct FActiveGameplayEffectHandle& ActiveHandle)
@@ -7247,7 +10489,7 @@ float UAbilitySystemBlueprintLibrary::GetActiveGameplayEffectRemainingDuration(c
 // Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetActiveGameplayEffectStackCount
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// struct FActiveGameplayEffectHandle      ActiveHandle                                           (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FActiveGameplayEffectHandle&ActiveHandle                                           (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 int32 UAbilitySystemBlueprintLibrary::GetActiveGameplayEffectStackCount(const struct FActiveGameplayEffectHandle& ActiveHandle)
@@ -7275,7 +10517,7 @@ int32 UAbilitySystemBlueprintLibrary::GetActiveGameplayEffectStackCount(const st
 // Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetActiveGameplayEffectStackLimitCount
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// struct FActiveGameplayEffectHandle      ActiveHandle                                           (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FActiveGameplayEffectHandle&ActiveHandle                                           (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 int32 UAbilitySystemBlueprintLibrary::GetActiveGameplayEffectStackLimitCount(const struct FActiveGameplayEffectHandle& ActiveHandle)
@@ -7303,7 +10545,7 @@ int32 UAbilitySystemBlueprintLibrary::GetActiveGameplayEffectStackLimitCount(con
 // Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetActiveGameplayEffectStartTime
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// struct FActiveGameplayEffectHandle      ActiveHandle                                           (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FActiveGameplayEffectHandle&ActiveHandle                                           (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 float UAbilitySystemBlueprintLibrary::GetActiveGameplayEffectStartTime(const struct FActiveGameplayEffectHandle& ActiveHandle)
@@ -7331,7 +10573,7 @@ float UAbilitySystemBlueprintLibrary::GetActiveGameplayEffectStartTime(const str
 // Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetActiveGameplayEffectTotalDuration
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// struct FActiveGameplayEffectHandle      ActiveHandle                                           (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FActiveGameplayEffectHandle&ActiveHandle                                           (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 float UAbilitySystemBlueprintLibrary::GetActiveGameplayEffectTotalDuration(const struct FActiveGameplayEffectHandle& ActiveHandle)
@@ -7359,7 +10601,7 @@ float UAbilitySystemBlueprintLibrary::GetActiveGameplayEffectTotalDuration(const
 // Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetActorByIndex
 // (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FGameplayCueParameters           Parameters                                             (Parm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FGameplayCueParameters&    Parameters                                             (Parm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 // int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -7389,7 +10631,7 @@ class AActor* UAbilitySystemBlueprintLibrary::GetActorByIndex(const struct FGame
 // Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetActorCount
 // (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FGameplayCueParameters           Parameters                                             (Parm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FGameplayCueParameters&    Parameters                                             (Parm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 // int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 int32 UAbilitySystemBlueprintLibrary::GetActorCount(const struct FGameplayCueParameters& Parameters)
@@ -7417,7 +10659,7 @@ int32 UAbilitySystemBlueprintLibrary::GetActorCount(const struct FGameplayCuePar
 // Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetActorsFromTargetData
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FGameplayAbilityTargetDataHandle TargetData                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FGameplayAbilityTargetDataHandle&TargetData                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<class AActor*>                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
@@ -7447,7 +10689,7 @@ TArray<class AActor*> UAbilitySystemBlueprintLibrary::GetActorsFromTargetData(co
 // Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetAllActorsFromTargetData
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FGameplayAbilityTargetDataHandle TargetData                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FGameplayAbilityTargetDataHandle&TargetData                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // TArray<class AActor*>                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
 TArray<class AActor*> UAbilitySystemBlueprintLibrary::GetAllActorsFromTargetData(const struct FGameplayAbilityTargetDataHandle& TargetData)
@@ -7475,7 +10717,7 @@ TArray<class AActor*> UAbilitySystemBlueprintLibrary::GetAllActorsFromTargetData
 // Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetAllLinkedGameplayEffectSpecHandles
 // (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FGameplayEffectSpecHandle        SpecHandle                                             (Parm, NativeAccessSpecifierPublic)
+// const struct FGameplayEffectSpecHandle& SpecHandle                                             (Parm, NativeAccessSpecifierPublic)
 // TArray<struct FGameplayEffectSpecHandle>ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
 TArray<struct FGameplayEffectSpecHandle> UAbilitySystemBlueprintLibrary::GetAllLinkedGameplayEffectSpecHandles(const struct FGameplayEffectSpecHandle& SpecHandle)
@@ -7503,7 +10745,7 @@ TArray<struct FGameplayEffectSpecHandle> UAbilitySystemBlueprintLibrary::GetAllL
 // Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetDataCountFromTargetData
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FGameplayAbilityTargetDataHandle TargetData                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FGameplayAbilityTargetDataHandle&TargetData                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 int32 UAbilitySystemBlueprintLibrary::GetDataCountFromTargetData(const struct FGameplayAbilityTargetDataHandle& TargetData)
@@ -7531,7 +10773,7 @@ int32 UAbilitySystemBlueprintLibrary::GetDataCountFromTargetData(const struct FG
 // Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetDebugStringFromGameplayAttribute
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FGameplayAttribute               Attribute                                              (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayAttribute&        Attribute                                              (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class FString UAbilitySystemBlueprintLibrary::GetDebugStringFromGameplayAttribute(const struct FGameplayAttribute& Attribute)
@@ -7559,7 +10801,7 @@ class FString UAbilitySystemBlueprintLibrary::GetDebugStringFromGameplayAttribut
 // Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetEffectContext
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// struct FGameplayEffectSpecHandle        SpecHandle                                             (Parm, NativeAccessSpecifierPublic)
+// const struct FGameplayEffectSpecHandle& SpecHandle                                             (Parm, NativeAccessSpecifierPublic)
 // struct FGameplayEffectContextHandle     ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
 struct FGameplayEffectContextHandle UAbilitySystemBlueprintLibrary::GetEffectContext(const struct FGameplayEffectSpecHandle& SpecHandle)
@@ -7587,9 +10829,9 @@ struct FGameplayEffectContextHandle UAbilitySystemBlueprintLibrary::GetEffectCon
 // Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetFloatAttribute
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// class AActor*                           Actor                                                  (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayAttribute               Attribute                                              (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bSuccessfullyFoundAttribute                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class AActor*                     Actor                                                  (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayAttribute&        Attribute                                              (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool*                                   bSuccessfullyFoundAttribute                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 float UAbilitySystemBlueprintLibrary::GetFloatAttribute(const class AActor* Actor, const struct FGameplayAttribute& Attribute, bool* bSuccessfullyFoundAttribute)
@@ -7621,9 +10863,9 @@ float UAbilitySystemBlueprintLibrary::GetFloatAttribute(const class AActor* Acto
 // Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetFloatAttributeBase
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// class AActor*                           Actor                                                  (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayAttribute               Attribute                                              (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bSuccessfullyFoundAttribute                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class AActor*                     Actor                                                  (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayAttribute&        Attribute                                              (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool*                                   bSuccessfullyFoundAttribute                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 float UAbilitySystemBlueprintLibrary::GetFloatAttributeBase(const class AActor* Actor, const struct FGameplayAttribute& Attribute, bool* bSuccessfullyFoundAttribute)
@@ -7655,9 +10897,9 @@ float UAbilitySystemBlueprintLibrary::GetFloatAttributeBase(const class AActor* 
 // Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetFloatAttributeBaseFromAbilitySystemComponent
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// class UAbilitySystemComponent*          AbilitySystemComponent                                 (ConstParm, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayAttribute               Attribute                                              (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bSuccessfullyFoundAttribute                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UAbilitySystemComponent*    AbilitySystemComponent                                 (ConstParm, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayAttribute&        Attribute                                              (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool*                                   bSuccessfullyFoundAttribute                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 float UAbilitySystemBlueprintLibrary::GetFloatAttributeBaseFromAbilitySystemComponent(const class UAbilitySystemComponent* AbilitySystemComponent, const struct FGameplayAttribute& Attribute, bool* bSuccessfullyFoundAttribute)
@@ -7689,9 +10931,9 @@ float UAbilitySystemBlueprintLibrary::GetFloatAttributeBaseFromAbilitySystemComp
 // Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetFloatAttributeFromAbilitySystemComponent
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// class UAbilitySystemComponent*          AbilitySystem                                          (ConstParm, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayAttribute               Attribute                                              (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bSuccessfullyFoundAttribute                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UAbilitySystemComponent*    AbilitySystem                                          (ConstParm, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayAttribute&        Attribute                                              (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool*                                   bSuccessfullyFoundAttribute                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 float UAbilitySystemBlueprintLibrary::GetFloatAttributeFromAbilitySystemComponent(const class UAbilitySystemComponent* AbilitySystem, const struct FGameplayAttribute& Attribute, bool* bSuccessfullyFoundAttribute)
@@ -7724,8 +10966,8 @@ float UAbilitySystemBlueprintLibrary::GetFloatAttributeFromAbilitySystemComponen
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
 // class UAbilitySystemComponent*          AbilitySystem                                          (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayAbilitySpecHandle       AbilitySpecHandle                                      (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bIsInstance                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayAbilitySpecHandle&AbilitySpecHandle                                      (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool*                                   bIsInstance                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class UGameplayAbility*           ReturnValue                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 const class UGameplayAbility* UAbilitySystemBlueprintLibrary::GetGameplayAbilityFromSpecHandle(class UAbilitySystemComponent* AbilitySystem, const struct FGameplayAbilitySpecHandle& AbilitySpecHandle, bool* bIsInstance)
@@ -7758,8 +11000,8 @@ const class UGameplayAbility* UAbilitySystemBlueprintLibrary::GetGameplayAbility
 // (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure)
 // Parameters:
 // class AActor*                           TargetActor                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-// struct FVector                          Direction                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// struct FVector*                         Direction                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UAbilitySystemBlueprintLibrary::GetGameplayCueDirection(class AActor* TargetActor, const struct FGameplayCueParameters& Parameters, struct FVector* Direction)
@@ -7792,9 +11034,9 @@ bool UAbilitySystemBlueprintLibrary::GetGameplayCueDirection(class AActor* Targe
 // (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure)
 // Parameters:
 // class AActor*                           TargetActor                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-// struct FVector                          Location                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          Normal                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// struct FVector*                         Location                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVector*                         Normal                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UAbilitySystemBlueprintLibrary::GetGameplayCueEndLocationAndNormal(class AActor* TargetActor, const struct FGameplayCueParameters& Parameters, struct FVector* Location, struct FVector* Normal)
@@ -7829,7 +11071,7 @@ bool UAbilitySystemBlueprintLibrary::GetGameplayCueEndLocationAndNormal(class AA
 // Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetGameplayEffectFromActiveEffectHandle
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FActiveGameplayEffectHandle      ActiveHandle                                           (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FActiveGameplayEffectHandle&ActiveHandle                                           (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class UGameplayEffect*            ReturnValue                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 const class UGameplayEffect* UAbilitySystemBlueprintLibrary::GetGameplayEffectFromActiveEffectHandle(const struct FActiveGameplayEffectHandle& ActiveHandle)
@@ -7887,7 +11129,7 @@ const class UGameplayEffectUIData* UAbilitySystemBlueprintLibrary::GetGameplayEf
 // Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetHitResult
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 // struct FHitResult                       ReturnValue                                            (Parm, OutParm, ReturnParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 struct FHitResult UAbilitySystemBlueprintLibrary::GetHitResult(const struct FGameplayCueParameters& Parameters)
@@ -7915,7 +11157,7 @@ struct FHitResult UAbilitySystemBlueprintLibrary::GetHitResult(const struct FGam
 // Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetHitResultFromTargetData
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FGameplayAbilityTargetDataHandle HitResult                                              (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FGameplayAbilityTargetDataHandle&HitResult                                              (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FHitResult                       ReturnValue                                            (Parm, OutParm, ReturnParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
@@ -7945,7 +11187,7 @@ struct FHitResult UAbilitySystemBlueprintLibrary::GetHitResultFromTargetData(con
 // Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetInstigatorActor
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 // class AActor*                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class AActor* UAbilitySystemBlueprintLibrary::GetInstigatorActor(const struct FGameplayCueParameters& Parameters)
@@ -7973,7 +11215,7 @@ class AActor* UAbilitySystemBlueprintLibrary::GetInstigatorActor(const struct FG
 // Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetInstigatorTransform
 // (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 // struct FTransform                       ReturnValue                                            (Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 struct FTransform UAbilitySystemBlueprintLibrary::GetInstigatorTransform(const struct FGameplayCueParameters& Parameters)
@@ -8001,8 +11243,8 @@ struct FTransform UAbilitySystemBlueprintLibrary::GetInstigatorTransform(const s
 // Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetModifiedAttributeMagnitude
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// struct FGameplayEffectSpecHandle        SpecHandle                                             (Parm, NativeAccessSpecifierPublic)
-// struct FGameplayAttribute               Attribute                                              (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayEffectSpecHandle& SpecHandle                                             (Parm, NativeAccessSpecifierPublic)
+// const struct FGameplayAttribute&        Attribute                                              (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 float UAbilitySystemBlueprintLibrary::GetModifiedAttributeMagnitude(const struct FGameplayEffectSpecHandle& SpecHandle, const struct FGameplayAttribute& Attribute)
@@ -8031,7 +11273,7 @@ float UAbilitySystemBlueprintLibrary::GetModifiedAttributeMagnitude(const struct
 // Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetOrigin
 // (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 // struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 struct FVector UAbilitySystemBlueprintLibrary::GetOrigin(const struct FGameplayCueParameters& Parameters)
@@ -8059,7 +11301,7 @@ struct FVector UAbilitySystemBlueprintLibrary::GetOrigin(const struct FGameplayC
 // Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetTargetDataDirection
 // (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FGameplayAbilityTargetDataHandle TargetData                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FGameplayAbilityTargetDataHandle&TargetData                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -8089,7 +11331,7 @@ struct FVector UAbilitySystemBlueprintLibrary::GetTargetDataDirection(const stru
 // Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetTargetDataEndPoint
 // (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FGameplayAbilityTargetDataHandle TargetData                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FGameplayAbilityTargetDataHandle&TargetData                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -8119,7 +11361,7 @@ struct FVector UAbilitySystemBlueprintLibrary::GetTargetDataEndPoint(const struc
 // Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetTargetDataEndPointTransform
 // (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FGameplayAbilityTargetDataHandle TargetData                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FGameplayAbilityTargetDataHandle&TargetData                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FTransform                       ReturnValue                                            (Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -8149,7 +11391,7 @@ struct FTransform UAbilitySystemBlueprintLibrary::GetTargetDataEndPointTransform
 // Function GameplayAbilities.AbilitySystemBlueprintLibrary.GetTargetDataOrigin
 // (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FGameplayAbilityTargetDataHandle TargetData                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FGameplayAbilityTargetDataHandle&TargetData                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FTransform                       ReturnValue                                            (Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -8179,7 +11421,7 @@ struct FTransform UAbilitySystemBlueprintLibrary::GetTargetDataOrigin(const stru
 // Function GameplayAbilities.AbilitySystemBlueprintLibrary.HasHitResult
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UAbilitySystemBlueprintLibrary::HasHitResult(const struct FGameplayCueParameters& Parameters)
@@ -8207,7 +11449,7 @@ bool UAbilitySystemBlueprintLibrary::HasHitResult(const struct FGameplayCueParam
 // Function GameplayAbilities.AbilitySystemBlueprintLibrary.IsInstigatorLocallyControlled
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UAbilitySystemBlueprintLibrary::IsInstigatorLocallyControlled(const struct FGameplayCueParameters& Parameters)
@@ -8235,7 +11477,7 @@ bool UAbilitySystemBlueprintLibrary::IsInstigatorLocallyControlled(const struct 
 // Function GameplayAbilities.AbilitySystemBlueprintLibrary.IsInstigatorLocallyControlledPlayer
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UAbilitySystemBlueprintLibrary::IsInstigatorLocallyControlledPlayer(const struct FGameplayCueParameters& Parameters)
@@ -8263,7 +11505,7 @@ bool UAbilitySystemBlueprintLibrary::IsInstigatorLocallyControlledPlayer(const s
 // Function GameplayAbilities.AbilitySystemBlueprintLibrary.IsValid
 // (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FGameplayAttribute               Attribute                                              (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayAttribute&        Attribute                                              (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UAbilitySystemBlueprintLibrary::IsValid(const struct FGameplayAttribute& Attribute)
@@ -8291,7 +11533,7 @@ bool UAbilitySystemBlueprintLibrary::IsValid(const struct FGameplayAttribute& At
 // Function GameplayAbilities.AbilitySystemBlueprintLibrary.MakeFilterHandle
 // (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FGameplayTargetDataFilter        Filter                                                 (Parm, NativeAccessSpecifierPublic)
+// const struct FGameplayTargetDataFilter& Filter                                                 (Parm, NativeAccessSpecifierPublic)
 // class AActor*                           FilterActor                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FGameplayTargetDataFilterHandle  ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
@@ -8326,13 +11568,13 @@ struct FGameplayTargetDataFilterHandle UAbilitySystemBlueprintLibrary::MakeFilte
 // EGameplayEffectDurationType             DurationPolicy                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   Duration                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   Period                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayEffectContextHandle     EffectContext                                          (Parm, AdvancedDisplay, NativeAccessSpecifierPublic)
-// struct FGameplayTag                     MatchedTagName                                         (Parm, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayTag                     OriginalTag                                            (Parm, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayTagContainer            AggregatedSourceTags                                   (Parm, AdvancedDisplay, NativeAccessSpecifierPublic)
-// struct FGameplayTagContainer            AggregatedTargetTags                                   (Parm, AdvancedDisplay, NativeAccessSpecifierPublic)
-// struct FVector                          Location                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          Normal                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayEffectContextHandle&EffectContext                                          (Parm, AdvancedDisplay, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              MatchedTagName                                         (Parm, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              OriginalTag                                            (Parm, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTagContainer&     AggregatedSourceTags                                   (Parm, AdvancedDisplay, NativeAccessSpecifierPublic)
+// const struct FGameplayTagContainer&     AggregatedTargetTags                                   (Parm, AdvancedDisplay, NativeAccessSpecifierPublic)
+// const struct FVector&                   Location                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   Normal                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           Instigator                                             (Parm, ZeroConstructor, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           EffectCauser                                           (Parm, ZeroConstructor, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UObject*                          SourceObject                                           (Parm, ZeroConstructor, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -8421,8 +11663,8 @@ struct FGameplayEffectSpecHandle UAbilitySystemBlueprintLibrary::MakeSpecHandle(
 // Function GameplayAbilities.AbilitySystemBlueprintLibrary.NotEqual_ActiveGameplayEffectHandle
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FActiveGameplayEffectHandle      A                                                      (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FActiveGameplayEffectHandle      B                                                      (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FActiveGameplayEffectHandle&A                                                      (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FActiveGameplayEffectHandle&B                                                      (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UAbilitySystemBlueprintLibrary::NotEqual_ActiveGameplayEffectHandle(const struct FActiveGameplayEffectHandle& A, const struct FActiveGameplayEffectHandle& B)
@@ -8451,8 +11693,8 @@ bool UAbilitySystemBlueprintLibrary::NotEqual_ActiveGameplayEffectHandle(const s
 // Function GameplayAbilities.AbilitySystemBlueprintLibrary.NotEqual_GameplayAbilitySpecHandle
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FGameplayAbilitySpecHandle       A                                                      (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayAbilitySpecHandle       B                                                      (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayAbilitySpecHandle&A                                                      (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayAbilitySpecHandle&B                                                      (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UAbilitySystemBlueprintLibrary::NotEqual_GameplayAbilitySpecHandle(const struct FGameplayAbilitySpecHandle& A, const struct FGameplayAbilitySpecHandle& B)
@@ -8481,8 +11723,8 @@ bool UAbilitySystemBlueprintLibrary::NotEqual_GameplayAbilitySpecHandle(const st
 // Function GameplayAbilities.AbilitySystemBlueprintLibrary.NotEqual_GameplayAttributeGameplayAttribute
 // (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FGameplayAttribute               AttributeA                                             (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayAttribute               AttributeB                                             (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayAttribute&        AttributeA                                             (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayAttribute&        AttributeB                                             (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UAbilitySystemBlueprintLibrary::NotEqual_GameplayAttributeGameplayAttribute(const struct FGameplayAttribute& AttributeA, const struct FGameplayAttribute& AttributeB)
@@ -8512,7 +11754,7 @@ bool UAbilitySystemBlueprintLibrary::NotEqual_GameplayAttributeGameplayAttribute
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // class AActor*                           Actor                                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayTagContainer            GameplayTags                                           (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FGameplayTagContainer&     GameplayTags                                           (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // bool                                    bShouldReplicate                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -8544,8 +11786,8 @@ bool UAbilitySystemBlueprintLibrary::RemoveLooseGameplayTags(class AActor* Actor
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class AActor*                           Actor                                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayTag                     EventTag                                               (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayEventData               Payload                                                (Parm, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              EventTag                                               (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayEventData&        Payload                                                (Parm, NativeAccessSpecifierPublic)
 
 void UAbilitySystemBlueprintLibrary::SendGameplayEventToActor(class AActor* Actor, const struct FGameplayTag& EventTag, const struct FGameplayEventData& Payload)
 {
@@ -8572,7 +11814,7 @@ void UAbilitySystemBlueprintLibrary::SendGameplayEventToActor(class AActor* Acto
 // Function GameplayAbilities.AbilitySystemBlueprintLibrary.SetDuration
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// struct FGameplayEffectSpecHandle        SpecHandle                                             (Parm, NativeAccessSpecifierPublic)
+// const struct FGameplayEffectSpecHandle& SpecHandle                                             (Parm, NativeAccessSpecifierPublic)
 // float                                   Duration                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FGameplayEffectSpecHandle        ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
@@ -8602,7 +11844,7 @@ struct FGameplayEffectSpecHandle UAbilitySystemBlueprintLibrary::SetDuration(con
 // Function GameplayAbilities.AbilitySystemBlueprintLibrary.SetStackCount
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// struct FGameplayEffectSpecHandle        SpecHandle                                             (Parm, NativeAccessSpecifierPublic)
+// const struct FGameplayEffectSpecHandle& SpecHandle                                             (Parm, NativeAccessSpecifierPublic)
 // int32                                   StackCount                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FGameplayEffectSpecHandle        ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
@@ -8632,7 +11874,7 @@ struct FGameplayEffectSpecHandle UAbilitySystemBlueprintLibrary::SetStackCount(c
 // Function GameplayAbilities.AbilitySystemBlueprintLibrary.SetStackCountToMax
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// struct FGameplayEffectSpecHandle        SpecHandle                                             (Parm, NativeAccessSpecifierPublic)
+// const struct FGameplayEffectSpecHandle& SpecHandle                                             (Parm, NativeAccessSpecifierPublic)
 // struct FGameplayEffectSpecHandle        ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
 struct FGameplayEffectSpecHandle UAbilitySystemBlueprintLibrary::SetStackCountToMax(const struct FGameplayEffectSpecHandle& SpecHandle)
@@ -8660,7 +11902,7 @@ struct FGameplayEffectSpecHandle UAbilitySystemBlueprintLibrary::SetStackCountTo
 // Function GameplayAbilities.AbilitySystemBlueprintLibrary.TargetDataHasActor
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FGameplayAbilityTargetDataHandle TargetData                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FGameplayAbilityTargetDataHandle&TargetData                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -8690,7 +11932,7 @@ bool UAbilitySystemBlueprintLibrary::TargetDataHasActor(const struct FGameplayAb
 // Function GameplayAbilities.AbilitySystemBlueprintLibrary.TargetDataHasEndPoint
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FGameplayAbilityTargetDataHandle TargetData                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FGameplayAbilityTargetDataHandle&TargetData                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -8720,7 +11962,7 @@ bool UAbilitySystemBlueprintLibrary::TargetDataHasEndPoint(const struct FGamepla
 // Function GameplayAbilities.AbilitySystemBlueprintLibrary.TargetDataHasHitResult
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FGameplayAbilityTargetDataHandle HitResult                                              (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FGameplayAbilityTargetDataHandle&HitResult                                              (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -8750,7 +11992,7 @@ bool UAbilitySystemBlueprintLibrary::TargetDataHasHitResult(const struct FGamepl
 // Function GameplayAbilities.AbilitySystemBlueprintLibrary.TargetDataHasOrigin
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FGameplayAbilityTargetDataHandle TargetData                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FGameplayAbilityTargetDataHandle&TargetData                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -8770,3248 +12012,6 @@ bool UAbilitySystemBlueprintLibrary::TargetDataHasOrigin(const struct FGameplayA
 	Func->FunctionFlags |= 0x400;
 
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.AddGameplayTag_Predict
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// struct FGameplayTag                     GameplayTag                                            (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   Count                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UAbilitySystemComponent::AddGameplayTag_Predict(const struct FGameplayTag& GameplayTag, const int32 Count)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "AddGameplayTag_Predict");
-
-	Params::AbilitySystemComponent_AddGameplayTag_Predict Parms{};
-
-	Parms.GameplayTag = std::move(GameplayTag);
-	Parms.Count = Count;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.AddGameplayTags_Predict
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// struct FGameplayTagContainer            GameplayTags                                           (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UAbilitySystemComponent::AddGameplayTags_Predict(const struct FGameplayTagContainer& GameplayTags)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "AddGameplayTags_Predict");
-
-	Params::AbilitySystemComponent_AddGameplayTags_Predict Parms{};
-
-	Parms.GameplayTags = std::move(GameplayTags);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.BP_ApplyGameplayEffectSpecToSelf
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// struct FGameplayEffectSpecHandle        SpecHandle                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FActiveGameplayEffectHandle      ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-struct FActiveGameplayEffectHandle UAbilitySystemComponent::BP_ApplyGameplayEffectSpecToSelf(const struct FGameplayEffectSpecHandle& SpecHandle)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "BP_ApplyGameplayEffectSpecToSelf");
-
-	Params::AbilitySystemComponent_BP_ApplyGameplayEffectSpecToSelf Parms{};
-
-	Parms.SpecHandle = std::move(SpecHandle);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.BP_ApplyGameplayEffectSpecToTarget
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// struct FGameplayEffectSpecHandle        SpecHandle                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// class UAbilitySystemComponent*          Target                                                 (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FActiveGameplayEffectHandle      ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-struct FActiveGameplayEffectHandle UAbilitySystemComponent::BP_ApplyGameplayEffectSpecToTarget(const struct FGameplayEffectSpecHandle& SpecHandle, class UAbilitySystemComponent* Target)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "BP_ApplyGameplayEffectSpecToTarget");
-
-	Params::AbilitySystemComponent_BP_ApplyGameplayEffectSpecToTarget Parms{};
-
-	Parms.SpecHandle = std::move(SpecHandle);
-	Parms.Target = Target;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.BP_ApplyGameplayEffectToSelf
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// TSubclassOf<class UGameplayEffect>      GameplayEffectClass                                    (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   Level                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayEffectContextHandle     EffectContext                                          (Parm, NativeAccessSpecifierPublic)
-// struct FActiveGameplayEffectHandle      ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-struct FActiveGameplayEffectHandle UAbilitySystemComponent::BP_ApplyGameplayEffectToSelf(TSubclassOf<class UGameplayEffect> GameplayEffectClass, float Level, const struct FGameplayEffectContextHandle& EffectContext)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "BP_ApplyGameplayEffectToSelf");
-
-	Params::AbilitySystemComponent_BP_ApplyGameplayEffectToSelf Parms{};
-
-	Parms.GameplayEffectClass = GameplayEffectClass;
-	Parms.Level = Level;
-	Parms.EffectContext = std::move(EffectContext);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.BP_ApplyGameplayEffectToTarget
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// TSubclassOf<class UGameplayEffect>      GameplayEffectClass                                    (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UAbilitySystemComponent*          Target                                                 (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   Level                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayEffectContextHandle     Context                                                (Parm, NativeAccessSpecifierPublic)
-// struct FActiveGameplayEffectHandle      ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-struct FActiveGameplayEffectHandle UAbilitySystemComponent::BP_ApplyGameplayEffectToTarget(TSubclassOf<class UGameplayEffect> GameplayEffectClass, class UAbilitySystemComponent* Target, float Level, const struct FGameplayEffectContextHandle& Context)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "BP_ApplyGameplayEffectToTarget");
-
-	Params::AbilitySystemComponent_BP_ApplyGameplayEffectToTarget Parms{};
-
-	Parms.GameplayEffectClass = GameplayEffectClass;
-	Parms.Target = Target;
-	Parms.Level = Level;
-	Parms.Context = std::move(Context);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.CheckScopedPredicitionKeyReject
-// (Final, Native, Public)
-// Parameters:
-// bool                                    bCallReject                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UAbilitySystemComponent::CheckScopedPredicitionKeyReject(bool bCallReject)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "CheckScopedPredicitionKeyReject");
-
-	Params::AbilitySystemComponent_CheckScopedPredicitionKeyReject Parms{};
-
-	Parms.bCallReject = bCallReject;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.ClearAbility
-// (Final, BlueprintAuthorityOnly, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// struct FGameplayAbilitySpecHandle       Handle                                                 (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UAbilitySystemComponent::ClearAbility(const struct FGameplayAbilitySpecHandle& Handle)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "ClearAbility");
-
-	Params::AbilitySystemComponent_ClearAbility Parms{};
-
-	Parms.Handle = std::move(Handle);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.ClearAllAbilities
-// (Final, BlueprintAuthorityOnly, Native, Public, BlueprintCallable)
-
-void UAbilitySystemComponent::ClearAllAbilities()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "ClearAllAbilities");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.ClearAllAbilitiesWithInputID
-// (Final, BlueprintAuthorityOnly, Native, Public, BlueprintCallable)
-// Parameters:
-// int32                                   InputID                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UAbilitySystemComponent::ClearAllAbilitiesWithInputID(int32 InputID)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "ClearAllAbilitiesWithInputID");
-
-	Params::AbilitySystemComponent_ClearAllAbilitiesWithInputID Parms{};
-
-	Parms.InputID = InputID;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.ClientActivateAbilityFailed
-// (Net, NetReliable, Native, Event, Protected, NetClient)
-// Parameters:
-// struct FGameplayAbilitySpecHandle       AbilityToActivate                                      (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           PredictionKey                                          (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UAbilitySystemComponent::ClientActivateAbilityFailed(const struct FGameplayAbilitySpecHandle& AbilityToActivate, const class FString& PredictionKey)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "ClientActivateAbilityFailed");
-
-	Params::AbilitySystemComponent_ClientActivateAbilityFailed Parms{};
-
-	Parms.AbilityToActivate = std::move(AbilityToActivate);
-	Parms.PredictionKey = std::move(PredictionKey);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.ClientActivateAbilitySucceed
-// (Net, NetReliable, Native, Event, Protected, NetClient)
-// Parameters:
-// struct FGameplayAbilitySpecHandle       AbilityToActivate                                      (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FPredictionKey                   PredictionKey                                          (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UAbilitySystemComponent::ClientActivateAbilitySucceed(const struct FGameplayAbilitySpecHandle& AbilityToActivate, const struct FPredictionKey& PredictionKey)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "ClientActivateAbilitySucceed");
-
-	Params::AbilitySystemComponent_ClientActivateAbilitySucceed Parms{};
-
-	Parms.AbilityToActivate = std::move(AbilityToActivate);
-	Parms.PredictionKey = std::move(PredictionKey);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.ClientActivateAbilitySucceedWithEventData
-// (Net, NetReliable, Native, Event, Protected, NetClient)
-// Parameters:
-// struct FGameplayAbilitySpecHandle       AbilityToActivate                                      (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FPredictionKey                   PredictionKey                                          (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayEventData               TriggerEventData                                       (Parm, NativeAccessSpecifierPublic)
-
-void UAbilitySystemComponent::ClientActivateAbilitySucceedWithEventData(const struct FGameplayAbilitySpecHandle& AbilityToActivate, const struct FPredictionKey& PredictionKey, const struct FGameplayEventData& TriggerEventData)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "ClientActivateAbilitySucceedWithEventData");
-
-	Params::AbilitySystemComponent_ClientActivateAbilitySucceedWithEventData Parms{};
-
-	Parms.AbilityToActivate = std::move(AbilityToActivate);
-	Parms.PredictionKey = std::move(PredictionKey);
-	Parms.TriggerEventData = std::move(TriggerEventData);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.ClientCancelAbility
-// (Net, NetReliable, Native, Event, Protected, NetClient)
-// Parameters:
-// struct FGameplayAbilitySpecHandle       AbilityToCancel                                        (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayAbilityActivationInfo   ActivationInfo                                         (Parm, NativeAccessSpecifierPublic)
-// struct FAbilityEndContext               EndContext                                             (ConstParm, Parm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UAbilitySystemComponent::ClientCancelAbility(const struct FGameplayAbilitySpecHandle& AbilityToCancel, const struct FGameplayAbilityActivationInfo& ActivationInfo, const struct FAbilityEndContext& EndContext)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "ClientCancelAbility");
-
-	Params::AbilitySystemComponent_ClientCancelAbility Parms{};
-
-	Parms.AbilityToCancel = std::move(AbilityToCancel);
-	Parms.ActivationInfo = std::move(ActivationInfo);
-	Parms.EndContext = std::move(EndContext);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.ClientCatchUpPredictionKey
-// (Net, NetReliable, Native, Event, Public, NetClient)
-// Parameters:
-// class FString                           PredictionKey                                          (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UAbilitySystemComponent::ClientCatchUpPredictionKey(const class FString& PredictionKey)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "ClientCatchUpPredictionKey");
-
-	Params::AbilitySystemComponent_ClientCatchUpPredictionKey Parms{};
-
-	Parms.PredictionKey = std::move(PredictionKey);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.ClientEndAbility
-// (Net, NetReliable, Native, Event, Protected, NetClient)
-// Parameters:
-// struct FGameplayAbilitySpecHandle       AbilityToEnd                                           (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayAbilityActivationInfo   ActivationInfo                                         (Parm, NativeAccessSpecifierPublic)
-// struct FAbilityEndContext               EndContext                                             (ConstParm, Parm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UAbilitySystemComponent::ClientEndAbility(const struct FGameplayAbilitySpecHandle& AbilityToEnd, const struct FGameplayAbilityActivationInfo& ActivationInfo, const struct FAbilityEndContext& EndContext)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "ClientEndAbility");
-
-	Params::AbilitySystemComponent_ClientEndAbility Parms{};
-
-	Parms.AbilityToEnd = std::move(AbilityToEnd);
-	Parms.ActivationInfo = std::move(ActivationInfo);
-	Parms.EndContext = std::move(EndContext);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.ClientInternalReboot_Dynamic
-// (Final, Net, NetReliable, Native, Event, Private, NetClient)
-// Parameters:
-// struct FPredictionKey                   PredictionKey                                          (ConstParm, Parm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FPredictionDynamicParamHandle    Handle                                                 (ConstParm, Parm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UAbilitySystemComponent::ClientInternalReboot_Dynamic(const struct FPredictionKey& PredictionKey, const struct FPredictionDynamicParamHandle& Handle)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "ClientInternalReboot_Dynamic");
-
-	Params::AbilitySystemComponent_ClientInternalReboot_Dynamic Parms{};
-
-	Parms.PredictionKey = std::move(PredictionKey);
-	Parms.Handle = std::move(Handle);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.ClientInternalRebootChannel_Dynamic
-// (Final, Net, NetReliable, Native, Event, Private, NetClient)
-// Parameters:
-// struct FPredictionKey                   PredictionKey                                          (ConstParm, Parm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FPredictionDynamicParamHandle    Handle                                                 (ConstParm, Parm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UAbilitySystemComponent::ClientInternalRebootChannel_Dynamic(const struct FPredictionKey& PredictionKey, const struct FPredictionDynamicParamHandle& Handle)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "ClientInternalRebootChannel_Dynamic");
-
-	Params::AbilitySystemComponent_ClientInternalRebootChannel_Dynamic Parms{};
-
-	Parms.PredictionKey = std::move(PredictionKey);
-	Parms.Handle = std::move(Handle);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.ClientPrintDebug_Response
-// (Net, NetReliable, Native, Event, Public, NetClient)
-// Parameters:
-// TArray<class FString>                   Strings                                                (ConstParm, Parm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// int32                                   GameFlags                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UAbilitySystemComponent::ClientPrintDebug_Response(const TArray<class FString>& Strings, int32 GameFlags)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "ClientPrintDebug_Response");
-
-	Params::AbilitySystemComponent_ClientPrintDebug_Response Parms{};
-
-	Parms.Strings = std::move(Strings);
-	Parms.GameFlags = GameFlags;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.ClientReceivePredictionKey
-// (Net, NetReliable, Native, Event, Public, NetClient)
-// Parameters:
-// struct FPredictionKey                   Key                                                    (ConstParm, Parm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UAbilitySystemComponent::ClientReceivePredictionKey(const struct FPredictionKey& Key)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "ClientReceivePredictionKey");
-
-	Params::AbilitySystemComponent_ClientReceivePredictionKey Parms{};
-
-	Parms.Key = std::move(Key);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.ClientRejectPredictionKey
-// (Net, NetReliable, Native, Event, Public, NetClient)
-// Parameters:
-// class FString                           PredictionKey                                          (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UAbilitySystemComponent::ClientRejectPredictionKey(const class FString& PredictionKey)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "ClientRejectPredictionKey");
-
-	Params::AbilitySystemComponent_ClientRejectPredictionKey Parms{};
-
-	Parms.PredictionKey = std::move(PredictionKey);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.ClientTestReplicateData
-// (Net, NetReliable, Native, Event, Public, NetClient)
-// Parameters:
-// struct FPredictionKey                   Key                                                    (ConstParm, Parm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UAbilitySystemComponent::ClientTestReplicateData(const struct FPredictionKey& Key)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "ClientTestReplicateData");
-
-	Params::AbilitySystemComponent_ClientTestReplicateData Parms{};
-
-	Parms.Key = std::move(Key);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.ClientTryActivateAbility
-// (Net, NetReliable, Native, Event, Protected, NetClient)
-// Parameters:
-// struct FGameplayAbilitySpecHandle       AbilityToActivate                                      (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UAbilitySystemComponent::ClientTryActivateAbility(const struct FGameplayAbilitySpecHandle& AbilityToActivate)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "ClientTryActivateAbility");
-
-	Params::AbilitySystemComponent_ClientTryActivateAbility Parms{};
-
-	Parms.AbilityToActivate = std::move(AbilityToActivate);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.ExecuteGameplayCue
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// struct FGameplayTag                     GameplayCueTag                                         (ConstParm, Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayCueParameters           GameplayCueParameters                                  (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-
-void UAbilitySystemComponent::ExecuteGameplayCue(const struct FGameplayTag& GameplayCueTag, const struct FGameplayCueParameters& GameplayCueParameters)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "ExecuteGameplayCue");
-
-	Params::AbilitySystemComponent_ExecuteGameplayCue Parms{};
-
-	Parms.GameplayCueTag = std::move(GameplayCueTag);
-	Parms.GameplayCueParameters = std::move(GameplayCueParameters);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.GetAllAttributes
-// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure)
-// Parameters:
-// TArray<struct FGameplayAttribute>       OutAttributes                                          (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
-
-void UAbilitySystemComponent::GetAllAttributes(TArray<struct FGameplayAttribute>* OutAttributes)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "GetAllAttributes");
-
-	Params::AbilitySystemComponent_GetAllAttributes Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (OutAttributes != nullptr)
-		*OutAttributes = std::move(Parms.OutAttributes);
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.HandleGameplayCue
-// (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// struct FGameplayTag                     GameplayCueTag                                         (ConstParm, Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EGameplayCueEvent                       EventType                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-
-void UAbilitySystemComponent::HandleGameplayCue(const struct FGameplayTag& GameplayCueTag, EGameplayCueEvent EventType, const struct FGameplayCueParameters& Parameters)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "HandleGameplayCue");
-
-	Params::AbilitySystemComponent_HandleGameplayCue Parms{};
-
-	Parms.GameplayCueTag = std::move(GameplayCueTag);
-	Parms.EventType = EventType;
-	Parms.Parameters = std::move(Parameters);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.InputCancel
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// int32                                   InputID                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UAbilitySystemComponent::InputCancel(int32 InputID)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "InputCancel");
-
-	Params::AbilitySystemComponent_InputCancel Parms{};
-
-	Parms.InputID = InputID;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.InputConfirm
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// int32                                   InputID                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UAbilitySystemComponent::InputConfirm(int32 InputID)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "InputConfirm");
-
-	Params::AbilitySystemComponent_InputConfirm Parms{};
-
-	Parms.InputID = InputID;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.K2_GiveAbility
-// (Final, BlueprintAuthorityOnly, Native, Public, BlueprintCallable)
-// Parameters:
-// TSubclassOf<class UGameplayAbility>     AbilityClass                                           (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   Level                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   InputID                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayAbilitySpecHandle       ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-struct FGameplayAbilitySpecHandle UAbilitySystemComponent::K2_GiveAbility(TSubclassOf<class UGameplayAbility> AbilityClass, int32 Level, int32 InputID)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "K2_GiveAbility");
-
-	Params::AbilitySystemComponent_K2_GiveAbility Parms{};
-
-	Parms.AbilityClass = AbilityClass;
-	Parms.Level = Level;
-	Parms.InputID = InputID;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.K2_GiveAbilityAndActivateOnce
-// (Final, BlueprintAuthorityOnly, Native, Public, BlueprintCallable)
-// Parameters:
-// TSubclassOf<class UGameplayAbility>     AbilityClass                                           (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   Level                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   InputID                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayAbilitySpecHandle       ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-struct FGameplayAbilitySpecHandle UAbilitySystemComponent::K2_GiveAbilityAndActivateOnce(TSubclassOf<class UGameplayAbility> AbilityClass, int32 Level, int32 InputID)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "K2_GiveAbilityAndActivateOnce");
-
-	Params::AbilitySystemComponent_K2_GiveAbilityAndActivateOnce Parms{};
-
-	Parms.AbilityClass = AbilityClass;
-	Parms.Level = Level;
-	Parms.InputID = InputID;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.K2_InitStats
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// TSubclassOf<class UAttributeSet>        Attributes                                             (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UDataTable*                       DataTable                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UAbilitySystemComponent::K2_InitStats(TSubclassOf<class UAttributeSet> Attributes, const class UDataTable* DataTable)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "K2_InitStats");
-
-	Params::AbilitySystemComponent_K2_InitStats Parms{};
-
-	Parms.Attributes = Attributes;
-	Parms.DataTable = DataTable;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.KeepAbilityRootKeyAsExpiredPredictionKey
-// (Final, Native, Public)
-// Parameters:
-// class UGameplayAbility*                 Ability                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bWasCancelled                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UAbilitySystemComponent::KeepAbilityRootKeyAsExpiredPredictionKey(class UGameplayAbility* Ability, bool bWasCancelled)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "KeepAbilityRootKeyAsExpiredPredictionKey");
-
-	Params::AbilitySystemComponent_KeepAbilityRootKeyAsExpiredPredictionKey Parms{};
-
-	Parms.Ability = Ability;
-	Parms.bWasCancelled = bWasCancelled;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.KeepExpiredPredictionKey
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class FString                           Key                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UAbilitySystemComponent::KeepExpiredPredictionKey(const class FString& Key)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "KeepExpiredPredictionKey");
-
-	Params::AbilitySystemComponent_KeepExpiredPredictionKey Parms{};
-
-	Parms.Key = std::move(Key);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.NetMulticast_InvokeGameplayCueAdded
-// (Net, Native, Event, NetMulticast, Public)
-// Parameters:
-// struct FGameplayTag                     GameplayCueTag                                         (ConstParm, Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FPredictionKey                   PredictionKey                                          (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayEffectContextHandle     EffectContext                                          (Parm, NativeAccessSpecifierPublic)
-
-void UAbilitySystemComponent::NetMulticast_InvokeGameplayCueAdded(const struct FGameplayTag& GameplayCueTag, const struct FPredictionKey& PredictionKey, const struct FGameplayEffectContextHandle& EffectContext)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "NetMulticast_InvokeGameplayCueAdded");
-
-	Params::AbilitySystemComponent_NetMulticast_InvokeGameplayCueAdded Parms{};
-
-	Parms.GameplayCueTag = std::move(GameplayCueTag);
-	Parms.PredictionKey = std::move(PredictionKey);
-	Parms.EffectContext = std::move(EffectContext);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.NetMulticast_InvokeGameplayCueAdded_WithParams
-// (Net, Native, Event, NetMulticast, Public)
-// Parameters:
-// struct FGameplayTag                     GameplayCueTag                                         (ConstParm, Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FPredictionKey                   PredictionKey                                          (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-
-void UAbilitySystemComponent::NetMulticast_InvokeGameplayCueAdded_WithParams(const struct FGameplayTag& GameplayCueTag, const struct FPredictionKey& PredictionKey, const struct FGameplayCueParameters& Parameters)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "NetMulticast_InvokeGameplayCueAdded_WithParams");
-
-	Params::AbilitySystemComponent_NetMulticast_InvokeGameplayCueAdded_WithParams Parms{};
-
-	Parms.GameplayCueTag = std::move(GameplayCueTag);
-	Parms.PredictionKey = std::move(PredictionKey);
-	Parms.Parameters = std::move(Parameters);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.NetMulticast_InvokeGameplayCueAddedAndWhileActive_FromSpec
-// (Net, Native, Event, NetMulticast, Public)
-// Parameters:
-// struct FGameplayEffectSpecForRPC        Spec                                                   (ConstParm, Parm, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FPredictionKey                   PredictionKey                                          (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UAbilitySystemComponent::NetMulticast_InvokeGameplayCueAddedAndWhileActive_FromSpec(const struct FGameplayEffectSpecForRPC& Spec, const struct FPredictionKey& PredictionKey)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "NetMulticast_InvokeGameplayCueAddedAndWhileActive_FromSpec");
-
-	Params::AbilitySystemComponent_NetMulticast_InvokeGameplayCueAddedAndWhileActive_FromSpec Parms{};
-
-	Parms.Spec = std::move(Spec);
-	Parms.PredictionKey = std::move(PredictionKey);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.NetMulticast_InvokeGameplayCueAddedAndWhileActive_WithParams
-// (Net, Native, Event, NetMulticast, Public)
-// Parameters:
-// struct FGameplayTag                     GameplayCueTag                                         (ConstParm, Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FPredictionKey                   PredictionKey                                          (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayCueParameters           GameplayCueParameters                                  (ConstParm, Parm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-
-void UAbilitySystemComponent::NetMulticast_InvokeGameplayCueAddedAndWhileActive_WithParams(const struct FGameplayTag& GameplayCueTag, const struct FPredictionKey& PredictionKey, const struct FGameplayCueParameters& GameplayCueParameters)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "NetMulticast_InvokeGameplayCueAddedAndWhileActive_WithParams");
-
-	Params::AbilitySystemComponent_NetMulticast_InvokeGameplayCueAddedAndWhileActive_WithParams Parms{};
-
-	Parms.GameplayCueTag = std::move(GameplayCueTag);
-	Parms.PredictionKey = std::move(PredictionKey);
-	Parms.GameplayCueParameters = std::move(GameplayCueParameters);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.NetMulticast_InvokeGameplayCueExecuted
-// (Net, Native, Event, NetMulticast, Public)
-// Parameters:
-// struct FGameplayTag                     GameplayCueTag                                         (ConstParm, Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FPredictionKey                   PredictionKey                                          (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayEffectContextHandle     EffectContext                                          (Parm, NativeAccessSpecifierPublic)
-
-void UAbilitySystemComponent::NetMulticast_InvokeGameplayCueExecuted(const struct FGameplayTag& GameplayCueTag, const struct FPredictionKey& PredictionKey, const struct FGameplayEffectContextHandle& EffectContext)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "NetMulticast_InvokeGameplayCueExecuted");
-
-	Params::AbilitySystemComponent_NetMulticast_InvokeGameplayCueExecuted Parms{};
-
-	Parms.GameplayCueTag = std::move(GameplayCueTag);
-	Parms.PredictionKey = std::move(PredictionKey);
-	Parms.EffectContext = std::move(EffectContext);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.NetMulticast_InvokeGameplayCueExecuted_FromSpec
-// (Net, Native, Event, NetMulticast, Public)
-// Parameters:
-// struct FGameplayEffectSpecForRPC        Spec                                                   (ConstParm, Parm, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FPredictionKey                   PredictionKey                                          (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UAbilitySystemComponent::NetMulticast_InvokeGameplayCueExecuted_FromSpec(const struct FGameplayEffectSpecForRPC& Spec, const struct FPredictionKey& PredictionKey)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "NetMulticast_InvokeGameplayCueExecuted_FromSpec");
-
-	Params::AbilitySystemComponent_NetMulticast_InvokeGameplayCueExecuted_FromSpec Parms{};
-
-	Parms.Spec = std::move(Spec);
-	Parms.PredictionKey = std::move(PredictionKey);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.NetMulticast_InvokeGameplayCueExecuted_WithParams
-// (Net, Native, Event, NetMulticast, Public)
-// Parameters:
-// struct FGameplayTag                     GameplayCueTag                                         (ConstParm, Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FPredictionKey                   PredictionKey                                          (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayCueParameters           GameplayCueParameters                                  (ConstParm, Parm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-
-void UAbilitySystemComponent::NetMulticast_InvokeGameplayCueExecuted_WithParams(const struct FGameplayTag& GameplayCueTag, const struct FPredictionKey& PredictionKey, const struct FGameplayCueParameters& GameplayCueParameters)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "NetMulticast_InvokeGameplayCueExecuted_WithParams");
-
-	Params::AbilitySystemComponent_NetMulticast_InvokeGameplayCueExecuted_WithParams Parms{};
-
-	Parms.GameplayCueTag = std::move(GameplayCueTag);
-	Parms.PredictionKey = std::move(PredictionKey);
-	Parms.GameplayCueParameters = std::move(GameplayCueParameters);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.NetMulticast_InvokeGameplayCuesAddedAndWhileActive_WithParams
-// (Net, Native, Event, NetMulticast, Public)
-// Parameters:
-// struct FGameplayTagContainer            GameplayCueTags                                        (ConstParm, Parm, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FPredictionKey                   PredictionKey                                          (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayCueParameters           GameplayCueParameters                                  (ConstParm, Parm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-
-void UAbilitySystemComponent::NetMulticast_InvokeGameplayCuesAddedAndWhileActive_WithParams(const struct FGameplayTagContainer& GameplayCueTags, const struct FPredictionKey& PredictionKey, const struct FGameplayCueParameters& GameplayCueParameters)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "NetMulticast_InvokeGameplayCuesAddedAndWhileActive_WithParams");
-
-	Params::AbilitySystemComponent_NetMulticast_InvokeGameplayCuesAddedAndWhileActive_WithParams Parms{};
-
-	Parms.GameplayCueTags = std::move(GameplayCueTags);
-	Parms.PredictionKey = std::move(PredictionKey);
-	Parms.GameplayCueParameters = std::move(GameplayCueParameters);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.NetMulticast_InvokeGameplayCuesExecuted
-// (Net, Native, Event, NetMulticast, Public)
-// Parameters:
-// struct FGameplayTagContainer            GameplayCueTags                                        (ConstParm, Parm, NativeAccessSpecifierPublic)
-// struct FPredictionKey                   PredictionKey                                          (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayEffectContextHandle     EffectContext                                          (Parm, NativeAccessSpecifierPublic)
-
-void UAbilitySystemComponent::NetMulticast_InvokeGameplayCuesExecuted(const struct FGameplayTagContainer& GameplayCueTags, const struct FPredictionKey& PredictionKey, const struct FGameplayEffectContextHandle& EffectContext)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "NetMulticast_InvokeGameplayCuesExecuted");
-
-	Params::AbilitySystemComponent_NetMulticast_InvokeGameplayCuesExecuted Parms{};
-
-	Parms.GameplayCueTags = std::move(GameplayCueTags);
-	Parms.PredictionKey = std::move(PredictionKey);
-	Parms.EffectContext = std::move(EffectContext);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.NetMulticast_InvokeGameplayCuesExecuted_WithParams
-// (Net, Native, Event, NetMulticast, Public)
-// Parameters:
-// struct FGameplayTagContainer            GameplayCueTags                                        (ConstParm, Parm, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FPredictionKey                   PredictionKey                                          (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayCueParameters           GameplayCueParameters                                  (ConstParm, Parm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-
-void UAbilitySystemComponent::NetMulticast_InvokeGameplayCuesExecuted_WithParams(const struct FGameplayTagContainer& GameplayCueTags, const struct FPredictionKey& PredictionKey, const struct FGameplayCueParameters& GameplayCueParameters)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "NetMulticast_InvokeGameplayCuesExecuted_WithParams");
-
-	Params::AbilitySystemComponent_NetMulticast_InvokeGameplayCuesExecuted_WithParams Parms{};
-
-	Parms.GameplayCueTags = std::move(GameplayCueTags);
-	Parms.PredictionKey = std::move(PredictionKey);
-	Parms.GameplayCueParameters = std::move(GameplayCueParameters);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.NetMulticast_ReplicationActivatableAbilities
-// (Net, NetReliable, Native, Event, NetMulticast, Protected)
-// Parameters:
-// struct FGameplayAbilitySpec             Spec                                                   (ConstParm, Parm, NativeAccessSpecifierPublic)
-// uint8                                   Operation                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UAbilitySystemComponent::NetMulticast_ReplicationActivatableAbilities(const struct FGameplayAbilitySpec& Spec, uint8 Operation)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "NetMulticast_ReplicationActivatableAbilities");
-
-	Params::AbilitySystemComponent_NetMulticast_ReplicationActivatableAbilities Parms{};
-
-	Parms.Spec = std::move(Spec);
-	Parms.Operation = Operation;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.OnAvatarActorDestroyed
-// (Final, Native, Public)
-// Parameters:
-// class AActor*                           InActor                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UAbilitySystemComponent::OnAvatarActorDestroyed(class AActor* InActor)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "OnAvatarActorDestroyed");
-
-	Params::AbilitySystemComponent_OnAvatarActorDestroyed Parms{};
-
-	Parms.InActor = InActor;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.OnOwnerActorDestroyed
-// (Final, Native, Public)
-// Parameters:
-// class AActor*                           InActor                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UAbilitySystemComponent::OnOwnerActorDestroyed(class AActor* InActor)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "OnOwnerActorDestroyed");
-
-	Params::AbilitySystemComponent_OnOwnerActorDestroyed Parms{};
-
-	Parms.InActor = InActor;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.OnPredictionKeyRejected
-// (Final, Native, Public)
-// Parameters:
-// class FString                           Key                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UAbilitySystemComponent::OnPredictionKeyRejected(const class FString& Key)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "OnPredictionKeyRejected");
-
-	Params::AbilitySystemComponent_OnPredictionKeyRejected Parms{};
-
-	Parms.Key = std::move(Key);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.OnRep_ActivateAbilities
-// (Native, Protected)
-
-void UAbilitySystemComponent::OnRep_ActivateAbilities()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "OnRep_ActivateAbilities");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.OnRep_ClientDebugString
-// (Native, Public)
-
-void UAbilitySystemComponent::OnRep_ClientDebugString()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "OnRep_ClientDebugString");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.OnRep_OwningActor
-// (Final, Native, Public)
-
-void UAbilitySystemComponent::OnRep_OwningActor()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "OnRep_OwningActor");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.OnRep_ReplicatedAnimMontage
-// (Native, Protected)
-
-void UAbilitySystemComponent::OnRep_ReplicatedAnimMontage()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "OnRep_ReplicatedAnimMontage");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.OnRep_ReplicatedAnimTimeline
-// (Native, Protected)
-
-void UAbilitySystemComponent::OnRep_ReplicatedAnimTimeline()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "OnRep_ReplicatedAnimTimeline");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.OnRep_ServerDebugString
-// (Native, Public)
-
-void UAbilitySystemComponent::OnRep_ServerDebugString()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "OnRep_ServerDebugString");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.OnRep_SpawnedAttributes
-// (Final, Native, Private, HasOutParams)
-// Parameters:
-// TArray<class UAttributeSet*>            PreviousSpawnedAttributes                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-
-void UAbilitySystemComponent::OnRep_SpawnedAttributes(const TArray<class UAttributeSet*>& PreviousSpawnedAttributes)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "OnRep_SpawnedAttributes");
-
-	Params::AbilitySystemComponent_OnRep_SpawnedAttributes Parms{};
-
-	Parms.PreviousSpawnedAttributes = std::move(PreviousSpawnedAttributes);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.OnSpawnedAttributesEndPlayed
-// (Final, Native, Public)
-// Parameters:
-// class AActor*                           InActor                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EEndPlayReason                          EndPlayReason                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UAbilitySystemComponent::OnSpawnedAttributesEndPlayed(class AActor* InActor, EEndPlayReason EndPlayReason)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "OnSpawnedAttributesEndPlayed");
-
-	Params::AbilitySystemComponent_OnSpawnedAttributesEndPlayed Parms{};
-
-	Parms.InActor = InActor;
-	Parms.EndPlayReason = EndPlayReason;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.PressInputID
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// int32                                   InputID                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UAbilitySystemComponent::PressInputID(int32 InputID)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "PressInputID");
-
-	Params::AbilitySystemComponent_PressInputID Parms{};
-
-	Parms.InputID = InputID;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.ReleaseInputID
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// int32                                   InputID                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UAbilitySystemComponent::ReleaseInputID(int32 InputID)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "ReleaseInputID");
-
-	Params::AbilitySystemComponent_ReleaseInputID Parms{};
-
-	Parms.InputID = InputID;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.RemoveActiveEffectsWithAppliedTags
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// struct FGameplayTagContainer            Tags                                                   (Parm, NativeAccessSpecifierPublic)
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-int32 UAbilitySystemComponent::RemoveActiveEffectsWithAppliedTags(const struct FGameplayTagContainer& Tags)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "RemoveActiveEffectsWithAppliedTags");
-
-	Params::AbilitySystemComponent_RemoveActiveEffectsWithAppliedTags Parms{};
-
-	Parms.Tags = std::move(Tags);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.RemoveActiveEffectsWithGrantedTagRequirements
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// struct FGameplayTagRequirements         TagRequirements                                        (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-int32 UAbilitySystemComponent::RemoveActiveEffectsWithGrantedTagRequirements(const struct FGameplayTagRequirements& TagRequirements)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "RemoveActiveEffectsWithGrantedTagRequirements");
-
-	Params::AbilitySystemComponent_RemoveActiveEffectsWithGrantedTagRequirements Parms{};
-
-	Parms.TagRequirements = std::move(TagRequirements);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.RemoveActiveEffectsWithGrantedTags
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// struct FGameplayTagContainer            Tags                                                   (Parm, NativeAccessSpecifierPublic)
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-int32 UAbilitySystemComponent::RemoveActiveEffectsWithGrantedTags(const struct FGameplayTagContainer& Tags)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "RemoveActiveEffectsWithGrantedTags");
-
-	Params::AbilitySystemComponent_RemoveActiveEffectsWithGrantedTags Parms{};
-
-	Parms.Tags = std::move(Tags);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.RemoveActiveEffectsWithSourceTags
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// struct FGameplayTagContainer            Tags                                                   (Parm, NativeAccessSpecifierPublic)
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-int32 UAbilitySystemComponent::RemoveActiveEffectsWithSourceTags(const struct FGameplayTagContainer& Tags)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "RemoveActiveEffectsWithSourceTags");
-
-	Params::AbilitySystemComponent_RemoveActiveEffectsWithSourceTags Parms{};
-
-	Parms.Tags = std::move(Tags);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.RemoveActiveEffectsWithTags
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// struct FGameplayTagContainer            Tags                                                   (Parm, NativeAccessSpecifierPublic)
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-int32 UAbilitySystemComponent::RemoveActiveEffectsWithTags(const struct FGameplayTagContainer& Tags)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "RemoveActiveEffectsWithTags");
-
-	Params::AbilitySystemComponent_RemoveActiveEffectsWithTags Parms{};
-
-	Parms.Tags = std::move(Tags);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.RemoveActiveGameplayEffect
-// (BlueprintAuthorityOnly, Native, Public, BlueprintCallable)
-// Parameters:
-// struct FActiveGameplayEffectHandle      Handle                                                 (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   StacksToRemove                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UAbilitySystemComponent::RemoveActiveGameplayEffect(const struct FActiveGameplayEffectHandle& Handle, int32 StacksToRemove)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "RemoveActiveGameplayEffect");
-
-	Params::AbilitySystemComponent_RemoveActiveGameplayEffect Parms{};
-
-	Parms.Handle = std::move(Handle);
-	Parms.StacksToRemove = StacksToRemove;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.RemoveActiveGameplayEffectBySourceEffect
-// (BlueprintAuthorityOnly, Native, Public, BlueprintCallable)
-// Parameters:
-// TSubclassOf<class UGameplayEffect>      GameplayEffect                                         (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UAbilitySystemComponent*          InstigatorAbilitySystemComponent                       (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   StacksToRemove                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UAbilitySystemComponent::RemoveActiveGameplayEffectBySourceEffect(TSubclassOf<class UGameplayEffect> GameplayEffect, class UAbilitySystemComponent* InstigatorAbilitySystemComponent, int32 StacksToRemove)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "RemoveActiveGameplayEffectBySourceEffect");
-
-	Params::AbilitySystemComponent_RemoveActiveGameplayEffectBySourceEffect Parms{};
-
-	Parms.GameplayEffect = GameplayEffect;
-	Parms.InstigatorAbilitySystemComponent = InstigatorAbilitySystemComponent;
-	Parms.StacksToRemove = StacksToRemove;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.RemoveGameplayTag_Predict
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// struct FGameplayTag                     GameplayTag                                            (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   Count                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UAbilitySystemComponent::RemoveGameplayTag_Predict(const struct FGameplayTag& GameplayTag, const int32 Count)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "RemoveGameplayTag_Predict");
-
-	Params::AbilitySystemComponent_RemoveGameplayTag_Predict Parms{};
-
-	Parms.GameplayTag = std::move(GameplayTag);
-	Parms.Count = Count;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.RemoveGameplayTags_Predict
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// struct FGameplayTagContainer            GameplayTags                                           (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UAbilitySystemComponent::RemoveGameplayTags_Predict(const struct FGameplayTagContainer& GameplayTags)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "RemoveGameplayTags_Predict");
-
-	Params::AbilitySystemComponent_RemoveGameplayTags_Predict Parms{};
-
-	Parms.GameplayTags = std::move(GameplayTags);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.ServerCancelAbility
-// (Net, NetReliable, Native, Event, Protected, NetServer)
-// Parameters:
-// struct FGameplayAbilitySpecHandle       AbilityToCancel                                        (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayAbilityActivationInfo   ActivationInfo                                         (Parm, NativeAccessSpecifierPublic)
-// struct FAbilityEndContext               EndContext                                             (ConstParm, Parm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UAbilitySystemComponent::ServerCancelAbility(const struct FGameplayAbilitySpecHandle& AbilityToCancel, const struct FGameplayAbilityActivationInfo& ActivationInfo, const struct FAbilityEndContext& EndContext)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "ServerCancelAbility");
-
-	Params::AbilitySystemComponent_ServerCancelAbility Parms{};
-
-	Parms.AbilityToCancel = std::move(AbilityToCancel);
-	Parms.ActivationInfo = std::move(ActivationInfo);
-	Parms.EndContext = std::move(EndContext);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.ServerCatchUpOperation
-// (Net, NetReliable, Native, Event, Public, NetServer)
-// Parameters:
-// struct FMinimalReplicationTagOperation  InOperation                                            (ConstParm, Parm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UAbilitySystemComponent::ServerCatchUpOperation(const struct FMinimalReplicationTagOperation& InOperation)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "ServerCatchUpOperation");
-
-	Params::AbilitySystemComponent_ServerCatchUpOperation Parms{};
-
-	Parms.InOperation = std::move(InOperation);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.ServerCurrentMontageJumpToSectionName
-// (Net, NetReliable, Native, Event, Protected, NetServer, NetValidate)
-// Parameters:
-// class UAnimMontage*                     ClientAnimMontage                                      (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             SectionName                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UAbilitySystemComponent::ServerCurrentMontageJumpToSectionName(class UAnimMontage* ClientAnimMontage, class FName SectionName)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "ServerCurrentMontageJumpToSectionName");
-
-	Params::AbilitySystemComponent_ServerCurrentMontageJumpToSectionName Parms{};
-
-	Parms.ClientAnimMontage = ClientAnimMontage;
-	Parms.SectionName = SectionName;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.ServerCurrentMontageSetNextSectionName
-// (Net, NetReliable, Native, Event, Protected, NetServer, NetValidate)
-// Parameters:
-// class UAnimMontage*                     ClientAnimMontage                                      (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   ClientPosition                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             SectionName                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             NextSectionName                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UAbilitySystemComponent::ServerCurrentMontageSetNextSectionName(class UAnimMontage* ClientAnimMontage, float ClientPosition, class FName SectionName, class FName NextSectionName)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "ServerCurrentMontageSetNextSectionName");
-
-	Params::AbilitySystemComponent_ServerCurrentMontageSetNextSectionName Parms{};
-
-	Parms.ClientAnimMontage = ClientAnimMontage;
-	Parms.ClientPosition = ClientPosition;
-	Parms.SectionName = SectionName;
-	Parms.NextSectionName = NextSectionName;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.ServerCurrentMontageSetPlayRate
-// (Net, NetReliable, Native, Event, Protected, NetServer, NetValidate)
-// Parameters:
-// class UAnimMontage*                     ClientAnimMontage                                      (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   InPlayRate                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UAbilitySystemComponent::ServerCurrentMontageSetPlayRate(class UAnimMontage* ClientAnimMontage, float InPlayRate)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "ServerCurrentMontageSetPlayRate");
-
-	Params::AbilitySystemComponent_ServerCurrentMontageSetPlayRate Parms{};
-
-	Parms.ClientAnimMontage = ClientAnimMontage;
-	Parms.InPlayRate = InPlayRate;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.ServerEndAbility
-// (Net, NetReliable, Native, Event, Protected, NetServer)
-// Parameters:
-// struct FGameplayAbilitySpecHandle       AbilityToEnd                                           (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayAbilityActivationInfo   ActivationInfo                                         (Parm, NativeAccessSpecifierPublic)
-// struct FPredictionKey                   PredictionKey                                          (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FAbilityEndContext               EndContext                                             (ConstParm, Parm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UAbilitySystemComponent::ServerEndAbility(const struct FGameplayAbilitySpecHandle& AbilityToEnd, const struct FGameplayAbilityActivationInfo& ActivationInfo, const struct FPredictionKey& PredictionKey, const struct FAbilityEndContext& EndContext)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "ServerEndAbility");
-
-	Params::AbilitySystemComponent_ServerEndAbility Parms{};
-
-	Parms.AbilityToEnd = std::move(AbilityToEnd);
-	Parms.ActivationInfo = std::move(ActivationInfo);
-	Parms.PredictionKey = std::move(PredictionKey);
-	Parms.EndContext = std::move(EndContext);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.ServerInternalOfferData_Dynamic
-// (Final, Net, NetReliable, Native, Event, Private, NetServer)
-// Parameters:
-// struct FPredictionKey                   PredictionKey                                          (ConstParm, Parm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   ValidTime                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FPredictionDynamicParamHandle    Handle                                                 (ConstParm, Parm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UAbilitySystemComponent::ServerInternalOfferData_Dynamic(const struct FPredictionKey& PredictionKey, float ValidTime, const struct FPredictionDynamicParamHandle& Handle)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "ServerInternalOfferData_Dynamic");
-
-	Params::AbilitySystemComponent_ServerInternalOfferData_Dynamic Parms{};
-
-	Parms.PredictionKey = std::move(PredictionKey);
-	Parms.ValidTime = ValidTime;
-	Parms.Handle = std::move(Handle);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.ServerInternalReboot_Dynamic
-// (Final, Net, NetReliable, Native, Event, Private, NetServer)
-// Parameters:
-// struct FPredictionKey                   PredictionKey                                          (ConstParm, Parm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FPredictionDynamicParamHandle    Handle                                                 (ConstParm, Parm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UAbilitySystemComponent::ServerInternalReboot_Dynamic(const struct FPredictionKey& PredictionKey, const struct FPredictionDynamicParamHandle& Handle)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "ServerInternalReboot_Dynamic");
-
-	Params::AbilitySystemComponent_ServerInternalReboot_Dynamic Parms{};
-
-	Parms.PredictionKey = std::move(PredictionKey);
-	Parms.Handle = std::move(Handle);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.ServerInternalRebootChannel_Dynamic
-// (Final, Net, NetReliable, Native, Event, Private, NetServer)
-// Parameters:
-// struct FPredictionKey                   PredictionKey                                          (ConstParm, Parm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FPredictionDynamicParamHandle    Handle                                                 (ConstParm, Parm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UAbilitySystemComponent::ServerInternalRebootChannel_Dynamic(const struct FPredictionKey& PredictionKey, const struct FPredictionDynamicParamHandle& Handle)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "ServerInternalRebootChannel_Dynamic");
-
-	Params::AbilitySystemComponent_ServerInternalRebootChannel_Dynamic Parms{};
-
-	Parms.PredictionKey = std::move(PredictionKey);
-	Parms.Handle = std::move(Handle);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.ServerPrintDebug_Request
-// (Net, NetReliable, Native, Event, Public, NetServer, NetValidate)
-
-void UAbilitySystemComponent::ServerPrintDebug_Request()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "ServerPrintDebug_Request");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.ServerPrintDebug_RequestWithStrings
-// (Net, NetReliable, Native, Event, Public, NetServer, NetValidate)
-// Parameters:
-// TArray<class FString>                   Strings                                                (ConstParm, Parm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UAbilitySystemComponent::ServerPrintDebug_RequestWithStrings(const TArray<class FString>& Strings)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "ServerPrintDebug_RequestWithStrings");
-
-	Params::AbilitySystemComponent_ServerPrintDebug_RequestWithStrings Parms{};
-
-	Parms.Strings = std::move(Strings);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.ServerTestDynamicParamHandle
-// (Net, NetReliable, Native, Event, Public, NetServer)
-// Parameters:
-// struct FPredictionDynamicParamHandle    Handle                                                 (ConstParm, Parm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UAbilitySystemComponent::ServerTestDynamicParamHandle(const struct FPredictionDynamicParamHandle& Handle)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "ServerTestDynamicParamHandle");
-
-	Params::AbilitySystemComponent_ServerTestDynamicParamHandle Parms{};
-
-	Parms.Handle = std::move(Handle);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.ServerTryActivateAbility
-// (Net, NetReliable, Native, Event, Protected, NetServer, NetValidate)
-// Parameters:
-// struct FGameplayAbilitySpecHandle       AbilityToActivate                                      (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    InputPressed                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FPredictionKey                   PredictionKey                                          (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FAbilityActivationExtraInfo      InActivationInfo                                       (Parm, NativeAccessSpecifierPublic)
-
-void UAbilitySystemComponent::ServerTryActivateAbility(const struct FGameplayAbilitySpecHandle& AbilityToActivate, bool InputPressed, const struct FPredictionKey& PredictionKey, const struct FAbilityActivationExtraInfo& InActivationInfo)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "ServerTryActivateAbility");
-
-	Params::AbilitySystemComponent_ServerTryActivateAbility Parms{};
-
-	Parms.AbilityToActivate = std::move(AbilityToActivate);
-	Parms.InputPressed = InputPressed;
-	Parms.PredictionKey = std::move(PredictionKey);
-	Parms.InActivationInfo = std::move(InActivationInfo);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.ServerTryActivateAbilityWithEventData
-// (Net, NetReliable, Native, Event, Protected, NetServer, NetValidate)
-// Parameters:
-// struct FGameplayAbilitySpecHandle       AbilityToActivate                                      (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    InputPressed                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FPredictionKey                   PredictionKey                                          (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayEventData               TriggerEventData                                       (Parm, NativeAccessSpecifierPublic)
-// struct FAbilityActivationExtraInfo      InActivationInfo                                       (Parm, NativeAccessSpecifierPublic)
-
-void UAbilitySystemComponent::ServerTryActivateAbilityWithEventData(const struct FGameplayAbilitySpecHandle& AbilityToActivate, bool InputPressed, const struct FPredictionKey& PredictionKey, const struct FGameplayEventData& TriggerEventData, const struct FAbilityActivationExtraInfo& InActivationInfo)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "ServerTryActivateAbilityWithEventData");
-
-	Params::AbilitySystemComponent_ServerTryActivateAbilityWithEventData Parms{};
-
-	Parms.AbilityToActivate = std::move(AbilityToActivate);
-	Parms.InputPressed = InputPressed;
-	Parms.PredictionKey = std::move(PredictionKey);
-	Parms.TriggerEventData = std::move(TriggerEventData);
-	Parms.InActivationInfo = std::move(InActivationInfo);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.ServerVerifyPredictionKeys
-// (Net, NetReliable, Native, Event, Public, NetServer)
-// Parameters:
-// TArray<class FString>                   Keys                                                   (ConstParm, Parm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UAbilitySystemComponent::ServerVerifyPredictionKeys(const TArray<class FString>& Keys)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "ServerVerifyPredictionKeys");
-
-	Params::AbilitySystemComponent_ServerVerifyPredictionKeys Parms{};
-
-	Parms.Keys = std::move(Keys);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.SetActiveGameplayEffectLevel
-// (BlueprintAuthorityOnly, Native, Public, BlueprintCallable)
-// Parameters:
-// struct FActiveGameplayEffectHandle      ActiveHandle                                           (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   NewLevel                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UAbilitySystemComponent::SetActiveGameplayEffectLevel(const struct FActiveGameplayEffectHandle& ActiveHandle, int32 NewLevel)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "SetActiveGameplayEffectLevel");
-
-	Params::AbilitySystemComponent_SetActiveGameplayEffectLevel Parms{};
-
-	Parms.ActiveHandle = std::move(ActiveHandle);
-	Parms.NewLevel = NewLevel;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.SetActiveGameplayEffectLevelUsingQuery
-// (BlueprintAuthorityOnly, Native, Public, BlueprintCallable)
-// Parameters:
-// struct FGameplayEffectQuery             Query                                                  (Parm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-// int32                                   NewLevel                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UAbilitySystemComponent::SetActiveGameplayEffectLevelUsingQuery(const struct FGameplayEffectQuery& Query, int32 NewLevel)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "SetActiveGameplayEffectLevelUsingQuery");
-
-	Params::AbilitySystemComponent_SetActiveGameplayEffectLevelUsingQuery Parms{};
-
-	Parms.Query = std::move(Query);
-	Parms.NewLevel = NewLevel;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.SetMontageRepAnimPositionMethod
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// ERepAnimPositionMethod                  InMethod                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UAbilitySystemComponent::SetMontageRepAnimPositionMethod(ERepAnimPositionMethod InMethod)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "SetMontageRepAnimPositionMethod");
-
-	Params::AbilitySystemComponent_SetMontageRepAnimPositionMethod Parms{};
-
-	Parms.InMethod = InMethod;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.SetUserAbilityActivationInhibited
-// (Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    NewInhibit                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UAbilitySystemComponent::SetUserAbilityActivationInhibited(bool NewInhibit)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "SetUserAbilityActivationInhibited");
-
-	Params::AbilitySystemComponent_SetUserAbilityActivationInhibited Parms{};
-
-	Parms.NewInhibit = NewInhibit;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.TestDynamicRPC
-// (Final, Native, Public, BlueprintCallable)
-
-void UAbilitySystemComponent::TestDynamicRPC()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "TestDynamicRPC");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.TestFunction
-// (Final, Native, Public)
-// Parameters:
-// int32                                   Data1                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<struct FHitResult>               Data2                                                  (Parm, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
-// struct FHitResult                       Data3                                                  (Parm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-// class FString                           Data4                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             Data5                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UAbilitySystemComponent::TestFunction(int32 Data1, const TArray<struct FHitResult>& Data2, const struct FHitResult& Data3, const class FString& Data4, class FName Data5)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "TestFunction");
-
-	Params::AbilitySystemComponent_TestFunction Parms{};
-
-	Parms.Data1 = Data1;
-	Parms.Data2 = std::move(Data2);
-	Parms.Data3 = std::move(Data3);
-	Parms.Data4 = std::move(Data4);
-	Parms.Data5 = Data5;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.TestFunction2
-// (Final, Native, Public)
-// Parameters:
-// struct FHitResult                       Data1                                                  (Parm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-// class FString                           Data2                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   Data3                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<struct FHitResult>               Data4                                                  (Parm, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
-// class FName                             Data5                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UAbilitySystemComponent::TestFunction2(const struct FHitResult& Data1, const class FString& Data2, int32 Data3, const TArray<struct FHitResult>& Data4, class FName Data5)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "TestFunction2");
-
-	Params::AbilitySystemComponent_TestFunction2 Parms{};
-
-	Parms.Data1 = std::move(Data1);
-	Parms.Data2 = std::move(Data2);
-	Parms.Data3 = Data3;
-	Parms.Data4 = std::move(Data4);
-	Parms.Data5 = Data5;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.TestFunction3
-// (Final, Native, Public)
-// Parameters:
-// int32                                   Data1                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<struct FHitResult>               Data2                                                  (Parm, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
-// struct FHitResult                       Data3                                                  (Parm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-// class FString                           Data4                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UAbilitySystemComponent::TestFunction3(int32 Data1, const TArray<struct FHitResult>& Data2, const struct FHitResult& Data3, const class FString& Data4)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "TestFunction3");
-
-	Params::AbilitySystemComponent_TestFunction3 Parms{};
-
-	Parms.Data1 = Data1;
-	Parms.Data2 = std::move(Data2);
-	Parms.Data3 = std::move(Data3);
-	Parms.Data4 = std::move(Data4);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.TestOfferDataCallback
-// (Final, Native, Public, HasOutParams)
-// Parameters:
-// struct FPredictionDynamicParamHandle    LocalHandle                                            (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FPredictionDynamicParamHandle    RemoteHandle                                           (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UAbilitySystemComponent::TestOfferDataCallback(const struct FPredictionDynamicParamHandle& LocalHandle, const struct FPredictionDynamicParamHandle& RemoteHandle)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "TestOfferDataCallback");
-
-	Params::AbilitySystemComponent_TestOfferDataCallback Parms{};
-
-	Parms.LocalHandle = std::move(LocalHandle);
-	Parms.RemoteHandle = std::move(RemoteHandle);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.TickUpdatePredictionKey
-// (Final, Native, Public)
-
-void UAbilitySystemComponent::TickUpdatePredictionKey()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "TickUpdatePredictionKey");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.TryActivateAbilitiesByTag
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// struct FGameplayTagContainer            GameplayTagContainer                                   (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// bool                                    bAllowRemoteActivation                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UAbilitySystemComponent::TryActivateAbilitiesByTag(const struct FGameplayTagContainer& GameplayTagContainer, bool bAllowRemoteActivation)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "TryActivateAbilitiesByTag");
-
-	Params::AbilitySystemComponent_TryActivateAbilitiesByTag Parms{};
-
-	Parms.GameplayTagContainer = std::move(GameplayTagContainer);
-	Parms.bAllowRemoteActivation = bAllowRemoteActivation;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.TryActivateAbility
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// struct FGameplayAbilitySpecHandle       AbilityToActivate                                      (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bAllowRemoteActivation                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UAbilitySystemComponent::TryActivateAbility(const struct FGameplayAbilitySpecHandle& AbilityToActivate, bool bAllowRemoteActivation)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "TryActivateAbility");
-
-	Params::AbilitySystemComponent_TryActivateAbility Parms{};
-
-	Parms.AbilityToActivate = std::move(AbilityToActivate);
-	Parms.bAllowRemoteActivation = bAllowRemoteActivation;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.TryActivateAbilityByClass
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// TSubclassOf<class UGameplayAbility>     InAbilityToActivate                                    (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bAllowRemoteActivation                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UAbilitySystemComponent::TryActivateAbilityByClass(TSubclassOf<class UGameplayAbility> InAbilityToActivate, bool bAllowRemoteActivation)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "TryActivateAbilityByClass");
-
-	Params::AbilitySystemComponent_TryActivateAbilityByClass Parms{};
-
-	Parms.InAbilityToActivate = InAbilityToActivate;
-	Parms.bAllowRemoteActivation = bAllowRemoteActivation;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.UpdateActiveGameplayEffectSetByCallerMagnitude
-// (BlueprintAuthorityOnly, Native, Public, BlueprintCallable)
-// Parameters:
-// struct FActiveGameplayEffectHandle      ActiveHandle                                           (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayTag                     SetByCallerTag                                         (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UAbilitySystemComponent::UpdateActiveGameplayEffectSetByCallerMagnitude(const struct FActiveGameplayEffectHandle& ActiveHandle, const struct FGameplayTag& SetByCallerTag, float NewValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "UpdateActiveGameplayEffectSetByCallerMagnitude");
-
-	Params::AbilitySystemComponent_UpdateActiveGameplayEffectSetByCallerMagnitude Parms{};
-
-	Parms.ActiveHandle = std::move(ActiveHandle);
-	Parms.SetByCallerTag = std::move(SetByCallerTag);
-	Parms.NewValue = NewValue;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.UpdateActiveGameplayEffectSetByCallerMagnitudes
-// (BlueprintAuthorityOnly, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// struct FActiveGameplayEffectHandle      ActiveHandle                                           (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TMap<struct FGameplayTag, float>        NewSetByCallerValues                                   (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UAbilitySystemComponent::UpdateActiveGameplayEffectSetByCallerMagnitudes(const struct FActiveGameplayEffectHandle& ActiveHandle, const TMap<struct FGameplayTag, float>& NewSetByCallerValues)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "UpdateActiveGameplayEffectSetByCallerMagnitudes");
-
-	Params::AbilitySystemComponent_UpdateActiveGameplayEffectSetByCallerMagnitudes Parms{};
-
-	Parms.ActiveHandle = std::move(ActiveHandle);
-	Parms.NewSetByCallerValues = std::move(NewSetByCallerValues);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.FindAllAbilitiesMatchingQuery
-// (Final, Native, Public, HasOutParams, BlueprintCallable, Const)
-// Parameters:
-// TArray<struct FGameplayAbilitySpecHandle>OutAbilityHandles                                      (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
-// struct FGameplayTagQuery                Query                                                  (Parm, NativeAccessSpecifierPublic)
-
-void UAbilitySystemComponent::FindAllAbilitiesMatchingQuery(TArray<struct FGameplayAbilitySpecHandle>* OutAbilityHandles, const struct FGameplayTagQuery& Query) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "FindAllAbilitiesMatchingQuery");
-
-	Params::AbilitySystemComponent_FindAllAbilitiesMatchingQuery Parms{};
-
-	Parms.Query = std::move(Query);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (OutAbilityHandles != nullptr)
-		*OutAbilityHandles = std::move(Parms.OutAbilityHandles);
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.FindAllAbilitiesWithInputID
-// (Final, Native, Public, HasOutParams, BlueprintCallable, Const)
-// Parameters:
-// TArray<struct FGameplayAbilitySpecHandle>OutAbilityHandles                                      (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
-// int32                                   InputID                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UAbilitySystemComponent::FindAllAbilitiesWithInputID(TArray<struct FGameplayAbilitySpecHandle>* OutAbilityHandles, int32 InputID) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "FindAllAbilitiesWithInputID");
-
-	Params::AbilitySystemComponent_FindAllAbilitiesWithInputID Parms{};
-
-	Parms.InputID = InputID;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (OutAbilityHandles != nullptr)
-		*OutAbilityHandles = std::move(Parms.OutAbilityHandles);
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.FindAllAbilitiesWithTags
-// (Final, Native, Public, HasOutParams, BlueprintCallable, Const)
-// Parameters:
-// TArray<struct FGameplayAbilitySpecHandle>OutAbilityHandles                                      (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
-// struct FGameplayTagContainer            Tags                                                   (Parm, NativeAccessSpecifierPublic)
-// bool                                    bExactMatch                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UAbilitySystemComponent::FindAllAbilitiesWithTags(TArray<struct FGameplayAbilitySpecHandle>* OutAbilityHandles, const struct FGameplayTagContainer& Tags, bool bExactMatch) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "FindAllAbilitiesWithTags");
-
-	Params::AbilitySystemComponent_FindAllAbilitiesWithTags Parms{};
-
-	Parms.Tags = std::move(Tags);
-	Parms.bExactMatch = bExactMatch;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (OutAbilityHandles != nullptr)
-		*OutAbilityHandles = std::move(Parms.OutAbilityHandles);
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.GetAbilityActivateDelayTime
-// (Final, Native, Public, Const)
-// Parameters:
-// class FString                           InActivationKey                                        (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float UAbilitySystemComponent::GetAbilityActivateDelayTime(const class FString& InActivationKey) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "GetAbilityActivateDelayTime");
-
-	Params::AbilitySystemComponent_GetAbilityActivateDelayTime Parms{};
-
-	Parms.InActivationKey = std::move(InActivationKey);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.GetActiveEffects
-// (Final, Native, Public, HasOutParams, BlueprintCallable, Const)
-// Parameters:
-// struct FGameplayEffectQuery             Query                                                  (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-// TArray<struct FActiveGameplayEffectHandle>ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
-
-TArray<struct FActiveGameplayEffectHandle> UAbilitySystemComponent::GetActiveEffects(const struct FGameplayEffectQuery& Query) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "GetActiveEffects");
-
-	Params::AbilitySystemComponent_GetActiveEffects Parms{};
-
-	Parms.Query = std::move(Query);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.GetActiveEffectsWithAllTags
-// (Final, Native, Public, BlueprintCallable, Const)
-// Parameters:
-// struct FGameplayTagContainer            Tags                                                   (Parm, NativeAccessSpecifierPublic)
-// TArray<struct FActiveGameplayEffectHandle>ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
-
-TArray<struct FActiveGameplayEffectHandle> UAbilitySystemComponent::GetActiveEffectsWithAllTags(const struct FGameplayTagContainer& Tags) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "GetActiveEffectsWithAllTags");
-
-	Params::AbilitySystemComponent_GetActiveEffectsWithAllTags Parms{};
-
-	Parms.Tags = std::move(Tags);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.GetAllAbilities
-// (Final, Native, Public, HasOutParams, BlueprintCallable, Const)
-// Parameters:
-// TArray<struct FGameplayAbilitySpecHandle>OutAbilityHandles                                      (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
-
-void UAbilitySystemComponent::GetAllAbilities(TArray<struct FGameplayAbilitySpecHandle>* OutAbilityHandles) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "GetAllAbilities");
-
-	Params::AbilitySystemComponent_GetAllAbilities Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (OutAbilityHandles != nullptr)
-		*OutAbilityHandles = std::move(Parms.OutAbilityHandles);
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.GetAttributeSet
-// (Final, Native, Public, BlueprintCallable, Const)
-// Parameters:
-// TSubclassOf<class UAttributeSet>        AttributeSetClass                                      (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class UAttributeSet*              ReturnValue                                            (ConstParm, ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-const class UAttributeSet* UAbilitySystemComponent::GetAttributeSet(TSubclassOf<class UAttributeSet> AttributeSetClass) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "GetAttributeSet");
-
-	Params::AbilitySystemComponent_GetAttributeSet Parms{};
-
-	Parms.AttributeSetClass = AttributeSetClass;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.GetCurrentAbilityActivateDelayTime
-// (Final, Native, Public, Const)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float UAbilitySystemComponent::GetCurrentAbilityActivateDelayTime() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "GetCurrentAbilityActivateDelayTime");
-
-	Params::AbilitySystemComponent_GetCurrentAbilityActivateDelayTime Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.GetGameplayAttributeValue
-// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// struct FGameplayAttribute               Attribute                                              (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bFound                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float UAbilitySystemComponent::GetGameplayAttributeValue(const struct FGameplayAttribute& Attribute, bool* bFound) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "GetGameplayAttributeValue");
-
-	Params::AbilitySystemComponent_GetGameplayAttributeValue Parms{};
-
-	Parms.Attribute = std::move(Attribute);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (bFound != nullptr)
-		*bFound = Parms.bFound;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.GetGameplayEffectCount
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// TSubclassOf<class UGameplayEffect>      SourceGameplayEffect                                   (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UAbilitySystemComponent*          OptionalInstigatorFilterComponent                      (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bEnforceOnGoingCheck                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-int32 UAbilitySystemComponent::GetGameplayEffectCount(TSubclassOf<class UGameplayEffect> SourceGameplayEffect, class UAbilitySystemComponent* OptionalInstigatorFilterComponent, bool bEnforceOnGoingCheck) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "GetGameplayEffectCount");
-
-	Params::AbilitySystemComponent_GetGameplayEffectCount Parms{};
-
-	Parms.SourceGameplayEffect = SourceGameplayEffect;
-	Parms.OptionalInstigatorFilterComponent = OptionalInstigatorFilterComponent;
-	Parms.bEnforceOnGoingCheck = bEnforceOnGoingCheck;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.GetGameplayEffectCount_IfLoaded
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// TSoftClassPtr<class UClass>             SoftSourceGameplayEffect                               (Parm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UAbilitySystemComponent*          OptionalInstigatorFilterComponent                      (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bEnforceOnGoingCheck                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-int32 UAbilitySystemComponent::GetGameplayEffectCount_IfLoaded(TSoftClassPtr<class UClass> SoftSourceGameplayEffect, class UAbilitySystemComponent* OptionalInstigatorFilterComponent, bool bEnforceOnGoingCheck) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "GetGameplayEffectCount_IfLoaded");
-
-	Params::AbilitySystemComponent_GetGameplayEffectCount_IfLoaded Parms{};
-
-	Parms.SoftSourceGameplayEffect = SoftSourceGameplayEffect;
-	Parms.OptionalInstigatorFilterComponent = OptionalInstigatorFilterComponent;
-	Parms.bEnforceOnGoingCheck = bEnforceOnGoingCheck;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.GetGameplayEffectMagnitude
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// struct FActiveGameplayEffectHandle      Handle                                                 (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayAttribute               Attribute                                              (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float UAbilitySystemComponent::GetGameplayEffectMagnitude(const struct FActiveGameplayEffectHandle& Handle, const struct FGameplayAttribute& Attribute) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "GetGameplayEffectMagnitude");
-
-	Params::AbilitySystemComponent_GetGameplayEffectMagnitude Parms{};
-
-	Parms.Handle = std::move(Handle);
-	Parms.Attribute = std::move(Attribute);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.GetGameplayTagCount
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// struct FGameplayTag                     GameplayTag                                            (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-int32 UAbilitySystemComponent::GetGameplayTagCount(const struct FGameplayTag& GameplayTag) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "GetGameplayTagCount");
-
-	Params::AbilitySystemComponent_GetGameplayTagCount Parms{};
-
-	Parms.GameplayTag = std::move(GameplayTag);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.GetKeyDebugString
-// (Final, Native, Public, Const)
-// Parameters:
-// class FString                           InKey                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class FString UAbilitySystemComponent::GetKeyDebugString(const class FString& InKey) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "GetKeyDebugString");
-
-	Params::AbilitySystemComponent_GetKeyDebugString Parms{};
-
-	Parms.InKey = std::move(InKey);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.GetUserAbilityActivationInhibited
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UAbilitySystemComponent::GetUserAbilityActivationInhibited() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "GetUserAbilityActivationInhibited");
-
-	Params::AbilitySystemComponent_GetUserAbilityActivationInhibited Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.IsForRemoteClient
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UAbilitySystemComponent::IsForRemoteClient() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "IsForRemoteClient");
-
-	Params::AbilitySystemComponent_IsForRemoteClient Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.IsForRunAlone
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UAbilitySystemComponent::IsForRunAlone() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "IsForRunAlone");
-
-	Params::AbilitySystemComponent_IsForRunAlone Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.IsGameplayCueActive
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// struct FGameplayTag                     GameplayCueTag                                         (ConstParm, Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UAbilitySystemComponent::IsGameplayCueActive(const struct FGameplayTag& GameplayCueTag) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "IsGameplayCueActive");
-
-	Params::AbilitySystemComponent_IsGameplayCueActive Parms{};
-
-	Parms.GameplayCueTag = std::move(GameplayCueTag);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.IsLocallyControlled
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UAbilitySystemComponent::IsLocallyControlled() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "IsLocallyControlled");
-
-	Params::AbilitySystemComponent_IsLocallyControlled Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.IsNetAuthority
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UAbilitySystemComponent::IsNetAuthority() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "IsNetAuthority");
-
-	Params::AbilitySystemComponent_IsNetAuthority Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.IsPredictingClient
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UAbilitySystemComponent::IsPredictingClient() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "IsPredictingClient");
-
-	Params::AbilitySystemComponent_IsPredictingClient Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.MakeEffectContext
-// (Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// struct FGameplayEffectContextHandle     ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-
-struct FGameplayEffectContextHandle UAbilitySystemComponent::MakeEffectContext() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "MakeEffectContext");
-
-	Params::AbilitySystemComponent_MakeEffectContext Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function GameplayAbilities.AbilitySystemComponent.MakeOutgoingSpec
-// (Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// TSubclassOf<class UGameplayEffect>      GameplayEffectClass                                    (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   Level                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayEffectContextHandle     Context                                                (Parm, NativeAccessSpecifierPublic)
-// struct FGameplayEffectSpecHandle        ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-
-struct FGameplayEffectSpecHandle UAbilitySystemComponent::MakeOutgoingSpec(TSubclassOf<class UGameplayEffect> GameplayEffectClass, float Level, const struct FGameplayEffectContextHandle& Context) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemComponent", "MakeOutgoingSpec");
-
-	Params::AbilitySystemComponent_MakeOutgoingSpec Parms{};
-
-	Parms.GameplayEffectClass = GameplayEffectClass;
-	Parms.Level = Level;
-	Parms.Context = std::move(Context);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 
@@ -12117,8 +12117,8 @@ bool UAbilitySystemGlobals::ShouldIgnoreCosts() const
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // class AActor*                           Target                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayTag                     GameplayCueTag                                         (ConstParm, Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              GameplayCueTag                                         (ConstParm, Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 void UGameplayCueFunctionLibrary::AddGameplayCueOnActor(class AActor* Target, const struct FGameplayTag& GameplayCueTag, const struct FGameplayCueParameters& Parameters)
 {
@@ -12146,8 +12146,8 @@ void UGameplayCueFunctionLibrary::AddGameplayCueOnActor(class AActor* Target, co
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // class AActor*                           Target                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayTag                     GameplayCueTag                                         (ConstParm, Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              GameplayCueTag                                         (ConstParm, Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 void UGameplayCueFunctionLibrary::ExecuteGameplayCueOnActor(class AActor* Target, const struct FGameplayTag& GameplayCueTag, const struct FGameplayCueParameters& Parameters)
 {
@@ -12174,7 +12174,7 @@ void UGameplayCueFunctionLibrary::ExecuteGameplayCueOnActor(class AActor* Target
 // Function GameplayAbilities.GameplayCueFunctionLibrary.MakeGameplayCueParametersFromHitResult
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FHitResult                       HitResult                                              (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FHitResult&                HitResult                                              (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 // struct FGameplayCueParameters           ReturnValue                                            (Parm, OutParm, ReturnParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 struct FGameplayCueParameters UGameplayCueFunctionLibrary::MakeGameplayCueParametersFromHitResult(const struct FHitResult& HitResult)
@@ -12203,8 +12203,8 @@ struct FGameplayCueParameters UGameplayCueFunctionLibrary::MakeGameplayCueParame
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // class AActor*                           Target                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayTag                     GameplayCueTag                                         (ConstParm, Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              GameplayCueTag                                         (ConstParm, Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 void UGameplayCueFunctionLibrary::RemoveGameplayCueOnActor(class AActor* Target, const struct FGameplayTag& GameplayCueTag, const struct FGameplayCueParameters& Parameters)
 {
@@ -12232,21 +12232,21 @@ void UGameplayCueFunctionLibrary::RemoveGameplayCueOnActor(class AActor* Target,
 // (BlueprintCosmetic, Event, Public, HasOutParams, BlueprintEvent)
 // Parameters:
 // EGameplayCueEvent                       EventType                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 void IGameplayCueInterface::BlueprintCustomHandler(EGameplayCueEvent EventType, const struct FGameplayCueParameters& Parameters)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GameplayCueInterface", "BlueprintCustomHandler");
+		Func = AsUObject()->Class->GetFunction("GameplayCueInterface", "BlueprintCustomHandler");
 
 	Params::GameplayCueInterface_BlueprintCustomHandler Parms{};
 
 	Parms.EventType = EventType;
 	Parms.Parameters = std::move(Parameters);
 
-	UObject::ProcessEvent(Func, &Parms);
+	AsUObject()->ProcessEvent(Func, &Parms);
 }
 
 
@@ -12258,12 +12258,12 @@ void IGameplayCueInterface::ForwardGameplayCueToParent()
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GameplayCueInterface", "ForwardGameplayCueToParent");
+		Func = AsUObject()->Class->GetFunction("GameplayCueInterface", "ForwardGameplayCueToParent");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, nullptr);
+	AsUObject()->ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
 }
@@ -12293,7 +12293,7 @@ void AGameplayCueNotify_Actor::K2_EndGameplayCue()
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // EGameplayCueEvent                       EventType                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 void AGameplayCueNotify_Actor::K2_HandleGameplayCue(class AActor* MyTarget, EGameplayCueEvent EventType, const struct FGameplayCueParameters& Parameters)
 {
@@ -12316,7 +12316,7 @@ void AGameplayCueNotify_Actor::K2_HandleGameplayCue(class AActor* MyTarget, EGam
 // (Native, Event, Public, HasOutParams, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool AGameplayCueNotify_Actor::OnActive(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
@@ -12346,7 +12346,7 @@ bool AGameplayCueNotify_Actor::OnActive(class AActor* MyTarget, const struct FGa
 // (Native, Event, Public, HasOutParams, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool AGameplayCueNotify_Actor::OnExecute(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
@@ -12428,7 +12428,7 @@ void AGameplayCueNotify_Actor::OnOwnerEndPlay(class AActor* Actor, EEndPlayReaso
 // (Native, Event, Public, HasOutParams, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool AGameplayCueNotify_Actor::OnRemove(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
@@ -12458,7 +12458,7 @@ bool AGameplayCueNotify_Actor::OnRemove(class AActor* MyTarget, const struct FGa
 // (Native, Event, Public, HasOutParams, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool AGameplayCueNotify_Actor::WhileActive(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
@@ -12489,7 +12489,7 @@ bool AGameplayCueNotify_Actor::WhileActive(class AActor* MyTarget, const struct 
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // EGameplayCueEvent                       EventType                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 void UGameplayCueNotify_Static::K2_HandleGameplayCue(class AActor* MyTarget, EGameplayCueEvent EventType, const struct FGameplayCueParameters& Parameters) const
 {
@@ -12512,7 +12512,7 @@ void UGameplayCueNotify_Static::K2_HandleGameplayCue(class AActor* MyTarget, EGa
 // (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UGameplayCueNotify_Static::OnActive(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters) const
@@ -12542,7 +12542,7 @@ bool UGameplayCueNotify_Static::OnActive(class AActor* MyTarget, const struct FG
 // (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UGameplayCueNotify_Static::OnExecute(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters) const
@@ -12572,7 +12572,7 @@ bool UGameplayCueNotify_Static::OnExecute(class AActor* MyTarget, const struct F
 // (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UGameplayCueNotify_Static::OnRemove(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters) const
@@ -12602,7 +12602,7 @@ bool UGameplayCueNotify_Static::OnRemove(class AActor* MyTarget, const struct FG
 // (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UGameplayCueNotify_Static::WhileActive(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters) const
@@ -12632,8 +12632,8 @@ bool UGameplayCueNotify_Static::WhileActive(class AActor* MyTarget, const struct
 // (Event, Protected, HasOutParams, BlueprintEvent, Const)
 // Parameters:
 // class AActor*                           Target                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-// struct FGameplayCueNotify_SpawnResult   SpawnResults                                           (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FGameplayCueNotify_SpawnResult&SpawnResults                                           (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 void UGameplayCueNotify_Burst::OnBurst(class AActor* Target, const struct FGameplayCueParameters& Parameters, const struct FGameplayCueNotify_SpawnResult& SpawnResults) const
 {
@@ -12656,8 +12656,8 @@ void UGameplayCueNotify_Burst::OnBurst(class AActor* Target, const struct FGamep
 // (Event, Protected, HasOutParams, BlueprintEvent)
 // Parameters:
 // class AActor*                           Target                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-// struct FGameplayCueNotify_SpawnResult   SpawnResults                                           (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FGameplayCueNotify_SpawnResult&SpawnResults                                           (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 void AGameplayCueNotify_BurstLatent::OnBurst(class AActor* Target, const struct FGameplayCueParameters& Parameters, const struct FGameplayCueNotify_SpawnResult& SpawnResults)
 {
@@ -12680,8 +12680,8 @@ void AGameplayCueNotify_BurstLatent::OnBurst(class AActor* Target, const struct 
 // (Event, Protected, HasOutParams, BlueprintEvent)
 // Parameters:
 // class AActor*                           Target                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-// struct FGameplayCueNotify_SpawnResult   SpawnResults                                           (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FGameplayCueNotify_SpawnResult&SpawnResults                                           (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 void AGameplayCueNotify_Looping::OnApplication(class AActor* Target, const struct FGameplayCueParameters& Parameters, const struct FGameplayCueNotify_SpawnResult& SpawnResults)
 {
@@ -12704,8 +12704,8 @@ void AGameplayCueNotify_Looping::OnApplication(class AActor* Target, const struc
 // (Event, Protected, HasOutParams, BlueprintEvent)
 // Parameters:
 // class AActor*                           Target                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-// struct FGameplayCueNotify_SpawnResult   SpawnResults                                           (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FGameplayCueNotify_SpawnResult&SpawnResults                                           (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 void AGameplayCueNotify_Looping::OnLoopingStart(class AActor* Target, const struct FGameplayCueParameters& Parameters, const struct FGameplayCueNotify_SpawnResult& SpawnResults)
 {
@@ -12728,8 +12728,8 @@ void AGameplayCueNotify_Looping::OnLoopingStart(class AActor* Target, const stru
 // (Event, Protected, HasOutParams, BlueprintEvent)
 // Parameters:
 // class AActor*                           Target                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-// struct FGameplayCueNotify_SpawnResult   SpawnResults                                           (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FGameplayCueNotify_SpawnResult&SpawnResults                                           (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 void AGameplayCueNotify_Looping::OnRecurring(class AActor* Target, const struct FGameplayCueParameters& Parameters, const struct FGameplayCueNotify_SpawnResult& SpawnResults)
 {
@@ -12752,8 +12752,8 @@ void AGameplayCueNotify_Looping::OnRecurring(class AActor* Target, const struct 
 // (Event, Protected, HasOutParams, BlueprintEvent)
 // Parameters:
 // class AActor*                           Target                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-// struct FGameplayCueNotify_SpawnResult   SpawnResults                                           (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FGameplayCueNotify_SpawnResult&SpawnResults                                           (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 void AGameplayCueNotify_Looping::OnRemoval(class AActor* Target, const struct FGameplayCueParameters& Parameters, const struct FGameplayCueNotify_SpawnResult& SpawnResults)
 {
@@ -12775,8 +12775,8 @@ void AGameplayCueNotify_Looping::OnRemoval(class AActor* Target, const struct FG
 // Function GameplayAbilities.GameplayEffectCustomApplicationRequirement.CanApplyGameplayEffect
 // (Native, Event, Public, HasOutParams, BlueprintEvent, Const)
 // Parameters:
-// class UGameplayEffect*                  GameplayEffect                                         (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayEffectSpec              Spec                                                   (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const class UGameplayEffect*            GameplayEffect                                         (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayEffectSpec&       Spec                                                   (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // class UAbilitySystemComponent*          ASC                                                    (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -12807,8 +12807,8 @@ bool UGameplayEffectCustomApplicationRequirement::CanApplyGameplayEffect(const c
 // Function GameplayAbilities.GameplayEffectExecutionCalculation.Execute
 // (Native, Event, Public, HasOutParams, BlueprintEvent, Const)
 // Parameters:
-// struct FGameplayEffectCustomExecutionParametersExecutionParams                                        (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FGameplayEffectCustomExecutionOutputOutExecutionOutput                                     (Parm, OutParm, NativeAccessSpecifierPublic)
+// const struct FGameplayEffectCustomExecutionParameters&ExecutionParams                                        (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// struct FGameplayEffectCustomExecutionOutput*OutExecutionOutput                                     (Parm, OutParm, NativeAccessSpecifierPublic)
 
 void UGameplayEffectExecutionCalculation::Execute(const struct FGameplayEffectCustomExecutionParameters& ExecutionParams, struct FGameplayEffectCustomExecutionOutput* OutExecutionOutput) const
 {
@@ -12836,8 +12836,8 @@ void UGameplayEffectExecutionCalculation::Execute(const struct FGameplayEffectCu
 // Function GameplayAbilities.GameplayEffectExecutionCalculation.PostExecute
 // (Native, Event, Public, HasOutParams, BlueprintEvent, Const)
 // Parameters:
-// struct FGameplayEffectCustomExecutionParametersExecutionParams                                        (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FGameplayEffectCustomExecutionOutputOutExecutionOutput                                     (Parm, OutParm, NativeAccessSpecifierPublic)
+// const struct FGameplayEffectCustomExecutionParameters&ExecutionParams                                        (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// struct FGameplayEffectCustomExecutionOutput*OutExecutionOutput                                     (Parm, OutParm, NativeAccessSpecifierPublic)
 
 void UGameplayEffectExecutionCalculation::PostExecute(const struct FGameplayEffectCustomExecutionParameters& ExecutionParams, struct FGameplayEffectCustomExecutionOutput* OutExecutionOutput) const
 {
@@ -12865,8 +12865,8 @@ void UGameplayEffectExecutionCalculation::PostExecute(const struct FGameplayEffe
 // Function GameplayAbilities.GameplayEffectExecutionCalculation.PreExecute
 // (Native, Event, Public, HasOutParams, BlueprintEvent, Const)
 // Parameters:
-// struct FGameplayEffectCustomExecutionParametersExecutionParams                                        (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FGameplayEffectCustomExecutionOutputOutExecutionOutput                                     (Parm, OutParm, NativeAccessSpecifierPublic)
+// const struct FGameplayEffectCustomExecutionParameters&ExecutionParams                                        (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// struct FGameplayEffectCustomExecutionOutput*OutExecutionOutput                                     (Parm, OutParm, NativeAccessSpecifierPublic)
 
 void UGameplayEffectExecutionCalculation::PreExecute(const struct FGameplayEffectCustomExecutionParameters& ExecutionParams, struct FGameplayEffectCustomExecutionOutput* OutExecutionOutput) const
 {
@@ -12894,7 +12894,7 @@ void UGameplayEffectExecutionCalculation::PreExecute(const struct FGameplayEffec
 // Function GameplayAbilities.GameplayModMagnitudeCalculation.CalculateBaseMagnitude
 // (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
 // Parameters:
-// struct FGameplayEffectSpec              Spec                                                   (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FGameplayEffectSpec&       Spec                                                   (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 float UGameplayModMagnitudeCalculation::CalculateBaseMagnitude(const struct FGameplayEffectSpec& Spec) const
@@ -12922,8 +12922,8 @@ float UGameplayModMagnitudeCalculation::CalculateBaseMagnitude(const struct FGam
 // Function GameplayAbilities.GameplayModMagnitudeCalculation.GetSetByCallerMagnitudeByName
 // (Final, Native, Protected, HasOutParams, BlueprintCallable, Const)
 // Parameters:
-// struct FGameplayEffectSpec              EffectSpec                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// class FName                             MagnitudeName                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayEffectSpec&       EffectSpec                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const class FName&                      MagnitudeName                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 float UGameplayModMagnitudeCalculation::GetSetByCallerMagnitudeByName(const struct FGameplayEffectSpec& EffectSpec, const class FName& MagnitudeName) const
@@ -12952,8 +12952,8 @@ float UGameplayModMagnitudeCalculation::GetSetByCallerMagnitudeByName(const stru
 // Function GameplayAbilities.GameplayModMagnitudeCalculation.GetSetByCallerMagnitudeByTag
 // (Final, Native, Protected, HasOutParams, BlueprintCallable, Const)
 // Parameters:
-// struct FGameplayEffectSpec              EffectSpec                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FGameplayTag                     Tag                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayEffectSpec&       EffectSpec                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              Tag                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 float UGameplayModMagnitudeCalculation::GetSetByCallerMagnitudeByTag(const struct FGameplayEffectSpec& EffectSpec, const struct FGameplayTag& Tag) const
@@ -12982,7 +12982,7 @@ float UGameplayModMagnitudeCalculation::GetSetByCallerMagnitudeByTag(const struc
 // Function GameplayAbilities.GameplayModMagnitudeCalculation.GetSourceActorTags
 // (Final, Native, Protected, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// struct FGameplayEffectSpec              EffectSpec                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FGameplayEffectSpec&       EffectSpec                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // const struct FGameplayTagContainer      ReturnValue                                            (ConstParm, Parm, OutParm, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 const struct FGameplayTagContainer UGameplayModMagnitudeCalculation::GetSourceActorTags(const struct FGameplayEffectSpec& EffectSpec) const
@@ -13010,7 +13010,7 @@ const struct FGameplayTagContainer UGameplayModMagnitudeCalculation::GetSourceAc
 // Function GameplayAbilities.GameplayModMagnitudeCalculation.GetSourceAggregatedTags
 // (Final, Native, Protected, HasOutParams, BlueprintCallable, Const)
 // Parameters:
-// struct FGameplayEffectSpec              EffectSpec                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FGameplayEffectSpec&       EffectSpec                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // struct FGameplayTagContainer            ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
 struct FGameplayTagContainer UGameplayModMagnitudeCalculation::GetSourceAggregatedTags(const struct FGameplayEffectSpec& EffectSpec) const
@@ -13038,7 +13038,7 @@ struct FGameplayTagContainer UGameplayModMagnitudeCalculation::GetSourceAggregat
 // Function GameplayAbilities.GameplayModMagnitudeCalculation.GetSourceSpecTags
 // (Final, Native, Protected, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// struct FGameplayEffectSpec              EffectSpec                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FGameplayEffectSpec&       EffectSpec                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // const struct FGameplayTagContainer      ReturnValue                                            (ConstParm, Parm, OutParm, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 const struct FGameplayTagContainer UGameplayModMagnitudeCalculation::GetSourceSpecTags(const struct FGameplayEffectSpec& EffectSpec) const
@@ -13066,7 +13066,7 @@ const struct FGameplayTagContainer UGameplayModMagnitudeCalculation::GetSourceSp
 // Function GameplayAbilities.GameplayModMagnitudeCalculation.GetTargetActorTags
 // (Final, Native, Protected, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// struct FGameplayEffectSpec              EffectSpec                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FGameplayEffectSpec&       EffectSpec                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // const struct FGameplayTagContainer      ReturnValue                                            (ConstParm, Parm, OutParm, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 const struct FGameplayTagContainer UGameplayModMagnitudeCalculation::GetTargetActorTags(const struct FGameplayEffectSpec& EffectSpec) const
@@ -13094,7 +13094,7 @@ const struct FGameplayTagContainer UGameplayModMagnitudeCalculation::GetTargetAc
 // Function GameplayAbilities.GameplayModMagnitudeCalculation.GetTargetAggregatedTags
 // (Final, Native, Protected, HasOutParams, BlueprintCallable, Const)
 // Parameters:
-// struct FGameplayEffectSpec              EffectSpec                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FGameplayEffectSpec&       EffectSpec                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // struct FGameplayTagContainer            ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
 struct FGameplayTagContainer UGameplayModMagnitudeCalculation::GetTargetAggregatedTags(const struct FGameplayEffectSpec& EffectSpec) const
@@ -13122,7 +13122,7 @@ struct FGameplayTagContainer UGameplayModMagnitudeCalculation::GetTargetAggregat
 // Function GameplayAbilities.GameplayModMagnitudeCalculation.GetTargetSpecTags
 // (Final, Native, Protected, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// struct FGameplayEffectSpec              EffectSpec                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FGameplayEffectSpec&       EffectSpec                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // const struct FGameplayTagContainer      ReturnValue                                            (ConstParm, Parm, OutParm, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 const struct FGameplayTagContainer UGameplayModMagnitudeCalculation::GetTargetSpecTags(const struct FGameplayEffectSpec& EffectSpec) const
@@ -13150,10 +13150,10 @@ const struct FGameplayTagContainer UGameplayModMagnitudeCalculation::GetTargetSp
 // Function GameplayAbilities.GameplayModMagnitudeCalculation.K2_GetCapturedAttributeMagnitude
 // (Final, Native, Protected, HasOutParams, BlueprintCallable, Const)
 // Parameters:
-// struct FGameplayEffectSpec              EffectSpec                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FGameplayAttribute               Attribute                                              (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayTagContainer            SourceTags                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FGameplayTagContainer            TargetTags                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FGameplayEffectSpec&       EffectSpec                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FGameplayAttribute&        Attribute                                              (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTagContainer&     SourceTags                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FGameplayTagContainer&     TargetTags                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 float UGameplayModMagnitudeCalculation::K2_GetCapturedAttributeMagnitude(const struct FGameplayEffectSpec& EffectSpec, const struct FGameplayAttribute& Attribute, const struct FGameplayTagContainer& SourceTags, const struct FGameplayTagContainer& TargetTags) const
@@ -13184,7 +13184,7 @@ float UGameplayModMagnitudeCalculation::K2_GetCapturedAttributeMagnitude(const s
 // Function GameplayAbilities.GameplayTagReponseTable.TagResponseEvent
 // (Final, Native, Protected)
 // Parameters:
-// struct FGameplayTag                     Tag                                                    (ConstParm, Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              Tag                                                    (ConstParm, Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   NewCount                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UAbilitySystemComponent*          ASC                                                    (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   idx                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -13215,9 +13215,9 @@ void UGameplayTagReponseTable::TagResponseEvent(const struct FGameplayTag& Tag, 
 // Function GameplayAbilities.MovieSceneGameplayCueTrack.SetSequencerTrackHandler
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// TDelegate<void(class AActor* Target, const struct FGameplayTag& GameplayTag, struct FGameplayCueParameters& Parameters, EGameplayCueEvent Event)>InGameplayCueTrackHandler                              (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TDelegate<void(class AActor* Target, const struct FGameplayTag& GameplayTag, const struct FGameplayCueParameters& Parameters, EGameplayCueEvent Event)>InGameplayCueTrackHandler                              (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMovieSceneGameplayCueTrack::SetSequencerTrackHandler(TDelegate<void(class AActor* Target, const struct FGameplayTag& GameplayTag, struct FGameplayCueParameters& Parameters, EGameplayCueEvent Event)> InGameplayCueTrackHandler)
+void UMovieSceneGameplayCueTrack::SetSequencerTrackHandler(TDelegate<void(class AActor* Target, const struct FGameplayTag& GameplayTag, const struct FGameplayCueParameters& Parameters, EGameplayCueEvent Event)> InGameplayCueTrackHandler)
 {
 	static class UFunction* Func = nullptr;
 

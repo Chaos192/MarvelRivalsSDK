@@ -17,11 +17,11 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Summoned_10373101_BP.Summoned_10373101_BP_C
-// 0x0010 (0x0A00 - 0x09F0)
+// 0x0010 (0x0A30 - 0x0A20)
 class ASummoned_10373101_BP_C final : public ASummoned_10373101
 {
 public:
-	class UStaticMeshComponent*                   Shield_StaticMesh3;                                // 0x09F0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UStaticMeshComponent*                   Shield_StaticMesh3;                                // 0x0A20(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

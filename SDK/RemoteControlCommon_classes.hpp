@@ -20,75 +20,6 @@
 namespace SDK
 {
 
-// Class RemoteControlCommon.RCPropertyContainerBase
-// 0x0028 (0x0058 - 0x0030)
-class URCPropertyContainerBase final : public UObject
-{
-public:
-	uint8                                         Pad_30[0x28];                                      // 0x0030(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"RCPropertyContainerBase">();
-	}
-	static class URCPropertyContainerBase* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<URCPropertyContainerBase>();
-	}
-};
-
-// Class RemoteControlCommon.RCPropertyContainerRegistry
-// 0x0050 (0x0088 - 0x0038)
-class URCPropertyContainerRegistry final : public UEngineSubsystem
-{
-public:
-	TMap<struct FRCPropertyContainerKey, TSubclassOf<class URCPropertyContainerBase>> CachedContainerClasses;                            // 0x0038(0x0050)(Transient, UObjectWrapper, NativeAccessSpecifierPrivate)
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"RCPropertyContainerRegistry">();
-	}
-	static class URCPropertyContainerRegistry* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<URCPropertyContainerRegistry>();
-	}
-};
-
-// Class RemoteControlCommon.PropertyContainerTestObject
-// 0x0090 (0x00C0 - 0x0030)
-class UPropertyContainerTestObject final : public UObject
-{
-public:
-	bool                                          bSomeBool;                                         // 0x0030(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_31[0x3];                                       // 0x0031(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	uint32                                        SomeUInt32;                                        // 0x0034(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         SomeFloat;                                         // 0x0038(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_3C[0x4];                                       // 0x003C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                SomeVector;                                        // 0x0040(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FRotator                               SomeRotator;                                       // 0x0058(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	int32                                         SomeClampedInt;                                    // 0x0070(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         SomeClampedInt2;                                   // 0x0074(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         SomeUIClampedInt;                                  // 0x0078(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         SomeClampedFloat;                                  // 0x007C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         SomeUIClampedFloat;                                // 0x0080(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         SomeClampedFloat2;                                 // 0x0084(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 SomeString;                                        // 0x0088(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FText                                   SomeText;                                          // 0x0098(0x0018)(NativeAccessSpecifierPublic)
-	TArray<float>                                 SomeFloatArray;                                    // 0x00B0(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"PropertyContainerTestObject">();
-	}
-	static class UPropertyContainerTestObject* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UPropertyContainerTestObject>();
-	}
-};
-
 // Class RemoteControlCommon.RemoteControlSettings
 // 0x00D0 (0x0118 - 0x0048)
 class URemoteControlSettings final : public UDeveloperSettings
@@ -133,6 +64,75 @@ public:
 	static class URemoteControlSettings* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<URemoteControlSettings>();
+	}
+};
+
+// Class RemoteControlCommon.RCPropertyContainerBase
+// 0x0028 (0x0058 - 0x0030)
+class URCPropertyContainerBase final : public UObject
+{
+public:
+	uint8                                         Pad_30[0x28];                                      // 0x0030(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"RCPropertyContainerBase">();
+	}
+	static class URCPropertyContainerBase* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<URCPropertyContainerBase>();
+	}
+};
+
+// Class RemoteControlCommon.RCPropertyContainerRegistry
+// 0x0050 (0x0088 - 0x0038)
+class URCPropertyContainerRegistry final : public UEngineSubsystem
+{
+public:
+	TMap<struct FRCPropertyContainerKey, TSubclassOf<class URCPropertyContainerBase>> CachedContainerClasses; // 0x0038(0x0050)(Transient, UObjectWrapper, NativeAccessSpecifierPrivate)
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"RCPropertyContainerRegistry">();
+	}
+	static class URCPropertyContainerRegistry* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<URCPropertyContainerRegistry>();
+	}
+};
+
+// Class RemoteControlCommon.PropertyContainerTestObject
+// 0x0090 (0x00C0 - 0x0030)
+class UPropertyContainerTestObject final : public UObject
+{
+public:
+	bool                                          bSomeBool;                                         // 0x0030(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_31[0x3];                                       // 0x0031(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint32                                        SomeUInt32;                                        // 0x0034(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         SomeFloat;                                         // 0x0038(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3C[0x4];                                       // 0x003C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                SomeVector;                                        // 0x0040(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FRotator                               SomeRotator;                                       // 0x0058(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	int32                                         SomeClampedInt;                                    // 0x0070(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         SomeClampedInt2;                                   // 0x0074(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         SomeUIClampedInt;                                  // 0x0078(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         SomeClampedFloat;                                  // 0x007C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         SomeUIClampedFloat;                                // 0x0080(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         SomeClampedFloat2;                                 // 0x0084(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 SomeString;                                        // 0x0088(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FText                                   SomeText;                                          // 0x0098(0x0018)(NativeAccessSpecifierPublic)
+	TArray<float>                                 SomeFloatArray;                                    // 0x00B0(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PropertyContainerTestObject">();
+	}
+	static class UPropertyContainerTestObject* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPropertyContainerTestObject>();
 	}
 };
 

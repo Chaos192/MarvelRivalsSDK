@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Hero_1033_classes.hpp"
 #include "Marvel_classes.hpp"
+#include "Hero_1033_classes.hpp"
 
 
 namespace SDK
@@ -52,7 +52,7 @@ public:
 };
 
 // PythonClass PyAbility_103332.PyProjectile_10333201
-// 0x0000 (0x3050 - 0x3050)
+// 0x0000 (0x3110 - 0x3110)
 class APyProjectile_10333201 final : public AMarvelAbilityTargetActor_Projectile
 {
 public:
@@ -86,7 +86,7 @@ public:
 };
 
 // PythonClass PyAbility_103332.PyAbility_103332
-// 0x0000 (0x25E8 - 0x25E8)
+// 0x0000 (0x25F0 - 0x25F0)
 class UPyAbility_103332 : public UAbility_103332
 {
 public:
@@ -104,7 +104,7 @@ public:
 };
 
 // PythonClass PyAbility_103332.PyUIController_103332
-// 0x0000 (0x0C60 - 0x0C60)
+// 0x0000 (0x0C50 - 0x0C50)
 class UPyUIController_103332 final : public UUIC_Ability
 {
 public:

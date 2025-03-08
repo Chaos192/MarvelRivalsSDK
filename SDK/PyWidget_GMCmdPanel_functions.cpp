@@ -77,8 +77,8 @@ void UPyWidget_GMCmdPanel::Destruct()
 // PythonFunction PyWidget_GMCmdPanel.PyWidget_GMCmdPanel.OnCommand
 // (Native, Public, BlueprintCallable)
 // Parameters:
-// class FString                           Cmd                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
-// class FString                           CmdName                                                (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Cmd                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    CmdName                                                (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyWidget_GMCmdPanel::OnCommand(const class FString& Cmd, const class FString& CmdName)
 {
@@ -104,7 +104,7 @@ void UPyWidget_GMCmdPanel::OnCommand(const class FString& Cmd, const class FStri
 // PythonFunction PyWidget_GMCmdPanel.PyWidget_GMCmdPanel.OnBroadcastCommand
 // (Native, Public, BlueprintCallable)
 // Parameters:
-// class FString                           Command                                                (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Command                                                (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyWidget_GMCmdPanel::OnBroadcastCommand(const class FString& Command)
 {

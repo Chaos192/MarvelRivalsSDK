@@ -19,11 +19,12 @@ namespace SDK
 {
 
 // PythonClass PyPlayerStateGameBehaviorComponent.PyPlayerStateGameBehaviorComponent
-// 0x0010 (0x0100 - 0x00F0)
+// 0x0020 (0x0110 - 0x00F0)
 class UPyPlayerStateGameBehaviorComponent final : public UMarvelActorComponentBase
 {
 public:
-	TMulticastInlineDelegate<void(class AMarvelPlayerState* PS, bool IsInactive, int32 InactiveType, int32 GamePlayModeID)> OnInactiveStateChangeDispatch;                     // 0x00F0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class AMarvelPlayerState* PS, bool IsInactive, int32 InactiveType, int32 GamePlayModeID)> OnInactiveStateChangeDispatch; // 0x00F0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void()>              OnResetLastCountdownTime;                          // 0x0100(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 
 public:
 	void ReceiveBeginPlay();

@@ -45,7 +45,7 @@ float AProjectile_10471101::GetProjectileFlyingTime()
 // Function Hero_1047.Projectile_10471101.OnJeffProjectileStop
 // (Native, Public, HasOutParams)
 // Parameters:
-// struct FHitResult                       ImpactResult                                           (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FHitResult&                ImpactResult                                           (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 void AProjectile_10471101::OnJeffProjectileStop(const struct FHitResult& ImpactResult)
 {
@@ -122,8 +122,8 @@ void ACue_Ability_Loop_10471102::ApplyDebugHapplyBubblesSpline(int32 FrameIndex,
 // Function Hero_1047.Cue_Ability_Loop_10471102.GetDebugHapplyMinAndMaxFrame
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// int32                                   Min                                                    (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   Max                                                    (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32*                                  Min                                                    (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32*                                  Max                                                    (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void ACue_Ability_Loop_10471102::GetDebugHapplyMinAndMaxFrame(int32* Min, int32* Max)
 {
@@ -179,7 +179,7 @@ void UCue_Projectile_HitImpact_10471101::OnPostExecuteAudioCreateShotActor(class
 // Function Hero_1047.Projectile_10471301.K2_JeffPaintOnLocation
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// struct FJeffPaintParams                 Param                                                  (Parm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FJeffPaintParams&          Param                                                  (Parm, NoDestructor, NativeAccessSpecifierPublic)
 
 void AProjectile_10471301::K2_JeffPaintOnLocation(const struct FJeffPaintParams& Param)
 {
@@ -204,7 +204,7 @@ void AProjectile_10471301::K2_JeffPaintOnLocation(const struct FJeffPaintParams&
 // Function Hero_1047.JeffWinterFestivalLibrary.JeffPaintOnLocation
 // (Final, Native, Static, Private, BlueprintCallable)
 // Parameters:
-// struct FJeffPaintParams                 Param                                                  (Parm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FJeffPaintParams&          Param                                                  (Parm, NoDestructor, NativeAccessSpecifierPublic)
 
 void UJeffWinterFestivalLibrary::JeffPaintOnLocation(const struct FJeffPaintParams& Param)
 {
@@ -308,8 +308,8 @@ void ASummoned_10475101::OnActorOverlap(class AActor* InActor)
 // Function Hero_1047.Projectile_10475101.CheckBubblePlacingSpace
 // (Final, Native, Public, HasOutParams, HasDefaults)
 // Parameters:
-// struct FVector                          BubbleLocation                                         (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FHitResult                       InHitResult                                            (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// struct FVector*                         BubbleLocation                                         (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FHitResult&                InHitResult                                            (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 // float                                   BubbleRadius                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -367,7 +367,7 @@ void ACue_Ability_Loop_10476101::OnJeffStateUpdate(EJeffState InState)
 // Function Hero_1047.Cue_Ability_Loop_10476101.OnOwnerTagUpdate
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FGameplayTag                     Tag                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              Tag                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    TagExists                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void ACue_Ability_Loop_10476101::OnOwnerTagUpdate(const struct FGameplayTag& Tag, bool TagExists)
@@ -536,7 +536,7 @@ void UAbility_104771::HandleOwnerBuff(int32 BuffID, bool bNeedApply)
 // Parameters:
 // class AActor*                           InSourceAvatar                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           InTargetAvatar                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FAttributeModifierHandle         ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FAttributeModifierHandle&  ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UAbility_104771::OnDevouredCharacterDeath(class AActor* InSourceAvatar, class AActor* InTargetAvatar, const struct FAttributeModifierHandle& ModifierParameterHandle)
 {
@@ -768,7 +768,7 @@ bool UAbility_104771::RestoreCapsuleSize()
 // Function Hero_1047.Ability_104771.SetCurrentAbilityState
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// EAbilityState_104771                    CurrentAbilityState_0                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const EAbilityState_104771              CurrentAbilityState_0                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UAbility_104771::SetCurrentAbilityState(const EAbilityState_104771 CurrentAbilityState_0)
 {
@@ -793,7 +793,7 @@ void UAbility_104771::SetCurrentAbilityState(const EAbilityState_104771 CurrentA
 // Function Hero_1047.Ability_104771.SetDevourCharactersFromScope
 // (Final, Native, Public, HasOutParams)
 // Parameters:
-// TArray<TWeakObjectPtr<class AActor>>    InDevourCharactersList                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, UObjectWrapper, NativeAccessSpecifierPublic)
+// const TArray<TWeakObjectPtr<class AActor>>&InDevourCharactersList                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, UObjectWrapper, NativeAccessSpecifierPublic)
 
 void UAbility_104771::SetDevourCharactersFromScope(const TArray<TWeakObjectPtr<class AActor>>& InDevourCharactersList)
 {
@@ -1188,7 +1188,7 @@ void UJeffPassengerContainerComponent::Client_DetachPassengerAndUpdateComponentT
 // Function Hero_1047.EffectiveComponent_10477101.K2_OnPreApplyContainer
 // (Native, Event, Public, HasOutParams, BlueprintEvent)
 // Parameters:
-// TArray<struct FHitResult>               HitResults                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const TArray<struct FHitResult>&        HitResults                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 // TArray<struct FHitResult>               ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 TArray<struct FHitResult> UEffectiveComponent_10477101::K2_OnPreApplyContainer(const TArray<struct FHitResult>& HitResults)
@@ -1526,7 +1526,7 @@ void UAbility_104781::OnCoopAbilityTickStateChanged(bool bShouldAbilityTick)
 // Parameters:
 // class AActor*                           InSourceAvatar                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           InTargetAvatar                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FAttributeModifierHandle         ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FAttributeModifierHandle&  ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UAbility_104781::OnGrootDeath(class AActor* InSourceAvatar, class AActor* InTargetAvatar, const struct FAttributeModifierHandle& ModifierParameterHandle)
 {
@@ -1567,7 +1567,7 @@ void UAbility_104781::OnGrootRepToSimulatedRole()
 // Function Hero_1047.Ability_104781.OnGrootTagUpdated
 // (Final, Native, Protected, HasOutParams)
 // Parameters:
-// struct FGameplayTag                     TagUpdated                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              TagUpdated                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bTagExists                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UAbility_104781::OnGrootTagUpdated(const struct FGameplayTag& TagUpdated, bool bTagExists)
@@ -1596,7 +1596,7 @@ void UAbility_104781::OnGrootTagUpdated(const struct FGameplayTag& TagUpdated, b
 // Parameters:
 // class AActor*                           InSourceAvatar                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           InTargetAvatar                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FAttributeModifierHandle         ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FAttributeModifierHandle&  ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UAbility_104781::OnJeffDeath(class AActor* InSourceAvatar, class AActor* InTargetAvatar, const struct FAttributeModifierHandle& ModifierParameterHandle)
 {
@@ -1623,7 +1623,7 @@ void UAbility_104781::OnJeffDeath(class AActor* InSourceAvatar, class AActor* In
 // Function Hero_1047.Ability_104781.OnJeffTagUpdated
 // (Final, Native, Protected, HasOutParams)
 // Parameters:
-// struct FGameplayTag                     TagUpdated                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              TagUpdated                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bTagExists                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UAbility_104781::OnJeffTagUpdated(const struct FGameplayTag& TagUpdated, bool bTagExists)
@@ -1652,7 +1652,7 @@ void UAbility_104781::OnJeffTagUpdated(const struct FGameplayTag& TagUpdated, bo
 // Parameters:
 // class AActor*                           InSourceAvatar                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           InTargetAvatar                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FAttributeModifierHandle         ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FAttributeModifierHandle&  ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UAbility_104781::OnJeffTakeDamage(class AActor* InSourceAvatar, class AActor* InTargetAvatar, const struct FAttributeModifierHandle& ModifierParameterHandle)
 {
@@ -1966,7 +1966,7 @@ void ACue_Ability_Loop_10478101::OnJeffGrootCoopStateChange(EJeffGrootAbilitySta
 // Function Hero_1047.JeffAnimInstance.CalucateJeffGrootIK
 // (Final, Native, Protected, HasOutParams)
 // Parameters:
-// struct FAnimComponentSpacePoseContext   PoseContext                                            (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FAnimComponentSpacePoseContext&PoseContext                                            (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UJeffAnimInstance::CalucateJeffGrootIK(const struct FAnimComponentSpacePoseContext& PoseContext)
 {
@@ -1991,7 +1991,7 @@ void UJeffAnimInstance::CalucateJeffGrootIK(const struct FAnimComponentSpacePose
 // Function Hero_1047.JeffAnimInstance.GetGroundMotionForwardState
 // (Final, Native, Protected, HasOutParams)
 // Parameters:
-// struct FAnimPoseContext                 PoseContext                                            (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FAnimPoseContext&          PoseContext                                            (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UJeffAnimInstance::GetGroundMotionForwardState(const struct FAnimPoseContext& PoseContext)
 {
@@ -2016,8 +2016,8 @@ void UJeffAnimInstance::GetGroundMotionForwardState(const struct FAnimPoseContex
 // Function Hero_1047.JeffAnimInstance.RelevantJeffOnGrootStateNode
 // (Final, Native, Protected, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FAnimUpdateContext               Context                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FAnimNodeReference               Node                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FAnimUpdateContext&        Context                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FAnimNodeReference&        Node                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
 void UJeffAnimInstance::RelevantJeffOnGrootStateNode(const struct FAnimUpdateContext& Context, const struct FAnimNodeReference& Node)
 {
@@ -2043,8 +2043,8 @@ void UJeffAnimInstance::RelevantJeffOnGrootStateNode(const struct FAnimUpdateCon
 // Function Hero_1047.JeffAnimInstance.UpdateJeffOnGrootMotionNode
 // (Final, Native, Protected, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FAnimUpdateContext               Context                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FAnimNodeReference               Node                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FAnimUpdateContext&        Context                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FAnimNodeReference&        Node                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
 void UJeffAnimInstance::UpdateJeffOnGrootMotionNode(const struct FAnimUpdateContext& Context, const struct FAnimNodeReference& Node)
 {
@@ -2070,8 +2070,8 @@ void UJeffAnimInstance::UpdateJeffOnGrootMotionNode(const struct FAnimUpdateCont
 // Function Hero_1047.JeffAnimInstance.UpdateJeffOnGrootStateNode
 // (Final, Native, Protected, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FAnimUpdateContext               Context                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FAnimNodeReference               Node                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FAnimUpdateContext&        Context                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FAnimNodeReference&        Node                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
 void UJeffAnimInstance::UpdateJeffOnGrootStateNode(const struct FAnimUpdateContext& Context, const struct FAnimNodeReference& Node)
 {
@@ -2097,7 +2097,7 @@ void UJeffAnimInstance::UpdateJeffOnGrootStateNode(const struct FAnimUpdateConte
 // Function Hero_1047.JeffCharacter.DivingBlockAbility
 // (Final, Native, Protected, BlueprintCallable)
 // Parameters:
-// struct FGameplayTagContainer            InContainer                                            (Parm, NativeAccessSpecifierPublic)
+// const struct FGameplayTagContainer&     InContainer                                            (Parm, NativeAccessSpecifierPublic)
 // bool                                    bBlock                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void AJeffCharacter::DivingBlockAbility(const struct FGameplayTagContainer& InContainer, bool bBlock)
@@ -2275,7 +2275,7 @@ void AJeffCharacter::RecoverCollisionResponse()
 // Function Hero_1047.JeffCharacter.SafeMove
 // (Final, Native, Protected, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FVector                          Delta                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   Delta                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void AJeffCharacter::SafeMove(const struct FVector& Delta)
 {
@@ -2384,7 +2384,7 @@ void AJeffChildActor::JeffChildActorExitDiving()
 // Parameters:
 // class AActor*                           OutSourceAvatar                                        (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           OutTargetAvatar                                        (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FAttributeModifierHandle         ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FAttributeModifierHandle&  ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void AJeffChildActor::OnCharacterDeath(class AActor* OutSourceAvatar, class AActor* OutTargetAvatar, const struct FAttributeModifierHandle& ModifierParameterHandle)
 {
@@ -2412,7 +2412,7 @@ void AJeffChildActor::OnCharacterDeath(class AActor* OutSourceAvatar, class AAct
 // (Final, Native, Public, HasOutParams)
 // Parameters:
 // class AActor*                           OutTargetActor                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FCharacterRebornParam            Param                                                  (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FCharacterRebornParam&     Param                                                  (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 void AJeffChildActor::OnCharacterReborn(class AActor* OutTargetActor, const struct FCharacterRebornParam& Param)
 {
@@ -2488,7 +2488,7 @@ void AJeffChildActor::OnJeffStateChange(EJeffState InState)
 // Function Hero_1047.JeffChildActor.OnTagUpdate
 // (Final, Native, Public, HasOutParams)
 // Parameters:
-// struct FGameplayTag                     Tag                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              Tag                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bTagExists                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void AJeffChildActor::OnTagUpdate(const struct FGameplayTag& Tag, bool bTagExists)
@@ -2559,7 +2559,7 @@ void ACue_Ability_Loop_10470101::DoShowHide()
 // Function Hero_1047.Cue_Ability_Loop_10470101.OnTagUpdate
 // (Final, Native, Public, HasOutParams)
 // Parameters:
-// struct FGameplayTag                     TagUpdated                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              TagUpdated                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bTagExists                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void ACue_Ability_Loop_10470101::OnTagUpdate(const struct FGameplayTag& TagUpdated, bool bTagExists)
@@ -2611,8 +2611,8 @@ void AFlowSimluateSplineActor::BuildCurrentSplinePoints(float DeltaTime)
 // Function Hero_1047.JeffGroundMotionSubAnimInstance.EnterBToF
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FAnimUpdateContext               Context                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FAnimNodeReference               Node                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FAnimUpdateContext&        Context                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FAnimNodeReference&        Node                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
 void UJeffGroundMotionSubAnimInstance::EnterBToF(const struct FAnimUpdateContext& Context, const struct FAnimNodeReference& Node)
 {
@@ -2638,8 +2638,8 @@ void UJeffGroundMotionSubAnimInstance::EnterBToF(const struct FAnimUpdateContext
 // Function Hero_1047.JeffGroundMotionSubAnimInstance.RelevantBlackforwadTransitionNode
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FAnimUpdateContext               Context                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FAnimNodeReference               Node                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FAnimUpdateContext&        Context                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FAnimNodeReference&        Node                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
 void UJeffGroundMotionSubAnimInstance::RelevantBlackforwadTransitionNode(const struct FAnimUpdateContext& Context, const struct FAnimNodeReference& Node)
 {
@@ -2665,8 +2665,8 @@ void UJeffGroundMotionSubAnimInstance::RelevantBlackforwadTransitionNode(const s
 // Function Hero_1047.JeffGroundMotionSubAnimInstance.RelevantCycleNode
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FAnimUpdateContext               Context                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FAnimNodeReference               Node                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FAnimUpdateContext&        Context                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FAnimNodeReference&        Node                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
 void UJeffGroundMotionSubAnimInstance::RelevantCycleNode(const struct FAnimUpdateContext& Context, const struct FAnimNodeReference& Node)
 {
@@ -2692,8 +2692,8 @@ void UJeffGroundMotionSubAnimInstance::RelevantCycleNode(const struct FAnimUpdat
 // Function Hero_1047.JeffGroundMotionSubAnimInstance.RelevantJumpStartNode
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FAnimUpdateContext               Context                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FAnimNodeReference               Node                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FAnimUpdateContext&        Context                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FAnimNodeReference&        Node                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
 void UJeffGroundMotionSubAnimInstance::RelevantJumpStartNode(const struct FAnimUpdateContext& Context, const struct FAnimNodeReference& Node)
 {
@@ -2719,8 +2719,8 @@ void UJeffGroundMotionSubAnimInstance::RelevantJumpStartNode(const struct FAnimU
 // Function Hero_1047.JeffGroundMotionSubAnimInstance.RelevantLeftForwardNode
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FAnimUpdateContext               Context                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FAnimNodeReference               Node                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FAnimUpdateContext&        Context                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FAnimNodeReference&        Node                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
 void UJeffGroundMotionSubAnimInstance::RelevantLeftForwardNode(const struct FAnimUpdateContext& Context, const struct FAnimNodeReference& Node)
 {
@@ -2746,8 +2746,8 @@ void UJeffGroundMotionSubAnimInstance::RelevantLeftForwardNode(const struct FAni
 // Function Hero_1047.JeffGroundMotionSubAnimInstance.RelevantRightForwardNode
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FAnimUpdateContext               Context                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FAnimNodeReference               Node                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FAnimUpdateContext&        Context                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FAnimNodeReference&        Node                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
 void UJeffGroundMotionSubAnimInstance::RelevantRightForwardNode(const struct FAnimUpdateContext& Context, const struct FAnimNodeReference& Node)
 {
@@ -2773,8 +2773,8 @@ void UJeffGroundMotionSubAnimInstance::RelevantRightForwardNode(const struct FAn
 // Function Hero_1047.JeffGroundMotionSubAnimInstance.RelevantStopNode
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FAnimUpdateContext               Context                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FAnimNodeReference               Node                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FAnimUpdateContext&        Context                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FAnimNodeReference&        Node                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
 void UJeffGroundMotionSubAnimInstance::RelevantStopNode(const struct FAnimUpdateContext& Context, const struct FAnimNodeReference& Node)
 {
@@ -2800,8 +2800,8 @@ void UJeffGroundMotionSubAnimInstance::RelevantStopNode(const struct FAnimUpdate
 // Function Hero_1047.JeffGroundMotionSubAnimInstance.UpdateAllBackforwardNode
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FAnimUpdateContext               Context                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FAnimNodeReference               Node                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FAnimUpdateContext&        Context                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FAnimNodeReference&        Node                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
 void UJeffGroundMotionSubAnimInstance::UpdateAllBackforwardNode(const struct FAnimUpdateContext& Context, const struct FAnimNodeReference& Node)
 {
@@ -2827,8 +2827,8 @@ void UJeffGroundMotionSubAnimInstance::UpdateAllBackforwardNode(const struct FAn
 // Function Hero_1047.JeffGroundMotionSubAnimInstance.UpdateBlackforwadTransitionNode
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FAnimUpdateContext               Context                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FAnimNodeReference               Node                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FAnimUpdateContext&        Context                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FAnimNodeReference&        Node                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
 void UJeffGroundMotionSubAnimInstance::UpdateBlackforwadTransitionNode(const struct FAnimUpdateContext& Context, const struct FAnimNodeReference& Node)
 {
@@ -2854,8 +2854,8 @@ void UJeffGroundMotionSubAnimInstance::UpdateBlackforwadTransitionNode(const str
 // Function Hero_1047.JeffGroundMotionSubAnimInstance.UpdateForwardNode
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FAnimUpdateContext               Context                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FAnimNodeReference               Node                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FAnimUpdateContext&        Context                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FAnimNodeReference&        Node                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
 void UJeffGroundMotionSubAnimInstance::UpdateForwardNode(const struct FAnimUpdateContext& Context, const struct FAnimNodeReference& Node)
 {
@@ -2881,8 +2881,8 @@ void UJeffGroundMotionSubAnimInstance::UpdateForwardNode(const struct FAnimUpdat
 // Function Hero_1047.JeffGroundMotionSubAnimInstance.UpdateJumpLandNode
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FAnimUpdateContext               Context                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FAnimNodeReference               Node                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FAnimUpdateContext&        Context                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FAnimNodeReference&        Node                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
 void UJeffGroundMotionSubAnimInstance::UpdateJumpLandNode(const struct FAnimUpdateContext& Context, const struct FAnimNodeReference& Node)
 {
@@ -2908,8 +2908,8 @@ void UJeffGroundMotionSubAnimInstance::UpdateJumpLandNode(const struct FAnimUpda
 // Function Hero_1047.JeffGroundMotionSubAnimInstance.UpdateJumpLoopNode
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FAnimUpdateContext               Context                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FAnimNodeReference               Node                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FAnimUpdateContext&        Context                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FAnimNodeReference&        Node                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
 void UJeffGroundMotionSubAnimInstance::UpdateJumpLoopNode(const struct FAnimUpdateContext& Context, const struct FAnimNodeReference& Node)
 {
@@ -2935,8 +2935,8 @@ void UJeffGroundMotionSubAnimInstance::UpdateJumpLoopNode(const struct FAnimUpda
 // Function Hero_1047.JeffGroundMotionSubAnimInstance.UpdateJumpStartNode
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FAnimUpdateContext               Context                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FAnimNodeReference               Node                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FAnimUpdateContext&        Context                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FAnimNodeReference&        Node                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
 void UJeffGroundMotionSubAnimInstance::UpdateJumpStartNode(const struct FAnimUpdateContext& Context, const struct FAnimNodeReference& Node)
 {
@@ -2962,8 +2962,8 @@ void UJeffGroundMotionSubAnimInstance::UpdateJumpStartNode(const struct FAnimUpd
 // Function Hero_1047.JeffGroundMotionSubAnimInstance.UpdateLeftForwardNode
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FAnimUpdateContext               Context                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FAnimNodeReference               Node                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FAnimUpdateContext&        Context                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FAnimNodeReference&        Node                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
 void UJeffGroundMotionSubAnimInstance::UpdateLeftForwardNode(const struct FAnimUpdateContext& Context, const struct FAnimNodeReference& Node)
 {
@@ -2989,8 +2989,8 @@ void UJeffGroundMotionSubAnimInstance::UpdateLeftForwardNode(const struct FAnimU
 // Function Hero_1047.JeffGroundMotionSubAnimInstance.UpdateRightForwardNode
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FAnimUpdateContext               Context                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FAnimNodeReference               Node                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FAnimUpdateContext&        Context                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FAnimNodeReference&        Node                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
 void UJeffGroundMotionSubAnimInstance::UpdateRightForwardNode(const struct FAnimUpdateContext& Context, const struct FAnimNodeReference& Node)
 {
@@ -3016,7 +3016,7 @@ void UJeffGroundMotionSubAnimInstance::UpdateRightForwardNode(const struct FAnim
 // Function Hero_1047.JeffMovementComponent.CheckMoveForward
 // (Final, Native, Public, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FVector                          MoveDelta                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   MoveDelta                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FJeffMoveForwardCheckResult      ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
 struct FJeffMoveForwardCheckResult UJeffMovementComponent::CheckMoveForward(const struct FVector& MoveDelta)
@@ -3044,7 +3044,7 @@ struct FJeffMoveForwardCheckResult UJeffMovementComponent::CheckMoveForward(cons
 // Function Hero_1047.JeffMovementComponent.OnJeffGetOffWall
 // (Final, Native, Private, HasOutParams)
 // Parameters:
-// struct FWallRunningEndInfo              InWallRunningEndInfo                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FWallRunningEndInfo&       InWallRunningEndInfo                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
 void UJeffMovementComponent::OnJeffGetOffWall(const struct FWallRunningEndInfo& InWallRunningEndInfo)
 {

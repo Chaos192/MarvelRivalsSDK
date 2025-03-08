@@ -177,7 +177,7 @@ void UPyAbility_104761_New::OnRep_PyAbility_104761_State()
 // PythonFunction PyAbility_104761.PyAbility_104761_New.TryMakeTriggerContext
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayEventData               EventData                                              (Parm, OutParm, ReferenceParm)
+// struct FGameplayEventData&              EventData                                              (Parm, OutParm, ReferenceParm)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 bool UPyAbility_104761_New::TryMakeTriggerContext(struct FGameplayEventData& EventData)
@@ -207,7 +207,7 @@ bool UPyAbility_104761_New::TryMakeTriggerContext(struct FGameplayEventData& Eve
 // PythonFunction PyAbility_104761.PyAbility_104761_New.K2_ActivateAbilityFromEvent
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayEventData               EventData                                              (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayEventData&        EventData                                              (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyAbility_104761_New::K2_ActivateAbilityFromEvent(const struct FGameplayEventData& EventData)
 {
@@ -232,7 +232,7 @@ void UPyAbility_104761_New::K2_ActivateAbilityFromEvent(const struct FGameplayEv
 // PythonFunction PyAbility_104761.PyAbility_104761_New.OnWallRunningEnd
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FWallRunningEndInfo              InWallRunningEndInfo                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
+// const struct FWallRunningEndInfo&       InWallRunningEndInfo                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
 
 void UPyAbility_104761_New::OnWallRunningEnd(const struct FWallRunningEndInfo& InWallRunningEndInfo)
 {

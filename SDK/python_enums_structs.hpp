@@ -579,7 +579,7 @@ enum class EProxyCampType : uint8
 };
 
 // PythonEnum python_enums.ELoadingPanelType
-// NumValues: 0x000A
+// NumValues: 0x0009
 enum class ELoadingPanelType : uint8
 {
 	Default                                  = 0,
@@ -589,13 +589,12 @@ enum class ELoadingPanelType : uint8
 	CareerHighLight                          = 4,
 	CommonLoading                            = 5,
 	Lobby                                    = 6,
-	KillCam                                  = 7,
 	HeroLogo                                 = 8,
 	ELoadingPanelType_MAX                    = 9,
 };
 
 // PythonEnum python_enums.EBanPickState
-// NumValues: 0x0005
+// NumValues: 0x0006
 enum class EBanPickState : uint8
 {
 	PreSelectHero                            = 0,
@@ -603,6 +602,7 @@ enum class EBanPickState : uint8
 	Announcement                             = 2,
 	End                                      = 3,
 	EBanPickState_MAX                        = 4,
+	EBanPickState_0_MAX                      = 5,
 };
 
 // PythonEnum python_enums.ESurrenderState

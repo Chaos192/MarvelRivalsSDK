@@ -55,8 +55,8 @@ public:
 };
 
 // Class SlateCore.FontFaceInterface
-// 0x0000 (0x0030 - 0x0030)
-class IFontFaceInterface final : public IInterface
+// 0x0000 (0x0000 - 0x0000)
+class IFontFaceInterface final
 {
 public:
 	static class UClass* StaticClass()
@@ -67,11 +67,20 @@ public:
 	{
 		return GetDefaultObjImpl<IFontFaceInterface>();
 	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
 };
 
 // Class SlateCore.FontProviderInterface
-// 0x0000 (0x0030 - 0x0030)
-class IFontProviderInterface final : public IInterface
+// 0x0000 (0x0000 - 0x0000)
+class IFontProviderInterface final
 {
 public:
 	static class UClass* StaticClass()
@@ -81,6 +90,15 @@ public:
 	static class IFontProviderInterface* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<IFontProviderInterface>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
 	}
 };
 
@@ -118,8 +136,8 @@ public:
 };
 
 // Class SlateCore.SlateWidgetStyleContainerInterface
-// 0x0000 (0x0030 - 0x0030)
-class ISlateWidgetStyleContainerInterface final : public IInterface
+// 0x0000 (0x0000 - 0x0000)
+class ISlateWidgetStyleContainerInterface final
 {
 public:
 	static class UClass* StaticClass()
@@ -129,6 +147,15 @@ public:
 	static class ISlateWidgetStyleContainerInterface* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<ISlateWidgetStyleContainerInterface>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
 	}
 };
 

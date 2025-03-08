@@ -123,7 +123,7 @@ void UPyActionLogController::DestroyLevelStatisticsController()
 // PythonFunction PyActionLogController.PyActionLogController.OnPartNameChange
 // (Native, Public, BlueprintCallable)
 // Parameters:
-// class FString                           current_part_name                                      (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    current_part_name                                      (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyActionLogController::OnPartNameChange(const class FString& current_part_name)
 {

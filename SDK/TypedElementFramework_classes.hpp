@@ -17,8 +17,8 @@ namespace SDK
 {
 
 // Class TypedElementFramework.TypedElementDataStorageCompatibilityInterface
-// 0x0000 (0x0030 - 0x0030)
-class ITypedElementDataStorageCompatibilityInterface final : public IInterface
+// 0x0000 (0x0000 - 0x0000)
+class ITypedElementDataStorageCompatibilityInterface final
 {
 public:
 	static class UClass* StaticClass()
@@ -28,6 +28,15 @@ public:
 	static class ITypedElementDataStorageCompatibilityInterface* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<ITypedElementDataStorageCompatibilityInterface>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
 	}
 };
 
@@ -47,8 +56,8 @@ public:
 };
 
 // Class TypedElementFramework.TypedElementDataStorageInterface
-// 0x0000 (0x0030 - 0x0030)
-class ITypedElementDataStorageInterface final : public IInterface
+// 0x0000 (0x0000 - 0x0000)
+class ITypedElementDataStorageInterface final
 {
 public:
 	static class UClass* StaticClass()
@@ -59,11 +68,20 @@ public:
 	{
 		return GetDefaultObjImpl<ITypedElementDataStorageInterface>();
 	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
 };
 
 // Class TypedElementFramework.TypedElementDataStorageUiInterface
-// 0x0000 (0x0030 - 0x0030)
-class ITypedElementDataStorageUiInterface final : public IInterface
+// 0x0000 (0x0000 - 0x0000)
+class ITypedElementDataStorageUiInterface final
 {
 public:
 	static class UClass* StaticClass()
@@ -73,6 +91,15 @@ public:
 	static class ITypedElementDataStorageUiInterface* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<ITypedElementDataStorageUiInterface>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
 	}
 };
 
@@ -135,8 +162,8 @@ public:
 };
 
 // Class TypedElementFramework.TypedElementCounterInterface
-// 0x0000 (0x0030 - 0x0030)
-class ITypedElementCounterInterface final : public IInterface
+// 0x0000 (0x0000 - 0x0000)
+class ITypedElementCounterInterface final
 {
 public:
 	static class UClass* StaticClass()
@@ -146,6 +173,15 @@ public:
 	static class ITypedElementCounterInterface* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<ITypedElementCounterInterface>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
 	}
 };
 
@@ -173,8 +209,8 @@ public:
 };
 
 // Class TypedElementFramework.TestTypedElementInterfaceA
-// 0x0000 (0x0030 - 0x0030)
-class ITestTypedElementInterfaceA final : public IInterface
+// 0x0000 (0x0000 - 0x0000)
+class ITestTypedElementInterfaceA final
 {
 public:
 	class FText GetDisplayName(const struct FScriptTypedElementHandle& InElementHandle);
@@ -189,11 +225,20 @@ public:
 	{
 		return GetDefaultObjImpl<ITestTypedElementInterfaceA>();
 	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
 };
 
 // Class TypedElementFramework.TestTypedElementInterfaceB
-// 0x0000 (0x0030 - 0x0030)
-class ITestTypedElementInterfaceB final : public IInterface
+// 0x0000 (0x0000 - 0x0000)
+class ITestTypedElementInterfaceB final
 {
 public:
 	bool MarkAsTested(const struct FScriptTypedElementHandle& InElementHandle);
@@ -207,11 +252,20 @@ public:
 	{
 		return GetDefaultObjImpl<ITestTypedElementInterfaceB>();
 	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
 };
 
 // Class TypedElementFramework.TestTypedElementInterfaceC
-// 0x0000 (0x0030 - 0x0030)
-class ITestTypedElementInterfaceC final : public IInterface
+// 0x0000 (0x0000 - 0x0000)
+class ITestTypedElementInterfaceC final
 {
 public:
 	bool GetIsTested(const struct FScriptTypedElementHandle& InElementHandle) const;
@@ -224,6 +278,15 @@ public:
 	static class ITestTypedElementInterfaceC* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<ITestTypedElementInterfaceC>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
 	}
 };
 

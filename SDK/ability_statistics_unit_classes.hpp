@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // PythonClass ability_statistics_unit.PyAbilityStatisticsUnit
-// 0x0000 (0x0650 - 0x0650)
+// 0x0000 (0x0640 - 0x0640)
 class UPyAbilityStatisticsUnit final : public UAbilityStatisticsUnit
 {
 public:

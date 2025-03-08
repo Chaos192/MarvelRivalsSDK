@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "ControlRig_structs.hpp"
-#include "CoreUObject_structs.hpp"
 #include "RigVM_structs.hpp"
+#include "CoreUObject_structs.hpp"
+#include "ControlRig_structs.hpp"
 
 
 namespace SDK
@@ -85,14 +85,14 @@ public:
 	struct FVector                                PrimaryAxis;                                       // 0x01F0(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                                SecondaryAxis;                                     // 0x0208(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                                PoleVectorPosition;                                // 0x0220(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<struct FRigUnit_FitChainToCurveMarvel_Rotation> Rotations;                                         // 0x0238(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FRigUnit_FitChainToCurveMarvel_Rotation> Rotations;                                // 0x0238(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
 	ERigVMAnimEasingType                          RotationEaseType;                                  // 0x0248(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_249[0x3];                                      // 0x0249(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         Weight;                                            // 0x024C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bPropagateToChildren;                              // 0x0250(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_251[0xF];                                      // 0x0251(0x000F)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FRigUnit_FitChainToCurveMarvel_DebugSettings DebugSettings;                                     // 0x0260(0x0090)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	struct FRigUnit_FitChainToCurveMarvel_WorkData WorkData;                                          // 0x02F0(0x0098)(Transient, NativeAccessSpecifierPublic)
+	struct FRigUnit_FitChainToCurveMarvel_DebugSettings DebugSettings;                               // 0x0260(0x0090)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	struct FRigUnit_FitChainToCurveMarvel_WorkData WorkData;                                         // 0x02F0(0x0098)(Transient, NativeAccessSpecifierPublic)
 	uint8                                         Pad_388[0x8];                                      // 0x0388(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 

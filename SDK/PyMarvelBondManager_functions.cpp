@@ -58,8 +58,8 @@ void APyMarvelBondManager::K2_OnDeInitialize()
 // PythonFunction PyMarvelBondManager.PyMarvelBondManager.OnBondStateChange
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FBondInstance                    InBondInstance                                         (ConstParm, Parm, OutParm, ReferenceParm)
-// TArray<class AMarvelBaseCharacter*>     TriggerCharacters                                      (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FBondInstance&             InBondInstance                                         (ConstParm, Parm, OutParm, ReferenceParm)
+// const TArray<class AMarvelBaseCharacter*>&TriggerCharacters                                      (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyMarvelBondManager::OnBondStateChange(const struct FBondInstance& InBondInstance, const TArray<class AMarvelBaseCharacter*>& TriggerCharacters)
 {
@@ -82,11 +82,40 @@ void APyMarvelBondManager::OnBondStateChange(const struct FBondInstance& InBondI
 }
 
 
+// PythonFunction PyMarvelBondManager.PyMarvelBondManager.OnCharacterBondStateChange
+// (Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const struct FBondInstance&             InBondInstance                                         (ConstParm, Parm, OutParm, ReferenceParm)
+// class AMarvelBaseCharacter*             Target                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// bool                                    IsActive                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void APyMarvelBondManager::OnCharacterBondStateChange(const struct FBondInstance& InBondInstance, class AMarvelBaseCharacter* Target, bool IsActive)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyMarvelBondManager", "OnCharacterBondStateChange");
+
+	Params::PyMarvelBondManager_OnCharacterBondStateChange Parms{};
+
+	Parms.InBondInstance = std::move(InBondInstance);
+	Parms.Target = Target;
+	Parms.IsActive = IsActive;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // PythonFunction PyMarvelBondManager.PyMarvelBondManager.OnBondCharacterAdd
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // class AMarvelBaseCharacter*             TriggerCharacter                                       (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// TArray<struct FBondInstance>            RefBondInstances                                       (ConstParm, Parm, OutParm, ReferenceParm)
+// const TArray<struct FBondInstance>&     RefBondInstances                                       (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyMarvelBondManager::OnBondCharacterAdd(class AMarvelBaseCharacter* TriggerCharacter, const TArray<struct FBondInstance>& RefBondInstances)
 {
@@ -113,7 +142,7 @@ void APyMarvelBondManager::OnBondCharacterAdd(class AMarvelBaseCharacter* Trigge
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // class AMarvelBaseCharacter*             TriggerCharacter                                       (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// TArray<struct FBondInstance>            RefBondInstances                                       (ConstParm, Parm, OutParm, ReferenceParm)
+// const TArray<struct FBondInstance>&     RefBondInstances                                       (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyMarvelBondManager::OnBondCharacterRemove(class AMarvelBaseCharacter* TriggerCharacter, const TArray<struct FBondInstance>& RefBondInstances)
 {
@@ -218,8 +247,8 @@ void APyMarvelBondManager::OnCharacterAttributeInited(class AMarvelBaseCharacter
 // Parameters:
 // class AMarvelBaseCharacter*             InTriggerCharacter                                     (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // class AMarvelBaseCharacter*             InTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FAttributeModifierParameter      ModifierParameter                                      (ConstParm, Parm, OutParm, ReferenceParm)
-// struct FBondInstance                    InBondInstance                                         (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FAttributeModifierParameter&ModifierParameter                                      (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FBondInstance&             InBondInstance                                         (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyMarvelBondManager::OnAssistKillCallback(class AMarvelBaseCharacter* InTriggerCharacter, class AMarvelBaseCharacter* InTarget, const struct FAttributeModifierParameter& ModifierParameter, const struct FBondInstance& InBondInstance)
 {
@@ -250,7 +279,7 @@ void APyMarvelBondManager::OnAssistKillCallback(class AMarvelBaseCharacter* InTr
 // class AMarvelBaseCharacter*             InTriggerCharacter                                     (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // int32                                   InTriggerAbilityID                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class AMarvelBaseCharacter*             InTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FBondInstance                    InBondInstance                                         (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FBondInstance&             InBondInstance                                         (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyMarvelBondManager::OnReceiverTriggeredCallback(class AMarvelBaseCharacter* InTriggerCharacter, int32 InTriggerAbilityID, class AMarvelBaseCharacter* InTarget, const struct FBondInstance& InBondInstance)
 {
@@ -281,7 +310,7 @@ void APyMarvelBondManager::OnReceiverTriggeredCallback(class AMarvelBaseCharacte
 // class AMarvelBaseCharacter*             InTriggerCharacter                                     (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // int32                                   InTriggerAbilityID                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class AMarvelBaseCharacter*             InTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FBondInstance                    InBondInstance                                         (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FBondInstance&             InBondInstance                                         (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyMarvelBondManager::OnSenderTriggeredCallback(class AMarvelBaseCharacter* InTriggerCharacter, int32 InTriggerAbilityID, class AMarvelBaseCharacter* InTarget, const struct FBondInstance& InBondInstance)
 {

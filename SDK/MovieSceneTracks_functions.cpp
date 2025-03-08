@@ -27,11 +27,11 @@ struct FTransform IMovieSceneTransformOrigin::BP_GetTransformOrigin() const
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("MovieSceneTransformOrigin", "BP_GetTransformOrigin");
+		Func = AsUObject()->Class->GetFunction("MovieSceneTransformOrigin", "BP_GetTransformOrigin");
 
 	Params::MovieSceneTransformOrigin_BP_GetTransformOrigin Parms{};
 
-	UObject::ProcessEvent(Func, &Parms);
+	AsUObject()->ProcessEvent(Func, &Parms);
 
 	return Parms.ReturnValue;
 }
@@ -40,7 +40,7 @@ struct FTransform IMovieSceneTransformOrigin::BP_GetTransformOrigin() const
 // Function MovieSceneTracks.MovieScene3DConstraintSection.SetConstraintBindingID
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FMovieSceneObjectBindingID       InConstraintBindingID                                  (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FMovieSceneObjectBindingID&InConstraintBindingID                                  (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UMovieScene3DConstraintSection::SetConstraintBindingID(const struct FMovieSceneObjectBindingID& InConstraintBindingID)
 {
@@ -190,7 +190,7 @@ void UMovieSceneAudioSection::SetSound(class USoundBase* InSound)
 // Function MovieSceneTracks.MovieSceneAudioSection.SetStartOffset
 // (Final, Native, Public, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FFrameNumber                     InStartOffset                                          (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FFrameNumber&              InStartOffset                                          (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UMovieSceneAudioSection::SetStartOffset(const struct FFrameNumber& InStartOffset)
 {
@@ -390,7 +390,7 @@ bool UMovieSceneAudioSection::GetSuppressSubtitles() const
 // Function MovieSceneTracks.MovieSceneCameraCutSection.SetCameraBindingID
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FMovieSceneObjectBindingID       InCameraBindingID                                      (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FMovieSceneObjectBindingID&InCameraBindingID                                      (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UMovieSceneCameraCutSection::SetCameraBindingID(const struct FMovieSceneObjectBindingID& InCameraBindingID)
 {
@@ -440,7 +440,7 @@ const struct FMovieSceneObjectBindingID UMovieSceneCameraCutSection::GetCameraBi
 // Function MovieSceneTracks.MovieSceneCinematicShotSection.SetShotDisplayName
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FString                           InShotDisplayName                                      (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    InShotDisplayName                                      (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UMovieSceneCinematicShotSection::SetShotDisplayName(const class FString& InShotDisplayName)
 {
@@ -490,7 +490,7 @@ class FString UMovieSceneCinematicShotSection::GetShotDisplayName() const
 // Function MovieSceneTracks.MovieSceneCVarSection.SetFromString
 // (Final, RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
-// class FString                           InString                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    InString                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UMovieSceneCVarSection::SetFromString(const class FString& InString)
 {
@@ -540,7 +540,7 @@ class FString UMovieSceneCVarSection::GetString() const
 // Function MovieSceneTracks.MovieSceneDataLayerSection.SetDataLayerAssets
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<class UDataLayerAsset*>          InDataLayerAssets                                      (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TArray<class UDataLayerAsset*>&   InDataLayerAssets                                      (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UMovieSceneDataLayerSection::SetDataLayerAssets(const TArray<class UDataLayerAsset*>& InDataLayerAssets)
 {
@@ -565,7 +565,7 @@ void UMovieSceneDataLayerSection::SetDataLayerAssets(const TArray<class UDataLay
 // Function MovieSceneTracks.MovieSceneDataLayerSection.SetDataLayers
 // (Final, Native, Private, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<struct FActorDataLayer>          InDataLayers                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TArray<struct FActorDataLayer>&   InDataLayers                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UMovieSceneDataLayerSection::SetDataLayers(const TArray<struct FActorDataLayer>& InDataLayers)
 {
@@ -790,7 +790,7 @@ EDataLayerRuntimeState UMovieSceneDataLayerSection::GetPrerollState() const
 // Function MovieSceneTracks.MovieSceneLevelVisibilitySection.SetLevelNames
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<class FName>                     InLevelNames                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TArray<class FName>&              InLevelNames                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UMovieSceneLevelVisibilitySection::SetLevelNames(const TArray<class FName>& InLevelNames)
 {
@@ -891,7 +891,7 @@ ELevelVisibility UMovieSceneLevelVisibilitySection::GetVisibility() const
 // (Final, RequiredAPI, Native, Public, HasDefaults, BlueprintCallable)
 // Parameters:
 // class FName                             InParameterName                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FFrameNumber                     InTime                                                 (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FFrameNumber&              InTime                                                 (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    InValue                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UMovieSceneParameterSection::AddBoolParameterKey(class FName InParameterName, const struct FFrameNumber& InTime, bool InValue)
@@ -920,8 +920,8 @@ void UMovieSceneParameterSection::AddBoolParameterKey(class FName InParameterNam
 // (Final, RequiredAPI, Native, Public, HasDefaults, BlueprintCallable)
 // Parameters:
 // class FName                             InParameterName                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FFrameNumber                     InTime                                                 (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FLinearColor                     InValue                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FFrameNumber&              InTime                                                 (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FLinearColor&              InValue                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // ERichCurveInterpMode                    InterpMode                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UMovieSceneParameterSection::AddColorParameterKey(class FName InParameterName, const struct FFrameNumber& InTime, const struct FLinearColor& InValue, ERichCurveInterpMode InterpMode)
@@ -951,7 +951,7 @@ void UMovieSceneParameterSection::AddColorParameterKey(class FName InParameterNa
 // (Final, RequiredAPI, Native, Public, HasDefaults, BlueprintCallable)
 // Parameters:
 // class FName                             InParameterName                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FFrameNumber                     InTime                                                 (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FFrameNumber&              InTime                                                 (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   InValue                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UMovieSceneParameterSection::AddScalarParameterKey(class FName InParameterName, const struct FFrameNumber& InTime, float InValue)
@@ -980,7 +980,7 @@ void UMovieSceneParameterSection::AddScalarParameterKey(class FName InParameterN
 // (Final, RequiredAPI, Native, Public, HasDefaults, BlueprintCallable)
 // Parameters:
 // class FName                             InParameterName                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FFrameNumber                     InTime                                                 (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FFrameNumber&              InTime                                                 (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UTexture*                         InValue                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UMovieSceneParameterSection::AddTextureParameterKey(class FName InParameterName, const struct FFrameNumber& InTime, class UTexture* InValue)
@@ -1009,8 +1009,8 @@ void UMovieSceneParameterSection::AddTextureParameterKey(class FName InParameter
 // (Final, RequiredAPI, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
 // class FName                             InParameterName                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FFrameNumber                     InTime                                                 (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FTransform                       InValue                                                (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FFrameNumber&              InTime                                                 (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FTransform&                InValue                                                (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UMovieSceneParameterSection::AddTransformParameterKey(class FName InParameterName, const struct FFrameNumber& InTime, const struct FTransform& InValue)
 {
@@ -1038,8 +1038,8 @@ void UMovieSceneParameterSection::AddTransformParameterKey(class FName InParamet
 // (Final, RequiredAPI, Native, Public, HasDefaults, BlueprintCallable)
 // Parameters:
 // class FName                             InParameterName                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FFrameNumber                     InTime                                                 (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector2D                        InValue                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FFrameNumber&              InTime                                                 (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector2D&                 InValue                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UMovieSceneParameterSection::AddVector2DParameterKey(class FName InParameterName, const struct FFrameNumber& InTime, const struct FVector2D& InValue)
 {
@@ -1067,8 +1067,8 @@ void UMovieSceneParameterSection::AddVector2DParameterKey(class FName InParamete
 // (Final, RequiredAPI, Native, Public, HasDefaults, BlueprintCallable)
 // Parameters:
 // class FName                             InParameterName                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FFrameNumber                     InTime                                                 (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          InValue                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FFrameNumber&              InTime                                                 (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   InValue                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UMovieSceneParameterSection::AddVectorParameterKey(class FName InParameterName, const struct FFrameNumber& InTime, const struct FVector& InValue)
 {
@@ -1291,7 +1291,7 @@ bool UMovieSceneParameterSection::RemoveVectorParameter(class FName InParameterN
 // Function MovieSceneTracks.MovieSceneParameterSection.GetParameterNames
 // (Final, RequiredAPI, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// TSet<class FName>                       ParameterNames                                         (Parm, OutParm, NativeAccessSpecifierPublic)
+// TSet<class FName>*                      ParameterNames                                         (Parm, OutParm, NativeAccessSpecifierPublic)
 
 void UMovieSceneParameterSection::GetParameterNames(TSet<class FName>* ParameterNames) const
 {
@@ -1319,7 +1319,7 @@ void UMovieSceneParameterSection::GetParameterNames(TSet<class FName>* Parameter
 // Parameters:
 // class UMovieSceneSequencePlayer*        Player                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class USceneComponent*                  TargetComponent                                        (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FFrameTime                       FrameTime                                              (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FFrameTime&                FrameTime                                              (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UMovieSceneAsyncAction_SequencePrediction*ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class UMovieSceneAsyncAction_SequencePrediction* UMovieSceneAsyncAction_SequencePrediction::PredictLocalTransformAtFrame(class UMovieSceneSequencePlayer* Player, class USceneComponent* TargetComponent, const struct FFrameTime& FrameTime)
@@ -1383,7 +1383,7 @@ class UMovieSceneAsyncAction_SequencePrediction* UMovieSceneAsyncAction_Sequence
 // Parameters:
 // class UMovieSceneSequencePlayer*        Player                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class USceneComponent*                  TargetComponent                                        (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FFrameTime                       FrameTime                                              (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FFrameTime&                FrameTime                                              (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UMovieSceneAsyncAction_SequencePrediction*ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class UMovieSceneAsyncAction_SequencePrediction* UMovieSceneAsyncAction_SequencePrediction::PredictWorldTransformAtFrame(class UMovieSceneSequencePlayer* Player, class USceneComponent* TargetComponent, const struct FFrameTime& FrameTime)

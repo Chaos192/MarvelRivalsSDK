@@ -51,11 +51,11 @@ public:
 };
 
 // PythonClass PyMagikCharacter.PyMagikCharacter
-// 0x0010 (0x1840 - 0x1830)
+// 0x0010 (0x18A0 - 0x1890)
 class APyMagikCharacter : public AMagikCharacter
 {
 public:
-	class UMarveSculptConfigComponent*            SonOfDarknessSculptConfigComponent;                // 0x1830(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UMarveSculptConfigComponent*            SonOfDarknessSculptConfigComponent;                // 0x1890(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void OnDeath(class AController* InSource, class AActor* InSourceAvatar, const struct FAttributeModifierHandle& ModifierParameter);

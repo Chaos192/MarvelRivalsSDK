@@ -45,8 +45,8 @@ class UTypedElementSelectionSet final : public UObject
 {
 public:
 	uint8                                         Pad_30[0x800];                                     // 0x0030(0x0800)(Fixing Size After Last Property [ Dumper-7 ])
-	TMulticastInlineDelegate<void(class UTypedElementSelectionSet* SelectionSet)> OnPreSelectionChange;                              // 0x0830(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class UTypedElementSelectionSet* SelectionSet)> OnSelectionChange;                                 // 0x0840(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const class UTypedElementSelectionSet* SelectionSet)> OnPreSelectionChange; // 0x0830(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const class UTypedElementSelectionSet* SelectionSet)> OnSelectionChange; // 0x0840(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	uint8                                         Pad_850[0x50];                                     // 0x0850(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
@@ -86,8 +86,8 @@ public:
 };
 
 // Class TypedElementRuntime.TypedElementAssetDataInterface
-// 0x0000 (0x0030 - 0x0030)
-class ITypedElementAssetDataInterface final : public IInterface
+// 0x0000 (0x0000 - 0x0000)
+class ITypedElementAssetDataInterface final
 {
 public:
 	TArray<struct FAssetData> GetAllReferencedAssetDatas(const struct FScriptTypedElementHandle& InElementHandle);
@@ -102,11 +102,20 @@ public:
 	{
 		return GetDefaultObjImpl<ITypedElementAssetDataInterface>();
 	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
 };
 
 // Class TypedElementRuntime.TypedElementHierarchyInterface
-// 0x0000 (0x0030 - 0x0030)
-class ITypedElementHierarchyInterface final : public IInterface
+// 0x0000 (0x0000 - 0x0000)
+class ITypedElementHierarchyInterface final
 {
 public:
 	void GetChildElements(const struct FScriptTypedElementHandle& InElementHandle, TArray<struct FScriptTypedElementHandle>* OutElementHandles, const bool bAllowCreate);
@@ -121,11 +130,20 @@ public:
 	{
 		return GetDefaultObjImpl<ITypedElementHierarchyInterface>();
 	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
 };
 
 // Class TypedElementRuntime.TypedElementObjectInterface
-// 0x0000 (0x0030 - 0x0030)
-class ITypedElementObjectInterface final : public IInterface
+// 0x0000 (0x0000 - 0x0000)
+class ITypedElementObjectInterface final
 {
 public:
 	class UObject* GetObject(const struct FScriptTypedElementHandle& InElementHandle);
@@ -140,11 +158,20 @@ public:
 	{
 		return GetDefaultObjImpl<ITypedElementObjectInterface>();
 	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
 };
 
 // Class TypedElementRuntime.TypedElementPrimitiveCustomDataInterface
-// 0x0000 (0x0030 - 0x0030)
-class ITypedElementPrimitiveCustomDataInterface final : public IInterface
+// 0x0000 (0x0000 - 0x0000)
+class ITypedElementPrimitiveCustomDataInterface final
 {
 public:
 	void SetCustomData(const struct FScriptTypedElementHandle& InElementHandle, const TArray<float>& CustomDataFloats, bool bMarkRenderStateDirty);
@@ -159,11 +186,20 @@ public:
 	{
 		return GetDefaultObjImpl<ITypedElementPrimitiveCustomDataInterface>();
 	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
 };
 
 // Class TypedElementRuntime.TypedElementSelectionInterface
-// 0x0000 (0x0030 - 0x0030)
-class ITypedElementSelectionInterface final : public IInterface
+// 0x0000 (0x0000 - 0x0000)
+class ITypedElementSelectionInterface final
 {
 public:
 	bool AllowSelectionModifiers(const struct FScriptTypedElementHandle& InElementHandle, const struct FScriptTypedElementListProxy& InSelectionSet);
@@ -182,6 +218,15 @@ public:
 	static class ITypedElementSelectionInterface* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<ITypedElementSelectionInterface>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
 	}
 };
 

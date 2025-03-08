@@ -21,7 +21,7 @@ namespace SDK
 // (Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class AActor*                           Instance                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class FString                           NodeName                                               (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    NodeName                                               (Parm, ZeroConstructor, HasGetValueTypeHash)
 // TSoftObjectPtr<class UAkAudioEvent>     AudioEvent                                             (Parm, UObjectWrapper, HasGetValueTypeHash)
 
 void UPyLevelAudioNodes::PlayAmbientSound(class AActor* Instance, const class FString& NodeName, TSoftObjectPtr<class UAkAudioEvent> AudioEvent)
@@ -50,7 +50,7 @@ void UPyLevelAudioNodes::PlayAmbientSound(class AActor* Instance, const class FS
 // (Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // class AActor*                           Instance                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// TArray<int32>                           VoiceIDList                                            (ConstParm, Parm, OutParm, ReferenceParm)
+// const TArray<int32>&                    VoiceIDList                                            (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyLevelAudioNodes::PlayAudioByID(class AActor* Instance, const TArray<int32>& VoiceIDList)
 {
@@ -77,8 +77,8 @@ void UPyLevelAudioNodes::PlayAudioByID(class AActor* Instance, const TArray<int3
 // (Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // class AActor*                           Instance                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class FString                           NPC                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
-// TArray<int32>                           VoiceIDList                                            (ConstParm, Parm, OutParm, ReferenceParm)
+// const class FString&                    NPC                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const TArray<int32>&                    VoiceIDList                                            (ConstParm, Parm, OutParm, ReferenceParm)
 // EBattleSide                             BattleSide                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UPyLevelAudioNodes::PlayAudioByIDAndBattleSide(class AActor* Instance, const class FString& NPC, const TArray<int32>& VoiceIDList, EBattleSide BattleSide)

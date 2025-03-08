@@ -93,11 +93,11 @@ public:
 };
 
 // PythonClass PyAbility_102351.PyAbility_102351
-// 0x0010 (0x2590 - 0x2580)
+// 0x0010 (0x2598 - 0x2588)
 class UPyAbility_102351 : public UMarvelGameplayAbility
 {
 public:
-	TMulticastInlineDelegate<void(bool IsActivate)> OnAbilityStateChanged;                             // 0x2580(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(bool IsActivate)> OnAbilityStateChanged;                           // 0x2588(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 
 public:
 	void BeginPlay();

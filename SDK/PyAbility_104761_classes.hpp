@@ -21,7 +21,7 @@ namespace SDK
 {
 
 // PythonClass PyAbility_104761.PyUIController_104761
-// 0x0000 (0x0C60 - 0x0C60)
+// 0x0000 (0x0C50 - 0x0C50)
 class UPyUIController_104761 final : public UUIC_Ability
 {
 public:
@@ -71,11 +71,11 @@ public:
 };
 
 // PythonClass PyAbility_104761.PyAbility_104761_New
-// 0x0008 (0x2628 - 0x2620)
+// 0x0008 (0x2630 - 0x2628)
 class UPyAbility_104761_New : public UAbility_104761
 {
 public:
-	int32                                         Server_PyAbility_104761_State;                     // 0x2620(0x0004)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Server_PyAbility_104761_State;                     // 0x2628(0x0004)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void BeginPlay();

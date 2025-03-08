@@ -18,31 +18,31 @@
 namespace SDK::Params
 {
 
-// PythonFunction PyAbility_104011.PyCue_Ability_Loop_10401101.WhileActiveAudio
+// PythonFunction PyAbility_104011.PyCue_Scope_HitImpact_10401101.OnExecuteFX
 // 0x01C0 (0x01C0 - 0x0000)
-struct PyCue_Ability_Loop_10401101_WhileActiveAudio final
+struct PyCue_Scope_HitImpact_10401101_OnExecuteFX final
 {
 public:
 	class AActor*                                 MyTarget;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	struct FGameplayCueParameters                 Parameters;                                        // 0x0008(0x01B8)(ConstParm, Parm, OutParm, ReferenceParm)
 };
 
-// PythonFunction PyAbility_104011.PyCue_Ability_Loop_10401101.OnRemoveAudio
+// PythonFunction PyAbility_104011.PyCue_Ability_Loop_10401102.OnActiveFX
 // 0x01C0 (0x01C0 - 0x0000)
-struct PyCue_Ability_Loop_10401101_OnRemoveAudio final
+struct PyCue_Ability_Loop_10401102_OnActiveFX final
 {
 public:
 	class AActor*                                 MyTarget;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	struct FGameplayCueParameters                 Parameters;                                        // 0x0008(0x01B8)(ConstParm, Parm, OutParm, ReferenceParm)
 };
 
-// PythonFunction PyAbility_104011.PyCue_Ability_Instant_10401101.OnExecuteFX
+// PythonFunction PyAbility_104011.PyCue_Ability_Loop_10401102.OnRemoveFX
 // 0x01C0 (0x01C0 - 0x0000)
-struct PyCue_Ability_Instant_10401101_OnExecuteFX final
+struct PyCue_Ability_Loop_10401102_OnRemoveFX final
 {
 public:
 	class AActor*                                 MyTarget;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	struct FGameplayCueParameters                 Parameter;                                         // 0x0008(0x01B8)(ConstParm, Parm, OutParm, ReferenceParm)
+	struct FGameplayCueParameters                 Parameters;                                        // 0x0008(0x01B8)(ConstParm, Parm, OutParm, ReferenceParm)
 };
 
 // PythonFunction PyAbility_104011.PyAbility_104011.OnApplyDamage
@@ -112,9 +112,18 @@ public:
 	class FString                                 Tag;                                               // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash)
 };
 
-// PythonFunction PyAbility_104011.PyCue_Scope_HitImpact_10401101.OnExecuteFX
+// PythonFunction PyAbility_104011.PyCue_Ability_Loop_10401101.WhileActiveAudio
 // 0x01C0 (0x01C0 - 0x0000)
-struct PyCue_Scope_HitImpact_10401101_OnExecuteFX final
+struct PyCue_Ability_Loop_10401101_WhileActiveAudio final
+{
+public:
+	class AActor*                                 MyTarget;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	struct FGameplayCueParameters                 Parameters;                                        // 0x0008(0x01B8)(ConstParm, Parm, OutParm, ReferenceParm)
+};
+
+// PythonFunction PyAbility_104011.PyCue_Ability_Loop_10401101.OnRemoveAudio
+// 0x01C0 (0x01C0 - 0x0000)
+struct PyCue_Ability_Loop_10401101_OnRemoveAudio final
 {
 public:
 	class AActor*                                 MyTarget;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)

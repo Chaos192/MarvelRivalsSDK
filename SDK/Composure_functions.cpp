@@ -354,7 +354,7 @@ bool ACompositingElement::DeletePass(class UCompositingElementPass* PassToDelete
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // TSubclassOf<class UCompositingElementInput>InputType                                              (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UTexture*                         PassResult                                             (Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UTexture**                        PassResult                                             (Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FName                             OptionalPassName                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UCompositingElementInput*         ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -448,7 +448,7 @@ class UCompositingElementOutput* ACompositingElement::FindOutputPass(TSubclassOf
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // TSubclassOf<class UCompositingElementTransform>TransformType                                          (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UTexture*                         PassResult                                             (Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UTexture**                        PassResult                                             (Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FName                             OptionalPassName                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UCompositingElementTransform*     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -566,7 +566,7 @@ class UTexture* ACompositingElement::RenderCompElement(bool bCameraCutThisFrame)
 // Function Composure.CompositingElement.RenderCompositingMaterial
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FCompositingMaterial             CompMaterial                                           (Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// struct FCompositingMaterial&            CompMaterial                                           (Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // float                                   RenderScale                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FName                             ResultLookupName                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // ETargetUsageFlags                       UsageTag                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -602,7 +602,7 @@ class UTexture* ACompositingElement::RenderCompositingMaterial(struct FCompositi
 // Function Composure.CompositingElement.RenderCompositingMaterialToTarget
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FCompositingMaterial             CompMaterial                                           (Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// struct FCompositingMaterial&            CompMaterial                                           (Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // class UTextureRenderTarget2D*           RenderTarget                                           (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FName                             ResultLookupName                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UTextureRenderTarget2D*           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -636,8 +636,8 @@ class UTextureRenderTarget2D* ACompositingElement::RenderCompositingMaterialToTa
 // Function Composure.CompositingElement.RequestNamedRenderTarget
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FName                             ReferenceName                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   RenderPercentage                                       (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       ReferenceName                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             RenderPercentage                                       (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // ETargetUsageFlags                       UsageTag                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UTextureRenderTarget2D*           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -718,7 +718,7 @@ void ACompositingElement::SetEditorColorPickingTarget(class UTextureRenderTarget
 // Function Composure.CompositingElement.SetElementName
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FName                             NewName                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       NewName                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void ACompositingElement::SetElementName(const class FName NewName)
 {
@@ -743,7 +743,7 @@ void ACompositingElement::SetElementName(const class FName NewName)
 // Function Composure.CompositingElement.SetOpacity
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// float                                   NewOpacity                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             NewOpacity                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void ACompositingElement::SetOpacity(const float NewOpacity)
 {
@@ -768,7 +768,7 @@ void ACompositingElement::SetOpacity(const float NewOpacity)
 // Function Composure.CompositingElement.SetRenderResolution
 // (Final, Native, Public, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FIntPoint                        NewResolution                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FIntPoint&                 NewResolution                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void ACompositingElement::SetRenderResolution(const struct FIntPoint& NewResolution)
 {
@@ -1139,9 +1139,9 @@ void ACompositingCaptureBase::UpdateDistortion()
 // Parameters:
 // class UTextureRenderTarget2D*           PickerTarget_0                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UTexture*                         DisplayImage                                           (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FText                             WindowTitle                                            (Parm, NativeAccessSpecifierPublic)
-// bool                                    bAverageColorOnDrag                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bUseImplicitGamma                                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FText&                      WindowTitle                                            (Parm, NativeAccessSpecifierPublic)
+// const bool                              bAverageColorOnDrag                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bUseImplicitGamma                                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UCompositingPickerAsyncTask*      ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class UCompositingPickerAsyncTask* UCompositingPickerAsyncTask::OpenCompositingPicker(class UTextureRenderTarget2D* PickerTarget_0, class UTexture* DisplayImage, const class FText& WindowTitle, const bool bAverageColorOnDrag, const bool bUseImplicitGamma)
@@ -1311,7 +1311,7 @@ class UTextureRenderTarget2D* UCompositingElementPass::RequestNativelyFormattedT
 // Function Composure.CompositingElementPass.RequestRenderTarget
 // (Final, Native, Protected, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FIntPoint                        Dimensions                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FIntPoint&                 Dimensions                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // ETextureRenderTargetFormat              Format                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UTextureRenderTarget2D*           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -1443,7 +1443,7 @@ class UTexture* ICompositingInputInterface::GenerateInput(class UCompositingInpu
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CompositingInputInterface", "GenerateInput");
+		Func = AsUObject()->Class->GetFunction("CompositingInputInterface", "GenerateInput");
 
 	Params::CompositingInputInterface_GenerateInput Parms{};
 
@@ -1452,7 +1452,7 @@ class UTexture* ICompositingInputInterface::GenerateInput(class UCompositingInpu
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	AsUObject()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 
@@ -1471,7 +1471,7 @@ void ICompositingInputInterface::OnFrameBegin(class UCompositingInputInterfacePr
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CompositingInputInterface", "OnFrameBegin");
+		Func = AsUObject()->Class->GetFunction("CompositingInputInterface", "OnFrameBegin");
 
 	Params::CompositingInputInterface_OnFrameBegin Parms{};
 
@@ -1481,7 +1481,7 @@ void ICompositingInputInterface::OnFrameBegin(class UCompositingInputInterfacePr
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	AsUObject()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 }
@@ -1497,7 +1497,7 @@ void ICompositingInputInterface::OnFrameEnd(class UCompositingInputInterfaceProx
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CompositingInputInterface", "OnFrameEnd");
+		Func = AsUObject()->Class->GetFunction("CompositingInputInterface", "OnFrameEnd");
 
 	Params::CompositingInputInterface_OnFrameEnd Parms{};
 
@@ -1506,7 +1506,7 @@ void ICompositingInputInterface::OnFrameEnd(class UCompositingInputInterfaceProx
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	AsUObject()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 }
@@ -1677,8 +1677,8 @@ bool UCompositingElementMaterialPass::SetParameterMapping(class FName TexturePar
 // Function Composure.ComposureBlueprintLibrary.AttachComposureElement
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FName                             ParentName                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             ChildName                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       ParentName                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       ChildName                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UComposureBlueprintLibrary::AttachComposureElement(const class FName ParentName, const class FName ChildName)
@@ -1738,7 +1738,7 @@ void UComposureBlueprintLibrary::CopyCameraSettingsToSceneCapture(class UCameraC
 // Function Composure.ComposureBlueprintLibrary.CreateComposureElement
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FName                             ElementName                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       ElementName                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TSubclassOf<class ACompositingElement>  ClassType                                              (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           LevelContext                                           (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class ACompositingElement*              ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -1798,7 +1798,7 @@ class UComposurePlayerCompositingTarget* UComposureBlueprintLibrary::CreatePlaye
 // Function Composure.ComposureBlueprintLibrary.DeleteComposureElementAndChildren
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FName                             ElementToDelete                                        (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       ElementToDelete                                        (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UComposureBlueprintLibrary::DeleteComposureElementAndChildren(const class FName ElementToDelete)
 {
@@ -1823,7 +1823,7 @@ void UComposureBlueprintLibrary::DeleteComposureElementAndChildren(const class F
 // Function Composure.ComposureBlueprintLibrary.GetComposureElement
 // (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
-// class FName                             ElementName                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       ElementName                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class ACompositingElement*              ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class ACompositingElement* UComposureBlueprintLibrary::GetComposureElement(const class FName ElementName)
@@ -1851,10 +1851,10 @@ class ACompositingElement* UComposureBlueprintLibrary::GetComposureElement(const
 // Function Composure.ComposureBlueprintLibrary.GetCroppingUVTransformationMatrixFromPostMoveSettings
 // (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FComposurePostMoveSettings       PostMoveSettings                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FComposurePostMoveSettings&PostMoveSettings                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // float                                   AspectRatio                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FMatrix                          CropingUVTransformationMatrix                          (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-// struct FMatrix                          UncropingUVTransformationMatrix                        (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// struct FMatrix*                         CropingUVTransformationMatrix                          (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// struct FMatrix*                         UncropingUVTransformationMatrix                        (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 
 void UComposureBlueprintLibrary::GetCroppingUVTransformationMatrixFromPostMoveSettings(const struct FComposurePostMoveSettings& PostMoveSettings, float AspectRatio, struct FMatrix* CropingUVTransformationMatrix, struct FMatrix* UncropingUVTransformationMatrix)
 {
@@ -1886,8 +1886,8 @@ void UComposureBlueprintLibrary::GetCroppingUVTransformationMatrixFromPostMoveSe
 // Function Composure.ComposureBlueprintLibrary.GetPlayerDisplayGamma
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// class APlayerCameraManager*             PlayerCameraManager                                    (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   DisplayGamma                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class APlayerCameraManager*       PlayerCameraManager                                    (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float*                                  DisplayGamma                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UComposureBlueprintLibrary::GetPlayerDisplayGamma(const class APlayerCameraManager* PlayerCameraManager, float* DisplayGamma)
 {
@@ -1915,10 +1915,10 @@ void UComposureBlueprintLibrary::GetPlayerDisplayGamma(const class APlayerCamera
 // Function Composure.ComposureBlueprintLibrary.GetProjectionMatrixFromPostMoveSettings
 // (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FComposurePostMoveSettings       PostMoveSettings                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FComposurePostMoveSettings&PostMoveSettings                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // float                                   HorizontalFOVAngle                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   AspectRatio                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FMatrix                          ProjectionMatrix                                       (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// struct FMatrix*                         ProjectionMatrix                                       (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 
 void UComposureBlueprintLibrary::GetProjectionMatrixFromPostMoveSettings(const struct FComposurePostMoveSettings& PostMoveSettings, float HorizontalFOVAngle, float AspectRatio, struct FMatrix* ProjectionMatrix)
 {
@@ -1949,7 +1949,7 @@ void UComposureBlueprintLibrary::GetProjectionMatrixFromPostMoveSettings(const s
 // (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure)
 // Parameters:
 // float                                   ChromaticAberrationAmount                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector2D                        RedGreenUVFactors                                      (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVector2D*                       RedGreenUVFactors                                      (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UComposureBlueprintLibrary::GetRedGreenUVFactorsFromChromaticAberration(float ChromaticAberrationAmount, struct FVector2D* RedGreenUVFactors)
 {
@@ -1977,8 +1977,8 @@ void UComposureBlueprintLibrary::GetRedGreenUVFactorsFromChromaticAberration(flo
 // Function Composure.ComposureBlueprintLibrary.InvertUVDisplacementMapEncodingParameters
 // (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FVector2D                        In                                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector2D                        Out                                                    (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector2D&                 In                                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVector2D*                       Out                                                    (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UComposureBlueprintLibrary::InvertUVDisplacementMapEncodingParameters(const struct FVector2D& In, struct FVector2D* Out)
 {
@@ -2053,8 +2053,8 @@ void UComposureBlueprintLibrary::RefreshComposureElementList()
 // Function Composure.ComposureBlueprintLibrary.RenameComposureElement
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FName                             OriginalElementName                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             NewElementName                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       OriginalElementName                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       NewElementName                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UComposureBlueprintLibrary::RenameComposureElement(const class FName OriginalElementName, const class FName NewElementName)
@@ -2102,7 +2102,7 @@ void UComposureBlueprintLibrary::RequestRedrawComposureViewport()
 // Function Composure.ComposureBlueprintLibrary.SetUVMapSettingsToMaterialParameters
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FComposureUVMapSettings          UVMapSettings                                          (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FComposureUVMapSettings&   UVMapSettings                                          (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // class UMaterialInstanceDynamic*         Material                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UComposureBlueprintLibrary::SetUVMapSettingsToMaterialParameters(const struct FComposureUVMapSettings& UVMapSettings, class UMaterialInstanceDynamic* Material)
@@ -2274,7 +2274,7 @@ void UComposureLensBloomPass::SetTonemapperReplacingMaterial(class UMaterialInst
 // (Native, Event, Public, HasOutParams, BlueprintEvent)
 // Parameters:
 // class USceneCaptureComponent2D*         SceneCapture                                           (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UMaterialInterface*               TonemapperOverride                                     (Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UMaterialInterface**              TonemapperOverride                                     (Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UComposurePostProcessPassPolicy::SetupPostProcess(class USceneCaptureComponent2D* SceneCapture, class UMaterialInterface** TonemapperOverride)
 {
@@ -2477,7 +2477,7 @@ void UComposureTonemapperPass::TonemapToRenderTarget()
 // (Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // class FName                             LookupName                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UTexture*                         OutTexture                                             (Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UTexture**                        OutTexture                                             (Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool ICompositingTextureLookupTable::FindNamedPassResult(class FName LookupName, class UTexture** OutTexture) const
@@ -2485,7 +2485,7 @@ bool ICompositingTextureLookupTable::FindNamedPassResult(class FName LookupName,
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CompositingTextureLookupTable", "FindNamedPassResult");
+		Func = AsUObject()->Class->GetFunction("CompositingTextureLookupTable", "FindNamedPassResult");
 
 	Params::CompositingTextureLookupTable_FindNamedPassResult Parms{};
 
@@ -2494,7 +2494,7 @@ bool ICompositingTextureLookupTable::FindNamedPassResult(class FName LookupName,
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	AsUObject()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 
@@ -2515,13 +2515,13 @@ void IMovieSceneComposureExportClient::InitializeForExport(class UMovieSceneComp
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("MovieSceneComposureExportClient", "InitializeForExport");
+		Func = AsUObject()->Class->GetFunction("MovieSceneComposureExportClient", "InitializeForExport");
 
 	Params::MovieSceneComposureExportClient_InitializeForExport Parms{};
 
 	Parms.ExportInitializer = ExportInitializer;
 
-	UObject::ProcessEvent(Func, &Parms);
+	AsUObject()->ProcessEvent(Func, &Parms);
 }
 
 
@@ -2530,7 +2530,7 @@ void IMovieSceneComposureExportClient::InitializeForExport(class UMovieSceneComp
 // Parameters:
 // class ACompositingElement*              CompShotElement                                        (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class USceneCaptureComponent2D*         SceneCapture                                           (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<class FString>                   BuffersToExport                                        (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TArray<class FString>&            BuffersToExport                                        (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UMovieSceneComposureExportInitializer::ExportSceneCaptureBuffers(class ACompositingElement* CompShotElement, class USceneCaptureComponent2D* SceneCapture, const TArray<class FString>& BuffersToExport)
 {

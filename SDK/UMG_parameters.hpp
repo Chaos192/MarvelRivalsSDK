@@ -388,7 +388,7 @@ struct Widget_K2_AddFieldValueChangedDelegate final
 {
 public:
 	struct FFieldNotificationId                   FieldId;                                           // 0x0000(0x000C)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(class UObject* Object, const struct FFieldNotificationId& Field)> Delegate;                                          // 0x000C(0x0014)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(class UObject* Object, const struct FFieldNotificationId& Field)> Delegate;       // 0x000C(0x0014)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
 // Function UMG.Widget.K2_BroadcastFieldValueChanged
@@ -405,7 +405,7 @@ struct Widget_K2_RemoveFieldValueChangedDelegate final
 {
 public:
 	struct FFieldNotificationId                   FieldId;                                           // 0x0000(0x000C)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(class UObject* Object, const struct FFieldNotificationId& Field)> Delegate;                                          // 0x000C(0x0014)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(class UObject* Object, const struct FFieldNotificationId& Field)> Delegate;       // 0x000C(0x0014)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
 // Function UMG.Widget.OnCascadingVisibleChanged
@@ -3810,7 +3810,7 @@ public:
 struct Image_SetBrushFromAtlasInterface final
 {
 public:
-	TScriptInterface<class ISlateTextureAtlasInterface> AtlasRegion;                                       // 0x0000(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TScriptInterface<class ISlateTextureAtlasInterface> AtlasRegion;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bMatchSize;                                        // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
@@ -4369,7 +4369,7 @@ public:
 struct RichTextBlock_SetDecorators final
 {
 public:
-	TArray<TSubclassOf<class URichTextBlockDecorator>> InDecoratorClasses;                                // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, UObjectWrapper, NativeAccessSpecifierPublic)
+	TArray<TSubclassOf<class URichTextBlockDecorator>> InDecoratorClasses;                           // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, UObjectWrapper, NativeAccessSpecifierPublic)
 };
 
 // Function UMG.RichTextBlock.SetDefaultColorAndOpacity

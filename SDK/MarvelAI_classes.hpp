@@ -10,16 +10,16 @@
 
 #include "Basic.hpp"
 
-#include "MarvelAI_structs.hpp"
-#include "UESVON_structs.hpp"
-#include "Engine_structs.hpp"
-#include "Engine_classes.hpp"
 #include "AIModule_structs.hpp"
 #include "AIModule_classes.hpp"
+#include "MarvelAI_structs.hpp"
 #include "Marvel_structs.hpp"
 #include "Marvel_classes.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
+#include "Engine_structs.hpp"
+#include "Engine_classes.hpp"
+#include "UESVON_structs.hpp"
 #include "GameplayTags_structs.hpp"
 #include "GameplayAbilities_structs.hpp"
 #include "InputRecord_structs.hpp"
@@ -29,25 +29,6 @@
 
 namespace SDK
 {
-
-// Class MarvelAI.BTD_TargetIsSummoned
-// 0x0080 (0x00F0 - 0x0070)
-class UBTD_TargetIsSummoned : public UBTDecorator
-{
-public:
-	struct FBlackboardKeySelector                 InCheckTarget;                                     // 0x0070(0x0030)(Edit, NativeAccessSpecifierPrivate)
-	TSet<int32>                                   ExcludeList;                                       // 0x00A0(0x0050)(Edit, NativeAccessSpecifierPrivate)
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"BTD_TargetIsSummoned">();
-	}
-	static class UBTD_TargetIsSummoned* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UBTD_TargetIsSummoned>();
-	}
-};
 
 // Class MarvelAI.MarvelAISubsystem
 // 0x0000 (0x0040 - 0x0040)
@@ -64,14 +45,34 @@ public:
 	}
 };
 
+// Class MarvelAI.EnvQueryTest_AllyShield
+// 0x0048 (0x02C8 - 0x0280)
+class UEnvQueryTest_AllyShield final : public UEnvQueryTest
+{
+public:
+	struct FAIDataProviderBoolValue               EnableThisTest;                                    // 0x0280(0x0040)(Edit, DisableEditOnInstance, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
+	float                                         ShieldValidDistance;                               // 0x02C0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_2C4[0x4];                                      // 0x02C4(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"EnvQueryTest_AllyShield">();
+	}
+	static class UEnvQueryTest_AllyShield* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UEnvQueryTest_AllyShield>();
+	}
+};
+
 // Class MarvelAI.AbilityTacticsManager
 // 0x00C0 (0x0100 - 0x0040)
 class UAbilityTacticsManager final : public UMarvelAISubsystem
 {
 public:
 	TArray<struct FAbilityTacticsRequest>         TacticsRequests;                                   // 0x0040(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
-	TMap<class UClass*, class UAbilityTacticsTask*> TaskObjectPool;                                    // 0x0050(0x0050)(NativeAccessSpecifierPrivate)
-	TMap<int32, TSubclassOf<class UAbilityTacticsTask>> TacticsTaskClasses;                                // 0x00A0(0x0050)(Edit, EditFixedSize, EditConst, UObjectWrapper, NativeAccessSpecifierPrivate)
+	TMap<class UClass*, class UAbilityTacticsTask*> TaskObjectPool;                                  // 0x0050(0x0050)(NativeAccessSpecifierPrivate)
+	TMap<int32, TSubclassOf<class UAbilityTacticsTask>> TacticsTaskClasses;                          // 0x00A0(0x0050)(Edit, EditFixedSize, EditConst, UObjectWrapper, NativeAccessSpecifierPrivate)
 	uint8                                         Pad_F0[0x10];                                      // 0x00F0(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
@@ -85,32 +86,6 @@ public:
 	}
 };
 
-// Class MarvelAI.BTS_AutoAbilityService
-// 0x00F0 (0x0168 - 0x0078)
-class UBTS_AutoAbilityService : public UBTService
-{
-public:
-	bool                                          bUseAIInfoGroupTags;                               // 0x0078(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_79[0x7];                                       // 0x0079(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FGameplayTagContainer                  UsageGroupTags;                                    // 0x0080(0x0068)(Edit, NativeAccessSpecifierPrivate)
-	struct FGameplayTagContainer                  BlockTag;                                          // 0x00E8(0x0068)(Edit, NativeAccessSpecifierPrivate)
-	bool                                          bUseDynamicFrequency;                              // 0x0150(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	bool                                          bOverrideTactics;                                  // 0x0151(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_152[0x6];                                      // 0x0152(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	TSubclassOf<class UAbilityTacticsTask>        OverrideRequestClass;                              // 0x0158(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	TSubclassOf<class UAIAbilitySelectCheckBase>  OverrideSelectCheckClass;                          // 0x0160(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"BTS_AutoAbilityService">();
-	}
-	static class UBTS_AutoAbilityService* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UBTS_AutoAbilityService>();
-	}
-};
-
 // Class MarvelAI.AbilityTacticsTask
 // 0x0118 (0x0148 - 0x0030)
 class UAbilityTacticsTask : public UObject
@@ -120,7 +95,7 @@ public:
 	TSubclassOf<class UAIAbilitySelectCheckBase>  SelectCheckClass;                                  // 0x00E8(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	int32                                         UseIndex;                                          // 0x00F0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	uint8                                         Pad_F4[0x4];                                       // 0x00F4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<TSubclassOf<class UAIAbilitySelectCheckBase>, class UAIAbilitySelectCheckBase*> CheckObjectMap;                                    // 0x00F8(0x0050)(UObjectWrapper, NativeAccessSpecifierPrivate)
+	TMap<TSubclassOf<class UAIAbilitySelectCheckBase>, class UAIAbilitySelectCheckBase*> CheckObjectMap; // 0x00F8(0x0050)(UObjectWrapper, NativeAccessSpecifierPrivate)
 
 public:
 	class UAIAbilitySelectCheckBase* GetSelectCheck() const;
@@ -133,6 +108,29 @@ public:
 	static class UAbilityTacticsTask* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UAbilityTacticsTask>();
+	}
+};
+
+// Class MarvelAI.BTS_AutoInjection
+// 0x03B8 (0x0430 - 0x0078)
+class UBTS_AutoInjection final : public UBTService
+{
+public:
+	struct FAIAbilityUsage                        AIAbilityData;                                     // 0x0078(0x00E8)(HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FMarvelAIAutoAbilityTable              UsageConfig;                                       // 0x0160(0x0258)(Edit, EditConst, NativeAccessSpecifierPublic)
+	class UAIAbilityUsageObject*                  AbilityUsageObject;                                // 0x03B8(0x0008)(ZeroConstructor, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FBlackboardKeySelector                 AbilityUsageBlackboardKey;                         // 0x03C0(0x0030)(Edit, EditConst, Protected, NativeAccessSpecifierProtected)
+	struct FBlackboardKeySelector                 AttackTargetBlackboardKey;                         // 0x03F0(0x0030)(Edit, EditConst, Protected, NativeAccessSpecifierProtected)
+	TArray<int32>                                 AbilityID;                                         // 0x0420(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"BTS_AutoInjection">();
+	}
+	static class UBTS_AutoInjection* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UBTS_AutoInjection>();
 	}
 };
 
@@ -162,27 +160,6 @@ public:
 	}
 };
 
-// Class MarvelAI.BTService_StrategyActionSelect
-// 0x0040 (0x00B8 - 0x0078)
-class UBTService_StrategyActionSelect final : public UBTService
-{
-public:
-	EActionCategory                               CurrentAction;                                     // 0x0078(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_79[0x7];                                       // 0x0079(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FBlackboardKeySelector                 OutNewAction;                                      // 0x0080(0x0030)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	class UActionRequirementAsset*                ActionTableAsset;                                  // 0x00B0(0x0008)(Edit, ZeroConstructor, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"BTService_StrategyActionSelect">();
-	}
-	static class UBTService_StrategyActionSelect* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UBTService_StrategyActionSelect>();
-	}
-};
-
 // Class MarvelAI.AbilityTacticsTask_AutoAbility
 // 0x0000 (0x0148 - 0x0148)
 class UAbilityTacticsTask_AutoAbility final : public UAbilityTacticsTask
@@ -195,6 +172,27 @@ public:
 	static class UAbilityTacticsTask_AutoAbility* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UAbilityTacticsTask_AutoAbility>();
+	}
+};
+
+// Class MarvelAI.EnvQueryTest_EffectByGroup
+// 0x0050 (0x02D0 - 0x0280)
+class UEnvQueryTest_EffectByGroup final : public UEnvQueryTest
+{
+public:
+	struct FAIDataProviderBoolValue               EnableThisTest;                                    // 0x0280(0x0040)(Edit, DisableEditOnInstance, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	TSubclassOf<class UEnvQueryContext>           TargetGroup;                                       // 0x02C0(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MaxEffectDistance;                                 // 0x02C8(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2CC[0x4];                                      // 0x02CC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"EnvQueryTest_EffectByGroup">();
+	}
+	static class UEnvQueryTest_EffectByGroup* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UEnvQueryTest_EffectByGroup>();
 	}
 };
 
@@ -213,62 +211,9 @@ public:
 	}
 };
 
-// Class MarvelAI.BTDecorator_MarvelInstancedBase
-// 0x0010 (0x00B8 - 0x00A8)
-class UBTDecorator_MarvelInstancedBase : public UBTDecorator_BlueprintBase
-{
-public:
-	class AMarvelAIController*                    MarvelAIOwner;                                     // 0x00A8(0x0008)(ZeroConstructor, Transient, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         Interval;                                          // 0x00B0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         RandomDeviation;                                   // 0x00B4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-
-public:
-	class AMarvelBaseCharacter* K2_GetControlledHero() const;
-	class APawn* K2_GetControlledPawn() const;
-	class AMarvelAIController* K2_GetMarvelAIOwner() const;
-	class UBehaviorTreeComponent* K2_GetOwnerBTComp() const;
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"BTDecorator_MarvelInstancedBase">();
-	}
-	static class UBTDecorator_MarvelInstancedBase* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UBTDecorator_MarvelInstancedBase>();
-	}
-};
-
-// Class MarvelAI.BTD_PayloadCheck
-// 0x0050 (0x0108 - 0x00B8)
-class UBTD_PayloadCheck : public UBTDecorator_MarvelInstancedBase
-{
-public:
-	struct FBlackboardKeySelector                 InPlayloadActor;                                   // 0x00B8(0x0030)(Edit, NativeAccessSpecifierPublic)
-	ECheckOption                                  InCheckOption;                                     // 0x00E8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_E9[0x3];                                       // 0x00E9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         InStage;                                           // 0x00EC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FFloatRange                            InScore;                                           // 0x00F0(0x0010)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         InPayloadState;                                    // 0x0100(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_101[0x7];                                      // 0x0101(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	bool Check(int32 Stage, float Score, float Speed, int32 Team, EOwnershipType Ownership) const;
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"BTD_PayloadCheck">();
-	}
-	static class UBTD_PayloadCheck* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UBTD_PayloadCheck>();
-	}
-};
-
 // Class MarvelAI.AbilityTacticsTaskInterface
-// 0x0000 (0x0030 - 0x0030)
-class IAbilityTacticsTaskInterface final : public IInterface
+// 0x0000 (0x0000 - 0x0000)
+class IAbilityTacticsTaskInterface final
 {
 public:
 	static class UClass* StaticClass()
@@ -278,6 +223,52 @@ public:
 	static class IAbilityTacticsTaskInterface* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<IAbilityTacticsTaskInterface>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
+};
+
+// Class MarvelAI.EnvQueryGenerator_Sphere
+// 0x0108 (0x0160 - 0x0058)
+class UEnvQueryGenerator_Sphere : public UEnvQueryGenerator
+{
+public:
+	TSubclassOf<class UEnvQueryContext>           GenerateAround;                                    // 0x0058(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FAIDataProviderFloatValue              DistanceInSameDirection;                           // 0x0060(0x0040)(Edit, DisableEditOnInstance, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
+	struct FAIDataProviderFloatValue              OuterRange;                                        // 0x00A0(0x0040)(Edit, DisableEditOnInstance, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
+	struct FAIDataProviderFloatValue              InnerRange;                                        // 0x00E0(0x0040)(Edit, DisableEditOnInstance, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
+	struct FAIDataProviderFloatValue              AngleStep;                                         // 0x0120(0x0040)(Edit, DisableEditOnInstance, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"EnvQueryGenerator_Sphere">();
+	}
+	static class UEnvQueryGenerator_Sphere* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UEnvQueryGenerator_Sphere>();
+	}
+};
+
+// Class MarvelAI.EnvQueryGenerator_SVONSphere
+// 0x0000 (0x0160 - 0x0160)
+class UEnvQueryGenerator_SVONSphere final : public UEnvQueryGenerator_Sphere
+{
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"EnvQueryGenerator_SVONSphere">();
+	}
+	static class UEnvQueryGenerator_SVONSphere* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UEnvQueryGenerator_SVONSphere>();
 	}
 };
 
@@ -322,21 +313,6 @@ public:
 	}
 };
 
-// Class MarvelAI.EnvQueryTest_IsShelterBroken
-// 0x0000 (0x0280 - 0x0280)
-class UEnvQueryTest_IsShelterBroken final : public UEnvQueryTest
-{
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"EnvQueryTest_IsShelterBroken">();
-	}
-	static class UEnvQueryTest_IsShelterBroken* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UEnvQueryTest_IsShelterBroken>();
-	}
-};
-
 // Class MarvelAI.AbilityUsageStandPoint
 // 0x0068 (0x05C8 - 0x0560)
 class AAbilityUsageStandPoint : public AStandPointBase
@@ -372,6 +348,28 @@ public:
 	}
 };
 
+// Class MarvelAI.BTS_AroundCharacter
+// 0x00C8 (0x0140 - 0x0078)
+class UBTS_AroundCharacter : public UBTService
+{
+public:
+	bool                                          ConsiderDist;                                      // 0x0078(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_79[0x7];                                       // 0x0079(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FAroundCharacterCheckStruct>    AroundCharacterCheckList;                          // 0x0080(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	struct FHeroFilter                            HeroFilter;                                        // 0x0090(0x0080)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FBlackboardKeySelector                 PassCharacterNum;                                  // 0x0110(0x0030)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"BTS_AroundCharacter">();
+	}
+	static class UBTS_AroundCharacter* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UBTS_AroundCharacter>();
+	}
+};
+
 // Class MarvelAI.LinkedAbilityUsageStandPoint
 // 0x0018 (0x05E0 - 0x05C8)
 class ALinkedAbilityUsageStandPoint final : public AAbilityUsageStandPoint
@@ -393,25 +391,6 @@ public:
 	static class ALinkedAbilityUsageStandPoint* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<ALinkedAbilityUsageStandPoint>();
-	}
-};
-
-// Class MarvelAI.HotPoint_DataAsset
-// 0x00A0 (0x00D8 - 0x0038)
-class UHotPoint_DataAsset final : public UDataAsset
-{
-public:
-	TMap<class FName, struct FMapPoint>           MapPoints;                                         // 0x0038(0x0050)(Edit, Protected, NativeAccessSpecifierProtected)
-	struct FMapPoint                              DefaultConfig;                                     // 0x0088(0x0050)(Edit, Protected, NativeAccessSpecifierProtected)
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"HotPoint_DataAsset">();
-	}
-	static class UHotPoint_DataAsset* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UHotPoint_DataAsset>();
 	}
 };
 
@@ -437,6 +416,34 @@ public:
 	}
 };
 
+// Class MarvelAI.BTS_SetMapPoint_Payload
+// 0x01F0 (0x0268 - 0x0078)
+class UBTS_SetMapPoint_Payload : public UBTService
+{
+public:
+	struct FBlackboardKeySelector                 InMatchStateInput;                                 // 0x0078(0x0030)(Edit, NativeAccessSpecifierPrivate)
+	struct FStrategyArea                          OutStrategyArea;                                   // 0x00A8(0x0090)(Edit, NativeAccessSpecifierPrivate)
+	struct FBlackboardKeySelector                 FrontierBBKey;                                     // 0x0138(0x0030)(Edit, NativeAccessSpecifierPrivate)
+	struct FBlackboardKeySelector                 EnemyPlayerStartBBKey;                             // 0x0168(0x0030)(Edit, NativeAccessSpecifierPrivate)
+	struct FBlackboardKeySelector                 AllyPlayerStartBBKey;                              // 0x0198(0x0030)(Edit, NativeAccessSpecifierPrivate)
+	float                                         SuppressDist;                                      // 0x01C8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	float                                         RetreatDist;                                       // 0x01CC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class UHotPoint_DataAsset*                    DA_HotPoint;                                       // 0x01D0(0x0008)(Edit, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	struct FBlackboardKeySelector                 SuppressPointBBKey;                                // 0x01D8(0x0030)(Edit, NativeAccessSpecifierPrivate)
+	struct FBlackboardKeySelector                 RetreatPointBBKey;                                 // 0x0208(0x0030)(Edit, NativeAccessSpecifierPrivate)
+	struct FBlackboardKeySelector                 OutHotPointBBKey;                                  // 0x0238(0x0030)(Edit, NativeAccessSpecifierPrivate)
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"BTS_SetMapPoint_Payload">();
+	}
+	static class UBTS_SetMapPoint_Payload* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UBTS_SetMapPoint_Payload>();
+	}
+};
+
 // Class MarvelAI.AIAbilityCondition_CheckAbilityCounter
 // 0x0010 (0x0048 - 0x0038)
 class UAIAbilityCondition_CheckAbilityCounter final : public UAIAbilityCondition
@@ -452,28 +459,6 @@ public:
 	static class UAIAbilityCondition_CheckAbilityCounter* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UAIAbilityCondition_CheckAbilityCounter>();
-	}
-};
-
-// Class MarvelAI.EnvQueryTest_RelativeGroundHeight
-// 0x0010 (0x0290 - 0x0280)
-class UEnvQueryTest_RelativeGroundHeight : public UEnvQueryTest
-{
-public:
-	class UCurveFloat*                            DamageScoreCurve;                                  // 0x0280(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	bool                                          bConsiderDestructible;                             // 0x0288(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	bool                                          bConsiderSceneSummoned;                            // 0x0289(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_28A[0x2];                                      // 0x028A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         MaxGroundSlope;                                    // 0x028C(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"EnvQueryTest_RelativeGroundHeight">();
-	}
-	static class UEnvQueryTest_RelativeGroundHeight* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UEnvQueryTest_RelativeGroundHeight>();
 	}
 };
 
@@ -495,6 +480,25 @@ public:
 	static class UAIAbilityCondition_CheckHeight* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UAIAbilityCondition_CheckHeight>();
+	}
+};
+
+// Class MarvelAI.BTS_CheckRemainTime
+// 0x0038 (0x00B0 - 0x0078)
+class UBTS_CheckRemainTime : public UBTService
+{
+public:
+	struct FBlackboardKeySelector                 OutRemainTime;                                     // 0x0078(0x0030)(Edit, Protected, NativeAccessSpecifierProtected)
+	uint8                                         Pad_A8[0x8];                                       // 0x00A8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"BTS_CheckRemainTime">();
+	}
+	static class UBTS_CheckRemainTime* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UBTS_CheckRemainTime>();
 	}
 };
 
@@ -527,27 +531,6 @@ public:
 	}
 };
 
-// Class MarvelAI.EnvQueryTest_EvadeTarget
-// 0x1140 (0x13C0 - 0x0280)
-class UEnvQueryTest_EvadeTarget final : public UEnvQueryTest
-{
-public:
-	struct FMarvelAbilityTraceContext             TraceContext;                                      // 0x0280(0x0F90)(Edit, ContainsInstancedReference, NativeAccessSpecifierPublic)
-	TArray<struct FAITagMatchParameter>           TagMatchParameters;                                // 0x1210(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-	struct FAbilityCheckConfig                    Asset;                                             // 0x1220(0x0198)(Edit, AdvancedDisplay, NativeAccessSpecifierPublic)
-	uint8                                         Pad_13B8[0x8];                                     // 0x13B8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"EnvQueryTest_EvadeTarget">();
-	}
-	static class UEnvQueryTest_EvadeTarget* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UEnvQueryTest_EvadeTarget>();
-	}
-};
-
 // Class MarvelAI.AIAbilityCondition_SummonerDistance
 // 0x0090 (0x00C8 - 0x0038)
 class UAIAbilityCondition_SummonerDistance final : public UAIAbilityCondition
@@ -567,6 +550,47 @@ public:
 	static class UAIAbilityCondition_SummonerDistance* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UAIAbilityCondition_SummonerDistance>();
+	}
+};
+
+// Class MarvelAI.ActionRequirementBase
+// 0x0008 (0x0038 - 0x0030)
+class UActionRequirementBase : public UObject
+{
+public:
+	bool                                          Invert;                                            // 0x0030(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_31[0x7];                                       // 0x0031(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	bool Requirement(class AAIController* OwnerController, class AActor* ControlledPawn);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"ActionRequirementBase">();
+	}
+	static class UActionRequirementBase* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UActionRequirementBase>();
+	}
+};
+
+// Class MarvelAI.Requirement_ReturnValue
+// 0x0008 (0x0040 - 0x0038)
+class URequirement_ReturnValue final : public UActionRequirementBase
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0038(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_39[0x7];                                       // 0x0039(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"Requirement_ReturnValue">();
+	}
+	static class URequirement_ReturnValue* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<URequirement_ReturnValue>();
 	}
 };
 
@@ -610,24 +634,6 @@ public:
 	}
 };
 
-// Class MarvelAI.AICommunicateAsset
-// 0x0050 (0x0088 - 0x0038)
-class UAICommunicateAsset final : public UPrimaryDataAsset
-{
-public:
-	struct FAICommunicateData                     Communicate;                                       // 0x0038(0x0050)(Edit, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"AICommunicateAsset">();
-	}
-	static class UAICommunicateAsset* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UAICommunicateAsset>();
-	}
-};
-
 // Class MarvelAI.AIAbilityExecutorManager
 // 0x0018 (0x0050 - 0x0038)
 class UAIAbilityExecutorManager final : public UWorldSubsystem
@@ -645,6 +651,47 @@ public:
 	static class UAIAbilityExecutorManager* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UAIAbilityExecutorManager>();
+	}
+};
+
+// Class MarvelAI.BTS_SendChatMessage
+// 0x0050 (0x00C8 - 0x0078)
+class UBTS_SendChatMessage final : public UBTService
+{
+public:
+	int32                                         MessageSide;                                       // 0x0078(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Timestamp;                                         // 0x007C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ChannelType;                                       // 0x0080(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         SpecialType;                                       // 0x0084(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         PoolHealth;                                        // 0x0088(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         SendMessageCD;                                     // 0x008C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UDataTable*                             AICommunicateDataTableAsset;                       // 0x0090(0x0008)(Edit, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UAICommunicateAsset*                    WeightsAsset;                                      // 0x0098(0x0008)(Edit, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AMarvelAIController*                    AIOwner;                                           // 0x00A0(0x0008)(ZeroConstructor, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FDateTime                              LastSendMessageTime;                               // 0x00A8(0x0008)(ZeroConstructor, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_B0[0x18];                                      // 0x00B0(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	class FString GetAIUserName(class AActor* Target);
+	void OnAllDeath(const struct FAIEventArgs& Args);
+	void OnDeath(const struct FAIEventArgs& Args);
+	void OnEnergyFull(const struct FAIEventArgs& Args);
+	void OnGameBegin(const struct FAIEventArgs& Args);
+	void OnGameEnd(const struct FAIEventArgs& Args);
+	void OnHeal(const struct FAIEventArgs& Args);
+	void OnHealthChanged(const struct FAIEventArgs& Args);
+	void SendChatMessage(const class FString& msg, class AActor* Target);
+	void SendMessage(struct FAICommunicateEx* Communicate, class AActor* Target);
+	void SendQuickMessage(const int32& ID, class AActor* Target);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"BTS_SendChatMessage">();
+	}
+	static class UBTS_SendChatMessage* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UBTS_SendChatMessage>();
 	}
 };
 
@@ -673,32 +720,6 @@ public:
 	}
 };
 
-// Class MarvelAI.BTS_UpdateFireLine
-// 0x0070 (0x00E8 - 0x0078)
-class UBTS_UpdateFireLine final : public UBTService
-{
-public:
-	float                                         TeammateDistance;                                  // 0x0078(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_7C[0x4];                                       // 0x007C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FBlackboardKeySelector                 DifficultyMode;                                    // 0x0080(0x0030)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	struct FBlackboardKeySelector                 DifficultyLevel;                                   // 0x00B0(0x0030)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	float                                         TempPriority;                                      // 0x00E0(0x0004)(BlueprintVisible, ZeroConstructor, Transient, DuplicateTransient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_E4[0x4];                                       // 0x00E4(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	bool IsActorInFireLineState(const class AMarvelBaseCharacter* Character);
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"BTS_UpdateFireLine">();
-	}
-	static class UBTS_UpdateFireLine* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UBTS_UpdateFireLine>();
-	}
-};
-
 // Class MarvelAI.AIAbilityExitStageLogic_BindLogic
 // 0x0018 (0x0050 - 0x0038)
 class UAIAbilityExitStageLogic_BindLogic : public UAIAbilityExitStageLogic
@@ -716,6 +737,24 @@ public:
 	static class UAIAbilityExitStageLogic_BindLogic* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UAIAbilityExitStageLogic_BindLogic>();
+	}
+};
+
+// Class MarvelAI.BTS_UpdateFrontier
+// 0x0030 (0x00A8 - 0x0078)
+class UBTS_UpdateFrontier : public UBTService
+{
+public:
+	struct FBlackboardKeySelector                 OutFrontier;                                       // 0x0078(0x0030)(Edit, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"BTS_UpdateFrontier">();
+	}
+	static class UBTS_UpdateFrontier* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UBTS_UpdateFrontier>();
 	}
 };
 
@@ -745,24 +784,6 @@ public:
 	}
 };
 
-// Class MarvelAI.BTS_UpdateAnthropomorphicType
-// 0x0030 (0x00A8 - 0x0078)
-class UBTS_UpdateAnthropomorphicType : public UBTService
-{
-public:
-	struct FBlackboardKeySelector                 OutAnthropomorphic;                                // 0x0078(0x0030)(Edit, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"BTS_UpdateAnthropomorphicType">();
-	}
-	static class UBTS_UpdateAnthropomorphicType* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UBTS_UpdateAnthropomorphicType>();
-	}
-};
-
 // Class MarvelAI.AIAbilityExitStageLogic_EQSComplete
 // 0x0000 (0x0038 - 0x0038)
 class UAIAbilityExitStageLogic_EQSComplete final : public UAIAbilityExitStageLogic
@@ -775,6 +796,24 @@ public:
 	static class UAIAbilityExitStageLogic_EQSComplete* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UAIAbilityExitStageLogic_EQSComplete>();
+	}
+};
+
+// Class MarvelAI.BTS_UpdateCampState
+// 0x0030 (0x00A8 - 0x0078)
+class UBTS_UpdateCampState : public UBTService
+{
+public:
+	struct FBlackboardKeySelector                 OutCampState;                                      // 0x0078(0x0030)(Edit, NativeAccessSpecifierPrivate)
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"BTS_UpdateCampState">();
+	}
+	static class UBTS_UpdateCampState* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UBTS_UpdateCampState>();
 	}
 };
 
@@ -797,27 +836,6 @@ public:
 	}
 };
 
-// Class MarvelAI.BTS_IsInBattle
-// 0x00F8 (0x0170 - 0x0078)
-class UBTS_IsInBattle : public UBTService
-{
-public:
-	struct FBlackboardKeySelector                 IsInBattle;                                        // 0x0078(0x0030)(Edit, Protected, NativeAccessSpecifierProtected)
-	struct FBlackboardKeySelector                 AttackTarget;                                      // 0x00A8(0x0030)(Edit, Protected, NativeAccessSpecifierProtected)
-	struct FBlackboardKeySelector                 TeammateTarget;                                    // 0x00D8(0x0030)(Edit, Protected, NativeAccessSpecifierProtected)
-	struct FAIHeroTag                             MatchTag;                                          // 0x0108(0x0068)(Edit, DisableEditOnInstance, AdvancedDisplay, Protected, NativeAccessSpecifierProtected)
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"BTS_IsInBattle">();
-	}
-	static class UBTS_IsInBattle* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UBTS_IsInBattle>();
-	}
-};
-
 // Class MarvelAI.AIAbilityExitStageLogic_WaitFocusMatched
 // 0x0008 (0x0040 - 0x0038)
 class UAIAbilityExitStageLogic_WaitFocusMatched : public UAIAbilityExitStageLogic
@@ -834,6 +852,43 @@ public:
 	static class UAIAbilityExitStageLogic_WaitFocusMatched* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UAIAbilityExitStageLogic_WaitFocusMatched>();
+	}
+};
+
+// Class MarvelAI.BTS_SelectTargetNew
+// 0x01B8 (0x0230 - 0x0078)
+class UBTS_SelectTargetNew : public UBTService
+{
+public:
+	bool                                          bEnableDebug;                                      // 0x0078(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_79[0x7];                                       // 0x0079(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 DebugName;                                         // 0x0080(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FBlackboardKeySelector                 InOutTarget;                                       // 0x0090(0x0030)(Edit, NativeAccessSpecifierPublic)
+	struct FBlackboardKeySelector                 OutSenseFromPortal;                                // 0x00C0(0x0030)(Edit, NativeAccessSpecifierPublic)
+	EAITargetType                                 CharacterGroupType;                                // 0x00F0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EHeroRole                                     LimitRole;                                         // 0x00F1(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_F2[0x6];                                       // 0x00F2(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	TSubclassOf<class UAIScoreModuleRule>         ScoreRuleConfigClass;                              // 0x00F8(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSubclassOf<class UAIScoreModuleRule>         SummonScoreRuleConfigClass;                        // 0x0100(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSet<int32>                                   HighPrioritySummoners;                             // 0x0108(0x0050)(Edit, NativeAccessSpecifierPublic)
+	class UAIScoreModuleRule*                     RuleConfig;                                        // 0x0158(0x0008)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class UAIScoreModuleRule*                     SummonedRuleConfig;                                // 0x0160(0x0008)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class AMarvelAIController*                    AIOwner;                                           // 0x0168(0x0008)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	TSet<class AActor*>                           Candidates;                                        // 0x0170(0x0050)(Transient, NativeAccessSpecifierPrivate)
+	class AMarvelGameState*                       CacheMarvelGameState;                              // 0x01C0(0x0008)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_1C8[0x68];                                     // 0x01C8(0x0068)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void OnTargetTakingDamage(class AActor* InSourceAvatar, class AActor* InTargetAvatar, const struct FAttributeModifierHandle& ModifierParameterHandle);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"BTS_SelectTargetNew">();
+	}
+	static class UBTS_SelectTargetNew* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UBTS_SelectTargetNew>();
 	}
 };
 
@@ -862,26 +917,6 @@ public:
 	}
 };
 
-// Class MarvelAI.BTS_UpdateDangerous
-// 0x0010 (0x0088 - 0x0078)
-class UBTS_UpdateDangerous : public UBTService
-{
-public:
-	bool                                          bEnableDebugLog;                                   // 0x0078(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_79[0x7];                                       // 0x0079(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UDangerousTargetAsset*                  DangerousTarget;                                   // 0x0080(0x0008)(Edit, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"BTS_UpdateDangerous">();
-	}
-	static class UBTS_UpdateDangerous* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UBTS_UpdateDangerous>();
-	}
-};
-
 // Class MarvelAI.AIAbilityFlowCheck_Condition
 // 0x0010 (0x0048 - 0x0038)
 class UAIAbilityFlowCheck_Condition final : public UAIAbilityFlowCheckLogicBase
@@ -897,6 +932,57 @@ public:
 	static class UAIAbilityFlowCheck_Condition* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UAIAbilityFlowCheck_Condition>();
+	}
+};
+
+// Class MarvelAI.BTS_UpdateMatchState_New
+// 0x00A0 (0x0118 - 0x0078)
+class UBTS_UpdateMatchState_New : public UBTService
+{
+public:
+	struct FBlackboardKeySelector                 GameModeTagKey;                                    // 0x0078(0x0030)(Edit, NativeAccessSpecifierPrivate)
+	struct FBlackboardKeySelector                 MatchStateKey;                                     // 0x00A8(0x0030)(Edit, NativeAccessSpecifierPrivate)
+	struct FBlackboardKeySelector                 RemainTimeKey;                                     // 0x00D8(0x0030)(Edit, NativeAccessSpecifierPrivate)
+	class AAIController*                          AIOwner;                                           // 0x0108(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class ULevelSubsystem*                        LevelSubsystem;                                    // 0x0110(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	void OnMatchStateChange(EMatchState NewState);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"BTS_UpdateMatchState_New">();
+	}
+	static class UBTS_UpdateMatchState_New* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UBTS_UpdateMatchState_New>();
+	}
+};
+
+// Class MarvelAI.BTS_UpdateEscortStateNew
+// 0x0090 (0x01A8 - 0x0118)
+class UBTS_UpdateEscortStateNew final : public UBTS_UpdateMatchState_New
+{
+public:
+	struct FBlackboardKeySelector                 GameStageKey;                                      // 0x0118(0x0030)(Edit, NativeAccessSpecifierPrivate)
+	struct FBlackboardKeySelector                 PayloadStateKey;                                   // 0x0148(0x0030)(Edit, NativeAccessSpecifierPrivate)
+	struct FBlackboardKeySelector                 PayloadProgressKey;                                // 0x0178(0x0030)(Edit, NativeAccessSpecifierPrivate)
+
+public:
+	EOwnershipType GetPayloadOwnership();
+	float GetPayLoadProgress();
+	float GetPayLoadSpeed();
+	void SetCurrentStage(const class FString& StageName);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"BTS_UpdateEscortStateNew">();
+	}
+	static class UBTS_UpdateEscortStateNew* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UBTS_UpdateEscortStateNew>();
 	}
 };
 
@@ -929,6 +1015,33 @@ public:
 	}
 };
 
+// Class MarvelAI.AIAbilityActivationLogic
+// 0x0008 (0x0038 - 0x0030)
+class UAIAbilityActivationLogic : public UObject
+{
+public:
+	bool                                          bShouldTick;                                       // 0x0030(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bCouldUseDefaultObject;                            // 0x0031(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_32[0x6];                                       // 0x0032(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UAIAbilityActivationLogic* GetAbilityActivationLogic(class AMarvelAIController* MarvelAIOwner, TSubclassOf<class UAIAbilityActivationLogic> ActivationLogicClass);
+
+	bool BeginLogic(class UAIAbilityExecutor* OwnerExecutor, const struct FAIAbilityUsage& AbilityUsage, class AMarvelAIController* OwnerController);
+	bool EndLogic(class UAIAbilityExecutor* OwnerExecutor, const struct FAIAbilityUsage& AbilityUsage, class AMarvelAIController* OwnerController);
+	bool TickLogic(class UAIAbilityExecutor* OwnerExecutor, const struct FAIAbilityUsage& AbilityUsage, class AMarvelAIController* OwnerController, float DeltaTime);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"AIAbilityActivationLogic">();
+	}
+	static class UAIAbilityActivationLogic* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UAIAbilityActivationLogic>();
+	}
+};
+
 // Class MarvelAI.BTTask_GeneralActivateAbility
 // 0x0038 (0x00B0 - 0x0078)
 class UBTTask_GeneralActivateAbility : public UBTTaskNode
@@ -957,30 +1070,22 @@ public:
 	}
 };
 
-// Class MarvelAI.AIAbilityActivationLogic
-// 0x0008 (0x0038 - 0x0030)
-class UAIAbilityActivationLogic : public UObject
+// Class MarvelAI.BTTask_ActivateAbility_BB
+// 0x0118 (0x01C8 - 0x00B0)
+class UBTTask_ActivateAbility_BB final : public UBTTask_GeneralActivateAbility
 {
 public:
-	bool                                          bShouldTick;                                       // 0x0030(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bCouldUseDefaultObject;                            // 0x0031(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_32[0x6];                                       // 0x0032(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UAIAbilityActivationLogic* GetAbilityActivationLogic(class AMarvelAIController* MarvelAIOwner, TSubclassOf<class UAIAbilityActivationLogic> ActivationLogicClass);
-
-	bool BeginLogic(class UAIAbilityExecutor* OwnerExecutor, const struct FAIAbilityUsage& AbilityUsage, class AMarvelAIController* OwnerController);
-	bool EndLogic(class UAIAbilityExecutor* OwnerExecutor, const struct FAIAbilityUsage& AbilityUsage, class AMarvelAIController* OwnerController);
-	bool TickLogic(class UAIAbilityExecutor* OwnerExecutor, const struct FAIAbilityUsage& AbilityUsage, class AMarvelAIController* OwnerController, float DeltaTime);
+	struct FBlackboardKeySelector                 InAbilityUsageObject;                              // 0x00B0(0x0030)(Edit, BlueprintVisible, Protected, NativeAccessSpecifierProtected)
+	uint8                                         Pad_E0[0xE8];                                      // 0x00E0(0x00E8)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"AIAbilityActivationLogic">();
+		return StaticClassImpl<"BTTask_ActivateAbility_BB">();
 	}
-	static class UAIAbilityActivationLogic* GetDefaultObj()
+	static class UBTTask_ActivateAbility_BB* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UAIAbilityActivationLogic>();
+		return GetDefaultObjImpl<UBTTask_ActivateAbility_BB>();
 	}
 };
 
@@ -1000,24 +1105,6 @@ public:
 	static class UAIAbilityMoveControlLogic* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UAIAbilityMoveControlLogic>();
-	}
-};
-
-// Class MarvelAI.BTS_UpdateMapID
-// 0x0030 (0x00A8 - 0x0078)
-class UBTS_UpdateMapID : public UBTService
-{
-public:
-	struct FBlackboardKeySelector                 OutMapID;                                          // 0x0078(0x0030)(Edit, Protected, NativeAccessSpecifierProtected)
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"BTS_UpdateMapID">();
-	}
-	static class UBTS_UpdateMapID* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UBTS_UpdateMapID>();
 	}
 };
 
@@ -1042,6 +1129,29 @@ public:
 	}
 };
 
+// Class MarvelAI.BTS_UpdateMatchState
+// 0x0068 (0x00E0 - 0x0078)
+class UBTS_UpdateMatchState : public UBTService
+{
+public:
+	struct FBlackboardKeySelector                 OutMatchState;                                     // 0x0078(0x0030)(Edit, NativeAccessSpecifierPublic)
+	struct FBlackboardKeySelector                 OutBattleState;                                    // 0x00A8(0x0030)(Edit, NativeAccessSpecifierPublic)
+	class AAIController*                          AIOwner;                                           // 0x00D8(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+
+public:
+	void OnMatchStateChange(EMatchState NewState);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"BTS_UpdateMatchState">();
+	}
+	static class UBTS_UpdateMatchState* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UBTS_UpdateMatchState>();
+	}
+};
+
 // Class MarvelAI.AIAbilityActivationLogic_TargetDistance
 // 0x0018 (0x0050 - 0x0038)
 class UAIAbilityActivationLogic_TargetDistance final : public UAIAbilityExitStageLogic
@@ -1063,38 +1173,13 @@ public:
 	}
 };
 
-// Class MarvelAI.BTS_UpdateMatchState_New
-// 0x00A0 (0x0118 - 0x0078)
-class UBTS_UpdateMatchState_New : public UBTService
-{
-public:
-	struct FBlackboardKeySelector                 GameModeTagKey;                                    // 0x0078(0x0030)(Edit, NativeAccessSpecifierPrivate)
-	struct FBlackboardKeySelector                 MatchStateKey;                                     // 0x00A8(0x0030)(Edit, NativeAccessSpecifierPrivate)
-	struct FBlackboardKeySelector                 RemainTimeKey;                                     // 0x00D8(0x0030)(Edit, NativeAccessSpecifierPrivate)
-	class AAIController*                          AIOwner;                                           // 0x0108(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class ULevelSubsystem*                        LevelSubsystem;                                    // 0x0110(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-public:
-	void OnMatchStateChange(EMatchState NewState);
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"BTS_UpdateMatchState_New">();
-	}
-	static class UBTS_UpdateMatchState_New* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UBTS_UpdateMatchState_New>();
-	}
-};
-
 // Class MarvelAI.AIAbilityObserver
 // 0x0070 (0x00A8 - 0x0038)
 class UAIAbilityObserver final : public UWorldSubsystem
 {
 public:
-	TMulticastInlineDelegate<void(class UAbilitySystemComponent* ASC, int32 AbilityID, const class FString& Session, struct FGlobalEventExtraData& Data)> OnAbilityActivate;                                 // 0x0038(0x0010)(ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class UAbilitySystemComponent* ASC, int32 AbilityID, const class FString& Session, struct FGlobalEventExtraData& Data)> OnAbilityDeActivate;                               // 0x0048(0x0010)(ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class UAbilitySystemComponent* ASC, int32 AbilityID, const class FString& Session, const struct FGlobalEventExtraData& Data)> OnAbilityActivate; // 0x0038(0x0010)(ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class UAbilitySystemComponent* ASC, int32 AbilityID, const class FString& Session, const struct FGlobalEventExtraData& Data)> OnAbilityDeActivate; // 0x0048(0x0010)(ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
 	TMap<class AActor*, struct FAbilityList>      ActivatedAbility;                                  // 0x0058(0x0050)(NativeAccessSpecifierPrivate)
 
 public:
@@ -1109,6 +1194,30 @@ public:
 	static class UAIAbilityObserver* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UAIAbilityObserver>();
+	}
+};
+
+// Class MarvelAI.BTS_UpdateControlState
+// 0x0090 (0x01A8 - 0x0118)
+class UBTS_UpdateControlState final : public UBTS_UpdateMatchState_New
+{
+public:
+	struct FBlackboardKeySelector                 AllyCampProgressKey;                               // 0x0118(0x0030)(Edit, NativeAccessSpecifierPrivate)
+	struct FBlackboardKeySelector                 EnemyCampProgressKey;                              // 0x0148(0x0030)(Edit, NativeAccessSpecifierPrivate)
+	struct FBlackboardKeySelector                 ControlStateKey;                                   // 0x0178(0x0030)(Edit, NativeAccessSpecifierPrivate)
+
+public:
+	EAIFilterSide GetCampControlState(class AMarvelBaseCharacter* OwnerCharacter);
+	TArray<float> GetCampProgress(class AMarvelBaseCharacter* OwnerCharacter);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"BTS_UpdateControlState">();
+	}
+	static class UBTS_UpdateControlState* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UBTS_UpdateControlState>();
 	}
 };
 
@@ -1134,24 +1243,6 @@ public:
 	}
 };
 
-// Class MarvelAI.BTS_UpdateUsageGroup
-// 0x0068 (0x00E0 - 0x0078)
-class UBTS_UpdateUsageGroup : public UBTService
-{
-public:
-	struct FGameplayTagContainer                  UsageGroupTags;                                    // 0x0078(0x0068)(Edit, Protected, NativeAccessSpecifierProtected)
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"BTS_UpdateUsageGroup">();
-	}
-	static class UBTS_UpdateUsageGroup* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UBTS_UpdateUsageGroup>();
-	}
-};
-
 // Class MarvelAI.AIAbilitySelectCheck_AILab
 // 0x0000 (0x0050 - 0x0050)
 class UAIAbilitySelectCheck_AILab final : public UAIAbilitySelectCheckBase
@@ -1164,6 +1255,76 @@ public:
 	static class UAIAbilitySelectCheck_AILab* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UAIAbilitySelectCheck_AILab>();
+	}
+};
+
+// Class MarvelAI.AISelectTargetLogicBase
+// 0x0040 (0x0070 - 0x0030)
+class UAISelectTargetLogicBase : public UObject
+{
+public:
+	bool                                          bShouldUpdateInTick;                               // 0x0030(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_31[0x3];                                       // 0x0031(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         TickInterval;                                      // 0x0034(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bCouldUseDefaultObject;                            // 0x0038(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bTryFindFromOwnerBeforeCreate;                     // 0x0039(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bShouldClearFocusWhenEnd;                          // 0x003A(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bShouldUseMissOffset;                              // 0x003B(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         ProjectilePredicateSpeed;                          // 0x003C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         ProjectilePredicateGravity;                        // 0x0040(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         FocusSpeedFactorWhenMiss;                          // 0x0044(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         MissBoxLength;                                     // 0x0048(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         MissBoxPadding;                                    // 0x004C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         MissBoxHeightScale;                                // 0x0050(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_54[0x4];                                       // 0x0054(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UCurveFloat*                            MissBoxLengthFactorCurve;                          // 0x0058(0x0008)(Edit, ZeroConstructor, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UCurveFloat*                            MissBoxPaddingFactorCurve;                         // 0x0060(0x0008)(Edit, ZeroConstructor, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bEnableDebugDraw;                                  // 0x0068(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_69[0x7];                                       // 0x0069(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UAISelectTargetLogicBase* GetSelectTargetLogicObject(class AMarvelAIController* MarvelAIOwner, TSubclassOf<class UAISelectTargetLogicBase> SelectLogicClass);
+
+	bool CheckMissAndAddMissOffset(class AMarvelAIController* MarvelAI, struct FMarvelAITarget& OutAITarget, const struct FAIAbilityUsage& AbilityUsage);
+	void OnDestroy(class AMarvelAIController* MarvelAIController, struct FAIAbilityUsage* AbilityUsage);
+	void OnInitialize(class AMarvelAIController* MarvelAIController, struct FAIAbilityUsage* AbilityUsage);
+	bool SelectTargetForAbilityCheck(const struct FRequiredAIDataForAutoAbility& AbilityContext, struct FMarvelAITarget& OutAITarget);
+	bool SelectTargetOrLocation(class AMarvelAIController* AIController, struct FMarvelAITarget& OutAITarget, const struct FAIAbilityUsage& AbilityUsage);
+	bool TakeResultAITarget(class AMarvelAIController* AIController, struct FMarvelAITarget& OutAITarget, const struct FAIAbilityUsage& AbilityUsage);
+	bool UpdateProjectilePredicateSpeed(class AMarvelAIController* AIController, const struct FAIAbilityUsage& AbilityUsage, const struct FMarvelProjectileAgentTable& ProjectileAgentTable);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"AISelectTargetLogicBase">();
+	}
+	static class UAISelectTargetLogicBase* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UAISelectTargetLogicBase>();
+	}
+};
+
+// Class MarvelAI.AISelectTargetLogic_General
+// 0x0030 (0x00A0 - 0x0070)
+class UAISelectTargetLogic_General : public UAISelectTargetLogicBase
+{
+public:
+	bool                                          bEnableAccumulateHitRate;                          // 0x0070(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_71[0x3];                                       // 0x0071(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         MaxDistanceForTargetAsUnMoved;                     // 0x0074(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         BoxLengthFactorByDistance;                         // 0x0078(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_7C[0x1C];                                      // 0x007C(0x001C)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         BaseAimBoxLength;                                  // 0x0098(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_9C[0x4];                                       // 0x009C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"AISelectTargetLogic_General">();
+	}
+	static class UAISelectTargetLogic_General* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UAISelectTargetLogic_General>();
 	}
 };
 
@@ -1182,29 +1343,6 @@ public:
 	}
 };
 
-// Class MarvelAI.BTT_ActiveAbilityByUsage
-// 0x0050 (0x00C8 - 0x0078)
-class UBTT_ActiveAbilityByUsage final : public UBTTaskNode
-{
-public:
-	int32                                         AbilityID;                                         // 0x0078(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	int32                                         AbilityUsageID;                                    // 0x007C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	struct FBlackboardKeySelector                 BlackboardAbilityID;                               // 0x0080(0x0030)(Edit, NativeAccessSpecifierPrivate)
-	struct FGameplayAITag                         AbilityGroupTag;                                   // 0x00B0(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_BC[0x4];                                       // 0x00BC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TSubclassOf<class UAbilityTacticsTask>        TaskClasses;                                       // 0x00C0(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"BTT_ActiveAbilityByUsage">();
-	}
-	static class UBTT_ActiveAbilityByUsage* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UBTT_ActiveAbilityByUsage>();
-	}
-};
-
 // Class MarvelAI.AIAbilitySelectCheck_SingleAbility
 // 0x0000 (0x0050 - 0x0050)
 class UAIAbilitySelectCheck_SingleAbility final : public UAIAbilitySelectCheckBase
@@ -1217,6 +1355,27 @@ public:
 	static class UAIAbilitySelectCheck_SingleAbility* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UAIAbilitySelectCheck_SingleAbility>();
+	}
+};
+
+// Class MarvelAI.BTT_FindStrategyArea
+// 0x0068 (0x00E0 - 0x0078)
+class UBTT_FindStrategyArea : public UBTTaskNode
+{
+public:
+	struct FBlackboardKeySelector                 StrategyAreaVolume;                                // 0x0078(0x0030)(Edit, NativeAccessSpecifierPublic)
+	struct FBlackboardKeySelector                 OutLandPoint;                                      // 0x00A8(0x0030)(Edit, NativeAccessSpecifierPublic)
+	int32                                         MaxSearchNode;                                     // 0x00D8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_DC[0x4];                                       // 0x00DC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"BTT_FindStrategyArea">();
+	}
+	static class UBTT_FindStrategyArea* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UBTT_FindStrategyArea>();
 	}
 };
 
@@ -1298,30 +1457,6 @@ public:
 	}
 };
 
-// Class MarvelAI.BTTask_AIActivateAbilityTask
-// 0x0048 (0x00C0 - 0x0078)
-class UBTTask_AIActivateAbilityTask final : public UBTTaskNode
-{
-public:
-	struct FBlackboardKeySelector                 InAbilityUsageObject;                              // 0x0078(0x0030)(Edit, BlueprintVisible, Protected, NativeAccessSpecifierProtected)
-	struct FGameplayTag                           InjectionTag;                                      // 0x00A8(0x000C)(Edit, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_B4[0x4];                                       // 0x00B4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UBehaviorTree*                          BehaviorAsset;                                     // 0x00B8(0x0008)(ZeroConstructor, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-
-public:
-	void InitAbilityTask();
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"BTTask_AIActivateAbilityTask">();
-	}
-	static class UBTTask_AIActivateAbilityTask* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UBTTask_AIActivateAbilityTask>();
-	}
-};
-
 // Class MarvelAI.AIAbilityUsageObject
 // 0x00E8 (0x0118 - 0x0030)
 class UAIAbilityUsageObject final : public UObject
@@ -1346,6 +1481,52 @@ public:
 	}
 };
 
+// Class MarvelAI.MarvelAIWorldSubsystem
+// 0x0000 (0x0048 - 0x0048)
+class UMarvelAIWorldSubsystem : public UTickableWorldSubsystem
+{
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"MarvelAIWorldSubsystem">();
+	}
+	static class UMarvelAIWorldSubsystem* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UMarvelAIWorldSubsystem>();
+	}
+};
+
+// Class MarvelAI.AIServerRequestServices
+// 0x02B8 (0x0300 - 0x0048)
+class UAIServerRequestServices final : public UMarvelAIWorldSubsystem
+{
+public:
+	uint8                                         Pad_48[0x70];                                      // 0x0048(0x0070)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 AILabServerUrl;                                    // 0x00B8(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         MaxTimeOut;                                        // 0x00C8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_CC[0xDC];                                      // 0x00CC(0x00DC)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         RequestInterval;                                   // 0x01A8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_1AC[0x4];                                      // 0x01AC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	int64                                         RequestIndexID;                                    // 0x01B0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_1B8[0x148];                                    // 0x01B8(0x0148)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	class FString GetAILabServerUrl();
+	void InitRequestServicesLogic();
+	void RequestTimer(bool bRetry);
+	void SetAILabServerUrl(const class FString& NewUrl, const class FString& msg);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"AIServerRequestServices">();
+	}
+	static class UAIServerRequestServices* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UAIServerRequestServices>();
+	}
+};
+
 // Class MarvelAI.AIActionArea
 // 0x0068 (0x04F8 - 0x0490)
 class AAIActionArea final : public AActor
@@ -1353,7 +1534,7 @@ class AAIActionArea final : public AActor
 public:
 	class USimpleBoxPlayerCheckComponent*         AICheckArea;                                       // 0x0490(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	TArray<class AAbilityUsageStandPoint*>        RelatedUsagePointConfig;                           // 0x0498(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
-	TMap<int32, struct FAbilityUsagePointCollection> ProcessedUsagePointData;                           // 0x04A8(0x0050)(BlueprintVisible, Transient, Protected, NativeAccessSpecifierProtected)
+	TMap<int32, struct FAbilityUsagePointCollection> ProcessedUsagePointData;                        // 0x04A8(0x0050)(BlueprintVisible, Transient, Protected, NativeAccessSpecifierProtected)
 
 public:
 	void WhenAIEnter(class ACharacter* Player);
@@ -1367,33 +1548,6 @@ public:
 	static class AAIActionArea* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<AAIActionArea>();
-	}
-};
-
-// Class MarvelAI.BTS_UpdateSight
-// 0x0028 (0x00A0 - 0x0078)
-class UBTS_UpdateSight : public UBTService
-{
-public:
-	float                                         VisionRadius;                                      // 0x0078(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         VisionRadiusForDamageSource;                       // 0x007C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         VisionHalfAngle;                                   // 0x0080(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MaxAge;                                            // 0x0084(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class AMarvelAIController*                    AIOwner;                                           // 0x0088(0x0008)(ZeroConstructor, Transient, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class UMarvelAIPerceptionComponent*           AIPerceptionComponent;                             // 0x0090(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class UAISenseConfig_Sight*                   SightConfig;                                       // 0x0098(0x0008)(ZeroConstructor, Transient, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-
-public:
-	void OnResetSightConfig(float NewRadius);
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"BTS_UpdateSight">();
-	}
-	static class UBTS_UpdateSight* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UBTS_UpdateSight>();
 	}
 };
 
@@ -1421,6 +1575,25 @@ public:
 	}
 };
 
+// Class MarvelAI.AISelectTargetLogic_Blackboard
+// 0x0010 (0x0080 - 0x0070)
+class UAISelectTargetLogic_Blackboard final : public UAISelectTargetLogicBase
+{
+public:
+	class FName                                   BlackboardKeyName;                                 // 0x0070(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_7C[0x4];                                       // 0x007C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"AISelectTargetLogic_Blackboard">();
+	}
+	static class UAISelectTargetLogic_Blackboard* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UAISelectTargetLogic_Blackboard>();
+	}
+};
+
 // Class MarvelAI.StoredPointDataBase
 // 0x0000 (0x0030 - 0x0030)
 class UStoredPointDataBase final : public UObject
@@ -1433,29 +1606,6 @@ public:
 	static class UStoredPointDataBase* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UStoredPointDataBase>();
-	}
-};
-
-// Class MarvelAI.MarvelAIStandPointManager
-// 0x0050 (0x0080 - 0x0030)
-class UMarvelAIStandPointManager : public UObject
-{
-public:
-	TMap<class FName, class AStandPointBase*>     StandPointMap;                                     // 0x0030(0x0050)(Protected, NativeAccessSpecifierProtected)
-
-public:
-	class AStandPointBase* FindStandPoint(const class FName& PointName);
-	void RegisterStandPoint(class AStandPointBase* StandPoint);
-	void UnRegisterStandPoint(class AStandPointBase* StandPoint);
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"MarvelAIStandPointManager">();
-	}
-	static class UMarvelAIStandPointManager* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UMarvelAIStandPointManager>();
 	}
 };
 
@@ -1489,6 +1639,25 @@ public:
 	}
 };
 
+// Class MarvelAI.BTTask_SwitchWeapon
+// 0x0010 (0x00C0 - 0x00B0)
+class UBTTask_SwitchWeapon final : public UBTTask_GeneralActivateAbility
+{
+public:
+	class FName                                   WeaponActionName;                                  // 0x00B0(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_BC[0x4];                                       // 0x00BC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"BTTask_SwitchWeapon">();
+	}
+	static class UBTTask_SwitchWeapon* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UBTTask_SwitchWeapon>();
+	}
+};
+
 // Class MarvelAI.AISniperBattleArea
 // 0x0008 (0x04E0 - 0x04D8)
 class AAISniperBattleArea final : public AAIBattleAreaBase
@@ -1508,94 +1677,6 @@ public:
 	}
 };
 
-// Class MarvelAI.AISelectTargetLogicBase
-// 0x0040 (0x0070 - 0x0030)
-class UAISelectTargetLogicBase : public UObject
-{
-public:
-	bool                                          bShouldUpdateInTick;                               // 0x0030(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_31[0x3];                                       // 0x0031(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         TickInterval;                                      // 0x0034(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bCouldUseDefaultObject;                            // 0x0038(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bTryFindFromOwnerBeforeCreate;                     // 0x0039(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bShouldClearFocusWhenEnd;                          // 0x003A(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bShouldUseMissOffset;                              // 0x003B(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         ProjectilePredicateSpeed;                          // 0x003C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         ProjectilePredicateGravity;                        // 0x0040(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         FocusSpeedFactorWhenMiss;                          // 0x0044(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         MissBoxLength;                                     // 0x0048(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         MissBoxPadding;                                    // 0x004C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         MissBoxHeightScale;                                // 0x0050(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_54[0x4];                                       // 0x0054(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UCurveFloat*                            MissBoxLengthFactorCurve;                          // 0x0058(0x0008)(Edit, ZeroConstructor, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class UCurveFloat*                            MissBoxPaddingFactorCurve;                         // 0x0060(0x0008)(Edit, ZeroConstructor, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bEnableDebugDraw;                                  // 0x0068(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_69[0x7];                                       // 0x0069(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UAISelectTargetLogicBase* GetSelectTargetLogicObject(class AMarvelAIController* MarvelAIOwner, TSubclassOf<class UAISelectTargetLogicBase> SelectLogicClass);
-
-	bool CheckMissAndAddMissOffset(class AMarvelAIController* MarvelAI, struct FMarvelAITarget& OutAITarget, const struct FAIAbilityUsage& AbilityUsage);
-	void OnDestroy(class AMarvelAIController* MarvelAIController, struct FAIAbilityUsage* AbilityUsage);
-	void OnInitialize(class AMarvelAIController* MarvelAIController, struct FAIAbilityUsage* AbilityUsage);
-	bool SelectTargetForAbilityCheck(const struct FRequiredAIDataForAutoAbility& AbilityContext, struct FMarvelAITarget& OutAITarget);
-	bool SelectTargetOrLocation(class AMarvelAIController* AIController, struct FMarvelAITarget& OutAITarget, const struct FAIAbilityUsage& AbilityUsage);
-	bool TakeResultAITarget(class AMarvelAIController* AIController, struct FMarvelAITarget& OutAITarget, const struct FAIAbilityUsage& AbilityUsage);
-	bool UpdateProjectilePredicateSpeed(class AMarvelAIController* AIController, const struct FAIAbilityUsage& AbilityUsage, const struct FMarvelProjectileAgentTable& ProjectileAgentTable);
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"AISelectTargetLogicBase">();
-	}
-	static class UAISelectTargetLogicBase* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UAISelectTargetLogicBase>();
-	}
-};
-
-// Class MarvelAI.AISelectTargetLogic_General
-// 0x0030 (0x00A0 - 0x0070)
-class UAISelectTargetLogic_General : public UAISelectTargetLogicBase
-{
-public:
-	bool                                          bEnableAccumulateHitRate;                          // 0x0070(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_71[0x3];                                       // 0x0071(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         MaxDistanceForTargetAsUnMoved;                     // 0x0074(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         BoxLengthFactorByDistance;                         // 0x0078(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_7C[0x1C];                                      // 0x007C(0x001C)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         BaseAimBoxLength;                                  // 0x0098(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_9C[0x4];                                       // 0x009C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"AISelectTargetLogic_General">();
-	}
-	static class UAISelectTargetLogic_General* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UAISelectTargetLogic_General>();
-	}
-};
-
-// Class MarvelAI.AIDashIntentionSelectTarget
-// 0x0018 (0x00B8 - 0x00A0)
-class UAIDashIntentionSelectTarget final : public UAISelectTargetLogic_General
-{
-public:
-	struct FVector                                LocationOffset;                                    // 0x00A0(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"AIDashIntentionSelectTarget">();
-	}
-	static class UAIDashIntentionSelectTarget* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UAIDashIntentionSelectTarget>();
-	}
-};
-
 // Class MarvelAI.AIDefendBattleArea
 // 0x0000 (0x04D8 - 0x04D8)
 class AAIDefendBattleArea final : public AAIBattleAreaBase
@@ -1608,6 +1689,27 @@ public:
 	static class AAIDefendBattleArea* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<AAIDefendBattleArea>();
+	}
+};
+
+// Class MarvelAI.DefendStandPoint
+// 0x00A8 (0x0608 - 0x0560)
+class ADefendStandPoint final : public AStandPointBase
+{
+public:
+	TSet<int32>                                   HeroIDSet;                                         // 0x0560(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	TSet<EDefendStandPointHeroType>               HeroTypeSet;                                       // 0x05B0(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	bool                                          bShared;                                           // 0x0600(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_601[0x7];                                      // 0x0601(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"DefendStandPoint">();
+	}
+	static class ADefendStandPoint* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<ADefendStandPoint>();
 	}
 };
 
@@ -1626,30 +1728,6 @@ public:
 	static class UAIBattleAreaFilterBase* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UAIBattleAreaFilterBase>();
-	}
-};
-
-// Class MarvelAI.AIAbilityUsageLibrary
-// 0x0000 (0x0030 - 0x0030)
-class UAIAbilityUsageLibrary final : public UBlueprintFunctionLibrary
-{
-public:
-	static class UMarvelGameplayAbility* GetAbilityByUsageID(int32 AbilityUsageID, class AMarvelAIController* OwnerController);
-	static class UMarvelGameplayAbility* GetAbilityFromContext(const struct FRequiredAIDataForAutoAbility& AutoAbilityContext);
-	static class FString GetAbilityUsageDescription(const struct FAIAbilityUsage& AbilityUsage);
-	static struct FVector GetTargetLocation(const struct FAIAbilityUsage& AbilityUsage);
-	static struct FMarvelAIAutoAbilityTable GetUsageConfig(const struct FAIAbilityUsage& AbilityUsage);
-	static bool GetUsageConfigFromContext(const struct FRequiredAIDataForAutoAbility& AutoAbilityContext, struct FMarvelAIAutoAbilityTable* OutUsageConfig);
-	static bool IsValidAbilityUsage(const struct FAIAbilityUsage& AbilityUsage);
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"AIAbilityUsageLibrary">();
-	}
-	static class UAIAbilityUsageLibrary* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UAIAbilityUsageLibrary>();
 	}
 };
 
@@ -1683,6 +1761,32 @@ public:
 	}
 };
 
+// Class MarvelAI.BTT_PinPoint
+// 0x1048 (0x10C0 - 0x0078)
+class UBTT_PinPoint : public UBTTaskNode
+{
+public:
+	TMap<EPinEnum, struct FPinPointInfo>          SignalInfoMap;                                     // 0x0078(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, EditConst, Protected, NativeAccessSpecifierProtected)
+	struct FGameplayTag                           PinEventTag;                                       // 0x00C8(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, EditConst, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         bRandomPinType : 1;                                // 0x00D4(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected))
+	EPinEnum                                      PinType;                                           // 0x00D5(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_D6[0x2];                                       // 0x00D6(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         NeedFrontSightLength;                              // 0x00D8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_DC[0x4];                                       // 0x00DC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FMarvelAbilityTraceContext             TraceContext;                                      // 0x00E0(0x0F90)(Edit, DisableEditOnInstance, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
+	TMap<int32, int32>                            UltimateAbilityIDMap;                              // 0x1070(0x0050)(Edit, DisableEditOnInstance, Protected, NativeAccessSpecifierProtected)
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"BTT_PinPoint">();
+	}
+	static class UBTT_PinPoint* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UBTT_PinPoint>();
+	}
+};
+
 // Class MarvelAI.AIControllerInfo
 // 0x04A8 (0x0598 - 0x00F0)
 class UAIControllerInfo final : public UActorComponent
@@ -1701,12 +1805,12 @@ public:
 	EAITeamAction                                 AITeamAction;                                      // 0x01A4(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bIsTeamActionFromSelf;                             // 0x01A5(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_1A6[0xA];                                      // 0x01A6(0x000A)(Fixing Size After Last Property [ Dumper-7 ])
-	TMulticastInlineDelegate<void(EAITeamAction PrevAction, EAITeamAction NewAction)> OnTeamActionChanged;                               // 0x01B0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(EAITeamAction PrevAction, EAITeamAction NewAction)> OnTeamActionChanged; // 0x01B0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 	int32                                         ForbiddenSkillLevel;                               // 0x01C0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_1C4[0x2D4];                                    // 0x01C4(0x02D4)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         AIComboIndex;                                      // 0x0498(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_49C[0x4];                                      // 0x049C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<class FString, class UAIAbilityActivationExtraConfig*> ExtraConfigs;                                      // 0x04A0(0x0050)(Protected, NativeAccessSpecifierProtected)
+	TMap<class FString, class UAIAbilityActivationExtraConfig*> ExtraConfigs;                        // 0x04A0(0x0050)(Protected, NativeAccessSpecifierProtected)
 	uint8                                         Pad_4F0[0xA0];                                     // 0x04F0(0x00A0)(Fixing Size After Last Property [ Dumper-7 ])
 	class AMarvelAIController*                    OwnerController;                                   // 0x0590(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 
@@ -1751,21 +1855,6 @@ public:
 	}
 };
 
-// Class MarvelAI.AISpawnDataConfig
-// 0x0000 (0x0030 - 0x0030)
-class UAISpawnDataConfig final : public UObject
-{
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"AISpawnDataConfig">();
-	}
-	static class UAISpawnDataConfig* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UAISpawnDataConfig>();
-	}
-};
-
 // Class MarvelAI.AICustomServiceLogicBase
 // 0x0010 (0x0040 - 0x0030)
 class UAICustomServiceLogicBase final : public UObject
@@ -1790,36 +1879,18 @@ public:
 	}
 };
 
-// Class MarvelAI.MarvelAIWorldSubsystem
-// 0x0000 (0x0048 - 0x0048)
-class UMarvelAIWorldSubsystem : public UTickableWorldSubsystem
+// Class MarvelAI.BTTask_MarvelRunBehaviorStatic
+// 0x0000 (0x0080 - 0x0080)
+class UBTTask_MarvelRunBehaviorStatic final : public UBTTask_RunBehavior
 {
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"MarvelAIWorldSubsystem">();
+		return StaticClassImpl<"BTTask_MarvelRunBehaviorStatic">();
 	}
-	static class UMarvelAIWorldSubsystem* GetDefaultObj()
+	static class UBTTask_MarvelRunBehaviorStatic* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UMarvelAIWorldSubsystem>();
-	}
-};
-
-// Class MarvelAI.DynamicAbilityBindFilter
-// 0x0008 (0x0038 - 0x0030)
-class UDynamicAbilityBindFilter : public UObject
-{
-public:
-	uint8                                         Pad_30[0x8];                                       // 0x0030(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"DynamicAbilityBindFilter">();
-	}
-	static class UDynamicAbilityBindFilter* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UDynamicAbilityBindFilter>();
+		return GetDefaultObjImpl<UBTTask_MarvelRunBehaviorStatic>();
 	}
 };
 
@@ -1843,6 +1914,39 @@ public:
 	}
 };
 
+// Class MarvelAI.DynamicAbilityBindFilter
+// 0x0008 (0x0038 - 0x0030)
+class UDynamicAbilityBindFilter : public UObject
+{
+public:
+	uint8                                         Pad_30[0x8];                                       // 0x0030(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"DynamicAbilityBindFilter">();
+	}
+	static class UDynamicAbilityBindFilter* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UDynamicAbilityBindFilter>();
+	}
+};
+
+// Class MarvelAI.DashAbilityFilter
+// 0x0000 (0x0038 - 0x0038)
+class UDashAbilityFilter final : public UDynamicAbilityBindFilter
+{
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"DashAbilityFilter">();
+	}
+	static class UDashAbilityFilter* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UDashAbilityFilter>();
+	}
+};
+
 // Class MarvelAI.AIDifficultyExtendAsset
 // 0x0020 (0x0058 - 0x0038)
 class UAIDifficultyExtendAsset final : public UPrimaryDataAsset
@@ -1863,27 +1967,6 @@ public:
 	static class UAIDifficultyExtendAsset* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UAIDifficultyExtendAsset>();
-	}
-};
-
-// Class MarvelAI.EnvQueryContext_CharacterGroup
-// 0x0008 (0x0038 - 0x0030)
-class UEnvQueryContext_CharacterGroup : public UEnvQueryContext
-{
-public:
-	EAICharacterSide                              CharacterGroupSide;                                // 0x0030(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	EHeroRole                                     CharacterGroupRole;                                // 0x0031(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	bool                                          IgnoreBBTarget;                                    // 0x0032(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_33[0x5];                                       // 0x0033(0x0005)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"EnvQueryContext_CharacterGroup">();
-	}
-	static class UEnvQueryContext_CharacterGroup* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UEnvQueryContext_CharacterGroup>();
 	}
 };
 
@@ -1911,6 +1994,28 @@ public:
 	static class UAIDynamicDifficultyAsset* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UAIDynamicDifficultyAsset>();
+	}
+};
+
+// Class MarvelAI.EnvQueryContext_Enemy
+// 0x0008 (0x0038 - 0x0030)
+class UEnvQueryContext_Enemy final : public UEnvQueryContext
+{
+public:
+	bool                                          bNeedAlive;                                        // 0x0030(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	bool                                          bNeedParticularRole;                               // 0x0031(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	EHeroRole                                     HeroType;                                          // 0x0032(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	bool                                          bIgnoreCurrentAttackTarget;                        // 0x0033(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"EnvQueryContext_Enemy">();
+	}
+	static class UEnvQueryContext_Enemy* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UEnvQueryContext_Enemy>();
 	}
 };
 
@@ -1942,21 +2047,6 @@ public:
 	}
 };
 
-// Class MarvelAI.DynamicAbilityBindFilterInterface
-// 0x0000 (0x0030 - 0x0030)
-class IDynamicAbilityBindFilterInterface final : public IInterface
-{
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"DynamicAbilityBindFilterInterface">();
-	}
-	static class IDynamicAbilityBindFilterInterface* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<IDynamicAbilityBindFilterInterface>();
-	}
-};
-
 // Class MarvelAI.AIGameInstanceSubsystem
 // 0x0038 (0x0070 - 0x0038)
 class UAIGameInstanceSubsystem final : public UGameInstanceSubsystem
@@ -1981,6 +2071,21 @@ public:
 	}
 };
 
+// Class MarvelAI.EnvQueryContext_AllAliveEnemies
+// 0x0000 (0x0030 - 0x0030)
+class UEnvQueryContext_AllAliveEnemies final : public UEnvQueryContext
+{
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"EnvQueryContext_AllAliveEnemies">();
+	}
+	static class UEnvQueryContext_AllAliveEnemies* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UEnvQueryContext_AllAliveEnemies>();
+	}
+};
+
 // Class MarvelAI.AIGroupInfoBase
 // 0x0068 (0x04F8 - 0x0490)
 class AAIGroupInfoBase : public AInfo
@@ -1996,29 +2101,6 @@ public:
 	static class AAIGroupInfoBase* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<AAIGroupInfoBase>();
-	}
-};
-
-// Class MarvelAI.BTT_PlayEmotes
-// 0x0068 (0x00E0 - 0x0078)
-class UBTT_PlayEmotes : public UBTTaskNode
-{
-public:
-	uint8                                         bUseAppointedEmoteID : 1;                          // 0x0078(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected))
-	uint8                                         Pad_79[0x7];                                       // 0x0079(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	int64                                         EmoteID;                                           // 0x0080(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	TMap<int32, struct FBTHeroEmoteConfig>        HeroEmoteConfigs;                                  // 0x0088(0x0050)(Edit, Protected, NativeAccessSpecifierProtected)
-	int32                                         DefaultEmoteSkinID;                                // 0x00D8(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	int32                                         DefaultEmoteActionID;                              // 0x00DC(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"BTT_PlayEmotes">();
-	}
-	static class UBTT_PlayEmotes* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UBTT_PlayEmotes>();
 	}
 };
 
@@ -2047,6 +2129,27 @@ public:
 	}
 };
 
+// Class MarvelAI.BTT_SprayNew
+// 0x0028 (0x00A0 - 0x0078)
+class UBTT_SprayNew : public UBTTaskNode
+{
+public:
+	TArray<struct FMarvelAISprayTable>            DefaultSprayConfigs;                               // 0x0078(0x0010)(Edit, ZeroConstructor, Protected, NativeAccessSpecifierProtected)
+	uint8                                         bOnlyUseDefaultSprayConfig : 1;                    // 0x0088(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected))
+	uint8                                         Pad_89[0x7];                                       // 0x0089(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 SprayConfigTableName;                              // 0x0090(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"BTT_SprayNew">();
+	}
+	static class UBTT_SprayNew* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UBTT_SprayNew>();
+	}
+};
+
 // Class MarvelAI.DistanceModify
 // 0x0008 (0x0060 - 0x0058)
 class UDistanceModify final : public UAIHitRateModify
@@ -2062,26 +2165,6 @@ public:
 	static class UDistanceModify* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UDistanceModify>();
-	}
-};
-
-// Class MarvelAI.EnvQueryContext_BlackboardActor
-// 0x0010 (0x0040 - 0x0030)
-class UEnvQueryContext_BlackboardActor : public UEnvQueryContext
-{
-public:
-	class FName                                   BlackboardKeyName;                                 // 0x0030(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bReturnQuerierIfValueInvalid;                      // 0x003C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_3D[0x3];                                       // 0x003D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"EnvQueryContext_BlackboardActor">();
-	}
-	static class UEnvQueryContext_BlackboardActor* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UEnvQueryContext_BlackboardActor>();
 	}
 };
 
@@ -2105,6 +2188,26 @@ public:
 	}
 };
 
+// Class MarvelAI.EnvQueryContext_BuffedCharacter
+// 0x0088 (0x00B8 - 0x0030)
+class UEnvQueryContext_BuffedCharacter final : public UEnvQueryContext
+{
+public:
+	int32                                         BuffID;                                            // 0x0030(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FHeroFilter                            HeroFilter;                                        // 0x0038(0x0080)(Edit, BlueprintVisible, Protected, NativeAccessSpecifierProtected)
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"EnvQueryContext_BuffedCharacter">();
+	}
+	static class UEnvQueryContext_BuffedCharacter* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UEnvQueryContext_BuffedCharacter>();
+	}
+};
+
 // Class MarvelAI.FlyVelocityModify
 // 0x0010 (0x0068 - 0x0058)
 class UFlyVelocityModify final : public UAIHitRateModify
@@ -2122,21 +2225,6 @@ public:
 	static class UFlyVelocityModify* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UFlyVelocityModify>();
-	}
-};
-
-// Class MarvelAI.MarvelEnvQueryTest
-// 0x0000 (0x0280 - 0x0280)
-class UMarvelEnvQueryTest : public UEnvQueryTest
-{
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"MarvelEnvQueryTest">();
-	}
-	static class UMarvelEnvQueryTest* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UMarvelEnvQueryTest>();
 	}
 };
 
@@ -2159,6 +2247,41 @@ public:
 	}
 };
 
+// Class MarvelAI.MarvelEnvQueryTest
+// 0x0000 (0x0280 - 0x0280)
+class UMarvelEnvQueryTest : public UEnvQueryTest
+{
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"MarvelEnvQueryTest">();
+	}
+	static class UMarvelEnvQueryTest* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UMarvelEnvQueryTest>();
+	}
+};
+
+// Class MarvelAI.EnvQueryTest_CheckGameplayTag
+// 0x0078 (0x02F8 - 0x0280)
+class UEnvQueryTest_CheckGameplayTag final : public UMarvelEnvQueryTest
+{
+public:
+	struct FAITagMatchParameter                   GamePlayParameter;                                 // 0x0280(0x0070)(Edit, NativeAccessSpecifierPublic)
+	EAIFilterSide                                 Side;                                              // 0x02F0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2F1[0x7];                                      // 0x02F1(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"EnvQueryTest_CheckGameplayTag">();
+	}
+	static class UEnvQueryTest_CheckGameplayTag* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UEnvQueryTest_CheckGameplayTag>();
+	}
+};
+
 // Class MarvelAI.LowHealthModify
 // 0x0008 (0x0060 - 0x0058)
 class ULowHealthModify final : public UAIHitRateModify
@@ -2174,26 +2297,6 @@ public:
 	static class ULowHealthModify* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<ULowHealthModify>();
-	}
-};
-
-// Class MarvelAI.EnvQueryGenerator_ScopePoints
-// 0x00D0 (0x0168 - 0x0098)
-class UEnvQueryGenerator_ScopePoints final : public UEnvQueryGenerator_ProjectedPoints
-{
-public:
-	struct FAIDataProviderFloatValue              SpaceBetween;                                      // 0x0098(0x0040)(Edit, DisableEditOnInstance, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
-	TSet<int32>                                   ScopeIDs;                                          // 0x00D8(0x0050)(Edit, DisableEditOnInstance, Protected, NativeAccessSpecifierProtected)
-	struct FAIDataProviderFloatValue              MaxDistanceToQuerier;                              // 0x0128(0x0040)(Edit, DisableEditOnInstance, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"EnvQueryGenerator_ScopePoints">();
-	}
-	static class UEnvQueryGenerator_ScopePoints* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UEnvQueryGenerator_ScopePoints>();
 	}
 };
 
@@ -2234,21 +2337,6 @@ public:
 	}
 };
 
-// Class MarvelAI.EnvQueryContext_AllAliveTeammates
-// 0x0000 (0x0030 - 0x0030)
-class UEnvQueryContext_AllAliveTeammates final : public UEnvQueryContext
-{
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"EnvQueryContext_AllAliveTeammates">();
-	}
-	static class UEnvQueryContext_AllAliveTeammates* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UEnvQueryContext_AllAliveTeammates>();
-	}
-};
-
 // Class MarvelAI.LowHealthMarkModify
 // 0x0050 (0x00A8 - 0x0058)
 class ULowHealthMarkModify final : public UAIHitRateModify
@@ -2267,6 +2355,27 @@ public:
 	}
 };
 
+// Class MarvelAI.EnvQueryContext_Ally
+// 0x0008 (0x0038 - 0x0030)
+class UEnvQueryContext_Ally final : public UEnvQueryContext
+{
+public:
+	bool                                          bNeedAlive;                                        // 0x0030(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	bool                                          bNeedParticularRole;                               // 0x0031(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	EHeroRole                                     HeroType;                                          // 0x0032(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_33[0x5];                                       // 0x0033(0x0005)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"EnvQueryContext_Ally">();
+	}
+	static class UEnvQueryContext_Ally* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UEnvQueryContext_Ally>();
+	}
+};
+
 // Class MarvelAI.TargetVelocity
 // 0x0008 (0x0060 - 0x0058)
 class UTargetVelocity final : public UAIHitRateModify
@@ -2282,25 +2391,6 @@ public:
 	static class UTargetVelocity* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UTargetVelocity>();
-	}
-};
-
-// Class MarvelAI.EnvQueryTest_1030Respond
-// 0x0048 (0x02C8 - 0x0280)
-class UEnvQueryTest_1030Respond final : public UEnvQueryTest
-{
-public:
-	struct FAIDataProviderBoolValue               EnableThisTest;                                    // 0x0280(0x0040)(Edit, DisableEditOnInstance, ContainsInstancedReference, NativeAccessSpecifierPublic)
-	TSubclassOf<class UEnvQueryContext>           DistanceTo;                                        // 0x02C0(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"EnvQueryTest_1030Respond">();
-	}
-	static class UEnvQueryTest_1030Respond* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UEnvQueryTest_1030Respond>();
 	}
 };
 
@@ -2341,25 +2431,6 @@ public:
 	static class UAILabConfigAsset* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UAILabConfigAsset>();
-	}
-};
-
-// Class MarvelAI.EnvQueryTest_MarginTarget
-// 0x0008 (0x0288 - 0x0280)
-class UEnvQueryTest_MarginTarget final : public UMarvelEnvQueryTest
-{
-public:
-	float                                         ScoreMax;                                          // 0x0280(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Radius;                                            // 0x0284(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"EnvQueryTest_MarginTarget">();
-	}
-	static class UEnvQueryTest_MarginTarget* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UEnvQueryTest_MarginTarget>();
 	}
 };
 
@@ -2433,28 +2504,13 @@ public:
 	}
 };
 
-// Class MarvelAI.EnvQueryTest_DamageAbilityScope
-// 0x0000 (0x0280 - 0x0280)
-class UEnvQueryTest_DamageAbilityScope final : public UEnvQueryTest
-{
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"EnvQueryTest_DamageAbilityScope">();
-	}
-	static class UEnvQueryTest_DamageAbilityScope* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UEnvQueryTest_DamageAbilityScope>();
-	}
-};
-
 // Class MarvelAI.AIPathSelectComponent
 // 0x00A0 (0x0190 - 0x00F0)
 class UAIPathSelectComponent final : public UActorComponent
 {
 public:
 	TMap<class AActor*, class AStartWayPoint*>    TargetToPathStart;                                 // 0x00F0(0x0050)(Edit, NativeAccessSpecifierPublic)
-	TMap<TSoftObjectPtr<class AActor>, TSoftObjectPtr<class AStartWayPoint>> TargetToPathStart_Soft;                            // 0x0140(0x0050)(Edit, UObjectWrapper, NativeAccessSpecifierPublic)
+	TMap<TSoftObjectPtr<class AActor>, TSoftObjectPtr<class AStartWayPoint>> TargetToPathStart_Soft; // 0x0140(0x0050)(Edit, UObjectWrapper, NativeAccessSpecifierPublic)
 
 public:
 	static void GetPathToTargetFromActor(class AActor* PathSelector, class AActor* ActorMovingAlong, class AActor* Target, struct FWayPointPath* OutWayPointPath, bool ShouldUpdateProgressInPath);
@@ -2484,25 +2540,6 @@ public:
 	static class AAISceneConfigActorBase* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<AAISceneConfigActorBase>();
-	}
-};
-
-// Class MarvelAI.EnvQueryGenerator_StaticActors
-// 0x0058 (0x0140 - 0x00E8)
-class UEnvQueryGenerator_StaticActors final : public UEnvQueryGenerator_ActorsOfClass
-{
-public:
-	bool                                          bUseCachedData;                                    // 0x00E8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_E9[0x57];                                      // 0x00E9(0x0057)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"EnvQueryGenerator_StaticActors">();
-	}
-	static class UEnvQueryGenerator_StaticActors* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UEnvQueryGenerator_StaticActors>();
 	}
 };
 
@@ -2836,25 +2873,6 @@ public:
 	}
 };
 
-// Class MarvelAI.AISelectTargetLogic_Blackboard
-// 0x0010 (0x0080 - 0x0070)
-class UAISelectTargetLogic_Blackboard final : public UAISelectTargetLogicBase
-{
-public:
-	class FName                                   BlackboardKeyName;                                 // 0x0070(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_7C[0x4];                                       // 0x007C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"AISelectTargetLogic_Blackboard">();
-	}
-	static class UAISelectTargetLogic_Blackboard* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UAISelectTargetLogic_Blackboard>();
-	}
-};
-
 // Class MarvelAI.AISelectTargetLogic_Destructible
 // 0x0018 (0x0088 - 0x0070)
 class UAISelectTargetLogic_Destructible : public UAISelectTargetLogicBase
@@ -2908,7 +2926,7 @@ public:
 class UDangerousTargetAsset final : public UDataAsset
 {
 public:
-	TMap<int32, struct FAISenseDangerousTargetConfig> DangerousTarget;                                   // 0x0038(0x0050)(Edit, NativeAccessSpecifierPublic)
+	TMap<int32, struct FAISenseDangerousTargetConfig> DangerousTarget;                               // 0x0038(0x0050)(Edit, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -2927,7 +2945,7 @@ class UAISenseConfig_DangerousTarget final : public UAISenseConfig
 {
 public:
 	class UDangerousTargetAsset*                  DangerousTargetAsset;                              // 0x0050(0x0008)(Edit, ZeroConstructor, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	TMap<int32, struct FAISenseDangerousTargetConfig> DefaultDangerousTarget;                            // 0x0058(0x0050)(Protected, NativeAccessSpecifierProtected)
+	TMap<int32, struct FAISenseDangerousTargetConfig> DefaultDangerousTarget;                        // 0x0058(0x0050)(Protected, NativeAccessSpecifierProtected)
 
 public:
 	static class UClass* StaticClass()
@@ -2940,34 +2958,18 @@ public:
 	}
 };
 
-// Class MarvelAI.AIServerRequestServices
-// 0x02B8 (0x0300 - 0x0048)
-class UAIServerRequestServices final : public UMarvelAIWorldSubsystem
+// Class MarvelAI.AISpawnDataConfig
+// 0x0000 (0x0030 - 0x0030)
+class UAISpawnDataConfig final : public UObject
 {
-public:
-	uint8                                         Pad_48[0x70];                                      // 0x0048(0x0070)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 AILabServerUrl;                                    // 0x00B8(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         MaxTimeOut;                                        // 0x00C8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_CC[0xDC];                                      // 0x00CC(0x00DC)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         RequestInterval;                                   // 0x01A8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_1AC[0x4];                                      // 0x01AC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	int64                                         RequestIndexID;                                    // 0x01B0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_1B8[0x148];                                    // 0x01B8(0x0148)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	class FString GetAILabServerUrl();
-	void InitRequestServicesLogic();
-	void RequestTimer(bool bRetry);
-	void SetAILabServerUrl(const class FString& NewUrl, const class FString& msg);
-
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"AIServerRequestServices">();
+		return StaticClassImpl<"AISpawnDataConfig">();
 	}
-	static class UAIServerRequestServices* GetDefaultObj()
+	static class UAISpawnDataConfig* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UAIServerRequestServices>();
+		return GetDefaultObjImpl<UAISpawnDataConfig>();
 	}
 };
 
@@ -2986,6 +2988,29 @@ public:
 	static class AAISpawner* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<AAISpawner>();
+	}
+};
+
+// Class MarvelAI.MarvelAIStandPointManager
+// 0x0050 (0x0080 - 0x0030)
+class UMarvelAIStandPointManager : public UObject
+{
+public:
+	TMap<class FName, class AStandPointBase*>     StandPointMap;                                     // 0x0030(0x0050)(Protected, NativeAccessSpecifierProtected)
+
+public:
+	class AStandPointBase* FindStandPoint(const class FName& PointName);
+	void RegisterStandPoint(class AStandPointBase* StandPoint);
+	void UnRegisterStandPoint(class AStandPointBase* StandPoint);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"MarvelAIStandPointManager">();
+	}
+	static class UMarvelAIStandPointManager* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UMarvelAIStandPointManager>();
 	}
 };
 
@@ -3059,6 +3084,30 @@ public:
 	}
 };
 
+// Class MarvelAI.AIAbilityUsageLibrary
+// 0x0000 (0x0030 - 0x0030)
+class UAIAbilityUsageLibrary final : public UBlueprintFunctionLibrary
+{
+public:
+	static class UMarvelGameplayAbility* GetAbilityByUsageID(int32 AbilityUsageID, class AMarvelAIController* OwnerController);
+	static class UMarvelGameplayAbility* GetAbilityFromContext(const struct FRequiredAIDataForAutoAbility& AutoAbilityContext);
+	static class FString GetAbilityUsageDescription(const struct FAIAbilityUsage& AbilityUsage);
+	static struct FVector GetTargetLocation(const struct FAIAbilityUsage& AbilityUsage);
+	static struct FMarvelAIAutoAbilityTable GetUsageConfig(const struct FAIAbilityUsage& AbilityUsage);
+	static bool GetUsageConfigFromContext(const struct FRequiredAIDataForAutoAbility& AutoAbilityContext, struct FMarvelAIAutoAbilityTable* OutUsageConfig);
+	static bool IsValidAbilityUsage(const struct FAIAbilityUsage& AbilityUsage);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"AIAbilityUsageLibrary">();
+	}
+	static class UAIAbilityUsageLibrary* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UAIAbilityUsageLibrary>();
+	}
+};
+
 // Class MarvelAI.AIAbilityUsagePointCondition
 // 0x0008 (0x0038 - 0x0030)
 class UAIAbilityUsagePointCondition final : public UObject
@@ -3126,7 +3175,7 @@ public:
 	TArray<class UAIAbilityUsagePointCondition*>  CustomUsagePointConditions;                        // 0x0048(0x0010)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 	class UAIAbilityUsagePointCalculator*         CustomUsagePointCalculator;                        // 0x0058(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, PersistentInstance, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<class UAIAbilityPreAction*>            AbilityPreActions;                                 // 0x0060(0x0010)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
-	TArray<class UAIAbilityActivationExtraConfig*> ActivationExtraConfigs;                            // 0x0070(0x0010)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	TArray<class UAIAbilityActivationExtraConfig*> ActivationExtraConfigs;                           // 0x0070(0x0010)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 	bool                                          bSkipCanActivateCheck;                             // 0x0080(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_81[0x7];                                       // 0x0081(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
@@ -3299,6 +3348,32 @@ public:
 	}
 };
 
+// Class MarvelAI.BTDecorator_MarvelInstancedBase
+// 0x0010 (0x00B8 - 0x00A8)
+class UBTDecorator_MarvelInstancedBase : public UBTDecorator_BlueprintBase
+{
+public:
+	class AMarvelAIController*                    MarvelAIOwner;                                     // 0x00A8(0x0008)(ZeroConstructor, Transient, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         Interval;                                          // 0x00B0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         RandomDeviation;                                   // 0x00B4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+
+public:
+	class AMarvelBaseCharacter* K2_GetControlledHero() const;
+	class APawn* K2_GetControlledPawn() const;
+	class AMarvelAIController* K2_GetMarvelAIOwner() const;
+	class UBehaviorTreeComponent* K2_GetOwnerBTComp() const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"BTDecorator_MarvelInstancedBase">();
+	}
+	static class UBTDecorator_MarvelInstancedBase* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UBTDecorator_MarvelInstancedBase>();
+	}
+};
+
 // Class MarvelAI.BTD_CampCheck
 // 0x0050 (0x0108 - 0x00B8)
 class UBTD_CampCheck : public UBTDecorator_MarvelInstancedBase
@@ -3411,6 +3486,33 @@ public:
 	}
 };
 
+// Class MarvelAI.BTD_PayloadCheck
+// 0x0050 (0x0108 - 0x00B8)
+class UBTD_PayloadCheck : public UBTDecorator_MarvelInstancedBase
+{
+public:
+	struct FBlackboardKeySelector                 InPlayloadActor;                                   // 0x00B8(0x0030)(Edit, NativeAccessSpecifierPublic)
+	ECheckOption                                  InCheckOption;                                     // 0x00E8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_E9[0x3];                                       // 0x00E9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         InStage;                                           // 0x00EC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FFloatRange                            InScore;                                           // 0x00F0(0x0010)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         InPayloadState;                                    // 0x0100(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_101[0x7];                                      // 0x0101(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	bool Check(int32 Stage, float Score, float Speed, int32 Team, EOwnershipType Ownership) const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"BTD_PayloadCheck">();
+	}
+	static class UBTD_PayloadCheck* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UBTD_PayloadCheck>();
+	}
+};
+
 // Class MarvelAI.BTD_SpaceDistCheck
 // 0x0020 (0x00D8 - 0x00B8)
 class UBTD_SpaceDistCheck : public UBTDecorator_MarvelInstancedBase
@@ -3430,6 +3532,25 @@ public:
 	static class UBTD_SpaceDistCheck* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UBTD_SpaceDistCheck>();
+	}
+};
+
+// Class MarvelAI.BTD_TargetIsSummoned
+// 0x0080 (0x00F0 - 0x0070)
+class UBTD_TargetIsSummoned : public UBTDecorator
+{
+public:
+	struct FBlackboardKeySelector                 InCheckTarget;                                     // 0x0070(0x0030)(Edit, NativeAccessSpecifierPrivate)
+	TSet<int32>                                   ExcludeList;                                       // 0x00A0(0x0050)(Edit, NativeAccessSpecifierPrivate)
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"BTD_TargetIsSummoned">();
+	}
+	static class UBTD_TargetIsSummoned* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UBTD_TargetIsSummoned>();
 	}
 };
 
@@ -3499,25 +3620,24 @@ public:
 	}
 };
 
-// Class MarvelAI.ActionRequirementBase
-// 0x0008 (0x0038 - 0x0030)
-class UActionRequirementBase : public UObject
+// Class MarvelAI.BTService_StrategyActionSelect
+// 0x0040 (0x00B8 - 0x0078)
+class UBTService_StrategyActionSelect final : public UBTService
 {
 public:
-	bool                                          Invert;                                            // 0x0030(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_31[0x7];                                       // 0x0031(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	bool Requirement(class AAIController* OwnerController, class AActor* ControlledPawn);
+	EActionCategory                               CurrentAction;                                     // 0x0078(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_79[0x7];                                       // 0x0079(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FBlackboardKeySelector                 OutNewAction;                                      // 0x0080(0x0030)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	class UActionRequirementAsset*                ActionTableAsset;                                  // 0x00B0(0x0008)(Edit, ZeroConstructor, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"ActionRequirementBase">();
+		return StaticClassImpl<"BTService_StrategyActionSelect">();
 	}
-	static class UActionRequirementBase* GetDefaultObj()
+	static class UBTService_StrategyActionSelect* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UActionRequirementBase>();
+		return GetDefaultObjImpl<UBTService_StrategyActionSelect>();
 	}
 };
 
@@ -3536,25 +3656,6 @@ public:
 	static class UActionRequirementAsset* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UActionRequirementAsset>();
-	}
-};
-
-// Class MarvelAI.Requirement_ReturnValue
-// 0x0008 (0x0040 - 0x0038)
-class URequirement_ReturnValue final : public UActionRequirementBase
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0038(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_39[0x7];                                       // 0x0039(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"Requirement_ReturnValue">();
-	}
-	static class URequirement_ReturnValue* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<URequirement_ReturnValue>();
 	}
 };
 
@@ -3587,48 +3688,29 @@ public:
 	}
 };
 
-// Class MarvelAI.BTS_AroundCharacter
-// 0x00C8 (0x0140 - 0x0078)
-class UBTS_AroundCharacter : public UBTService
+// Class MarvelAI.BTS_AutoAbilityService
+// 0x00F0 (0x0168 - 0x0078)
+class UBTS_AutoAbilityService : public UBTService
 {
 public:
-	bool                                          ConsiderDist;                                      // 0x0078(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bUseAIInfoGroupTags;                               // 0x0078(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	uint8                                         Pad_79[0x7];                                       // 0x0079(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FAroundCharacterCheckStruct>    AroundCharacterCheckList;                          // 0x0080(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	struct FHeroFilter                            HeroFilter;                                        // 0x0090(0x0080)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FBlackboardKeySelector                 PassCharacterNum;                                  // 0x0110(0x0030)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FGameplayTagContainer                  UsageGroupTags;                                    // 0x0080(0x0068)(Edit, NativeAccessSpecifierPrivate)
+	struct FGameplayTagContainer                  BlockTag;                                          // 0x00E8(0x0068)(Edit, NativeAccessSpecifierPrivate)
+	bool                                          bUseDynamicFrequency;                              // 0x0150(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	bool                                          bOverrideTactics;                                  // 0x0151(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_152[0x6];                                      // 0x0152(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	TSubclassOf<class UAbilityTacticsTask>        OverrideRequestClass;                              // 0x0158(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	TSubclassOf<class UAIAbilitySelectCheckBase>  OverrideSelectCheckClass;                          // 0x0160(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"BTS_AroundCharacter">();
+		return StaticClassImpl<"BTS_AutoAbilityService">();
 	}
-	static class UBTS_AroundCharacter* GetDefaultObj()
+	static class UBTS_AutoAbilityService* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UBTS_AroundCharacter>();
-	}
-};
-
-// Class MarvelAI.BTS_AutoInjection
-// 0x03C8 (0x0440 - 0x0078)
-class UBTS_AutoInjection final : public UBTService
-{
-public:
-	struct FAIAbilityUsage                        AIAbilityData;                                     // 0x0078(0x00E8)(HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FMarvelAIAutoAbilityTable              UsageConfig;                                       // 0x0160(0x0268)(Edit, EditConst, NativeAccessSpecifierPublic)
-	class UAIAbilityUsageObject*                  AbilityUsageObject;                                // 0x03C8(0x0008)(ZeroConstructor, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FBlackboardKeySelector                 AbilityUsageBlackboardKey;                         // 0x03D0(0x0030)(Edit, EditConst, Protected, NativeAccessSpecifierProtected)
-	struct FBlackboardKeySelector                 AttackTargetBlackboardKey;                         // 0x0400(0x0030)(Edit, EditConst, Protected, NativeAccessSpecifierProtected)
-	TArray<int32>                                 AbilityID;                                         // 0x0430(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"BTS_AutoInjection">();
-	}
-	static class UBTS_AutoInjection* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UBTS_AutoInjection>();
+		return GetDefaultObjImpl<UBTS_AutoAbilityService>();
 	}
 };
 
@@ -3657,237 +3739,170 @@ public:
 	}
 };
 
-// Class MarvelAI.BTS_CheckRemainTime
-// 0x0038 (0x00B0 - 0x0078)
-class UBTS_CheckRemainTime : public UBTService
+// Class MarvelAI.BTS_IsInBattle
+// 0x00F8 (0x0170 - 0x0078)
+class UBTS_IsInBattle : public UBTService
 {
 public:
-	struct FBlackboardKeySelector                 OutRemainTime;                                     // 0x0078(0x0030)(Edit, Protected, NativeAccessSpecifierProtected)
-	uint8                                         Pad_A8[0x8];                                       // 0x00A8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FBlackboardKeySelector                 IsInBattle;                                        // 0x0078(0x0030)(Edit, Protected, NativeAccessSpecifierProtected)
+	struct FBlackboardKeySelector                 AttackTarget;                                      // 0x00A8(0x0030)(Edit, Protected, NativeAccessSpecifierProtected)
+	struct FBlackboardKeySelector                 TeammateTarget;                                    // 0x00D8(0x0030)(Edit, Protected, NativeAccessSpecifierProtected)
+	struct FAIHeroTag                             MatchTag;                                          // 0x0108(0x0068)(Edit, DisableEditOnInstance, AdvancedDisplay, Protected, NativeAccessSpecifierProtected)
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"BTS_CheckRemainTime">();
+		return StaticClassImpl<"BTS_IsInBattle">();
 	}
-	static class UBTS_CheckRemainTime* GetDefaultObj()
+	static class UBTS_IsInBattle* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UBTS_CheckRemainTime>();
+		return GetDefaultObjImpl<UBTS_IsInBattle>();
 	}
 };
 
-// Class MarvelAI.BTS_SelectTargetNew
-// 0x01B8 (0x0230 - 0x0078)
-class UBTS_SelectTargetNew : public UBTService
+// Class MarvelAI.AICommunicateAsset
+// 0x0050 (0x0088 - 0x0038)
+class UAICommunicateAsset final : public UPrimaryDataAsset
 {
 public:
-	bool                                          bEnableDebug;                                      // 0x0078(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FAICommunicateData                     Communicate;                                       // 0x0038(0x0050)(Edit, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"AICommunicateAsset">();
+	}
+	static class UAICommunicateAsset* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UAICommunicateAsset>();
+	}
+};
+
+// Class MarvelAI.HotPoint_DataAsset
+// 0x00A0 (0x00D8 - 0x0038)
+class UHotPoint_DataAsset final : public UDataAsset
+{
+public:
+	TMap<class FName, struct FMapPoint>           MapPoints;                                         // 0x0038(0x0050)(Edit, Protected, NativeAccessSpecifierProtected)
+	struct FMapPoint                              DefaultConfig;                                     // 0x0088(0x0050)(Edit, Protected, NativeAccessSpecifierProtected)
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"HotPoint_DataAsset">();
+	}
+	static class UHotPoint_DataAsset* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UHotPoint_DataAsset>();
+	}
+};
+
+// Class MarvelAI.BTS_UpdateAnthropomorphicType
+// 0x0030 (0x00A8 - 0x0078)
+class UBTS_UpdateAnthropomorphicType : public UBTService
+{
+public:
+	struct FBlackboardKeySelector                 OutAnthropomorphic;                                // 0x0078(0x0030)(Edit, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"BTS_UpdateAnthropomorphicType">();
+	}
+	static class UBTS_UpdateAnthropomorphicType* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UBTS_UpdateAnthropomorphicType>();
+	}
+};
+
+// Class MarvelAI.BTS_UpdateDangerous
+// 0x0010 (0x0088 - 0x0078)
+class UBTS_UpdateDangerous : public UBTService
+{
+public:
+	bool                                          bEnableDebugLog;                                   // 0x0078(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_79[0x7];                                       // 0x0079(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 DebugName;                                         // 0x0080(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FBlackboardKeySelector                 InOutTarget;                                       // 0x0090(0x0030)(Edit, NativeAccessSpecifierPublic)
-	struct FBlackboardKeySelector                 OutSenseFromPortal;                                // 0x00C0(0x0030)(Edit, NativeAccessSpecifierPublic)
-	EAITargetType                                 CharacterGroupType;                                // 0x00F0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EHeroRole                                     LimitRole;                                         // 0x00F1(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_F2[0x6];                                       // 0x00F2(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	TSubclassOf<class UAIScoreModuleRule>         ScoreRuleConfigClass;                              // 0x00F8(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TSubclassOf<class UAIScoreModuleRule>         SummonScoreRuleConfigClass;                        // 0x0100(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TSet<int32>                                   HighPrioritySummoners;                             // 0x0108(0x0050)(Edit, NativeAccessSpecifierPublic)
-	class UAIScoreModuleRule*                     RuleConfig;                                        // 0x0158(0x0008)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	class UAIScoreModuleRule*                     SummonedRuleConfig;                                // 0x0160(0x0008)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	class AMarvelAIController*                    AIOwner;                                           // 0x0168(0x0008)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	TSet<class AActor*>                           Candidates;                                        // 0x0170(0x0050)(Transient, NativeAccessSpecifierPrivate)
-	class AMarvelGameState*                       CacheMarvelGameState;                              // 0x01C0(0x0008)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_1C8[0x68];                                     // 0x01C8(0x0068)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void OnTargetTakingDamage(class AActor* InSourceAvatar, class AActor* InTargetAvatar, const struct FAttributeModifierHandle& ModifierParameterHandle);
+	class UDangerousTargetAsset*                  DangerousTarget;                                   // 0x0080(0x0008)(Edit, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"BTS_SelectTargetNew">();
+		return StaticClassImpl<"BTS_UpdateDangerous">();
 	}
-	static class UBTS_SelectTargetNew* GetDefaultObj()
+	static class UBTS_UpdateDangerous* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UBTS_SelectTargetNew>();
+		return GetDefaultObjImpl<UBTS_UpdateDangerous>();
 	}
 };
 
-// Class MarvelAI.BTS_SendChatMessage
-// 0x0050 (0x00C8 - 0x0078)
-class UBTS_SendChatMessage final : public UBTService
+// Class MarvelAI.BTS_UpdateFireLine
+// 0x0070 (0x00E8 - 0x0078)
+class UBTS_UpdateFireLine final : public UBTService
 {
 public:
-	int32                                         MessageSide;                                       // 0x0078(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Timestamp;                                         // 0x007C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         ChannelType;                                       // 0x0080(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         SpecialType;                                       // 0x0084(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         PoolHealth;                                        // 0x0088(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         SendMessageCD;                                     // 0x008C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UDataTable*                             AICommunicateDataTableAsset;                       // 0x0090(0x0008)(Edit, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UAICommunicateAsset*                    WeightsAsset;                                      // 0x0098(0x0008)(Edit, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class AMarvelAIController*                    AIOwner;                                           // 0x00A0(0x0008)(ZeroConstructor, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FDateTime                              LastSendMessageTime;                               // 0x00A8(0x0008)(ZeroConstructor, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_B0[0x18];                                      // 0x00B0(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	float                                         TeammateDistance;                                  // 0x0078(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_7C[0x4];                                       // 0x007C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FBlackboardKeySelector                 DifficultyMode;                                    // 0x0080(0x0030)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	struct FBlackboardKeySelector                 DifficultyLevel;                                   // 0x00B0(0x0030)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	float                                         TempPriority;                                      // 0x00E0(0x0004)(BlueprintVisible, ZeroConstructor, Transient, DuplicateTransient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_E4[0x4];                                       // 0x00E4(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
-	class FString GetAIUserName(class AActor* Target);
-	void OnAllDeath(const struct FAIEventArgs& Args);
-	void OnDeath(const struct FAIEventArgs& Args);
-	void OnEnergyFull(const struct FAIEventArgs& Args);
-	void OnGameBegin(const struct FAIEventArgs& Args);
-	void OnGameEnd(const struct FAIEventArgs& Args);
-	void OnHeal(const struct FAIEventArgs& Args);
-	void OnHealthChanged(const struct FAIEventArgs& Args);
-	void SendChatMessage(const class FString& msg, class AActor* Target);
-	void SendMessage(struct FAICommunicateEx* Communicate, class AActor* Target);
-	void SendQuickMessage(const int32& ID, class AActor* Target);
+	bool IsActorInFireLineState(const class AMarvelBaseCharacter* Character);
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"BTS_SendChatMessage">();
+		return StaticClassImpl<"BTS_UpdateFireLine">();
 	}
-	static class UBTS_SendChatMessage* GetDefaultObj()
+	static class UBTS_UpdateFireLine* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UBTS_SendChatMessage>();
+		return GetDefaultObjImpl<UBTS_UpdateFireLine>();
 	}
 };
 
-// Class MarvelAI.BTS_SetMapPoint_Payload
-// 0x01F0 (0x0268 - 0x0078)
-class UBTS_SetMapPoint_Payload : public UBTService
-{
-public:
-	struct FBlackboardKeySelector                 InMatchStateInput;                                 // 0x0078(0x0030)(Edit, NativeAccessSpecifierPrivate)
-	struct FStrategyArea                          OutStrategyArea;                                   // 0x00A8(0x0090)(Edit, NativeAccessSpecifierPrivate)
-	struct FBlackboardKeySelector                 FrontierBBKey;                                     // 0x0138(0x0030)(Edit, NativeAccessSpecifierPrivate)
-	struct FBlackboardKeySelector                 EnemyPlayerStartBBKey;                             // 0x0168(0x0030)(Edit, NativeAccessSpecifierPrivate)
-	struct FBlackboardKeySelector                 AllyPlayerStartBBKey;                              // 0x0198(0x0030)(Edit, NativeAccessSpecifierPrivate)
-	float                                         SuppressDist;                                      // 0x01C8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	float                                         RetreatDist;                                       // 0x01CC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	class UHotPoint_DataAsset*                    DA_HotPoint;                                       // 0x01D0(0x0008)(Edit, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	struct FBlackboardKeySelector                 SuppressPointBBKey;                                // 0x01D8(0x0030)(Edit, NativeAccessSpecifierPrivate)
-	struct FBlackboardKeySelector                 RetreatPointBBKey;                                 // 0x0208(0x0030)(Edit, NativeAccessSpecifierPrivate)
-	struct FBlackboardKeySelector                 OutHotPointBBKey;                                  // 0x0238(0x0030)(Edit, NativeAccessSpecifierPrivate)
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"BTS_SetMapPoint_Payload">();
-	}
-	static class UBTS_SetMapPoint_Payload* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UBTS_SetMapPoint_Payload>();
-	}
-};
-
-// Class MarvelAI.BTS_UpdateCampState
+// Class MarvelAI.BTS_UpdateMapID
 // 0x0030 (0x00A8 - 0x0078)
-class UBTS_UpdateCampState : public UBTService
+class UBTS_UpdateMapID : public UBTService
 {
 public:
-	struct FBlackboardKeySelector                 OutCampState;                                      // 0x0078(0x0030)(Edit, NativeAccessSpecifierPrivate)
+	struct FBlackboardKeySelector                 OutMapID;                                          // 0x0078(0x0030)(Edit, Protected, NativeAccessSpecifierProtected)
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"BTS_UpdateCampState">();
+		return StaticClassImpl<"BTS_UpdateMapID">();
 	}
-	static class UBTS_UpdateCampState* GetDefaultObj()
+	static class UBTS_UpdateMapID* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UBTS_UpdateCampState>();
+		return GetDefaultObjImpl<UBTS_UpdateMapID>();
 	}
 };
 
-// Class MarvelAI.BTS_UpdateControlState
-// 0x0090 (0x01A8 - 0x0118)
-class UBTS_UpdateControlState final : public UBTS_UpdateMatchState_New
+// Class MarvelAI.BTS_UpdateSight
+// 0x0028 (0x00A0 - 0x0078)
+class UBTS_UpdateSight : public UBTService
 {
 public:
-	struct FBlackboardKeySelector                 AllyCampProgressKey;                               // 0x0118(0x0030)(Edit, NativeAccessSpecifierPrivate)
-	struct FBlackboardKeySelector                 EnemyCampProgressKey;                              // 0x0148(0x0030)(Edit, NativeAccessSpecifierPrivate)
-	struct FBlackboardKeySelector                 ControlStateKey;                                   // 0x0178(0x0030)(Edit, NativeAccessSpecifierPrivate)
+	float                                         VisionRadius;                                      // 0x0078(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         VisionRadiusForDamageSource;                       // 0x007C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         VisionHalfAngle;                                   // 0x0080(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MaxAge;                                            // 0x0084(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AMarvelAIController*                    AIOwner;                                           // 0x0088(0x0008)(ZeroConstructor, Transient, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UMarvelAIPerceptionComponent*           AIPerceptionComponent;                             // 0x0090(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UAISenseConfig_Sight*                   SightConfig;                                       // 0x0098(0x0008)(ZeroConstructor, Transient, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 
 public:
-	EAIFilterSide GetCampControlState(class AMarvelBaseCharacter* OwnerCharacter);
-	TArray<float> GetCampProgress(class AMarvelBaseCharacter* OwnerCharacter);
+	void OnResetSightConfig(float NewRadius);
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"BTS_UpdateControlState">();
+		return StaticClassImpl<"BTS_UpdateSight">();
 	}
-	static class UBTS_UpdateControlState* GetDefaultObj()
+	static class UBTS_UpdateSight* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UBTS_UpdateControlState>();
-	}
-};
-
-// Class MarvelAI.BTS_UpdateEscortStateNew
-// 0x0090 (0x01A8 - 0x0118)
-class UBTS_UpdateEscortStateNew final : public UBTS_UpdateMatchState_New
-{
-public:
-	struct FBlackboardKeySelector                 GameStageKey;                                      // 0x0118(0x0030)(Edit, NativeAccessSpecifierPrivate)
-	struct FBlackboardKeySelector                 PayloadStateKey;                                   // 0x0148(0x0030)(Edit, NativeAccessSpecifierPrivate)
-	struct FBlackboardKeySelector                 PayloadProgressKey;                                // 0x0178(0x0030)(Edit, NativeAccessSpecifierPrivate)
-
-public:
-	EOwnershipType GetPayloadOwnership();
-	float GetPayLoadProgress();
-	float GetPayLoadSpeed();
-	void SetCurrentStage(const class FString& StageName);
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"BTS_UpdateEscortStateNew">();
-	}
-	static class UBTS_UpdateEscortStateNew* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UBTS_UpdateEscortStateNew>();
-	}
-};
-
-// Class MarvelAI.BTS_UpdateFrontier
-// 0x0030 (0x00A8 - 0x0078)
-class UBTS_UpdateFrontier : public UBTService
-{
-public:
-	struct FBlackboardKeySelector                 OutFrontier;                                       // 0x0078(0x0030)(Edit, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"BTS_UpdateFrontier">();
-	}
-	static class UBTS_UpdateFrontier* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UBTS_UpdateFrontier>();
-	}
-};
-
-// Class MarvelAI.BTS_UpdateMatchState
-// 0x0068 (0x00E0 - 0x0078)
-class UBTS_UpdateMatchState : public UBTService
-{
-public:
-	struct FBlackboardKeySelector                 OutMatchState;                                     // 0x0078(0x0030)(Edit, NativeAccessSpecifierPublic)
-	struct FBlackboardKeySelector                 OutBattleState;                                    // 0x00A8(0x0030)(Edit, NativeAccessSpecifierPublic)
-	class AAIController*                          AIOwner;                                           // 0x00D8(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-
-public:
-	void OnMatchStateChange(EMatchState NewState);
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"BTS_UpdateMatchState">();
-	}
-	static class UBTS_UpdateMatchState* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UBTS_UpdateMatchState>();
+		return GetDefaultObjImpl<UBTS_UpdateSight>();
 	}
 };
 
@@ -3912,6 +3927,24 @@ public:
 	}
 };
 
+// Class MarvelAI.BTS_UpdateUsageGroup
+// 0x0068 (0x00E0 - 0x0078)
+class UBTS_UpdateUsageGroup : public UBTService
+{
+public:
+	struct FGameplayTagContainer                  UsageGroupTags;                                    // 0x0078(0x0068)(Edit, Protected, NativeAccessSpecifierProtected)
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"BTS_UpdateUsageGroup">();
+	}
+	static class UBTS_UpdateUsageGroup* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UBTS_UpdateUsageGroup>();
+	}
+};
+
 // Class MarvelAI.BTTask_AbilityDelayWait_BB
 // 0x0030 (0x00B0 - 0x0080)
 class UBTTask_AbilityDelayWait_BB final : public UBTTask_Wait
@@ -3930,22 +3963,27 @@ public:
 	}
 };
 
-// Class MarvelAI.BTTask_ActivateAbility_BB
-// 0x0118 (0x01C8 - 0x00B0)
-class UBTTask_ActivateAbility_BB final : public UBTTask_GeneralActivateAbility
+// Class MarvelAI.BTTask_AIActivateAbilityTask
+// 0x0048 (0x00C0 - 0x0078)
+class UBTTask_AIActivateAbilityTask final : public UBTTaskNode
 {
 public:
-	struct FBlackboardKeySelector                 InAbilityUsageObject;                              // 0x00B0(0x0030)(Edit, BlueprintVisible, Protected, NativeAccessSpecifierProtected)
-	uint8                                         Pad_E0[0xE8];                                      // 0x00E0(0x00E8)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FBlackboardKeySelector                 InAbilityUsageObject;                              // 0x0078(0x0030)(Edit, BlueprintVisible, Protected, NativeAccessSpecifierProtected)
+	struct FGameplayTag                           InjectionTag;                                      // 0x00A8(0x000C)(Edit, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_B4[0x4];                                       // 0x00B4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UBehaviorTree*                          BehaviorAsset;                                     // 0x00B8(0x0008)(ZeroConstructor, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+
+public:
+	void InitAbilityTask();
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"BTTask_ActivateAbility_BB">();
+		return StaticClassImpl<"BTTask_AIActivateAbilityTask">();
 	}
-	static class UBTTask_ActivateAbility_BB* GetDefaultObj()
+	static class UBTTask_AIActivateAbilityTask* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UBTTask_ActivateAbility_BB>();
+		return GetDefaultObjImpl<UBTTask_AIActivateAbilityTask>();
 	}
 };
 
@@ -4021,21 +4059,6 @@ public:
 	}
 };
 
-// Class MarvelAI.BTTask_MarvelRunBehaviorStatic
-// 0x0000 (0x0080 - 0x0080)
-class UBTTask_MarvelRunBehaviorStatic final : public UBTTask_RunBehavior
-{
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"BTTask_MarvelRunBehaviorStatic">();
-	}
-	static class UBTTask_MarvelRunBehaviorStatic* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UBTTask_MarvelRunBehaviorStatic>();
-	}
-};
-
 // Class MarvelAI.BTTask_MarvelRunEQSQuery
 // 0x0048 (0x01C0 - 0x0178)
 class UBTTask_MarvelRunEQSQuery final : public UBTTask_RunEQSQuery
@@ -4056,43 +4079,26 @@ public:
 	}
 };
 
-// Class MarvelAI.BTTask_SwitchWeapon
-// 0x0010 (0x00C0 - 0x00B0)
-class UBTTask_SwitchWeapon final : public UBTTask_GeneralActivateAbility
+// Class MarvelAI.BTT_ActiveAbilityByUsage
+// 0x0050 (0x00C8 - 0x0078)
+class UBTT_ActiveAbilityByUsage final : public UBTTaskNode
 {
 public:
-	class FName                                   WeaponActionName;                                  // 0x00B0(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_BC[0x4];                                       // 0x00BC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	int32                                         AbilityID;                                         // 0x0078(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	int32                                         AbilityUsageID;                                    // 0x007C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	struct FBlackboardKeySelector                 BlackboardAbilityID;                               // 0x0080(0x0030)(Edit, NativeAccessSpecifierPrivate)
+	struct FGameplayAITag                         AbilityGroupTag;                                   // 0x00B0(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_BC[0x4];                                       // 0x00BC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TSubclassOf<class UAbilityTacticsTask>        TaskClasses;                                       // 0x00C0(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"BTTask_SwitchWeapon">();
+		return StaticClassImpl<"BTT_ActiveAbilityByUsage">();
 	}
-	static class UBTTask_SwitchWeapon* GetDefaultObj()
+	static class UBTT_ActiveAbilityByUsage* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UBTTask_SwitchWeapon>();
-	}
-};
-
-// Class MarvelAI.BTT_FindStrategyArea
-// 0x0068 (0x00E0 - 0x0078)
-class UBTT_FindStrategyArea : public UBTTaskNode
-{
-public:
-	struct FBlackboardKeySelector                 StrategyAreaVolume;                                // 0x0078(0x0030)(Edit, NativeAccessSpecifierPublic)
-	struct FBlackboardKeySelector                 OutLandPoint;                                      // 0x00A8(0x0030)(Edit, NativeAccessSpecifierPublic)
-	int32                                         MaxSearchNode;                                     // 0x00D8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_DC[0x4];                                       // 0x00DC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"BTT_FindStrategyArea">();
-	}
-	static class UBTT_FindStrategyArea* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UBTT_FindStrategyArea>();
+		return GetDefaultObjImpl<UBTT_ActiveAbilityByUsage>();
 	}
 };
 
@@ -4114,262 +4120,218 @@ public:
 	}
 };
 
-// Class MarvelAI.BTT_PinPoint
-// 0x1048 (0x10C0 - 0x0078)
-class UBTT_PinPoint : public UBTTaskNode
+// Class MarvelAI.BTT_PlayEmotes
+// 0x0068 (0x00E0 - 0x0078)
+class UBTT_PlayEmotes : public UBTTaskNode
 {
 public:
-	TMap<EPinEnum, struct FPinPointInfo>          SignalInfoMap;                                     // 0x0078(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, EditConst, Protected, NativeAccessSpecifierProtected)
-	struct FGameplayTag                           PinEventTag;                                       // 0x00C8(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, EditConst, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         bRandomPinType : 1;                                // 0x00D4(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected))
-	EPinEnum                                      PinType;                                           // 0x00D5(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_D6[0x2];                                       // 0x00D6(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         NeedFrontSightLength;                              // 0x00D8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_DC[0x4];                                       // 0x00DC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FMarvelAbilityTraceContext             TraceContext;                                      // 0x00E0(0x0F90)(Edit, DisableEditOnInstance, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
-	TMap<int32, int32>                            UltimateAbilityIDMap;                              // 0x1070(0x0050)(Edit, DisableEditOnInstance, Protected, NativeAccessSpecifierProtected)
+	uint8                                         bUseAppointedEmoteID : 1;                          // 0x0078(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected))
+	uint8                                         Pad_79[0x7];                                       // 0x0079(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	int64                                         EmoteID;                                           // 0x0080(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	TMap<int32, struct FBTHeroEmoteConfig>        HeroEmoteConfigs;                                  // 0x0088(0x0050)(Edit, Protected, NativeAccessSpecifierProtected)
+	int32                                         DefaultEmoteSkinID;                                // 0x00D8(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	int32                                         DefaultEmoteActionID;                              // 0x00DC(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"BTT_PinPoint">();
+		return StaticClassImpl<"BTT_PlayEmotes">();
 	}
-	static class UBTT_PinPoint* GetDefaultObj()
+	static class UBTT_PlayEmotes* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UBTT_PinPoint>();
+		return GetDefaultObjImpl<UBTT_PlayEmotes>();
 	}
 };
 
-// Class MarvelAI.BTT_SprayNew
-// 0x0028 (0x00A0 - 0x0078)
-class UBTT_SprayNew : public UBTTaskNode
+// Class MarvelAI.AIDashIntentionSelectTarget
+// 0x0018 (0x00B8 - 0x00A0)
+class UAIDashIntentionSelectTarget final : public UAISelectTargetLogic_General
 {
 public:
-	TArray<struct FMarvelAISprayTable>            DefaultSprayConfigs;                               // 0x0078(0x0010)(Edit, ZeroConstructor, Protected, NativeAccessSpecifierProtected)
-	uint8                                         bOnlyUseDefaultSprayConfig : 1;                    // 0x0088(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected))
-	uint8                                         Pad_89[0x7];                                       // 0x0089(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 SprayConfigTableName;                              // 0x0090(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FVector                                LocationOffset;                                    // 0x00A0(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"BTT_SprayNew">();
+		return StaticClassImpl<"AIDashIntentionSelectTarget">();
 	}
-	static class UBTT_SprayNew* GetDefaultObj()
+	static class UAIDashIntentionSelectTarget* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UBTT_SprayNew>();
+		return GetDefaultObjImpl<UAIDashIntentionSelectTarget>();
 	}
 };
 
-// Class MarvelAI.DashAbilityFilter
-// 0x0000 (0x0038 - 0x0038)
-class UDashAbilityFilter final : public UDynamicAbilityBindFilter
+// Class MarvelAI.DynamicAbilityBindFilterInterface
+// 0x0000 (0x0000 - 0x0000)
+class IDynamicAbilityBindFilterInterface final
 {
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"DashAbilityFilter">();
+		return StaticClassImpl<"DynamicAbilityBindFilterInterface">();
 	}
-	static class UDashAbilityFilter* GetDefaultObj()
+	static class IDynamicAbilityBindFilterInterface* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UDashAbilityFilter>();
+		return GetDefaultObjImpl<IDynamicAbilityBindFilterInterface>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
 	}
 };
 
-// Class MarvelAI.DefendStandPoint
-// 0x00A8 (0x0608 - 0x0560)
-class ADefendStandPoint final : public AStandPointBase
-{
-public:
-	TSet<int32>                                   HeroIDSet;                                         // 0x0560(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	TSet<EDefendStandPointHeroType>               HeroTypeSet;                                       // 0x05B0(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	bool                                          bShared;                                           // 0x0600(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_601[0x7];                                      // 0x0601(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"DefendStandPoint">();
-	}
-	static class ADefendStandPoint* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<ADefendStandPoint>();
-	}
-};
-
-// Class MarvelAI.EnvQueryContext_AllAliveEnemies
+// Class MarvelAI.EnvQueryContext_AllAliveTeammates
 // 0x0000 (0x0030 - 0x0030)
-class UEnvQueryContext_AllAliveEnemies final : public UEnvQueryContext
+class UEnvQueryContext_AllAliveTeammates final : public UEnvQueryContext
 {
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"EnvQueryContext_AllAliveEnemies">();
+		return StaticClassImpl<"EnvQueryContext_AllAliveTeammates">();
 	}
-	static class UEnvQueryContext_AllAliveEnemies* GetDefaultObj()
+	static class UEnvQueryContext_AllAliveTeammates* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UEnvQueryContext_AllAliveEnemies>();
+		return GetDefaultObjImpl<UEnvQueryContext_AllAliveTeammates>();
 	}
 };
 
-// Class MarvelAI.EnvQueryContext_Ally
-// 0x0008 (0x0038 - 0x0030)
-class UEnvQueryContext_Ally final : public UEnvQueryContext
+// Class MarvelAI.EnvQueryContext_BlackboardActor
+// 0x0010 (0x0040 - 0x0030)
+class UEnvQueryContext_BlackboardActor : public UEnvQueryContext
 {
 public:
-	bool                                          bNeedAlive;                                        // 0x0030(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	bool                                          bNeedParticularRole;                               // 0x0031(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	EHeroRole                                     HeroType;                                          // 0x0032(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class FName                                   BlackboardKeyName;                                 // 0x0030(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bReturnQuerierIfValueInvalid;                      // 0x003C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3D[0x3];                                       // 0x003D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"EnvQueryContext_BlackboardActor">();
+	}
+	static class UEnvQueryContext_BlackboardActor* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UEnvQueryContext_BlackboardActor>();
+	}
+};
+
+// Class MarvelAI.EnvQueryContext_CharacterGroup
+// 0x0008 (0x0038 - 0x0030)
+class UEnvQueryContext_CharacterGroup : public UEnvQueryContext
+{
+public:
+	EAICharacterSide                              CharacterGroupSide;                                // 0x0030(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	EHeroRole                                     CharacterGroupRole;                                // 0x0031(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	bool                                          IgnoreBBTarget;                                    // 0x0032(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	uint8                                         Pad_33[0x5];                                       // 0x0033(0x0005)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"EnvQueryContext_Ally">();
+		return StaticClassImpl<"EnvQueryContext_CharacterGroup">();
 	}
-	static class UEnvQueryContext_Ally* GetDefaultObj()
+	static class UEnvQueryContext_CharacterGroup* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UEnvQueryContext_Ally>();
+		return GetDefaultObjImpl<UEnvQueryContext_CharacterGroup>();
 	}
 };
 
-// Class MarvelAI.EnvQueryContext_BuffedCharacter
-// 0x0088 (0x00B8 - 0x0030)
-class UEnvQueryContext_BuffedCharacter final : public UEnvQueryContext
+// Class MarvelAI.EnvQueryGenerator_ScopePoints
+// 0x00D0 (0x0168 - 0x0098)
+class UEnvQueryGenerator_ScopePoints final : public UEnvQueryGenerator_ProjectedPoints
 {
 public:
-	int32                                         BuffID;                                            // 0x0030(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FHeroFilter                            HeroFilter;                                        // 0x0038(0x0080)(Edit, BlueprintVisible, Protected, NativeAccessSpecifierProtected)
+	struct FAIDataProviderFloatValue              SpaceBetween;                                      // 0x0098(0x0040)(Edit, DisableEditOnInstance, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
+	TSet<int32>                                   ScopeIDs;                                          // 0x00D8(0x0050)(Edit, DisableEditOnInstance, Protected, NativeAccessSpecifierProtected)
+	struct FAIDataProviderFloatValue              MaxDistanceToQuerier;                              // 0x0128(0x0040)(Edit, DisableEditOnInstance, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"EnvQueryContext_BuffedCharacter">();
+		return StaticClassImpl<"EnvQueryGenerator_ScopePoints">();
 	}
-	static class UEnvQueryContext_BuffedCharacter* GetDefaultObj()
+	static class UEnvQueryGenerator_ScopePoints* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UEnvQueryContext_BuffedCharacter>();
+		return GetDefaultObjImpl<UEnvQueryGenerator_ScopePoints>();
 	}
 };
 
-// Class MarvelAI.EnvQueryContext_Enemy
-// 0x0008 (0x0038 - 0x0030)
-class UEnvQueryContext_Enemy final : public UEnvQueryContext
+// Class MarvelAI.EnvQueryGenerator_StaticActors
+// 0x0058 (0x0140 - 0x00E8)
+class UEnvQueryGenerator_StaticActors final : public UEnvQueryGenerator_ActorsOfClass
 {
 public:
-	bool                                          bNeedAlive;                                        // 0x0030(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	bool                                          bNeedParticularRole;                               // 0x0031(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	EHeroRole                                     HeroType;                                          // 0x0032(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	bool                                          bIgnoreCurrentAttackTarget;                        // 0x0033(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	bool                                          bUseCachedData;                                    // 0x00E8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_E9[0x57];                                      // 0x00E9(0x0057)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"EnvQueryContext_Enemy">();
+		return StaticClassImpl<"EnvQueryGenerator_StaticActors">();
 	}
-	static class UEnvQueryContext_Enemy* GetDefaultObj()
+	static class UEnvQueryGenerator_StaticActors* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UEnvQueryContext_Enemy>();
+		return GetDefaultObjImpl<UEnvQueryGenerator_StaticActors>();
 	}
 };
 
-// Class MarvelAI.EnvQueryGenerator_Sphere
-// 0x0108 (0x0160 - 0x0058)
-class UEnvQueryGenerator_Sphere : public UEnvQueryGenerator
-{
-public:
-	TSubclassOf<class UEnvQueryContext>           GenerateAround;                                    // 0x0058(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FAIDataProviderFloatValue              DistanceInSameDirection;                           // 0x0060(0x0040)(Edit, DisableEditOnInstance, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
-	struct FAIDataProviderFloatValue              OuterRange;                                        // 0x00A0(0x0040)(Edit, DisableEditOnInstance, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
-	struct FAIDataProviderFloatValue              InnerRange;                                        // 0x00E0(0x0040)(Edit, DisableEditOnInstance, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
-	struct FAIDataProviderFloatValue              AngleStep;                                         // 0x0120(0x0040)(Edit, DisableEditOnInstance, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"EnvQueryGenerator_Sphere">();
-	}
-	static class UEnvQueryGenerator_Sphere* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UEnvQueryGenerator_Sphere>();
-	}
-};
-
-// Class MarvelAI.EnvQueryGenerator_SVONSphere
-// 0x0000 (0x0160 - 0x0160)
-class UEnvQueryGenerator_SVONSphere final : public UEnvQueryGenerator_Sphere
-{
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"EnvQueryGenerator_SVONSphere">();
-	}
-	static class UEnvQueryGenerator_SVONSphere* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UEnvQueryGenerator_SVONSphere>();
-	}
-};
-
-// Class MarvelAI.EnvQueryTest_AllyShield
+// Class MarvelAI.EnvQueryTest_1030Respond
 // 0x0048 (0x02C8 - 0x0280)
-class UEnvQueryTest_AllyShield final : public UEnvQueryTest
-{
-public:
-	struct FAIDataProviderBoolValue               EnableThisTest;                                    // 0x0280(0x0040)(Edit, DisableEditOnInstance, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
-	float                                         ShieldValidDistance;                               // 0x02C0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_2C4[0x4];                                      // 0x02C4(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"EnvQueryTest_AllyShield">();
-	}
-	static class UEnvQueryTest_AllyShield* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UEnvQueryTest_AllyShield>();
-	}
-};
-
-// Class MarvelAI.EnvQueryTest_CheckGameplayTag
-// 0x0078 (0x02F8 - 0x0280)
-class UEnvQueryTest_CheckGameplayTag final : public UMarvelEnvQueryTest
-{
-public:
-	struct FAITagMatchParameter                   GamePlayParameter;                                 // 0x0280(0x0070)(Edit, NativeAccessSpecifierPublic)
-	EAIFilterSide                                 Side;                                              // 0x02F0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2F1[0x7];                                      // 0x02F1(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"EnvQueryTest_CheckGameplayTag">();
-	}
-	static class UEnvQueryTest_CheckGameplayTag* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UEnvQueryTest_CheckGameplayTag>();
-	}
-};
-
-// Class MarvelAI.EnvQueryTest_EffectByGroup
-// 0x0050 (0x02D0 - 0x0280)
-class UEnvQueryTest_EffectByGroup final : public UEnvQueryTest
+class UEnvQueryTest_1030Respond final : public UEnvQueryTest
 {
 public:
 	struct FAIDataProviderBoolValue               EnableThisTest;                                    // 0x0280(0x0040)(Edit, DisableEditOnInstance, ContainsInstancedReference, NativeAccessSpecifierPublic)
-	TSubclassOf<class UEnvQueryContext>           TargetGroup;                                       // 0x02C0(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MaxEffectDistance;                                 // 0x02C8(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2CC[0x4];                                      // 0x02CC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	TSubclassOf<class UEnvQueryContext>           DistanceTo;                                        // 0x02C0(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"EnvQueryTest_EffectByGroup">();
+		return StaticClassImpl<"EnvQueryTest_1030Respond">();
 	}
-	static class UEnvQueryTest_EffectByGroup* GetDefaultObj()
+	static class UEnvQueryTest_1030Respond* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UEnvQueryTest_EffectByGroup>();
+		return GetDefaultObjImpl<UEnvQueryTest_1030Respond>();
+	}
+};
+
+// Class MarvelAI.EnvQueryTest_DamageAbilityScope
+// 0x0000 (0x0280 - 0x0280)
+class UEnvQueryTest_DamageAbilityScope final : public UEnvQueryTest
+{
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"EnvQueryTest_DamageAbilityScope">();
+	}
+	static class UEnvQueryTest_DamageAbilityScope* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UEnvQueryTest_DamageAbilityScope>();
+	}
+};
+
+// Class MarvelAI.EnvQueryTest_EvadeTarget
+// 0x1140 (0x13C0 - 0x0280)
+class UEnvQueryTest_EvadeTarget final : public UEnvQueryTest
+{
+public:
+	struct FMarvelAbilityTraceContext             TraceContext;                                      // 0x0280(0x0F90)(Edit, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	TArray<struct FAITagMatchParameter>           TagMatchParameters;                                // 0x1210(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	struct FAbilityCheckConfig                    Asset;                                             // 0x1220(0x0198)(Edit, AdvancedDisplay, NativeAccessSpecifierPublic)
+	uint8                                         Pad_13B8[0x8];                                     // 0x13B8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"EnvQueryTest_EvadeTarget">();
+	}
+	static class UEnvQueryTest_EvadeTarget* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UEnvQueryTest_EvadeTarget>();
 	}
 };
 
@@ -4393,6 +4355,21 @@ public:
 	}
 };
 
+// Class MarvelAI.EnvQueryTest_IsShelterBroken
+// 0x0000 (0x0280 - 0x0280)
+class UEnvQueryTest_IsShelterBroken final : public UEnvQueryTest
+{
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"EnvQueryTest_IsShelterBroken">();
+	}
+	static class UEnvQueryTest_IsShelterBroken* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UEnvQueryTest_IsShelterBroken>();
+	}
+};
+
 // Class MarvelAI.EnvQueryTest_KeepDistance
 // 0x0010 (0x0290 - 0x0280)
 class UEnvQueryTest_KeepDistance : public UEnvQueryTest
@@ -4413,6 +4390,25 @@ public:
 	}
 };
 
+// Class MarvelAI.EnvQueryTest_MarginTarget
+// 0x0008 (0x0288 - 0x0280)
+class UEnvQueryTest_MarginTarget final : public UMarvelEnvQueryTest
+{
+public:
+	float                                         ScoreMax;                                          // 0x0280(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Radius;                                            // 0x0284(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"EnvQueryTest_MarginTarget">();
+	}
+	static class UEnvQueryTest_MarginTarget* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UEnvQueryTest_MarginTarget>();
+	}
+};
+
 // Class MarvelAI.EnvQueryTest_ProjectilePath
 // 0x0058 (0x02D8 - 0x0280)
 class UEnvQueryTest_ProjectilePath final : public UMarvelEnvQueryTest
@@ -4430,6 +4426,28 @@ public:
 	static class UEnvQueryTest_ProjectilePath* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UEnvQueryTest_ProjectilePath>();
+	}
+};
+
+// Class MarvelAI.EnvQueryTest_RelativeGroundHeight
+// 0x0010 (0x0290 - 0x0280)
+class UEnvQueryTest_RelativeGroundHeight : public UEnvQueryTest
+{
+public:
+	class UCurveFloat*                            DamageScoreCurve;                                  // 0x0280(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	bool                                          bConsiderDestructible;                             // 0x0288(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	bool                                          bConsiderSceneSummoned;                            // 0x0289(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_28A[0x2];                                      // 0x028A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         MaxGroundSlope;                                    // 0x028C(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"EnvQueryTest_RelativeGroundHeight">();
+	}
+	static class UEnvQueryTest_RelativeGroundHeight* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UEnvQueryTest_RelativeGroundHeight>();
 	}
 };
 
@@ -4511,6 +4529,42 @@ public:
 	}
 };
 
+// Class MarvelAI.MarvelAIAlarmSubsystem
+// 0x0128 (0x0170 - 0x0048)
+class UMarvelAIAlarmSubsystem final : public UMarvelAIWorldSubsystem
+{
+public:
+	bool                                          bEnable;                                           // 0x0048(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	bool                                          bEnableVislog;                                     // 0x0049(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_4A[0x2];                                       // 0x004A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         CheckInterval;                                     // 0x004C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	int32                                         LogLimitNumPerAI;                                  // 0x0050(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_54[0xE4];                                      // 0x0054(0x00E4)(Fixing Size After Last Property [ Dumper-7 ])
+	class UMarvelAISystem*                        CacheAISys;                                        // 0x0138(0x0008)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_140[0x4];                                      // 0x0140(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         EmptyUsageLimitSeconds;                            // 0x0144(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	float                                         MoveStuckThreshold;                                // 0x0148(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_14C[0x1C];                                     // 0x014C(0x001C)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         AbilityEndThreshold;                               // 0x0168(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	int32                                         RecordNum;                                         // 0x016C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+
+public:
+	void OnActorActivateAbility(class AActor* Source, int32 AbilityID, const class FString& SessionID, class UMarvelGameplayAbility* SourceAbility);
+	void OnActorEndAbility(class AActor* Source, int32 AbilityID, const class FString& SessionID, class UMarvelGameplayAbility* SourceAbility);
+	void OnGameQuittingStart();
+	void OnMatchStateChange(EMatchState NewState);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"MarvelAIAlarmSubsystem">();
+	}
+	static class UMarvelAIAlarmSubsystem* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UMarvelAIAlarmSubsystem>();
+	}
+};
+
 // Class MarvelAI.MarvelAIAssetLibrary
 // 0x0000 (0x0030 - 0x0030)
 class UMarvelAIAssetLibrary final : public UBlueprintFunctionLibrary
@@ -4531,7 +4585,7 @@ public:
 class UMarvelAIAutoAbilityGlobalConfig final : public UPrimaryDataAsset
 {
 public:
-	TMap<EAbilityEffectPriority, struct FAbilityUsagePriorityConfig> UsageTypeBasePriorityConfig;                       // 0x0038(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, Protected, NativeAccessSpecifierProtected)
+	TMap<EAbilityEffectPriority, struct FAbilityUsagePriorityConfig> UsageTypeBasePriorityConfig;    // 0x0038(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, Protected, NativeAccessSpecifierProtected)
 	int32                                         ComboUsageExtraPriority;                           // 0x0088(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	bool                                          bUseNewPriorityCalculation;                        // 0x008C(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_8D[0x3];                                       // 0x008D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
@@ -4592,7 +4646,7 @@ public:
 class AMarvelAIController : public AMarvelAIControllerBase
 {
 public:
-	TMap<TWeakObjectPtr<class AActor>, struct FDateTime> DamageSourceRecord;                                // 0x06A0(0x0050)(Protected, NativeAccessSpecifierProtected)
+	TMap<TWeakObjectPtr<class AActor>, struct FDateTime> DamageSourceRecord;                         // 0x06A0(0x0050)(Protected, NativeAccessSpecifierProtected)
 	class UClass*                                 AbilityTacticClass;                                // 0x06F0(0x0008)(Edit, ZeroConstructor, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	uint8                                         Pad_6F8[0x18];                                     // 0x06F8(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
 	class UBehaviorTree*                          OldBehaviorTree;                                   // 0x0710(0x0008)(ZeroConstructor, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
@@ -4904,7 +4958,7 @@ public:
 class UMarvelAIGameModeDefaultConfigAsset final : public UAIGlobalConfigAsset
 {
 public:
-	TMap<struct FGameplayTag, struct FAIGameModeConfig> AIGameModeConfigMap;                               // 0x0038(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	TMap<struct FGameplayTag, struct FAIGameModeConfig> AIGameModeConfigMap;                         // 0x0038(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	bool                                          bEnablePersonificationAIForDDA;                    // 0x0088(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bEnableNormalAIForDDA;                             // 0x0089(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_8A[0x2];                                       // 0x008A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
@@ -4931,7 +4985,7 @@ public:
 class UMarvelAIGlobalDataSubsystem final : public UMarvelAIWorldSubsystem
 {
 public:
-	TMap<TSubclassOf<class AActor>, struct FLevelStaticActorCache> LevelStaticActorCache;                             // 0x0048(0x0050)(Transient, Protected, NativeAccessSpecifierProtected)
+	TMap<TSubclassOf<class AActor>, struct FLevelStaticActorCache> LevelStaticActorCache;            // 0x0048(0x0050)(Transient, Protected, NativeAccessSpecifierProtected)
 	uint8                                         Pad_98[0xF8];                                      // 0x0098(0x00F8)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
@@ -5334,7 +5388,7 @@ class AMarvelAITeamManager : public AMarvelActorBase
 {
 public:
 	TMap<class AActor*, struct FDateTime>         LowHpMark;                                         // 0x04B0(0x0050)(BlueprintVisible, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class AMarvelPlayerState* PlayerState)> AutoChangeHeroDelegate;                            // 0x0500(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class AMarvelPlayerState* PlayerState)> AutoChangeHeroDelegate;    // 0x0500(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 	TMap<int32, struct FMarvelAITeamInfo>         TeamInfos;                                         // 0x0510(0x0050)(BlueprintVisible, NativeAccessSpecifierPublic)
 	bool                                          bHasInitTeamInfo;                                  // 0x0560(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bIsMatchStart;                                     // 0x0561(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -5379,7 +5433,7 @@ public:
 class UMarvelBehaviorTreeComponent final : public UBehaviorTreeComponent
 {
 public:
-	TMap<struct FGameplayTag, class UBehaviorTree*> HeroSubBTMap;                                      // 0x02E0(0x0050)(BlueprintVisible, NativeAccessSpecifierPublic)
+	TMap<struct FGameplayTag, class UBehaviorTree*> HeroSubBTMap;                                    // 0x02E0(0x0050)(BlueprintVisible, NativeAccessSpecifierPublic)
 
 public:
 	class UBehaviorTree* GetBTAssetByTag(const struct FGameplayTag& GameplayTag);
@@ -5439,8 +5493,8 @@ public:
 };
 
 // Class MarvelAI.MarvelNavAgentInterface
-// 0x0000 (0x0030 - 0x0030)
-class IMarvelNavAgentInterface final : public INavAgentInterface
+// 0x0000 (0x0000 - 0x0000)
+class IMarvelNavAgentInterface final
 {
 public:
 	static class UClass* StaticClass()
@@ -5450,6 +5504,15 @@ public:
 	static class IMarvelNavAgentInterface* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<IMarvelNavAgentInterface>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
 	}
 };
 
@@ -5589,6 +5652,21 @@ public:
 	static class UMarvelNavArea_CampLink* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UMarvelNavArea_CampLink>();
+	}
+};
+
+// Class MarvelAI.MarvelNavArea_SpaceRift
+// 0x0000 (0x0050 - 0x0050)
+class UMarvelNavArea_SpaceRift final : public UMarvelNavArea
+{
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"MarvelNavArea_SpaceRift">();
+	}
+	static class UMarvelNavArea_SpaceRift* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UMarvelNavArea_SpaceRift>();
 	}
 };
 
@@ -5882,7 +5960,7 @@ class UMarvelPathFollowingComponent final : public UPathFollowingComponent
 {
 public:
 	uint8                                         Pad_328[0x8];                                      // 0x0328(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	TMulticastInlineDelegate<void(struct FVector& MoveEnd)> OnMovePathSegmentDispatcher;                       // 0x0330(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const struct FVector& MoveEnd)> OnMovePathSegmentDispatcher;       // 0x0330(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	uint8                                         Pad_340[0x30];                                     // 0x0340(0x0030)(Fixing Size After Last Property [ Dumper-7 ])
 	bool                                          bEnableDebugDraw;                                  // 0x0370(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	bool                                          bUseMoveAbility;                                   // 0x0371(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
@@ -5940,8 +6018,8 @@ public:
 class AMarvelWayPointManager : public AMarvelActorBase
 {
 public:
-	TMap<TSoftObjectPtr<class AActor>, struct FPathSelectorData> PathSelectConfig;                                  // 0x04B0(0x0050)(Edit, Protected, NativeAccessSpecifierProtected)
-	TMap<class FName, TSoftObjectPtr<class AStartWayPoint>> StartWayPointMap;                                  // 0x0500(0x0050)(Edit, Protected, UObjectWrapper, NativeAccessSpecifierProtected)
+	TMap<TSoftObjectPtr<class AActor>, struct FPathSelectorData> PathSelectConfig;                   // 0x04B0(0x0050)(Edit, Protected, NativeAccessSpecifierProtected)
+	TMap<class FName, TSoftObjectPtr<class AStartWayPoint>> StartWayPointMap;                        // 0x0500(0x0050)(Edit, Protected, UObjectWrapper, NativeAccessSpecifierProtected)
 
 public:
 	void CollectDataFromOldConfig();
@@ -5962,7 +6040,7 @@ public:
 };
 
 // Class MarvelAI.NavEffectBoxComponent
-// 0x0000 (0x08A0 - 0x08A0)
+// 0x0000 (0x0930 - 0x0930)
 class UNavEffectBoxComponent final : public UBoxComponent
 {
 public:
@@ -6151,6 +6229,21 @@ public:
 	}
 };
 
+// Class MarvelAI.NavLinkMoveMethod_SpaceRift
+// 0x0000 (0x0048 - 0x0048)
+class UNavLinkMoveMethod_SpaceRift final : public UNavLinkMoveMethod
+{
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"NavLinkMoveMethod_SpaceRift">();
+	}
+	static class UNavLinkMoveMethod_SpaceRift* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UNavLinkMoveMethod_SpaceRift>();
+	}
+};
+
 // Class MarvelAI.NavLinkMoveMethod_TeleportJump
 // 0x0000 (0x0048 - 0x0048)
 class UNavLinkMoveMethod_TeleportJump final : public UNavLinkMoveMethod
@@ -6193,16 +6286,16 @@ public:
 };
 
 // Class MarvelAI.PrepareAreaComponent
-// 0x0030 (0x08D0 - 0x08A0)
+// 0x0030 (0x0960 - 0x0930)
 class UPrepareAreaComponent final : public UBoxComponent
 {
 public:
-	EBattleSide                                   MyBattleSide;                                      // 0x08A0(0x0001)(Edit, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_8A1[0x3];                                      // 0x08A1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         UpdateIsValidInterval;                             // 0x08A4(0x0004)(Edit, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         MarkToInvalidDuration;                             // 0x08A8(0x0004)(Edit, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bIsValidArea;                                      // 0x08AC(0x0001)(Edit, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_8AD[0x23];                                     // 0x08AD(0x0023)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	EBattleSide                                   MyBattleSide;                                      // 0x0930(0x0001)(Edit, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_931[0x3];                                      // 0x0931(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         UpdateIsValidInterval;                             // 0x0934(0x0004)(Edit, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         MarkToInvalidDuration;                             // 0x0938(0x0004)(Edit, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bIsValidArea;                                      // 0x093C(0x0001)(Edit, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_93D[0x23];                                     // 0x093D(0x0023)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	bool CheckIsActorInRange(const class AActor* ToCheckActor) const;
@@ -6423,8 +6516,8 @@ public:
 };
 
 // Class MarvelAI.SteeringLimiter
-// 0x0000 (0x0030 - 0x0030)
-class ISteeringLimiter : public IInterface
+// 0x0000 (0x0000 - 0x0000)
+class ISteeringLimiter final
 {
 public:
 	static class UClass* StaticClass()
@@ -6435,11 +6528,20 @@ public:
 	{
 		return GetDefaultObjImpl<ISteeringLimiter>();
 	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
 };
 
 // Class MarvelAI.Steerable
-// 0x0000 (0x0030 - 0x0030)
-class ISteerable final : public ISteeringLimiter
+// 0x0000 (0x0000 - 0x0000)
+class ISteerable final
 {
 public:
 	static class UClass* StaticClass()
@@ -6449,6 +6551,15 @@ public:
 	static class ISteerable* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<ISteerable>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
 	}
 };
 

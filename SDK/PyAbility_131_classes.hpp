@@ -18,29 +18,6 @@
 namespace SDK
 {
 
-// PythonClass PyAbility_131.PyUIController_131
-// 0x0008 (0x0C68 - 0x0C60)
-class UPyUIController_131 : public UUIC_Ability
-{
-public:
-	float                                         HideTipDelay;                                      // 0x0C60(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-public:
-	void SetAbility(int32 InAbilityId, class UGameplayAbility* InAbility);
-	void OnDestruct();
-	void OnWallRunningEnd(const struct FWallRunningEndInfo& InWallRunningEndInfo);
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"PyUIController_131">();
-	}
-	static class UPyUIController_131* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UPyUIController_131>();
-	}
-};
-
 // PythonClass PyAbility_131.PyConfig_131
 // 0x1818 (0x1930 - 0x0118)
 class UPyConfig_131 : public UWallRunningAbilityConfig
@@ -129,7 +106,7 @@ public:
 };
 
 // PythonClass PyAbility_131.PyAbility_131
-// 0x0000 (0x2608 - 0x2608)
+// 0x0000 (0x2610 - 0x2610)
 class UPyAbility_131 : public UWallRunningAbility
 {
 public:
@@ -154,6 +131,29 @@ public:
 	static class UPyAbility_131* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UPyAbility_131>();
+	}
+};
+
+// PythonClass PyAbility_131.PyUIController_131
+// 0x0008 (0x0C58 - 0x0C50)
+class UPyUIController_131 : public UUIC_Ability
+{
+public:
+	float                                         HideTipDelay;                                      // 0x0C50(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	void SetAbility(int32 InAbilityId, class UGameplayAbility* InAbility);
+	void OnDestruct();
+	void OnWallRunningEnd(const struct FWallRunningEndInfo& InWallRunningEndInfo);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PyUIController_131">();
+	}
+	static class UPyUIController_131* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPyUIController_131>();
 	}
 };
 

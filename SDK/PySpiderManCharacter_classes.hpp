@@ -32,7 +32,7 @@ public:
 };
 
 // PythonClass PySpiderManCharacter.PySpiderManCharacter
-// 0x0000 (0x1880 - 0x1880)
+// 0x0000 (0x18E0 - 0x18E0)
 class APySpiderManCharacter : public ASpiderManCharacter
 {
 public:

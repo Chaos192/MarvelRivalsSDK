@@ -40,7 +40,7 @@ void UWBP_AudioEmitter_C::ExecuteUbergraph_WBP_AudioEmitter(int32 EntryPoint)
 // Function WBP_AudioEmitter.WBP_AudioEmitter_C.GetCachedAdmin
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// class UMarvelAudioAdmin*                AudioAdmin                                             (Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class UMarvelAudioAdmin**               AudioAdmin                                             (Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 void UWBP_AudioEmitter_C::GetCachedAdmin(class UMarvelAudioAdmin** AudioAdmin)
 {
@@ -61,7 +61,7 @@ void UWBP_AudioEmitter_C::GetCachedAdmin(class UMarvelAudioAdmin** AudioAdmin)
 // Function WBP_AudioEmitter.WBP_AudioEmitter_C.HasPlayingEvent
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                                    Has                                                    (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool*                                   Has                                                    (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UWBP_AudioEmitter_C::HasPlayingEvent(bool* Has)
 {
@@ -250,7 +250,7 @@ void UWBP_AudioEmitter_C::SetThreatValue(bool Playing)
 // Function WBP_AudioEmitter.WBP_AudioEmitter_C.Tick
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// struct FGeometry                        MyGeometry                                             (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
+// const struct FGeometry&                 MyGeometry                                             (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
 // float                                   InDeltaTime                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UWBP_AudioEmitter_C::Tick(const struct FGeometry& MyGeometry, float InDeltaTime)

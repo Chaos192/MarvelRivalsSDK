@@ -104,11 +104,14 @@ void UControlAnalyzerSubsystem::ResetScoreReportConfig(float NewLSThreshold, flo
 
 
 // Function MarvelControlAnalyzer.ControlAnalyzerSubsystem.SendWarning
-// (Event, Public, BlueprintEvent)
+// (Event, Public, HasOutParams, BlueprintEvent)
 // Parameters:
-// class FString                           WarningStr                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<int32>&                    LSScores                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TArray<int32>&                    RSScores                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TArray<int32>&                    LTScores                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TArray<int32>&                    RTScores                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UControlAnalyzerSubsystem::SendWarning(const class FString& WarningStr)
+void UControlAnalyzerSubsystem::SendWarning(const TArray<int32>& LSScores, const TArray<int32>& RSScores, const TArray<int32>& LTScores, const TArray<int32>& RTScores)
 {
 	static class UFunction* Func = nullptr;
 
@@ -117,7 +120,10 @@ void UControlAnalyzerSubsystem::SendWarning(const class FString& WarningStr)
 
 	Params::ControlAnalyzerSubsystem_SendWarning Parms{};
 
-	Parms.WarningStr = std::move(WarningStr);
+	Parms.LSScores = std::move(LSScores);
+	Parms.RSScores = std::move(RSScores);
+	Parms.LTScores = std::move(LTScores);
+	Parms.RTScores = std::move(RTScores);
 
 	UObject::ProcessEvent(Func, &Parms);
 }

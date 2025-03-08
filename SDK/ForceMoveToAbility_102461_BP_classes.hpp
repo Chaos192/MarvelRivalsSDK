@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass ForceMoveToAbility_102461_BP.ForceMoveToAbility_102461_BP_C
-// 0x0000 (0x1100 - 0x1100)
+// 0x0000 (0x1108 - 0x1108)
 class UForceMoveToAbility_102461_BP_C final : public UForceMoveToAbility_102461
 {
 public:

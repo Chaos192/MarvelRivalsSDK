@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Knockup_103614.Knockup_103614_C
-// 0x0000 (0x1D98 - 0x1D98)
+// 0x0000 (0x1DA8 - 0x1DA8)
 class UKnockup_103614_C final : public UMarvelKnockUpAbility
 {
 public:

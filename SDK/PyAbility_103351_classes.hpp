@@ -10,15 +10,15 @@
 
 #include "Basic.hpp"
 
-#include "Hero_1033_classes.hpp"
 #include "Marvel_classes.hpp"
+#include "Hero_1033_classes.hpp"
 
 
 namespace SDK
 {
 
 // PythonClass PyAbility_103351.PyUIController_103351
-// 0x0000 (0x0C60 - 0x0C60)
+// 0x0000 (0x0C50 - 0x0C50)
 class UPyUIController_103351 final : public UUIC_Ability
 {
 public:
@@ -57,12 +57,12 @@ public:
 };
 
 // PythonClass PyAbility_103351.PyAbility_103351
-// 0x0020 (0x2608 - 0x25E8)
+// 0x0020 (0x2610 - 0x25F0)
 class UPyAbility_103351 : public UMarvelAbility_AimDownSights
 {
 public:
-	TMulticastInlineDelegate<void()>              OnAbilityCommit;                                   // 0x25E8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void()>              OnAbilityCancel;                                   // 0x25F8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void()>              OnAbilityCommit;                                   // 0x25F0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void()>              OnAbilityCancel;                                   // 0x2600(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 
 public:
 	void BeginPlay();

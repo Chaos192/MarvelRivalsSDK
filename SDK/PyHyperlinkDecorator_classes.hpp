@@ -40,7 +40,7 @@ public:
 
 // PythonClass PyHyperlinkDecorator.PyHyperlinkImageDecorator
 // 0x0000 (0x0038 - 0x0038)
-class UPyHyperlinkImageDecorator final : public URichTextBlockHyperlinkImageDecorator
+class UPyHyperlinkImageDecorator : public URichTextBlockHyperlinkImageDecorator
 {
 public:
 	void OnClickHyperlink(EHyperlinkType LinkType, const class FString& Args);

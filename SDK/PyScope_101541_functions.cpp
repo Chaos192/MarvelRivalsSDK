@@ -59,7 +59,7 @@ void APyScope_101541_Common::K2_OnEndAgentTask()
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UObject*                          TraceSource                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// TArray<struct FHitResult>               HitResults                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const TArray<struct FHitResult>&        HitResults                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyScope_10154106::TraceResults(class UObject* TraceSource, const TArray<struct FHitResult>& HitResults)
 {

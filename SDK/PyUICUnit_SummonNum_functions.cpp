@@ -133,7 +133,7 @@ void UPyUICUnit_SummonNum::SetCurNum(int32 InTotalNumCur)
 // PythonFunction PyUICUnit_SummonNum.PyUICUnit_SummonNum.SetSummonedDesc
 // (Native, Public, BlueprintCallable)
 // Parameters:
-// class FText                             InDesc                                                 (Parm)
+// const class FText&                      InDesc                                                 (Parm)
 
 void UPyUICUnit_SummonNum::SetSummonedDesc(const class FText& InDesc)
 {

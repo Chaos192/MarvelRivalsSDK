@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // PythonClass PyAbility_211.PyAbility_211
-// 0x0000 (0x2598 - 0x2598)
+// 0x0000 (0x25A0 - 0x25A0)
 class UPyAbility_211 : public UAbility_211
 {
 public:
@@ -80,11 +80,11 @@ public:
 };
 
 // PythonClass PyAbility_211.PyUIController_211
-// 0x0008 (0x0C68 - 0x0C60)
+// 0x0008 (0x0C58 - 0x0C50)
 class UPyUIController_211 final : public UUIC_Ability
 {
 public:
-	int32                                         MinResponseDistanceSquare;                         // 0x0C60(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         MinResponseDistanceSquare;                         // 0x0C50(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void OnInit();

@@ -22,28 +22,44 @@
 namespace SDK
 {
 
-// PythonClass PyAbility_104241.PySummonerLoop_10424102_Cue
-// 0x0028 (0x0EB8 - 0x0E90)
-class APySummonerLoop_10424102_Cue : public AMarvelCueNotify_Summoned
+// PythonClass PyAbility_104241.PySummonedComp_10424101
+// 0x0030 (0x0CD0 - 0x0CA0)
+class UPySummonedComp_10424101 : public USummonedComp_10424101
 {
 public:
-	int32                                         MoveStateAudioID;                                  // 0x0E90(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_E94[0x4];                                      // 0x0E94(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TMulticastInlineDelegate<void()>              OnStopMoveDelegate;                                // 0x0E98(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void()>              OnBeginMoveDelegate;                               // 0x0EA8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	EState_10424101                               State;                                             // 0x0CA0(0x0001)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EEvent_10424101                               Event;                                             // 0x0CA1(0x0001)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_CA2[0x6];                                      // 0x0CA2(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	TMulticastInlineDelegate<void()>              OnElectronicNestEndTask;                           // 0x0CA8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(EState_10424101 NewState)> OnStateChange;                          // 0x0CB8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 
 public:
-	void WhileActiveAudio(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters);
-	void OnExecuteAudio(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters);
+	void EndPlay();
+	void SetState(EState_10424101 NewState);
+	void UpdateState();
+	void OnRep_State();
+	void OnRep_Event();
+	void OnWebActivated();
+	void SetEvent(EEvent_10424101 NewEvent);
+	void K2_OnBeginAgentTask();
+	void K2_OnEndAgentTask();
+	void K2_OnRecycleAgentTask();
+	void MulticastLaunch(const struct FVector& StartLocation, const struct FVector& Velocity);
+	void OnProjectileHit(const struct FHitResult& Hit);
+	void OnAttachActorDestroyed(class UGeometryCollectionComponent* Component, class FName Name_0);
+	void OnChaosBroken(const struct FChaosBreakEvent& BreakEvent);
+	void OnAttachComponentFracture(const struct FVector& Point, const struct FVector& Direction);
+	void OnPresetDestuctionBegin(class FName LevelName);
+	void OnMovementPlaced();
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"PySummonerLoop_10424102_Cue">();
+		return StaticClassImpl<"PySummonedComp_10424101">();
 	}
-	static class APySummonerLoop_10424102_Cue* GetDefaultObj()
+	static class UPySummonedComp_10424101* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<APySummonerLoop_10424102_Cue>();
+		return GetDefaultObjImpl<UPySummonedComp_10424101>();
 	}
 };
 
@@ -86,7 +102,7 @@ public:
 };
 
 // PythonClass PyAbility_104241.PyAbility_104241
-// 0x0000 (0x2580 - 0x2580)
+// 0x0000 (0x2588 - 0x2588)
 class UPyAbility_104241 : public UMarvelGameplayAbility
 {
 public:
@@ -95,6 +111,7 @@ public:
 	void OnActivateActionPressed(float TimeWaited);
 	void OnConfirmEvent(const struct FGameplayAbilityTargetDataHandle& Data);
 	void OnCancelEvent(const struct FGameplayAbilityTargetDataHandle& Data);
+	void NativeOnMontageCancelled(const class FString& Tag);
 	void MissileEventNotify();
 	void K2_OnEndAbility(bool bWasCancelled);
 
@@ -125,12 +142,12 @@ public:
 };
 
 // PythonClass PyAbility_104241.PySummoned_10424101
-// 0x0010 (0x08A0 - 0x0890)
+// 0x0010 (0x08D0 - 0x08C0)
 #pragma pack(push, 0x1)
 class alignas(0x10) APySummoned_10424101 : public ASummoned_10424101
 {
 public:
-	class UPyExplosiveSpiderManager*              SpiderManager;                                     // 0x0890(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UPyExplosiveSpiderManager*              SpiderManager;                                     // 0x08C0(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	EState_10424101 GetCurrentState();
@@ -147,49 +164,8 @@ public:
 };
 #pragma pack(pop)
 
-// PythonClass PyAbility_104241.PySummonedComp_10424101
-// 0x0030 (0x0CD0 - 0x0CA0)
-class UPySummonedComp_10424101 : public USummonedComp_10424101
-{
-public:
-	EState_10424101                               State;                                             // 0x0CA0(0x0001)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EEvent_10424101                               Event;                                             // 0x0CA1(0x0001)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_CA2[0x6];                                      // 0x0CA2(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	TMulticastInlineDelegate<void()>              OnElectronicNestEndTask;                           // 0x0CA8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(EState_10424101 NewState)> OnStateChange;                                     // 0x0CB8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-
-public:
-	void EndPlay();
-	void SetState(EState_10424101 NewState);
-	void UpdateState();
-	void OnRep_State();
-	void OnRep_Event();
-	void OnWebActivated();
-	void SetEvent(EEvent_10424101 NewEvent);
-	void K2_OnBeginAgentTask();
-	void K2_OnEndAgentTask();
-	void K2_OnRecycleAgentTask();
-	void MulticastLaunch(const struct FVector& StartLocation, const struct FVector& Velocity);
-	void OnProjectileHit(const struct FHitResult& Hit);
-	void OnAttachActorDestroyed(class UGeometryCollectionComponent* Component, class FName Name_0);
-	void OnChaosBroken(const struct FChaosBreakEvent& BreakEvent);
-	void OnAttachComponentFracture(const struct FVector& Point, const struct FVector& Direction);
-	void OnPresetDestuctionBegin(class FName LevelName);
-	void OnMovementPlaced();
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"PySummonedComp_10424101">();
-	}
-	static class UPySummonedComp_10424101* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UPySummonedComp_10424101>();
-	}
-};
-
 // PythonClass PyAbility_104241.PyExplosiveSpiderMeshComponent
-// 0x0000 (0x0A90 - 0x0A90)
+// 0x0000 (0x0B20 - 0x0B20)
 class UPyExplosiveSpiderMeshComponent final : public UInstancedStaticMeshComponent
 {
 public:
@@ -223,6 +199,24 @@ public:
 	}
 };
 
+// PythonClass PyAbility_104241.PyCue_Ability_Loop_10424101
+// 0x0000 (0x0E50 - 0x0E50)
+class APyCue_Ability_Loop_10424101 final : public AMarvelCueNotify_Ability
+{
+public:
+	bool WhileActive(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PyCue_Ability_Loop_10424101">();
+	}
+	static class APyCue_Ability_Loop_10424101* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<APyCue_Ability_Loop_10424101>();
+	}
+};
+
 // PythonClass PyAbility_104241.PySummonerLoop_10424101_Cue
 // 0x0010 (0x0EA0 - 0x0E90)
 class APySummonerLoop_10424101_Cue final : public AMarvelCueNotify_Summoned
@@ -244,6 +238,31 @@ public:
 	static class APySummonerLoop_10424101_Cue* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<APySummonerLoop_10424101_Cue>();
+	}
+};
+
+// PythonClass PyAbility_104241.PySummonerLoop_10424102_Cue
+// 0x0028 (0x0EB8 - 0x0E90)
+class APySummonerLoop_10424102_Cue : public AMarvelCueNotify_Summoned
+{
+public:
+	int32                                         MoveStateAudioID;                                  // 0x0E90(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_E94[0x4];                                      // 0x0E94(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TMulticastInlineDelegate<void()>              OnStopMoveDelegate;                                // 0x0E98(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void()>              OnBeginMoveDelegate;                               // 0x0EA8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+
+public:
+	void WhileActiveAudio(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters);
+	void OnExecuteAudio(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PySummonerLoop_10424102_Cue">();
+	}
+	static class APySummonerLoop_10424102_Cue* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<APySummonerLoop_10424102_Cue>();
 	}
 };
 
@@ -360,24 +379,6 @@ public:
 	static class UPySummonedComp_10424103* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UPySummonedComp_10424103>();
-	}
-};
-
-// PythonClass PyAbility_104241.PyCue_Ability_Loop_10424101
-// 0x0000 (0x0E50 - 0x0E50)
-class APyCue_Ability_Loop_10424101 final : public AMarvelCueNotify_Ability
-{
-public:
-	bool WhileActive(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters);
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"PyCue_Ability_Loop_10424101">();
-	}
-	static class APyCue_Ability_Loop_10424101* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<APyCue_Ability_Loop_10424101>();
 	}
 };
 

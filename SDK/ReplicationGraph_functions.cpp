@@ -20,9 +20,9 @@ namespace SDK
 // Function ReplicationGraph.ReplicationGraphDebugActor.ClientCellInfo
 // (Net, NetReliable, Native, Event, Public, HasDefaults, NetClient)
 // Parameters:
-// struct FVector                          CellLocation                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          CellExtent                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<class AActor*>                   Actors                                                 (ConstParm, Parm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FVector&                   CellLocation                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   CellExtent                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<class AActor*>&            Actors                                                 (ConstParm, Parm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
 void AReplicationGraphDebugActor::ClientCellInfo(const struct FVector& CellLocation, const struct FVector& CellExtent, const TArray<class AActor*>& Actors)
 {
@@ -68,7 +68,7 @@ void AReplicationGraphDebugActor::ServerCellInfo()
 // Function ReplicationGraph.ReplicationGraphDebugActor.ServerPrintAllActorInfo
 // (Net, NetReliable, Native, Event, Public, NetServer)
 // Parameters:
-// class FString                           Str                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Str                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void AReplicationGraphDebugActor::ServerPrintAllActorInfo(const class FString& Str)
 {

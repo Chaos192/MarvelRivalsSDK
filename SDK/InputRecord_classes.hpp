@@ -26,7 +26,7 @@ public:
 	class APlayerController*                      PlayerController;                                  // 0x0500(0x0008)(ZeroConstructor, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	class AController*                            OwnerController;                                   // 0x0508(0x0008)(ZeroConstructor, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	uint8                                         Pad_510[0xF8];                                     // 0x0510(0x00F8)(Fixing Size After Last Property [ Dumper-7 ])
-	TMulticastInlineDelegate<void(class AController* Owner)> OnInputRecordFinishedPlaying;                      // 0x0608(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class AController* Owner)> OnInputRecordFinishedPlaying;           // 0x0608(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	uint8                                         Pad_618[0x8];                                      // 0x0618(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:

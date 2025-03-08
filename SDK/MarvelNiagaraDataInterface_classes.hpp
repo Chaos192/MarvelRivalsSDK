@@ -20,8 +20,8 @@ namespace SDK
 {
 
 // Class MarvelNiagaraDataInterface.MarvelNiagaraDataInterface
-// 0x0000 (0x0030 - 0x0030)
-class IMarvelNiagaraDataInterface final : public IInterface
+// 0x0000 (0x0000 - 0x0000)
+class IMarvelNiagaraDataInterface final
 {
 public:
 	static class UClass* StaticClass()
@@ -31,6 +31,15 @@ public:
 	static class IMarvelNiagaraDataInterface* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<IMarvelNiagaraDataInterface>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
 	}
 };
 

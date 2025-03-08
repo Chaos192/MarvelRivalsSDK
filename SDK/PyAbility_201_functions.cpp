@@ -102,7 +102,7 @@ void UPyAbility_201::K2_OnEndAbility(bool bWasCancelled)
 // PythonFunction PyAbility_201.PyAbility_201.OnClickShortcut
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   InCommID                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const int32                             InCommID                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UPyAbility_201::OnClickShortcut(const int32 InCommID)
 {
@@ -152,12 +152,12 @@ void UPyAbility_201::OnReplayStateChanged(EMarvelReplayState ReplayState)
 // PythonFunction PyAbility_201.PyAbility_201.SetSignalInfo
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FGameplayTag                     InSignalTag                                            (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
-// struct FHitResult                       InHitResult                                            (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayTag&              InSignalTag                                            (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+// const struct FHitResult&                InHitResult                                            (ConstParm, Parm, OutParm, ReferenceParm)
 // class AActor*                           InActor                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // bool                                    IsHandleCoolingdown                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayTag                     InAbilityTag                                           (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
-// class FString                           handle_type_tag                                        (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              InAbilityTag                                           (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+// const class FString&                    handle_type_tag                                        (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_201::SetSignalInfo(const struct FGameplayTag& InSignalTag, const struct FHitResult& InHitResult, class AActor* InActor, bool IsHandleCoolingdown, const struct FGameplayTag& InAbilityTag, const class FString& handle_type_tag)
 {
@@ -206,7 +206,7 @@ void UPyAbility_201::OnStatusUpdate()
 // PythonFunction PyAbility_201.PyAbility_201.OnClickGamepadFaceRight
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FKey                             Key                                                    (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
+// const struct FKey&                      Key                                                    (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
 
 void UPyAbility_201::OnClickGamepadFaceRight(const struct FKey& Key)
 {
@@ -277,7 +277,7 @@ void UPyUIController_201::Destruct()
 // PythonFunction PyAbility_201.PyUIController_201.OnTagUpdate
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FGameplayTag                     Tag                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              Tag                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
 // bool                                    Exist                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UPyUIController_201::OnTagUpdate(const struct FGameplayTag& Tag, bool Exist)
@@ -355,7 +355,7 @@ void UPyUIController_201::ListenAbilityActivateFailed(bool IsListen)
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // class UMarvelGameplayAbility*           Ability_0                                              (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayTagContainer            Reason                                                 (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayTagContainer&     Reason                                                 (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyUIController_201::OnAbilityFailed(class UMarvelGameplayAbility* Ability_0, const struct FGameplayTagContainer& Reason)
 {

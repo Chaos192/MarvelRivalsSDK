@@ -35,11 +35,11 @@ public:
 };
 
 // Class DataflowEnginePlugin.DataflowComponent
-// 0x0140 (0x0980 - 0x0840)
+// 0x0140 (0x0A10 - 0x08D0)
 class UDataflowComponent final : public UPrimitiveComponent
 {
 public:
-	uint8                                         Pad_838[0x148];                                    // 0x0838(0x0148)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_8C8[0x148];                                    // 0x08C8(0x0148)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()

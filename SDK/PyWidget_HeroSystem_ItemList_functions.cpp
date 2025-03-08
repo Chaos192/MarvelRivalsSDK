@@ -74,6 +74,31 @@ void UPyWidget_HeroSystem_ItemList::Destruct()
 }
 
 
+// PythonFunction PyWidget_HeroSystem_ItemList.PyWidget_HeroSystem_ItemList.PreConstruct
+// (BlueprintCosmetic, Native, Event, Protected, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    IsDesignTime                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UPyWidget_HeroSystem_ItemList::PreConstruct(bool IsDesignTime)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyWidget_HeroSystem_ItemList", "PreConstruct");
+
+	Params::PyWidget_HeroSystem_ItemList_PreConstruct Parms{};
+
+	Parms.IsDesignTime = IsDesignTime;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // PythonFunction PyWidget_HeroSystem_ItemList.PyWidget_HeroSystem_ItemList.MarvelSetVisible
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -99,26 +124,22 @@ void UPyWidget_HeroSystem_ItemList::MarvelSetVisible(bool Visible)
 }
 
 
-// PythonFunction PyWidget_HeroSystem_ItemList.PyWidget_HeroSystem_ItemList.OnWrapBoxScrolled
+// PythonFunction PyWidget_HeroSystem_ItemList.PyWidget_HeroSystem_ItemList.OnTileViewNav
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// int32                                   NextFocusableChildIndex                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// int32                                   FocusedChildDirection                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// int32                                   NumItemsLine                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class UButton*                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash)
+// EUINavigation                           Navigation_0                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UWidget*                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash)
 
-class UButton* UPyWidget_HeroSystem_ItemList::OnWrapBoxScrolled(int32 NextFocusableChildIndex, int32 FocusedChildDirection, int32 NumItemsLine)
+class UWidget* UPyWidget_HeroSystem_ItemList::OnTileViewNav(EUINavigation Navigation_0)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PyWidget_HeroSystem_ItemList", "OnWrapBoxScrolled");
+		Func = Class->GetFunction("PyWidget_HeroSystem_ItemList", "OnTileViewNav");
 
-	Params::PyWidget_HeroSystem_ItemList_OnWrapBoxScrolled Parms{};
+	Params::PyWidget_HeroSystem_ItemList_OnTileViewNav Parms{};
 
-	Parms.NextFocusableChildIndex = NextFocusableChildIndex;
-	Parms.FocusedChildDirection = FocusedChildDirection;
-	Parms.NumItemsLine = NumItemsLine;
+	Parms.Navigation_0 = Navigation_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

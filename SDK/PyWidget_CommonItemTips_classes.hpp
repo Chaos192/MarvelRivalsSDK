@@ -10,12 +10,12 @@
 
 #include "Basic.hpp"
 
+#include "PyWidget_CommonTipsBase_classes.hpp"
 #include "UMG_classes.hpp"
 #include "CoreUObject_structs.hpp"
 #include "Marvel_structs.hpp"
 #include "SlateCore_structs.hpp"
 #include "PyMarvelUserWidget_classes.hpp"
-#include "PyWidget_CommonTipsBase_classes.hpp"
 
 
 namespace SDK
@@ -70,11 +70,12 @@ public:
 };
 
 // PythonClass PyWidget_CommonItemTips.PyWidget_Multi_CommomItemTips
-// 0x0008 (0x0610 - 0x0608)
+// 0x0010 (0x0618 - 0x0608)
 class UPyWidget_Multi_CommomItemTips : public UPyWidget_CommonTipsBase
 {
 public:
 	TSubclassOf<class UPyMarvelUserWidget>        CommonItemClass;                                   // 0x0608(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UAkAudioEvent*                          Shortcut_Key_RightAudio;                           // 0x0610(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void OnInitialized();

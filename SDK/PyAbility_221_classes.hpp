@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "MarvelLevel_structs.hpp"
 #include "Marvel_structs.hpp"
 #include "Marvel_classes.hpp"
-#include "MarvelLevel_structs.hpp"
 
 
 namespace SDK
@@ -37,13 +37,13 @@ public:
 };
 
 // PythonClass PyAbility_221.PyAbility_221
-// 0x0030 (0x25C8 - 0x2598)
+// 0x0030 (0x25D0 - 0x25A0)
 class UPyAbility_221 : public UMarvelAbility_LongPressTrigger
 {
 public:
-	TMulticastInlineDelegate<void()>              AbilityActivate;                                   // 0x2598(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void()>              AbilityHoldEnd;                                    // 0x25A8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void()>              AbilityHoldTriggered;                              // 0x25B8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void()>              AbilityActivate;                                   // 0x25A0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void()>              AbilityHoldEnd;                                    // 0x25B0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void()>              AbilityHoldTriggered;                              // 0x25C0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 
 public:
 	void BeginPlay();

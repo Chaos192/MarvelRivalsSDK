@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // PythonClass PyCue_Weapon_Loop_101404.PyCue_Weapon_Loop_101404
-// 0x0000 (0x10A8 - 0x10A8)
+// 0x0000 (0x10B0 - 0x10B0)
 class APyCue_Weapon_Loop_101404 final : public AMarvelCueNotify_Weapon_Loop
 {
 public:

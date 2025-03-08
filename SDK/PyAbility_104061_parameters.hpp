@@ -18,6 +18,16 @@
 namespace SDK::Params
 {
 
+// PythonFunction PyAbility_104061.PyCue_Scope_HitImpact_10406101.GetAbilityHitAudioID
+// 0x01C8 (0x01C8 - 0x0000)
+struct PyCue_Scope_HitImpact_10406101_GetAbilityHitAudioID final
+{
+public:
+	class AActor*                                 MyTarget;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	struct FGameplayCueParameters                 Parameters;                                        // 0x0008(0x01B8)(ConstParm, Parm, OutParm, ReferenceParm)
+	int32                                         ReturnValue;                                       // 0x01C0(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+
 // PythonFunction PyAbility_104061.PyAbility_104061.CheckIsWalking
 // 0x0008 (0x0008 - 0x0000)
 struct PyAbility_104061_CheckIsWalking final
@@ -63,16 +73,6 @@ public:
 	class AActor*                                 MyTarget;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	struct FGameplayCueParameters                 Parameters;                                        // 0x0008(0x01B8)(ConstParm, Parm, OutParm, ReferenceParm)
 	bool                                          ReturnValue;                                       // 0x01C0(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-
-// PythonFunction PyAbility_104061.PyCue_Scope_HitImpact_10406101.GetAbilityHitAudioID
-// 0x01C8 (0x01C8 - 0x0000)
-struct PyCue_Scope_HitImpact_10406101_GetAbilityHitAudioID final
-{
-public:
-	class AActor*                                 MyTarget;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	struct FGameplayCueParameters                 Parameters;                                        // 0x0008(0x01B8)(ConstParm, Parm, OutParm, ReferenceParm)
-	int32                                         ReturnValue;                                       // 0x01C0(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 
 }

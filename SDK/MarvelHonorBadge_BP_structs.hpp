@@ -17,13 +17,14 @@ namespace SDK
 {
 
 // UserDefinedStruct MarvelHonorBadge_BP.MarvelHonorBadge_BP
-// 0x0028 (0x0028 - 0x0000)
+// 0x0030 (0x0030 - 0x0000)
 struct FMarvelHonorBadge_BP final
 {
 public:
 	class UTexture*                               Icon_8_0DF2BC6D4412D9AEC777DC9D29C33AF3;           // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	class UTexture*                               BigIcon_15_29FEC41648BB4031E08CE882EEF7C31A;       // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	struct FDataTableRowHandle                    Season_24_DC036A0848D80855915FA7B6E673434C;        // 0x0010(0x0018)(Edit, BlueprintVisible, NoDestructor)
+	bool                                          ShowAnim_29_AB4904854F114EB7EB15858E6595414A;      // 0x0028(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 
 }

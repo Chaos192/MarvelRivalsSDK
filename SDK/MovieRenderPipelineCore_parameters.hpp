@@ -1084,7 +1084,7 @@ public:
 struct MoviePipelineRenderLayer_GetModifiers final
 {
 public:
-	TArray<class UMoviePipelineCollectionModifier*> ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+	TArray<class UMoviePipelineCollectionModifier*> ReturnValue;                                     // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 };
 
 // Function MovieRenderPipelineCore.MoviePipelineRenderLayer.GetRenderLayerName

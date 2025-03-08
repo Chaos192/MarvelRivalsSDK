@@ -185,7 +185,7 @@ public:
 	float                                         StaticFloatArray[0x3];                             // 0x0030(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_3C[0x4];                                       // 0x003C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<struct FVector>                        VectorArray;                                       // 0x0040(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FStructSerializerBuiltinTestStruct> StructArray;                                       // 0x0050(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FStructSerializerBuiltinTestStruct> StructArray;                                   // 0x0050(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 };
 
 // ScriptStruct Serialization.StructSerializerMapTestStruct
@@ -196,7 +196,7 @@ public:
 	TMap<int32, class FString>                    IntToStr;                                          // 0x0000(0x0050)(NativeAccessSpecifierPublic)
 	TMap<class FString, class FString>            StrToStr;                                          // 0x0050(0x0050)(NativeAccessSpecifierPublic)
 	TMap<class FString, struct FVector>           StrToVec;                                          // 0x00A0(0x0050)(NativeAccessSpecifierPublic)
-	TMap<class FString, struct FStructSerializerBuiltinTestStruct> StrToStruct;                                       // 0x00F0(0x0050)(NativeAccessSpecifierPublic)
+	TMap<class FString, struct FStructSerializerBuiltinTestStruct> StrToStruct;                      // 0x00F0(0x0050)(NativeAccessSpecifierPublic)
 };
 
 // ScriptStruct Serialization.StructSerializerSetTestStruct
@@ -207,7 +207,7 @@ public:
 	TSet<class FString>                           StrSet;                                            // 0x0000(0x0050)(NativeAccessSpecifierPublic)
 	TSet<int32>                                   IntSet;                                            // 0x0050(0x0050)(NativeAccessSpecifierPublic)
 	TSet<class FName>                             NameSet;                                           // 0x00A0(0x0050)(NativeAccessSpecifierPublic)
-	TSet<struct FStructSerializerBuiltinTestStruct> StructSet;                                         // 0x00F0(0x0050)(NativeAccessSpecifierPublic)
+	TSet<struct FStructSerializerBuiltinTestStruct> StructSet;                                       // 0x00F0(0x0050)(NativeAccessSpecifierPublic)
 };
 
 // ScriptStruct Serialization.StructSerializerTestStruct

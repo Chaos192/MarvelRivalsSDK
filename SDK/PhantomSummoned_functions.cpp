@@ -27,14 +27,14 @@ class UGameplayAbility* IPhantomAbilityInterface::GetSourceAbility()
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PhantomAbilityInterface", "GetSourceAbility");
+		Func = AsUObject()->Class->GetFunction("PhantomAbilityInterface", "GetSourceAbility");
 
 	Params::PhantomAbilityInterface_GetSourceAbility Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	AsUObject()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 
@@ -52,14 +52,14 @@ bool IPhantomAbilityInterface::IsPhantomAbility() const
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PhantomAbilityInterface", "IsPhantomAbility");
+		Func = AsUObject()->Class->GetFunction("PhantomAbilityInterface", "IsPhantomAbility");
 
 	Params::PhantomAbilityInterface_IsPhantomAbility Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	AsUObject()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 
@@ -124,7 +124,7 @@ void APhantomSummonedController::OnPhantomSourceActivateAbility(class UGameplayA
 // Function PhantomSummoned.PhantomSummonedController.OnPhantomSourceEndAbility
 // (Final, Native, Protected, HasOutParams)
 // Parameters:
-// struct FAbilityEndedData                AbilityEndData                                         (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FAbilityEndedData&         AbilityEndData                                         (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
 void APhantomSummonedController::OnPhantomSourceEndAbility(const struct FAbilityEndedData& AbilityEndData)
 {

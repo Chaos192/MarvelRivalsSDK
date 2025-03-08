@@ -66,12 +66,12 @@ public:
 };
 
 // PythonClass PyAbility_102993.PyAbility_102993
-// 0x0020 (0x25A8 - 0x2588)
+// 0x0020 (0x25B0 - 0x2590)
 class UPyAbility_102993 final : public UAbility_108
 {
 public:
-	TMulticastInlineDelegate<void()>              OnTPEnterSpawned;                                  // 0x2588(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void()>              OnTPEnterDestroy;                                  // 0x2598(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void()>              OnTPEnterSpawned;                                  // 0x2590(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void()>              OnTPEnterDestroy;                                  // 0x25A0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 
 public:
 	void BeginPlay();
@@ -93,15 +93,15 @@ public:
 };
 
 // PythonClass PyAbility_102993.PySummoned_10299301
-// 0x0030 (0x08C0 - 0x0890)
+// 0x0030 (0x08F0 - 0x08C0)
 class APySummoned_10299301 : public AMarvelSummonerBase
 {
 public:
-	class AMarvelSummonerBase*                    TargetTP;                                          // 0x0890(0x0008)(BlueprintVisible, Net, ZeroConstructor, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         TPCountAsEntry;                                    // 0x0898(0x0004)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         TPCountAsExit;                                     // 0x089C(0x0004)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(bool is_connected)> OnTPConnected;                                     // 0x08A0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(bool AsEntry)>  OnTPCountChanged;                                  // 0x08B0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	class AMarvelSummonerBase*                    TargetTP;                                          // 0x08C0(0x0008)(BlueprintVisible, Net, ZeroConstructor, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         TPCountAsEntry;                                    // 0x08C8(0x0004)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         TPCountAsExit;                                     // 0x08CC(0x0004)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(bool is_connected)> OnTPConnected;                                 // 0x08D0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(bool AsEntry)>  OnTPCountChanged;                                  // 0x08E0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 
 public:
 	void OnRep_TargetTP();

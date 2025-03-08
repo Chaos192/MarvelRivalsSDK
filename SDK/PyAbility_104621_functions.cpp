@@ -171,7 +171,7 @@ void UPyAbility_104621::K2_TriggerGameplay(float TimeHeld)
 // PythonFunction PyAbility_104621.PyAbility_104621.NativeOnMontageCompleted
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_104621::NativeOnMontageCompleted(const class FString& Tag)
 {
@@ -196,7 +196,7 @@ void UPyAbility_104621::NativeOnMontageCompleted(const class FString& Tag)
 // PythonFunction PyAbility_104621.PyAbility_104621.NativeOnMontageInterrupted
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_104621::NativeOnMontageInterrupted(const class FString& Tag)
 {
@@ -221,7 +221,7 @@ void UPyAbility_104621::NativeOnMontageInterrupted(const class FString& Tag)
 // PythonFunction PyAbility_104621.PyAbility_104621.NativeOnMontageCancelled
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_104621::NativeOnMontageCancelled(const class FString& Tag)
 {
@@ -247,7 +247,7 @@ void UPyAbility_104621::NativeOnMontageCancelled(const class FString& Tag)
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int32                                   SocketId                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FMarvelAbilitySocketInfo         SocketInfo                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
+// const struct FMarvelAbilitySocketInfo&  SocketInfo                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
 
 void UPyAbility_104621::HandleAnimSocketInfo(int32 SocketId, const struct FMarvelAbilitySocketInfo& SocketInfo)
 {

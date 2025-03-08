@@ -10,13 +10,13 @@
 
 #include "Basic.hpp"
 
-#include "InterchangeEngine_structs.hpp"
 #include "Engine_classes.hpp"
+#include "InterchangeEngine_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
+#include "DeveloperSettings_classes.hpp"
 #include "InterchangeCore_structs.hpp"
 #include "InterchangeCore_classes.hpp"
-#include "DeveloperSettings_classes.hpp"
 
 
 namespace SDK
@@ -218,8 +218,8 @@ class alignas(0x10) UInterchangeManager final : public UObject
 public:
 	uint8                                         Pad_30[0xA8];                                      // 0x0030(0x00A8)(Fixing Size After Last Property [ Dumper-7 ])
 	TSet<TSubclassOf<class UObject>>              RegisteredTranslatorsClass;                        // 0x00D8(0x0050)(UObjectWrapper, NativeAccessSpecifierPrivate)
-	TMap<TSubclassOf<class UObject>, TSubclassOf<class UObject>> RegisteredFactoryClasses;                          // 0x0128(0x0050)(UObjectWrapper, NativeAccessSpecifierPrivate)
-	TMap<TSubclassOf<class UObject>, class UInterchangeWriterBase*> RegisteredWriters;                                 // 0x0178(0x0050)(UObjectWrapper, NativeAccessSpecifierPrivate)
+	TMap<TSubclassOf<class UObject>, TSubclassOf<class UObject>> RegisteredFactoryClasses;           // 0x0128(0x0050)(UObjectWrapper, NativeAccessSpecifierPrivate)
+	TMap<TSubclassOf<class UObject>, class UInterchangeWriterBase*> RegisteredWriters;               // 0x0178(0x0050)(UObjectWrapper, NativeAccessSpecifierPrivate)
 	uint8                                         Pad_1C8[0x18];                                     // 0x01C8(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:

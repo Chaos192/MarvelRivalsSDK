@@ -127,7 +127,7 @@ public:
 	class UAbilityTargetMgmtSys*                  CallFunc_GetWorldSubsystem_ReturnValue;            // 0x0028(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0030(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_31[0x3];                                       // 0x0031(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	TDelegate<void(class AMarvelPlayerState* PS, class AMarvelBaseCharacter* BaseCharacter)> K2Node_CreateDelegate_OutputDelegate;              // 0x0034(0x0014)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	TDelegate<void(class AMarvelPlayerState* PS, class AMarvelBaseCharacter* BaseCharacter)> K2Node_CreateDelegate_OutputDelegate; // 0x0034(0x0014)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	class AActor*                                 CallFunc_GetOwner_ReturnValue;                     // 0x0048(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	class AMarvelPlayerState*                     K2Node_CustomEvent_PS;                             // 0x0050(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	class AMarvelBaseCharacter*                   K2Node_CustomEvent_BaseCharacter;                  // 0x0058(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
@@ -160,7 +160,7 @@ public:
 	float                                         K2Node_Event_DeltaSeconds;                         // 0x0150(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FLinearColor                           CallFunc_SelectColor_ReturnValue;                  // 0x0154(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_164[0x4];                                      // 0x0164(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class AMarvelAbilityTargetActor_Projectile*> CallFunc_GetProjectileByCharacter_ReturnValue;     // 0x0168(0x0010)(ReferenceParm)
+	TArray<class AMarvelAbilityTargetActor_Projectile*> CallFunc_GetProjectileByCharacter_ReturnValue; // 0x0168(0x0010)(ReferenceParm)
 	bool                                          CallFunc_IsServer_ReturnValue_2;                   // 0x0178(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_179[0x7];                                      // 0x0179(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class AMarvelAbilityTargetActor_Projectile*   CallFunc_Array_Get_Item;                           // 0x0180(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
@@ -432,7 +432,7 @@ struct MarvelAbilitySystemDebugger_BP_C_UpdateOwnerCharacter final
 {
 public:
 	class AMarvelBaseCharacter*                   OldOwnerCharacter;                                 // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, NoDestructor, HasGetValueTypeHash)
-	TDelegate<void(class UGameplayAbility* InAbility, struct FMarvelAbilityHitParams& HitParams, TArray<struct FHitResult>& HitResults)> K2Node_CreateDelegate_OutputDelegate;              // 0x0008(0x0014)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	TDelegate<void(class UGameplayAbility* InAbility, const struct FMarvelAbilityHitParams& HitParams, const TArray<struct FHitResult>& HitResults)> K2Node_CreateDelegate_OutputDelegate; // 0x0008(0x0014)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	TDelegate<void(class AActor* GameplayActor)>  K2Node_CreateDelegate_OutputDelegate_1;            // 0x001C(0x0014)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0030(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_EqualEqual_ObjectObject_ReturnValue;      // 0x0031(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)

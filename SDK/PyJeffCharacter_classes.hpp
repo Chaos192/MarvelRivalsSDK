@@ -19,7 +19,7 @@ namespace SDK
 {
 
 // PythonClass PyJeffCharacter.PyJeffCharacter
-// 0x0000 (0x1990 - 0x1990)
+// 0x0000 (0x19F0 - 0x19F0)
 class APyJeffCharacter : public AJeffCharacter
 {
 public:

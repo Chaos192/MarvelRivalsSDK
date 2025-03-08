@@ -18,7 +18,8 @@ namespace SDK
 
 // PythonClass PyWidget_MallChildPanel.PyWidget_MallChildPanel
 // 0x0000 (0x0618 - 0x0618)
-class UPyWidget_MallChildPanel : public UPyWidget_ModuleMainPanel
+#pragma pack(push, 0x1)
+class alignas(0x08) UPyWidget_MallChildPanel : public UPyWidget_ModuleMainPanel
 {
 public:
 	void MarvelSetVisible(bool Visible);
@@ -33,6 +34,7 @@ public:
 		return GetDefaultObjImpl<UPyWidget_MallChildPanel>();
 	}
 };
+#pragma pack(pop)
 
 }
 

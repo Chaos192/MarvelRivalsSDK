@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Projectile_105051_BP.Projectile_105051_BP_C
-// 0x0000 (0x3050 - 0x3050)
+// 0x0000 (0x3110 - 0x3110)
 class AProjectile_105051_BP_C final : public APyProjectile_105051
 {
 public:

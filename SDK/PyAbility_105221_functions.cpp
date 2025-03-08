@@ -64,7 +64,7 @@ bool UPyAbility_105221::CanActivate()
 // PythonFunction PyAbility_105221.PyAbility_105221.TryMakeTriggerContext
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayEventData               EventData                                              (Parm, OutParm, ReferenceParm)
+// struct FGameplayEventData&              EventData                                              (Parm, OutParm, ReferenceParm)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 bool UPyAbility_105221::TryMakeTriggerContext(struct FGameplayEventData& EventData)
@@ -94,7 +94,7 @@ bool UPyAbility_105221::TryMakeTriggerContext(struct FGameplayEventData& EventDa
 // PythonFunction PyAbility_105221.PyAbility_105221.K2_ActivateAbilityFromEvent
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayEventData               EventData                                              (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayEventData&        EventData                                              (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyAbility_105221::K2_ActivateAbilityFromEvent(const struct FGameplayEventData& EventData)
 {
@@ -248,7 +248,7 @@ void UPyAbility_105221::LeaveFloating(class UCharacterMovementComponent* MoveCom
 // PythonFunction PyAbility_105221.PyAbility_105221.NativeOnMontageEvent
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_105221::NativeOnMontageEvent(const class FString& Tag)
 {
@@ -273,7 +273,7 @@ void UPyAbility_105221::NativeOnMontageEvent(const class FString& Tag)
 // PythonFunction PyAbility_105221.PyAbility_105221.NativeOnMontageCompleted
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_105221::NativeOnMontageCompleted(const class FString& Tag)
 {
@@ -298,7 +298,7 @@ void UPyAbility_105221::NativeOnMontageCompleted(const class FString& Tag)
 // PythonFunction PyAbility_105221.PyAbility_105221.NativeOnMontageInterrupted
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_105221::NativeOnMontageInterrupted(const class FString& Tag)
 {
@@ -323,7 +323,7 @@ void UPyAbility_105221::NativeOnMontageInterrupted(const class FString& Tag)
 // PythonFunction PyAbility_105221.PyAbility_105221.NativeOnMontageCancelled
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_105221::NativeOnMontageCancelled(const class FString& Tag)
 {
@@ -348,7 +348,7 @@ void UPyAbility_105221::NativeOnMontageCancelled(const class FString& Tag)
 // PythonFunction PyAbility_105221.PyEffectiveComponent_105221.K2_OnPostApplyContainer
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TArray<struct FHitResult>               HitResults                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const TArray<struct FHitResult>&        HitResults                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyEffectiveComponent_105221::K2_OnPostApplyContainer(const TArray<struct FHitResult>& HitResults)
 {

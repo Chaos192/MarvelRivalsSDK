@@ -102,7 +102,7 @@ void UPyWidget_ImageMaskCut::Destruct()
 // PythonFunction PyWidget_ImageMaskCut.PyWidget_ImageMaskCut.SetMaskMap
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FVector2D                        Mask_Map_0                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVector2D&                 Mask_Map_0                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UPyWidget_ImageMaskCut::SetMaskMap(const struct FVector2D& Mask_Map_0)
 {
@@ -127,8 +127,8 @@ void UPyWidget_ImageMaskCut::SetMaskMap(const struct FVector2D& Mask_Map_0)
 // PythonFunction PyWidget_ImageMaskCut.PyWidget_ImageMaskCut.SetImageData
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FVector2D                        Image_Location_0                                       (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FVector2D                        Image_Size_0                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVector2D&                 Image_Location_0                                       (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVector2D&                 Image_Size_0                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UPyWidget_ImageMaskCut::SetImageData(const struct FVector2D& Image_Location_0, const struct FVector2D& Image_Size_0)
 {

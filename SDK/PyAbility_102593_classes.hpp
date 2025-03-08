@@ -18,11 +18,11 @@ namespace SDK
 {
 
 // PythonClass PyAbility_102593.PyAbility_102593
-// 0x0118 (0x2698 - 0x2580)
+// 0x0118 (0x26A0 - 0x2588)
 class UPyAbility_102593 : public UMarvelGameplayAbility
 {
 public:
-	struct FGameplayTagRequirements               GameplayTagRequirementsToCancelThisAbility;        // 0x2580(0x0118)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	struct FGameplayTagRequirements               GameplayTagRequirementsToCancelThisAbility;        // 0x2588(0x0118)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
 
 public:
 	void K2_ActivateAbility();

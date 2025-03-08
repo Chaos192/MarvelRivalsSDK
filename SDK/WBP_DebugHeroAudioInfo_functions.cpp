@@ -74,7 +74,7 @@ class FText UWBP_DebugHeroAudioInfo_C::Get_ListenerInfo_Text_0()
 // Function WBP_DebugHeroAudioInfo.WBP_DebugHeroAudioInfo_C.GetListnerDisInfo
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// class FString                           Out                                                    (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
+// class FString*                          Out                                                    (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
 
 void UWBP_DebugHeroAudioInfo_C::GetListnerDisInfo(class FString* Out)
 {
@@ -129,7 +129,7 @@ void UWBP_DebugHeroAudioInfo_C::OnTimer()
 // Function WBP_DebugHeroAudioInfo.WBP_DebugHeroAudioInfo_C.TryGetOwnerAk
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// class UAkComponent*                     OutAk                                                  (Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+// class UAkComponent**                    OutAk                                                  (Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 
 void UWBP_DebugHeroAudioInfo_C::TryGetOwnerAk(class UAkComponent** OutAk)
 {

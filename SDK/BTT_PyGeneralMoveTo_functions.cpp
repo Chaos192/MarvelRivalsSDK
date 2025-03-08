@@ -151,7 +151,7 @@ void UBTT_PyGeneralMoveTo::OnSVONMoveRequestFailed()
 // PythonFunction BTT_PyGeneralMoveTo.BTT_PyGeneralMoveTo.OnMoveCompleted
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FAIRequestID                     RequestID                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
+// const struct FAIRequestID&              RequestID                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
 // EPathFollowingResult                    Result                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UBTT_PyGeneralMoveTo::OnMoveCompleted(const struct FAIRequestID& RequestID, EPathFollowingResult Result)

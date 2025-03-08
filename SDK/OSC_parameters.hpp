@@ -590,7 +590,7 @@ struct OSCServer_BindEventToOnOSCAddressPatternMatchesPath final
 {
 public:
 	struct FOSCAddress                            OSCAddressPattern;                                 // 0x0000(0x0028)(ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(struct FOSCAddress& AddressPattern, struct FOSCMessage& Message, const class FString& IPAddress, int32 Port)> Event;                                             // 0x0028(0x0014)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FOSCAddress& AddressPattern, const struct FOSCMessage& Message, const class FString& IPAddress, int32 Port)> Event; // 0x0028(0x0014)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_3C[0x4];                                       // 0x003C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 
@@ -643,7 +643,7 @@ struct OSCServer_UnbindEventFromOnOSCAddressPatternMatchesPath final
 {
 public:
 	struct FOSCAddress                            OSCAddressPattern;                                 // 0x0000(0x0028)(ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(struct FOSCAddress& AddressPattern, struct FOSCMessage& Message, const class FString& IPAddress, int32 Port)> Event;                                             // 0x0028(0x0014)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FOSCAddress& AddressPattern, const struct FOSCMessage& Message, const class FString& IPAddress, int32 Port)> Event; // 0x0028(0x0014)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_3C[0x4];                                       // 0x003C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 

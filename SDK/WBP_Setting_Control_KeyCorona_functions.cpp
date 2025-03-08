@@ -40,7 +40,7 @@ void UWBP_Setting_Control_KeyCorona_C::ExecuteUbergraph_WBP_Setting_Control_KeyC
 // Function WBP_Setting_Control_KeyCorona.WBP_Setting_Control_KeyCorona_C.SetCoronas
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TArray<int32>                           InCoronas                                              (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// const TArray<int32>&                    InCoronas                                              (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 // bool                                    IsFourArea                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UWBP_Setting_Control_KeyCorona_C::SetCoronas(const TArray<int32>& InCoronas, bool IsFourArea)

@@ -22,12 +22,12 @@ namespace SDK
 {
 
 // PythonClass PyAbility_102471.PySummoned_10247101
-// 0x0020 (0x0900 - 0x08E0)
+// 0x0020 (0x0930 - 0x0910)
 class APySummoned_10247101 : public ASummoned_10247101
 {
 public:
-	TArray<int32>                                 InheritedBuff;                                     // 0x08E0(0x0010)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FGameplayTag                           FogTag;                                            // 0x08F0(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<int32>                                 InheritedBuff;                                     // 0x0910(0x0010)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FGameplayTag                           FogTag;                                            // 0x0920(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -53,9 +53,9 @@ public:
 	int32                                         CrowAttackNotify;                                  // 0x0CC8(0x0004)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_CCC[0x4];                                      // 0x0CCC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector                                WeaponSocketRelativeLoc;                           // 0x0CD0(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(int32 NewStatus)> OnAbilityStatusChanged;                            // 0x0CE8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(bool NewStatus)> OnMeshHiddenChanged;                               // 0x0CF8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(int32 ComboState)> OnPlayAttackMontage;                               // 0x0D08(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(int32 NewStatus)> OnAbilityStatusChanged;                          // 0x0CE8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(bool NewStatus)> OnMeshHiddenChanged;                              // 0x0CF8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(int32 ComboState)> OnPlayAttackMontage;                            // 0x0D08(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 	TMulticastInlineDelegate<void()>              OnCameraBlendEnd;                                  // 0x0D18(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 
 public:
@@ -83,7 +83,7 @@ public:
 };
 
 // PythonClass PyAbility_102471.PyConfig_102471
-// 0x2F68 (0x3000 - 0x0098)
+// 0x2FD8 (0x3070 - 0x0098)
 class UPyConfig_102471 final : public UMarvelAbilityConfig
 {
 public:
@@ -115,7 +115,8 @@ public:
 	int32                                         BlackUIBuffID;                                     // 0x2FCC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         CrowUIBuffID;                                      // 0x2FD0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         DefaultSummonerCameraRot;                          // 0x2FD4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FShootModeSensitivityParam             SensitivityParam;                                  // 0x2FD8(0x0024)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NoDestructor, NativeAccessSpecifierPublic)
+	struct FGameplayTagContainer                  CrowStageTags;                                     // 0x2FD8(0x0068)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FShootModeSensitivityParam             SensitivityParam;                                  // 0x3040(0x0024)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NoDestructor, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -149,16 +150,16 @@ public:
 };
 
 // PythonClass PyAbility_102471.PyAbility_102471
-// 0x0030 (0x25C8 - 0x2598)
+// 0x0030 (0x25D0 - 0x25A0)
 class UPyAbility_102471 : public UAbility_102471
 {
 public:
-	bool                                          IsCrow;                                            // 0x2598(0x0001)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2599[0x3];                                     // 0x2599(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         AbilityStatus;                                     // 0x259C(0x0004)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UPySummonedComp_10247101*               CrowSummonedComp;                                  // 0x25A0(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, Net, ZeroConstructor, EditConst, InstancedReference, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(int32 NewStatus)> OnAbilityStatusChanged;                            // 0x25A8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void()>              OnCrowMoveEnd;                                     // 0x25B8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	bool                                          IsCrow;                                            // 0x25A0(0x0001)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_25A1[0x3];                                     // 0x25A1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         AbilityStatus;                                     // 0x25A4(0x0004)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UPySummonedComp_10247101*               CrowSummonedComp;                                  // 0x25A8(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, Net, ZeroConstructor, EditConst, InstancedReference, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(int32 NewStatus)> OnAbilityStatusChanged;                          // 0x25B0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void()>              OnCrowMoveEnd;                                     // 0x25C0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 
 public:
 	void MulticastOnCrwoMoveHitEnd();
@@ -189,12 +190,12 @@ public:
 };
 
 // PythonClass PyAbility_102471.PyUIController_102471
-// 0x0130 (0x0D90 - 0x0C60)
+// 0x0130 (0x0D80 - 0x0C50)
 class UPyUIController_102471 final : public UUIC_Ability
 {
 public:
-	struct FCueHintData                           HintData;                                          // 0x0C60(0x0098)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FCueHintData                           MoveEndHitData;                                    // 0x0CF8(0x0098)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FCueHintData                           HintData;                                          // 0x0C50(0x0098)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FCueHintData                           MoveEndHitData;                                    // 0x0CE8(0x0098)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 
 public:
 	void SetAbility(int32 InAbilityId, class UGameplayAbility* InAbility);

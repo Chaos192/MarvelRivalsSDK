@@ -18,12 +18,12 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Ability_104993_BP.Ability_104993_BP_C
-// 0x0BB0 (0x3318 - 0x2768)
+// 0x0BB0 (0x3460 - 0x28B0)
 class UAbility_104993_BP_C final : public UPyAbility_104993
 {
 public:
-	struct FDashAbilityInfo                       Dash_Info;                                         // 0x2768(0x0BA8)(Edit, BlueprintVisible, DisableEditOnInstance)
-	class AMarvelAbilityTargetActor_Scope*        Scope_Actor;                                       // 0x3310(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	struct FDashAbilityInfo                       Dash_Info;                                         // 0x28B0(0x0BA8)(Edit, BlueprintVisible, DisableEditOnInstance)
+	class AMarvelAbilityTargetActor_Scope*        Scope_Actor;                                       // 0x3458(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

@@ -44,11 +44,12 @@ public:
 };
 
 // PythonClass PyAbility_104051.PyProjectile_10405101
-// 0x0010 (0x3060 - 0x3050)
+// 0x0010 (0x3120 - 0x3110)
 class APyProjectile_10405101 : public AMarvelAbilityTargetActor_Projectile
 {
 public:
-	int32                                         DamageSourceAbilityID;                             // 0x3050(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3108[0x8];                                     // 0x3108(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         DamageSourceAbilityID;                             // 0x3110(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void K2_OnInitializeData();
@@ -65,15 +66,15 @@ public:
 };
 
 // PythonClass PyAbility_104051.PyAbility_104051
-// 0x0020 (0x2858 - 0x2838)
+// 0x0020 (0x2860 - 0x2840)
 class UPyAbility_104051 : public UAbility_109
 {
 public:
-	float                                         SummonerAbsorbDamage;                              // 0x2838(0x0004)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         SummonerHealth;                                    // 0x283C(0x0004)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         SummonerMaxHealth;                                 // 0x2840(0x0004)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2844[0x4];                                     // 0x2844(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TMulticastInlineDelegate<void()>              UIControlHandle;                                   // 0x2848(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	float                                         SummonerAbsorbDamage;                              // 0x2840(0x0004)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         SummonerHealth;                                    // 0x2844(0x0004)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         SummonerMaxHealth;                                 // 0x2848(0x0004)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_284C[0x4];                                     // 0x284C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TMulticastInlineDelegate<void()>              UIControlHandle;                                   // 0x2850(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 
 public:
 	void BeginPlay();
@@ -123,12 +124,12 @@ public:
 };
 
 // PythonClass PyAbility_104051.PySummoner_10405101
-// 0x0010 (0x08B0 - 0x08A0)
+// 0x0010 (0x08E0 - 0x08D0)
 class APySummoner_10405101 : public ASummoner_10405101
 {
 public:
-	float                                         ForwardLength;                                     // 0x08A0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         DownLength;                                        // 0x08A4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ForwardLength;                                     // 0x08D0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         DownLength;                                        // 0x08D4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void K2_OnBeginAgentTask();

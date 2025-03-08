@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "CoreUObject_structs.hpp"
 #include "python_enums_structs.hpp"
+#include "CoreUObject_structs.hpp"
 
 
 namespace SDK::Params

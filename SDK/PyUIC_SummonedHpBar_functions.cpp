@@ -198,7 +198,7 @@ void UPyUIC_Summoned_HpBar::OnComponentDeactivate(class UActorComponent* Compone
 // PythonFunction PyUIC_SummonedHpBar.PyUIC_Summoned_HpBar.SetWidgetStyleConfig
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TMap<EClientPlayerViewSide, struct FWidgetStyle_HealthBar_BattlePanel>WidgetStyleConfig                                      (ConstParm, Parm, OutParm, ReferenceParm)
+// const TMap<EClientPlayerViewSide, struct FWidgetStyle_HealthBar_BattlePanel>&WidgetStyleConfig                                      (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyUIC_Summoned_HpBar::SetWidgetStyleConfig(const TMap<EClientPlayerViewSide, struct FWidgetStyle_HealthBar_BattlePanel>& WidgetStyleConfig)
 {

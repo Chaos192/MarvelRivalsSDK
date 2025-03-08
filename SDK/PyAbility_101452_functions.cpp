@@ -58,7 +58,7 @@ void UPyAbility_101452::EndPlay()
 // PythonFunction PyAbility_101452.PyAbility_101452.K2_ActivateAbilityFromEvent
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayEventData               EventData                                              (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayEventData&        EventData                                              (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyAbility_101452::K2_ActivateAbilityFromEvent(const struct FGameplayEventData& EventData)
 {
@@ -83,7 +83,7 @@ void UPyAbility_101452::K2_ActivateAbilityFromEvent(const struct FGameplayEventD
 // PythonFunction PyAbility_101452.PyAbility_101452.OnAbilityFailed
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FGameplayTagContainer            FailureReason                                          (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayTagContainer&     FailureReason                                          (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyAbility_101452::OnAbilityFailed(const struct FGameplayTagContainer& FailureReason)
 {
@@ -512,7 +512,7 @@ void APySummoned_Cue_10145201_Loop::ReceiveBeginPlay()
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APySummoned_Cue_10145201_Loop::WhileActiveFX(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
 {
@@ -539,7 +539,7 @@ void APySummoned_Cue_10145201_Loop::WhileActiveFX(class AActor* MyTarget, const 
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APySummoned_Cue_10145201_Loop::OnRemoveFX(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
 {

@@ -93,7 +93,7 @@ void UPyPlayerStateGameBehaviorComponent::OnPossessCharacter(class AMarvelPlayer
 // Parameters:
 // class AActor*                           InSourceAvatar                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // class AActor*                           InTargetAvatar                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FAttributeModifierHandle         ModifierParameter                                      (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
+// const struct FAttributeModifierHandle&  ModifierParameter                                      (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
 
 void UPyPlayerStateGameBehaviorComponent::OnCharacterDeath(class AActor* InSourceAvatar, class AActor* InTargetAvatar, const struct FAttributeModifierHandle& ModifierParameter)
 {
@@ -121,7 +121,7 @@ void UPyPlayerStateGameBehaviorComponent::OnCharacterDeath(class AActor* InSourc
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // class AActor*                           TargetActor                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FCharacterRebornParam            RebornParam                                            (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FCharacterRebornParam&     RebornParam                                            (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyPlayerStateGameBehaviorComponent::OnCharacterReborn(class AActor* TargetActor, const struct FCharacterRebornParam& RebornParam)
 {

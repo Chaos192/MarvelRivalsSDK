@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Stealth_101641_BP.Stealth_101641_BP_C
-// 0x0000 (0x1380 - 0x1380)
+// 0x0000 (0x1388 - 0x1388)
 class UStealth_101641_BP_C final : public UStealth_101641
 {
 public:

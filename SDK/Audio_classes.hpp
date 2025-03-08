@@ -17,22 +17,23 @@
 namespace SDK
 {
 
-// PythonClass Audio.UISettingEntryInputDeviceHandler
+// PythonClass Audio.UISettingEntryChatVolumeHandler
 // 0x0000 (0x0030 - 0x0030)
-class UUISettingEntryInputDeviceHandler final : public UUISettingEntrySettingHandler
+class UUISettingEntryChatVolumeHandler final : public UUISettingEntrySettingHandler
 {
 public:
-	float BP_GetCurrentValue(class UObject* Obj, const class FString& setting_key, const TMap<class FString, class FString>& Params_0, const TMap<int32, class FText>& OPTIONS);
+	float BP_GetCurrentValue(class UObject* Obj, const class FString& setting_key, const TMap<class FString, class FString>& P, const TMap<int32, class FText>& O);
 	TMap<class FString, int32> BP_OnChanged(class UObject* Obj, const class FString& setting_key, const TMap<class FString, class FString>& Params_0, const TMap<int32, class FText>& OPTIONS, float Value, const TMap<class FString, int32>& Tags);
+	float BP_GetDefaultValue(class UObject* Obj, const class FString& setting_key, const TMap<class FString, class FString>& P, const TMap<int32, class FText>& O);
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"UISettingEntryInputDeviceHandler">();
+		return StaticClassImpl<"UISettingEntryChatVolumeHandler">();
 	}
-	static class UUISettingEntryInputDeviceHandler* GetDefaultObj()
+	static class UUISettingEntryChatVolumeHandler* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UUISettingEntryInputDeviceHandler>();
+		return GetDefaultObjImpl<UUISettingEntryChatVolumeHandler>();
 	}
 };
 
@@ -74,9 +75,28 @@ public:
 	}
 };
 
-// PythonClass Audio.UISettingEntryChatVolumeHandler
+// PythonClass Audio.UISettingEntryInputDeviceHandler
 // 0x0000 (0x0030 - 0x0030)
-class UUISettingEntryChatVolumeHandler final : public UUISettingEntrySettingHandler
+class UUISettingEntryInputDeviceHandler final : public UUISettingEntrySettingHandler
+{
+public:
+	float BP_GetCurrentValue(class UObject* Obj, const class FString& setting_key, const TMap<class FString, class FString>& Params_0, const TMap<int32, class FText>& OPTIONS);
+	TMap<class FString, int32> BP_OnChanged(class UObject* Obj, const class FString& setting_key, const TMap<class FString, class FString>& Params_0, const TMap<int32, class FText>& OPTIONS, float Value, const TMap<class FString, int32>& Tags);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"UISettingEntryInputDeviceHandler">();
+	}
+	static class UUISettingEntryInputDeviceHandler* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UUISettingEntryInputDeviceHandler>();
+	}
+};
+
+// PythonClass Audio.UISettingEntryVoiceEnhancementHandler
+// 0x0000 (0x0030 - 0x0030)
+class UUISettingEntryVoiceEnhancementHandler final : public UUISettingEntrySettingHandler
 {
 public:
 	float BP_GetCurrentValue(class UObject* Obj, const class FString& setting_key, const TMap<class FString, class FString>& P, const TMap<int32, class FText>& O);
@@ -86,11 +106,11 @@ public:
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"UISettingEntryChatVolumeHandler">();
+		return StaticClassImpl<"UISettingEntryVoiceEnhancementHandler">();
 	}
-	static class UUISettingEntryChatVolumeHandler* GetDefaultObj()
+	static class UUISettingEntryVoiceEnhancementHandler* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UUISettingEntryChatVolumeHandler>();
+		return GetDefaultObjImpl<UUISettingEntryVoiceEnhancementHandler>();
 	}
 };
 

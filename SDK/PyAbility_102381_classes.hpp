@@ -36,11 +36,11 @@ public:
 };
 
 // PythonClass PyAbility_102381.PyBuffAbility_10238101
-// 0x0008 (0x1110 - 0x1108)
+// 0x0008 (0x1118 - 0x1110)
 class UPyBuffAbility_10238101 final : public UPyBuffAbility_10001201
 {
 public:
-	bool                                          BuffCueActive;                                     // 0x1108(0x0001)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          BuffCueActive;                                     // 0x1110(0x0001)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void K2_ActivateAbility();

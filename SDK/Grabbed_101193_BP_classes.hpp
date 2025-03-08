@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Grabbed_101193_BP.Grabbed_101193_BP_C
-// 0x0000 (0x1178 - 0x1178)
+// 0x0000 (0x1180 - 0x1180)
 class UGrabbed_101193_BP_C final : public UPyAbility_AirGrab_101191
 {
 public:

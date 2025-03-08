@@ -18,6 +18,30 @@
 namespace SDK::Params
 {
 
+// PythonFunction PyAbility_101841.PyAbility_101841.CanActivate
+// 0x0001 (0x0001 - 0x0000)
+struct PyAbility_101841_CanActivate final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+
+// PythonFunction PyAbility_101841.PyAbility_101841.K2_OnEndAbility
+// 0x0001 (0x0001 - 0x0000)
+struct PyAbility_101841_K2_OnEndAbility final
+{
+public:
+	bool                                          bWasCancelled;                                     // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+
+// PythonFunction PyAbility_101841.PyAbility_101841.NativeOnMontageEvent
+// 0x0010 (0x0010 - 0x0000)
+struct PyAbility_101841_NativeOnMontageEvent final
+{
+public:
+	class FString                                 Tag;                                               // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash)
+};
+
 // PythonFunction PyAbility_101841.PySummonedCue_10184101.WhileActive
 // 0x01C8 (0x01C8 - 0x0000)
 struct PySummonedCue_10184101_WhileActive final
@@ -53,30 +77,6 @@ struct PySummonedCue_10184101_SwtichBarrierTimeline final
 {
 public:
 	struct FVector                                OutValue;                                          // 0x0000(0x0018)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-
-// PythonFunction PyAbility_101841.PyAbility_101841.CanActivate
-// 0x0001 (0x0001 - 0x0000)
-struct PyAbility_101841_CanActivate final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-
-// PythonFunction PyAbility_101841.PyAbility_101841.K2_OnEndAbility
-// 0x0001 (0x0001 - 0x0000)
-struct PyAbility_101841_K2_OnEndAbility final
-{
-public:
-	bool                                          bWasCancelled;                                     // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-
-// PythonFunction PyAbility_101841.PyAbility_101841.NativeOnMontageEvent
-// 0x0010 (0x0010 - 0x0000)
-struct PyAbility_101841_NativeOnMontageEvent final
-{
-public:
-	class FString                                 Tag;                                               // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash)
 };
 
 }

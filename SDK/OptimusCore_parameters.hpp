@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "OptimusCore_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "OptimusCore_structs.hpp"
 
 
 namespace SDK::Params
@@ -186,7 +186,7 @@ public:
 struct OptimusNodeGraph_AddDataInterfaceNode final
 {
 public:
-	TSubclassOf<class UOptimusComputeDataInterface> InDataInterfaceClass;                              // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSubclassOf<class UOptimusComputeDataInterface> InDataInterfaceClass;                            // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector2D                              InPosition;                                        // 0x0008(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UOptimusNode*                           ReturnValue;                                       // 0x0018(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };

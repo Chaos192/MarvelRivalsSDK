@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Ability_NotTreatKillFall.Ability_NotTreatKillFall_C
-// 0x0000 (0x12C0 - 0x12C0)
+// 0x0000 (0x12D0 - 0x12D0)
 class UAbility_NotTreatKillFall_C : public UMarvelNotTreatKillFallAbility
 {
 public:

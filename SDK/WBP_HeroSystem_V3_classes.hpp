@@ -34,7 +34,7 @@ public:
 	class UScaleBox*                              ScaleBox_Chat;                                     // 0x0748(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class USizeBox*                               SizeBox_HeroList;                                  // 0x0750(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UWBP_Common_Chat_C*                     WBP_Common_Chat;                                   // 0x0758(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	TMap<EHeroSystemTab, TSubclassOf<class UUserWidget>> SubWidgetClasses_0;                                // 0x0760(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
+	TMap<EHeroSystemTab, TSubclassOf<class UUserWidget>> SubWidgetClasses_0;                         // 0x0760(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
 
 public:
 	static class UClass* StaticClass()

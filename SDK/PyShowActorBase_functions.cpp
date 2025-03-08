@@ -17,6 +17,25 @@
 namespace SDK
 {
 
+// PythonFunction PyShowActorBase.PyShowActorBase.PlayTurnAnim
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+
+void APyShowActorBase::PlayTurnAnim()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyShowActorBase", "PlayTurnAnim");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // PythonFunction PyShowActorBase.PyShowActorBase.OnLikeFXFinished
 // (Native, Event, Public, BlueprintCallable, BlueprintEvent)
 
@@ -449,7 +468,7 @@ void APyShowActorBase::PlayMVPAnim(class ULevelSequence* MVPLevelSequence)
 // PythonFunction PyShowActorBase.PyShowActorBase.OnPlayEmoteAnimItem
 // (Native, Event, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           ItemId                                                 (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    ItemId                                                 (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void APyShowActorBase::OnPlayEmoteAnimItem(const class FString& ItemId)
 {
@@ -474,7 +493,7 @@ void APyShowActorBase::OnPlayEmoteAnimItem(const class FString& ItemId)
 // PythonFunction PyShowActorBase.PyShowActorBase.PlayEmoteAnim
 // (Native, Public, BlueprintCallable)
 // Parameters:
-// class FString                           ItemId                                                 (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    ItemId                                                 (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void APyShowActorBase::PlayEmoteAnim(const class FString& ItemId)
 {
@@ -505,25 +524,6 @@ void APyShowActorBase::StopTurnAnim()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("PyShowActorBase", "StopTurnAnim");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// PythonFunction PyShowActorBase.PyShowActorBase.PlayTurnAnim
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-
-void APyShowActorBase::PlayTurnAnim()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PyShowActorBase", "PlayTurnAnim");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -758,8 +758,8 @@ void APyShowActorBase::OnMeshRotation(float Yaw, float AnglePerSecond)
 // PythonFunction PyShowActorBase.PyShowActorBase.SetMeshsVisibleByTag
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<class USkeletalMeshComponent*>   MeshList                                               (ConstParm, Parm, OutParm, ReferenceParm)
-// struct FGameplayTagContainer            MeshTag                                                (ConstParm, Parm, OutParm, ReferenceParm)
+// const TArray<class USkeletalMeshComponent*>&MeshList                                               (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayTagContainer&     MeshTag                                                (ConstParm, Parm, OutParm, ReferenceParm)
 // bool                                    Visible                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void APyShowActorBase::SetMeshsVisibleByTag(const TArray<class USkeletalMeshComponent*>& MeshList, const struct FGameplayTagContainer& MeshTag, bool Visible)
@@ -788,7 +788,7 @@ void APyShowActorBase::SetMeshsVisibleByTag(const TArray<class USkeletalMeshComp
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // class USkeletalMeshComponent*           Mesh                                                   (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayTagContainer            MeshTag                                                (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayTagContainer&     MeshTag                                                (ConstParm, Parm, OutParm, ReferenceParm)
 // bool                                    Visible                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void APyShowActorBase::SetMeshVisibleByTag(class USkeletalMeshComponent* Mesh, const struct FGameplayTagContainer& MeshTag, bool Visible)
@@ -817,7 +817,7 @@ void APyShowActorBase::SetMeshVisibleByTag(class USkeletalMeshComponent* Mesh, c
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // bool                                    Visible                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// TArray<class USkeletalMeshComponent*>   MeshList                                               (ConstParm, Parm, OutParm, ReferenceParm)
+// const TArray<class USkeletalMeshComponent*>&MeshList                                               (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyShowActorBase::SetMeshsVisible(bool Visible, const TArray<class USkeletalMeshComponent*>& MeshList)
 {
@@ -870,8 +870,8 @@ void APyShowActorBase::SetMeshVisible(bool Visible, class USkeletalMeshComponent
 // PythonFunction PyShowActorBase.PyShowActorBase.SetComponentsVisibleByTag
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<class USceneComponent*>          ComponentList                                          (ConstParm, Parm, OutParm, ReferenceParm)
-// struct FGameplayTagContainer            ComponentTag                                           (ConstParm, Parm, OutParm, ReferenceParm)
+// const TArray<class USceneComponent*>&   ComponentList                                          (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayTagContainer&     ComponentTag                                           (ConstParm, Parm, OutParm, ReferenceParm)
 // bool                                    Visible                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void APyShowActorBase::SetComponentsVisibleByTag(const TArray<class USceneComponent*>& ComponentList, const struct FGameplayTagContainer& ComponentTag, bool Visible)
@@ -900,7 +900,7 @@ void APyShowActorBase::SetComponentsVisibleByTag(const TArray<class USceneCompon
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // class USceneComponent*                  Component                                              (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayTagContainer            ComponentTag                                           (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayTagContainer&     ComponentTag                                           (ConstParm, Parm, OutParm, ReferenceParm)
 // bool                                    Visible                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void APyShowActorBase::SetComponentVisibleByTag(class USceneComponent* Component, const struct FGameplayTagContainer& ComponentTag, bool Visible)
@@ -929,7 +929,7 @@ void APyShowActorBase::SetComponentVisibleByTag(class USceneComponent* Component
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // bool                                    Visible                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// TArray<class USceneComponent*>          ComponentList                                          (ConstParm, Parm, OutParm, ReferenceParm)
+// const TArray<class USceneComponent*>&   ComponentList                                          (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyShowActorBase::SetComponentsVisible(bool Visible, const TArray<class USceneComponent*>& ComponentList)
 {
@@ -1033,7 +1033,7 @@ void APyShowActorBase::SetEnabledPostProcess(bool IsEnabledPostProcess_0)
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // class USkeletalMeshComponent*           Mesh                                                   (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// TArray<class FName>                     BoneNameList                                           (ConstParm, Parm, OutParm, ReferenceParm)
+// const TArray<class FName>&              BoneNameList                                           (ConstParm, Parm, OutParm, ReferenceParm)
 // bool                                    bIncludeSelf                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                                   PhysicsBlendWeight                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
@@ -1133,7 +1133,7 @@ void APyShowActorBase::StopAllPhysicsBlendWeight()
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // class USkeletalMeshComponent*           Mesh                                                   (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// TArray<class FName>                     BoneNameList                                           (ConstParm, Parm, OutParm, ReferenceParm)
+// const TArray<class FName>&              BoneNameList                                           (ConstParm, Parm, OutParm, ReferenceParm)
 // bool                                    bIncludeSelf                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void APyShowActorBase::ReversePhysicsBlendWeight(class USkeletalMeshComponent* Mesh, const TArray<class FName>& BoneNameList, bool bIncludeSelf)
@@ -1162,7 +1162,7 @@ void APyShowActorBase::ReversePhysicsBlendWeight(class USkeletalMeshComponent* M
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // class USkeletalMeshComponent*           Mesh                                                   (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// TArray<class FName>                     BoneNameList                                           (ConstParm, Parm, OutParm, ReferenceParm)
+// const TArray<class FName>&              BoneNameList                                           (ConstParm, Parm, OutParm, ReferenceParm)
 // bool                                    bIncludeSelf                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void APyShowActorBase::ForwardPhysicsBlendWeight(class USkeletalMeshComponent* Mesh, const TArray<class FName>& BoneNameList, bool bIncludeSelf)
@@ -1259,7 +1259,7 @@ bool APyShowActorBase::OnANSSetAllBodiesBelowSimulatePhysicsBegin(class USkeleta
 // (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class USkeletalMeshComponent*           Mesh                                                   (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// TArray<class FName>                     BoneNameList                                           (ConstParm, Parm, OutParm, ReferenceParm)
+// const TArray<class FName>&              BoneNameList                                           (ConstParm, Parm, OutParm, ReferenceParm)
 // bool                                    bIncludeSelf                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void APyShowActorBase::AutoReversePhysicsBlendWeight(class USkeletalMeshComponent* Mesh, const TArray<class FName>& BoneNameList, bool bIncludeSelf)
@@ -1288,7 +1288,7 @@ void APyShowActorBase::AutoReversePhysicsBlendWeight(class USkeletalMeshComponen
 // (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class USkeletalMeshComponent*           Mesh                                                   (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// TArray<class FName>                     BoneNameList                                           (ConstParm, Parm, OutParm, ReferenceParm)
+// const TArray<class FName>&              BoneNameList                                           (ConstParm, Parm, OutParm, ReferenceParm)
 // bool                                    bIncludeSelf                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void APyShowActorBase::AutoForwardPhysicsBlendWeight(class USkeletalMeshComponent* Mesh, const TArray<class FName>& BoneNameList, bool bIncludeSelf)
@@ -1342,7 +1342,7 @@ void APyShowActorBase::OnMeshPhysicsEnable(bool bEnable)
 // (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class USkeletalMeshComponent*           Mesh                                                   (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// TArray<struct FShowActorCustomPhysicsBlendConfig>PhysicsConfigs                                         (ConstParm, Parm, OutParm, ReferenceParm)
+// const TArray<struct FShowActorCustomPhysicsBlendConfig>&PhysicsConfigs                                         (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyShowActorBase::SetCustomBoneChain(class USkeletalMeshComponent* Mesh, const TArray<struct FShowActorCustomPhysicsBlendConfig>& PhysicsConfigs)
 {
@@ -1368,7 +1368,7 @@ void APyShowActorBase::SetCustomBoneChain(class USkeletalMeshComponent* Mesh, co
 // PythonFunction PyShowActorBase.PyShowActorBase.CallExtensionFunction
 // (Native, Event, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           func_name                                              (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    func_name                                              (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void APyShowActorBase::CallExtensionFunction(const class FString& func_name)
 {
@@ -1506,7 +1506,7 @@ void APyShowActorBase::OnReceiveAnyInputInThisFrame()
 // PythonFunction PyShowActorBase.PyShowActorBase.LoadShowAssetsFinished
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<class UObject*>                  Assets                                                 (ConstParm, Parm, OutParm, ReferenceParm)
+// const TArray<class UObject*>&           Assets                                                 (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyShowActorBase::LoadShowAssetsFinished(const TArray<class UObject*>& Assets)
 {

@@ -12,8 +12,8 @@
 
 #include "UMG_classes.hpp"
 #include "Engine_structs.hpp"
-#include "Marvel_structs.hpp"
 #include "SlateCore_structs.hpp"
+#include "Marvel_structs.hpp"
 
 
 namespace SDK
@@ -29,10 +29,10 @@ public:
 	class UMarvelButton*                          ConfirmButton;                                     // 0x03C8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UEditableText*                          HeroIdInput;                                       // 0x03D0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	struct FMargin                                UnitMargin;                                        // 0x03D8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	TMap<class UAkAudioEvent*, struct FMarvelAbilityAudioPack> EventConfigs;                                      // 0x03E8(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
+	TMap<class UAkAudioEvent*, struct FMarvelAbilityAudioPack> EventConfigs;                         // 0x03E8(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
 	int32                                         HeroID;                                            // 0x0438(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         SkinID;                                            // 0x043C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TMap<class UAkAudioEvent*, class UWBP_DebugAudioAbilityLine_C*> EventWidgets;                                      // 0x0440(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
+	TMap<class UAkAudioEvent*, class UWBP_DebugAudioAbilityLine_C*> EventWidgets;                    // 0x0440(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
 
 public:
 	void AddWidgets();

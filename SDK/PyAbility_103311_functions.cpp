@@ -39,7 +39,7 @@ void UPyAbility_103311::BeginPlay()
 // PythonFunction PyAbility_103311.PyAbility_103311.OnActivateFailed
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FGameplayTagContainer            FailReason                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayTagContainer&     FailReason                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyAbility_103311::OnActivateFailed(const struct FGameplayTagContainer& FailReason)
 {

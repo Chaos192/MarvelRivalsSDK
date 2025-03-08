@@ -18,13 +18,13 @@ namespace SDK::Params
 {
 
 // Function Synthesis.ModularSynthLibrary.AddModularSynthPresetToBankAsset
-// 0x0110 (0x0110 - 0x0000)
+// 0x0100 (0x0100 - 0x0000)
 struct ModularSynthLibrary_AddModularSynthPresetToBankAsset final
 {
 public:
 	class UModularSynthPresetBank*                InBank;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FModularSynthPreset                    Preset;                                            // 0x0008(0x00F8)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	class FString                                 PresetName;                                        // 0x0100(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FModularSynthPreset                    Preset;                                            // 0x0008(0x00E8)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	class FString                                 PresetName;                                        // 0x00F0(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
 // Function Synthesis.ModularSynthComponent.CreatePatch
@@ -524,11 +524,11 @@ public:
 };
 
 // Function Synthesis.ModularSynthComponent.SetSynthPreset
-// 0x00F8 (0x00F8 - 0x0000)
+// 0x00E8 (0x00E8 - 0x0000)
 struct ModularSynthComponent_SetSynthPreset final
 {
 public:
-	struct FModularSynthPreset                    SynthPreset;                                       // 0x0000(0x00F8)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	struct FModularSynthPreset                    SynthPreset;                                       // 0x0000(0x00E8)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 };
 
 // Function Synthesis.SourceEffectBitCrusherPreset.SetBitModulator
@@ -824,7 +824,7 @@ public:
 struct SourceEffectFoldbackDistortionPreset_SetSettings final
 {
 public:
-	struct FSourceEffectFoldbackDistortionSettings InSettings;                                        // 0x0000(0x000C)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	struct FSourceEffectFoldbackDistortionSettings InSettings;                                       // 0x0000(0x000C)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 };
 
 // Function Synthesis.SourceEffectMidSideSpreaderPreset.SetSettings
@@ -1062,7 +1062,7 @@ public:
 struct SubmixEffectMultibandCompressorPreset_SetSettings final
 {
 public:
-	struct FSubmixEffectMultibandCompressorSettings InSettings;                                        // 0x0000(0x0038)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	struct FSubmixEffectMultibandCompressorSettings InSettings;                                      // 0x0000(0x0038)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 };
 
 // Function Synthesis.SubmixEffectStereoDelayPreset.SetSettings

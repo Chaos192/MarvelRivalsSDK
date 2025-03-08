@@ -18,13 +18,14 @@ namespace SDK
 {
 
 // PythonClass PyAbility_102233.PyConfig_102233
-// 0x0070 (0x0108 - 0x0098)
+// 0x0078 (0x0110 - 0x0098)
 class UPyConfig_102233 final : public UMarvelAbilityConfig
 {
 public:
 	float                                         HitCount;                                          // 0x0098(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         BuffID;                                            // 0x009C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FGameplayTagContainer                  IgnoreTags;                                        // 0x00A0(0x0068)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	float                                         ComboTimeout;                                      // 0x0108(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -38,7 +39,7 @@ public:
 };
 
 // PythonClass PyAbility_102233.PyAbility_102233
-// 0x0000 (0x2580 - 0x2580)
+// 0x0000 (0x2588 - 0x2588)
 class UPyAbility_102233 : public UMarvelGameplayAbility
 {
 public:

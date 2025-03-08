@@ -39,11 +39,11 @@ public:
 };
 
 // PythonClass PyPeniParkerCharacter.PyPeniParkerCharacter
-// 0x0010 (0x1860 - 0x1850)
+// 0x0010 (0x18B0 - 0x18A0)
 class APyPeniParkerCharacter : public APeniParkerCharacter
 {
 public:
-	struct FGameplayTag                           ShowSpiderLegTag;                                  // 0x1850(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGameplayTag                           ShowSpiderLegTag;                                  // 0x18A0(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void ReceiveBeginPlay();

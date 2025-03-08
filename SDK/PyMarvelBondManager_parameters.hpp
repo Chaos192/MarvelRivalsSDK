@@ -17,12 +17,22 @@ namespace SDK::Params
 {
 
 // PythonFunction PyMarvelBondManager.PyMarvelBondManager.OnBondStateChange
-// 0x00A0 (0x00A0 - 0x0000)
+// 0x00F0 (0x00F0 - 0x0000)
 struct PyMarvelBondManager_OnBondStateChange final
 {
 public:
-	struct FBondInstance                          InBondInstance;                                    // 0x0000(0x0090)(ConstParm, Parm, OutParm, ReferenceParm)
-	TArray<class AMarvelBaseCharacter*>           TriggerCharacters;                                 // 0x0090(0x0010)(ConstParm, Parm, OutParm, ReferenceParm)
+	struct FBondInstance                          InBondInstance;                                    // 0x0000(0x00E0)(ConstParm, Parm, OutParm, ReferenceParm)
+	TArray<class AMarvelBaseCharacter*>           TriggerCharacters;                                 // 0x00E0(0x0010)(ConstParm, Parm, OutParm, ReferenceParm)
+};
+
+// PythonFunction PyMarvelBondManager.PyMarvelBondManager.OnCharacterBondStateChange
+// 0x00F0 (0x00F0 - 0x0000)
+struct PyMarvelBondManager_OnCharacterBondStateChange final
+{
+public:
+	struct FBondInstance                          InBondInstance;                                    // 0x0000(0x00E0)(ConstParm, Parm, OutParm, ReferenceParm)
+	class AMarvelBaseCharacter*                   Target;                                            // 0x00E0(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          IsActive;                                          // 0x00E8(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 
 // PythonFunction PyMarvelBondManager.PyMarvelBondManager.OnBondCharacterAdd
@@ -69,18 +79,18 @@ public:
 };
 
 // PythonFunction PyMarvelBondManager.PyMarvelBondManager.OnAssistKillCallback
-// 0x0758 (0x0758 - 0x0000)
+// 0x07A8 (0x07A8 - 0x0000)
 struct PyMarvelBondManager_OnAssistKillCallback final
 {
 public:
 	class AMarvelBaseCharacter*                   InTriggerCharacter;                                // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	class AMarvelBaseCharacter*                   InTarget;                                          // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	struct FAttributeModifierParameter            ModifierParameter;                                 // 0x0010(0x06B8)(ConstParm, Parm, OutParm, ReferenceParm)
-	struct FBondInstance                          InBondInstance;                                    // 0x06C8(0x0090)(ConstParm, Parm, OutParm, ReferenceParm)
+	struct FBondInstance                          InBondInstance;                                    // 0x06C8(0x00E0)(ConstParm, Parm, OutParm, ReferenceParm)
 };
 
 // PythonFunction PyMarvelBondManager.PyMarvelBondManager.OnReceiverTriggeredCallback
-// 0x00A8 (0x00A8 - 0x0000)
+// 0x00F8 (0x00F8 - 0x0000)
 struct PyMarvelBondManager_OnReceiverTriggeredCallback final
 {
 public:
@@ -88,11 +98,11 @@ public:
 	int32                                         InTriggerAbilityID;                                // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class AMarvelBaseCharacter*                   InTarget;                                          // 0x0010(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	struct FBondInstance                          InBondInstance;                                    // 0x0018(0x0090)(ConstParm, Parm, OutParm, ReferenceParm)
+	struct FBondInstance                          InBondInstance;                                    // 0x0018(0x00E0)(ConstParm, Parm, OutParm, ReferenceParm)
 };
 
 // PythonFunction PyMarvelBondManager.PyMarvelBondManager.OnSenderTriggeredCallback
-// 0x00A8 (0x00A8 - 0x0000)
+// 0x00F8 (0x00F8 - 0x0000)
 struct PyMarvelBondManager_OnSenderTriggeredCallback final
 {
 public:
@@ -100,7 +110,7 @@ public:
 	int32                                         InTriggerAbilityID;                                // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class AMarvelBaseCharacter*                   InTarget;                                          // 0x0010(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	struct FBondInstance                          InBondInstance;                                    // 0x0018(0x0090)(ConstParm, Parm, OutParm, ReferenceParm)
+	struct FBondInstance                          InBondInstance;                                    // 0x0018(0x00E0)(ConstParm, Parm, OutParm, ReferenceParm)
 };
 
 // PythonFunction PyMarvelBondManager.PyMarvelBondManager.TestBindEvent

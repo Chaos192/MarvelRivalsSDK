@@ -110,16 +110,16 @@ public:
 };
 
 // Class CameraCalibrationCore.CalibrationPointComponent
-// 0x0060 (0x0990 - 0x0930)
+// 0x0060 (0x0A20 - 0x09C0)
 class UCalibrationPointComponent final : public UProceduralMeshComponent
 {
 public:
-	TMap<class FString, struct FVector>           SubPoints;                                         // 0x0930(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	bool                                          bVisualizePointsInEditor;                          // 0x0980(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_981[0x3];                                      // 0x0981(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         PointVisualizationScale;                           // 0x0984(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ECalibrationPointVisualization                VisualizationShape;                                // 0x0988(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_989[0x7];                                      // 0x0989(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	TMap<class FString, struct FVector>           SubPoints;                                         // 0x09C0(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	bool                                          bVisualizePointsInEditor;                          // 0x0A10(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_A11[0x3];                                      // 0x0A11(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         PointVisualizationScale;                           // 0x0A14(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ECalibrationPointVisualization                VisualizationShape;                                // 0x0A18(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_A19[0x7];                                      // 0x0A19(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void RebuildVertices();
@@ -181,9 +181,9 @@ public:
 	struct FIntPoint                              DisplacementMapResolution;                         // 0x0078(0x0008)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	float                                         CalibrationInputTolerance;                         // 0x0080(0x0004)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	uint8                                         Pad_84[0x4];                                       // 0x0084(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<TSubclassOf<class ULensDistortionModelHandlerBase>, TSoftObjectPtr<class UMaterialInterface>> DefaultUndistortionDisplacementMaterials;          // 0x0088(0x0050)(Config, UObjectWrapper, NativeAccessSpecifierPrivate)
-	TMap<TSubclassOf<class ULensDistortionModelHandlerBase>, TSoftObjectPtr<class UMaterialInterface>> DefaultDistortionDisplacementMaterials;            // 0x00D8(0x0050)(Config, UObjectWrapper, NativeAccessSpecifierPrivate)
-	TMap<TSubclassOf<class ULensDistortionModelHandlerBase>, TSoftObjectPtr<class UMaterialInterface>> DefaultDistortionMaterials;                        // 0x0128(0x0050)(Config, UObjectWrapper, NativeAccessSpecifierPrivate)
+	TMap<TSubclassOf<class ULensDistortionModelHandlerBase>, TSoftObjectPtr<class UMaterialInterface>> DefaultUndistortionDisplacementMaterials; // 0x0088(0x0050)(Config, UObjectWrapper, NativeAccessSpecifierPrivate)
+	TMap<TSubclassOf<class ULensDistortionModelHandlerBase>, TSoftObjectPtr<class UMaterialInterface>> DefaultDistortionDisplacementMaterials; // 0x00D8(0x0050)(Config, UObjectWrapper, NativeAccessSpecifierPrivate)
+	TMap<TSubclassOf<class ULensDistortionModelHandlerBase>, TSoftObjectPtr<class UMaterialInterface>> DefaultDistortionMaterials; // 0x0128(0x0050)(Config, UObjectWrapper, NativeAccessSpecifierPrivate)
 	bool                                          bEnableCalibrationDatasetImportExport;             // 0x0178(0x0001)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	uint8                                         Pad_179[0xF];                                      // 0x0179(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
@@ -234,10 +234,10 @@ class UCameraCalibrationSubsystem final : public UEngineSubsystem
 {
 public:
 	class ULensFile*                              DefaultLensFile;                                   // 0x0038(0x0008)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	TMap<class FName, TSubclassOf<class ULensModel>> LensModelMap;                                      // 0x0040(0x0050)(Transient, UObjectWrapper, NativeAccessSpecifierPrivate)
-	TMap<class FName, TSubclassOf<class UCameraNodalOffsetAlgo>> CameraNodalOffsetAlgosMap;                         // 0x0090(0x0050)(Transient, UObjectWrapper, NativeAccessSpecifierPrivate)
-	TMap<class FName, TSubclassOf<class UCameraImageCenterAlgo>> CameraImageCenterAlgosMap;                         // 0x00E0(0x0050)(Transient, UObjectWrapper, NativeAccessSpecifierPrivate)
-	TMap<class FName, TSubclassOf<class UCameraCalibrationStep>> CameraCalibrationStepsMap;                         // 0x0130(0x0050)(Transient, UObjectWrapper, NativeAccessSpecifierPrivate)
+	TMap<class FName, TSubclassOf<class ULensModel>> LensModelMap;                                   // 0x0040(0x0050)(Transient, UObjectWrapper, NativeAccessSpecifierPrivate)
+	TMap<class FName, TSubclassOf<class UCameraNodalOffsetAlgo>> CameraNodalOffsetAlgosMap;          // 0x0090(0x0050)(Transient, UObjectWrapper, NativeAccessSpecifierPrivate)
+	TMap<class FName, TSubclassOf<class UCameraImageCenterAlgo>> CameraImageCenterAlgosMap;          // 0x00E0(0x0050)(Transient, UObjectWrapper, NativeAccessSpecifierPrivate)
+	TMap<class FName, TSubclassOf<class UCameraCalibrationStep>> CameraCalibrationStepsMap;          // 0x0130(0x0050)(Transient, UObjectWrapper, NativeAccessSpecifierPrivate)
 	uint8                                         Pad_180[0xA8];                                     // 0x0180(0x00A8)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
@@ -347,7 +347,7 @@ public:
 	float                                         OriginalFocalLength;                               // 0x0214(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	class UMaterialInstanceDynamic*               LastDistortionMID;                                 // 0x0218(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	class UCineCameraComponent*                   LastCameraComponent;                               // 0x0220(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	TMap<TSubclassOf<class ULensModel>, class ULensDistortionModelHandlerBase*> LensDistortionHandlerMap;                          // 0x0228(0x0050)(Transient, Protected, UObjectWrapper, NativeAccessSpecifierProtected)
+	TMap<TSubclassOf<class ULensModel>, class ULensDistortionModelHandlerBase*> LensDistortionHandlerMap; // 0x0228(0x0050)(Transient, Protected, UObjectWrapper, NativeAccessSpecifierProtected)
 	TWeakObjectPtr<class USceneComponent>         TrackedComponent;                                  // 0x0278(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	class FString                                 TrackedComponentName;                              // 0x0280(0x0010)(ZeroConstructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	uint8                                         Pad_290[0x40];                                     // 0x0290(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])

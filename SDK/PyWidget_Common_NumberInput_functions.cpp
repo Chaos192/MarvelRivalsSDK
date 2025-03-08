@@ -152,7 +152,7 @@ void UPyWidget_Common_NumberInput::SetIsOwner(bool IsOwner)
 // PythonFunction PyWidget_Common_NumberInput.PyWidget_Common_NumberInput.SetHintText
 // (Native, Public, BlueprintCallable)
 // Parameters:
-// class FText                             HintText_0                                             (Parm)
+// const class FText&                      HintText_0                                             (Parm)
 
 void UPyWidget_Common_NumberInput::SetHintText(const class FText& HintText_0)
 {
@@ -227,7 +227,7 @@ void UPyWidget_Common_NumberInput::SetNeedPercent(bool is_percent)
 // PythonFunction PyWidget_Common_NumberInput.PyWidget_Common_NumberInput.SetInputText
 // (Native, Public, BlueprintCallable)
 // Parameters:
-// class FText                             Text                                                   (Parm)
+// const class FText&                      Text                                                   (Parm)
 
 void UPyWidget_Common_NumberInput::SetInputText(const class FText& Text)
 {
@@ -302,7 +302,7 @@ void UPyWidget_Common_NumberInput::UpdateWidgetStyleWithEditState(bool IsEditing
 // PythonFunction PyWidget_Common_NumberInput.PyWidget_Common_NumberInput.SubmitText
 // (Native, Public, BlueprintCallable)
 // Parameters:
-// class FText                             Text                                                   (Parm)
+// const class FText&                      Text                                                   (Parm)
 // bool                                    bIsEnter                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UPyWidget_Common_NumberInput::SubmitText(const class FText& Text, bool bIsEnter)

@@ -20,7 +20,7 @@ namespace SDK
 // Function Hero_1048.Ability_104831.GetFirstHomingLocations
 // (Native, Event, Public, HasOutParams, BlueprintEvent)
 // Parameters:
-// EShurikenRecallType                     RecallType                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const EShurikenRecallType&              RecallType                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<struct FVector>                  ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
 TArray<struct FVector> UAbility_104831::GetFirstHomingLocations(const EShurikenRecallType& RecallType)
@@ -49,7 +49,7 @@ TArray<struct FVector> UAbility_104831::GetFirstHomingLocations(const EShurikenR
 // (Final, Native, Protected, HasOutParams)
 // Parameters:
 // class AActor*                           SpawnActor                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayAbilityTargetDataHandle Data                                                   (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FGameplayAbilityTargetDataHandle&Data                                                   (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UAbility_104831::OnProjectileSpawnSuccess(class AActor* SpawnActor, const struct FGameplayAbilityTargetDataHandle& Data)
 {
@@ -146,7 +146,7 @@ void UAbility_104831::SpawnLaunchShuriken()
 // Function Hero_1048.Ability_104831.SpawnRecallShuriken
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// EShurikenRecallType                     RecallType                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const EShurikenRecallType&              RecallType                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UAbility_104831::SpawnRecallShuriken(const EShurikenRecallType& RecallType)
 {
@@ -171,7 +171,7 @@ void UAbility_104831::SpawnRecallShuriken(const EShurikenRecallType& RecallType)
 // Function Hero_1048.Projectile_10483101.AttachToTarget
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FHitResult                       Hit                                                    (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FHitResult&                Hit                                                    (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 void AProjectile_10483101::AttachToTarget(const struct FHitResult& Hit)
 {
@@ -215,7 +215,7 @@ void AProjectile_10483101::ClearProjectileVelocity()
 // Function Hero_1048.Projectile_10483101.DetachFromActorWithReason
 // (Final, Native, Protected, BlueprintCallable)
 // Parameters:
-// class FString                           Reason                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Reason                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void AProjectile_10483101::DetachFromActorWithReason(const class FString& Reason)
 {
@@ -294,7 +294,7 @@ void AProjectile_10483101::OnAttachAgentEndTask(class AActor* Actor)
 // Parameters:
 // class AActor*                           InSourceAvatar                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           InTargetAvatar                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FAttributeModifierHandle         ParamHandle                                            (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FAttributeModifierHandle&  ParamHandle                                            (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void AProjectile_10483101::OnAttachCharacterDeath(class AActor* InSourceAvatar, class AActor* InTargetAvatar, const struct FAttributeModifierHandle& ParamHandle)
 {
@@ -384,7 +384,7 @@ void AProjectile_10483102::OnEndHomingSelf()
 // Function Hero_1048.Projectile_10483102.OnModifyMoveDelta
 // (Final, Native, Protected, HasOutParams, HasDefaults)
 // Parameters:
-// struct FVector                          MoveDelta                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVector*                         MoveDelta                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void AProjectile_10483102::OnModifyMoveDelta(struct FVector* MoveDelta)
 {
@@ -531,7 +531,7 @@ void APsylockeCharacter::SetCharacterState(EPsylockeState NewState)
 // Parameters:
 // class AActor*                           InSourceAvatar                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           InTargetAvatar                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FAttributeModifierHandle         ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FAttributeModifierHandle&  ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void ASummoned_104892::OnAbilitySystemDeath(class AActor* InSourceAvatar, class AActor* InTargetAvatar, const struct FAttributeModifierHandle& ModifierParameterHandle)
 {

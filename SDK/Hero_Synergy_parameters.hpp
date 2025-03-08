@@ -14,8 +14,8 @@
 #include "CoreUObject_structs.hpp"
 #include "Engine_structs.hpp"
 #include "GameplayAbilities_structs.hpp"
-#include "Hero_Synergy_structs.hpp"
 #include "GameplayTags_structs.hpp"
+#include "Hero_Synergy_structs.hpp"
 
 
 namespace SDK::Params
@@ -43,6 +43,14 @@ struct MarvelBackTrackAbility_OnCharacterMovementPreUpdated final
 {
 public:
 	float                                         DeltaTime;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function Hero_Synergy.MarvelBackTrackAbility.OnCharTranslatedByLevelPortal
+// 0x0060 (0x0060 - 0x0000)
+struct MarvelBackTrackAbility_OnCharTranslatedByLevelPortal final
+{
+public:
+	struct FTransform                             TargetTransform;                                   // 0x0000(0x0060)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
 // Function Hero_Synergy.MarvelBackTrackAbility.OnCharTranslatedByPortal
@@ -228,6 +236,14 @@ struct Ability_100015_CancelRelevantSynergyAbility final
 {
 public:
 	bool                                          bNormalEnd;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function Hero_Synergy.Ability_100015.ClientCheckWavingState
+// 0x0001 (0x0001 - 0x0000)
+struct Ability_100015_ClientCheckWavingState final
+{
+public:
+	ESynergyWavingState                           AuthorityRoleState;                                // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
 // Function Hero_Synergy.Ability_100015.CustomCommitSynergyCoolDown

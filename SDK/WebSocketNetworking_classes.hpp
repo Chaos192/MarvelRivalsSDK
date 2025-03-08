@@ -17,11 +17,11 @@ namespace SDK
 {
 
 // Class WebSocketNetworking.WebSocketConnection
-// 0x0010 (0x21A8 - 0x2198)
+// 0x0010 (0x21E8 - 0x21D8)
 class UWebSocketConnection final : public UNetConnection
 {
 public:
-	uint8                                         Pad_2198[0x10];                                    // 0x2198(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_21D8[0x10];                                    // 0x21D8(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -35,12 +35,12 @@ public:
 };
 
 // Class WebSocketNetworking.WebSocketNetDriver
-// 0x0010 (0x0A80 - 0x0A70)
+// 0x0010 (0x0AE0 - 0x0AD0)
 class UWebSocketNetDriver final : public UNetDriver
 {
 public:
-	int32                                         WebSocketPort;                                     // 0x0A70(0x0004)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_A74[0xC];                                      // 0x0A74(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	int32                                         WebSocketPort;                                     // 0x0AD0(0x0004)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_AD4[0xC];                                      // 0x0AD4(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()

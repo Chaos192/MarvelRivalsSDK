@@ -60,7 +60,7 @@ void UPyAbility_103571::K2_ActivateAbility()
 // Parameters:
 // class AActor*                           Source                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // class AActor*                           Target                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FAttributeModifierHandle         ParamHandle                                            (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
+// const struct FAttributeModifierHandle&  ParamHandle                                            (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
 
 void UPyAbility_103571::OnOwnerApplyDamage(class AActor* Source, class AActor* Target, const struct FAttributeModifierHandle& ParamHandle)
 {
@@ -238,7 +238,7 @@ void UPyAbility_103571::OnDurationEnd()
 // Parameters:
 // class AActor*                           DamageCauser                                           (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // class AActor*                           TargetActor                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FAttributeModifierHandle         ModifierParameter                                      (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
+// const struct FAttributeModifierHandle&  ModifierParameter                                      (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
 
 void UPyAbility_103571::OnTargetDeath(class AActor* DamageCauser, class AActor* TargetActor, const struct FAttributeModifierHandle& ModifierParameter)
 {
@@ -353,7 +353,7 @@ void UPyAbility_103571::FinishDevour()
 // PythonFunction PyAbility_103571.PyAbility_103571.NativeOnMontageCompleted
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_103571::NativeOnMontageCompleted(const class FString& Tag)
 {
@@ -378,7 +378,7 @@ void UPyAbility_103571::NativeOnMontageCompleted(const class FString& Tag)
 // PythonFunction PyAbility_103571.PyAbility_103571.NativeOnMontageInterrupted
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_103571::NativeOnMontageInterrupted(const class FString& Tag)
 {
@@ -403,7 +403,7 @@ void UPyAbility_103571::NativeOnMontageInterrupted(const class FString& Tag)
 // PythonFunction PyAbility_103571.PyAbility_103571.NativeOnMontageCancelled
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_103571::NativeOnMontageCancelled(const class FString& Tag)
 {

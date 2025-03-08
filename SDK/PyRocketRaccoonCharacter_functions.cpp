@@ -20,7 +20,7 @@ namespace SDK
 // PythonFunction PyRocketRaccoonCharacter.PyRocketRaccoonCharacter.OnLanded
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FHitResult                       Hit                                                    (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FHitResult&                Hit                                                    (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyRocketRaccoonCharacter::OnLanded(const struct FHitResult& Hit)
 {

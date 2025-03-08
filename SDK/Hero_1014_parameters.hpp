@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
+#include "Engine_structs.hpp"
 #include "Hero_1014_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "Marvel_structs.hpp"
-#include "Engine_structs.hpp"
 #include "GameplayTags_structs.hpp"
 
 

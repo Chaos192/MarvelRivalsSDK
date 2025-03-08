@@ -74,7 +74,7 @@ void UAbility_103334_BP_C::K2_ActivateAbility()
 // Function Ability_103334_BP.Ability_103334_BP_C.OnCompletedDelegate_B67A1050426623CF63E033A6B67CE458
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayTag                     TriggerNotifyTagEventDelegate__DelegateSignature_EventTag(BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              TriggerNotifyTagEventDelegate__DelegateSignature_EventTag(BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
 
 void UAbility_103334_BP_C::OnCompletedDelegate_B67A1050426623CF63E033A6B67CE458(const struct FGameplayTag& TriggerNotifyTagEventDelegate__DelegateSignature_EventTag)
 {
@@ -95,7 +95,7 @@ void UAbility_103334_BP_C::OnCompletedDelegate_B67A1050426623CF63E033A6B67CE458(
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AMarvelAbilityTargetActor_Scope*  OnAllHitDelegate__DelegateSignature_ScopeActor         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// TArray<struct FHitResult>               OnAllHitDelegate__DelegateSignature_HitInfos           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, ContainsInstancedReference)
+// const TArray<struct FHitResult>&        OnAllHitDelegate__DelegateSignature_HitInfos           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, ContainsInstancedReference)
 
 void UAbility_103334_BP_C::OnHitAll_B1BCBCF94E8DC32521CA5E95695198CC(class AMarvelAbilityTargetActor_Scope* OnAllHitDelegate__DelegateSignature_ScopeActor, const TArray<struct FHitResult>& OnAllHitDelegate__DelegateSignature_HitInfos)
 {
@@ -116,7 +116,7 @@ void UAbility_103334_BP_C::OnHitAll_B1BCBCF94E8DC32521CA5E95695198CC(class AMarv
 // Function Ability_103334_BP.Ability_103334_BP_C.OnTriggerEvent_B67A1050426623CF63E033A6B67CE458
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayTag                     TriggerNotifyTagEventDelegate__DelegateSignature_EventTag(BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              TriggerNotifyTagEventDelegate__DelegateSignature_EventTag(BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
 
 void UAbility_103334_BP_C::OnTriggerEvent_B67A1050426623CF63E033A6B67CE458(const struct FGameplayTag& TriggerNotifyTagEventDelegate__DelegateSignature_EventTag)
 {

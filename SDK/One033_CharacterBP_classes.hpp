@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass 1033_CharacterBP.1033_CharacterBP_C
-// 0x0000 (0x1890 - 0x1890)
+// 0x0000 (0x18E0 - 0x18E0)
 class AOne033_CharacterBP_C final : public APyBlackWidowCharacter
 {
 public:

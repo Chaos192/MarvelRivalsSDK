@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Weapon_StarLordElementGun.Weapon_StarLordElementGun_C
-// 0x0000 (0x0C90 - 0x0C90)
+// 0x0000 (0x0C80 - 0x0C80)
 class AWeapon_StarLordElementGun_C final : public AShootingWeapon
 {
 public:

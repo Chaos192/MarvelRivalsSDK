@@ -74,7 +74,7 @@ public:
 };
 
 // PythonClass PyAbility_102921.PyAbility_102921
-// 0x0000 (0x2598 - 0x2598)
+// 0x0000 (0x25A0 - 0x25A0)
 class UPyAbility_102921 : public UMarvelAbility_LongPressTrigger
 {
 public:
@@ -99,11 +99,11 @@ public:
 };
 
 // PythonClass PyAbility_102921.PyProjectile_10292101
-// 0x0010 (0x3060 - 0x3050)
+// 0x0010 (0x3120 - 0x3110)
 class APyProjectile_10292101 final : public AProjectile_10292101
 {
 public:
-	float                                         AccumulateTime;                                    // 0x3050(0x0004)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         AccumulateTime;                                    // 0x3110(0x0004)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void K2_OnInitializeData();
@@ -121,7 +121,7 @@ public:
 };
 
 // PythonClass PyAbility_102921.PyUIController_102921
-// 0x0000 (0x0C70 - 0x0C70)
+// 0x0000 (0x0C60 - 0x0C60)
 class UPyUIController_102921 final : public UUIController_102921
 {
 public:

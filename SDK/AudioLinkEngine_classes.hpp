@@ -17,8 +17,8 @@ namespace SDK
 {
 
 // Class AudioLinkEngine.AudioLinkBlueprintInterface
-// 0x0000 (0x0030 - 0x0030)
-class IAudioLinkBlueprintInterface final : public IInterface
+// 0x0000 (0x0000 - 0x0000)
+class IAudioLinkBlueprintInterface final
 {
 public:
 	void PlayLink(float StartTime);
@@ -35,6 +35,15 @@ public:
 	static class IAudioLinkBlueprintInterface* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<IAudioLinkBlueprintInterface>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
 	}
 };
 

@@ -103,7 +103,7 @@ void APySummoned_102241::OnSummonedCompBeginAgentTask()
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // class AActor*                           TargetActor                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FCharacterRebornParam            Param                                                  (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FCharacterRebornParam&     Param                                                  (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APySummoned_102241::OnOwnerReborn(class AActor* TargetActor, const struct FCharacterRebornParam& Param)
 {
@@ -131,7 +131,7 @@ void APySummoned_102241::OnOwnerReborn(class AActor* TargetActor, const struct F
 // Parameters:
 // class AActor*                           InSourceAvatar                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // class AActor*                           InTargetAvatar                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FAttributeModifierHandle         ModifierParameter                                      (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
+// const struct FAttributeModifierHandle&  ModifierParameter                                      (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
 
 void APySummoned_102241::OnOwnerDeath(class AActor* InSourceAvatar, class AActor* InTargetAvatar, const struct FAttributeModifierHandle& ModifierParameter)
 {
@@ -204,7 +204,7 @@ void APySummoned_102241::SetShieldActive(bool bIsActive)
 // Parameters:
 // class AActor*                           SourceActor_0                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // class AActor*                           TargetActor                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FAttributeModifierHandle         ParameterHandle                                        (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
+// const struct FAttributeModifierHandle&  ParameterHandle                                        (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
 
 void APySummoned_102241::OnShieldTakeDamage(class AActor* SourceActor_0, class AActor* TargetActor, const struct FAttributeModifierHandle& ParameterHandle)
 {
@@ -256,9 +256,9 @@ void APySummoned_102241::MultiSetAlive(bool in_alive)
 // PythonFunction PyAbility_102241.PySummoned_102241.OnShieldReflex
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FMarvelReflexRecvInfo            RecvInfo                                               (ConstParm, Parm, OutParm, ReferenceParm)
-// struct FVector                          ReflectLocation                                        (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FVector                          ReflectDir                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FMarvelReflexRecvInfo&     RecvInfo                                               (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FVector&                   ReflectLocation                                        (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVector&                   ReflectDir                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void APySummoned_102241::OnShieldReflex(const struct FMarvelReflexRecvInfo& RecvInfo, const struct FVector& ReflectLocation, const struct FVector& ReflectDir)
 {
@@ -286,7 +286,7 @@ void APySummoned_102241::OnShieldReflex(const struct FMarvelReflexRecvInfo& Recv
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 bool APyCue_SummonerLoop_102241::WhileActive(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
@@ -316,7 +316,7 @@ bool APyCue_SummonerLoop_102241::WhileActive(class AActor* MyTarget, const struc
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 bool APyCue_SummonerLoop_102241::OnRemove(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
@@ -346,7 +346,7 @@ bool APyCue_SummonerLoop_102241::OnRemove(class AActor* MyTarget, const struct F
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // class AActor*                           InSourceAvatar                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FAttributeModifierHandle         ModifierHandle                                         (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
+// const struct FAttributeModifierHandle&  ModifierHandle                                         (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
 
 void APyCue_SummonerLoop_102241::OnSelfAttributeChanged(class AActor* InSourceAvatar, const struct FAttributeModifierHandle& ModifierHandle)
 {
@@ -372,7 +372,7 @@ void APyCue_SummonerLoop_102241::OnSelfAttributeChanged(class AActor* InSourceAv
 // PythonFunction PyAbility_102241.PyCue_SummonerLoop_102241.OnTagUpdate
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FGameplayTag                     TagUpdated                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              TagUpdated                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
 // bool                                    TagExists                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void APyCue_SummonerLoop_102241::OnTagUpdate(const struct FGameplayTag& TagUpdated, bool TagExists)
@@ -571,7 +571,7 @@ void UPyAbility_102241::K2_OnEndAbility(bool bWasCancelled)
 // PythonFunction PyAbility_102241.PyAbility_102241.NativeOnMontageCompleted
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_102241::NativeOnMontageCompleted(const class FString& Tag)
 {
@@ -596,7 +596,7 @@ void UPyAbility_102241::NativeOnMontageCompleted(const class FString& Tag)
 // PythonFunction PyAbility_102241.PyAbility_102241.NativeOnMontageBlendOut
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_102241::NativeOnMontageBlendOut(const class FString& Tag)
 {
@@ -621,7 +621,7 @@ void UPyAbility_102241::NativeOnMontageBlendOut(const class FString& Tag)
 // PythonFunction PyAbility_102241.PyAbility_102241.NativeOnMontageInterrupted
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_102241::NativeOnMontageInterrupted(const class FString& Tag)
 {
@@ -646,7 +646,7 @@ void UPyAbility_102241::NativeOnMontageInterrupted(const class FString& Tag)
 // PythonFunction PyAbility_102241.PyAbility_102241.NativeOnMontageCancelled
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_102241::NativeOnMontageCancelled(const class FString& Tag)
 {

@@ -42,11 +42,11 @@ public:
 	uint8                                         Pad_821[0x3];                                      // 0x0821(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         PillageMaxTime;                                    // 0x0824(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TMap<float, class APyLevelSummoned_200009*>   Time2PillageMachine;                               // 0x0828(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class APyControl* mine_obj, float cur_num, float changed_num)> DispatchOnStorageNumChanged;                       // 0x0878(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class APyControl* mine_obj)> DispatchOnStorageNumRunOut;                        // 0x0888(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class APyControl* mine_obj)> DispatchOnMineDeactivated;                         // 0x0898(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class APyControl* mine_obj, int32 Stage)> DispatchOnPillageStageChanged;                     // 0x08A8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class APyControl* mine_obj)> DispatchOnPillageFinished;                         // 0x08B8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class APyControl* mine_obj, float cur_num, float changed_num)> DispatchOnStorageNumChanged; // 0x0878(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class APyControl* mine_obj)> DispatchOnStorageNumRunOut;           // 0x0888(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class APyControl* mine_obj)> DispatchOnMineDeactivated;            // 0x0898(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class APyControl* mine_obj, int32 Stage)> DispatchOnPillageStageChanged; // 0x08A8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class APyControl* mine_obj)> DispatchOnPillageFinished;            // 0x08B8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 
 public:
 	void SetUIName(const class FString& Param_Name_0);

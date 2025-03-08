@@ -18,12 +18,33 @@
 namespace SDK
 {
 
+// PythonClass PyAbility_104061.PyCue_Scope_HitImpact_10406101
+// 0x0050 (0x0520 - 0x04D0)
+class UPyCue_Scope_HitImpact_10406101 final : public UMarvelCueNotify_HitImpact
+{
+public:
+	TMap<int32, int32>                            HitAudioIDsMap;                                    // 0x04D0(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+
+public:
+	int32 GetAbilityHitAudioID(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters) const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PyCue_Scope_HitImpact_10406101">();
+	}
+	static class UPyCue_Scope_HitImpact_10406101* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPyCue_Scope_HitImpact_10406101>();
+	}
+};
+
 // PythonClass PyAbility_104061.PyAbility_104061
-// 0x0008 (0x2728 - 0x2720)
+// 0x0008 (0x2730 - 0x2728)
 class UPyAbility_104061 : public UAbility_104061
 {
 public:
-	int32                                         CurrentHitTimes;                                   // 0x2720(0x0004)(Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         CurrentHitTimes;                                   // 0x2728(0x0004)(Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	bool CheckIsWalking(float DeltaTime);
@@ -71,27 +92,6 @@ public:
 	static class APyCue_Ability_Instant_10406103* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<APyCue_Ability_Instant_10406103>();
-	}
-};
-
-// PythonClass PyAbility_104061.PyCue_Scope_HitImpact_10406101
-// 0x0050 (0x0520 - 0x04D0)
-class UPyCue_Scope_HitImpact_10406101 final : public UMarvelCueNotify_HitImpact
-{
-public:
-	TMap<int32, int32>                            HitAudioIDsMap;                                    // 0x04D0(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-
-public:
-	int32 GetAbilityHitAudioID(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters) const;
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"PyCue_Scope_HitImpact_10406101">();
-	}
-	static class UPyCue_Scope_HitImpact_10406101* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UPyCue_Scope_HitImpact_10406101>();
 	}
 };
 

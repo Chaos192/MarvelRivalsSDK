@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_structs.hpp"
 #include "SlateCore_structs.hpp"
+#include "CoreUObject_structs.hpp"
 #include "PyMarvelUserWidget_classes.hpp"
 
 
@@ -20,7 +20,7 @@ namespace SDK
 
 // PythonClass PyWidget_Common_LineAngle.PyWidget_Common_LineAngle
 // 0x0020 (0x0610 - 0x05F0)
-class UPyWidget_Common_LineAngle final : public UPyMarvelUserWidget
+class UPyWidget_Common_LineAngle : public UPyMarvelUserWidget
 {
 public:
 	uint8                                         Pad_5E9[0x7];                                      // 0x05E9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
@@ -49,7 +49,7 @@ class UPyWidget_Common_Line : public UPyMarvelUserWidget
 {
 public:
 	uint8                                         Pad_5E9[0x7];                                      // 0x05E9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TMulticastInlineDelegate<void(class UWidgetAnimation* Animation)> OnAnimFinished;                                    // 0x05F0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class UWidgetAnimation* Animation)> OnAnimFinished;                // 0x05F0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 
 public:
 	void TriggerAnimationFinished(class UWidgetAnimation* Animation);

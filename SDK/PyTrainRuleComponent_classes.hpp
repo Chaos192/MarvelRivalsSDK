@@ -10,11 +10,11 @@
 
 #include "Basic.hpp"
 
+#include "Marvel_structs.hpp"
 #include "MarvelLevel_structs.hpp"
 #include "MarvelLevel_classes.hpp"
 #include "GameplayTags_structs.hpp"
 #include "PyRuleComponent_classes.hpp"
-#include "Marvel_structs.hpp"
 
 
 namespace SDK

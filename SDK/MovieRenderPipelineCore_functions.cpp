@@ -21,7 +21,7 @@ namespace SDK
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // class UMovieGraphOutputSettingNode*     InNode                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FFrameRate                       InDefaultRate                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FFrameRate&                InDefaultRate                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FFrameRate                       ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 struct FFrameRate UMovieGraphBlueprintLibrary::GetEffectiveFrameRate(class UMovieGraphOutputSettingNode* InNode, const struct FFrameRate& InDefaultRate)
@@ -51,7 +51,7 @@ struct FFrameRate UMovieGraphBlueprintLibrary::GetEffectiveFrameRate(class UMovi
 // (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
 // class UMovieGraphEvaluatedConfig*       InEvaluatedGraph                                       (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             InBranchName                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName&                      InBranchName                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FIntPoint                        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 struct FIntPoint UMovieGraphBlueprintLibrary::GetEffectiveOutputResolution(class UMovieGraphEvaluatedConfig* InEvaluatedGraph, const class FName& InBranchName)
@@ -80,9 +80,9 @@ struct FIntPoint UMovieGraphBlueprintLibrary::GetEffectiveOutputResolution(class
 // Function MovieRenderPipelineCore.MovieGraphBlueprintLibrary.ResolveFilenameFormatArguments
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class FString                           InFormatString                                         (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FMovieGraphFilenameResolveParams InParams                                               (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FMovieGraphResolveArgs           OutMergedFormatArgs                                    (Parm, OutParm, NativeAccessSpecifierPublic)
+// const class FString&                    InFormatString                                         (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FMovieGraphFilenameResolveParams&InParams                                               (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// struct FMovieGraphResolveArgs*          OutMergedFormatArgs                                    (Parm, OutParm, NativeAccessSpecifierPublic)
 // class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class FString UMovieGraphBlueprintLibrary::ResolveFilenameFormatArguments(const class FString& InFormatString, const struct FMovieGraphFilenameResolveParams& InParams, struct FMovieGraphResolveArgs* OutMergedFormatArgs)
@@ -159,7 +159,7 @@ class FString UMovieGraphValueContainer::GetValueSerializedString()
 // Function MovieRenderPipelineCore.MovieGraphValueContainer.SetValueBool
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// bool                                    bInValue                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bInValue                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UMovieGraphValueContainer::SetValueBool(const bool bInValue)
@@ -187,7 +187,7 @@ bool UMovieGraphValueContainer::SetValueBool(const bool bInValue)
 // Function MovieRenderPipelineCore.MovieGraphValueContainer.SetValueByte
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// uint8                                   InValue                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const uint8                             InValue                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UMovieGraphValueContainer::SetValueByte(const uint8 InValue)
@@ -268,7 +268,7 @@ void UMovieGraphValueContainer::SetValueContainerType(EMovieGraphContainerType C
 // Function MovieRenderPipelineCore.MovieGraphValueContainer.SetValueDouble
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// double                                  InValue                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const double                            InValue                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UMovieGraphValueContainer::SetValueDouble(const double InValue)
@@ -296,8 +296,8 @@ bool UMovieGraphValueContainer::SetValueDouble(const double InValue)
 // Function MovieRenderPipelineCore.MovieGraphValueContainer.SetValueEnum
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// uint8                                   InValue                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UEnum*                            Enum                                                   (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const uint8                             InValue                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UEnum*                      Enum                                                   (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UMovieGraphValueContainer::SetValueEnum(const uint8 InValue, const class UEnum* Enum)
@@ -326,7 +326,7 @@ bool UMovieGraphValueContainer::SetValueEnum(const uint8 InValue, const class UE
 // Function MovieRenderPipelineCore.MovieGraphValueContainer.SetValueFloat
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// float                                   InValue                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             InValue                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UMovieGraphValueContainer::SetValueFloat(const float InValue)
@@ -354,7 +354,7 @@ bool UMovieGraphValueContainer::SetValueFloat(const float InValue)
 // Function MovieRenderPipelineCore.MovieGraphValueContainer.SetValueInt32
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// int32                                   InValue                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int32                             InValue                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UMovieGraphValueContainer::SetValueInt32(const int32 InValue)
@@ -382,7 +382,7 @@ bool UMovieGraphValueContainer::SetValueInt32(const int32 InValue)
 // Function MovieRenderPipelineCore.MovieGraphValueContainer.SetValueInt64
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// int64                                   InValue                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int64                             InValue                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UMovieGraphValueContainer::SetValueInt64(const int64 InValue)
@@ -410,7 +410,7 @@ bool UMovieGraphValueContainer::SetValueInt64(const int64 InValue)
 // Function MovieRenderPipelineCore.MovieGraphValueContainer.SetValueName
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FName                             InValue                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       InValue                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UMovieGraphValueContainer::SetValueName(const class FName InValue)
@@ -466,7 +466,7 @@ bool UMovieGraphValueContainer::SetValueObject(class UObject* InValue)
 // Function MovieRenderPipelineCore.MovieGraphValueContainer.SetValueSerializedString
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FString                           NewValue                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    NewValue                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UMovieGraphValueContainer::SetValueSerializedString(const class FString& NewValue)
@@ -494,7 +494,7 @@ bool UMovieGraphValueContainer::SetValueSerializedString(const class FString& Ne
 // Function MovieRenderPipelineCore.MovieGraphValueContainer.SetValueString
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FString                           InValue                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    InValue                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UMovieGraphValueContainer::SetValueString(const class FString& InValue)
@@ -522,7 +522,7 @@ bool UMovieGraphValueContainer::SetValueString(const class FString& InValue)
 // Function MovieRenderPipelineCore.MovieGraphValueContainer.SetValueText
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class FText                             InValue                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const class FText&                      InValue                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UMovieGraphValueContainer::SetValueText(const class FText& InValue)
@@ -575,7 +575,7 @@ void UMovieGraphValueContainer::SetValueType(EMovieGraphValueType ValueType)
 // Function MovieRenderPipelineCore.MovieGraphValueContainer.SetValueTypeObject
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class UObject*                          ValueTypeObject                                        (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UObject*                    ValueTypeObject                                        (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UMovieGraphValueContainer::SetValueTypeObject(const class UObject* ValueTypeObject)
 {
@@ -600,7 +600,7 @@ void UMovieGraphValueContainer::SetValueTypeObject(const class UObject* ValueTyp
 // Function MovieRenderPipelineCore.MovieGraphValueContainer.GetValueBool
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// bool                                    bOutValue                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool*                                   bOutValue                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UMovieGraphValueContainer::GetValueBool(bool* bOutValue) const
@@ -629,7 +629,7 @@ bool UMovieGraphValueContainer::GetValueBool(bool* bOutValue) const
 // Function MovieRenderPipelineCore.MovieGraphValueContainer.GetValueByte
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// uint8                                   OutValue                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// uint8*                                  OutValue                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UMovieGraphValueContainer::GetValueByte(uint8* OutValue) const
@@ -711,7 +711,7 @@ EMovieGraphContainerType UMovieGraphValueContainer::GetValueContainerType() cons
 // Function MovieRenderPipelineCore.MovieGraphValueContainer.GetValueDouble
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// double                                  OutValue                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// double*                                 OutValue                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UMovieGraphValueContainer::GetValueDouble(double* OutValue) const
@@ -740,8 +740,8 @@ bool UMovieGraphValueContainer::GetValueDouble(double* OutValue) const
 // Function MovieRenderPipelineCore.MovieGraphValueContainer.GetValueEnum
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// uint8                                   OutValue                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UEnum*                            RequestedEnum                                          (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// uint8*                                  OutValue                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UEnum*                      RequestedEnum                                          (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UMovieGraphValueContainer::GetValueEnum(uint8* OutValue, const class UEnum* RequestedEnum) const
@@ -772,7 +772,7 @@ bool UMovieGraphValueContainer::GetValueEnum(uint8* OutValue, const class UEnum*
 // Function MovieRenderPipelineCore.MovieGraphValueContainer.GetValueFloat
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// float                                   OutValue                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float*                                  OutValue                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UMovieGraphValueContainer::GetValueFloat(float* OutValue) const
@@ -801,7 +801,7 @@ bool UMovieGraphValueContainer::GetValueFloat(float* OutValue) const
 // Function MovieRenderPipelineCore.MovieGraphValueContainer.GetValueInt32
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// int32                                   OutValue                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32*                                  OutValue                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UMovieGraphValueContainer::GetValueInt32(int32* OutValue) const
@@ -830,7 +830,7 @@ bool UMovieGraphValueContainer::GetValueInt32(int32* OutValue) const
 // Function MovieRenderPipelineCore.MovieGraphValueContainer.GetValueInt64
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// int64                                   OutValue                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int64*                                  OutValue                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UMovieGraphValueContainer::GetValueInt64(int64* OutValue) const
@@ -859,7 +859,7 @@ bool UMovieGraphValueContainer::GetValueInt64(int64* OutValue) const
 // Function MovieRenderPipelineCore.MovieGraphValueContainer.GetValueName
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// class FName                             OutValue                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FName*                            OutValue                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UMovieGraphValueContainer::GetValueName(class FName* OutValue) const
@@ -889,7 +889,7 @@ bool UMovieGraphValueContainer::GetValueName(class FName* OutValue) const
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // class UObject*                          OutValue                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UClass*                           RequestedClass                                         (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UClass*                     RequestedClass                                         (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UMovieGraphValueContainer::GetValueObject(class UObject* OutValue, const class UClass* RequestedClass) const
@@ -918,7 +918,7 @@ bool UMovieGraphValueContainer::GetValueObject(class UObject* OutValue, const cl
 // Function MovieRenderPipelineCore.MovieGraphValueContainer.GetValueString
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// class FString                           OutValue                                               (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString*                          OutValue                                               (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UMovieGraphValueContainer::GetValueString(class FString* OutValue) const
@@ -947,7 +947,7 @@ bool UMovieGraphValueContainer::GetValueString(class FString* OutValue) const
 // Function MovieRenderPipelineCore.MovieGraphValueContainer.GetValueText
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// class FText                             OutValue                                               (Parm, OutParm, NativeAccessSpecifierPublic)
+// class FText*                            OutValue                                               (Parm, OutParm, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UMovieGraphValueContainer::GetValueText(class FText* OutValue) const
@@ -1026,7 +1026,7 @@ const class UObject* UMovieGraphValueContainer::GetValueTypeObject() const
 // Function MovieRenderPipelineCore.MovieGraphConfig.AddVariable
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FName                             InCustomBaseName                                       (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       InCustomBaseName                                       (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UMovieGraphVariable*              ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class UMovieGraphVariable* UMovieGraphConfig::AddVariable(const class FName InCustomBaseName)
@@ -1054,7 +1054,7 @@ class UMovieGraphVariable* UMovieGraphConfig::AddVariable(const class FName InCu
 // Function MovieRenderPipelineCore.MovieGraphConfig.CreateFlattenedGraph
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FMovieGraphTraversalContext      InContext                                              (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FMovieGraphTraversalContext&InContext                                              (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // class UMovieGraphEvaluatedConfig*       ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class UMovieGraphEvaluatedConfig* UMovieGraphConfig::CreateFlattenedGraph(const struct FMovieGraphTraversalContext& InContext)
@@ -1082,7 +1082,7 @@ class UMovieGraphEvaluatedConfig* UMovieGraphConfig::CreateFlattenedGraph(const 
 // Function MovieRenderPipelineCore.MovieGraphConfig.GetVariables
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// bool                                    bIncludeGlobal                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bIncludeGlobal                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<class UMovieGraphVariable*>      ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
 TArray<class UMovieGraphVariable*> UMovieGraphConfig::GetVariables(const bool bIncludeGlobal) const
@@ -1211,7 +1211,7 @@ bool UMoviePipelineBase::IsShutdownRequested() const
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // class UMoviePipelineExecutorJob*        InJob                                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FMovieGraphInitConfig            InitConfig                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FMovieGraphInitConfig&     InitConfig                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
 void UMovieGraphPipeline::Initialize(class UMoviePipelineExecutorJob* InJob, const struct FMovieGraphInitConfig& InitConfig)
 {
@@ -1256,7 +1256,7 @@ void UMovieGraphPipeline::OnMoviePipelineFinishedImpl()
 // Function MovieRenderPipelineCore.MovieGraphPipeline.SetInitializationTime
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FDateTime                        InDateTime                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FDateTime&                 InDateTime                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UMovieGraphPipeline::SetInitializationTime(const struct FDateTime& InDateTime)
 {
@@ -1331,7 +1331,7 @@ struct FDateTime UMovieGraphPipeline::GetInitializationTime() const
 // Function MovieRenderPipelineCore.MovieGraphSubgraphNode.SetSubGraphAsset
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TSoftObjectPtr<class UMovieGraphConfig> InSubgraphAsset                                        (ConstParm, Parm, OutParm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TSoftObjectPtr<class UMovieGraphConfig>&InSubgraphAsset                                        (ConstParm, Parm, OutParm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UMovieGraphSubgraphNode::SetSubGraphAsset(const TSoftObjectPtr<class UMovieGraphConfig>& InSubgraphAsset)
 {
@@ -1381,7 +1381,7 @@ class UMovieGraphConfig* UMovieGraphSubgraphNode::GetSubgraphAsset() const
 // Function MovieRenderPipelineCore.MovieJobVariableAssignmentContainer.GetValueSerializedString
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class FName                             PropertyName                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName&                      PropertyName                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class FString UMovieJobVariableAssignmentContainer::GetValueSerializedString(const class FName& PropertyName)
@@ -1409,8 +1409,8 @@ class FString UMovieJobVariableAssignmentContainer::GetValueSerializedString(con
 // Function MovieRenderPipelineCore.MovieJobVariableAssignmentContainer.GetVariableAssignmentEnableState
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class UMovieGraphVariable*              InGraphVariable                                        (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bOutIsEnabled                                          (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UMovieGraphVariable*        InGraphVariable                                        (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool*                                   bOutIsEnabled                                          (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UMovieJobVariableAssignmentContainer::GetVariableAssignmentEnableState(const class UMovieGraphVariable* InGraphVariable, bool* bOutIsEnabled)
@@ -1441,7 +1441,7 @@ bool UMovieJobVariableAssignmentContainer::GetVariableAssignmentEnableState(cons
 // Function MovieRenderPipelineCore.MovieJobVariableAssignmentContainer.SetGraphConfig
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TSoftObjectPtr<class UMovieGraphConfig> InGraphConfig                                          (ConstParm, Parm, OutParm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TSoftObjectPtr<class UMovieGraphConfig>&InGraphConfig                                          (ConstParm, Parm, OutParm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UMovieJobVariableAssignmentContainer::SetGraphConfig(const TSoftObjectPtr<class UMovieGraphConfig>& InGraphConfig)
 {
@@ -1466,8 +1466,8 @@ void UMovieJobVariableAssignmentContainer::SetGraphConfig(const TSoftObjectPtr<c
 // Function MovieRenderPipelineCore.MovieJobVariableAssignmentContainer.SetValueBool
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class FName                             PropertyName                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bInValue                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName&                      PropertyName                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bInValue                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UMovieJobVariableAssignmentContainer::SetValueBool(const class FName& PropertyName, const bool bInValue)
@@ -1496,8 +1496,8 @@ bool UMovieJobVariableAssignmentContainer::SetValueBool(const class FName& Prope
 // Function MovieRenderPipelineCore.MovieJobVariableAssignmentContainer.SetValueByte
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class FName                             PropertyName                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// uint8                                   InValue                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName&                      PropertyName                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const uint8                             InValue                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UMovieJobVariableAssignmentContainer::SetValueByte(const class FName& PropertyName, const uint8 InValue)
@@ -1526,7 +1526,7 @@ bool UMovieJobVariableAssignmentContainer::SetValueByte(const class FName& Prope
 // Function MovieRenderPipelineCore.MovieJobVariableAssignmentContainer.SetValueClass
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class FName                             PropertyName                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName&                      PropertyName                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UClass*                           InValue                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -1556,8 +1556,8 @@ bool UMovieJobVariableAssignmentContainer::SetValueClass(const class FName& Prop
 // Function MovieRenderPipelineCore.MovieJobVariableAssignmentContainer.SetValueDouble
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class FName                             PropertyName                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// double                                  InValue                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName&                      PropertyName                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const double                            InValue                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UMovieJobVariableAssignmentContainer::SetValueDouble(const class FName& PropertyName, const double InValue)
@@ -1586,9 +1586,9 @@ bool UMovieJobVariableAssignmentContainer::SetValueDouble(const class FName& Pro
 // Function MovieRenderPipelineCore.MovieJobVariableAssignmentContainer.SetValueEnum
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class FName                             PropertyName                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// uint8                                   InValue                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UEnum*                            Enum                                                   (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName&                      PropertyName                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const uint8                             InValue                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UEnum*                      Enum                                                   (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UMovieJobVariableAssignmentContainer::SetValueEnum(const class FName& PropertyName, const uint8 InValue, const class UEnum* Enum)
@@ -1618,8 +1618,8 @@ bool UMovieJobVariableAssignmentContainer::SetValueEnum(const class FName& Prope
 // Function MovieRenderPipelineCore.MovieJobVariableAssignmentContainer.SetValueFloat
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class FName                             PropertyName                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   InValue                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName&                      PropertyName                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             InValue                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UMovieJobVariableAssignmentContainer::SetValueFloat(const class FName& PropertyName, const float InValue)
@@ -1648,8 +1648,8 @@ bool UMovieJobVariableAssignmentContainer::SetValueFloat(const class FName& Prop
 // Function MovieRenderPipelineCore.MovieJobVariableAssignmentContainer.SetValueInt32
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class FName                             PropertyName                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   InValue                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName&                      PropertyName                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int32                             InValue                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UMovieJobVariableAssignmentContainer::SetValueInt32(const class FName& PropertyName, const int32 InValue)
@@ -1678,8 +1678,8 @@ bool UMovieJobVariableAssignmentContainer::SetValueInt32(const class FName& Prop
 // Function MovieRenderPipelineCore.MovieJobVariableAssignmentContainer.SetValueInt64
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class FName                             PropertyName                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int64                                   InValue                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName&                      PropertyName                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int64                             InValue                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UMovieJobVariableAssignmentContainer::SetValueInt64(const class FName& PropertyName, const int64 InValue)
@@ -1708,8 +1708,8 @@ bool UMovieJobVariableAssignmentContainer::SetValueInt64(const class FName& Prop
 // Function MovieRenderPipelineCore.MovieJobVariableAssignmentContainer.SetValueName
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class FName                             PropertyName                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             InValue                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName&                      PropertyName                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       InValue                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UMovieJobVariableAssignmentContainer::SetValueName(const class FName& PropertyName, const class FName InValue)
@@ -1738,7 +1738,7 @@ bool UMovieJobVariableAssignmentContainer::SetValueName(const class FName& Prope
 // Function MovieRenderPipelineCore.MovieJobVariableAssignmentContainer.SetValueObject
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class FName                             PropertyName                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName&                      PropertyName                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UObject*                          InValue                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -1768,8 +1768,8 @@ bool UMovieJobVariableAssignmentContainer::SetValueObject(const class FName& Pro
 // Function MovieRenderPipelineCore.MovieJobVariableAssignmentContainer.SetValueSerializedString
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class FName                             PropertyName                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           NewValue                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName&                      PropertyName                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    NewValue                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UMovieJobVariableAssignmentContainer::SetValueSerializedString(const class FName& PropertyName, const class FString& NewValue)
@@ -1798,8 +1798,8 @@ bool UMovieJobVariableAssignmentContainer::SetValueSerializedString(const class 
 // Function MovieRenderPipelineCore.MovieJobVariableAssignmentContainer.SetValueString
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class FName                             PropertyName                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           InValue                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName&                      PropertyName                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    InValue                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UMovieJobVariableAssignmentContainer::SetValueString(const class FName& PropertyName, const class FString& InValue)
@@ -1828,8 +1828,8 @@ bool UMovieJobVariableAssignmentContainer::SetValueString(const class FName& Pro
 // Function MovieRenderPipelineCore.MovieJobVariableAssignmentContainer.SetValueText
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class FName                             PropertyName                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FText                             InValue                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const class FName&                      PropertyName                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FText&                      InValue                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UMovieJobVariableAssignmentContainer::SetValueText(const class FName& PropertyName, const class FText& InValue)
@@ -1858,7 +1858,7 @@ bool UMovieJobVariableAssignmentContainer::SetValueText(const class FName& Prope
 // Function MovieRenderPipelineCore.MovieJobVariableAssignmentContainer.SetVariableAssignmentEnableState
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class UMovieGraphVariable*              InGraphVariable                                        (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UMovieGraphVariable*        InGraphVariable                                        (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bIsEnabled                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -1888,8 +1888,8 @@ bool UMovieJobVariableAssignmentContainer::SetVariableAssignmentEnableState(cons
 // Function MovieRenderPipelineCore.MovieJobVariableAssignmentContainer.GetValueBool
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// class FName                             PropertyName                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bOutValue                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName&                      PropertyName                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool*                                   bOutValue                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UMovieJobVariableAssignmentContainer::GetValueBool(const class FName& PropertyName, bool* bOutValue) const
@@ -1920,8 +1920,8 @@ bool UMovieJobVariableAssignmentContainer::GetValueBool(const class FName& Prope
 // Function MovieRenderPipelineCore.MovieJobVariableAssignmentContainer.GetValueByte
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// class FName                             PropertyName                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// uint8                                   OutValue                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName&                      PropertyName                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// uint8*                                  OutValue                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UMovieJobVariableAssignmentContainer::GetValueByte(const class FName& PropertyName, uint8* OutValue) const
@@ -1952,7 +1952,7 @@ bool UMovieJobVariableAssignmentContainer::GetValueByte(const class FName& Prope
 // Function MovieRenderPipelineCore.MovieJobVariableAssignmentContainer.GetValueClass
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// class FName                             PropertyName                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName&                      PropertyName                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UClass*                           OutValue                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -1982,7 +1982,7 @@ bool UMovieJobVariableAssignmentContainer::GetValueClass(const class FName& Prop
 // Function MovieRenderPipelineCore.MovieJobVariableAssignmentContainer.GetValueContainerType
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// class FName                             PropertyName                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName&                      PropertyName                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // EMovieGraphContainerType                ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 EMovieGraphContainerType UMovieJobVariableAssignmentContainer::GetValueContainerType(const class FName& PropertyName) const
@@ -2010,8 +2010,8 @@ EMovieGraphContainerType UMovieJobVariableAssignmentContainer::GetValueContainer
 // Function MovieRenderPipelineCore.MovieJobVariableAssignmentContainer.GetValueDouble
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// class FName                             PropertyName                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// double                                  OutValue                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName&                      PropertyName                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// double*                                 OutValue                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UMovieJobVariableAssignmentContainer::GetValueDouble(const class FName& PropertyName, double* OutValue) const
@@ -2042,9 +2042,9 @@ bool UMovieJobVariableAssignmentContainer::GetValueDouble(const class FName& Pro
 // Function MovieRenderPipelineCore.MovieJobVariableAssignmentContainer.GetValueEnum
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// class FName                             PropertyName                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// uint8                                   OutValue                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UEnum*                            RequestedEnum                                          (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName&                      PropertyName                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// uint8*                                  OutValue                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UEnum*                      RequestedEnum                                          (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UMovieJobVariableAssignmentContainer::GetValueEnum(const class FName& PropertyName, uint8* OutValue, const class UEnum* RequestedEnum) const
@@ -2076,8 +2076,8 @@ bool UMovieJobVariableAssignmentContainer::GetValueEnum(const class FName& Prope
 // Function MovieRenderPipelineCore.MovieJobVariableAssignmentContainer.GetValueFloat
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// class FName                             PropertyName                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   OutValue                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName&                      PropertyName                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float*                                  OutValue                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UMovieJobVariableAssignmentContainer::GetValueFloat(const class FName& PropertyName, float* OutValue) const
@@ -2108,8 +2108,8 @@ bool UMovieJobVariableAssignmentContainer::GetValueFloat(const class FName& Prop
 // Function MovieRenderPipelineCore.MovieJobVariableAssignmentContainer.GetValueInt32
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// class FName                             PropertyName                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   OutValue                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName&                      PropertyName                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32*                                  OutValue                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UMovieJobVariableAssignmentContainer::GetValueInt32(const class FName& PropertyName, int32* OutValue) const
@@ -2140,8 +2140,8 @@ bool UMovieJobVariableAssignmentContainer::GetValueInt32(const class FName& Prop
 // Function MovieRenderPipelineCore.MovieJobVariableAssignmentContainer.GetValueInt64
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// class FName                             PropertyName                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int64                                   OutValue                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName&                      PropertyName                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int64*                                  OutValue                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UMovieJobVariableAssignmentContainer::GetValueInt64(const class FName& PropertyName, int64* OutValue) const
@@ -2172,8 +2172,8 @@ bool UMovieJobVariableAssignmentContainer::GetValueInt64(const class FName& Prop
 // Function MovieRenderPipelineCore.MovieJobVariableAssignmentContainer.GetValueName
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// class FName                             PropertyName                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             OutValue                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName&                      PropertyName                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FName*                            OutValue                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UMovieJobVariableAssignmentContainer::GetValueName(const class FName& PropertyName, class FName* OutValue) const
@@ -2204,9 +2204,9 @@ bool UMovieJobVariableAssignmentContainer::GetValueName(const class FName& Prope
 // Function MovieRenderPipelineCore.MovieJobVariableAssignmentContainer.GetValueObject
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// class FName                             PropertyName                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName&                      PropertyName                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UObject*                          OutValue                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UClass*                           RequestedClass                                         (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UClass*                     RequestedClass                                         (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UMovieJobVariableAssignmentContainer::GetValueObject(const class FName& PropertyName, class UObject* OutValue, const class UClass* RequestedClass) const
@@ -2236,8 +2236,8 @@ bool UMovieJobVariableAssignmentContainer::GetValueObject(const class FName& Pro
 // Function MovieRenderPipelineCore.MovieJobVariableAssignmentContainer.GetValueString
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// class FName                             PropertyName                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           OutValue                                               (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName&                      PropertyName                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString*                          OutValue                                               (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UMovieJobVariableAssignmentContainer::GetValueString(const class FName& PropertyName, class FString* OutValue) const
@@ -2268,8 +2268,8 @@ bool UMovieJobVariableAssignmentContainer::GetValueString(const class FName& Pro
 // Function MovieRenderPipelineCore.MovieJobVariableAssignmentContainer.GetValueText
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// class FName                             PropertyName                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FText                             OutValue                                               (Parm, OutParm, NativeAccessSpecifierPublic)
+// const class FName&                      PropertyName                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FText*                            OutValue                                               (Parm, OutParm, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UMovieJobVariableAssignmentContainer::GetValueText(const class FName& PropertyName, class FText* OutValue) const
@@ -2300,7 +2300,7 @@ bool UMovieJobVariableAssignmentContainer::GetValueText(const class FName& Prope
 // Function MovieRenderPipelineCore.MovieJobVariableAssignmentContainer.GetValueType
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// class FName                             PropertyName                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName&                      PropertyName                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // EMovieGraphValueType                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 EMovieGraphValueType UMovieJobVariableAssignmentContainer::GetValueType(const class FName& PropertyName) const
@@ -2328,7 +2328,7 @@ EMovieGraphValueType UMovieJobVariableAssignmentContainer::GetValueType(const cl
 // Function MovieRenderPipelineCore.MovieJobVariableAssignmentContainer.GetValueTypeObject
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// class FName                             PropertyName                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName&                      PropertyName                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class UObject*                    ReturnValue                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 const class UObject* UMovieJobVariableAssignmentContainer::GetValueTypeObject(const class FName& PropertyName) const
@@ -2381,8 +2381,8 @@ void UMoviePipelineSetting::SetIsEnabled(bool bInEnabled)
 // Function MovieRenderPipelineCore.MoviePipelineSetting.BuildNewProcessCommandLine
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// class FString                           InOutUnrealURLParams                                   (Parm, OutParm, ZeroConstructor, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           InOutCommandLineArgs                                   (Parm, OutParm, ZeroConstructor, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString&                          InOutUnrealURLParams                                   (Parm, OutParm, ZeroConstructor, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString&                          InOutCommandLineArgs                                   (Parm, OutParm, ZeroConstructor, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UMoviePipelineSetting::BuildNewProcessCommandLine(class FString& InOutUnrealURLParams, class FString& InOutCommandLineArgs) const
 {
@@ -2411,10 +2411,10 @@ void UMoviePipelineSetting::BuildNewProcessCommandLine(class FString& InOutUnrea
 // Function MovieRenderPipelineCore.MoviePipelineSetting.BuildNewProcessCommandLineArgs
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// TArray<class FString>                   InOutUnrealURLParams                                   (Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// TArray<class FString>                   InOutCommandLineArgs                                   (Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// TArray<class FString>                   InOutDeviceProfileCvars                                (Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// TArray<class FString>                   InOutExecCmds                                          (Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// TArray<class FString>&                  InOutUnrealURLParams                                   (Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// TArray<class FString>&                  InOutCommandLineArgs                                   (Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// TArray<class FString>&                  InOutDeviceProfileCvars                                (Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// TArray<class FString>&                  InOutExecCmds                                          (Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UMoviePipelineSetting::BuildNewProcessCommandLineArgs(TArray<class FString>& InOutUnrealURLParams, TArray<class FString>& InOutCommandLineArgs, TArray<class FString>& InOutDeviceProfileCvars, TArray<class FString>& InOutExecCmds) const
 {
@@ -2497,7 +2497,7 @@ void UMoviePipelineCollection::AddQuery(class UMoviePipelineCollectionQuery* Que
 // Function MovieRenderPipelineCore.MoviePipelineCollection.SetCollectionName
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FString                           InName                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    InName                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UMoviePipelineCollection::SetCollectionName(const class FString& InName)
 {
@@ -2547,8 +2547,8 @@ class FString UMoviePipelineCollection::GetCollectionName() const
 // Function MovieRenderPipelineCore.MoviePipelineCollection.GetMatchingActors
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// class UWorld*                           World                                                  (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bInvertResult                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UWorld*                     World                                                  (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bInvertResult                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<class AActor*>                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
 TArray<class AActor*> UMoviePipelineCollection::GetMatchingActors(const class UWorld* World, const bool bInvertResult) const
@@ -2602,7 +2602,7 @@ void UMoviePipelineCollectionModifier::AddCollection(class UMoviePipelineCollect
 // Function MovieRenderPipelineCore.MoviePipelineCollectionModifier.SetCollections
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// TArray<class UMoviePipelineCollection*> InCollections                                          (ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+// const TArray<class UMoviePipelineCollection*>&InCollections                                          (ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 
 void UMoviePipelineCollectionModifier::SetCollections(const TArray<class UMoviePipelineCollection*>& InCollections)
 {
@@ -2627,7 +2627,7 @@ void UMoviePipelineCollectionModifier::SetCollections(const TArray<class UMovieP
 // Function MovieRenderPipelineCore.MoviePipelineCollectionModifier.SetIsInverted
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// bool                                    bIsInverted                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bIsInverted                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UMoviePipelineCollectionModifier::SetIsInverted(const bool bIsInverted)
 {
@@ -2702,7 +2702,7 @@ bool UMoviePipelineCollectionModifier::IsInverted() const
 // Function MovieRenderPipelineCore.MoviePipelineMaterialModifier.ApplyModifier
 // (Native, Public, BlueprintCallable)
 // Parameters:
-// class UWorld*                           World                                                  (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UWorld*                     World                                                  (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UMoviePipelineMaterialModifier::ApplyModifier(const class UWorld* World)
 {
@@ -2771,7 +2771,7 @@ void UMoviePipelineMaterialModifier::UndoModifier()
 // Function MovieRenderPipelineCore.MoviePipelineVisibilityModifier.ApplyModifier
 // (Native, Public, BlueprintCallable)
 // Parameters:
-// class UWorld*                           World                                                  (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UWorld*                     World                                                  (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UMoviePipelineVisibilityModifier::ApplyModifier(const class UWorld* World)
 {
@@ -2796,7 +2796,7 @@ void UMoviePipelineVisibilityModifier::ApplyModifier(const class UWorld* World)
 // Function MovieRenderPipelineCore.MoviePipelineVisibilityModifier.SetHidden
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// bool                                    bInIsHidden                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bInIsHidden                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UMoviePipelineVisibilityModifier::SetHidden(const bool bInIsHidden)
 {
@@ -2865,7 +2865,7 @@ bool UMoviePipelineVisibilityModifier::IsHidden() const
 // Function MovieRenderPipelineCore.MoviePipelineCollectionCommonQuery.SetActorNames
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<class FString>                   InActorNames                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TArray<class FString>&            InActorNames                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UMoviePipelineCollectionCommonQuery::SetActorNames(const TArray<class FString>& InActorNames)
 {
@@ -2890,7 +2890,7 @@ void UMoviePipelineCollectionCommonQuery::SetActorNames(const TArray<class FStri
 // Function MovieRenderPipelineCore.MoviePipelineCollectionCommonQuery.SetComponentTypes
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// TArray<class UClass*>                   InComponentTypes                                       (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+// const TArray<class UClass*>&            InComponentTypes                                       (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 
 void UMoviePipelineCollectionCommonQuery::SetComponentTypes(const TArray<class UClass*>& InComponentTypes)
 {
@@ -2915,7 +2915,7 @@ void UMoviePipelineCollectionCommonQuery::SetComponentTypes(const TArray<class U
 // Function MovieRenderPipelineCore.MoviePipelineCollectionCommonQuery.SetQueryMode
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// EMoviePipelineCollectionCommonQueryMode InQueryMode                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const EMoviePipelineCollectionCommonQueryModeInQueryMode                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UMoviePipelineCollectionCommonQuery::SetQueryMode(const EMoviePipelineCollectionCommonQueryMode InQueryMode)
 {
@@ -2940,7 +2940,7 @@ void UMoviePipelineCollectionCommonQuery::SetQueryMode(const EMoviePipelineColle
 // Function MovieRenderPipelineCore.MoviePipelineCollectionCommonQuery.SetTags
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<class FName>                     InTags                                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TArray<class FName>&              InTags                                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UMoviePipelineCollectionCommonQuery::SetTags(const TArray<class FName>& InTags)
 {
@@ -2965,7 +2965,7 @@ void UMoviePipelineCollectionCommonQuery::SetTags(const TArray<class FName>& InT
 // Function MovieRenderPipelineCore.MoviePipelineCollectionCommonQuery.DoesActorMatchQuery
 // (Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// class AActor*                           Actor                                                  (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class AActor*                     Actor                                                  (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UMoviePipelineCollectionCommonQuery::DoesActorMatchQuery(const class AActor* Actor) const
@@ -3018,7 +3018,7 @@ void UMoviePipelineRenderLayer::AddModifier(class UMoviePipelineCollectionModifi
 // Function MovieRenderPipelineCore.MoviePipelineRenderLayer.Preview
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class UWorld*                           World                                                  (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UWorld*                     World                                                  (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UMoviePipelineRenderLayer::Preview(const class UWorld* World)
 {
@@ -3068,7 +3068,7 @@ void UMoviePipelineRenderLayer::RemoveModifier(class UMoviePipelineCollectionMod
 // Function MovieRenderPipelineCore.MoviePipelineRenderLayer.SetRenderLayerName
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FString                           NewName                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    NewName                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UMoviePipelineRenderLayer::SetRenderLayerName(const class FString& NewName)
 {
@@ -3093,7 +3093,7 @@ void UMoviePipelineRenderLayer::SetRenderLayerName(const class FString& NewName)
 // Function MovieRenderPipelineCore.MoviePipelineRenderLayer.UndoPreview
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class UWorld*                           World                                                  (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UWorld*                     World                                                  (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UMoviePipelineRenderLayer::UndoPreview(const class UWorld* World)
 {
@@ -3118,7 +3118,7 @@ void UMoviePipelineRenderLayer::UndoPreview(const class UWorld* World)
 // Function MovieRenderPipelineCore.MoviePipelineRenderLayer.GetCollectionByName
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// class FString                           Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UMoviePipelineCollection*         ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class UMoviePipelineCollection* UMoviePipelineRenderLayer::GetCollectionByName(const class FString& Name_0) const
@@ -3196,7 +3196,7 @@ class FString UMoviePipelineRenderLayer::GetRenderLayerName() const
 // Function MovieRenderPipelineCore.MoviePipelineRenderLayerSubsystem.GetFromWorld
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class UWorld*                           World                                                  (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UWorld*                     World                                                  (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UMoviePipelineRenderLayerSubsystem*ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class UMoviePipelineRenderLayerSubsystem* UMoviePipelineRenderLayerSubsystem::GetFromWorld(const class UWorld* World)
@@ -3384,7 +3384,7 @@ void UMoviePipelineRenderLayerSubsystem::PreviewModifier(class UMoviePipelineCol
 // Function MovieRenderPipelineCore.MoviePipelineRenderLayerSubsystem.RemoveRenderLayer
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FString                           RenderLayerName                                        (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    RenderLayerName                                        (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UMoviePipelineRenderLayerSubsystem::RemoveRenderLayer(const class FString& RenderLayerName)
 {
@@ -3428,7 +3428,7 @@ void UMoviePipelineRenderLayerSubsystem::Reset()
 // Function MovieRenderPipelineCore.MoviePipelineRenderLayerSubsystem.SetActiveRenderLayerByName
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FString                           RenderLayerName                                        (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    RenderLayerName                                        (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UMoviePipelineRenderLayerSubsystem::SetActiveRenderLayerByName(const class FString& RenderLayerName)
 {
@@ -3557,7 +3557,7 @@ void UMoviePipelineSetting_BlueprintBase::ReceiveTeardownForPipelineImpl(class U
 // Function MovieRenderPipelineCore.MoviePipelineSetting_BlueprintBase.ReceiveGetFormatArguments
 // (Native, Event, Public, HasOutParams, BlueprintEvent, Const)
 // Parameters:
-// struct FMoviePipelineFormatArgs         InOutFormatArgs                                        (Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// struct FMoviePipelineFormatArgs&        InOutFormatArgs                                        (Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // struct FMoviePipelineFormatArgs         ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
 struct FMoviePipelineFormatArgs UMoviePipelineSetting_BlueprintBase::ReceiveGetFormatArguments(struct FMoviePipelineFormatArgs& InOutFormatArgs) const
@@ -3651,7 +3651,7 @@ void UMoviePipeline::OnMoviePipelineFinishedImpl()
 // Function MovieRenderPipelineCore.MoviePipeline.SetInitializationTime
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FDateTime                        InDateTime                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FDateTime&                 InDateTime                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UMoviePipeline::SetInitializationTime(const struct FDateTime& InDateTime)
 {
@@ -3832,8 +3832,8 @@ class UMovieSceneSequence* UMoviePipelineBlueprintLibrary::DuplicateSequence(cla
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // TSubclassOf<class UMoviePipelineSetting>InSettingType                                          (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UMoviePipelinePrimaryConfig*      InPrimaryConfig                                        (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UMoviePipelineExecutorShot*       InShot                                                 (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UMoviePipelinePrimaryConfig*InPrimaryConfig                                        (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UMoviePipelineExecutorShot* InShot                                                 (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UMoviePipelineSetting*            ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class UMoviePipelineSetting* UMoviePipelineBlueprintLibrary::FindOrGetDefaultSettingForShot(TSubclassOf<class UMoviePipelineSetting> InSettingType, const class UMoviePipelinePrimaryConfig* InPrimaryConfig, const class UMoviePipelineExecutorShot* InShot)
@@ -3863,7 +3863,7 @@ class UMoviePipelineSetting* UMoviePipelineBlueprintLibrary::FindOrGetDefaultSet
 // Function MovieRenderPipelineCore.MoviePipelineBlueprintLibrary.GetCompletionPercentage
 // (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
-// class UMoviePipeline*                   InPipeline                                             (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UMoviePipeline*             InPipeline                                             (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 float UMoviePipelineBlueprintLibrary::GetCompletionPercentage(const class UMoviePipeline* InPipeline)
@@ -3891,7 +3891,7 @@ float UMoviePipelineBlueprintLibrary::GetCompletionPercentage(const class UMovie
 // Function MovieRenderPipelineCore.MoviePipelineBlueprintLibrary.GetCurrentAperture
 // (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
-// class UMoviePipeline*                   InMoviePipeline                                        (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UMoviePipeline*             InMoviePipeline                                        (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 float UMoviePipelineBlueprintLibrary::GetCurrentAperture(const class UMoviePipeline* InMoviePipeline)
@@ -3919,7 +3919,7 @@ float UMoviePipelineBlueprintLibrary::GetCurrentAperture(const class UMoviePipel
 // Function MovieRenderPipelineCore.MoviePipelineBlueprintLibrary.GetCurrentExecutorShot
 // (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
-// class UMoviePipeline*                   InMoviePipeline                                        (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UMoviePipeline*             InMoviePipeline                                        (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UMoviePipelineExecutorShot*       ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class UMoviePipelineExecutorShot* UMoviePipelineBlueprintLibrary::GetCurrentExecutorShot(const class UMoviePipeline* InMoviePipeline)
@@ -3947,7 +3947,7 @@ class UMoviePipelineExecutorShot* UMoviePipelineBlueprintLibrary::GetCurrentExec
 // Function MovieRenderPipelineCore.MoviePipelineBlueprintLibrary.GetCurrentFocalLength
 // (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
-// class UMoviePipeline*                   InMoviePipeline                                        (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UMoviePipeline*             InMoviePipeline                                        (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 float UMoviePipelineBlueprintLibrary::GetCurrentFocalLength(const class UMoviePipeline* InMoviePipeline)
@@ -3975,7 +3975,7 @@ float UMoviePipelineBlueprintLibrary::GetCurrentFocalLength(const class UMoviePi
 // Function MovieRenderPipelineCore.MoviePipelineBlueprintLibrary.GetCurrentFocusDistance
 // (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
-// class UMoviePipeline*                   InMoviePipeline                                        (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UMoviePipeline*             InMoviePipeline                                        (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 float UMoviePipelineBlueprintLibrary::GetCurrentFocusDistance(const class UMoviePipeline* InMoviePipeline)
@@ -4004,8 +4004,8 @@ float UMoviePipelineBlueprintLibrary::GetCurrentFocusDistance(const class UMovie
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
 // class UMoviePipeline*                   InMoviePipeline                                        (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FText                             OutOuterName                                           (Parm, OutParm, NativeAccessSpecifierPublic)
-// class FText                             OutInnerName                                           (Parm, OutParm, NativeAccessSpecifierPublic)
+// class FText*                            OutOuterName                                           (Parm, OutParm, NativeAccessSpecifierPublic)
+// class FText*                            OutInnerName                                           (Parm, OutParm, NativeAccessSpecifierPublic)
 
 void UMoviePipelineBlueprintLibrary::GetCurrentSegmentName(class UMoviePipeline* InMoviePipeline, class FText* OutOuterName, class FText* OutInnerName)
 {
@@ -4064,7 +4064,7 @@ EMovieRenderShotState UMoviePipelineBlueprintLibrary::GetCurrentSegmentState(cla
 // Function MovieRenderPipelineCore.MoviePipelineBlueprintLibrary.GetCurrentSegmentWorkMetrics
 // (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
-// class UMoviePipeline*                   InMoviePipeline                                        (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UMoviePipeline*             InMoviePipeline                                        (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FMoviePipelineSegmentWorkMetrics ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
 struct FMoviePipelineSegmentWorkMetrics UMoviePipelineBlueprintLibrary::GetCurrentSegmentWorkMetrics(const class UMoviePipeline* InMoviePipeline)
@@ -4092,7 +4092,7 @@ struct FMoviePipelineSegmentWorkMetrics UMoviePipelineBlueprintLibrary::GetCurre
 // Function MovieRenderPipelineCore.MoviePipelineBlueprintLibrary.GetCurrentSequence
 // (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
-// class UMoviePipeline*                   InMoviePipeline                                        (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UMoviePipeline*             InMoviePipeline                                        (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class ULevelSequence*                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class ULevelSequence* UMoviePipelineBlueprintLibrary::GetCurrentSequence(const class UMoviePipeline* InMoviePipeline)
@@ -4120,7 +4120,7 @@ class ULevelSequence* UMoviePipelineBlueprintLibrary::GetCurrentSequence(const c
 // Function MovieRenderPipelineCore.MoviePipelineBlueprintLibrary.GetCurrentShotFrameNumber
 // (Final, Native, Static, Public, HasDefaults, BlueprintCallable, BlueprintPure)
 // Parameters:
-// class UMoviePipeline*                   InMoviePipeline                                        (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UMoviePipeline*             InMoviePipeline                                        (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FFrameNumber                     ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 struct FFrameNumber UMoviePipelineBlueprintLibrary::GetCurrentShotFrameNumber(const class UMoviePipeline* InMoviePipeline)
@@ -4148,7 +4148,7 @@ struct FFrameNumber UMoviePipelineBlueprintLibrary::GetCurrentShotFrameNumber(co
 // Function MovieRenderPipelineCore.MoviePipelineBlueprintLibrary.GetCurrentShotTimecode
 // (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
-// class UMoviePipeline*                   InMoviePipeline                                        (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UMoviePipeline*             InMoviePipeline                                        (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FTimecode                        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 struct FTimecode UMoviePipelineBlueprintLibrary::GetCurrentShotTimecode(const class UMoviePipeline* InMoviePipeline)
@@ -4206,8 +4206,8 @@ struct FIntPoint UMoviePipelineBlueprintLibrary::GetEffectiveOutputResolution(cl
 // Function MovieRenderPipelineCore.MoviePipelineBlueprintLibrary.GetEstimatedTimeRemaining
 // (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure)
 // Parameters:
-// class UMoviePipeline*                   InPipeline                                             (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FTimespan                        OutEstimate                                            (Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UMoviePipeline*             InPipeline                                             (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FTimespan*                       OutEstimate                                            (Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UMoviePipelineBlueprintLibrary::GetEstimatedTimeRemaining(const class UMoviePipeline* InPipeline, struct FTimespan* OutEstimate)
@@ -4266,7 +4266,7 @@ class FText UMoviePipelineBlueprintLibrary::GetJobAuthor(class UMoviePipeline* I
 // Function MovieRenderPipelineCore.MoviePipelineBlueprintLibrary.GetJobInitializationTime
 // (Final, Native, Static, Public, HasDefaults, BlueprintCallable, BlueprintPure)
 // Parameters:
-// class UMoviePipeline*                   InMoviePipeline                                        (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UMoviePipeline*             InMoviePipeline                                        (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FDateTime                        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 struct FDateTime UMoviePipelineBlueprintLibrary::GetJobInitializationTime(const class UMoviePipeline* InMoviePipeline)
@@ -4350,7 +4350,7 @@ class FString UMoviePipelineBlueprintLibrary::GetMapPackageName(class UMoviePipe
 // Function MovieRenderPipelineCore.MoviePipelineBlueprintLibrary.GetMasterFrameNumber
 // (Final, Native, Static, Public, HasDefaults, BlueprintCallable, BlueprintPure)
 // Parameters:
-// class UMoviePipeline*                   InMoviePipeline                                        (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UMoviePipeline*             InMoviePipeline                                        (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FFrameNumber                     ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 struct FFrameNumber UMoviePipelineBlueprintLibrary::GetMasterFrameNumber(const class UMoviePipeline* InMoviePipeline)
@@ -4378,7 +4378,7 @@ struct FFrameNumber UMoviePipelineBlueprintLibrary::GetMasterFrameNumber(const c
 // Function MovieRenderPipelineCore.MoviePipelineBlueprintLibrary.GetMasterTimecode
 // (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
-// class UMoviePipeline*                   InMoviePipeline                                        (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UMoviePipeline*             InMoviePipeline                                        (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FTimecode                        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 struct FTimecode UMoviePipelineBlueprintLibrary::GetMasterTimecode(const class UMoviePipeline* InMoviePipeline)
@@ -4406,7 +4406,7 @@ struct FTimecode UMoviePipelineBlueprintLibrary::GetMasterTimecode(const class U
 // Function MovieRenderPipelineCore.MoviePipelineBlueprintLibrary.GetMoviePipelineEngineChangelistLabel
 // (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
-// class UMoviePipeline*                   InMoviePipeline                                        (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UMoviePipeline*             InMoviePipeline                                        (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FText                             ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
 class FText UMoviePipelineBlueprintLibrary::GetMoviePipelineEngineChangelistLabel(const class UMoviePipeline* InMoviePipeline)
@@ -4434,9 +4434,9 @@ class FText UMoviePipelineBlueprintLibrary::GetMoviePipelineEngineChangelistLabe
 // Function MovieRenderPipelineCore.MoviePipelineBlueprintLibrary.GetOverallOutputFrames
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// class UMoviePipeline*                   InMoviePipeline                                        (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   OutCurrentIndex                                        (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   OutTotalCount                                          (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UMoviePipeline*             InMoviePipeline                                        (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32*                                  OutCurrentIndex                                        (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32*                                  OutTotalCount                                          (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UMoviePipelineBlueprintLibrary::GetOverallOutputFrames(const class UMoviePipeline* InMoviePipeline, int32* OutCurrentIndex, int32* OutTotalCount)
 {
@@ -4467,9 +4467,9 @@ void UMoviePipelineBlueprintLibrary::GetOverallOutputFrames(const class UMoviePi
 // Function MovieRenderPipelineCore.MoviePipelineBlueprintLibrary.GetOverallSegmentCounts
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// class UMoviePipeline*                   InMoviePipeline                                        (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   OutCurrentIndex                                        (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   OutTotalCount                                          (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UMoviePipeline*             InMoviePipeline                                        (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32*                                  OutCurrentIndex                                        (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32*                                  OutTotalCount                                          (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UMoviePipelineBlueprintLibrary::GetOverallSegmentCounts(const class UMoviePipeline* InMoviePipeline, int32* OutCurrentIndex, int32* OutTotalCount)
 {
@@ -4500,7 +4500,7 @@ void UMoviePipelineBlueprintLibrary::GetOverallSegmentCounts(const class UMovieP
 // Function MovieRenderPipelineCore.MoviePipelineBlueprintLibrary.GetPipelineState
 // (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
-// class UMoviePipeline*                   InPipeline                                             (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UMoviePipeline*             InPipeline                                             (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // EMovieRenderPipelineState               ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 EMovieRenderPipelineState UMoviePipelineBlueprintLibrary::GetPipelineState(const class UMoviePipeline* InPipeline)
@@ -4528,7 +4528,7 @@ EMovieRenderPipelineState UMoviePipelineBlueprintLibrary::GetPipelineState(const
 // Function MovieRenderPipelineCore.MoviePipelineBlueprintLibrary.GetRootFrameNumber
 // (Final, Native, Static, Public, HasDefaults, BlueprintCallable, BlueprintPure)
 // Parameters:
-// class UMoviePipeline*                   InMoviePipeline                                        (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UMoviePipeline*             InMoviePipeline                                        (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FFrameNumber                     ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 struct FFrameNumber UMoviePipelineBlueprintLibrary::GetRootFrameNumber(const class UMoviePipeline* InMoviePipeline)
@@ -4556,7 +4556,7 @@ struct FFrameNumber UMoviePipelineBlueprintLibrary::GetRootFrameNumber(const cla
 // Function MovieRenderPipelineCore.MoviePipelineBlueprintLibrary.GetRootTimecode
 // (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
-// class UMoviePipeline*                   InMoviePipeline                                        (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UMoviePipeline*             InMoviePipeline                                        (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FTimecode                        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 struct FTimecode UMoviePipelineBlueprintLibrary::GetRootTimecode(const class UMoviePipeline* InMoviePipeline)
@@ -4584,7 +4584,7 @@ struct FTimecode UMoviePipelineBlueprintLibrary::GetRootTimecode(const class UMo
 // Function MovieRenderPipelineCore.MoviePipelineBlueprintLibrary.LoadManifestFileFromString
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           InManifestFilePath                                     (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    InManifestFilePath                                     (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UMoviePipelineQueue*              ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class UMoviePipelineQueue* UMoviePipelineBlueprintLibrary::LoadManifestFileFromString(const class FString& InManifestFilePath)
@@ -4612,10 +4612,10 @@ class UMoviePipelineQueue* UMoviePipelineBlueprintLibrary::LoadManifestFileFromS
 // Function MovieRenderPipelineCore.MoviePipelineBlueprintLibrary.ResolveFilenameFormatArguments
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class FString                           InFormatString                                         (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FMoviePipelineFilenameResolveParamsInParams                                               (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// class FString                           OutFinalPath                                           (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FMoviePipelineFormatArgs         OutMergedFormatArgs                                    (Parm, OutParm, NativeAccessSpecifierPublic)
+// const class FString&                    InFormatString                                         (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FMoviePipelineFilenameResolveParams&InParams                                               (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// class FString*                          OutFinalPath                                           (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FMoviePipelineFormatArgs*        OutMergedFormatArgs                                    (Parm, OutParm, NativeAccessSpecifierPublic)
 
 void UMoviePipelineBlueprintLibrary::ResolveFilenameFormatArguments(const class FString& InFormatString, const struct FMoviePipelineFilenameResolveParams& InParams, class FString* OutFinalPath, struct FMoviePipelineFormatArgs* OutMergedFormatArgs)
 {
@@ -4647,7 +4647,7 @@ void UMoviePipelineBlueprintLibrary::ResolveFilenameFormatArguments(const class 
 // Function MovieRenderPipelineCore.MoviePipelineBlueprintLibrary.ResolveVersionNumber
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// struct FMoviePipelineFilenameResolveParamsInParams                                               (Parm, NativeAccessSpecifierPublic)
+// const struct FMoviePipelineFilenameResolveParams&InParams                                               (Parm, NativeAccessSpecifierPublic)
 // bool                                    bGetNextVersion                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -4679,7 +4679,7 @@ int32 UMoviePipelineBlueprintLibrary::ResolveVersionNumber(const struct FMoviePi
 // Parameters:
 // class ULevelSequence*                   InSequence                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UMoviePipelineExecutorJob*        InJob                                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bShotsChanged                                          (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool*                                   bShotsChanged                                          (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UMoviePipelineBlueprintLibrary::UpdateJobShotListFromSequence(class ULevelSequence* InSequence, class UMoviePipelineExecutorJob* InJob, bool* bShotsChanged)
 {
@@ -4734,8 +4734,8 @@ void UMoviePipelineConfigBase::CopyFrom(class UMoviePipelineConfigBase* InConfig
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // TSubclassOf<class UMoviePipelineSetting>InClass                                                (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bIncludeDisabledSettings                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bExactMatch                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bIncludeDisabledSettings                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bExactMatch                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UMoviePipelineSetting*            ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class UMoviePipelineSetting* UMoviePipelineConfigBase::FindOrAddSettingByClass(TSubclassOf<class UMoviePipelineSetting> InClass, const bool bIncludeDisabledSettings, const bool bExactMatch)
@@ -4816,8 +4816,8 @@ void UMoviePipelineConfigBase::SetConfigOrigin(class UMoviePipelineConfigBase* I
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // TSubclassOf<class UMoviePipelineSetting>InClass                                                (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bIncludeDisabledSettings                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bExactMatch                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bIncludeDisabledSettings                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bExactMatch                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UMoviePipelineSetting*            ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class UMoviePipelineSetting* UMoviePipelineConfigBase::FindSettingByClass(TSubclassOf<class UMoviePipelineSetting> InClass, const bool bIncludeDisabledSettings, const bool bExactMatch) const
@@ -4848,8 +4848,8 @@ class UMoviePipelineSetting* UMoviePipelineConfigBase::FindSettingByClass(TSubcl
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // TSubclassOf<class UMoviePipelineSetting>InClass                                                (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bIncludeDisabledSettings                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bExactMatch                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bIncludeDisabledSettings                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bExactMatch                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<class UMoviePipelineSetting*>    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
 TArray<class UMoviePipelineSetting*> UMoviePipelineConfigBase::FindSettingsByClass(TSubclassOf<class UMoviePipelineSetting> InClass, const bool bIncludeDisabledSettings, const bool bExactMatch) const
@@ -4967,8 +4967,8 @@ void UMoviePipelineExecutorBase::CancelCurrentJob()
 // Function MovieRenderPipelineCore.MoviePipelineExecutorBase.ConnectSocket
 // (Final, Native, Protected, BlueprintCallable)
 // Parameters:
-// class FString                           InHostName                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   InPort                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    InHostName                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int32                             InPort                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UMoviePipelineExecutorBase::ConnectSocket(const class FString& InHostName, const int32 InPort)
@@ -5062,7 +5062,7 @@ void UMoviePipelineExecutorBase::OnBeginFrame()
 // Parameters:
 // class UMoviePipeline*                   ErroredPipeline                                        (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bFatal                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FText                             ErrorReason                                            (Parm, NativeAccessSpecifierPublic)
+// const class FText&                      ErrorReason                                            (Parm, NativeAccessSpecifierPublic)
 
 void UMoviePipelineExecutorBase::OnExecutorErroredImpl(class UMoviePipeline* ErroredPipeline, bool bFatal, const class FText& ErrorReason)
 {
@@ -5108,10 +5108,10 @@ void UMoviePipelineExecutorBase::OnExecutorFinishedImpl()
 // Function MovieRenderPipelineCore.MoviePipelineExecutorBase.SendHTTPRequest
 // (Final, Native, Protected, HasOutParams, BlueprintCallable)
 // Parameters:
-// class FString                           InURL                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           InVerb                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           InMessage                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TMap<class FString, class FString>      InHeaders                                              (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const class FString&                    InURL                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    InVerb                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    InMessage                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TMap<class FString, class FString>&InHeaders                                              (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 int32 UMoviePipelineExecutorBase::SendHTTPRequest(const class FString& InURL, const class FString& InVerb, const class FString& InMessage, const TMap<class FString, class FString>& InHeaders)
@@ -5142,7 +5142,7 @@ int32 UMoviePipelineExecutorBase::SendHTTPRequest(const class FString& InURL, co
 // Function MovieRenderPipelineCore.MoviePipelineExecutorBase.SendSocketMessage
 // (Final, Native, Protected, BlueprintCallable)
 // Parameters:
-// class FString                           InMessage                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    InMessage                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UMoviePipelineExecutorBase::SendSocketMessage(const class FString& InMessage)
@@ -5195,7 +5195,7 @@ void UMoviePipelineExecutorBase::SetMoviePipelineClass(class UClass* InPipelineC
 // Function MovieRenderPipelineCore.MoviePipelineExecutorBase.SetStatusMessage
 // (Native, Event, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           InStatus                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    InStatus                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UMoviePipelineExecutorBase::SetStatusMessage(const class FString& InStatus)
 {
@@ -5220,7 +5220,7 @@ void UMoviePipelineExecutorBase::SetStatusMessage(const class FString& InStatus)
 // Function MovieRenderPipelineCore.MoviePipelineExecutorBase.SetStatusProgress
 // (Native, Event, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// float                                   InProgress                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             InProgress                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UMoviePipelineExecutorBase::SetStatusProgress(const float InProgress)
 {
@@ -5364,8 +5364,8 @@ void UMoviePipelinePrimaryConfig::InitializeTransientSettings()
 // Function MovieRenderPipelineCore.MoviePipelinePrimaryConfig.GetAllSettings
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// bool                                    bIncludeDisabledSettings                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bIncludeTransientSettings                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bIncludeDisabledSettings                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bIncludeTransientSettings                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<class UMoviePipelineSetting*>    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
 TArray<class UMoviePipelineSetting*> UMoviePipelinePrimaryConfig::GetAllSettings(const bool bIncludeDisabledSettings, const bool bIncludeTransientSettings) const
@@ -5394,7 +5394,7 @@ TArray<class UMoviePipelineSetting*> UMoviePipelinePrimaryConfig::GetAllSettings
 // Function MovieRenderPipelineCore.MoviePipelinePrimaryConfig.GetEffectiveFrameRate
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// class ULevelSequence*                   InSequence                                             (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class ULevelSequence*             InSequence                                             (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FFrameRate                       ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 struct FFrameRate UMoviePipelinePrimaryConfig::GetEffectiveFrameRate(const class ULevelSequence* InSequence) const
@@ -5575,7 +5575,7 @@ void UMoviePipelineExecutorShot::SetGraphConfig(class UMovieGraphConfig* InGraph
 // Function MovieRenderPipelineCore.MoviePipelineExecutorShot.SetGraphPreset
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class UMovieGraphConfig*                InGraphPreset                                          (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UMovieGraphConfig*          InGraphPreset                                          (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UMoviePipelineExecutorShot::SetGraphPreset(const class UMovieGraphConfig* InGraphPreset)
 {
@@ -5650,7 +5650,7 @@ void UMoviePipelineExecutorShot::SetShotOverridePresetOrigin(class UMoviePipelin
 // Function MovieRenderPipelineCore.MoviePipelineExecutorShot.SetStatusMessage
 // (Native, Event, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           InStatus                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    InStatus                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UMoviePipelineExecutorShot::SetStatusMessage(const class FString& InStatus)
 {
@@ -5675,7 +5675,7 @@ void UMoviePipelineExecutorShot::SetStatusMessage(const class FString& InStatus)
 // Function MovieRenderPipelineCore.MoviePipelineExecutorShot.SetStatusProgress
 // (Native, Event, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// float                                   InProgress                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             InProgress                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UMoviePipelineExecutorShot::SetStatusProgress(const float InProgress)
 {
@@ -5972,7 +5972,7 @@ void UMoviePipelineExecutorJob::SetConfiguration(class UMoviePipelinePrimaryConf
 // Function MovieRenderPipelineCore.MoviePipelineExecutorJob.SetConsumed
 // (Native, Event, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                                    bInConsumed                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bInConsumed                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UMoviePipelineExecutorJob::SetConsumed(const bool bInConsumed)
 {
@@ -6022,7 +6022,7 @@ void UMoviePipelineExecutorJob::SetGraphConfig(class UMovieGraphConfig* InGraphC
 // Function MovieRenderPipelineCore.MoviePipelineExecutorJob.SetGraphPreset
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class UMovieGraphConfig*                InGraphPreset                                          (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UMovieGraphConfig*          InGraphPreset                                          (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UMoviePipelineExecutorJob::SetGraphPreset(const class UMovieGraphConfig* InGraphPreset)
 {
@@ -6047,7 +6047,7 @@ void UMoviePipelineExecutorJob::SetGraphPreset(const class UMovieGraphConfig* In
 // Function MovieRenderPipelineCore.MoviePipelineExecutorJob.SetIsEnabled
 // (Native, Event, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                                    bInEnabled                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bInEnabled                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UMoviePipelineExecutorJob::SetIsEnabled(const bool bInEnabled)
 {
@@ -6097,7 +6097,7 @@ void UMoviePipelineExecutorJob::SetPresetOrigin(class UMoviePipelinePrimaryConfi
 // Function MovieRenderPipelineCore.MoviePipelineExecutorJob.SetSequence
 // (Final, Native, Public, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FSoftObjectPath                  InSequence                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FSoftObjectPath&           InSequence                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UMoviePipelineExecutorJob::SetSequence(const struct FSoftObjectPath& InSequence)
 {
@@ -6122,7 +6122,7 @@ void UMoviePipelineExecutorJob::SetSequence(const struct FSoftObjectPath& InSequ
 // Function MovieRenderPipelineCore.MoviePipelineExecutorJob.SetStatusMessage
 // (Native, Event, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           InStatus                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    InStatus                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UMoviePipelineExecutorJob::SetStatusMessage(const class FString& InStatus)
 {
@@ -6147,7 +6147,7 @@ void UMoviePipelineExecutorJob::SetStatusMessage(const class FString& InStatus)
 // Function MovieRenderPipelineCore.MoviePipelineExecutorJob.SetStatusProgress
 // (Native, Event, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// float                                   InProgress                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             InProgress                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UMoviePipelineExecutorJob::SetStatusProgress(const float InProgress)
 {
@@ -6731,7 +6731,7 @@ void UMoviePipelineQueueEngineSubsystem::RenderQueueWithExecutorInstance(class U
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // TSubclassOf<class UMovieRenderDebugWidget>InProgressWidgetClass                                  (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bRenderPlayerViewport                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bRenderPlayerViewport                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UMoviePipelineQueueEngineSubsystem::SetConfiguration(TSubclassOf<class UMovieRenderDebugWidget> InProgressWidgetClass, const bool bRenderPlayerViewport)
 {

@@ -17,23 +17,21 @@
 namespace SDK
 {
 
-// Function Hero_1043.Cue_Ability_Loop_10434101.OnTagChanged
-// (Final, Native, Public, HasOutParams)
+// Function Hero_1043.Ability_104321.OnUltimateDashFinish
+// (Final, Native, Protected)
 // Parameters:
-// struct FGameplayTag                     TagUpdated                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    TagExists                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EDashStopReason                         Reason                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ACue_Ability_Loop_10434101::OnTagChanged(const struct FGameplayTag& TagUpdated, bool TagExists)
+void UAbility_104321::OnUltimateDashFinish(EDashStopReason Reason)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Cue_Ability_Loop_10434101", "OnTagChanged");
+		Func = Class->GetFunction("Ability_104321", "OnUltimateDashFinish");
 
-	Params::Cue_Ability_Loop_10434101_OnTagChanged Parms{};
+	Params::Ability_104321_OnUltimateDashFinish Parms{};
 
-	Parms.TagUpdated = std::move(TagUpdated);
-	Parms.TagExists = TagExists;
+	Parms.Reason = Reason;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -44,24 +42,21 @@ void ACue_Ability_Loop_10434101::OnTagChanged(const struct FGameplayTag& TagUpda
 }
 
 
-// Function Hero_1043.Cue_Ability_Loop_10434101.SetMaterialChangeTimer
-// (Final, Native, Public, HasOutParams)
+// Function Hero_1043.Ability_104321.ServerSetCharacterInput
+// (Net, NetReliable, Native, Event, Protected, NetServer, HasDefaults)
 // Parameters:
-// float                                   ChangeTime                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<class FName>                     MaterialSlotNameArray                                  (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
-// bool                                    NewState                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   CharInput                                              (ConstParm, Parm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ACue_Ability_Loop_10434101::SetMaterialChangeTimer(float ChangeTime, TArray<class FName>* MaterialSlotNameArray, bool NewState)
+void UAbility_104321::ServerSetCharacterInput(const struct FVector& CharInput)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Cue_Ability_Loop_10434101", "SetMaterialChangeTimer");
+		Func = Class->GetFunction("Ability_104321", "ServerSetCharacterInput");
 
-	Params::Cue_Ability_Loop_10434101_SetMaterialChangeTimer Parms{};
+	Params::Ability_104321_ServerSetCharacterInput Parms{};
 
-	Parms.ChangeTime = ChangeTime;
-	Parms.NewState = NewState;
+	Parms.CharInput = std::move(CharInput);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -69,38 +64,6 @@ void ACue_Ability_Loop_10434101::SetMaterialChangeTimer(float ChangeTime, TArray
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-
-	if (MaterialSlotNameArray != nullptr)
-		*MaterialSlotNameArray = std::move(Parms.MaterialSlotNameArray);
-}
-
-
-// Function Hero_1043.Cue_Ability_Loop_10434101.SetMeshMaterials
-// (Final, Native, Public, HasOutParams)
-// Parameters:
-// TArray<class FName>                     MaterialSlotNameArray                                  (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
-// bool                                    NewState                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ACue_Ability_Loop_10434101::SetMeshMaterials(TArray<class FName>* MaterialSlotNameArray, bool NewState)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Cue_Ability_Loop_10434101", "SetMeshMaterials");
-
-	Params::Cue_Ability_Loop_10434101_SetMeshMaterials Parms{};
-
-	Parms.NewState = NewState;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (MaterialSlotNameArray != nullptr)
-		*MaterialSlotNameArray = std::move(Parms.MaterialSlotNameArray);
 }
 
 
@@ -108,7 +71,7 @@ void ACue_Ability_Loop_10434101::SetMeshMaterials(TArray<class FName>* MaterialS
 // (Final, Native, Public, HasOutParams)
 // Parameters:
 // class USkeletalMeshComponent*           MeshComponent                                          (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TMap<int32, class UMaterialInterface*>  CurrentMaterialDict                                    (Parm, OutParm, NativeAccessSpecifierPublic)
+// TMap<int32, class UMaterialInterface*>* CurrentMaterialDict                                    (Parm, OutParm, NativeAccessSpecifierPublic)
 
 void ACue_AbilityLoop_10432101::CreateCustomMaterial(class USkeletalMeshComponent* MeshComponent, TMap<int32, class UMaterialInterface*>* CurrentMaterialDict)
 {
@@ -136,7 +99,7 @@ void ACue_AbilityLoop_10432101::CreateCustomMaterial(class USkeletalMeshComponen
 // Function Hero_1043.Cue_AbilityLoop_10432101.OnTagChanged
 // (Final, Native, Public, HasOutParams)
 // Parameters:
-// struct FGameplayTag                     TagUpdated                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              TagUpdated                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    TagExists                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void ACue_AbilityLoop_10432101::OnTagChanged(const struct FGameplayTag& TagUpdated, bool TagExists)
@@ -190,7 +153,7 @@ void ACue_AbilityLoop_10432101::SetMeshPara(class USkeletalMeshComponent* MeshCo
 // Function Hero_1043.Cue_AbilityLoop_10432101.ShowShadowMesh
 // (Final, Native, Public)
 // Parameters:
-// struct FShadowMesh                      ShadowMeshComponent                                    (Parm, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FShadowMesh&               ShadowMeshComponent                                    (Parm, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 // int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void ACue_AbilityLoop_10432101::ShowShadowMesh(const struct FShadowMesh& ShadowMeshComponent, int32 Index_0)
@@ -214,60 +177,10 @@ void ACue_AbilityLoop_10432101::ShowShadowMesh(const struct FShadowMesh& ShadowM
 }
 
 
-// Function Hero_1043.Ability_104321.OnUltimateDashFinish
-// (Final, Native, Protected)
-// Parameters:
-// EDashStopReason                         Reason                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UAbility_104321::OnUltimateDashFinish(EDashStopReason Reason)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Ability_104321", "OnUltimateDashFinish");
-
-	Params::Ability_104321_OnUltimateDashFinish Parms{};
-
-	Parms.Reason = Reason;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Hero_1043.Ability_104321.ServerSetCharacterInput
-// (Net, NetReliable, Native, Event, Protected, NetServer, HasDefaults)
-// Parameters:
-// struct FVector                          CharInput                                              (ConstParm, Parm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UAbility_104321::ServerSetCharacterInput(const struct FVector& CharInput)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Ability_104321", "ServerSetCharacterInput");
-
-	Params::Ability_104321_ServerSetCharacterInput Parms{};
-
-	Parms.CharInput = std::move(CharInput);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // Function Hero_1043.Ability_104331.OnMoveBlock
 // (Final, Native, Public, HasOutParams)
 // Parameters:
-// struct FHitResult                       Impact                                                 (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FHitResult&                Impact                                                 (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 void UAbility_104331::OnMoveBlock(const struct FHitResult& Impact)
 {
@@ -319,7 +232,7 @@ struct FSelectTaskResult UAbility_104342::GetTarget()
 // Parameters:
 // class AActor*                           InSourceAvatar                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           InTargetAvatar                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FAttributeModifierHandle         ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FAttributeModifierHandle&  ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UAbility_104342::OnKillOtherCall(class AActor* InSourceAvatar, class AActor* InTargetAvatar, const struct FAttributeModifierHandle& ModifierParameterHandle)
 {
@@ -340,6 +253,93 @@ void UAbility_104342::OnKillOtherCall(class AActor* InSourceAvatar, class AActor
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Hero_1043.Cue_Ability_Loop_10434101.OnTagChanged
+// (Final, Native, Public, HasOutParams)
+// Parameters:
+// const struct FGameplayTag&              TagUpdated                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    TagExists                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ACue_Ability_Loop_10434101::OnTagChanged(const struct FGameplayTag& TagUpdated, bool TagExists)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Cue_Ability_Loop_10434101", "OnTagChanged");
+
+	Params::Cue_Ability_Loop_10434101_OnTagChanged Parms{};
+
+	Parms.TagUpdated = std::move(TagUpdated);
+	Parms.TagExists = TagExists;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Hero_1043.Cue_Ability_Loop_10434101.SetMaterialChangeTimer
+// (Final, Native, Public, HasOutParams)
+// Parameters:
+// float                                   ChangeTime                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TArray<class FName>*                    MaterialSlotNameArray                                  (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+// bool                                    NewState                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ACue_Ability_Loop_10434101::SetMaterialChangeTimer(float ChangeTime, TArray<class FName>* MaterialSlotNameArray, bool NewState)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Cue_Ability_Loop_10434101", "SetMaterialChangeTimer");
+
+	Params::Cue_Ability_Loop_10434101_SetMaterialChangeTimer Parms{};
+
+	Parms.ChangeTime = ChangeTime;
+	Parms.NewState = NewState;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (MaterialSlotNameArray != nullptr)
+		*MaterialSlotNameArray = std::move(Parms.MaterialSlotNameArray);
+}
+
+
+// Function Hero_1043.Cue_Ability_Loop_10434101.SetMeshMaterials
+// (Final, Native, Public, HasOutParams)
+// Parameters:
+// TArray<class FName>*                    MaterialSlotNameArray                                  (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+// bool                                    NewState                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ACue_Ability_Loop_10434101::SetMeshMaterials(TArray<class FName>* MaterialSlotNameArray, bool NewState)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Cue_Ability_Loop_10434101", "SetMeshMaterials");
+
+	Params::Cue_Ability_Loop_10434101_SetMeshMaterials Parms{};
+
+	Parms.NewState = NewState;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (MaterialSlotNameArray != nullptr)
+		*MaterialSlotNameArray = std::move(Parms.MaterialSlotNameArray);
 }
 
 
@@ -422,7 +422,7 @@ void UAbility_Glide::EndGlideTask()
 // Function Hero_1043.Ability_Glide.OnMoveBlock
 // (Final, Native, Public, HasOutParams)
 // Parameters:
-// struct FHitResult                       Impact                                                 (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FHitResult&                Impact                                                 (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 void UAbility_Glide::OnMoveBlock(const struct FHitResult& Impact)
 {
@@ -612,7 +612,7 @@ void UStarlordAnimInstance::UpdateDoubleJumpingFlag(bool NewState)
 // Function Hero_1043.StarlordCharacter.AssignDeathCueTag
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FGameplayTag                     InDeathCue                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              InDeathCue                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void AStarlordCharacter::AssignDeathCueTag(const struct FGameplayTag& InDeathCue)
 {
@@ -662,7 +662,7 @@ struct FVector AStarlordCharacter::GetCharacterInput()
 // Function Hero_1043.StarlordCharacter.SetCharacterInput
 // (Final, Native, Public, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FVector                          CharInput                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   CharInput                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void AStarlordCharacter::SetCharacterInput(const struct FVector& CharInput)
 {

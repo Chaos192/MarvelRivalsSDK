@@ -12,8 +12,8 @@
 
 #include "GameplayTags_structs.hpp"
 #include "CoreUObject_structs.hpp"
-#include "python_enums_structs.hpp"
 #include "Marvel_structs.hpp"
+#include "python_enums_structs.hpp"
 #include "Engine_structs.hpp"
 
 
@@ -338,7 +338,7 @@ struct PyShowActorBase_SetCustomBoneChain final
 {
 public:
 	class USkeletalMeshComponent*                 Mesh;                                              // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	TArray<struct FShowActorCustomPhysicsBlendConfig> PhysicsConfigs;                                    // 0x0008(0x0010)(ConstParm, Parm, OutParm, ReferenceParm)
+	TArray<struct FShowActorCustomPhysicsBlendConfig> PhysicsConfigs;                                // 0x0008(0x0010)(ConstParm, Parm, OutParm, ReferenceParm)
 };
 
 // PythonFunction PyShowActorBase.PyShowActorBase.CallExtensionFunction

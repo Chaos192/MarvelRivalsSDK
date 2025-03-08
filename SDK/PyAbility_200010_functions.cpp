@@ -17,103 +17,6 @@
 namespace SDK
 {
 
-// PythonFunction PyAbility_200010.PyAbility_200010.BeginPlay
-// (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
-
-void UPyAbility_200010::BeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PyAbility_200010", "BeginPlay");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// PythonFunction PyAbility_200010.PyAbility_200010.K2_ActivateAbility
-// (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
-
-void UPyAbility_200010::K2_ActivateAbility()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PyAbility_200010", "K2_ActivateAbility");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// PythonFunction PyAbility_200010.PyAbility_200010.K2_OnEndAbility
-// (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                                    bWasCancelled                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UPyAbility_200010::K2_OnEndAbility(bool bWasCancelled)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PyAbility_200010", "K2_OnEndAbility");
-
-	Params::PyAbility_200010_K2_OnEndAbility Parms{};
-
-	Parms.bWasCancelled = bWasCancelled;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// PythonFunction PyAbility_200010.PyAbility_200010.K2_CanActivateAbility
-// (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
-// Parameters:
-// struct FGameplayAbilityActorInfo        ActorInfo                                              (Parm)
-// struct FGameplayAbilitySpecHandle       Handle                                                 (ConstParm, Parm, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayTagContainer            RelevantTags                                           (Parm, OutParm)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-bool UPyAbility_200010::K2_CanActivateAbility(const struct FGameplayAbilityActorInfo& ActorInfo, const struct FGameplayAbilitySpecHandle& Handle, struct FGameplayTagContainer* RelevantTags) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PyAbility_200010", "K2_CanActivateAbility");
-
-	Params::PyAbility_200010_K2_CanActivateAbility Parms{};
-
-	Parms.ActorInfo = std::move(ActorInfo);
-	Parms.Handle = std::move(Handle);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (RelevantTags != nullptr)
-		*RelevantTags = std::move(Parms.RelevantTags);
-
-	return Parms.ReturnValue;
-}
-
-
 // PythonFunction PyAbility_200010.PyUIController_200010.OnInit
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 
@@ -149,6 +52,116 @@ void UPyUIController_200010::OnDestruct()
 	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
+}
+
+
+// PythonFunction PyAbility_200010.PyAbility_200010.BeginPlay
+// (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
+
+void UPyAbility_200010::BeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyAbility_200010", "BeginPlay");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// PythonFunction PyAbility_200010.PyAbility_200010.OnRep_CurrentPortal
+// (Native, Public, BlueprintCallable)
+
+void UPyAbility_200010::OnRep_CurrentPortal()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyAbility_200010", "OnRep_CurrentPortal");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// PythonFunction PyAbility_200010.PyAbility_200010.K2_ActivateAbility
+// (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
+
+void UPyAbility_200010::K2_ActivateAbility()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyAbility_200010", "K2_ActivateAbility");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// PythonFunction PyAbility_200010.PyAbility_200010.RecoverDelegate
+// (Native, Public, BlueprintCallable)
+
+void UPyAbility_200010::RecoverDelegate()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyAbility_200010", "RecoverDelegate");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// PythonFunction PyAbility_200010.PyAbility_200010.K2_CanActivateAbility
+// (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
+// Parameters:
+// const struct FGameplayAbilityActorInfo& ActorInfo                                              (Parm)
+// const struct FGameplayAbilitySpecHandle&Handle                                                 (ConstParm, Parm, NoDestructor, HasGetValueTypeHash)
+// struct FGameplayTagContainer*           RelevantTags                                           (Parm, OutParm)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+bool UPyAbility_200010::K2_CanActivateAbility(const struct FGameplayAbilityActorInfo& ActorInfo, const struct FGameplayAbilitySpecHandle& Handle, struct FGameplayTagContainer* RelevantTags) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyAbility_200010", "K2_CanActivateAbility");
+
+	Params::PyAbility_200010_K2_CanActivateAbility Parms{};
+
+	Parms.ActorInfo = std::move(ActorInfo);
+	Parms.Handle = std::move(Handle);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (RelevantTags != nullptr)
+		*RelevantTags = std::move(Parms.RelevantTags);
+
+	return Parms.ReturnValue;
 }
 
 }

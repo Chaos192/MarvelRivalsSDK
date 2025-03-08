@@ -20,7 +20,7 @@ namespace SDK
 // Function MarvelPlayerControllerBP.MarvelPlayerControllerBP_C.ShowMessageToChatPanelWithType
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// class FString                           Message                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Message                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // int32                                   Type                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void AMarvelPlayerControllerBP_C::ShowMessageToChatPanelWithType(const class FString& Message, int32 Type)
@@ -42,7 +42,7 @@ void AMarvelPlayerControllerBP_C::ShowMessageToChatPanelWithType(const class FSt
 // Function MarvelPlayerControllerBP.MarvelPlayerControllerBP_C.ShowMessageToChatPanel
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// class FString                           Message                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Message                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void AMarvelPlayerControllerBP_C::ShowMessageToChatPanel(const class FString& Message)
 {
@@ -62,7 +62,7 @@ void AMarvelPlayerControllerBP_C::ShowMessageToChatPanel(const class FString& Me
 // Function MarvelPlayerControllerBP.MarvelPlayerControllerBP_C.SendCmdToPython
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// class FString                           Command                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Command                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void AMarvelPlayerControllerBP_C::SendCmdToPython(const class FString& Command)
 {
@@ -82,7 +82,7 @@ void AMarvelPlayerControllerBP_C::SendCmdToPython(const class FString& Command)
 // Function MarvelPlayerControllerBP.MarvelPlayerControllerBP_C.IsActiveAbility
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                                    Abiliting                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool*                                   Abiliting                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void AMarvelPlayerControllerBP_C::IsActiveAbility(bool* Abiliting)
 {
@@ -103,7 +103,7 @@ void AMarvelPlayerControllerBP_C::IsActiveAbility(bool* Abiliting)
 // Function MarvelPlayerControllerBP.MarvelPlayerControllerBP_C.InpActEvt_AbilityInstruction_K2Node_InputActionEvent_1
 // (BlueprintEvent)
 // Parameters:
-// struct FKey                             Key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
+// const struct FKey&                      Key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
 
 void AMarvelPlayerControllerBP_C::InpActEvt_AbilityInstruction_K2Node_InputActionEvent_1(const struct FKey& Key)
 {
@@ -123,7 +123,7 @@ void AMarvelPlayerControllerBP_C::InpActEvt_AbilityInstruction_K2Node_InputActio
 // Function MarvelPlayerControllerBP.MarvelPlayerControllerBP_C.InpActEvt_AbilityInstruction_K2Node_InputActionEvent_0
 // (BlueprintEvent)
 // Parameters:
-// struct FKey                             Key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
+// const struct FKey&                      Key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
 
 void AMarvelPlayerControllerBP_C::InpActEvt_AbilityInstruction_K2Node_InputActionEvent_0(const struct FKey& Key)
 {
@@ -143,7 +143,7 @@ void AMarvelPlayerControllerBP_C::InpActEvt_AbilityInstruction_K2Node_InputActio
 // Function MarvelPlayerControllerBP.MarvelPlayerControllerBP_C.InpActEvt_Ability2_K2Node_InputActionEvent_2
 // (BlueprintEvent)
 // Parameters:
-// struct FKey                             Key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
+// const struct FKey&                      Key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
 
 void AMarvelPlayerControllerBP_C::InpActEvt_Ability2_K2Node_InputActionEvent_2(const struct FKey& Key)
 {
@@ -163,7 +163,7 @@ void AMarvelPlayerControllerBP_C::InpActEvt_Ability2_K2Node_InputActionEvent_2(c
 // Function MarvelPlayerControllerBP.MarvelPlayerControllerBP_C.InpActEvt_Ability1_K2Node_InputActionEvent_3
 // (BlueprintEvent)
 // Parameters:
-// struct FKey                             Key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
+// const struct FKey&                      Key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
 
 void AMarvelPlayerControllerBP_C::InpActEvt_Ability1_K2Node_InputActionEvent_3(const struct FKey& Key)
 {
@@ -203,7 +203,7 @@ void AMarvelPlayerControllerBP_C::ExecuteUbergraph_MarvelPlayerControllerBP(int3
 // Function MarvelPlayerControllerBP.MarvelPlayerControllerBP_C.EventTellClientMsg
 // (Net, NetReliable, NetClient, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FText                             Message                                                (BlueprintVisible, BlueprintReadOnly, Parm)
+// const class FText&                      Message                                                (BlueprintVisible, BlueprintReadOnly, Parm)
 
 void AMarvelPlayerControllerBP_C::EventTellClientMsg(const class FText& Message)
 {

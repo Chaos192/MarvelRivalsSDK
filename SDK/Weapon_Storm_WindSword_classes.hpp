@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Weapon_Storm_WindSword.Weapon_Storm_WindSword_C
-// 0x0000 (0x0C90 - 0x0C90)
+// 0x0000 (0x0C80 - 0x0C80)
 class AWeapon_Storm_WindSword_C final : public AShootingWeapon
 {
 public:

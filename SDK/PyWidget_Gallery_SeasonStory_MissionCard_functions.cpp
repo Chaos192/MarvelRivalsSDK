@@ -16,15 +16,15 @@
 namespace SDK
 {
 
-// PythonFunction PyWidget_Gallery_SeasonStory_MissionCard.PyWidget_Gallery_SeasonStory_MissionCard.Construct
+// PythonFunction PyWidget_Gallery_SeasonStory_MissionCard.PyWidget_Gallery_SeasonStory_MissionCard.Destruct
 // (BlueprintCosmetic, Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 
-void UPyWidget_Gallery_SeasonStory_MissionCard::Construct()
+void UPyWidget_Gallery_SeasonStory_MissionCard::Destruct()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PyWidget_Gallery_SeasonStory_MissionCard", "Construct");
+		Func = Class->GetFunction("PyWidget_Gallery_SeasonStory_MissionCard", "Destruct");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -35,15 +35,15 @@ void UPyWidget_Gallery_SeasonStory_MissionCard::Construct()
 }
 
 
-// PythonFunction PyWidget_Gallery_SeasonStory_MissionCard.PyWidget_Gallery_SeasonStory_MissionCard.Destruct
+// PythonFunction PyWidget_Gallery_SeasonStory_MissionCard.PyWidget_Gallery_SeasonStory_MissionCard.Construct
 // (BlueprintCosmetic, Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 
-void UPyWidget_Gallery_SeasonStory_MissionCard::Destruct()
+void UPyWidget_Gallery_SeasonStory_MissionCard::Construct()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PyWidget_Gallery_SeasonStory_MissionCard", "Destruct");
+		Func = Class->GetFunction("PyWidget_Gallery_SeasonStory_MissionCard", "Construct");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

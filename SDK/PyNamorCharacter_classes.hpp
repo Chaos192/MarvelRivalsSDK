@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // PythonClass PyNamorCharacter.PyNamorCharacter
-// 0x0000 (0x1850 - 0x1850)
+// 0x0000 (0x18A0 - 0x18A0)
 class APyNamorCharacter : public ANamorCharacter
 {
 public:

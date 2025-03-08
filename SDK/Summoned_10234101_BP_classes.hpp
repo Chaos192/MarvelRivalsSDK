@@ -17,12 +17,12 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Summoned_10234101_BP.Summoned_10234101_BP_C
-// 0x0010 (0x0930 - 0x0920)
+// 0x0010 (0x0960 - 0x0950)
 class ASummoned_10234101_BP_C final : public ASummoned_10234101
 {
 public:
-	class UNavEffectBoxComponent*                 NavEffectBox;                                      // 0x0920(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UMarvelNavModifierComponent*            MarvelNavModifier;                                 // 0x0928(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UNavEffectBoxComponent*                 NavEffectBox;                                      // 0x0950(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UMarvelNavModifierComponent*            MarvelNavModifier;                                 // 0x0958(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

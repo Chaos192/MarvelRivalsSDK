@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass WC_CharacterArrowBP.WC_CharacterArrowBP_C
-// 0x0000 (0x0B10 - 0x0B10)
+// 0x0000 (0x0BA0 - 0x0BA0)
 class UWC_CharacterArrowBP_C final : public UMarvelWidgetComponent
 {
 public:

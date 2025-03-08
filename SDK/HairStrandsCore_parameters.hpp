@@ -29,7 +29,7 @@ public:
 struct GroomAsset_GetHairGroupsCards final
 {
 public:
-	TArray<struct FHairGroupsCardsSourceDescription> ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+	TArray<struct FHairGroupsCardsSourceDescription> ReturnValue;                                    // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 };
 
 // Function HairStrandsCore.GroomAsset.GetHairGroupsInterpolation
@@ -61,7 +61,7 @@ public:
 struct GroomAsset_GetHairGroupsMeshes final
 {
 public:
-	TArray<struct FHairGroupsMeshesSourceDescription> ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+	TArray<struct FHairGroupsMeshesSourceDescription> ReturnValue;                                   // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 };
 
 // Function HairStrandsCore.GroomAsset.GetHairGroupsPhysics
@@ -109,7 +109,7 @@ public:
 struct GroomAsset_SetHairGroupsCards final
 {
 public:
-	TArray<struct FHairGroupsCardsSourceDescription> In;                                                // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TArray<struct FHairGroupsCardsSourceDescription> In;                                             // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 };
 
 // Function HairStrandsCore.GroomAsset.SetHairGroupsInterpolation
@@ -141,7 +141,7 @@ public:
 struct GroomAsset_SetHairGroupsMeshes final
 {
 public:
-	TArray<struct FHairGroupsMeshesSourceDescription> In;                                                // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TArray<struct FHairGroupsMeshesSourceDescription> In;                                            // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 };
 
 // Function HairStrandsCore.GroomAsset.SetHairGroupsPhysics

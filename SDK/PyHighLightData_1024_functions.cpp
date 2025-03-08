@@ -60,8 +60,8 @@ void UPyHighLightData_1024::K2_Shutdown()
 // Parameters:
 // class AActor*                           Killer                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // class AActor*                           Target                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FAttributeModifierHandle         ParmaHandle                                            (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
-// struct FGlobalEventExtraData            ExtraData                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
+// const struct FAttributeModifierHandle&  ParmaHandle                                            (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
+// const struct FGlobalEventExtraData&     ExtraData                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
 
 void UPyHighLightData_1024::OnActorDeath(class AActor* Killer, class AActor* Target, const struct FAttributeModifierHandle& ParmaHandle, const struct FGlobalEventExtraData& ExtraData)
 {
@@ -91,8 +91,8 @@ void UPyHighLightData_1024::OnActorDeath(class AActor* Killer, class AActor* Tar
 // Parameters:
 // class AActor*                           SourceActor                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // class UMarvelGameplayAbility*           SourceAbility                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FMarvelTargetActorGenerateInfo   GenerateInfo                                           (ConstParm, Parm, OutParm, ReferenceParm)
-// struct FEndAgentTaskInfo                AgentTaskInfo                                          (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
+// const struct FMarvelTargetActorGenerateInfo&GenerateInfo                                           (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FEndAgentTaskInfo&         AgentTaskInfo                                          (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
 
 void UPyHighLightData_1024::OnTargetActorRecycleAgentTask(class AActor* SourceActor, class UMarvelGameplayAbility* SourceAbility, const struct FMarvelTargetActorGenerateInfo& GenerateInfo, const struct FEndAgentTaskInfo& AgentTaskInfo)
 {

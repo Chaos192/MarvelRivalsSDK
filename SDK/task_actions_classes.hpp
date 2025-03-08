@@ -357,12 +357,14 @@ public:
 };
 
 // PythonClass task_actions.PyTaskAction_ReadStories
-// 0x0018 (0x0050 - 0x0038)
+// 0x0028 (0x0060 - 0x0038)
 class UPyTaskAction_ReadStories final : public UMarvelTaskActionBase
 {
 public:
 	TArray<int32>                                 spec_heros;                                        // 0x0038(0x0010)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	bool                                          is_bond_story;                                     // 0x0048(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_49[0x7];                                       // 0x0049(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<int32>                                 limit_stories;                                     // 0x0050(0x0010)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()

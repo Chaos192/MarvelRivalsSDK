@@ -11,12 +11,12 @@
 #include "Basic.hpp"
 
 #include "MarvelAI_structs.hpp"
-#include "UESVON_structs.hpp"
 #include "AIModule_structs.hpp"
-#include "Engine_structs.hpp"
 #include "Marvel_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "UESVON_structs.hpp"
 #include "GameplayTags_structs.hpp"
+#include "Engine_structs.hpp"
 #include "GameplayAbilities_structs.hpp"
 #include "InputRecord_structs.hpp"
 
@@ -46,52 +46,6 @@ public:
 	struct FAIServerResponseCode                  AIServerResponseCode;                              // 0x0038(0x0001)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 	uint8                                         Pad_39[0x7];                                       // 0x0039(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class AMarvelAIController*                    AIController;                                      // 0x0040(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function MarvelAI.BTDecorator_MarvelInstancedBase.K2_GetControlledHero
-// 0x0008 (0x0008 - 0x0000)
-struct BTDecorator_MarvelInstancedBase_K2_GetControlledHero final
-{
-public:
-	class AMarvelBaseCharacter*                   ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function MarvelAI.BTDecorator_MarvelInstancedBase.K2_GetControlledPawn
-// 0x0008 (0x0008 - 0x0000)
-struct BTDecorator_MarvelInstancedBase_K2_GetControlledPawn final
-{
-public:
-	class APawn*                                  ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function MarvelAI.BTDecorator_MarvelInstancedBase.K2_GetMarvelAIOwner
-// 0x0008 (0x0008 - 0x0000)
-struct BTDecorator_MarvelInstancedBase_K2_GetMarvelAIOwner final
-{
-public:
-	class AMarvelAIController*                    ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function MarvelAI.BTDecorator_MarvelInstancedBase.K2_GetOwnerBTComp
-// 0x0008 (0x0008 - 0x0000)
-struct BTDecorator_MarvelInstancedBase_K2_GetOwnerBTComp final
-{
-public:
-	class UBehaviorTreeComponent*                 ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function MarvelAI.BTD_PayloadCheck.Check
-// 0x0014 (0x0014 - 0x0000)
-struct BTD_PayloadCheck_Check final
-{
-public:
-	int32                                         Stage;                                             // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Score;                                             // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Speed;                                             // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Team;                                              // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EOwnershipType                                Ownership;                                         // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0011(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_12[0x2];                                       // 0x0012(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 
 // Function MarvelAI.StandPointBase.BindController
@@ -239,6 +193,17 @@ public:
 	const class AActor*                           SummonerActor;                                     // 0x0038(0x0008)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0040(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_41[0x7];                                       // 0x0041(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+
+// Function MarvelAI.ActionRequirementBase.Requirement
+// 0x0018 (0x0018 - 0x0000)
+struct ActionRequirementBase_Requirement final
+{
+public:
+	class AAIController*                          OwnerController;                                   // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AActor*                                 ControlledPawn;                                    // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 
 // Function MarvelAI.AIAbilityExecutorManagerComponent.ActivateAbility
@@ -399,6 +364,99 @@ public:
 	class UAIAbilityExecutor*                     Executor;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
+// Function MarvelAI.BTS_SendChatMessage.GetAIUserName
+// 0x0018 (0x0018 - 0x0000)
+struct BTS_SendChatMessage_GetAIUserName final
+{
+public:
+	class AActor*                                 Target;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0008(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function MarvelAI.BTS_SendChatMessage.OnAllDeath
+// 0x0028 (0x0028 - 0x0000)
+struct BTS_SendChatMessage_OnAllDeath final
+{
+public:
+	struct FAIEventArgs                           Args;                                              // 0x0000(0x0028)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+
+// Function MarvelAI.BTS_SendChatMessage.OnDeath
+// 0x0028 (0x0028 - 0x0000)
+struct BTS_SendChatMessage_OnDeath final
+{
+public:
+	struct FAIEventArgs                           Args;                                              // 0x0000(0x0028)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+
+// Function MarvelAI.BTS_SendChatMessage.OnEnergyFull
+// 0x0028 (0x0028 - 0x0000)
+struct BTS_SendChatMessage_OnEnergyFull final
+{
+public:
+	struct FAIEventArgs                           Args;                                              // 0x0000(0x0028)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+
+// Function MarvelAI.BTS_SendChatMessage.OnGameBegin
+// 0x0028 (0x0028 - 0x0000)
+struct BTS_SendChatMessage_OnGameBegin final
+{
+public:
+	struct FAIEventArgs                           Args;                                              // 0x0000(0x0028)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+
+// Function MarvelAI.BTS_SendChatMessage.OnGameEnd
+// 0x0028 (0x0028 - 0x0000)
+struct BTS_SendChatMessage_OnGameEnd final
+{
+public:
+	struct FAIEventArgs                           Args;                                              // 0x0000(0x0028)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+
+// Function MarvelAI.BTS_SendChatMessage.OnHeal
+// 0x0028 (0x0028 - 0x0000)
+struct BTS_SendChatMessage_OnHeal final
+{
+public:
+	struct FAIEventArgs                           Args;                                              // 0x0000(0x0028)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+
+// Function MarvelAI.BTS_SendChatMessage.OnHealthChanged
+// 0x0028 (0x0028 - 0x0000)
+struct BTS_SendChatMessage_OnHealthChanged final
+{
+public:
+	struct FAIEventArgs                           Args;                                              // 0x0000(0x0028)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+
+// Function MarvelAI.BTS_SendChatMessage.SendChatMessage
+// 0x0018 (0x0018 - 0x0000)
+struct BTS_SendChatMessage_SendChatMessage final
+{
+public:
+	class FString                                 msg;                                               // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AActor*                                 Target;                                            // 0x0010(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function MarvelAI.BTS_SendChatMessage.SendMessage
+// 0x0078 (0x0078 - 0x0000)
+struct BTS_SendChatMessage_SendMessage final
+{
+public:
+	struct FAICommunicateEx                       Communicate;                                       // 0x0000(0x0070)(Parm, OutParm, NativeAccessSpecifierPublic)
+	class AActor*                                 Target;                                            // 0x0070(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function MarvelAI.BTS_SendChatMessage.SendQuickMessage
+// 0x0010 (0x0010 - 0x0000)
+struct BTS_SendChatMessage_SendQuickMessage final
+{
+public:
+	int32                                         ID;                                                // 0x0000(0x0004)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class AActor*                                 Target;                                            // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
 // Function MarvelAI.AIAbilityExitStageLogic.GetAbilityExitStageLogic
 // 0x0018 (0x0018 - 0x0000)
 struct AIAbilityExitStageLogic_GetAbilityExitStageLogic final
@@ -420,14 +478,14 @@ public:
 	uint8                                         Pad_F1[0x7];                                       // 0x00F1(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 
-// Function MarvelAI.BTS_UpdateFireLine.IsActorInFireLineState
-// 0x0010 (0x0010 - 0x0000)
-struct BTS_UpdateFireLine_IsActorInFireLineState final
+// Function MarvelAI.BTS_SelectTargetNew.OnTargetTakingDamage
+// 0x0028 (0x0028 - 0x0000)
+struct BTS_SelectTargetNew_OnTargetTakingDamage final
 {
 public:
-	const class AMarvelBaseCharacter*             Character;                                         // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class AActor*                                 InSourceAvatar;                                    // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AActor*                                 InTargetAvatar;                                    // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FAttributeModifierHandle               ModifierParameterHandle;                           // 0x0010(0x0018)(ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
 // Function MarvelAI.AIAbilityFlowCheckLogicBase.GetAbilityFlowCheckLogic
@@ -436,7 +494,7 @@ struct AIAbilityFlowCheckLogicBase_GetAbilityFlowCheckLogic final
 {
 public:
 	class AMarvelAIController*                    MarvelAIOwner;                                     // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TSubclassOf<class UAIAbilityFlowCheckLogicBase> CheckLogicClass;                                   // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSubclassOf<class UAIAbilityFlowCheckLogicBase> CheckLogicClass;                                 // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UAIAbilityFlowCheckLogicBase*           ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -449,6 +507,46 @@ public:
 	class AMarvelAIController*                    OwnerController;                                   // 0x00E8(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x00F0(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_F1[0x7];                                       // 0x00F1(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+
+// Function MarvelAI.BTS_UpdateMatchState_New.OnMatchStateChange
+// 0x0001 (0x0001 - 0x0000)
+struct BTS_UpdateMatchState_New_OnMatchStateChange final
+{
+public:
+	EMatchState                                   NewState;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function MarvelAI.BTS_UpdateEscortStateNew.GetPayloadOwnership
+// 0x0001 (0x0001 - 0x0000)
+struct BTS_UpdateEscortStateNew_GetPayloadOwnership final
+{
+public:
+	EOwnershipType                                ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function MarvelAI.BTS_UpdateEscortStateNew.GetPayLoadProgress
+// 0x0004 (0x0004 - 0x0000)
+struct BTS_UpdateEscortStateNew_GetPayLoadProgress final
+{
+public:
+	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function MarvelAI.BTS_UpdateEscortStateNew.GetPayLoadSpeed
+// 0x0004 (0x0004 - 0x0000)
+struct BTS_UpdateEscortStateNew_GetPayLoadSpeed final
+{
+public:
+	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function MarvelAI.BTS_UpdateEscortStateNew.SetCurrentStage
+// 0x0010 (0x0010 - 0x0000)
+struct BTS_UpdateEscortStateNew_SetCurrentStage final
+{
+public:
+	class FString                                 StageName;                                         // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
 // Function MarvelAI.AIMoveControlLogic.GetMoveControlLogic
@@ -529,9 +627,9 @@ public:
 	uint8                                         Pad_FD[0x3];                                       // 0x00FD(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 
-// Function MarvelAI.BTS_UpdateMatchState_New.OnMatchStateChange
+// Function MarvelAI.BTS_UpdateMatchState.OnMatchStateChange
 // 0x0001 (0x0001 - 0x0000)
-struct BTS_UpdateMatchState_New_OnMatchStateChange final
+struct BTS_UpdateMatchState_OnMatchStateChange final
 {
 public:
 	EMatchState                                   NewState;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -561,27 +659,133 @@ public:
 	class UMarvelGameplayAbility*                 SourceAbility;                                     // 0x0020(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
+// Function MarvelAI.BTS_UpdateControlState.GetCampControlState
+// 0x0010 (0x0010 - 0x0000)
+struct BTS_UpdateControlState_GetCampControlState final
+{
+public:
+	class AMarvelBaseCharacter*                   OwnerCharacter;                                    // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EAIFilterSide                                 ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+
+// Function MarvelAI.BTS_UpdateControlState.GetCampProgress
+// 0x0018 (0x0018 - 0x0000)
+struct BTS_UpdateControlState_GetCampProgress final
+{
+public:
+	class AMarvelBaseCharacter*                   OwnerCharacter;                                    // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<float>                                 ReturnValue;                                       // 0x0008(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+};
+
 // Function MarvelAI.AIAbilitySelectCheckBase.ReceivePostCheck
-// 0x0390 (0x0390 - 0x0000)
+// 0x0380 (0x0380 - 0x0000)
 struct AIAbilitySelectCheckBase_ReceivePostCheck final
 {
 public:
 	struct FRequiredAIDataForAutoAbility          RequiredData;                                      // 0x0000(0x0038)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-	struct FMarvelAIAutoAbilityTable              AbilityConfig;                                     // 0x0038(0x0268)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	struct FAIAbilityUsage                        AbilityUsage;                                      // 0x02A0(0x00E8)(ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0388(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_389[0x7];                                      // 0x0389(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FMarvelAIAutoAbilityTable              AbilityConfig;                                     // 0x0038(0x0258)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	struct FAIAbilityUsage                        AbilityUsage;                                      // 0x0290(0x00E8)(ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0378(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_379[0x7];                                      // 0x0379(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 
 // Function MarvelAI.AIAbilitySelectCheckBase.ReceivePreCheck
-// 0x02A8 (0x02A8 - 0x0000)
+// 0x0298 (0x0298 - 0x0000)
 struct AIAbilitySelectCheckBase_ReceivePreCheck final
 {
 public:
 	struct FRequiredAIDataForAutoAbility          RequiredData;                                      // 0x0000(0x0038)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-	struct FMarvelAIAutoAbilityTable              AbilityConfig;                                     // 0x0038(0x0268)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x02A0(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2A1[0x7];                                      // 0x02A1(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FMarvelAIAutoAbilityTable              AbilityConfig;                                     // 0x0038(0x0258)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0290(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_291[0x7];                                      // 0x0291(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+
+// Function MarvelAI.AISelectTargetLogicBase.GetSelectTargetLogicObject
+// 0x0018 (0x0018 - 0x0000)
+struct AISelectTargetLogicBase_GetSelectTargetLogicObject final
+{
+public:
+	class AMarvelAIController*                    MarvelAIOwner;                                     // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSubclassOf<class UAISelectTargetLogicBase>   SelectLogicClass;                                  // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UAISelectTargetLogicBase*               ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function MarvelAI.AISelectTargetLogicBase.CheckMissAndAddMissOffset
+// 0x0158 (0x0158 - 0x0000)
+struct AISelectTargetLogicBase_CheckMissAndAddMissOffset final
+{
+public:
+	class AMarvelAIController*                    MarvelAI;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FMarvelAITarget                        OutAITarget;                                       // 0x0008(0x0060)(Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAIAbilityUsage                        AbilityUsage;                                      // 0x0068(0x00E8)(ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0150(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_151[0x7];                                      // 0x0151(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+
+// Function MarvelAI.AISelectTargetLogicBase.OnDestroy
+// 0x00F0 (0x00F0 - 0x0000)
+struct AISelectTargetLogicBase_OnDestroy final
+{
+public:
+	class AMarvelAIController*                    MarvelAIController;                                // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FAIAbilityUsage                        AbilityUsage;                                      // 0x0008(0x00E8)(Parm, OutParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function MarvelAI.AISelectTargetLogicBase.OnInitialize
+// 0x00F0 (0x00F0 - 0x0000)
+struct AISelectTargetLogicBase_OnInitialize final
+{
+public:
+	class AMarvelAIController*                    MarvelAIController;                                // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FAIAbilityUsage                        AbilityUsage;                                      // 0x0008(0x00E8)(Parm, OutParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function MarvelAI.AISelectTargetLogicBase.SelectTargetForAbilityCheck
+// 0x00A0 (0x00A0 - 0x0000)
+struct AISelectTargetLogicBase_SelectTargetForAbilityCheck final
+{
+public:
+	struct FRequiredAIDataForAutoAbility          AbilityContext;                                    // 0x0000(0x0038)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	struct FMarvelAITarget                        OutAITarget;                                       // 0x0038(0x0060)(Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0098(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_99[0x7];                                       // 0x0099(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+
+// Function MarvelAI.AISelectTargetLogicBase.SelectTargetOrLocation
+// 0x0158 (0x0158 - 0x0000)
+struct AISelectTargetLogicBase_SelectTargetOrLocation final
+{
+public:
+	class AMarvelAIController*                    AIController;                                      // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FMarvelAITarget                        OutAITarget;                                       // 0x0008(0x0060)(Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAIAbilityUsage                        AbilityUsage;                                      // 0x0068(0x00E8)(ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0150(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_151[0x7];                                      // 0x0151(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+
+// Function MarvelAI.AISelectTargetLogicBase.TakeResultAITarget
+// 0x0158 (0x0158 - 0x0000)
+struct AISelectTargetLogicBase_TakeResultAITarget final
+{
+public:
+	class AMarvelAIController*                    AIController;                                      // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FMarvelAITarget                        OutAITarget;                                       // 0x0008(0x0060)(Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAIAbilityUsage                        AbilityUsage;                                      // 0x0068(0x00E8)(ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0150(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_151[0x7];                                      // 0x0151(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+
+// Function MarvelAI.AISelectTargetLogicBase.UpdateProjectilePredicateSpeed
+// 0x10C0 (0x10C0 - 0x0000)
+struct AISelectTargetLogicBase_UpdateProjectilePredicateSpeed final
+{
+public:
+	class AMarvelAIController*                    AIController;                                      // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FAIAbilityUsage                        AbilityUsage;                                      // 0x0008(0x00E8)(ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FMarvelProjectileAgentTable            ProjectileAgentTable;                              // 0x00F0(0x0FC8)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x10B8(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_10B9[0x7];                                     // 0x10B9(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 
 // Function MarvelAI.AIAbilityExecutor.ActivateTask
@@ -709,11 +913,11 @@ public:
 };
 
 // Function MarvelAI.AIAbilityUsageObject.GetUsageConfig
-// 0x0268 (0x0268 - 0x0000)
+// 0x0258 (0x0258 - 0x0000)
 struct AIAbilityUsageObject_GetUsageConfig final
 {
 public:
-	struct FMarvelAIAutoAbilityTable              ReturnValue;                                       // 0x0000(0x0268)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+	struct FMarvelAIAutoAbilityTable              ReturnValue;                                       // 0x0000(0x0258)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
 
 // Function MarvelAI.AIAbilityUsageObject.GetUsageID
@@ -732,6 +936,31 @@ public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
+// Function MarvelAI.AIServerRequestServices.GetAILabServerUrl
+// 0x0010 (0x0010 - 0x0000)
+struct AIServerRequestServices_GetAILabServerUrl final
+{
+public:
+	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function MarvelAI.AIServerRequestServices.RequestTimer
+// 0x0001 (0x0001 - 0x0000)
+struct AIServerRequestServices_RequestTimer final
+{
+public:
+	bool                                          bRetry;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function MarvelAI.AIServerRequestServices.SetAILabServerUrl
+// 0x0020 (0x0020 - 0x0000)
+struct AIServerRequestServices_SetAILabServerUrl final
+{
+public:
+	class FString                                 NewUrl;                                            // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 msg;                                               // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
 // Function MarvelAI.AIActionArea.WhenAIEnter
 // 0x0008 (0x0008 - 0x0000)
 struct AIActionArea_WhenAIEnter final
@@ -746,14 +975,6 @@ struct AIActionArea_WhenAIExit final
 {
 public:
 	class ACharacter*                             Player;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function MarvelAI.BTS_UpdateSight.OnResetSightConfig
-// 0x0004 (0x0004 - 0x0000)
-struct BTS_UpdateSight_OnResetSightConfig final
-{
-public:
-	float                                         NewRadius;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
 // Function MarvelAI.AIAutoAbilityComponent.AddUsageCondition
@@ -778,32 +999,6 @@ struct AIAutoAbilityComponent_RemoveUsageCondition final
 {
 public:
 	class UAIAbilityCondition*                    ConditionToRemove;                                 // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function MarvelAI.MarvelAIStandPointManager.FindStandPoint
-// 0x0018 (0x0018 - 0x0000)
-struct MarvelAIStandPointManager_FindStandPoint final
-{
-public:
-	class FName                                   PointName;                                         // 0x0000(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class AStandPointBase*                        ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function MarvelAI.MarvelAIStandPointManager.RegisterStandPoint
-// 0x0008 (0x0008 - 0x0000)
-struct MarvelAIStandPointManager_RegisterStandPoint final
-{
-public:
-	class AStandPointBase*                        StandPoint;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function MarvelAI.MarvelAIStandPointManager.UnRegisterStandPoint
-// 0x0008 (0x0008 - 0x0000)
-struct MarvelAIStandPointManager_UnRegisterStandPoint final
-{
-public:
-	class AStandPointBase*                        StandPoint;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
 // Function MarvelAI.AIBattleAreaBase.BindStandPoint
@@ -841,93 +1036,6 @@ public:
 	class AStandPointBase*                        ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
-// Function MarvelAI.AISelectTargetLogicBase.GetSelectTargetLogicObject
-// 0x0018 (0x0018 - 0x0000)
-struct AISelectTargetLogicBase_GetSelectTargetLogicObject final
-{
-public:
-	class AMarvelAIController*                    MarvelAIOwner;                                     // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TSubclassOf<class UAISelectTargetLogicBase>   SelectLogicClass;                                  // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UAISelectTargetLogicBase*               ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function MarvelAI.AISelectTargetLogicBase.CheckMissAndAddMissOffset
-// 0x0158 (0x0158 - 0x0000)
-struct AISelectTargetLogicBase_CheckMissAndAddMissOffset final
-{
-public:
-	class AMarvelAIController*                    MarvelAI;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FMarvelAITarget                        OutAITarget;                                       // 0x0008(0x0060)(Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAIAbilityUsage                        AbilityUsage;                                      // 0x0068(0x00E8)(ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0150(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_151[0x7];                                      // 0x0151(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-
-// Function MarvelAI.AISelectTargetLogicBase.OnDestroy
-// 0x00F0 (0x00F0 - 0x0000)
-struct AISelectTargetLogicBase_OnDestroy final
-{
-public:
-	class AMarvelAIController*                    MarvelAIController;                                // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FAIAbilityUsage                        AbilityUsage;                                      // 0x0008(0x00E8)(Parm, OutParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function MarvelAI.AISelectTargetLogicBase.OnInitialize
-// 0x00F0 (0x00F0 - 0x0000)
-struct AISelectTargetLogicBase_OnInitialize final
-{
-public:
-	class AMarvelAIController*                    MarvelAIController;                                // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FAIAbilityUsage                        AbilityUsage;                                      // 0x0008(0x00E8)(Parm, OutParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function MarvelAI.AISelectTargetLogicBase.SelectTargetForAbilityCheck
-// 0x00A0 (0x00A0 - 0x0000)
-struct AISelectTargetLogicBase_SelectTargetForAbilityCheck final
-{
-public:
-	struct FRequiredAIDataForAutoAbility          AbilityContext;                                    // 0x0000(0x0038)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-	struct FMarvelAITarget                        OutAITarget;                                       // 0x0038(0x0060)(Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0098(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_99[0x7];                                       // 0x0099(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-
-// Function MarvelAI.AISelectTargetLogicBase.SelectTargetOrLocation
-// 0x0158 (0x0158 - 0x0000)
-struct AISelectTargetLogicBase_SelectTargetOrLocation final
-{
-public:
-	class AMarvelAIController*                    AIController;                                      // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FMarvelAITarget                        OutAITarget;                                       // 0x0008(0x0060)(Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAIAbilityUsage                        AbilityUsage;                                      // 0x0068(0x00E8)(ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0150(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_151[0x7];                                      // 0x0151(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-
-// Function MarvelAI.AISelectTargetLogicBase.TakeResultAITarget
-// 0x0158 (0x0158 - 0x0000)
-struct AISelectTargetLogicBase_TakeResultAITarget final
-{
-public:
-	class AMarvelAIController*                    AIController;                                      // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FMarvelAITarget                        OutAITarget;                                       // 0x0008(0x0060)(Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAIAbilityUsage                        AbilityUsage;                                      // 0x0068(0x00E8)(ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0150(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_151[0x7];                                      // 0x0151(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-
-// Function MarvelAI.AISelectTargetLogicBase.UpdateProjectilePredicateSpeed
-// 0x10D0 (0x10D0 - 0x0000)
-struct AISelectTargetLogicBase_UpdateProjectilePredicateSpeed final
-{
-public:
-	class AMarvelAIController*                    AIController;                                      // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FAIAbilityUsage                        AbilityUsage;                                      // 0x0008(0x00E8)(ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FMarvelProjectileAgentTable            ProjectileAgentTable;                              // 0x00F0(0x0FD8)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x10C8(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_10C9[0x7];                                     // 0x10C9(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-
 // Function MarvelAI.AIBattleAreaFilterBase.CheckCouldPass
 // 0x0010 (0x0010 - 0x0000)
 struct AIBattleAreaFilterBase_CheckCouldPass final
@@ -936,74 +1044,6 @@ public:
 	class AAIBattleAreaBase*                      BattleArea;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-
-// Function MarvelAI.AIAbilityUsageLibrary.GetAbilityByUsageID
-// 0x0018 (0x0018 - 0x0000)
-struct AIAbilityUsageLibrary_GetAbilityByUsageID final
-{
-public:
-	int32                                         AbilityUsageID;                                    // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class AMarvelAIController*                    OwnerController;                                   // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UMarvelGameplayAbility*                 ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function MarvelAI.AIAbilityUsageLibrary.GetAbilityFromContext
-// 0x0040 (0x0040 - 0x0000)
-struct AIAbilityUsageLibrary_GetAbilityFromContext final
-{
-public:
-	struct FRequiredAIDataForAutoAbility          AutoAbilityContext;                                // 0x0000(0x0038)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-	class UMarvelGameplayAbility*                 ReturnValue;                                       // 0x0038(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function MarvelAI.AIAbilityUsageLibrary.GetAbilityUsageDescription
-// 0x00F8 (0x00F8 - 0x0000)
-struct AIAbilityUsageLibrary_GetAbilityUsageDescription final
-{
-public:
-	struct FAIAbilityUsage                        AbilityUsage;                                      // 0x0000(0x00E8)(ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 ReturnValue;                                       // 0x00E8(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function MarvelAI.AIAbilityUsageLibrary.GetTargetLocation
-// 0x0100 (0x0100 - 0x0000)
-struct AIAbilityUsageLibrary_GetTargetLocation final
-{
-public:
-	struct FAIAbilityUsage                        AbilityUsage;                                      // 0x0000(0x00E8)(ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                ReturnValue;                                       // 0x00E8(0x0018)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function MarvelAI.AIAbilityUsageLibrary.GetUsageConfig
-// 0x0350 (0x0350 - 0x0000)
-struct AIAbilityUsageLibrary_GetUsageConfig final
-{
-public:
-	struct FAIAbilityUsage                        AbilityUsage;                                      // 0x0000(0x00E8)(ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FMarvelAIAutoAbilityTable              ReturnValue;                                       // 0x00E8(0x0268)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-};
-
-// Function MarvelAI.AIAbilityUsageLibrary.GetUsageConfigFromContext
-// 0x02A8 (0x02A8 - 0x0000)
-struct AIAbilityUsageLibrary_GetUsageConfigFromContext final
-{
-public:
-	struct FRequiredAIDataForAutoAbility          AutoAbilityContext;                                // 0x0000(0x0038)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-	struct FMarvelAIAutoAbilityTable              OutUsageConfig;                                    // 0x0038(0x0268)(Parm, OutParm, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x02A0(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2A1[0x7];                                      // 0x02A1(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-
-// Function MarvelAI.AIAbilityUsageLibrary.IsValidAbilityUsage
-// 0x00F0 (0x00F0 - 0x0000)
-struct AIAbilityUsageLibrary_IsValidAbilityUsage final
-{
-public:
-	struct FAIAbilityUsage                        AbilityUsage;                                      // 0x0000(0x00E8)(ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x00E8(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_E9[0x7];                                       // 0x00E9(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 
 // Function MarvelAI.MarvelAIBattleAreaManager.FindBattleArea
@@ -1520,29 +1560,30 @@ public:
 	uint8                                         Pad_59[0x7];                                       // 0x0059(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 
-// Function MarvelAI.AIServerRequestServices.GetAILabServerUrl
-// 0x0010 (0x0010 - 0x0000)
-struct AIServerRequestServices_GetAILabServerUrl final
+// Function MarvelAI.MarvelAIStandPointManager.FindStandPoint
+// 0x0018 (0x0018 - 0x0000)
+struct MarvelAIStandPointManager_FindStandPoint final
 {
 public:
-	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   PointName;                                         // 0x0000(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class AStandPointBase*                        ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
-// Function MarvelAI.AIServerRequestServices.RequestTimer
-// 0x0001 (0x0001 - 0x0000)
-struct AIServerRequestServices_RequestTimer final
+// Function MarvelAI.MarvelAIStandPointManager.RegisterStandPoint
+// 0x0008 (0x0008 - 0x0000)
+struct MarvelAIStandPointManager_RegisterStandPoint final
 {
 public:
-	bool                                          bRetry;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AStandPointBase*                        StandPoint;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
-// Function MarvelAI.AIServerRequestServices.SetAILabServerUrl
-// 0x0020 (0x0020 - 0x0000)
-struct AIServerRequestServices_SetAILabServerUrl final
+// Function MarvelAI.MarvelAIStandPointManager.UnRegisterStandPoint
+// 0x0008 (0x0008 - 0x0000)
+struct MarvelAIStandPointManager_UnRegisterStandPoint final
 {
 public:
-	class FString                                 NewUrl;                                            // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 msg;                                               // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AStandPointBase*                        StandPoint;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
 // Function MarvelAI.AIStrategyAreaVolume.GetGroupState
@@ -1643,6 +1684,74 @@ public:
 	class AActor*                                 Target;                                            // 0x0050(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         MarkLife;                                          // 0x0058(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_5C[0x4];                                       // 0x005C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+
+// Function MarvelAI.AIAbilityUsageLibrary.GetAbilityByUsageID
+// 0x0018 (0x0018 - 0x0000)
+struct AIAbilityUsageLibrary_GetAbilityByUsageID final
+{
+public:
+	int32                                         AbilityUsageID;                                    // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class AMarvelAIController*                    OwnerController;                                   // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UMarvelGameplayAbility*                 ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function MarvelAI.AIAbilityUsageLibrary.GetAbilityFromContext
+// 0x0040 (0x0040 - 0x0000)
+struct AIAbilityUsageLibrary_GetAbilityFromContext final
+{
+public:
+	struct FRequiredAIDataForAutoAbility          AutoAbilityContext;                                // 0x0000(0x0038)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class UMarvelGameplayAbility*                 ReturnValue;                                       // 0x0038(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function MarvelAI.AIAbilityUsageLibrary.GetAbilityUsageDescription
+// 0x00F8 (0x00F8 - 0x0000)
+struct AIAbilityUsageLibrary_GetAbilityUsageDescription final
+{
+public:
+	struct FAIAbilityUsage                        AbilityUsage;                                      // 0x0000(0x00E8)(ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x00E8(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function MarvelAI.AIAbilityUsageLibrary.GetTargetLocation
+// 0x0100 (0x0100 - 0x0000)
+struct AIAbilityUsageLibrary_GetTargetLocation final
+{
+public:
+	struct FAIAbilityUsage                        AbilityUsage;                                      // 0x0000(0x00E8)(ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                ReturnValue;                                       // 0x00E8(0x0018)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function MarvelAI.AIAbilityUsageLibrary.GetUsageConfig
+// 0x0340 (0x0340 - 0x0000)
+struct AIAbilityUsageLibrary_GetUsageConfig final
+{
+public:
+	struct FAIAbilityUsage                        AbilityUsage;                                      // 0x0000(0x00E8)(ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FMarvelAIAutoAbilityTable              ReturnValue;                                       // 0x00E8(0x0258)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+};
+
+// Function MarvelAI.AIAbilityUsageLibrary.GetUsageConfigFromContext
+// 0x0298 (0x0298 - 0x0000)
+struct AIAbilityUsageLibrary_GetUsageConfigFromContext final
+{
+public:
+	struct FRequiredAIDataForAutoAbility          AutoAbilityContext;                                // 0x0000(0x0038)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	struct FMarvelAIAutoAbilityTable              OutUsageConfig;                                    // 0x0038(0x0258)(Parm, OutParm, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0290(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_291[0x7];                                      // 0x0291(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+
+// Function MarvelAI.AIAbilityUsageLibrary.IsValidAbilityUsage
+// 0x00F0 (0x00F0 - 0x0000)
+struct AIAbilityUsageLibrary_IsValidAbilityUsage final
+{
+public:
+	struct FAIAbilityUsage                        AbilityUsage;                                      // 0x0000(0x00E8)(ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x00E8(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_E9[0x7];                                       // 0x00E9(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 
 // Function MarvelAI.AIAbilityUsagePointCondition.CheckIsValidPoint
@@ -1751,6 +1860,38 @@ public:
 	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 
+// Function MarvelAI.BTDecorator_MarvelInstancedBase.K2_GetControlledHero
+// 0x0008 (0x0008 - 0x0000)
+struct BTDecorator_MarvelInstancedBase_K2_GetControlledHero final
+{
+public:
+	class AMarvelBaseCharacter*                   ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function MarvelAI.BTDecorator_MarvelInstancedBase.K2_GetControlledPawn
+// 0x0008 (0x0008 - 0x0000)
+struct BTDecorator_MarvelInstancedBase_K2_GetControlledPawn final
+{
+public:
+	class APawn*                                  ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function MarvelAI.BTDecorator_MarvelInstancedBase.K2_GetMarvelAIOwner
+// 0x0008 (0x0008 - 0x0000)
+struct BTDecorator_MarvelInstancedBase_K2_GetMarvelAIOwner final
+{
+public:
+	class AMarvelAIController*                    ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function MarvelAI.BTDecorator_MarvelInstancedBase.K2_GetOwnerBTComp
+// 0x0008 (0x0008 - 0x0000)
+struct BTDecorator_MarvelInstancedBase_K2_GetOwnerBTComp final
+{
+public:
+	class UBehaviorTreeComponent*                 ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
 // Function MarvelAI.BTD_CampCheck.Check
 // 0x0010 (0x0010 - 0x0000)
 struct BTD_CampCheck_Check final
@@ -1781,6 +1922,20 @@ public:
 	EAIFilterSide                                 BattleSide;                                        // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         ReturnValue;                                       // 0x000C(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function MarvelAI.BTD_PayloadCheck.Check
+// 0x0014 (0x0014 - 0x0000)
+struct BTD_PayloadCheck_Check final
+{
+public:
+	int32                                         Stage;                                             // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Score;                                             // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Speed;                                             // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Team;                                              // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EOwnershipType                                Ownership;                                         // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0011(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_12[0x2];                                       // 0x0012(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 
 // Function MarvelAI.BTD_SpaceDistCheck.Check
@@ -1833,177 +1988,22 @@ public:
 	class UBehaviorTreeComponent*                 ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
-// Function MarvelAI.ActionRequirementBase.Requirement
-// 0x0018 (0x0018 - 0x0000)
-struct ActionRequirementBase_Requirement final
-{
-public:
-	class AAIController*                          OwnerController;                                   // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class AActor*                                 ControlledPawn;                                    // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-
-// Function MarvelAI.BTS_SelectTargetNew.OnTargetTakingDamage
-// 0x0028 (0x0028 - 0x0000)
-struct BTS_SelectTargetNew_OnTargetTakingDamage final
-{
-public:
-	class AActor*                                 InSourceAvatar;                                    // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class AActor*                                 InTargetAvatar;                                    // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FAttributeModifierHandle               ModifierParameterHandle;                           // 0x0010(0x0018)(ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function MarvelAI.BTS_SendChatMessage.GetAIUserName
-// 0x0018 (0x0018 - 0x0000)
-struct BTS_SendChatMessage_GetAIUserName final
-{
-public:
-	class AActor*                                 Target;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 ReturnValue;                                       // 0x0008(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function MarvelAI.BTS_SendChatMessage.OnAllDeath
-// 0x0028 (0x0028 - 0x0000)
-struct BTS_SendChatMessage_OnAllDeath final
-{
-public:
-	struct FAIEventArgs                           Args;                                              // 0x0000(0x0028)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-};
-
-// Function MarvelAI.BTS_SendChatMessage.OnDeath
-// 0x0028 (0x0028 - 0x0000)
-struct BTS_SendChatMessage_OnDeath final
-{
-public:
-	struct FAIEventArgs                           Args;                                              // 0x0000(0x0028)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-};
-
-// Function MarvelAI.BTS_SendChatMessage.OnEnergyFull
-// 0x0028 (0x0028 - 0x0000)
-struct BTS_SendChatMessage_OnEnergyFull final
-{
-public:
-	struct FAIEventArgs                           Args;                                              // 0x0000(0x0028)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-};
-
-// Function MarvelAI.BTS_SendChatMessage.OnGameBegin
-// 0x0028 (0x0028 - 0x0000)
-struct BTS_SendChatMessage_OnGameBegin final
-{
-public:
-	struct FAIEventArgs                           Args;                                              // 0x0000(0x0028)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-};
-
-// Function MarvelAI.BTS_SendChatMessage.OnGameEnd
-// 0x0028 (0x0028 - 0x0000)
-struct BTS_SendChatMessage_OnGameEnd final
-{
-public:
-	struct FAIEventArgs                           Args;                                              // 0x0000(0x0028)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-};
-
-// Function MarvelAI.BTS_SendChatMessage.OnHeal
-// 0x0028 (0x0028 - 0x0000)
-struct BTS_SendChatMessage_OnHeal final
-{
-public:
-	struct FAIEventArgs                           Args;                                              // 0x0000(0x0028)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-};
-
-// Function MarvelAI.BTS_SendChatMessage.OnHealthChanged
-// 0x0028 (0x0028 - 0x0000)
-struct BTS_SendChatMessage_OnHealthChanged final
-{
-public:
-	struct FAIEventArgs                           Args;                                              // 0x0000(0x0028)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-};
-
-// Function MarvelAI.BTS_SendChatMessage.SendChatMessage
-// 0x0018 (0x0018 - 0x0000)
-struct BTS_SendChatMessage_SendChatMessage final
-{
-public:
-	class FString                                 msg;                                               // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class AActor*                                 Target;                                            // 0x0010(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function MarvelAI.BTS_SendChatMessage.SendMessage
-// 0x0078 (0x0078 - 0x0000)
-struct BTS_SendChatMessage_SendMessage final
-{
-public:
-	struct FAICommunicateEx                       Communicate;                                       // 0x0000(0x0070)(Parm, OutParm, NativeAccessSpecifierPublic)
-	class AActor*                                 Target;                                            // 0x0070(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function MarvelAI.BTS_SendChatMessage.SendQuickMessage
+// Function MarvelAI.BTS_UpdateFireLine.IsActorInFireLineState
 // 0x0010 (0x0010 - 0x0000)
-struct BTS_SendChatMessage_SendQuickMessage final
+struct BTS_UpdateFireLine_IsActorInFireLineState final
 {
 public:
-	int32                                         ID;                                                // 0x0000(0x0004)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class AActor*                                 Target;                                            // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function MarvelAI.BTS_UpdateControlState.GetCampControlState
-// 0x0010 (0x0010 - 0x0000)
-struct BTS_UpdateControlState_GetCampControlState final
-{
-public:
-	class AMarvelBaseCharacter*                   OwnerCharacter;                                    // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EAIFilterSide                                 ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	const class AMarvelBaseCharacter*             Character;                                         // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 
-// Function MarvelAI.BTS_UpdateControlState.GetCampProgress
-// 0x0018 (0x0018 - 0x0000)
-struct BTS_UpdateControlState_GetCampProgress final
-{
-public:
-	class AMarvelBaseCharacter*                   OwnerCharacter;                                    // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<float>                                 ReturnValue;                                       // 0x0008(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
-};
-
-// Function MarvelAI.BTS_UpdateEscortStateNew.GetPayloadOwnership
-// 0x0001 (0x0001 - 0x0000)
-struct BTS_UpdateEscortStateNew_GetPayloadOwnership final
-{
-public:
-	EOwnershipType                                ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function MarvelAI.BTS_UpdateEscortStateNew.GetPayLoadProgress
+// Function MarvelAI.BTS_UpdateSight.OnResetSightConfig
 // 0x0004 (0x0004 - 0x0000)
-struct BTS_UpdateEscortStateNew_GetPayLoadProgress final
+struct BTS_UpdateSight_OnResetSightConfig final
 {
 public:
-	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function MarvelAI.BTS_UpdateEscortStateNew.GetPayLoadSpeed
-// 0x0004 (0x0004 - 0x0000)
-struct BTS_UpdateEscortStateNew_GetPayLoadSpeed final
-{
-public:
-	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function MarvelAI.BTS_UpdateEscortStateNew.SetCurrentStage
-// 0x0010 (0x0010 - 0x0000)
-struct BTS_UpdateEscortStateNew_SetCurrentStage final
-{
-public:
-	class FString                                 StageName;                                         // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function MarvelAI.BTS_UpdateMatchState.OnMatchStateChange
-// 0x0001 (0x0001 - 0x0000)
-struct BTS_UpdateMatchState_OnMatchStateChange final
-{
-public:
-	EMatchState                                   NewState;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         NewRadius;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
 // Function MarvelAI.BTTask_ChaseTarget.OnActorBump
@@ -2074,6 +2074,38 @@ struct BTTask_MarvelInstancedBase_K2_GetOwnerBTComp final
 {
 public:
 	class UBehaviorTreeComponent*                 ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function MarvelAI.MarvelAIAlarmSubsystem.OnActorActivateAbility
+// 0x0028 (0x0028 - 0x0000)
+struct MarvelAIAlarmSubsystem_OnActorActivateAbility final
+{
+public:
+	class AActor*                                 Source;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         AbilityID;                                         // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 SessionID;                                         // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UMarvelGameplayAbility*                 SourceAbility;                                     // 0x0020(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function MarvelAI.MarvelAIAlarmSubsystem.OnActorEndAbility
+// 0x0028 (0x0028 - 0x0000)
+struct MarvelAIAlarmSubsystem_OnActorEndAbility final
+{
+public:
+	class AActor*                                 Source;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         AbilityID;                                         // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 SessionID;                                         // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UMarvelGameplayAbility*                 SourceAbility;                                     // 0x0020(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function MarvelAI.MarvelAIAlarmSubsystem.OnMatchStateChange
+// 0x0001 (0x0001 - 0x0000)
+struct MarvelAIAlarmSubsystem_OnMatchStateChange final
+{
+public:
+	EMatchState                                   NewState;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
 // Function MarvelAI.AIAbilityActivationExtraConfig.GetConfigName
@@ -2224,13 +2256,13 @@ public:
 };
 
 // Function MarvelAI.MarvelAIController.K2_GetAIDifficultyConfig
-// 0x0220 (0x0220 - 0x0000)
+// 0x0210 (0x0210 - 0x0000)
 struct MarvelAIController_K2_GetAIDifficultyConfig final
 {
 public:
-	struct FMarvelAIDifficultyTable               OutDifficultyConfig;                               // 0x0000(0x0218)(Parm, OutParm, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0218(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_219[0x7];                                      // 0x0219(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FMarvelAIDifficultyTable               OutDifficultyConfig;                               // 0x0000(0x0208)(Parm, OutParm, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0208(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_209[0x7];                                      // 0x0209(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 
 // Function MarvelAI.MarvelAIController.K2_GetPriorityFactorInPerceptionComp
@@ -2696,13 +2728,13 @@ public:
 };
 
 // Function MarvelAI.MarvelAIController.GetHeroBTConfig
-// 0x0118 (0x0118 - 0x0000)
+// 0x0108 (0x0108 - 0x0000)
 struct MarvelAIController_GetHeroBTConfig final
 {
 public:
-	struct FMarvelHeroBehaviorTreeTable           OutHeroBTConfig;                                   // 0x0000(0x0110)(Parm, OutParm, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0110(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_111[0x7];                                      // 0x0111(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FMarvelHeroBehaviorTreeTable           OutHeroBTConfig;                                   // 0x0000(0x0100)(Parm, OutParm, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0100(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_101[0x7];                                      // 0x0101(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 
 // Function MarvelAI.MarvelAIController.GetIsTestAI
@@ -3348,14 +3380,14 @@ public:
 };
 
 // Function MarvelAI.MarvelAILibrary.GetAbilityIDByConfig
-// 0x0278 (0x0278 - 0x0000)
+// 0x0268 (0x0268 - 0x0000)
 struct MarvelAILibrary_GetAbilityIDByConfig final
 {
 public:
-	struct FMarvelAIAutoAbilityTable              Data;                                              // 0x0000(0x0268)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	const class AMarvelAIController*              OwnerController;                                   // 0x0268(0x0008)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         ReturnValue;                                       // 0x0270(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_274[0x4];                                      // 0x0274(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FMarvelAIAutoAbilityTable              Data;                                              // 0x0000(0x0258)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	const class AMarvelAIController*              OwnerController;                                   // 0x0258(0x0008)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ReturnValue;                                       // 0x0260(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_264[0x4];                                      // 0x0264(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 
 // Function MarvelAI.MarvelAILibrary.GetAbilityIDByUsage
@@ -3370,13 +3402,13 @@ public:
 };
 
 // Function MarvelAI.MarvelAILibrary.GetAIAutoAbilityConfig
-// 0x0270 (0x0270 - 0x0000)
+// 0x0260 (0x0260 - 0x0000)
 struct MarvelAILibrary_GetAIAutoAbilityConfig final
 {
 public:
 	int32                                         ID;                                                // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FMarvelAIAutoAbilityTable              ReturnValue;                                       // 0x0008(0x0268)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+	struct FMarvelAIAutoAbilityTable              ReturnValue;                                       // 0x0008(0x0258)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
 
 // Function MarvelAI.MarvelAILibrary.GetAIByTag
@@ -3402,16 +3434,16 @@ public:
 };
 
 // Function MarvelAI.MarvelAILibrary.GetAIDifficultyConfigByModeAndLevel
-// 0x0228 (0x0228 - 0x0000)
+// 0x0218 (0x0218 - 0x0000)
 struct MarvelAILibrary_GetAIDifficultyConfigByModeAndLevel final
 {
 public:
 	EAIDifficultyMode                             DifficultyMode;                                    // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         DifficultyLevel;                                   // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FMarvelAIDifficultyTable               OutDifficultyConfig;                               // 0x0008(0x0218)(Parm, OutParm, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0220(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_221[0x7];                                      // 0x0221(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FMarvelAIDifficultyTable               OutDifficultyConfig;                               // 0x0008(0x0208)(Parm, OutParm, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0210(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_211[0x7];                                      // 0x0211(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 
 // Function MarvelAI.MarvelAILibrary.GetAIHeroTable
@@ -3503,26 +3535,26 @@ public:
 };
 
 // Function MarvelAI.MarvelAILibrary.GetCheckedHeroBehaviorTreeConfig
-// 0x0120 (0x0120 - 0x0000)
+// 0x0110 (0x0110 - 0x0000)
 struct MarvelAILibrary_GetCheckedHeroBehaviorTreeConfig final
 {
 public:
 	const class AMarvelBaseCharacter*             MarvelHero;                                        // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FMarvelHeroBehaviorTreeTable           OutConfigData;                                     // 0x0008(0x0110)(Parm, OutParm, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0118(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_119[0x7];                                      // 0x0119(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FMarvelHeroBehaviorTreeTable           OutConfigData;                                     // 0x0008(0x0100)(Parm, OutParm, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0108(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_109[0x7];                                      // 0x0109(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 
 // Function MarvelAI.MarvelAILibrary.GetCheckedHeroBehaviorTreeConfigByID
-// 0x0120 (0x0120 - 0x0000)
+// 0x0110 (0x0110 - 0x0000)
 struct MarvelAILibrary_GetCheckedHeroBehaviorTreeConfigByID final
 {
 public:
 	int32                                         HeroID;                                            // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         SculptID;                                          // 0x0004(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FMarvelHeroBehaviorTreeTable           OutConfigData;                                     // 0x0008(0x0110)(Parm, OutParm, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0118(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_119[0x7];                                      // 0x0119(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FMarvelHeroBehaviorTreeTable           OutConfigData;                                     // 0x0008(0x0100)(Parm, OutParm, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0108(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_109[0x7];                                      // 0x0109(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 
 // Function MarvelAI.MarvelAILibrary.GetDefaultRequestServerIndex
@@ -3566,12 +3598,12 @@ public:
 };
 
 // Function MarvelAI.MarvelAILibrary.GetHeroBehaviorTreeConfig
-// 0x0118 (0x0118 - 0x0000)
+// 0x0108 (0x0108 - 0x0000)
 struct MarvelAILibrary_GetHeroBehaviorTreeConfig final
 {
 public:
 	const class AMarvelBaseCharacter*             MarvelHero;                                        // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FMarvelHeroBehaviorTreeTable           ReturnValue;                                       // 0x0008(0x0110)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+	struct FMarvelHeroBehaviorTreeTable           ReturnValue;                                       // 0x0008(0x0100)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
 
 // Function MarvelAI.MarvelAILibrary.GetHeroGameModeBehaviorTree
@@ -3600,13 +3632,13 @@ public:
 };
 
 // Function MarvelAI.MarvelAILibrary.GetMarvelHeroAutoAITable
-// 0x0038 (0x0038 - 0x0000)
+// 0x0028 (0x0028 - 0x0000)
 struct MarvelAILibrary_GetMarvelHeroAutoAITable final
 {
 public:
 	int32                                         HeroID;                                            // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FMarvelHeroAutoAITable                 ReturnValue;                                       // 0x0008(0x0030)(ConstParm, Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+	struct FMarvelHeroAutoAITable                 ReturnValue;                                       // 0x0008(0x0020)(ConstParm, Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
 
 // Function MarvelAI.MarvelAILibrary.GetMaxHealthPropertyOfActor
@@ -3668,13 +3700,13 @@ public:
 };
 
 // Function MarvelAI.MarvelAILibrary.GetRandomJumpIntervalsScale
-// 0x0220 (0x0220 - 0x0000)
+// 0x0210 (0x0210 - 0x0000)
 struct MarvelAILibrary_GetRandomJumpIntervalsScale final
 {
 public:
-	struct FMarvelAIDifficultyTable               Table;                                             // 0x0000(0x0218)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	float                                         DynamicDifficultyFactor;                           // 0x0218(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ReturnValue;                                       // 0x021C(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FMarvelAIDifficultyTable               Table;                                             // 0x0000(0x0208)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	float                                         DynamicDifficultyFactor;                           // 0x0208(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ReturnValue;                                       // 0x020C(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
 // Function MarvelAI.MarvelAILibrary.GetRandomLocationAroundLocation
@@ -3817,23 +3849,23 @@ public:
 };
 
 // Function MarvelAI.MarvelAILibrary.IsValidAIAutoAbilityConfig
-// 0x0270 (0x0270 - 0x0000)
+// 0x0260 (0x0260 - 0x0000)
 struct MarvelAILibrary_IsValidAIAutoAbilityConfig final
 {
 public:
-	struct FMarvelAIAutoAbilityTable              Data;                                              // 0x0000(0x0268)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0268(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_269[0x7];                                      // 0x0269(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FMarvelAIAutoAbilityTable              Data;                                              // 0x0000(0x0258)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0258(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_259[0x7];                                      // 0x0259(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 
 // Function MarvelAI.MarvelAILibrary.IsValidHeroBehaviorTreeConfig
-// 0x0118 (0x0118 - 0x0000)
+// 0x0108 (0x0108 - 0x0000)
 struct MarvelAILibrary_IsValidHeroBehaviorTreeConfig final
 {
 public:
-	struct FMarvelHeroBehaviorTreeTable           Data;                                              // 0x0000(0x0110)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0110(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_111[0x7];                                      // 0x0111(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FMarvelHeroBehaviorTreeTable           Data;                                              // 0x0000(0x0100)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0100(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_101[0x7];                                      // 0x0101(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 
 // Function MarvelAI.MarvelAILibrary.IsValidLocation
@@ -4450,7 +4482,7 @@ public:
 struct MarvelAISystem_GetAIGameModeConfig final
 {
 public:
-	const class UMarvelAIGameModeDefaultConfigAsset* ReturnValue;                                       // 0x0000(0x0008)(ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	const class UMarvelAIGameModeDefaultConfigAsset* ReturnValue;                                    // 0x0000(0x0008)(ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
 // Function MarvelAI.MarvelAITeamManager.CheckAITeamLineup
@@ -4594,7 +4626,7 @@ public:
 struct MarvelBehaviorTreeComponent_UpdateSubTreeMap final
 {
 public:
-	TMap<struct FGameplayTag, class UBehaviorTree*> SubTreeMap;                                        // 0x0000(0x0050)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	TMap<struct FGameplayTag, class UBehaviorTree*> SubTreeMap;                                      // 0x0000(0x0050)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 };
 
 // Function MarvelAI.MarvelBTFunctionLibrary.AddClassFilterForBBKeySelector

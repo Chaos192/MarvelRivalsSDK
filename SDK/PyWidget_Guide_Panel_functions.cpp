@@ -108,8 +108,8 @@ bool UPyWidget_GuideActionTips::ShouldEnableInput()
 // PythonFunction PyWidget_Guide_Panel.PyWidget_GuideActionTips.OnReceiveInputKey
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FKey                             InKey                                                  (Parm, HasGetValueTypeHash)
-// EInputEvent                             EventType                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FKey&                      InKey                                                  (Parm, HasGetValueTypeHash)
+// const EInputEvent                       EventType                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UPyWidget_GuideActionTips::OnReceiveInputKey(const struct FKey& InKey, const EInputEvent EventType)
 {
@@ -135,8 +135,8 @@ void UPyWidget_GuideActionTips::OnReceiveInputKey(const struct FKey& InKey, cons
 // PythonFunction PyWidget_Guide_Panel.PyWidget_GuideActionTips.OnReceiveGlobalInputKey
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FKey                             InKey                                                  (Parm, HasGetValueTypeHash)
-// EInputEvent                             EventType                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FKey&                      InKey                                                  (Parm, HasGetValueTypeHash)
+// const EInputEvent                       EventType                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UPyWidget_GuideActionTips::OnReceiveGlobalInputKey(const struct FKey& InKey, const EInputEvent EventType)
 {
@@ -307,7 +307,7 @@ void UPyWidget_GuideActionPanel::Destruct()
 // PythonFunction PyWidget_Guide_Panel.PyWidget_GuideActionPanel.OnTipWidgetClicked
 // (Native, Public, BlueprintCallable)
 // Parameters:
-// class FString                           Event                                                  (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Event                                                  (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyWidget_GuideActionPanel::OnTipWidgetClicked(const class FString& Event)
 {

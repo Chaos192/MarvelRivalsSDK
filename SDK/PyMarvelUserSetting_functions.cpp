@@ -75,7 +75,7 @@ void UPyMarvelUserSetting::TrySaveCtrlSettingToConfig(int32 HeroID, bool bUpdate
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // float                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           PropName                                               (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    PropName                                               (Parm, ZeroConstructor, HasGetValueTypeHash)
 // int32                                   HeroID                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    bUpdateApplyData                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
@@ -106,7 +106,7 @@ void UPyMarvelUserSetting::TryChangeControllerProperty(float Value, const class 
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int32                                   HeroSculptID                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           SettingName                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    SettingName                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyMarvelUserSetting::TryLoadOtherHeroSettingFromConfig(int32 HeroSculptID, const class FString& SettingName)
 {

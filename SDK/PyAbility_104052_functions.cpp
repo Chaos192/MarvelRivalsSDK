@@ -133,7 +133,7 @@ int32 UPyAbility_104052::GetTimelineIndexToPlay()
 // PythonFunction PyAbility_104052.PyAbility_104052.NativeOnMontageEvent
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_104052::NativeOnMontageEvent(const class FString& Tag)
 {
@@ -228,7 +228,7 @@ void UPyAbility_104052::K2_OnEndAbility(bool bWasCancelled)
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyCue_AbilityLoop_104052::OnActiveFX(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
 {

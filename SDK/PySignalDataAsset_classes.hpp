@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "GameplayTags_structs.hpp"
 #include "Marvel_structs.hpp"
 #include "Marvel_classes.hpp"
-#include "GameplayTags_structs.hpp"
 
 
 namespace SDK
@@ -44,7 +44,7 @@ public:
 	struct FGameplayTag                           HurtTeammateTag;                                   // 0x030C(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FGameplayTag                           AbilitySignalTag;                                  // 0x0318(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_324[0x4];                                      // 0x0324(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<EAbilityInputBinds, struct FAbilityStatusSignalConfig> CDSignalAbilityInputConfig;                        // 0x0328(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	TMap<EAbilityInputBinds, struct FAbilityStatusSignalConfig> CDSignalAbilityInputConfig;          // 0x0328(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
 	TArray<EAbilityInputBinds>                    CDSignalBlockAbilityInputs;                        // 0x0378(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
 	TArray<int32>                                 AbilityInputWhiteList;                             // 0x0388(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
 	class FText                                   AbilityStateMsgPrefix;                             // 0x0398(0x0018)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)

@@ -76,6 +76,14 @@ public:
 	class ACharacter*                             Target;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 };
 
+// PythonFunction PyAbility_104971.PyAbility_104971.OnPredictingClientGrabTargetPredictFailed
+// 0x0008 (0x0008 - 0x0000)
+struct PyAbility_104971_OnPredictingClientGrabTargetPredictFailed final
+{
+public:
+	class ACharacter*                             InCharacter;                                       // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+};
+
 // PythonFunction PyAbility_104971.PyAbility_104971.K2_ShouldEndScope
 // 0x0001 (0x0001 - 0x0000)
 struct PyAbility_104971_K2_ShouldEndScope final

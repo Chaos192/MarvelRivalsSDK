@@ -182,7 +182,7 @@ void UWBP_DebugAudioAbility_C::InitializeTableEvents()
 // Parameters:
 // class UAkComponent*                     AkComponent                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 // class UAkAudioEvent*                    Event                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class FString                           EventName                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    EventName                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UWBP_DebugAudioAbility_C::OnPostAkEvent(class UAkComponent* AkComponent, class UAkAudioEvent* Event, const class FString& EventName)
 {

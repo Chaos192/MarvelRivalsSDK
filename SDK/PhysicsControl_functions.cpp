@@ -20,9 +20,9 @@ namespace SDK
 // Function PhysicsControl.PhysicsControlComponent.AddBodyModifiersToSet
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FPhysicsControlNames             NewSet                                                 (Parm, OutParm, NativeAccessSpecifierPublic)
-// TArray<class FName>                     BodyModifiers                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// class FName                             Set                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FPhysicsControlNames*            NewSet                                                 (Parm, OutParm, NativeAccessSpecifierPublic)
+// const TArray<class FName>&              BodyModifiers                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const class FName                       Set                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UPhysicsControlComponent::AddBodyModifiersToSet(struct FPhysicsControlNames* NewSet, const TArray<class FName>& BodyModifiers, const class FName Set)
 {
@@ -51,9 +51,9 @@ void UPhysicsControlComponent::AddBodyModifiersToSet(struct FPhysicsControlNames
 // Function PhysicsControl.PhysicsControlComponent.AddBodyModifierToSet
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FPhysicsControlNames             NewSet                                                 (Parm, OutParm, NativeAccessSpecifierPublic)
-// class FName                             BodyModifier                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             Set                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FPhysicsControlNames*            NewSet                                                 (Parm, OutParm, NativeAccessSpecifierPublic)
+// const class FName                       BodyModifier                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       Set                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UPhysicsControlComponent::AddBodyModifierToSet(struct FPhysicsControlNames* NewSet, const class FName BodyModifier, const class FName Set)
 {
@@ -82,9 +82,9 @@ void UPhysicsControlComponent::AddBodyModifierToSet(struct FPhysicsControlNames*
 // Function PhysicsControl.PhysicsControlComponent.AddControlsToSet
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FPhysicsControlNames             NewSet                                                 (Parm, OutParm, NativeAccessSpecifierPublic)
-// TArray<class FName>                     Controls                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// class FName                             Set                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FPhysicsControlNames*            NewSet                                                 (Parm, OutParm, NativeAccessSpecifierPublic)
+// const TArray<class FName>&              Controls                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const class FName                       Set                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UPhysicsControlComponent::AddControlsToSet(struct FPhysicsControlNames* NewSet, const TArray<class FName>& Controls, const class FName Set)
 {
@@ -113,9 +113,9 @@ void UPhysicsControlComponent::AddControlsToSet(struct FPhysicsControlNames* New
 // Function PhysicsControl.PhysicsControlComponent.AddControlToSet
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FPhysicsControlNames             NewSet                                                 (Parm, OutParm, NativeAccessSpecifierPublic)
-// class FName                             Control                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             Set                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FPhysicsControlNames*            NewSet                                                 (Parm, OutParm, NativeAccessSpecifierPublic)
+// const class FName                       Control                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       Set                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UPhysicsControlComponent::AddControlToSet(struct FPhysicsControlNames* NewSet, const class FName Control, const class FName Set)
 {
@@ -145,14 +145,14 @@ void UPhysicsControlComponent::AddControlToSet(struct FPhysicsControlNames* NewS
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // class UMeshComponent*                   MeshComponent                                          (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             BoneName                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             Set                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EPhysicsMovementType                    MovementType                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// ECollisionEnabled                       CollisionType                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   GravityMultiplier                                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   PhysicsBlendWeight                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bUseSkeletalAnimation                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bUpdateKinematicFromSimulation                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       BoneName                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       Set                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const EPhysicsMovementType              MovementType                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const ECollisionEnabled                 CollisionType                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             GravityMultiplier                                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             PhysicsBlendWeight                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bUseSkeletalAnimation                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bUpdateKinematicFromSimulation                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FName                             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class FName UPhysicsControlComponent::CreateBodyModifier(class UMeshComponent* MeshComponent, const class FName BoneName, const class FName Set, const EPhysicsMovementType MovementType, const ECollisionEnabled CollisionType, const float GravityMultiplier, const float PhysicsBlendWeight, const bool bUseSkeletalAnimation, const bool bUpdateKinematicFromSimulation)
@@ -188,14 +188,14 @@ class FName UPhysicsControlComponent::CreateBodyModifier(class UMeshComponent* M
 // Function PhysicsControl.PhysicsControlComponent.CreateBodyModifiersFromLimbBones
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FPhysicsControlNames             AllBodyModifiers                                       (Parm, OutParm, NativeAccessSpecifierPublic)
-// TMap<class FName, struct FPhysicsControlLimbBones>LimbBones                                              (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// EPhysicsMovementType                    MovementType                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// ECollisionEnabled                       CollisionType                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   GravityMultiplier                                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   PhysicsBlendWeight                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bUseSkeletalAnimation                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bUpdateKinematicFromSimulation                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FPhysicsControlNames*            AllBodyModifiers                                       (Parm, OutParm, NativeAccessSpecifierPublic)
+// const TMap<class FName, struct FPhysicsControlLimbBones>&LimbBones                                              (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const EPhysicsMovementType              MovementType                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const ECollisionEnabled                 CollisionType                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             GravityMultiplier                                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             PhysicsBlendWeight                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bUseSkeletalAnimation                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bUpdateKinematicFromSimulation                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TMap<class FName, struct FPhysicsControlNames>ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
 TMap<class FName, struct FPhysicsControlNames> UPhysicsControlComponent::CreateBodyModifiersFromLimbBones(struct FPhysicsControlNames* AllBodyModifiers, const TMap<class FName, struct FPhysicsControlLimbBones>& LimbBones, const EPhysicsMovementType MovementType, const ECollisionEnabled CollisionType, const float GravityMultiplier, const float PhysicsBlendWeight, const bool bUseSkeletalAnimation, const bool bUpdateKinematicFromSimulation)
@@ -233,15 +233,15 @@ TMap<class FName, struct FPhysicsControlNames> UPhysicsControlComponent::CreateB
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // class USkeletalMeshComponent*           SkeletalMeshComponent                                  (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             BoneName                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bIncludeSelf                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             Set                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EPhysicsMovementType                    MovementType                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// ECollisionEnabled                       CollisionType                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   GravityMultiplier                                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   PhysicsBlendWeight                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bUseSkeletalAnimation                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bUpdateKinematicFromSimulation                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       BoneName                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bIncludeSelf                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       Set                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const EPhysicsMovementType              MovementType                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const ECollisionEnabled                 CollisionType                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             GravityMultiplier                                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             PhysicsBlendWeight                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bUseSkeletalAnimation                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bUpdateKinematicFromSimulation                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<class FName>                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
 TArray<class FName> UPhysicsControlComponent::CreateBodyModifiersFromSkeletalMeshBelow(class USkeletalMeshComponent* SkeletalMeshComponent, const class FName BoneName, const bool bIncludeSelf, const class FName Set, const EPhysicsMovementType MovementType, const ECollisionEnabled CollisionType, const float GravityMultiplier, const float PhysicsBlendWeight, const bool bUseSkeletalAnimation, const bool bUpdateKinematicFromSimulation)
@@ -281,12 +281,12 @@ TArray<class FName> UPhysicsControlComponent::CreateBodyModifiersFromSkeletalMes
 // class UMeshComponent*                   ParentMeshComponent                                    (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FName                             ParentBoneName                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UMeshComponent*                   ChildMeshComponent                                     (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             ChildBoneName                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FPhysicsControlData              ControlData                                            (ConstParm, Parm, NoDestructor, NativeAccessSpecifierPublic)
-// struct FPhysicsControlTarget            ControlTarget                                          (ConstParm, Parm, NoDestructor, NativeAccessSpecifierPublic)
-// struct FPhysicsControlSettings          ControlSettings                                        (ConstParm, Parm, NoDestructor, NativeAccessSpecifierPublic)
+// const class FName                       ChildBoneName                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FPhysicsControlData&       ControlData                                            (ConstParm, Parm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FPhysicsControlTarget&     ControlTarget                                          (ConstParm, Parm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FPhysicsControlSettings&   ControlSettings                                        (ConstParm, Parm, NoDestructor, NativeAccessSpecifierPublic)
 // class FName                             Set                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bEnabled                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bEnabled                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FName                             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class FName UPhysicsControlComponent::CreateControl(class UMeshComponent* ParentMeshComponent, class FName ParentBoneName, class UMeshComponent* ChildMeshComponent, const class FName ChildBoneName, const struct FPhysicsControlData& ControlData, const struct FPhysicsControlTarget& ControlTarget, const struct FPhysicsControlSettings& ControlSettings, class FName Set, const bool bEnabled)
@@ -322,23 +322,23 @@ class FName UPhysicsControlComponent::CreateControl(class UMeshComponent* Parent
 // Function PhysicsControl.PhysicsControlComponent.CreateControlsAndBodyModifiersFromLimbBones
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FPhysicsControlNames             AllWorldSpaceControls                                  (Parm, OutParm, NativeAccessSpecifierPublic)
-// TMap<class FName, struct FPhysicsControlNames>LimbWorldSpaceControls                                 (Parm, OutParm, NativeAccessSpecifierPublic)
-// struct FPhysicsControlNames             AllParentSpaceControls                                 (Parm, OutParm, NativeAccessSpecifierPublic)
-// TMap<class FName, struct FPhysicsControlNames>LimbParentSpaceControls                                (Parm, OutParm, NativeAccessSpecifierPublic)
-// struct FPhysicsControlNames             AllBodyModifiers                                       (Parm, OutParm, NativeAccessSpecifierPublic)
-// TMap<class FName, struct FPhysicsControlNames>LimbBodyModifiers                                      (Parm, OutParm, NativeAccessSpecifierPublic)
+// struct FPhysicsControlNames*            AllWorldSpaceControls                                  (Parm, OutParm, NativeAccessSpecifierPublic)
+// TMap<class FName, struct FPhysicsControlNames>*LimbWorldSpaceControls                                 (Parm, OutParm, NativeAccessSpecifierPublic)
+// struct FPhysicsControlNames*            AllParentSpaceControls                                 (Parm, OutParm, NativeAccessSpecifierPublic)
+// TMap<class FName, struct FPhysicsControlNames>*LimbParentSpaceControls                                (Parm, OutParm, NativeAccessSpecifierPublic)
+// struct FPhysicsControlNames*            AllBodyModifiers                                       (Parm, OutParm, NativeAccessSpecifierPublic)
+// TMap<class FName, struct FPhysicsControlNames>*LimbBodyModifiers                                      (Parm, OutParm, NativeAccessSpecifierPublic)
 // class USkeletalMeshComponent*           SkeletalMeshComponent                                  (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<struct FPhysicsControlLimbSetupData>LimbSetupData                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FPhysicsControlData              WorldSpaceControlData                                  (ConstParm, Parm, NoDestructor, NativeAccessSpecifierPublic)
-// struct FPhysicsControlSettings          WorldSpaceControlSettings                              (ConstParm, Parm, NoDestructor, NativeAccessSpecifierPublic)
-// bool                                    bEnableWorldSpaceControls                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FPhysicsControlData              ParentSpaceControlData                                 (ConstParm, Parm, NoDestructor, NativeAccessSpecifierPublic)
-// struct FPhysicsControlSettings          ParentSpaceControlSettings                             (ConstParm, Parm, NoDestructor, NativeAccessSpecifierPublic)
-// bool                                    bEnableParentSpaceControls                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EPhysicsMovementType                    PhysicsMovementType                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   GravityMultiplier                                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   PhysicsBlendWeight                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<struct FPhysicsControlLimbSetupData>&LimbSetupData                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FPhysicsControlData&       WorldSpaceControlData                                  (ConstParm, Parm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FPhysicsControlSettings&   WorldSpaceControlSettings                              (ConstParm, Parm, NoDestructor, NativeAccessSpecifierPublic)
+// const bool                              bEnableWorldSpaceControls                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FPhysicsControlData&       ParentSpaceControlData                                 (ConstParm, Parm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FPhysicsControlSettings&   ParentSpaceControlSettings                             (ConstParm, Parm, NoDestructor, NativeAccessSpecifierPublic)
+// const bool                              bEnableParentSpaceControls                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const EPhysicsMovementType              PhysicsMovementType                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             GravityMultiplier                                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             PhysicsBlendWeight                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UPhysicsControlComponent::CreateControlsAndBodyModifiersFromLimbBones(struct FPhysicsControlNames* AllWorldSpaceControls, TMap<class FName, struct FPhysicsControlNames>* LimbWorldSpaceControls, struct FPhysicsControlNames* AllParentSpaceControls, TMap<class FName, struct FPhysicsControlNames>* LimbParentSpaceControls, struct FPhysicsControlNames* AllBodyModifiers, TMap<class FName, struct FPhysicsControlNames>* LimbBodyModifiers, class USkeletalMeshComponent* SkeletalMeshComponent, const TArray<struct FPhysicsControlLimbSetupData>& LimbSetupData, const struct FPhysicsControlData& WorldSpaceControlData, const struct FPhysicsControlSettings& WorldSpaceControlSettings, const bool bEnableWorldSpaceControls, const struct FPhysicsControlData& ParentSpaceControlData, const struct FPhysicsControlSettings& ParentSpaceControlSettings, const bool bEnableParentSpaceControls, const EPhysicsMovementType PhysicsMovementType, const float GravityMultiplier, const float PhysicsBlendWeight)
 {
@@ -391,12 +391,12 @@ void UPhysicsControlComponent::CreateControlsAndBodyModifiersFromLimbBones(struc
 // Function PhysicsControl.PhysicsControlComponent.CreateControlsFromLimbBones
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FPhysicsControlNames             AllControls                                            (Parm, OutParm, NativeAccessSpecifierPublic)
-// TMap<class FName, struct FPhysicsControlLimbBones>LimbBones                                              (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// EPhysicsControlType                     ControlType                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FPhysicsControlData              ControlData                                            (ConstParm, Parm, NoDestructor, NativeAccessSpecifierPublic)
-// struct FPhysicsControlSettings          ControlSettings                                        (ConstParm, Parm, NoDestructor, NativeAccessSpecifierPublic)
-// bool                                    bEnabled                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FPhysicsControlNames*            AllControls                                            (Parm, OutParm, NativeAccessSpecifierPublic)
+// const TMap<class FName, struct FPhysicsControlLimbBones>&LimbBones                                              (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const EPhysicsControlType               ControlType                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FPhysicsControlData&       ControlData                                            (ConstParm, Parm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FPhysicsControlSettings&   ControlSettings                                        (ConstParm, Parm, NoDestructor, NativeAccessSpecifierPublic)
+// const bool                              bEnabled                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TMap<class FName, struct FPhysicsControlNames>ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
 TMap<class FName, struct FPhysicsControlNames> UPhysicsControlComponent::CreateControlsFromLimbBones(struct FPhysicsControlNames* AllControls, const TMap<class FName, struct FPhysicsControlLimbBones>& LimbBones, const EPhysicsControlType ControlType, const struct FPhysicsControlData& ControlData, const struct FPhysicsControlSettings& ControlSettings, const bool bEnabled)
@@ -431,10 +431,10 @@ TMap<class FName, struct FPhysicsControlNames> UPhysicsControlComponent::CreateC
 // Function PhysicsControl.PhysicsControlComponent.CreateControlsFromLimbBonesAndConstraintProfile
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FPhysicsControlNames             AllControls                                            (Parm, OutParm, NativeAccessSpecifierPublic)
-// TMap<class FName, struct FPhysicsControlLimbBones>LimbBones                                              (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// class FName                             ConstraintProfile                                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bEnabled                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FPhysicsControlNames*            AllControls                                            (Parm, OutParm, NativeAccessSpecifierPublic)
+// const TMap<class FName, struct FPhysicsControlLimbBones>&LimbBones                                              (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const class FName                       ConstraintProfile                                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bEnabled                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TMap<class FName, struct FPhysicsControlNames>ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
 TMap<class FName, struct FPhysicsControlNames> UPhysicsControlComponent::CreateControlsFromLimbBonesAndConstraintProfile(struct FPhysicsControlNames* AllControls, const TMap<class FName, struct FPhysicsControlLimbBones>& LimbBones, const class FName ConstraintProfile, const bool bEnabled)
@@ -468,12 +468,12 @@ TMap<class FName, struct FPhysicsControlNames> UPhysicsControlComponent::CreateC
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // class USkeletalMeshComponent*           SkeletalMeshComponent                                  (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<class FName>                     BoneNames                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// EPhysicsControlType                     ControlType                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FPhysicsControlData              ControlData                                            (ConstParm, Parm, NoDestructor, NativeAccessSpecifierPublic)
-// struct FPhysicsControlSettings          ControlSettings                                        (ConstParm, Parm, NoDestructor, NativeAccessSpecifierPublic)
-// class FName                             Set                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bEnabled                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<class FName>&              BoneNames                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const EPhysicsControlType               ControlType                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FPhysicsControlData&       ControlData                                            (ConstParm, Parm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FPhysicsControlSettings&   ControlSettings                                        (ConstParm, Parm, NoDestructor, NativeAccessSpecifierPublic)
+// const class FName                       Set                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bEnabled                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<class FName>                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
 TArray<class FName> UPhysicsControlComponent::CreateControlsFromSkeletalMesh(class USkeletalMeshComponent* SkeletalMeshComponent, const TArray<class FName>& BoneNames, const EPhysicsControlType ControlType, const struct FPhysicsControlData& ControlData, const struct FPhysicsControlSettings& ControlSettings, const class FName Set, const bool bEnabled)
@@ -508,10 +508,10 @@ TArray<class FName> UPhysicsControlComponent::CreateControlsFromSkeletalMesh(cla
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // class USkeletalMeshComponent*           SkeletalMeshComponent                                  (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<class FName>                     BoneNames                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// class FName                             ConstraintProfile                                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             Set                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bEnabled                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<class FName>&              BoneNames                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const class FName                       ConstraintProfile                                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       Set                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bEnabled                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<class FName>                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
 TArray<class FName> UPhysicsControlComponent::CreateControlsFromSkeletalMeshAndConstraintProfile(class USkeletalMeshComponent* SkeletalMeshComponent, const TArray<class FName>& BoneNames, const class FName ConstraintProfile, const class FName Set, const bool bEnabled)
@@ -544,11 +544,11 @@ TArray<class FName> UPhysicsControlComponent::CreateControlsFromSkeletalMeshAndC
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // class USkeletalMeshComponent*           SkeletalMeshComponent                                  (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             BoneName                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bIncludeSelf                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             ConstraintProfile                                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             Set                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bEnabled                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       BoneName                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bIncludeSelf                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       ConstraintProfile                                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       Set                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bEnabled                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<class FName>                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
 TArray<class FName> UPhysicsControlComponent::CreateControlsFromSkeletalMeshAndConstraintProfileBelow(class USkeletalMeshComponent* SkeletalMeshComponent, const class FName BoneName, const bool bIncludeSelf, const class FName ConstraintProfile, const class FName Set, const bool bEnabled)
@@ -582,13 +582,13 @@ TArray<class FName> UPhysicsControlComponent::CreateControlsFromSkeletalMeshAndC
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // class USkeletalMeshComponent*           SkeletalMeshComponent                                  (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             BoneName                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bIncludeSelf                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EPhysicsControlType                     ControlType                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FPhysicsControlData              ControlData                                            (ConstParm, Parm, NoDestructor, NativeAccessSpecifierPublic)
-// struct FPhysicsControlSettings          ControlSettings                                        (ConstParm, Parm, NoDestructor, NativeAccessSpecifierPublic)
-// class FName                             Set                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bEnabled                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       BoneName                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bIncludeSelf                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const EPhysicsControlType               ControlType                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FPhysicsControlData&       ControlData                                            (ConstParm, Parm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FPhysicsControlSettings&   ControlSettings                                        (ConstParm, Parm, NoDestructor, NativeAccessSpecifierPublic)
+// const class FName                       Set                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bEnabled                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<class FName>                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
 TArray<class FName> UPhysicsControlComponent::CreateControlsFromSkeletalMeshBelow(class USkeletalMeshComponent* SkeletalMeshComponent, const class FName BoneName, const bool bIncludeSelf, const EPhysicsControlType ControlType, const struct FPhysicsControlData& ControlData, const struct FPhysicsControlSettings& ControlSettings, const class FName Set, const bool bEnabled)
@@ -623,16 +623,16 @@ TArray<class FName> UPhysicsControlComponent::CreateControlsFromSkeletalMeshBelo
 // Function PhysicsControl.PhysicsControlComponent.CreateNamedBodyModifier
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FName                             Name_0                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       Name_0                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UMeshComponent*                   MeshComponent                                          (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             BoneName                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             Set                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EPhysicsMovementType                    MovementType                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// ECollisionEnabled                       CollisionType                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   GravityMultiplier                                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   PhysicsBlendWeight                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bUseSkeletalAnimation                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bUpdateKinematicFromSimulation                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       BoneName                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       Set                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const EPhysicsMovementType              MovementType                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const ECollisionEnabled                 CollisionType                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             GravityMultiplier                                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             PhysicsBlendWeight                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bUseSkeletalAnimation                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bUpdateKinematicFromSimulation                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UPhysicsControlComponent::CreateNamedBodyModifier(const class FName Name_0, class UMeshComponent* MeshComponent, const class FName BoneName, const class FName Set, const EPhysicsMovementType MovementType, const ECollisionEnabled CollisionType, const float GravityMultiplier, const float PhysicsBlendWeight, const bool bUseSkeletalAnimation, const bool bUpdateKinematicFromSimulation)
@@ -671,14 +671,14 @@ bool UPhysicsControlComponent::CreateNamedBodyModifier(const class FName Name_0,
 // Parameters:
 // class FName                             Name_0                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UMeshComponent*                   ParentMeshComponent                                    (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             ParentBoneName                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       ParentBoneName                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UMeshComponent*                   ChildMeshComponent                                     (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             ChildBoneName                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FPhysicsControlData              ControlData                                            (ConstParm, Parm, NoDestructor, NativeAccessSpecifierPublic)
-// struct FPhysicsControlTarget            ControlTarget                                          (ConstParm, Parm, NoDestructor, NativeAccessSpecifierPublic)
-// struct FPhysicsControlSettings          ControlSettings                                        (ConstParm, Parm, NoDestructor, NativeAccessSpecifierPublic)
-// class FName                             Set                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bEnabled                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       ChildBoneName                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FPhysicsControlData&       ControlData                                            (ConstParm, Parm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FPhysicsControlTarget&     ControlTarget                                          (ConstParm, Parm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FPhysicsControlSettings&   ControlSettings                                        (ConstParm, Parm, NoDestructor, NativeAccessSpecifierPublic)
+// const class FName                       Set                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bEnabled                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UPhysicsControlComponent::CreateNamedControl(class FName Name_0, class UMeshComponent* ParentMeshComponent, const class FName ParentBoneName, class UMeshComponent* ChildMeshComponent, const class FName ChildBoneName, const struct FPhysicsControlData& ControlData, const struct FPhysicsControlTarget& ControlTarget, const struct FPhysicsControlSettings& ControlSettings, const class FName Set, const bool bEnabled)
@@ -715,7 +715,7 @@ bool UPhysicsControlComponent::CreateNamedControl(class FName Name_0, class UMes
 // Function PhysicsControl.PhysicsControlComponent.DestroyBodyModifier
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FName                             Name_0                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       Name_0                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UPhysicsControlComponent::DestroyBodyModifier(const class FName Name_0)
@@ -743,7 +743,7 @@ bool UPhysicsControlComponent::DestroyBodyModifier(const class FName Name_0)
 // Function PhysicsControl.PhysicsControlComponent.DestroyBodyModifiers
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<class FName>                     Names                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TArray<class FName>&              Names                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UPhysicsControlComponent::DestroyBodyModifiers(const TArray<class FName>& Names)
 {
@@ -768,7 +768,7 @@ void UPhysicsControlComponent::DestroyBodyModifiers(const TArray<class FName>& N
 // Function PhysicsControl.PhysicsControlComponent.DestroyBodyModifiersInSet
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FName                             Set                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       Set                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UPhysicsControlComponent::DestroyBodyModifiersInSet(const class FName Set)
 {
@@ -793,7 +793,7 @@ void UPhysicsControlComponent::DestroyBodyModifiersInSet(const class FName Set)
 // Function PhysicsControl.PhysicsControlComponent.DestroyControl
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FName                             Name_0                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       Name_0                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UPhysicsControlComponent::DestroyControl(const class FName Name_0)
@@ -821,7 +821,7 @@ bool UPhysicsControlComponent::DestroyControl(const class FName Name_0)
 // Function PhysicsControl.PhysicsControlComponent.DestroyControls
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<class FName>                     Names                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TArray<class FName>&              Names                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UPhysicsControlComponent::DestroyControls(const TArray<class FName>& Names)
 {
@@ -846,7 +846,7 @@ void UPhysicsControlComponent::DestroyControls(const TArray<class FName>& Names)
 // Function PhysicsControl.PhysicsControlComponent.DestroyControlsInSet
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FName                             Set                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       Set                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UPhysicsControlComponent::DestroyControlsInSet(const class FName Set)
 {
@@ -871,8 +871,8 @@ void UPhysicsControlComponent::DestroyControlsInSet(const class FName Set)
 // Function PhysicsControl.PhysicsControlComponent.GetCachedBoneAngularVelocities
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class USkeletalMeshComponent*           SkeletalMeshComponent                                  (ConstParm, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<class FName>                     BoneNames                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const class USkeletalMeshComponent*     SkeletalMeshComponent                                  (ConstParm, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<class FName>&              BoneNames                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 // TArray<struct FVector>                  ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
 TArray<struct FVector> UPhysicsControlComponent::GetCachedBoneAngularVelocities(const class USkeletalMeshComponent* SkeletalMeshComponent, const TArray<class FName>& BoneNames)
@@ -901,8 +901,8 @@ TArray<struct FVector> UPhysicsControlComponent::GetCachedBoneAngularVelocities(
 // Function PhysicsControl.PhysicsControlComponent.GetCachedBoneAngularVelocity
 // (Final, Native, Public, HasDefaults, BlueprintCallable)
 // Parameters:
-// class USkeletalMeshComponent*           SkeletalMeshComponent                                  (ConstParm, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             BoneName                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class USkeletalMeshComponent*     SkeletalMeshComponent                                  (ConstParm, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       BoneName                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 struct FVector UPhysicsControlComponent::GetCachedBoneAngularVelocity(const class USkeletalMeshComponent* SkeletalMeshComponent, const class FName BoneName)
@@ -931,8 +931,8 @@ struct FVector UPhysicsControlComponent::GetCachedBoneAngularVelocity(const clas
 // Function PhysicsControl.PhysicsControlComponent.GetCachedBoneOrientation
 // (Final, Native, Public, HasDefaults, BlueprintCallable)
 // Parameters:
-// class USkeletalMeshComponent*           SkeletalMeshComponent                                  (ConstParm, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             BoneName                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class USkeletalMeshComponent*     SkeletalMeshComponent                                  (ConstParm, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       BoneName                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FRotator                         ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 
 struct FRotator UPhysicsControlComponent::GetCachedBoneOrientation(const class USkeletalMeshComponent* SkeletalMeshComponent, const class FName BoneName)
@@ -961,8 +961,8 @@ struct FRotator UPhysicsControlComponent::GetCachedBoneOrientation(const class U
 // Function PhysicsControl.PhysicsControlComponent.GetCachedBoneOrientations
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class USkeletalMeshComponent*           SkeletalMeshComponent                                  (ConstParm, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<class FName>                     BoneNames                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const class USkeletalMeshComponent*     SkeletalMeshComponent                                  (ConstParm, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<class FName>&              BoneNames                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 // TArray<struct FRotator>                 ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
 TArray<struct FRotator> UPhysicsControlComponent::GetCachedBoneOrientations(const class USkeletalMeshComponent* SkeletalMeshComponent, const TArray<class FName>& BoneNames)
@@ -991,8 +991,8 @@ TArray<struct FRotator> UPhysicsControlComponent::GetCachedBoneOrientations(cons
 // Function PhysicsControl.PhysicsControlComponent.GetCachedBonePosition
 // (Final, Native, Public, HasDefaults, BlueprintCallable)
 // Parameters:
-// class USkeletalMeshComponent*           SkeletalMeshComponent                                  (ConstParm, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             BoneName                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class USkeletalMeshComponent*     SkeletalMeshComponent                                  (ConstParm, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       BoneName                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 struct FVector UPhysicsControlComponent::GetCachedBonePosition(const class USkeletalMeshComponent* SkeletalMeshComponent, const class FName BoneName)
@@ -1021,8 +1021,8 @@ struct FVector UPhysicsControlComponent::GetCachedBonePosition(const class USkel
 // Function PhysicsControl.PhysicsControlComponent.GetCachedBonePositions
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class USkeletalMeshComponent*           SkeletalMeshComponent                                  (ConstParm, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<class FName>                     BoneNames                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const class USkeletalMeshComponent*     SkeletalMeshComponent                                  (ConstParm, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<class FName>&              BoneNames                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 // TArray<struct FVector>                  ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
 TArray<struct FVector> UPhysicsControlComponent::GetCachedBonePositions(const class USkeletalMeshComponent* SkeletalMeshComponent, const TArray<class FName>& BoneNames)
@@ -1051,8 +1051,8 @@ TArray<struct FVector> UPhysicsControlComponent::GetCachedBonePositions(const cl
 // Function PhysicsControl.PhysicsControlComponent.GetCachedBoneTransform
 // (Final, Native, Public, HasDefaults, BlueprintCallable)
 // Parameters:
-// class USkeletalMeshComponent*           SkeletalMeshComponent                                  (ConstParm, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             BoneName                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class USkeletalMeshComponent*     SkeletalMeshComponent                                  (ConstParm, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       BoneName                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FTransform                       ReturnValue                                            (Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 struct FTransform UPhysicsControlComponent::GetCachedBoneTransform(const class USkeletalMeshComponent* SkeletalMeshComponent, const class FName BoneName)
@@ -1081,8 +1081,8 @@ struct FTransform UPhysicsControlComponent::GetCachedBoneTransform(const class U
 // Function PhysicsControl.PhysicsControlComponent.GetCachedBoneTransforms
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class USkeletalMeshComponent*           SkeletalMeshComponent                                  (ConstParm, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<class FName>                     BoneNames                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const class USkeletalMeshComponent*     SkeletalMeshComponent                                  (ConstParm, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<class FName>&              BoneNames                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 // TArray<struct FTransform>               ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
 TArray<struct FTransform> UPhysicsControlComponent::GetCachedBoneTransforms(const class USkeletalMeshComponent* SkeletalMeshComponent, const TArray<class FName>& BoneNames)
@@ -1111,8 +1111,8 @@ TArray<struct FTransform> UPhysicsControlComponent::GetCachedBoneTransforms(cons
 // Function PhysicsControl.PhysicsControlComponent.GetCachedBoneVelocities
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class USkeletalMeshComponent*           SkeletalMeshComponent                                  (ConstParm, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<class FName>                     BoneNames                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const class USkeletalMeshComponent*     SkeletalMeshComponent                                  (ConstParm, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<class FName>&              BoneNames                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 // TArray<struct FVector>                  ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
 TArray<struct FVector> UPhysicsControlComponent::GetCachedBoneVelocities(const class USkeletalMeshComponent* SkeletalMeshComponent, const TArray<class FName>& BoneNames)
@@ -1141,8 +1141,8 @@ TArray<struct FVector> UPhysicsControlComponent::GetCachedBoneVelocities(const c
 // Function PhysicsControl.PhysicsControlComponent.GetCachedBoneVelocity
 // (Final, Native, Public, HasDefaults, BlueprintCallable)
 // Parameters:
-// class USkeletalMeshComponent*           SkeletalMeshComponent                                  (ConstParm, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             BoneName                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class USkeletalMeshComponent*     SkeletalMeshComponent                                  (ConstParm, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       BoneName                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 struct FVector UPhysicsControlComponent::GetCachedBoneVelocity(const class USkeletalMeshComponent* SkeletalMeshComponent, const class FName BoneName)
@@ -1171,8 +1171,8 @@ struct FVector UPhysicsControlComponent::GetCachedBoneVelocity(const class USkel
 // Function PhysicsControl.PhysicsControlComponent.ResetBodyModifiersInSetToCachedBoneTransforms
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FName                             SetName                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EResetToCachedTargetBehavior            Behavior                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       SetName                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const EResetToCachedTargetBehavior      Behavior                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UPhysicsControlComponent::ResetBodyModifiersInSetToCachedBoneTransforms(const class FName SetName, const EResetToCachedTargetBehavior Behavior)
 {
@@ -1198,8 +1198,8 @@ void UPhysicsControlComponent::ResetBodyModifiersInSetToCachedBoneTransforms(con
 // Function PhysicsControl.PhysicsControlComponent.ResetBodyModifiersToCachedBoneTransforms
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<class FName>                     Names                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// EResetToCachedTargetBehavior            Behavior                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<class FName>&              Names                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const EResetToCachedTargetBehavior      Behavior                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UPhysicsControlComponent::ResetBodyModifiersToCachedBoneTransforms(const TArray<class FName>& Names, const EResetToCachedTargetBehavior Behavior)
 {
@@ -1225,8 +1225,8 @@ void UPhysicsControlComponent::ResetBodyModifiersToCachedBoneTransforms(const TA
 // Function PhysicsControl.PhysicsControlComponent.ResetBodyModifierToCachedBoneTransform
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FName                             Name_0                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EResetToCachedTargetBehavior            Behavior                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       Name_0                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const EResetToCachedTargetBehavior      Behavior                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UPhysicsControlComponent::ResetBodyModifierToCachedBoneTransform(const class FName Name_0, const EResetToCachedTargetBehavior Behavior)
@@ -1255,7 +1255,7 @@ bool UPhysicsControlComponent::ResetBodyModifierToCachedBoneTransform(const clas
 // Function PhysicsControl.PhysicsControlComponent.ResetControlPoint
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FName                             Name_0                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       Name_0                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UPhysicsControlComponent::ResetControlPoint(const class FName Name_0)
@@ -1283,8 +1283,8 @@ bool UPhysicsControlComponent::ResetControlPoint(const class FName Name_0)
 // Function PhysicsControl.PhysicsControlComponent.SetBodyModifierCollisionType
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FName                             Name_0                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// ECollisionEnabled                       CollisionType                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       Name_0                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const ECollisionEnabled                 CollisionType                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UPhysicsControlComponent::SetBodyModifierCollisionType(const class FName Name_0, const ECollisionEnabled CollisionType)
@@ -1313,8 +1313,8 @@ bool UPhysicsControlComponent::SetBodyModifierCollisionType(const class FName Na
 // Function PhysicsControl.PhysicsControlComponent.SetBodyModifierGravityMultiplier
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FName                             Name_0                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   GravityMultiplier                                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       Name_0                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             GravityMultiplier                                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UPhysicsControlComponent::SetBodyModifierGravityMultiplier(const class FName Name_0, const float GravityMultiplier)
@@ -1343,10 +1343,10 @@ bool UPhysicsControlComponent::SetBodyModifierGravityMultiplier(const class FNam
 // Function PhysicsControl.PhysicsControlComponent.SetBodyModifierKinematicTarget
 // (Final, Native, Public, HasDefaults, BlueprintCallable)
 // Parameters:
-// class FName                             Name_0                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          KinematicTargetPosition                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FRotator                         KinematicTargetOrienation                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-// bool                                    bMakeKinematic                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       Name_0                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   KinematicTargetPosition                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FRotator&                  KinematicTargetOrienation                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// const bool                              bMakeKinematic                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UPhysicsControlComponent::SetBodyModifierKinematicTarget(const class FName Name_0, const struct FVector& KinematicTargetPosition, const struct FRotator& KinematicTargetOrienation, const bool bMakeKinematic)
@@ -1377,8 +1377,8 @@ bool UPhysicsControlComponent::SetBodyModifierKinematicTarget(const class FName 
 // Function PhysicsControl.PhysicsControlComponent.SetBodyModifierMovementType
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FName                             Name_0                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EPhysicsMovementType                    MovementType                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       Name_0                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const EPhysicsMovementType              MovementType                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UPhysicsControlComponent::SetBodyModifierMovementType(const class FName Name_0, const EPhysicsMovementType MovementType)
@@ -1407,8 +1407,8 @@ bool UPhysicsControlComponent::SetBodyModifierMovementType(const class FName Nam
 // Function PhysicsControl.PhysicsControlComponent.SetBodyModifierPhysicsBlendWeight
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FName                             Name_0                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   PhysicsBlendWeight                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       Name_0                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             PhysicsBlendWeight                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UPhysicsControlComponent::SetBodyModifierPhysicsBlendWeight(const class FName Name_0, const float PhysicsBlendWeight)
@@ -1437,8 +1437,8 @@ bool UPhysicsControlComponent::SetBodyModifierPhysicsBlendWeight(const class FNa
 // Function PhysicsControl.PhysicsControlComponent.SetBodyModifiersCollisionType
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<class FName>                     Names                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// ECollisionEnabled                       CollisionType                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<class FName>&              Names                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const ECollisionEnabled                 CollisionType                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UPhysicsControlComponent::SetBodyModifiersCollisionType(const TArray<class FName>& Names, const ECollisionEnabled CollisionType)
 {
@@ -1464,8 +1464,8 @@ void UPhysicsControlComponent::SetBodyModifiersCollisionType(const TArray<class 
 // Function PhysicsControl.PhysicsControlComponent.SetBodyModifiersGravityMultiplier
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<class FName>                     Names                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// float                                   GravityMultiplier                                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<class FName>&              Names                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const float                             GravityMultiplier                                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UPhysicsControlComponent::SetBodyModifiersGravityMultiplier(const TArray<class FName>& Names, const float GravityMultiplier)
 {
@@ -1491,8 +1491,8 @@ void UPhysicsControlComponent::SetBodyModifiersGravityMultiplier(const TArray<cl
 // Function PhysicsControl.PhysicsControlComponent.SetBodyModifiersInSetCollisionType
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FName                             Set                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// ECollisionEnabled                       CollisionType                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       Set                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const ECollisionEnabled                 CollisionType                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UPhysicsControlComponent::SetBodyModifiersInSetCollisionType(const class FName Set, const ECollisionEnabled CollisionType)
 {
@@ -1518,8 +1518,8 @@ void UPhysicsControlComponent::SetBodyModifiersInSetCollisionType(const class FN
 // Function PhysicsControl.PhysicsControlComponent.SetBodyModifiersInSetGravityMultiplier
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FName                             Set                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   GravityMultiplier                                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       Set                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             GravityMultiplier                                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UPhysicsControlComponent::SetBodyModifiersInSetGravityMultiplier(const class FName Set, const float GravityMultiplier)
 {
@@ -1545,8 +1545,8 @@ void UPhysicsControlComponent::SetBodyModifiersInSetGravityMultiplier(const clas
 // Function PhysicsControl.PhysicsControlComponent.SetBodyModifiersInSetMovementType
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FName                             Set                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EPhysicsMovementType                    MovementType                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       Set                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const EPhysicsMovementType              MovementType                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UPhysicsControlComponent::SetBodyModifiersInSetMovementType(const class FName Set, const EPhysicsMovementType MovementType)
 {
@@ -1572,8 +1572,8 @@ void UPhysicsControlComponent::SetBodyModifiersInSetMovementType(const class FNa
 // Function PhysicsControl.PhysicsControlComponent.SetBodyModifiersInSetPhysicsBlendWeight
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FName                             Set                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   PhysicsBlendWeight                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       Set                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             PhysicsBlendWeight                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UPhysicsControlComponent::SetBodyModifiersInSetPhysicsBlendWeight(const class FName Set, const float PhysicsBlendWeight)
 {
@@ -1599,8 +1599,8 @@ void UPhysicsControlComponent::SetBodyModifiersInSetPhysicsBlendWeight(const cla
 // Function PhysicsControl.PhysicsControlComponent.SetBodyModifiersInSetUpdateKinematicFromSimulation
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FName                             Set                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bUpdateKinematicFromSimulation                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       Set                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bUpdateKinematicFromSimulation                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UPhysicsControlComponent::SetBodyModifiersInSetUpdateKinematicFromSimulation(const class FName Set, const bool bUpdateKinematicFromSimulation)
 {
@@ -1626,8 +1626,8 @@ void UPhysicsControlComponent::SetBodyModifiersInSetUpdateKinematicFromSimulatio
 // Function PhysicsControl.PhysicsControlComponent.SetBodyModifiersInSetUseSkeletalAnimation
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FName                             Set                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bUseSkeletalAnimation                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       Set                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bUseSkeletalAnimation                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UPhysicsControlComponent::SetBodyModifiersInSetUseSkeletalAnimation(const class FName Set, const bool bUseSkeletalAnimation)
 {
@@ -1653,8 +1653,8 @@ void UPhysicsControlComponent::SetBodyModifiersInSetUseSkeletalAnimation(const c
 // Function PhysicsControl.PhysicsControlComponent.SetBodyModifiersMovementType
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<class FName>                     Names                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// EPhysicsMovementType                    MovementType                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<class FName>&              Names                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const EPhysicsMovementType              MovementType                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UPhysicsControlComponent::SetBodyModifiersMovementType(const TArray<class FName>& Names, const EPhysicsMovementType MovementType)
 {
@@ -1680,8 +1680,8 @@ void UPhysicsControlComponent::SetBodyModifiersMovementType(const TArray<class F
 // Function PhysicsControl.PhysicsControlComponent.SetBodyModifiersPhysicsBlendWeight
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<class FName>                     Names                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// float                                   PhysicsBlendWeight                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<class FName>&              Names                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const float                             PhysicsBlendWeight                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UPhysicsControlComponent::SetBodyModifiersPhysicsBlendWeight(const TArray<class FName>& Names, const float PhysicsBlendWeight)
 {
@@ -1707,8 +1707,8 @@ void UPhysicsControlComponent::SetBodyModifiersPhysicsBlendWeight(const TArray<c
 // Function PhysicsControl.PhysicsControlComponent.SetBodyModifiersUpdateKinematicFromSimulation
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<class FName>                     Names                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// bool                                    bUpdateKinematicFromSimulation                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<class FName>&              Names                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const bool                              bUpdateKinematicFromSimulation                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UPhysicsControlComponent::SetBodyModifiersUpdateKinematicFromSimulation(const TArray<class FName>& Names, const bool bUpdateKinematicFromSimulation)
 {
@@ -1734,8 +1734,8 @@ void UPhysicsControlComponent::SetBodyModifiersUpdateKinematicFromSimulation(con
 // Function PhysicsControl.PhysicsControlComponent.SetBodyModifiersUseSkeletalAnimation
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<class FName>                     Names                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// bool                                    bUseSkeletalAnimation                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<class FName>&              Names                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const bool                              bUseSkeletalAnimation                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UPhysicsControlComponent::SetBodyModifiersUseSkeletalAnimation(const TArray<class FName>& Names, const bool bUseSkeletalAnimation)
 {
@@ -1761,8 +1761,8 @@ void UPhysicsControlComponent::SetBodyModifiersUseSkeletalAnimation(const TArray
 // Function PhysicsControl.PhysicsControlComponent.SetBodyModifierUpdateKinematicFromSimulation
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FName                             Name_0                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bUpdateKinematicFromSimulation                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       Name_0                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bUpdateKinematicFromSimulation                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UPhysicsControlComponent::SetBodyModifierUpdateKinematicFromSimulation(const class FName Name_0, const bool bUpdateKinematicFromSimulation)
@@ -1791,8 +1791,8 @@ bool UPhysicsControlComponent::SetBodyModifierUpdateKinematicFromSimulation(cons
 // Function PhysicsControl.PhysicsControlComponent.SetBodyModifierUseSkeletalAnimation
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FName                             Name_0                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bUseSkeletalAnimation                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       Name_0                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bUseSkeletalAnimation                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UPhysicsControlComponent::SetBodyModifierUseSkeletalAnimation(const class FName Name_0, const bool bUseSkeletalAnimation)
@@ -1821,11 +1821,11 @@ bool UPhysicsControlComponent::SetBodyModifierUseSkeletalAnimation(const class F
 // Function PhysicsControl.PhysicsControlComponent.SetCachedBoneData
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
-// class USkeletalMeshComponent*           SkeletalMeshComponent                                  (ConstParm, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             BoneName                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FTransform                       TM                                                     (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          Velocity                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          AngularVelocity                                        (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class USkeletalMeshComponent*     SkeletalMeshComponent                                  (ConstParm, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       BoneName                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FTransform&                TM                                                     (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   Velocity                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   AngularVelocity                                        (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UPhysicsControlComponent::SetCachedBoneData(const class USkeletalMeshComponent* SkeletalMeshComponent, const class FName BoneName, const struct FTransform& TM, const struct FVector& Velocity, const struct FVector& AngularVelocity)
@@ -1857,12 +1857,12 @@ bool UPhysicsControlComponent::SetCachedBoneData(const class USkeletalMeshCompon
 // Function PhysicsControl.PhysicsControlComponent.SetControlAngularData
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FName                             Name_0                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   Strength                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   DampingRatio                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   ExtraDamping                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   MaxTorque                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bEnableControl                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       Name_0                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             Strength                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             DampingRatio                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             ExtraDamping                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             MaxTorque                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bEnableControl                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UPhysicsControlComponent::SetControlAngularData(const class FName Name_0, const float Strength, const float DampingRatio, const float ExtraDamping, const float MaxTorque, const bool bEnableControl)
@@ -1895,8 +1895,8 @@ bool UPhysicsControlComponent::SetControlAngularData(const class FName Name_0, c
 // Function PhysicsControl.PhysicsControlComponent.SetControlAutoDisable
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FName                             Name_0                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bAutoDisable                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       Name_0                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bAutoDisable                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UPhysicsControlComponent::SetControlAutoDisable(const class FName Name_0, const bool bAutoDisable)
@@ -1925,9 +1925,9 @@ bool UPhysicsControlComponent::SetControlAutoDisable(const class FName Name_0, c
 // Function PhysicsControl.PhysicsControlComponent.SetControlData
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FName                             Name_0                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FPhysicsControlData              ControlData                                            (ConstParm, Parm, NoDestructor, NativeAccessSpecifierPublic)
-// bool                                    bEnableControl                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       Name_0                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FPhysicsControlData&       ControlData                                            (ConstParm, Parm, NoDestructor, NativeAccessSpecifierPublic)
+// const bool                              bEnableControl                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UPhysicsControlComponent::SetControlData(const class FName Name_0, const struct FPhysicsControlData& ControlData, const bool bEnableControl)
@@ -1957,9 +1957,9 @@ bool UPhysicsControlComponent::SetControlData(const class FName Name_0, const st
 // Function PhysicsControl.PhysicsControlComponent.SetControlDatas
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<class FName>                     Names                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FPhysicsControlData              ControlData                                            (ConstParm, Parm, NoDestructor, NativeAccessSpecifierPublic)
-// bool                                    bEnableControl                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<class FName>&              Names                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FPhysicsControlData&       ControlData                                            (ConstParm, Parm, NoDestructor, NativeAccessSpecifierPublic)
+// const bool                              bEnableControl                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UPhysicsControlComponent::SetControlDatas(const TArray<class FName>& Names, const struct FPhysicsControlData& ControlData, const bool bEnableControl)
 {
@@ -1986,9 +1986,9 @@ void UPhysicsControlComponent::SetControlDatas(const TArray<class FName>& Names,
 // Function PhysicsControl.PhysicsControlComponent.SetControlDatasInSet
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FName                             Set                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FPhysicsControlData              ControlData                                            (ConstParm, Parm, NoDestructor, NativeAccessSpecifierPublic)
-// bool                                    bEnableControl                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       Set                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FPhysicsControlData&       ControlData                                            (ConstParm, Parm, NoDestructor, NativeAccessSpecifierPublic)
+// const bool                              bEnableControl                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UPhysicsControlComponent::SetControlDatasInSet(const class FName Set, const struct FPhysicsControlData& ControlData, const bool bEnableControl)
 {
@@ -2015,8 +2015,8 @@ void UPhysicsControlComponent::SetControlDatasInSet(const class FName Set, const
 // Function PhysicsControl.PhysicsControlComponent.SetControlDisableCollision
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FName                             Name_0                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bDisableCollision                                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       Name_0                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bDisableCollision                                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UPhysicsControlComponent::SetControlDisableCollision(const class FName Name_0, const bool bDisableCollision)
@@ -2045,8 +2045,8 @@ bool UPhysicsControlComponent::SetControlDisableCollision(const class FName Name
 // Function PhysicsControl.PhysicsControlComponent.SetControlEnabled
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FName                             Name_0                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bEnable                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       Name_0                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bEnable                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UPhysicsControlComponent::SetControlEnabled(const class FName Name_0, const bool bEnable)
@@ -2075,12 +2075,12 @@ bool UPhysicsControlComponent::SetControlEnabled(const class FName Name_0, const
 // Function PhysicsControl.PhysicsControlComponent.SetControlLinearData
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FName                             Name_0                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   Strength                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   DampingRatio                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   ExtraDamping                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   MaxForce                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bEnableControl                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       Name_0                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             Strength                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             DampingRatio                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             ExtraDamping                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             MaxForce                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bEnableControl                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UPhysicsControlComponent::SetControlLinearData(const class FName Name_0, const float Strength, const float DampingRatio, const float ExtraDamping, const float MaxForce, const bool bEnableControl)
@@ -2113,9 +2113,9 @@ bool UPhysicsControlComponent::SetControlLinearData(const class FName Name_0, co
 // Function PhysicsControl.PhysicsControlComponent.SetControlMultiplier
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FName                             Name_0                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FPhysicsControlMultiplier        ControlMultiplier                                      (ConstParm, Parm, NoDestructor, NativeAccessSpecifierPublic)
-// bool                                    bEnableControl                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       Name_0                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FPhysicsControlMultiplier& ControlMultiplier                                      (ConstParm, Parm, NoDestructor, NativeAccessSpecifierPublic)
+// const bool                              bEnableControl                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UPhysicsControlComponent::SetControlMultiplier(const class FName Name_0, const struct FPhysicsControlMultiplier& ControlMultiplier, const bool bEnableControl)
@@ -2145,9 +2145,9 @@ bool UPhysicsControlComponent::SetControlMultiplier(const class FName Name_0, co
 // Function PhysicsControl.PhysicsControlComponent.SetControlMultipliers
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<class FName>                     Names                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FPhysicsControlMultiplier        ControlMultiplier                                      (ConstParm, Parm, NoDestructor, NativeAccessSpecifierPublic)
-// bool                                    bEnableControl                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<class FName>&              Names                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FPhysicsControlMultiplier& ControlMultiplier                                      (ConstParm, Parm, NoDestructor, NativeAccessSpecifierPublic)
+// const bool                              bEnableControl                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UPhysicsControlComponent::SetControlMultipliers(const TArray<class FName>& Names, const struct FPhysicsControlMultiplier& ControlMultiplier, const bool bEnableControl)
 {
@@ -2174,9 +2174,9 @@ void UPhysicsControlComponent::SetControlMultipliers(const TArray<class FName>& 
 // Function PhysicsControl.PhysicsControlComponent.SetControlMultipliersInSet
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FName                             Set                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FPhysicsControlMultiplier        ControlMultiplier                                      (ConstParm, Parm, NoDestructor, NativeAccessSpecifierPublic)
-// bool                                    bEnableControl                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       Set                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FPhysicsControlMultiplier& ControlMultiplier                                      (ConstParm, Parm, NoDestructor, NativeAccessSpecifierPublic)
+// const bool                              bEnableControl                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UPhysicsControlComponent::SetControlMultipliersInSet(const class FName Set, const struct FPhysicsControlMultiplier& ControlMultiplier, const bool bEnableControl)
 {
@@ -2203,8 +2203,8 @@ void UPhysicsControlComponent::SetControlMultipliersInSet(const class FName Set,
 // Function PhysicsControl.PhysicsControlComponent.SetControlPoint
 // (Final, Native, Public, HasDefaults, BlueprintCallable)
 // Parameters:
-// class FName                             Name_0                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          position                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       Name_0                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   position                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UPhysicsControlComponent::SetControlPoint(const class FName Name_0, const struct FVector& position)
@@ -2233,8 +2233,8 @@ bool UPhysicsControlComponent::SetControlPoint(const class FName Name_0, const s
 // Function PhysicsControl.PhysicsControlComponent.SetControlsAutoDisable
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<class FName>                     Names                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// bool                                    bAutoDisable                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<class FName>&              Names                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const bool                              bAutoDisable                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UPhysicsControlComponent::SetControlsAutoDisable(const TArray<class FName>& Names, const bool bAutoDisable)
 {
@@ -2260,8 +2260,8 @@ void UPhysicsControlComponent::SetControlsAutoDisable(const TArray<class FName>&
 // Function PhysicsControl.PhysicsControlComponent.SetControlsDisableCollision
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<class FName>                     Names                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// bool                                    bDisableCollision                                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<class FName>&              Names                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const bool                              bDisableCollision                                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UPhysicsControlComponent::SetControlsDisableCollision(const TArray<class FName>& Names, const bool bDisableCollision)
 {
@@ -2287,8 +2287,8 @@ void UPhysicsControlComponent::SetControlsDisableCollision(const TArray<class FN
 // Function PhysicsControl.PhysicsControlComponent.SetControlsEnabled
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<class FName>                     Names                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// bool                                    bEnable                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<class FName>&              Names                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const bool                              bEnable                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UPhysicsControlComponent::SetControlsEnabled(const TArray<class FName>& Names, const bool bEnable)
 {
@@ -2314,8 +2314,8 @@ void UPhysicsControlComponent::SetControlsEnabled(const TArray<class FName>& Nam
 // Function PhysicsControl.PhysicsControlComponent.SetControlsInSetAutoDisable
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FName                             Set                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bAutoDisable                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       Set                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bAutoDisable                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UPhysicsControlComponent::SetControlsInSetAutoDisable(const class FName Set, const bool bAutoDisable)
 {
@@ -2341,8 +2341,8 @@ void UPhysicsControlComponent::SetControlsInSetAutoDisable(const class FName Set
 // Function PhysicsControl.PhysicsControlComponent.SetControlsInSetDisableCollision
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FName                             Set                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bDisableCollision                                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       Set                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bDisableCollision                                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UPhysicsControlComponent::SetControlsInSetDisableCollision(const class FName Set, const bool bDisableCollision)
 {
@@ -2368,8 +2368,8 @@ void UPhysicsControlComponent::SetControlsInSetDisableCollision(const class FNam
 // Function PhysicsControl.PhysicsControlComponent.SetControlsInSetEnabled
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FName                             Set                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bEnable                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       Set                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bEnable                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UPhysicsControlComponent::SetControlsInSetEnabled(const class FName Set, const bool bEnable)
 {
@@ -2395,9 +2395,9 @@ void UPhysicsControlComponent::SetControlsInSetEnabled(const class FName Set, co
 // Function PhysicsControl.PhysicsControlComponent.SetControlsInSetUseSkeletalAnimation
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FName                             Set                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bUseSkeletalAnimation                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   SkeletalAnimationVelocityMultiplier                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       Set                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bUseSkeletalAnimation                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             SkeletalAnimationVelocityMultiplier                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UPhysicsControlComponent::SetControlsInSetUseSkeletalAnimation(const class FName Set, const bool bUseSkeletalAnimation, const float SkeletalAnimationVelocityMultiplier)
 {
@@ -2424,9 +2424,9 @@ void UPhysicsControlComponent::SetControlsInSetUseSkeletalAnimation(const class 
 // Function PhysicsControl.PhysicsControlComponent.SetControlsUseSkeletalAnimation
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<class FName>                     Names                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// bool                                    bUseSkeletalAnimation                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   SkeletalAnimationVelocityMultiplier                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<class FName>&              Names                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const bool                              bUseSkeletalAnimation                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             SkeletalAnimationVelocityMultiplier                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UPhysicsControlComponent::SetControlsUseSkeletalAnimation(const TArray<class FName>& Names, const bool bUseSkeletalAnimation, const float SkeletalAnimationVelocityMultiplier)
 {
@@ -2453,9 +2453,9 @@ void UPhysicsControlComponent::SetControlsUseSkeletalAnimation(const TArray<clas
 // Function PhysicsControl.PhysicsControlComponent.SetControlTarget
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FName                             Name_0                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FPhysicsControlTarget            ControlTarget                                          (ConstParm, Parm, NoDestructor, NativeAccessSpecifierPublic)
-// bool                                    bEnableControl                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       Name_0                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FPhysicsControlTarget&     ControlTarget                                          (ConstParm, Parm, NoDestructor, NativeAccessSpecifierPublic)
+// const bool                              bEnableControl                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UPhysicsControlComponent::SetControlTarget(const class FName Name_0, const struct FPhysicsControlTarget& ControlTarget, const bool bEnableControl)
@@ -2485,11 +2485,11 @@ bool UPhysicsControlComponent::SetControlTarget(const class FName Name_0, const 
 // Function PhysicsControl.PhysicsControlComponent.SetControlTargetOrientation
 // (Final, Native, Public, HasDefaults, BlueprintCallable)
 // Parameters:
-// class FName                             Name_0                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FRotator                         Orientation                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-// float                                   AngularVelocityDeltaTime                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bEnableControl                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bApplyControlPointToTarget                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       Name_0                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FRotator&                  Orientation                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// const float                             AngularVelocityDeltaTime                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bEnableControl                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bApplyControlPointToTarget                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UPhysicsControlComponent::SetControlTargetOrientation(const class FName Name_0, const struct FRotator& Orientation, const float AngularVelocityDeltaTime, const bool bEnableControl, const bool bApplyControlPointToTarget)
@@ -2521,11 +2521,11 @@ bool UPhysicsControlComponent::SetControlTargetOrientation(const class FName Nam
 // Function PhysicsControl.PhysicsControlComponent.SetControlTargetOrientations
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
-// TArray<class FName>                     Names                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FRotator                         Orientation                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-// float                                   AngularVelocityDeltaTime                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bEnableControl                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bApplyControlPointToTarget                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<class FName>&              Names                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FRotator&                  Orientation                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// const float                             AngularVelocityDeltaTime                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bEnableControl                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bApplyControlPointToTarget                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UPhysicsControlComponent::SetControlTargetOrientations(const TArray<class FName>& Names, const struct FRotator& Orientation, const float AngularVelocityDeltaTime, const bool bEnableControl, const bool bApplyControlPointToTarget)
 {
@@ -2554,11 +2554,11 @@ void UPhysicsControlComponent::SetControlTargetOrientations(const TArray<class F
 // Function PhysicsControl.PhysicsControlComponent.SetControlTargetOrientationsFromArray
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<class FName>                     Names                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// TArray<struct FRotator>                 Orientations                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// float                                   VelocityDeltaTime                                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bEnableControl                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bApplyControlPointToTarget                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<class FName>&              Names                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TArray<struct FRotator>&          Orientations                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const float                             VelocityDeltaTime                                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bEnableControl                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bApplyControlPointToTarget                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UPhysicsControlComponent::SetControlTargetOrientationsFromArray(const TArray<class FName>& Names, const TArray<struct FRotator>& Orientations, const float VelocityDeltaTime, const bool bEnableControl, const bool bApplyControlPointToTarget)
@@ -2590,11 +2590,11 @@ bool UPhysicsControlComponent::SetControlTargetOrientationsFromArray(const TArra
 // Function PhysicsControl.PhysicsControlComponent.SetControlTargetOrientationsInSet
 // (Final, Native, Public, HasDefaults, BlueprintCallable)
 // Parameters:
-// class FName                             SetName                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FRotator                         Orientation                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-// float                                   AngularVelocityDeltaTime                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bEnableControl                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bApplyControlPointToTarget                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       SetName                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FRotator&                  Orientation                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// const float                             AngularVelocityDeltaTime                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bEnableControl                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bApplyControlPointToTarget                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UPhysicsControlComponent::SetControlTargetOrientationsInSet(const class FName SetName, const struct FRotator& Orientation, const float AngularVelocityDeltaTime, const bool bEnableControl, const bool bApplyControlPointToTarget)
 {
@@ -2623,13 +2623,13 @@ void UPhysicsControlComponent::SetControlTargetOrientationsInSet(const class FNa
 // Function PhysicsControl.PhysicsControlComponent.SetControlTargetPoses
 // (Final, Native, Public, HasDefaults, BlueprintCallable)
 // Parameters:
-// class FName                             Name_0                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          ParentPosition                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FRotator                         ParentOrientation                                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-// struct FVector                          ChildPosition                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FRotator                         ChildOrientation                                       (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-// float                                   VelocityDeltaTime                                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bEnableControl                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       Name_0                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   ParentPosition                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FRotator&                  ParentOrientation                                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FVector&                   ChildPosition                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FRotator&                  ChildOrientation                                       (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// const float                             VelocityDeltaTime                                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bEnableControl                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UPhysicsControlComponent::SetControlTargetPoses(const class FName Name_0, const struct FVector& ParentPosition, const struct FRotator& ParentOrientation, const struct FVector& ChildPosition, const struct FRotator& ChildOrientation, const float VelocityDeltaTime, const bool bEnableControl)
@@ -2663,11 +2663,11 @@ bool UPhysicsControlComponent::SetControlTargetPoses(const class FName Name_0, c
 // Function PhysicsControl.PhysicsControlComponent.SetControlTargetPosition
 // (Final, Native, Public, HasDefaults, BlueprintCallable)
 // Parameters:
-// class FName                             Name_0                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          position                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   VelocityDeltaTime                                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bEnableControl                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bApplyControlPointToTarget                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       Name_0                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   position                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             VelocityDeltaTime                                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bEnableControl                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bApplyControlPointToTarget                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UPhysicsControlComponent::SetControlTargetPosition(const class FName Name_0, const struct FVector& position, const float VelocityDeltaTime, const bool bEnableControl, const bool bApplyControlPointToTarget)
@@ -2699,12 +2699,12 @@ bool UPhysicsControlComponent::SetControlTargetPosition(const class FName Name_0
 // Function PhysicsControl.PhysicsControlComponent.SetControlTargetPositionAndOrientation
 // (Final, Native, Public, HasDefaults, BlueprintCallable)
 // Parameters:
-// class FName                             Name_0                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          position                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FRotator                         Orientation                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-// float                                   VelocityDeltaTime                                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bEnableControl                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bApplyControlPointToTarget                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       Name_0                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   position                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FRotator&                  Orientation                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// const float                             VelocityDeltaTime                                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bEnableControl                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bApplyControlPointToTarget                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UPhysicsControlComponent::SetControlTargetPositionAndOrientation(const class FName Name_0, const struct FVector& position, const struct FRotator& Orientation, const float VelocityDeltaTime, const bool bEnableControl, const bool bApplyControlPointToTarget)
@@ -2737,11 +2737,11 @@ bool UPhysicsControlComponent::SetControlTargetPositionAndOrientation(const clas
 // Function PhysicsControl.PhysicsControlComponent.SetControlTargetPositions
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
-// TArray<class FName>                     Names                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FVector                          position                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   VelocityDeltaTime                                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bEnableControl                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bApplyControlPointToTarget                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<class FName>&              Names                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FVector&                   position                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             VelocityDeltaTime                                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bEnableControl                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bApplyControlPointToTarget                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UPhysicsControlComponent::SetControlTargetPositions(const TArray<class FName>& Names, const struct FVector& position, const float VelocityDeltaTime, const bool bEnableControl, const bool bApplyControlPointToTarget)
 {
@@ -2770,12 +2770,12 @@ void UPhysicsControlComponent::SetControlTargetPositions(const TArray<class FNam
 // Function PhysicsControl.PhysicsControlComponent.SetControlTargetPositionsAndOrientations
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
-// TArray<class FName>                     Names                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FVector                          position                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FRotator                         Orientation                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-// float                                   VelocityDeltaTime                                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bEnableControl                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bApplyControlPointToTarget                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<class FName>&              Names                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FVector&                   position                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FRotator&                  Orientation                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// const float                             VelocityDeltaTime                                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bEnableControl                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bApplyControlPointToTarget                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UPhysicsControlComponent::SetControlTargetPositionsAndOrientations(const TArray<class FName>& Names, const struct FVector& position, const struct FRotator& Orientation, const float VelocityDeltaTime, const bool bEnableControl, const bool bApplyControlPointToTarget)
 {
@@ -2805,12 +2805,12 @@ void UPhysicsControlComponent::SetControlTargetPositionsAndOrientations(const TA
 // Function PhysicsControl.PhysicsControlComponent.SetControlTargetPositionsAndOrientationsFromArray
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<class FName>                     Names                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// TArray<struct FVector>                  Positions                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// TArray<struct FRotator>                 Orientations                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// float                                   VelocityDeltaTime                                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bEnableControl                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bApplyControlPointToTarget                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<class FName>&              Names                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TArray<struct FVector>&           Positions                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TArray<struct FRotator>&          Orientations                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const float                             VelocityDeltaTime                                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bEnableControl                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bApplyControlPointToTarget                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UPhysicsControlComponent::SetControlTargetPositionsAndOrientationsFromArray(const TArray<class FName>& Names, const TArray<struct FVector>& Positions, const TArray<struct FRotator>& Orientations, const float VelocityDeltaTime, const bool bEnableControl, const bool bApplyControlPointToTarget)
@@ -2843,12 +2843,12 @@ bool UPhysicsControlComponent::SetControlTargetPositionsAndOrientationsFromArray
 // Function PhysicsControl.PhysicsControlComponent.SetControlTargetPositionsAndOrientationsInSet
 // (Final, Native, Public, HasDefaults, BlueprintCallable)
 // Parameters:
-// class FName                             SetName                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          position                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FRotator                         Orientation                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-// float                                   VelocityDeltaTime                                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bEnableControl                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bApplyControlPointToTarget                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       SetName                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   position                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FRotator&                  Orientation                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// const float                             VelocityDeltaTime                                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bEnableControl                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bApplyControlPointToTarget                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UPhysicsControlComponent::SetControlTargetPositionsAndOrientationsInSet(const class FName SetName, const struct FVector& position, const struct FRotator& Orientation, const float VelocityDeltaTime, const bool bEnableControl, const bool bApplyControlPointToTarget)
 {
@@ -2878,11 +2878,11 @@ void UPhysicsControlComponent::SetControlTargetPositionsAndOrientationsInSet(con
 // Function PhysicsControl.PhysicsControlComponent.SetControlTargetPositionsFromArray
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<class FName>                     Names                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// TArray<struct FVector>                  Positions                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// float                                   VelocityDeltaTime                                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bEnableControl                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bApplyControlPointToTarget                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<class FName>&              Names                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TArray<struct FVector>&           Positions                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const float                             VelocityDeltaTime                                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bEnableControl                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bApplyControlPointToTarget                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UPhysicsControlComponent::SetControlTargetPositionsFromArray(const TArray<class FName>& Names, const TArray<struct FVector>& Positions, const float VelocityDeltaTime, const bool bEnableControl, const bool bApplyControlPointToTarget)
@@ -2914,11 +2914,11 @@ bool UPhysicsControlComponent::SetControlTargetPositionsFromArray(const TArray<c
 // Function PhysicsControl.PhysicsControlComponent.SetControlTargetPositionsInSet
 // (Final, Native, Public, HasDefaults, BlueprintCallable)
 // Parameters:
-// class FName                             SetName                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          position                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   VelocityDeltaTime                                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bEnableControl                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bApplyControlPointToTarget                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       SetName                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   position                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             VelocityDeltaTime                                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bEnableControl                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bApplyControlPointToTarget                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UPhysicsControlComponent::SetControlTargetPositionsInSet(const class FName SetName, const struct FVector& position, const float VelocityDeltaTime, const bool bEnableControl, const bool bApplyControlPointToTarget)
 {
@@ -2947,9 +2947,9 @@ void UPhysicsControlComponent::SetControlTargetPositionsInSet(const class FName 
 // Function PhysicsControl.PhysicsControlComponent.SetControlTargets
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<class FName>                     Names                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FPhysicsControlTarget            ControlTarget                                          (ConstParm, Parm, NoDestructor, NativeAccessSpecifierPublic)
-// bool                                    bEnableControl                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<class FName>&              Names                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FPhysicsControlTarget&     ControlTarget                                          (ConstParm, Parm, NoDestructor, NativeAccessSpecifierPublic)
+// const bool                              bEnableControl                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UPhysicsControlComponent::SetControlTargets(const TArray<class FName>& Names, const struct FPhysicsControlTarget& ControlTarget, const bool bEnableControl)
 {
@@ -2976,9 +2976,9 @@ void UPhysicsControlComponent::SetControlTargets(const TArray<class FName>& Name
 // Function PhysicsControl.PhysicsControlComponent.SetControlTargetsInSet
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FName                             Set                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FPhysicsControlTarget            ControlTarget                                          (ConstParm, Parm, NoDestructor, NativeAccessSpecifierPublic)
-// bool                                    bEnableControl                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       Set                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FPhysicsControlTarget&     ControlTarget                                          (ConstParm, Parm, NoDestructor, NativeAccessSpecifierPublic)
+// const bool                              bEnableControl                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UPhysicsControlComponent::SetControlTargetsInSet(const class FName Set, const struct FPhysicsControlTarget& ControlTarget, const bool bEnableControl)
 {
@@ -3005,9 +3005,9 @@ void UPhysicsControlComponent::SetControlTargetsInSet(const class FName Set, con
 // Function PhysicsControl.PhysicsControlComponent.SetControlUseSkeletalAnimation
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FName                             Name_0                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bUseSkeletalAnimation                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   SkeletalAnimationVelocityMultiplier                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       Name_0                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bUseSkeletalAnimation                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             SkeletalAnimationVelocityMultiplier                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UPhysicsControlComponent::SetControlUseSkeletalAnimation(const class FName Name_0, const bool bUseSkeletalAnimation, const float SkeletalAnimationVelocityMultiplier)
@@ -3137,7 +3137,7 @@ const TArray<class FName> UPhysicsControlComponent::GetAllControlNames() const
 // Function PhysicsControl.PhysicsControlComponent.GetBodyModifierNamesInSet
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// class FName                             Set                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       Set                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TArray<class FName>               ReturnValue                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 const TArray<class FName> UPhysicsControlComponent::GetBodyModifierNamesInSet(const class FName Set) const
@@ -3165,7 +3165,7 @@ const TArray<class FName> UPhysicsControlComponent::GetBodyModifierNamesInSet(co
 // Function PhysicsControl.PhysicsControlComponent.GetControlAutoDisable
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// class FName                             Name_0                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       Name_0                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UPhysicsControlComponent::GetControlAutoDisable(const class FName Name_0) const
@@ -3193,8 +3193,8 @@ bool UPhysicsControlComponent::GetControlAutoDisable(const class FName Name_0) c
 // Function PhysicsControl.PhysicsControlComponent.GetControlData
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// class FName                             Name_0                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FPhysicsControlData              ControlData                                            (Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
+// const class FName                       Name_0                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FPhysicsControlData*             ControlData                                            (Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UPhysicsControlComponent::GetControlData(const class FName Name_0, struct FPhysicsControlData* ControlData) const
@@ -3225,7 +3225,7 @@ bool UPhysicsControlComponent::GetControlData(const class FName Name_0, struct F
 // Function PhysicsControl.PhysicsControlComponent.GetControlEnabled
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// class FName                             Name_0                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       Name_0                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UPhysicsControlComponent::GetControlEnabled(const class FName Name_0) const
@@ -3253,8 +3253,8 @@ bool UPhysicsControlComponent::GetControlEnabled(const class FName Name_0) const
 // Function PhysicsControl.PhysicsControlComponent.GetControlMultiplier
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// class FName                             Name_0                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FPhysicsControlMultiplier        ControlMultiplier                                      (Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
+// const class FName                       Name_0                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FPhysicsControlMultiplier*       ControlMultiplier                                      (Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UPhysicsControlComponent::GetControlMultiplier(const class FName Name_0, struct FPhysicsControlMultiplier* ControlMultiplier) const
@@ -3285,7 +3285,7 @@ bool UPhysicsControlComponent::GetControlMultiplier(const class FName Name_0, st
 // Function PhysicsControl.PhysicsControlComponent.GetControlNamesInSet
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// class FName                             Set                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       Set                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TArray<class FName>               ReturnValue                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 const TArray<class FName> UPhysicsControlComponent::GetControlNamesInSet(const class FName Set) const
@@ -3313,8 +3313,8 @@ const TArray<class FName> UPhysicsControlComponent::GetControlNamesInSet(const c
 // Function PhysicsControl.PhysicsControlComponent.GetControlTarget
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// class FName                             Name_0                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FPhysicsControlTarget            ControlTarget                                          (Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
+// const class FName                       Name_0                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FPhysicsControlTarget*           ControlTarget                                          (Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UPhysicsControlComponent::GetControlTarget(const class FName Name_0, struct FPhysicsControlTarget* ControlTarget) const
@@ -3346,7 +3346,7 @@ bool UPhysicsControlComponent::GetControlTarget(const class FName Name_0, struct
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // class USkeletalMeshComponent*           SkeletalMeshComponent                                  (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<struct FPhysicsControlLimbSetupData>LimbSetupData                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TArray<struct FPhysicsControlLimbSetupData>&LimbSetupData                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 // TMap<class FName, struct FPhysicsControlLimbBones>ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
 TMap<class FName, struct FPhysicsControlLimbBones> UPhysicsControlComponent::GetLimbBonesFromSkeletalMesh(class USkeletalMeshComponent* SkeletalMeshComponent, const TArray<struct FPhysicsControlLimbSetupData>& LimbSetupData) const
@@ -3375,7 +3375,7 @@ TMap<class FName, struct FPhysicsControlLimbBones> UPhysicsControlComponent::Get
 // Function PhysicsControl.PhysicsControlComponent.GetSetsContainingBodyModifier
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// class FName                             Control                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       Control                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<class FName>                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
 TArray<class FName> UPhysicsControlComponent::GetSetsContainingBodyModifier(const class FName Control) const
@@ -3403,7 +3403,7 @@ TArray<class FName> UPhysicsControlComponent::GetSetsContainingBodyModifier(cons
 // Function PhysicsControl.PhysicsControlComponent.GetSetsContainingControl
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// class FName                             Control                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       Control                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<class FName>                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
 TArray<class FName> UPhysicsControlComponent::GetSetsContainingControl(const class FName Control) const

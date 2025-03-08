@@ -96,8 +96,8 @@ void APySummoned_102382::StopMovement()
 // PythonFunction PyAbility_102382.PySummoned_102382.MulticastLocationAndVelocity
 // (Net, Native, NetMulticast, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FVector                          CurLocation                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FVector                          CurVelocity                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVector&                   CurLocation                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVector&                   CurVelocity                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void APySummoned_102382::MulticastLocationAndVelocity(const struct FVector& CurLocation, const struct FVector& CurVelocity)
 {
@@ -123,7 +123,7 @@ void APySummoned_102382::MulticastLocationAndVelocity(const struct FVector& CurL
 // PythonFunction PyAbility_102382.PySummoned_102382.MulticastStopSimulating
 // (Net, NetReliable, Native, NetMulticast, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FVector                          EndLocation                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVector&                   EndLocation                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void APySummoned_102382::MulticastStopSimulating(const struct FVector& EndLocation)
 {
@@ -206,7 +206,7 @@ void APyCue_Summoner_Loop_10238201_BP::Expand()
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 bool APyCue_Summoner_Loop_10238201_BP::WhileActive(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
@@ -255,7 +255,7 @@ void APyCue_Summoner_Loop_10238201_BP::OnLand()
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 bool APyCue_Summoner_Loop_10238201_BP::OnRemove(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)

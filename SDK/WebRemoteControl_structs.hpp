@@ -164,7 +164,7 @@ public:
 	class FString                                 Name;                                              // 0x0000(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 Path;                                              // 0x0010(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 ID;                                                // 0x0020(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<struct FRCPresetLayoutGroupDescription> Groups;                                            // 0x0030(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FRCPresetLayoutGroupDescription> Groups;                                           // 0x0030(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 	TArray<struct FRCControllerDescription>       Controllers;                                       // 0x0040(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 };
 
@@ -728,7 +728,7 @@ struct FRCActorsChangedEvent final
 {
 public:
 	class FString                                 Type;                                              // 0x0000(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMap<class FString, struct FRCActorsChangedData> Changes;                                           // 0x0010(0x0050)(NativeAccessSpecifierPublic)
+	TMap<class FString, struct FRCActorsChangedData> Changes;                                        // 0x0010(0x0050)(NativeAccessSpecifierPublic)
 };
 
 // ScriptStruct WebRemoteControl.RCTransactionEndedEvent

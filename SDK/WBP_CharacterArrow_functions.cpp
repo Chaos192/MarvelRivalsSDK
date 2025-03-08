@@ -40,7 +40,7 @@ void UWBP_CharacterArrow_C::ExecuteUbergraph_WBP_CharacterArrow(int32 EntryPoint
 // Function WBP_CharacterArrow.WBP_CharacterArrow_C.SetArrowColor
 // (Event, Public, HasOutParams, BlueprintEvent)
 // Parameters:
-// struct FLinearColor                     Color                                                  (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FLinearColor&              Color                                                  (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UWBP_CharacterArrow_C::SetArrowColor(const struct FLinearColor& Color)
 {

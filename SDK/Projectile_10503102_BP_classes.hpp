@@ -11,20 +11,20 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "PyAbility_105031_classes.hpp"
 #include "Marvel_structs.hpp"
+#include "PyAbility_105031_classes.hpp"
 
 
 namespace SDK
 {
 
 // BlueprintGeneratedClass Projectile_10503102_BP.Projectile_10503102_BP_C
-// 0x03A0 (0x3420 - 0x3080)
+// 0x03A0 (0x34D0 - 0x3130)
 class AProjectile_10503102_BP_C final : public APyProjectile_10503102
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x3080(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	struct FMarvelTraceRule                       TraceEnemy;                                        // 0x3088(0x0390)(Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x3130(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FMarvelTraceRule                       TraceEnemy;                                        // 0x3138(0x0390)(Edit, BlueprintVisible, DisableEditOnInstance)
 
 public:
 	void ExecuteUbergraph_Projectile_10503102_BP(int32 EntryPoint);

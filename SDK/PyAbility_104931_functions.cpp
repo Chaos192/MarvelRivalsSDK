@@ -86,7 +86,7 @@ bool UPyAbility_104931::IsActorMatchRequirement(class AActor* InActor)
 // PythonFunction PyAbility_104931.PyAbility_104931.IsWolverineParticipateInKillEvent
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FAttributeModifierHandle         ParamHandle                                            (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
+// const struct FAttributeModifierHandle&  ParamHandle                                            (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 bool UPyAbility_104931::IsWolverineParticipateInKillEvent(const struct FAttributeModifierHandle& ParamHandle)
@@ -141,8 +141,8 @@ void UPyAbility_104931::BindWolverineParticipateInKillEvent(bool ShouldBind)
 // Parameters:
 // class AActor*                           Killer                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // class AActor*                           Target                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FAttributeModifierHandle         ParamHandle                                            (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
-// struct FGlobalEventExtraData            ExtraData                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
+// const struct FAttributeModifierHandle&  ParamHandle                                            (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
+// const struct FGlobalEventExtraData&     ExtraData                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
 
 void UPyAbility_104931::OnGlobalActorDealth(class AActor* Killer, class AActor* Target, const struct FAttributeModifierHandle& ParamHandle, const struct FGlobalEventExtraData& ExtraData)
 {

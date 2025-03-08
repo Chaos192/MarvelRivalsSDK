@@ -58,7 +58,7 @@ void UPyWidget_SelectionMenu::Construct()
 // PythonFunction PyWidget_SelectionMenu.PyWidget_SelectionMenu.Tick
 // (BlueprintCosmetic, Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGeometry                        MyGeometry                                             (Parm, IsPlainOldData, NoDestructor)
+// const struct FGeometry&                 MyGeometry                                             (Parm, IsPlainOldData, NoDestructor)
 // float                                   InDeltaTime                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UPyWidget_SelectionMenu::Tick(const struct FGeometry& MyGeometry, float InDeltaTime)

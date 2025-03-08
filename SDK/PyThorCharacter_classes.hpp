@@ -19,7 +19,7 @@ namespace SDK
 {
 
 // PythonClass PyThorCharacter.PyThorCharacter
-// 0x0000 (0x1820 - 0x1820)
+// 0x0000 (0x1870 - 0x1870)
 class APyThorCharacter : public AThorCharacter
 {
 public:

@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass 1023_CharacterBP.1023_CharacterBP_C
-// 0x0000 (0x18A0 - 0x18A0)
+// 0x0000 (0x1900 - 0x1900)
 class AOne023_CharacterBP_C final : public APyRocketRaccoonCharacter
 {
 public:

@@ -12,44 +12,28 @@
 
 #include "Marvel_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "Engine_structs.hpp"
 #include "Hero_1043_structs.hpp"
 #include "GameplayTags_structs.hpp"
-#include "Engine_structs.hpp"
 
 
 namespace SDK::Params
 {
 
-// Function Hero_1043.Cue_Ability_Loop_10434101.OnTagChanged
-// 0x0010 (0x0010 - 0x0000)
-struct Cue_Ability_Loop_10434101_OnTagChanged final
+// Function Hero_1043.Ability_104321.OnUltimateDashFinish
+// 0x0001 (0x0001 - 0x0000)
+struct Ability_104321_OnUltimateDashFinish final
 {
 public:
-	struct FGameplayTag                           TagUpdated;                                        // 0x0000(0x000C)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          TagExists;                                         // 0x000C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	EDashStopReason                               Reason;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
-// Function Hero_1043.Cue_Ability_Loop_10434101.SetMaterialChangeTimer
-// 0x0020 (0x0020 - 0x0000)
-struct Cue_Ability_Loop_10434101_SetMaterialChangeTimer final
-{
-public:
-	float                                         ChangeTime;                                        // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class FName>                           MaterialSlotNameArray;                             // 0x0008(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
-	bool                                          NewState;                                          // 0x0018(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-
-// Function Hero_1043.Cue_Ability_Loop_10434101.SetMeshMaterials
+// Function Hero_1043.Ability_104321.ServerSetCharacterInput
 // 0x0018 (0x0018 - 0x0000)
-struct Cue_Ability_Loop_10434101_SetMeshMaterials final
+struct Ability_104321_ServerSetCharacterInput final
 {
 public:
-	TArray<class FName>                           MaterialSlotNameArray;                             // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
-	bool                                          NewState;                                          // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FVector                                CharInput;                                         // 0x0000(0x0018)(ConstParm, Parm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
 // Function Hero_1043.Cue_AbilityLoop_10432101.CreateCustomMaterial
@@ -90,22 +74,6 @@ public:
 	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 
-// Function Hero_1043.Ability_104321.OnUltimateDashFinish
-// 0x0001 (0x0001 - 0x0000)
-struct Ability_104321_OnUltimateDashFinish final
-{
-public:
-	EDashStopReason                               Reason;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function Hero_1043.Ability_104321.ServerSetCharacterInput
-// 0x0018 (0x0018 - 0x0000)
-struct Ability_104321_ServerSetCharacterInput final
-{
-public:
-	struct FVector                                CharInput;                                         // 0x0000(0x0018)(ConstParm, Parm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
 // Function Hero_1043.Ability_104331.OnMoveBlock
 // 0x0170 (0x0170 - 0x0000)
 struct Ability_104331_OnMoveBlock final
@@ -130,6 +98,38 @@ public:
 	class AActor*                                 InSourceAvatar;                                    // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class AActor*                                 InTargetAvatar;                                    // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FAttributeModifierHandle               ModifierParameterHandle;                           // 0x0010(0x0018)(ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function Hero_1043.Cue_Ability_Loop_10434101.OnTagChanged
+// 0x0010 (0x0010 - 0x0000)
+struct Cue_Ability_Loop_10434101_OnTagChanged final
+{
+public:
+	struct FGameplayTag                           TagUpdated;                                        // 0x0000(0x000C)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          TagExists;                                         // 0x000C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+
+// Function Hero_1043.Cue_Ability_Loop_10434101.SetMaterialChangeTimer
+// 0x0020 (0x0020 - 0x0000)
+struct Cue_Ability_Loop_10434101_SetMaterialChangeTimer final
+{
+public:
+	float                                         ChangeTime;                                        // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class FName>                           MaterialSlotNameArray;                             // 0x0008(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+	bool                                          NewState;                                          // 0x0018(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+
+// Function Hero_1043.Cue_Ability_Loop_10434101.SetMeshMaterials
+// 0x0018 (0x0018 - 0x0000)
+struct Cue_Ability_Loop_10434101_SetMeshMaterials final
+{
+public:
+	TArray<class FName>                           MaterialSlotNameArray;                             // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+	bool                                          NewState;                                          // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 
 // Function Hero_1043.Ability_Glide.OnMoveBlock

@@ -83,8 +83,8 @@ void UPyWidget_CommonVXButton::Construct()
 // PythonFunction PyWidget_Common_ListButton.PyWidget_CommonVXButton.OnMouseEnter
 // (BlueprintCosmetic, Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGeometry                        MyGeometry                                             (Parm, IsPlainOldData, NoDestructor)
-// struct FPointerEvent                    MouseEvent                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGeometry&                 MyGeometry                                             (Parm, IsPlainOldData, NoDestructor)
+// const struct FPointerEvent&             MouseEvent                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyWidget_CommonVXButton::OnMouseEnter(const struct FGeometry& MyGeometry, const struct FPointerEvent& MouseEvent)
 {
@@ -110,7 +110,7 @@ void UPyWidget_CommonVXButton::OnMouseEnter(const struct FGeometry& MyGeometry, 
 // PythonFunction PyWidget_Common_ListButton.PyWidget_CommonVXButton.OnMouseLeave
 // (BlueprintCosmetic, Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FPointerEvent                    MouseEvent                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FPointerEvent&             MouseEvent                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyWidget_CommonVXButton::OnMouseLeave(const struct FPointerEvent& MouseEvent)
 {

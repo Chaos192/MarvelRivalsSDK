@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass KnockUp_LargeTentacle_Attack.KnockUp_LargeTentacle_Attack_C
-// 0x0000 (0x1D98 - 0x1D98)
+// 0x0000 (0x1DA8 - 0x1DA8)
 class UKnockUp_LargeTentacle_Attack_C final : public UPyKnockUp_LargeTentacle_Attack
 {
 public:

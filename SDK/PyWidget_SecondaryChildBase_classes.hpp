@@ -21,6 +21,9 @@ namespace SDK
 class UPyWidget_SecondaryChildBase : public UPyMarvelUserWidget
 {
 public:
+	void Destruct();
+
+public:
 	static class UClass* StaticClass()
 	{
 		return StaticClassImpl<"PyWidget_SecondaryChildBase">();

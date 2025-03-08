@@ -36,10 +36,54 @@ void UPyWidget_HeroSystem_ShowItem::OnInitialized()
 }
 
 
+// PythonFunction PyWidget_HeroSystem_ShowItem.PyWidget_HeroSystem_ShowItem.Destruct
+// (BlueprintCosmetic, Native, Event, Protected, BlueprintCallable, BlueprintEvent)
+
+void UPyWidget_HeroSystem_ShowItem::Destruct()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyWidget_HeroSystem_ShowItem", "Destruct");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// PythonFunction PyWidget_HeroSystem_ShowItem.PyWidget_HeroSystem_ShowItem.PreConstruct
+// (BlueprintCosmetic, Native, Event, Protected, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    IsDesignTime                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UPyWidget_HeroSystem_ShowItem::PreConstruct(bool IsDesignTime)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyWidget_HeroSystem_ShowItem", "PreConstruct");
+
+	Params::PyWidget_HeroSystem_ShowItem_PreConstruct Parms{};
+
+	Parms.IsDesignTime = IsDesignTime;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // PythonFunction PyWidget_HeroSystem_ShowItem.PyWidget_HeroSystem_ShowItem.OnAnimationFinished
 // (BlueprintCosmetic, Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UWidgetAnimation*                 Animation                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// const class UWidgetAnimation*           Animation                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 void UPyWidget_HeroSystem_ShowItem::OnAnimationFinished(const class UWidgetAnimation* Animation)
 {
@@ -61,20 +105,26 @@ void UPyWidget_HeroSystem_ShowItem::OnAnimationFinished(const class UWidgetAnima
 }
 
 
-// PythonFunction PyWidget_HeroSystem_ShowItem.PyWidget_HeroSystem_ShowItem.OnItemRefreshFunc
+// PythonFunction PyWidget_HeroSystem_ShowItem.PyWidget_HeroSystem_ShowItem.SetShowItemData
 // (Native, Public, BlueprintCallable)
+// Parameters:
+// class UObject*                          ItemObject                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void UPyWidget_HeroSystem_ShowItem::OnItemRefreshFunc()
+void UPyWidget_HeroSystem_ShowItem::SetShowItemData(class UObject* ItemObject)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PyWidget_HeroSystem_ShowItem", "OnItemRefreshFunc");
+		Func = Class->GetFunction("PyWidget_HeroSystem_ShowItem", "SetShowItemData");
+
+	Params::PyWidget_HeroSystem_ShowItem_SetShowItemData Parms{};
+
+	Parms.ItemObject = ItemObject;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, nullptr);
+	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 }

@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // PythonClass PyWolverineCharacter.PyWolverineCharacter
-// 0x0000 (0x1870 - 0x1870)
+// 0x0000 (0x18D0 - 0x18D0)
 class APyWolverineCharacter : public AWolverineCharacter
 {
 public:

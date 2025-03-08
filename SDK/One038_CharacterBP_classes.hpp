@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass 1038_CharacterBP.1038_CharacterBP_C
-// 0x0000 (0x1820 - 0x1820)
+// 0x0000 (0x1870 - 0x1870)
 class AOne038_CharacterBP_C final : public APyScarletWitchCharacter
 {
 public:

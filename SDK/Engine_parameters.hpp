@@ -10,12 +10,12 @@
 
 #include "Basic.hpp"
 
+#include "Chaos_structs.hpp"
 #include "Engine_structs.hpp"
 #include "TypedElementFramework_structs.hpp"
 #include "AudioExtensions_structs.hpp"
 #include "NetCore_structs.hpp"
 #include "CoreUObject_structs.hpp"
-#include "Chaos_structs.hpp"
 #include "FieldNotification_structs.hpp"
 #include "InputCore_structs.hpp"
 #include "PhysicsCore_structs.hpp"
@@ -5756,6 +5756,14 @@ public:
 	ETravelFailure                                FailureType;                                       // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
+// Function Engine.GameInstance.SetPacketSize
+// 0x0004 (0x0004 - 0x0000)
+struct GameInstance_SetPacketSize final
+{
+public:
+	int32                                         Size;                                              // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
 // Function Engine.AnimTimeline.AddNewNotifyEvent
 // 0x0070 (0x0070 - 0x0000)
 struct AnimTimeline_AddNewNotifyEvent final
@@ -9505,6 +9513,14 @@ struct DemoNetDriver_GotoEndTime final
 {
 public:
 	bool                                          IsEnd;                                             // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function Engine.DemoNetDriver.IsDemoCheatingAnalysis
+// 0x0001 (0x0001 - 0x0000)
+struct DemoNetDriver_IsDemoCheatingAnalysis final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
 // Function Engine.DemoNetDriver.IsDemoDeathReplay
@@ -14051,14 +14067,23 @@ public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
+// Function Engine.World.SetForceHotfix
+// 0x0001 (0x0001 - 0x0000)
+struct World_SetForceHotfix final
+{
+public:
+	bool                                          bShouldForce;                                      // 0x0000(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
 // Function Engine.World.SetHotfixBytes
-// 0x0030 (0x0030 - 0x0000)
+// 0x0040 (0x0040 - 0x0000)
 struct World_SetHotfixBytes final
 {
 public:
 	TArray<uint8>                                 InHotfixBytes;                                     // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 	TArray<int32>                                 lengths;                                           // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 	TArray<class FString>                         fileNames;                                         // 0x0020(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	class FString                                 HotfixID;                                          // 0x0030(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
 // Function Engine.World.SetNetServerMaxTickRate
@@ -14249,7 +14274,7 @@ struct TimelineComponent_AddInterpFloat final
 {
 public:
 	class UCurveFloat*                            FloatCurve;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(class FName TrackName, class FName PropertyName, float Output)> InterpFunc;                                        // 0x0008(0x0014)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(class FName TrackName, class FName PropertyName, float Output)> InterpFunc;       // 0x0008(0x0014)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FName                                   PropertyName;                                      // 0x001C(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FName                                   TrackName;                                         // 0x0028(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
@@ -14261,7 +14286,7 @@ struct TimelineComponent_AddInterpLinearColor final
 {
 public:
 	class UCurveLinearColor*                      LinearColorCurve;                                  // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FLinearColor& Output)> InterpFunc;                                        // 0x0008(0x0014)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLinearColor& Output)> InterpFunc;                                   // 0x0008(0x0014)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FName                                   PropertyName;                                      // 0x001C(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FName                                   TrackName;                                         // 0x0028(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
@@ -15361,7 +15386,7 @@ public:
 	TSubclassOf<class ULocalPlayerSaveGame>       SaveGameClass;                                     // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class APlayerController*                      LocalPlayerController;                             // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 SlotName;                                          // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(class ULocalPlayerSaveGame* SaveGame)> Delegate;                                          // 0x0020(0x0014)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(class ULocalPlayerSaveGame* SaveGame)> Delegate;                                  // 0x0020(0x0014)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0034(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_35[0x3];                                       // 0x0035(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
@@ -16363,7 +16388,7 @@ public:
 struct PlayerController_ClientSpawnCameraLensEffect final
 {
 public:
-	TSubclassOf<class AEmitterCameraLensEffectBase> LensEffectEmitterClass;                            // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSubclassOf<class AEmitterCameraLensEffectBase> LensEffectEmitterClass;                          // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
 // Function Engine.PlayerController.ClientSpawnGenericCameraLensEffect
@@ -16499,7 +16524,7 @@ public:
 struct PlayerController_ClientUpdateMultipleLevelsStreamingStatus final
 {
 public:
-	TArray<struct FUpdateLevelStreamingLevelStatus> LevelStatuses;                                     // 0x0000(0x0010)(ConstParm, Parm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TArray<struct FUpdateLevelStreamingLevelStatus> LevelStatuses;                                   // 0x0000(0x0010)(ConstParm, Parm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 };
 
 // Function Engine.PlayerController.ClientWasKicked
@@ -16771,7 +16796,7 @@ public:
 struct PlayerController_ServerUpdateMultipleLevelsVisibility final
 {
 public:
-	TArray<struct FUpdateLevelVisibilityLevelInfo> LevelVisibilities;                                 // 0x0000(0x0010)(ConstParm, Parm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TArray<struct FUpdateLevelVisibilityLevelInfo> LevelVisibilities;                                // 0x0000(0x0010)(ConstParm, Parm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 };
 
 // Function Engine.PlayerController.ServerViewSelf
@@ -17288,6 +17313,14 @@ struct PlayerController_GetViewportSize final
 public:
 	int32                                         SizeX;                                             // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         SizeY;                                             // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function Engine.PlayerController.HasNetConnection
+// 0x0001 (0x0001 - 0x0000)
+struct PlayerController_HasNetConnection final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
 // Function Engine.PlayerController.IsAudioListener
@@ -19132,7 +19165,7 @@ public:
 struct PlayerCameraManager_AddCameraLensEffect final
 {
 public:
-	TSubclassOf<class AEmitterCameraLensEffectBase> LensEffectEmitterClass;                            // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSubclassOf<class AEmitterCameraLensEffectBase> LensEffectEmitterClass;                          // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class AEmitterCameraLensEffectBase*           ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -19142,7 +19175,7 @@ struct PlayerCameraManager_AddGenericCameraLensEffect final
 {
 public:
 	TSubclassOf<class AActor>                     LensEffectEmitterClass;                            // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TScriptInterface<class ICameraLensEffectInterface> ReturnValue;                                       // 0x0008(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TScriptInterface<class ICameraLensEffectInterface> ReturnValue;                                  // 0x0008(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
 // Function Engine.PlayerCameraManager.AddNewCameraModifier
@@ -19210,7 +19243,7 @@ public:
 struct PlayerCameraManager_RemoveGenericCameraLensEffect final
 {
 public:
-	TScriptInterface<class ICameraLensEffectInterface> Emitter;                                           // 0x0000(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TScriptInterface<class ICameraLensEffectInterface> Emitter;                                      // 0x0000(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
 // Function Engine.PlayerCameraManager.SetManualCameraFade
@@ -20732,7 +20765,7 @@ public:
 struct AudioVolume_SetSubmixOverrideSettings final
 {
 public:
-	TArray<struct FAudioVolumeSubmixOverrideSettings> NewSubmixOverrideSettings;                         // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TArray<struct FAudioVolumeSubmixOverrideSettings> NewSubmixOverrideSettings;                     // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 };
 
 // Function Engine.AudioVolume.SetSubmixSendSettings
@@ -20875,7 +20908,7 @@ public:
 struct CameraLensEffectInterfaceClassSupportLibrary_IsInterfaceValid final
 {
 public:
-	TScriptInterface<class ICameraLensEffectInterface> CameraLens;                                        // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TScriptInterface<class ICameraLensEffectInterface> CameraLens;                                   // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EInterfaceValidResult                         Result;                                            // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
@@ -22032,7 +22065,7 @@ public:
 	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UQuartzClockHandle*                     InClockHandle;                                     // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FQuartzQuantizationBoundary            InQuantizationBoundary;                            // 0x0010(0x0020)(Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	TDelegate<void(EQuartzCommandDelegateSubType EventType, class FName Name)> InDelegate;                                        // 0x0030(0x0014)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(EQuartzCommandDelegateSubType EventType, class FName Name)> InDelegate;           // 0x0030(0x0014)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         InStartTime;                                       // 0x0044(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         InFadeInDuration;                                  // 0x0048(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         InFadeVolumeLevel;                                 // 0x004C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -24199,16 +24232,16 @@ public:
 };
 
 // Function Engine.DataTableFunctionLibrary.GetDataTableRowFromName
-// 0x0040 (0x0040 - 0x0000)
+// 0x0030 (0x0030 - 0x0000)
 struct DataTableFunctionLibrary_GetDataTableRowFromName final
 {
 public:
 	class UDataTable*                             Table;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FName                                   RowName;                                           // 0x0008(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTableRowBase                          OutRow;                                            // 0x0018(0x0020)(Parm, OutParm, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0038(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_39[0x7];                                       // 0x0039(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FTableRowBase                          OutRow;                                            // 0x0018(0x0010)(Parm, OutParm, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0028(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_29[0x7];                                       // 0x0029(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 
 // Function Engine.DataTableFunctionLibrary.GetDataTableRowNames
@@ -24669,7 +24702,7 @@ public:
 struct ViewportStatsSubsystem_AddDisplayDelegate final
 {
 public:
-	TDelegate<void(class FText* OutText, struct FLinearColor* OutColor)> Delegate;                                          // 0x0000(0x0014)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(class FText* OutText, struct FLinearColor* OutColor)> Delegate;                   // 0x0000(0x0014)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         ReturnValue;                                       // 0x0014(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
@@ -37834,7 +37867,7 @@ struct KismetSystemLibrary_LoadAssetClass final
 public:
 	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TSoftClassPtr<class UClass>                   AssetClass;                                        // 0x0008(0x0030)(Parm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(TSubclassOf<class UObject> Loaded)> OnLoaded;                                          // 0x0038(0x0014)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(TSubclassOf<class UObject> Loaded)> OnLoaded;                                     // 0x0038(0x0014)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_4C[0x4];                                       // 0x004C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FLatentActionInfo                      LatentInfo;                                        // 0x0050(0x0020)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 };
@@ -40648,7 +40681,7 @@ struct SoundSubmix_AddEnvelopeFollowerDelegate final
 {
 public:
 	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(TArray<float>& Envelope)>      OnSubmixEnvelopeBP;                                // 0x0008(0x0014)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const TArray<float>& Envelope)> OnSubmixEnvelopeBP;                               // 0x0008(0x0014)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 
@@ -40658,8 +40691,8 @@ struct SoundSubmix_AddSpectralAnalysisDelegate final
 {
 public:
 	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<struct FSoundSubmixSpectralAnalysisBandSettings> InBandSettings;                                    // 0x0008(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-	TDelegate<void(TArray<float>& Magnitude)>     OnSubmixSpectralAnalysisBP;                        // 0x0018(0x0014)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FSoundSubmixSpectralAnalysisBandSettings> InBandSettings;                          // 0x0008(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void(const TArray<float>& Magnitude)> OnSubmixSpectralAnalysisBP;                      // 0x0018(0x0014)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         UpdateRate;                                        // 0x002C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         DecibelNoiseFloor;                                 // 0x0030(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bDoNormalize;                                      // 0x0034(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -40675,7 +40708,7 @@ struct SoundSubmix_RemoveSpectralAnalysisDelegate final
 {
 public:
 	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(TArray<float>& Magnitude)>     OnSubmixSpectralAnalysisBP;                        // 0x0008(0x0014)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const TArray<float>& Magnitude)> OnSubmixSpectralAnalysisBP;                      // 0x0008(0x0014)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 
@@ -41330,7 +41363,7 @@ public:
 struct WorldPartitionDestructibleInHLODSupportLibrary_DamageInHLOD final
 {
 public:
-	TScriptInterface<class IWorldPartitionDestructibleInHLODInterface> DestructibleInHLOD;                                // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TScriptInterface<class IWorldPartitionDestructibleInHLODInterface> DestructibleInHLOD;           // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         DamagePercent;                                     // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
@@ -41340,7 +41373,7 @@ public:
 struct WorldPartitionDestructibleInHLODSupportLibrary_DestroyInHLOD final
 {
 public:
-	TScriptInterface<class IWorldPartitionDestructibleInHLODInterface> DestructibleInHLOD;                                // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TScriptInterface<class IWorldPartitionDestructibleInHLODInterface> DestructibleInHLOD;           // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
 // Function Engine.WorldPartitionSubsystem.IsAllStreamingCompleted
@@ -41358,7 +41391,7 @@ struct WorldPartitionSubsystem_IsStreamingCompleted final
 public:
 	EWorldPartitionRuntimeCellState               QueryState;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FWorldPartitionStreamingQuerySource> QuerySources;                                      // 0x0008(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TArray<struct FWorldPartitionStreamingQuerySource> QuerySources;                                 // 0x0008(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 	bool                                          bExactState;                                       // 0x0018(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0019(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_1A[0x6];                                       // 0x001A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])

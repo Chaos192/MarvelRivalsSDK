@@ -17,24 +17,6 @@
 namespace SDK
 {
 
-// PythonClass PyAbility_103171.PyWidget_Switch_AbilityStatus_103171
-// 0x0000 (0x05A8 - 0x05A8)
-class UPyWidget_Switch_AbilityStatus_103171 final : public UMarvelUserWidget
-{
-public:
-	void Construct();
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"PyWidget_Switch_AbilityStatus_103171">();
-	}
-	static class UPyWidget_Switch_AbilityStatus_103171* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UPyWidget_Switch_AbilityStatus_103171>();
-	}
-};
-
 // PythonClass PyAbility_103171.PyConfig_103171
 // 0x0018 (0x00B0 - 0x0098)
 class UPyConfig_103171 final : public UMarvelAbilityConfig
@@ -57,35 +39,17 @@ public:
 	}
 };
 
-// PythonClass PyAbility_103171.PyWidget_103171
-// 0x0008 (0x05B0 - 0x05A8)
-class UPyWidget_103171 final : public UMarvelUserWidget
-{
-public:
-	int32                                         TreatScopeID;                                      // 0x05A8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         LoopPlayDealyTime;                                 // 0x05AC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"PyWidget_103171">();
-	}
-	static class UPyWidget_103171* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UPyWidget_103171>();
-	}
-};
-
 // PythonClass PyAbility_103171.PyAbility_103171
-// 0x0038 (0x25C0 - 0x2588)
+// 0x0038 (0x25C8 - 0x2590)
 class UPyAbility_103171 : public UAbility_108
 {
 public:
-	int32                                         ScopeId;                                           // 0x2588(0x0004)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_258C[0x4];                                     // 0x258C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TMulticastInlineDelegate<void()>              OnSwitchDelegate;                                  // 0x2590(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void()>              OnTeamKilled;                                      // 0x25A0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(int32 ScopeId)> OnScopeChanged;                                    // 0x25B0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	int32                                         ScopeId;                                           // 0x2590(0x0004)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bCanSwitch;                                        // 0x2594(0x0001)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2595[0x3];                                     // 0x2595(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	TMulticastInlineDelegate<void()>              OnSwitchDelegate;                                  // 0x2598(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void()>              OnTeamKilled;                                      // 0x25A8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(int32 ScopeId)> OnScopeChanged;                                    // 0x25B8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 
 public:
 	void BeginPlay();
@@ -136,11 +100,11 @@ public:
 };
 
 // PythonClass PyAbility_103171.PyUIController_103171
-// 0x0010 (0x0C70 - 0x0C60)
+// 0x0010 (0x0C60 - 0x0C50)
 class UPyUIController_103171 final : public UUIC_Ability
 {
 public:
-	struct FGameplayTag                           StatusTag;                                         // 0x0C60(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGameplayTag                           StatusTag;                                         // 0x0C50(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void SetAbility(int32 InAbilityId, class UGameplayAbility* InAbility);
@@ -158,8 +122,45 @@ public:
 	}
 };
 
+// PythonClass PyAbility_103171.PyWidget_Switch_AbilityStatus_103171
+// 0x0000 (0x05A8 - 0x05A8)
+class UPyWidget_Switch_AbilityStatus_103171 final : public UMarvelUserWidget
+{
+public:
+	void Construct();
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PyWidget_Switch_AbilityStatus_103171">();
+	}
+	static class UPyWidget_Switch_AbilityStatus_103171* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPyWidget_Switch_AbilityStatus_103171>();
+	}
+};
+
+// PythonClass PyAbility_103171.PyWidget_103171
+// 0x0008 (0x05B0 - 0x05A8)
+class UPyWidget_103171 final : public UMarvelUserWidget
+{
+public:
+	int32                                         TreatScopeID;                                      // 0x05A8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         LoopPlayDealyTime;                                 // 0x05AC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PyWidget_103171">();
+	}
+	static class UPyWidget_103171* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPyWidget_103171>();
+	}
+};
+
 // PythonClass PyAbility_103171.PyCue_Ability_Loop_10317101
-// 0x0090 (0x0EE0 - 0x0E50)
+// 0x00F8 (0x0F48 - 0x0E50)
 class APyCue_Ability_Loop_10317101 final : public AMarvelCueNotify_Ability
 {
 public:
@@ -171,6 +172,10 @@ public:
 	uint8                                         Pad_EC4[0x4];                                      // 0x0EC4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UFXSystemAsset*                         SwitchOnceFXAsset;                                 // 0x0EC8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FName                                   SwitchOnceFXSocket;                                // 0x0ED0(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   OpenChangeLogoParamName;                           // 0x0EDC(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   ChangeLogoParamName;                               // 0x0EE8(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_EF4[0x4];                                      // 0x0EF4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<int32, float>                            LogoParamValMap;                                   // 0x0EF8(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 
 public:
 	bool WhileActive(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters);

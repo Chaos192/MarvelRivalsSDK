@@ -40,6 +40,15 @@ public:
 	struct FVector3f                              RotationWS;                                        // 0x0014(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
+// ScriptStruct BlastNiagara.BlastBigChunkBrokenMessage
+// 0x0050 (0x0050 - 0x0000)
+struct FBlastBigChunkBrokenMessage final
+{
+public:
+	struct FBlastBigChunkState                    BigChunkState;                                     // 0x0000(0x0040)(NoDestructor, NativeAccessSpecifierPublic)
+	TArray<struct FBlastFXChunkState>             FXChunkStates;                                     // 0x0040(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+};
+
 // ScriptStruct BlastNiagara.BlastFXChunkParticleData
 // 0x0020 (0x0020 - 0x0000)
 struct FBlastFXChunkParticleData final
@@ -49,15 +58,6 @@ public:
 	uint32                                        MeshIndex;                                         // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector3f                              Rotation;                                          // 0x0010(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint32                                        FatherChunkDataIndex;                              // 0x001C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// ScriptStruct BlastNiagara.BlastBigChunkBrokenMessage
-// 0x0050 (0x0050 - 0x0000)
-struct FBlastBigChunkBrokenMessage final
-{
-public:
-	struct FBlastBigChunkState                    BigChunkState;                                     // 0x0000(0x0040)(NoDestructor, NativeAccessSpecifierPublic)
-	TArray<struct FBlastFXChunkState>             FXChunkStates;                                     // 0x0040(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 };
 
 }

@@ -269,9 +269,9 @@ class UUserWidget* UPyUIGameFunctionLibraray::GetAbilityStatusPanel()
 // PythonFunction PyBattlePanel.PyUIGameFunctionLibraray.AddHitIndicator
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UMarvelCueNotify_HitImpact*       Cue                                                    (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// const class UMarvelCueNotify_HitImpact* Cue                                                    (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameter                                              (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameter                                              (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyUIGameFunctionLibraray::AddHitIndicator(const class UMarvelCueNotify_HitImpact* Cue, class AActor* MyTarget, const struct FGameplayCueParameters& Parameter)
 {

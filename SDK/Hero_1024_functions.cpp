@@ -22,8 +22,8 @@ namespace SDK
 // Parameters:
 // class AActor*                           Killer                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           Target                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FAttributeModifierHandle         ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGlobalEventExtraData            ExtraData                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FAttributeModifierHandle&  ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGlobalEventExtraData&     ExtraData                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
 void UAbility_102411::OnActorDeath(class AActor* Killer, class AActor* Target, const struct FAttributeModifierHandle& ModifierParameterHandle, const struct FGlobalEventExtraData& ExtraData)
 {
@@ -51,7 +51,7 @@ void UAbility_102411::OnActorDeath(class AActor* Killer, class AActor* Target, c
 // Function Hero_1024.Ability_102411.OnAssistKill
 // (Native, Event, Protected, HasOutParams, BlueprintEvent)
 // Parameters:
-// struct FUIKillInfo                      KillInfo                                               (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FUIKillInfo&               KillInfo                                               (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UAbility_102411::OnAssistKill(const struct FUIKillInfo& KillInfo)
 {
@@ -384,8 +384,8 @@ float UAbility_102471::GetOriginGravityScale() const
 // Function Hero_1024.Ability_102471.OnAbilityActiveFailed
 // (Final, Native, Public, HasOutParams, Const)
 // Parameters:
-// class UGameplayAbility*                 InAbility                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayTagContainer            Tags                                                   (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const class UGameplayAbility*           InAbility                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTagContainer&     Tags                                                   (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UAbility_102471::OnAbilityActiveFailed(const class UGameplayAbility* InAbility, const struct FGameplayTagContainer& Tags) const
 {
@@ -474,7 +474,7 @@ void ACrownStormCharacter::TransitionToHela()
 // Function Hero_1024.HelaAnimInstance.OnFlyTagUpdated
 // (Final, Native, Protected, HasOutParams)
 // Parameters:
-// struct FGameplayTag                     TagUpdated                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              TagUpdated                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    TagExists                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UHelaAnimInstance::OnFlyTagUpdated(const struct FGameplayTag& TagUpdated, bool TagExists)
@@ -527,7 +527,7 @@ void UHelaAnimInstance::SetAutoDescend(bool bInOpenAutoDescend)
 // (Final, Native, Public, HasOutParams)
 // Parameters:
 // class UGameplayAbility*                 InAbility                                              (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FMarvelAbilitySocketInfo         SocketInfo                                             (Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
+// struct FMarvelAbilitySocketInfo*        SocketInfo                                             (Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
 // float                                   DelayTime                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   ScopeId                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -561,7 +561,7 @@ void AHelaCharacter::DelaySpawnPassiveAbilityDamageScope(class UGameplayAbility*
 // Parameters:
 // class AActor*                           DamageCauser                                           (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           TargetActor                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FAttributeModifierHandle         ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FAttributeModifierHandle&  ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void AHelaCharacter::OnDeathDeal(class AActor* DamageCauser, class AActor* TargetActor, const struct FAttributeModifierHandle& ModifierParameterHandle)
 {
@@ -589,7 +589,7 @@ void AHelaCharacter::OnDeathDeal(class AActor* DamageCauser, class AActor* Targe
 // (Final, Native, Public, HasOutParams)
 // Parameters:
 // class AActor*                           InActor                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FCharacterRebornParam            Param                                                  (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FCharacterRebornParam&     Param                                                  (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 void AHelaCharacter::OnRebornDeal(class AActor* InActor, const struct FCharacterRebornParam& Param)
 {
@@ -617,7 +617,7 @@ void AHelaCharacter::OnRebornDeal(class AActor* InActor, const struct FCharacter
 // Parameters:
 // class AActor*                           InSource                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           InTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FAttributeModifierHandle         ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FAttributeModifierHandle&  ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UTabData_1024::OnPostApplyDamage(class AActor* InSource, class AActor* InTarget, const struct FAttributeModifierHandle& ModifierParameterHandle)
 {

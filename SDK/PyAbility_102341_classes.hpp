@@ -107,7 +107,7 @@ public:
 	float                                         SpawnUpTraceLength;                                // 0x2048(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          DebugRespawnSelf;                                  // 0x204C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          DebugRespawnEnemy;                                 // 0x204D(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          DebugInfiniteRespawn;                              // 0x204E(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          DebugSpawnFailed;                                  // 0x204E(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -139,12 +139,12 @@ public:
 };
 
 // PythonClass PyAbility_102341.PyAbility_102341
-// 0x0070 (0x25F8 - 0x2588)
+// 0x0070 (0x2600 - 0x2590)
 class UPyAbility_102341 : public UAbility_108
 {
 public:
-	class UPySummonedComp_10234101*               CurrentSummonedComp;                               // 0x2588(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, Net, ZeroConstructor, EditConst, InstancedReference, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGameplayTagContainer                  AbilityMainTag;                                    // 0x2590(0x0068)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	class UPySummonedComp_10234101*               CurrentSummonedComp;                               // 0x2590(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, Net, ZeroConstructor, EditConst, InstancedReference, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGameplayTagContainer                  AbilityMainTag;                                    // 0x2598(0x0068)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 
 public:
 	void BeginPlay();
@@ -213,16 +213,16 @@ public:
 };
 
 // PythonClass PyAbility_102341.PySummoned_102341_Item
-// 0x0030 (0x0900 - 0x08D0)
+// 0x0030 (0x0930 - 0x0900)
 #pragma pack(push, 0x1)
 class alignas(0x10) APySummoned_102341_Item : public ASummoned_10234101_Item
 {
 public:
-	bool                                          IsArmorPack;                                       // 0x08D0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          IsRocketShoes;                                     // 0x08D1(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_8D2[0x6];                                      // 0x08D2(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                InitialVelocity;                                   // 0x08D8(0x0018)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          Launched;                                          // 0x08F0(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsArmorPack;                                       // 0x0900(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsRocketShoes;                                     // 0x0901(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_902[0x6];                                      // 0x0902(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                InitialVelocity;                                   // 0x0908(0x0018)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          Launched;                                          // 0x0920(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -266,12 +266,12 @@ public:
 };
 
 // PythonClass PyAbility_102341.PyUIController_102341
-// 0x0010 (0x0C70 - 0x0C60)
+// 0x0010 (0x0C60 - 0x0C50)
 class UPyUIController_102341 final : public UUIC_Ability
 {
 public:
-	class UTexture2D*                             Icon_Normal;                                       // 0x0C60(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UTexture2D*                             Icon_Switch;                                       // 0x0C68(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UTexture2D*                             Icon_Normal;                                       // 0x0C50(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UTexture2D*                             Icon_Switch;                                       // 0x0C58(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void OnInit();

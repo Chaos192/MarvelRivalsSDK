@@ -10,12 +10,12 @@
 
 #include "Basic.hpp"
 
-#include "Engine_classes.hpp"
+#include "GameplayTags_structs.hpp"
 #include "AIModule_structs.hpp"
 #include "AIModule_classes.hpp"
-#include "GameplayTags_structs.hpp"
-#include "GameplayBehaviorsModule_structs.hpp"
 #include "CoreUObject_classes.hpp"
+#include "Engine_classes.hpp"
+#include "GameplayBehaviorsModule_structs.hpp"
 
 
 namespace SDK
@@ -219,7 +219,7 @@ public:
 class UGameplayBehaviorSubsystem final : public UWorldSubsystem
 {
 public:
-	TMap<class AActor*, struct FAgentGameplayBehaviors> AgentGameplayBehaviors;                            // 0x0038(0x0050)(Protected, NativeAccessSpecifierProtected)
+	TMap<class AActor*, struct FAgentGameplayBehaviors> AgentGameplayBehaviors;                      // 0x0038(0x0050)(Protected, NativeAccessSpecifierProtected)
 
 public:
 	static class UClass* StaticClass()

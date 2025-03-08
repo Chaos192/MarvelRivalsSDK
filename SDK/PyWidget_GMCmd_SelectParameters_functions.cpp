@@ -17,50 +17,6 @@
 namespace SDK
 {
 
-// PythonFunction PyWidget_GMCmd_SelectParameters.PyWidget_GMCmd_SelectParameters_Item.OnInitialized
-// (BlueprintCosmetic, Native, Event, Protected, BlueprintCallable, BlueprintEvent)
-
-void UPyWidget_GMCmd_SelectParameters_Item::OnInitialized()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PyWidget_GMCmd_SelectParameters_Item", "OnInitialized");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// PythonFunction PyWidget_GMCmd_SelectParameters.PyWidget_GMCmd_SelectParameters_Item.SetParametersData
-// (Native, Public, BlueprintCallable)
-// Parameters:
-// class UObject*                          ItemObject_0                                           (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-
-void UPyWidget_GMCmd_SelectParameters_Item::SetParametersData(class UObject* ItemObject_0)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PyWidget_GMCmd_SelectParameters_Item", "SetParametersData");
-
-	Params::PyWidget_GMCmd_SelectParameters_Item_SetParametersData Parms{};
-
-	Parms.ItemObject_0 = ItemObject_0;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // PythonFunction PyWidget_GMCmd_SelectParameters.PyWidget_GMCmd_SelectParameters.OnInitialized
 // (BlueprintCosmetic, Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 
@@ -83,8 +39,8 @@ void UPyWidget_GMCmd_SelectParameters::OnInitialized()
 // PythonFunction PyWidget_GMCmd_SelectParameters.PyWidget_GMCmd_SelectParameters.OnClickedBtn
 // (Native, Public, BlueprintCallable)
 // Parameters:
-// class FString                           ParametersName                                         (Parm, ZeroConstructor, HasGetValueTypeHash)
-// class FString                           ParametersValue                                        (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    ParametersName                                         (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    ParametersValue                                        (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyWidget_GMCmd_SelectParameters::OnClickedBtn(const class FString& ParametersName, const class FString& ParametersValue)
 {
@@ -110,8 +66,8 @@ void UPyWidget_GMCmd_SelectParameters::OnClickedBtn(const class FString& Paramet
 // PythonFunction PyWidget_GMCmd_SelectParameters.PyWidget_GMCmd_SelectParameters.OnDoubleClickedBtn
 // (Native, Public, BlueprintCallable)
 // Parameters:
-// class FString                           ParametersName                                         (Parm, ZeroConstructor, HasGetValueTypeHash)
-// class FString                           ParametersValue                                        (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    ParametersName                                         (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    ParametersValue                                        (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyWidget_GMCmd_SelectParameters::OnDoubleClickedBtn(const class FString& ParametersName, const class FString& ParametersValue)
 {
@@ -149,6 +105,50 @@ void UPyWidget_GMCmd_SelectParameters::MarvelSetVisible(bool Visible)
 	Params::PyWidget_GMCmd_SelectParameters_MarvelSetVisible Parms{};
 
 	Parms.Visible = Visible;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// PythonFunction PyWidget_GMCmd_SelectParameters.PyWidget_GMCmd_SelectParameters_Item.OnInitialized
+// (BlueprintCosmetic, Native, Event, Protected, BlueprintCallable, BlueprintEvent)
+
+void UPyWidget_GMCmd_SelectParameters_Item::OnInitialized()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyWidget_GMCmd_SelectParameters_Item", "OnInitialized");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// PythonFunction PyWidget_GMCmd_SelectParameters.PyWidget_GMCmd_SelectParameters_Item.SetParametersData
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// class UObject*                          ItemObject_0                                           (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+
+void UPyWidget_GMCmd_SelectParameters_Item::SetParametersData(class UObject* ItemObject_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyWidget_GMCmd_SelectParameters_Item", "SetParametersData");
+
+	Params::PyWidget_GMCmd_SelectParameters_Item_SetParametersData Parms{};
+
+	Parms.ItemObject_0 = ItemObject_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

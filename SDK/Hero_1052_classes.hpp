@@ -21,12 +21,12 @@ namespace SDK
 {
 
 // Class Hero_1052.Ability_105221
-// 0x0010 (0x2590 - 0x2580)
+// 0x0010 (0x2598 - 0x2588)
 class UAbility_105221 : public UMarvelGameplayAbility
 {
 public:
-	bool                                          bIsFloating;                                       // 0x2580(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_2581[0xF];                                     // 0x2581(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	bool                                          bIsFloating;                                       // 0x2588(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_2589[0xF];                                     // 0x2589(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void EndFloating();
@@ -66,12 +66,12 @@ public:
 };
 
 // Class Hero_1052.Ability_105231
-// 0x0010 (0x2590 - 0x2580)
+// 0x0010 (0x2598 - 0x2588)
 class UAbility_105231 : public UMarvelGameplayAbility
 {
 public:
-	uint8                                         Pad_2580[0x8];                                     // 0x2580(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	class AMarvelBaseCharacter*                   InstigatorCharacter;                               // 0x2588(0x0008)(ZeroConstructor, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_2588[0x8];                                     // 0x2588(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	class AMarvelBaseCharacter*                   InstigatorCharacter;                               // 0x2590(0x0008)(ZeroConstructor, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 
 public:
 	void OnBlockedSucceed(float BlockValue);
@@ -90,16 +90,16 @@ public:
 };
 
 // Class Hero_1052.NotTreatShield_105241
-// 0x0068 (0x1160 - 0x10F8)
+// 0x0068 (0x1168 - 0x1100)
 class UNotTreatShield_105241 final : public UMarvelEffectGameplayAbility
 {
 public:
-	float                                         AdditionSpeed;                                     // 0x10F8(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Interval;                                          // 0x10FC(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MaxAttribute;                                      // 0x1100(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1104[0x4];                                     // 0x1104(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FGameplayAttribute                     Attribute;                                         // 0x1108(0x0040)(Edit, BlueprintVisible, BlueprintReadOnly, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FTimerHandle                           UpdateTimerHandle;                                 // 0x1148(0x0018)(Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         AdditionSpeed;                                     // 0x1100(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Interval;                                          // 0x1104(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MaxAttribute;                                      // 0x1108(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_110C[0x4];                                     // 0x110C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FGameplayAttribute                     Attribute;                                         // 0x1110(0x0040)(Edit, BlueprintVisible, BlueprintReadOnly, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FTimerHandle                           UpdateTimerHandle;                                 // 0x1150(0x0018)(Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 
 public:
 	void AddAttributeValue();
@@ -116,12 +116,12 @@ public:
 };
 
 // Class Hero_1052.Ability_105232
-// 0x00A8 (0x2628 - 0x2580)
+// 0x00A8 (0x2630 - 0x2588)
 class UAbility_105232 : public UMarvelGameplayAbility
 {
 public:
-	struct FPredictionKey                         PlayTimelineKey;                                   // 0x2580(0x00A0)(HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	class UMarvelAbilityTask_PlayMontageAndWaitForEvent* PlayTimelineTask;                                  // 0x2620(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	struct FPredictionKey                         PlayTimelineKey;                                   // 0x2588(0x00A0)(HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class UMarvelAbilityTask_PlayMontageAndWaitForEvent* PlayTimelineTask;                           // 0x2628(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 
 public:
 	void CallServerPlayTimeline(int32 TimelineIndex, const struct FHitResult& InHitResult, bool BlockDash, const struct FVector& ClientTargetLocation);
@@ -167,17 +167,17 @@ public:
 };
 
 // Class Hero_1052.LinLieCharacter
-// 0x0050 (0x1860 - 0x1810)
+// 0x0040 (0x18B0 - 0x1870)
 class ALinLieCharacter : public AMarvelBaseCharacter
 {
 public:
-	bool                                          bIsRunLeft;                                        // 0x1810(0x0001)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1811[0x7];                                     // 0x1811(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TMulticastInlineDelegate<void(int32 Value)>   OnJumpIndexUpdatedDelegate;                        // 0x1818(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	int32                                         JumpIndex;                                         // 0x1828(0x0004)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_182C[0x4];                                     // 0x182C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class ULinLieMoveLogicBaseComponent*          LinLieMoveLogic;                                   // 0x1830(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_1838[0x28];                                    // 0x1838(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	bool                                          bIsRunLeft;                                        // 0x1868(0x0001)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1869[0x7];                                     // 0x1869(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TMulticastInlineDelegate<void(int32 Value)>   OnJumpIndexUpdatedDelegate;                        // 0x1870(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	int32                                         JumpIndex;                                         // 0x1880(0x0004)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1884[0x4];                                     // 0x1884(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class ULinLieMoveLogicBaseComponent*          LinLieMoveLogic;                                   // 0x1888(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_1890[0x20];                                    // 0x1890(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	int32 GetShareComboState();
@@ -215,20 +215,20 @@ public:
 };
 
 // Class Hero_1052.LinLieMovementComponent
-// 0x0FC0 (0x3F90 - 0x2FD0)
+// 0x0FC0 (0x3FD0 - 0x3010)
 class ULinLieMovementComponent final : public UCharacterWallRunningComponent
 {
 public:
-	float                                         MaxGroundSlop;                                     // 0x2FD0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bTraceDestructible;                                // 0x2FD4(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bTraceSceneCommoned;                               // 0x2FD5(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bTraceAirWall;                                     // 0x2FD6(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2FD7[0x1];                                     // 0x2FD7(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         MinWallHeight;                                     // 0x2FD8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         WallZSpeed;                                        // 0x2FDC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FMarvelAbilityTraceContext             EffectiveTraceContext;                             // 0x2FE0(0x0F90)(Edit, BlueprintVisible, ContainsInstancedReference, NativeAccessSpecifierPublic)
-	class ALinLieCharacter*                       LinLieCharacter;                                   // 0x3F70(0x0008)(ZeroConstructor, Transient, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_3F78[0x18];                                    // 0x3F78(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	float                                         MaxGroundSlop;                                     // 0x3010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bTraceDestructible;                                // 0x3014(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bTraceSceneCommoned;                               // 0x3015(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bTraceAirWall;                                     // 0x3016(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3017[0x1];                                     // 0x3017(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         MinWallHeight;                                     // 0x3018(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         WallZSpeed;                                        // 0x301C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FMarvelAbilityTraceContext             EffectiveTraceContext;                             // 0x3020(0x0F90)(Edit, BlueprintVisible, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	class ALinLieCharacter*                       LinLieCharacter;                                   // 0x3FB0(0x0008)(ZeroConstructor, Transient, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_3FB8[0x18];                                    // 0x3FB8(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()

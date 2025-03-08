@@ -303,7 +303,7 @@ void UPyWidget_VoiceStateImage::SetIsMicrophone(bool IsMicrophone)
 // PythonFunction PyWidget_VoiceChatPanel.PyWidget_VoiceStateImage.SetIconColor
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FLinearColor                     Color                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FLinearColor&              Color                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UPyWidget_VoiceStateImage::SetIconColor(const struct FLinearColor& Color)
 {
@@ -378,7 +378,7 @@ void UPyWidget_VoiceStateImage::SetIsMessage(bool Is_Message)
 // PythonFunction PyWidget_VoiceChatPanel.PyWidget_VoiceStateImage.OnAnimationFinished
 // (BlueprintCosmetic, Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UWidgetAnimation*                 Animation                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// const class UWidgetAnimation*           Animation                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 void UPyWidget_VoiceStateImage::OnAnimationFinished(const class UWidgetAnimation* Animation)
 {

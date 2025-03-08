@@ -20,6 +20,21 @@
 namespace SDK
 {
 
+// PythonClass PyAbility_104971.PyCue_Buff_10497104
+// 0x0000 (0x0EC8 - 0x0EC8)
+class APyCue_Buff_10497104 final : public AMarvelCueNotify_Loop
+{
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PyCue_Buff_10497104">();
+	}
+	static class APyCue_Buff_10497104* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<APyCue_Buff_10497104>();
+	}
+};
+
 // PythonClass PyAbility_104971.PyEffectiveComponent_10497101
 // 0x0000 (0x1C00 - 0x1C00)
 class UPyEffectiveComponent_10497101 final : public UMarvelAgentEffectiveComponent
@@ -68,8 +83,29 @@ public:
 	}
 };
 
+// PythonClass PyAbility_104971.PyAbility_AirGrab_104971
+// 0x0010 (0x1190 - 0x1180)
+class UPyAbility_AirGrab_104971 final : public UAbility_AirGrab_104971
+{
+public:
+	struct FGameplayTag                           AbilityCueTag;                                     // 0x1180(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	void OnActiveAbility();
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PyAbility_AirGrab_104971">();
+	}
+	static class UPyAbility_AirGrab_104971* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPyAbility_AirGrab_104971>();
+	}
+};
+
 // PythonClass PyAbility_104971.PyAbility_104971
-// 0x0000 (0x2768 - 0x2768)
+// 0x0000 (0x28B0 - 0x28B0)
 class UPyAbility_104971 : public UAbility_104971
 {
 public:
@@ -81,6 +117,7 @@ public:
 	void TryGrabTarget(class ACharacter* Target);
 	float GetCollideKnockDownDamage();
 	void InternalGrabTarget(class ACharacter* Target);
+	void OnPredictingClientGrabTargetPredictFailed(class ACharacter* InCharacter);
 	bool K2_ShouldEndScope();
 	void K2_OnEndAbility(bool bWasCancelled);
 	void MissileEventNotify();
@@ -103,42 +140,6 @@ public:
 	static class UPyAbility_104971* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UPyAbility_104971>();
-	}
-};
-
-// PythonClass PyAbility_104971.PyAbility_AirGrab_104971
-// 0x0010 (0x1188 - 0x1178)
-class UPyAbility_AirGrab_104971 final : public UAbility_AirGrab_104971
-{
-public:
-	struct FGameplayTag                           AbilityCueTag;                                     // 0x1178(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-public:
-	void OnActiveAbility();
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"PyAbility_AirGrab_104971">();
-	}
-	static class UPyAbility_AirGrab_104971* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UPyAbility_AirGrab_104971>();
-	}
-};
-
-// PythonClass PyAbility_104971.PyCue_Buff_10497104
-// 0x0000 (0x0EC8 - 0x0EC8)
-class APyCue_Buff_10497104 final : public AMarvelCueNotify_Loop
-{
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"PyCue_Buff_10497104">();
-	}
-	static class APyCue_Buff_10497104* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<APyCue_Buff_10497104>();
 	}
 };
 

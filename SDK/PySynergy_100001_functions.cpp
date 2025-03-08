@@ -129,8 +129,8 @@ void UPyAbility_10000101::OnHeroChanged(class AMarvelPlayerState* player_state, 
 // PythonFunction PySynergy_100001.PyAbility_10000101.OnBondStateChanged
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FBondInstance                    bind                                                   (ConstParm, Parm, OutParm, ReferenceParm)
-// TArray<class AMarvelBaseCharacter*>     Triggers                                               (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FBondInstance&             bind                                                   (ConstParm, Parm, OutParm, ReferenceParm)
+// const TArray<class AMarvelBaseCharacter*>&Triggers                                               (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyAbility_10000101::OnBondStateChanged(const struct FBondInstance& bind, const TArray<class AMarvelBaseCharacter*>& Triggers)
 {
@@ -156,7 +156,7 @@ void UPyAbility_10000101::OnBondStateChanged(const struct FBondInstance& bind, c
 // PythonFunction PySynergy_100001.PyAbility_10000101.OnPlayerKilled
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FAttributeModifierParameter      Param                                                  (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FAttributeModifierParameter&Param                                                  (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyAbility_10000101::OnPlayerKilled(const struct FAttributeModifierParameter& Param)
 {
@@ -202,7 +202,7 @@ void UPyAbility_10000101::MulticastStopReplay()
 // Parameters:
 // class AActor*                           DamageCauser                                           (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // class AActor*                           TargetActor                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FAttributeModifierHandle         ParameterHandle                                        (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
+// const struct FAttributeModifierHandle&  ParameterHandle                                        (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
 
 void UPyAbility_10000101::OnCharacterDeath(class AActor* DamageCauser, class AActor* TargetActor, const struct FAttributeModifierHandle& ParameterHandle)
 {
@@ -388,7 +388,7 @@ void UPyAbility_10000101::K2_OnEndAbility(bool bWasCancelled)
 // PythonFunction PySynergy_100001.PyAbility_10000101.NativeOnMontageBlendOut
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_10000101::NativeOnMontageBlendOut(const class FString& Tag)
 {
@@ -413,7 +413,7 @@ void UPyAbility_10000101::NativeOnMontageBlendOut(const class FString& Tag)
 // PythonFunction PySynergy_100001.PyAbility_10000101.NativeOnMontageEvent
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_10000101::NativeOnMontageEvent(const class FString& Tag)
 {

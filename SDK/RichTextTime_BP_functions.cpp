@@ -20,7 +20,7 @@ namespace SDK
 // Function RichTextTime_BP.RichTextTime_BP_C.FormatTimeFromPython
 // (Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           TimeString                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    TimeString                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash)
 
 class FString URichTextTime_BP_C::FormatTimeFromPython(const class FString& TimeString)

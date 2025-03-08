@@ -10,7 +10,7 @@
 
 #include "Basic.hpp"
 
-#include "SummonedComp_10424103_BP_classes.hpp"
+#include "SummonedComp_10423102_BP_classes.hpp"
 
 
 namespace SDK
@@ -18,7 +18,7 @@ namespace SDK
 
 // BlueprintGeneratedClass SummonedComp_10427101_BP.SummonedComp_10427101_BP_C
 // 0x0000 (0x0CC0 - 0x0CC0)
-class USummonedComp_10427101_BP_C final : public USummonedComp_10424103_BP_C
+class USummonedComp_10427101_BP_C final : public USummonedComp_10423102_BP_C
 {
 public:
 	static class UClass* StaticClass()

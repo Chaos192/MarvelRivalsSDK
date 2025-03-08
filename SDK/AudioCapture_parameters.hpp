@@ -57,7 +57,7 @@ struct AudioCaptureBlueprintLibrary_GetAvailableAudioInputDevices final
 {
 public:
 	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(TArray<struct FAudioInputDeviceInfo>& AvailableDevices)> OnObtainDevicesEvent;                              // 0x0008(0x0014)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const TArray<struct FAudioInputDeviceInfo>& AvailableDevices)> OnObtainDevicesEvent; // 0x0008(0x0014)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 

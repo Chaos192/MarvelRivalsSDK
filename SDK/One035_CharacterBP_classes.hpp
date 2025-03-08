@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass 1035_CharacterBP.1035_CharacterBP_C
-// 0x0000 (0x18A0 - 0x18A0)
+// 0x0000 (0x1900 - 0x1900)
 class AOne035_CharacterBP_C final : public APyVenomCharacter
 {
 public:

@@ -20,8 +20,8 @@ namespace SDK
 // Function Hero_1015.Scope_101541.MulticastExecuteHitCue
 // (Net, NetReliable, Native, Event, NetMulticast, Public, BlueprintCallable)
 // Parameters:
-// struct FGameplayTag                     InCueTag                                               (ConstParm, Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<struct FHitResult>               InHitResults                                           (ConstParm, Parm, ZeroConstructor, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              InCueTag                                               (ConstParm, Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<struct FHitResult>&        InHitResults                                           (ConstParm, Parm, ZeroConstructor, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 void AScope_101541::MulticastExecuteHitCue(const struct FGameplayTag& InCueTag, const TArray<struct FHitResult>& InHitResults)
 {
@@ -83,7 +83,7 @@ bool ACue_Ability_Loop_101541::IsAbilitySoundPlaying()
 // Parameters:
 // class AActor*                           InSourceAvatar                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           InTargetAvatar                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FAttributeModifierHandle         ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FAttributeModifierHandle&  ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void ACue_Ability_Loop_101541::OnCharDeath(class AActor* InSourceAvatar, class AActor* InTargetAvatar, const struct FAttributeModifierHandle& ModifierParameterHandle)
 {
@@ -125,7 +125,7 @@ void ACue_Ability_Loop_101541::OnSecondResLoaded(class AActor* Value)
 // Function Hero_1015.Cue_Ability_Loop_101541.OnTagUpdate
 // (Event, Public, HasOutParams, BlueprintEvent)
 // Parameters:
-// struct FGameplayTag                     Tag                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              Tag                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    TagExist                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void ACue_Ability_Loop_101541::OnTagUpdate(const struct FGameplayTag& Tag, bool TagExist)
@@ -496,7 +496,7 @@ class AStormCharacter* UAbility_101561::GetOwnerCharacter()
 // Function Hero_1015.Ability_101561.HandleSelectionMoveParam
 // (Final, Native, Protected, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FStormMoveConfig                 InMoveConfig                                           (Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
+// struct FStormMoveConfig*                InMoveConfig                                           (Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
 // bool                                    bIsWalking                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bIsCache                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bClearSpeed                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -529,7 +529,7 @@ void UAbility_101561::HandleSelectionMoveParam(struct FStormMoveConfig* InMoveCo
 // Function Hero_1015.Ability_101561.NetMulticast_ActivateFireHurricane
 // (Net, NetReliable, Native, Event, NetMulticast, Public)
 // Parameters:
-// TArray<class AActor*>                   InTargets                                              (ConstParm, Parm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TArray<class AActor*>&            InTargets                                              (ConstParm, Parm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UAbility_101561::NetMulticast_ActivateFireHurricane(const TArray<class AActor*>& InTargets)
 {
@@ -757,7 +757,7 @@ void UAbility_101561::OnRep_ReplicateCameraActor()
 // (Final, Native, Public, HasOutParams)
 // Parameters:
 // class AActor*                           SpawnActor                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayAbilityTargetDataHandle Data                                                   (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FGameplayAbilityTargetDataHandle&Data                                                   (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UAbility_101561::OnSpawnSuccess(class AActor* SpawnActor, const struct FGameplayAbilityTargetDataHandle& Data)
 {
@@ -909,7 +909,7 @@ void UUIController_101571::ShowThrowActionTips(bool bShow)
 // Function Hero_1015.Ability_101581.ClientSpawnSplashScope
 // (Net, NetReliable, Native, Event, Protected, HasDefaults, NetClient)
 // Parameters:
-// struct FVector                          Location                                               (ConstParm, Parm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   Location                                               (ConstParm, Parm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           AttachTgt                                              (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UAbility_101581::ClientSpawnSplashScope(const struct FVector& Location, class AActor* AttachTgt)
@@ -963,7 +963,7 @@ void UAbility_101581::OnSplashScopeInitialized(class UMarvelAgentTraceComponent*
 // Function Hero_1015.Ability_101581.ServerSpawnSplashScope
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FVector                          Location                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   Location                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           AttachTgt                                              (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UAbility_101581::ServerSpawnSplashScope(const struct FVector& Location, class AActor* AttachTgt)
@@ -1019,7 +1019,7 @@ bool UAbility_101581::IsTargetCharValidToSplash(class AMarvelBaseCharacter* Targ
 // (Final, Native, Public, Const)
 // Parameters:
 // class AActor*                           InActor                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UConfig_101581*                   Config                                                 (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UConfig_101581*             Config                                                 (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UEffectiveComponent_101581_Common::ActorHasSpecialTag(class AActor* InActor, const class UConfig_101581* Config) const
@@ -1117,7 +1117,7 @@ void ASelectionRegionCue_101561::OnCameraStateChange(bool bIsActive)
 // Function Hero_1015.StormChildActor.ApplyHurricaneMeshMaterial
 // (Final, Native, Public, HasDefaults)
 // Parameters:
-// struct FVector                          FxData                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   FxData                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   FireAlpha                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void AStormChildActor::ApplyHurricaneMeshMaterial(const struct FVector& FxData, float FireAlpha)
@@ -1301,8 +1301,8 @@ float AStormCharacter::GetDisToCeiling()
 // Function Hero_1015.StormCharacter.InterpSpringToCustomViewOffset
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FVector                          TargetLocationOffset                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FRotator                         TargetRotationOffset                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FVector&                   TargetLocationOffset                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FRotator&                  TargetRotationOffset                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 // float                                   InterpSpeed                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void AStormCharacter::InterpSpringToCustomViewOffset(const struct FVector& TargetLocationOffset, const struct FRotator& TargetRotationOffset, float InterpSpeed)
@@ -1412,7 +1412,7 @@ void AStormCharacter::RecoverFromStorm()
 // Function Hero_1015.StormCharacter.SafeMove
 // (Final, Native, Public, HasDefaults)
 // Parameters:
-// struct FVector                          Delta                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   Delta                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void AStormCharacter::SafeMove(const struct FVector& Delta)
 {
@@ -1437,7 +1437,7 @@ void AStormCharacter::SafeMove(const struct FVector& Delta)
 // Function Hero_1015.StormCharacter.SetCameraState
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// EStormCameraState                       State                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const EStormCameraState                 State                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void AStormCharacter::SetCameraState(const EStormCameraState State)
 {
@@ -1462,7 +1462,7 @@ void AStormCharacter::SetCameraState(const EStormCameraState State)
 // Function Hero_1015.StormCharacter.SetCurrentState
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// EStormCharState                         State                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const EStormCharState                   State                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bActiveByTimerOrMT                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void AStormCharacter::SetCurrentState(const EStormCharState State, bool bActiveByTimerOrMT)
@@ -1514,7 +1514,7 @@ void AStormCharacter::SetHurricaneFireState(bool InState)
 // Function Hero_1015.StormCharacter.SweepQueryWalkingHurricaneLocation
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FVector                          OutLocation                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVector*                         OutLocation                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bIsImpact                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 

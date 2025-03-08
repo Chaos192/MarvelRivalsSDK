@@ -72,7 +72,7 @@ public:
 	class UMovieScene*                            MovieScene;                                        // 0x0078(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FLevelSequenceObjectReferenceMap       ObjectReferences;                                  // 0x0080(0x0050)(Protected, NativeAccessSpecifierProtected)
 	struct FLevelSequenceBindingReferences        BindingReferences;                                 // 0x00D0(0x00F0)(Protected, NativeAccessSpecifierProtected)
-	TMap<class FString, struct FLevelSequenceObject> PossessedObjects;                                  // 0x01C0(0x0050)(Deprecated, Protected, NativeAccessSpecifierProtected)
+	TMap<class FString, struct FLevelSequenceObject> PossessedObjects;                               // 0x01C0(0x0050)(Deprecated, Protected, NativeAccessSpecifierProtected)
 	TSubclassOf<class UObject>                    DirectorClass;                                     // 0x0210(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	TArray<class UAssetUserData*>                 AssetUserData;                                     // 0x0218(0x0010)(Edit, ExportObject, ZeroConstructor, ContainsInstancedReference, AdvancedDisplay, Protected, UObjectWrapper, NativeAccessSpecifierProtected)
 
@@ -151,7 +151,9 @@ public:
 	uint8                                         bReplicatePlayback : 1;                            // 0x04F0(0x0001)(BitIndex: 0x02, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash, NativeAccessSpecifierPublic))
 	uint8                                         Pad_4F1[0x7];                                      // 0x04F1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                DefaultInstanceData;                               // 0x04F8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, PersistentInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_500[0x8];                                      // 0x0500(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_500[0x1];                                      // 0x0500(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          bBanEndPlayTearDown;                               // 0x0501(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_502[0x6];                                      // 0x0502(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	class ULevelSequenceBurnIn*                   BurnInInstance;                                    // 0x0508(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	bool                                          bShowBurnin;                                       // 0x0510(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	uint8                                         Pad_511[0x7];                                      // 0x0511(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
@@ -208,7 +210,7 @@ public:
 class ULevelSequenceAnimSequenceLink final : public UAssetUserData
 {
 public:
-	TArray<struct FLevelSequenceAnimSequenceLinkItem> AnimSequenceLinks;                                 // 0x0030(0x0010)(BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FLevelSequenceAnimSequenceLinkItem> AnimSequenceLinks;                             // 0x0030(0x0010)(BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -297,7 +299,7 @@ public:
 class ULevelSequencePlayer final : public UMovieSceneSequencePlayer
 {
 public:
-	TMulticastInlineDelegate<void(class UCameraComponent* CameraComponent)> OnCameraCut;                                       // 0x04D8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class UCameraComponent* CameraComponent)> OnCameraCut;             // 0x04D8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	uint8                                         Pad_4E8[0x140];                                    // 0x04E8(0x0140)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:

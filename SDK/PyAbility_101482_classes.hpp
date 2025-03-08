@@ -17,6 +17,60 @@
 namespace SDK
 {
 
+// PythonClass PyAbility_101482.PyConfig_101482
+// 0x0008 (0x00C0 - 0x00B8)
+class UPyConfig_101482 final : public UConfig_105
+{
+public:
+	int32                                         SlowBuffID;                                        // 0x00B8(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PyConfig_101482">();
+	}
+	static class UPyConfig_101482* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPyConfig_101482>();
+	}
+};
+
+// PythonClass PyAbility_101482.PyAbility_101482
+// 0x0030 (0x2600 - 0x25D0)
+class UPyAbility_101482 : public UAbility_105
+{
+public:
+	int32                                         GatlingWeaponIndex;                                // 0x25D0(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ParentAbilityId;                                   // 0x25D4(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EState_101482                                 AbilityState;                                      // 0x25D8(0x0001)(BlueprintVisible, Net, ZeroConstructor, Transient, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_25D9[0x7];                                     // 0x25D9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TMulticastInlineDelegate<void()>              OnBeginGunWarmUp;                                  // 0x25E0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void()>              OnBeginGunCoolDown;                                // 0x25F0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+
+public:
+	void BeginPlay();
+	void ParentAbilityChange(EState_101481 State);
+	void EndPlay();
+	void K2_ActivateAbility();
+	void NativeOnMontageCompleted(const class FString& Tag);
+	void K2_OnEndAbility(bool Cancel);
+	void TryGetCurrentWeaponAgain();
+	void PostGunWarmUp();
+	void PostGunCoolDown();
+	void OnRep_AbilityState();
+	void OnAbilityStateChanged();
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PyAbility_101482">();
+	}
+	static class UPyAbility_101482* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPyAbility_101482>();
+	}
+};
+
 // PythonClass PyAbility_101482.PyCue_Ability_Loop_101482
 // 0x0020 (0x0E70 - 0x0E50)
 class APyCue_Ability_Loop_101482 final : public AMarvelCueNotify_Ability
@@ -46,60 +100,6 @@ public:
 	static class APyCue_Ability_Loop_101482* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<APyCue_Ability_Loop_101482>();
-	}
-};
-
-// PythonClass PyAbility_101482.PyConfig_101482
-// 0x0008 (0x00C0 - 0x00B8)
-class UPyConfig_101482 final : public UConfig_105
-{
-public:
-	int32                                         SlowBuffID;                                        // 0x00B8(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"PyConfig_101482">();
-	}
-	static class UPyConfig_101482* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UPyConfig_101482>();
-	}
-};
-
-// PythonClass PyAbility_101482.PyAbility_101482
-// 0x0030 (0x25F8 - 0x25C8)
-class UPyAbility_101482 : public UAbility_105
-{
-public:
-	int32                                         GatlingWeaponIndex;                                // 0x25C8(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         ParentAbilityId;                                   // 0x25CC(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EState_101482                                 AbilityState;                                      // 0x25D0(0x0001)(BlueprintVisible, Net, ZeroConstructor, Transient, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_25D1[0x7];                                     // 0x25D1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TMulticastInlineDelegate<void()>              OnBeginGunWarmUp;                                  // 0x25D8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void()>              OnBeginGunCoolDown;                                // 0x25E8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-
-public:
-	void BeginPlay();
-	void ParentAbilityChange(EState_101481 State);
-	void EndPlay();
-	void K2_ActivateAbility();
-	void NativeOnMontageCompleted(const class FString& Tag);
-	void K2_OnEndAbility(bool Cancel);
-	void TryGetCurrentWeaponAgain();
-	void PostGunWarmUp();
-	void PostGunCoolDown();
-	void OnRep_AbilityState();
-	void OnAbilityStateChanged();
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"PyAbility_101482">();
-	}
-	static class UPyAbility_101482* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UPyAbility_101482>();
 	}
 };
 

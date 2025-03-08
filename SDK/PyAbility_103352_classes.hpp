@@ -10,37 +10,12 @@
 
 #include "Basic.hpp"
 
-#include "Hero_1033_classes.hpp"
 #include "Marvel_classes.hpp"
+#include "Hero_1033_classes.hpp"
 
 
 namespace SDK
 {
-
-// PythonClass PyAbility_103352.PyCue_Scope_Start_10335201
-// 0x0020 (0x0388 - 0x0368)
-class UPyCue_Scope_Start_10335201 final : public UMarvelCueNotify_Base
-{
-public:
-	class UFXSystemAsset*                         GroundFX;                                          // 0x0368(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         DecalCheckHeight;                                  // 0x0370(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_374[0x4];                                      // 0x0374(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class AActor*>                         Ignores;                                           // 0x0378(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-
-public:
-	void OnExecuteFX(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters) const;
-	void SetFXParameter(class UNiagaraComponent* InFXComponent, const class AActor* MyTarget, const struct FGameplayCueParameters& Parameters) const;
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"PyCue_Scope_Start_10335201">();
-	}
-	static class UPyCue_Scope_Start_10335201* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UPyCue_Scope_Start_10335201>();
-	}
-};
 
 // PythonClass PyAbility_103352.PyEffectiveComponent_10335201
 // 0x0000 (0x1C00 - 0x1C00)
@@ -98,12 +73,13 @@ public:
 };
 
 // PythonClass PyAbility_103352.PyProjectile_10335201
-// 0x0010 (0x3060 - 0x3050)
+// 0x0010 (0x3120 - 0x3110)
 class APyProjectile_10335201 final : public AMarvelAbilityTargetActor_Projectile
 {
 public:
-	float                                         ChargeDuration;                                    // 0x3050(0x0004)(Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ChargePercent;                                     // 0x3054(0x0004)(Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3108[0x8];                                     // 0x3108(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         ChargeDuration;                                    // 0x3110(0x0004)(Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ChargePercent;                                     // 0x3114(0x0004)(Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void K2_OnInitializeData();
@@ -121,14 +97,42 @@ public:
 	}
 };
 
+// PythonClass PyAbility_103352.PyAbility_103352
+// 0x0010 (0x25A8 - 0x2598)
+class UPyAbility_103352 : public UAbility_103352
+{
+public:
+	TSubclassOf<class AMarvelSummonerBase>        SummonedClass;                                     // 0x2598(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSubclassOf<class AMarvelAbilityTargetActor_Projectile> ProjectileClass;                         // 0x25A0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	void BeginPlay();
+	bool CanActivate();
+	void OnPreLoadedSummonedSpawned(class AActor* SpawnedActor);
+	void K2_ActivateAbility();
+	void K2_OnEndAbility(bool bWasCancelled);
+	void OnDurationEnd();
+	void NativeOnMontageEvent(const class FString& Tag);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PyAbility_103352">();
+	}
+	static class UPyAbility_103352* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPyAbility_103352>();
+	}
+};
+
 // PythonClass PyAbility_103352.PySummoned_10335201
-// 0x0010 (0x08A0 - 0x0890)
+// 0x0010 (0x08D0 - 0x08C0)
 #pragma pack(push, 0x1)
 class alignas(0x10) APySummoned_10335201 : public AMarvelSummonerBase
 {
 public:
-	int32                                         ScopeId;                                           // 0x0890(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ChargeDuration;                                    // 0x0894(0x0004)(Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ScopeId;                                           // 0x08C0(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ChargeDuration;                                    // 0x08C4(0x0004)(Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void ReceiveBeginPlay();
@@ -147,6 +151,31 @@ public:
 	}
 };
 #pragma pack(pop)
+
+// PythonClass PyAbility_103352.PyCue_Scope_Start_10335201
+// 0x0020 (0x0388 - 0x0368)
+class UPyCue_Scope_Start_10335201 final : public UMarvelCueNotify_Base
+{
+public:
+	class UFXSystemAsset*                         GroundFX;                                          // 0x0368(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         DecalCheckHeight;                                  // 0x0370(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_374[0x4];                                      // 0x0374(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class AActor*>                         Ignores;                                           // 0x0378(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+
+public:
+	void OnExecuteFX(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters) const;
+	void SetFXParameter(class UNiagaraComponent* InFXComponent, const class AActor* MyTarget, const struct FGameplayCueParameters& Parameters) const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PyCue_Scope_Start_10335201">();
+	}
+	static class UPyCue_Scope_Start_10335201* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPyCue_Scope_Start_10335201>();
+	}
+};
 
 // PythonClass PyAbility_103352.PyTraceComponent_10335201
 // 0x0000 (0x1710 - 0x1710)
@@ -167,7 +196,7 @@ public:
 };
 
 // PythonClass PyAbility_103352.PyProjectile_10335202
-// 0x0000 (0x3060 - 0x3060)
+// 0x0000 (0x3120 - 0x3120)
 class APyProjectile_10335202 final : public AProjectile_10335202
 {
 public:
@@ -182,34 +211,6 @@ public:
 	static class APyProjectile_10335202* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<APyProjectile_10335202>();
-	}
-};
-
-// PythonClass PyAbility_103352.PyAbility_103352
-// 0x0010 (0x25A0 - 0x2590)
-class UPyAbility_103352 : public UAbility_103352
-{
-public:
-	TSubclassOf<class AMarvelSummonerBase>        SummonedClass;                                     // 0x2590(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TSubclassOf<class AMarvelAbilityTargetActor_Projectile> ProjectileClass;                                   // 0x2598(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-public:
-	void BeginPlay();
-	bool CanActivate();
-	void OnPreLoadedSummonedSpawned(class AActor* SpawnedActor);
-	void K2_ActivateAbility();
-	void K2_OnEndAbility(bool bWasCancelled);
-	void OnDurationEnd();
-	void NativeOnMontageEvent(const class FString& Tag);
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"PyAbility_103352">();
-	}
-	static class UPyAbility_103352* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UPyAbility_103352>();
 	}
 };
 

@@ -18,7 +18,7 @@ namespace SDK
 {
 
 // PythonClass PyAbility_103821.PyAbility_103821
-// 0x0000 (0x2588 - 0x2588)
+// 0x0000 (0x2590 - 0x2590)
 class UPyAbility_103821 : public UAbility_108
 {
 public:
@@ -37,12 +37,12 @@ public:
 };
 
 // PythonClass PyAbility_103821.PyUIController_103821
-// 0x0018 (0x0C78 - 0x0C60)
+// 0x0018 (0x0C68 - 0x0C50)
 class UPyUIController_103821 final : public UUIC_Ability
 {
 public:
-	struct FGameplayTag                           UltraAbilityTag;                                   // 0x0C60(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGameplayTag                           ShiftAbilityTag;                                   // 0x0C6C(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGameplayTag                           UltraAbilityTag;                                   // 0x0C50(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGameplayTag                           ShiftAbilityTag;                                   // 0x0C5C(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void SetAbility(int32 InAbilityId, class UGameplayAbility* InAbility);

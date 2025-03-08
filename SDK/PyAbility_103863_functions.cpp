@@ -165,7 +165,7 @@ void UPyAbility_103863::SetTargetActor()
 // PythonFunction PyAbility_103863.PyAbility_103863.NativeOnMontageEvent
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_103863::NativeOnMontageEvent(const class FString& Tag)
 {

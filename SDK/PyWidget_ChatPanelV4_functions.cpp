@@ -97,7 +97,7 @@ void UPyWidget_ChatPanelV4::InitChatClient()
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class FName                             ActionName                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// EInputEvent                             EventType                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const EInputEvent                       EventType                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UPyWidget_ChatPanelV4::OnReceiveInputAction(class FName ActionName, const EInputEvent EventType)
 {
@@ -251,8 +251,8 @@ class UWidget* UPyWidget_ChatPanelV4::ListView_Normal_Down_Navigation(EUINavigat
 // PythonFunction PyWidget_ChatPanelV4.PyWidget_ChatPanelV4.PrintMsgText
 // (Native, Public, BlueprintCallable)
 // Parameters:
-// class FString                           Text                                                   (Parm, ZeroConstructor, HasGetValueTypeHash)
-// class FString                           Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Text                                                   (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash)
 // int32                                   MessageSide                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // int32                                   Timestamp                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // int32                                   ChannelType                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -286,8 +286,8 @@ void UPyWidget_ChatPanelV4::PrintMsgText(const class FString& Text, const class 
 // PythonFunction PyWidget_ChatPanelV4.PyWidget_ChatPanelV4.PrintTeamMsgText
 // (Native, Public, BlueprintCallable)
 // Parameters:
-// class FString                           Text                                                   (Parm, ZeroConstructor, HasGetValueTypeHash)
-// class FString                           Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Text                                                   (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash)
 // int32                                   MessageSide                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // int32                                   Timestamp                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 

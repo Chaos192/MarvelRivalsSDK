@@ -21,8 +21,8 @@ namespace SDK
 // (Final, Native, Public, HasDefaults)
 // Parameters:
 // float                                   DeltaTime                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          OldLocation                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          OldVelocity                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   OldLocation                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   OldVelocity                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UAbility_103601::DecelerationLaunchVel(float DeltaTime, const struct FVector& OldLocation, const struct FVector& OldVelocity)
 {
@@ -109,7 +109,7 @@ void ACue_Summoner_Loop_10362101::InitializeSpiderWebDecal(class USpiderWebDecal
 // Parameters:
 // class AActor*                           SourceAvatar                                           (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           TargetAvatar                                           (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FAttributeModifierHandle         ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FAttributeModifierHandle&  ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UEffectAbility_10362111::OnDamageTaken(class AActor* SourceAvatar, class AActor* TargetAvatar, const struct FAttributeModifierHandle& ModifierParameterHandle)
 {
@@ -199,9 +199,9 @@ void UAbility_103631::ClientRPCTargetDashFinish()
 // Function Hero_1036.Ability_103631.GetHitResultReplicated
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FHitResult                       OutHitResult                                           (Parm, OutParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-// bool                                    OutIsCharacter                                         (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    OutIsSummoner                                          (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FHitResult*                      OutHitResult                                           (Parm, OutParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// bool*                                   OutIsCharacter                                         (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool*                                   OutIsSummoner                                          (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UAbility_103631::GetHitResultReplicated(struct FHitResult* OutHitResult, bool* OutIsCharacter, bool* OutIsSummoner)
@@ -236,7 +236,7 @@ bool UAbility_103631::GetHitResultReplicated(struct FHitResult* OutHitResult, bo
 // Function Hero_1036.Ability_103631.OnAbilityHit
 // (Final, Native, Public, HasOutParams)
 // Parameters:
-// struct FHitResult                       HitResult                                              (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FHitResult&                HitResult                                              (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 void UAbility_103631::OnAbilityHit(const struct FHitResult& HitResult)
 {
@@ -325,7 +325,7 @@ void UAbility_103631::RemoveDizzyBuff()
 // (Final, Native, Public, HasOutParams)
 // Parameters:
 // class UObject*                          TraceSource                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<struct FHitResult>               HitResults                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const TArray<struct FHitResult>&        HitResults                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 void UTraceComponent_10365101::OnScopeTraceResults(class UObject* TraceSource, const TArray<struct FHitResult>& HitResults)
 {
@@ -352,7 +352,7 @@ void UTraceComponent_10365101::OnScopeTraceResults(class UObject* TraceSource, c
 // (Final, Native, Public)
 // Parameters:
 // class UMarvelBaseAbilitySystemComponent*TargetComp                                             (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   Value                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             Value                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UBuffAbility_10365101::OnAddSlowDown(class UMarvelBaseAbilitySystemComponent* TargetComp, const float Value)
 {
@@ -649,7 +649,7 @@ void UAbility_103681::ServerEndSpecialFalling(bool ByCancelled)
 // Parameters:
 // class AActor*                           Source                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   AbilityID                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           SessionID                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    SessionID                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UMarvelGameplayAbility*           SourceAbility                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UEpicMomentAction_1036::OnActorAbilityCancel(class AActor* Source, int32 AbilityID, const class FString& SessionID, class UMarvelGameplayAbility* SourceAbility)
@@ -679,8 +679,8 @@ void UEpicMomentAction_1036::OnActorAbilityCancel(class AActor* Source, int32 Ab
 // (Final, Native, Public, HasOutParams)
 // Parameters:
 // class UAbilitySystemComponent*          ASC                                                    (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayEffectSpec              GameplayEffectSpec                                     (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FActiveGameplayEffectHandle      ActiveGameplayEffectHandle                             (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayEffectSpec&       GameplayEffectSpec                                     (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FActiveGameplayEffectHandle&ActiveGameplayEffectHandle                             (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UEpicMomentAction_1036::OnGameplayEffectAppliedToTarget(class UAbilitySystemComponent* ASC, const struct FGameplayEffectSpec& GameplayEffectSpec, const struct FActiveGameplayEffectHandle& ActiveGameplayEffectHandle)
 {
@@ -726,8 +726,8 @@ void USpiderManAnimInstance::AnimNotify_EnterDoubleJump()
 // Function Hero_1036.SpiderManAnimInstance.OnSpecialFallingToRunBecomeRelevant
 // (Final, Native, Protected, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FAnimUpdateContext               Context                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FAnimNodeReference               Node                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FAnimUpdateContext&        Context                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FAnimNodeReference&        Node                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
 void USpiderManAnimInstance::OnSpecialFallingToRunBecomeRelevant(const struct FAnimUpdateContext& Context, const struct FAnimNodeReference& Node)
 {
@@ -753,8 +753,8 @@ void USpiderManAnimInstance::OnSpecialFallingToRunBecomeRelevant(const struct FA
 // Function Hero_1036.SpiderManAnimInstance.OnSpecialFallingToRunUpdate
 // (Final, Native, Protected, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FAnimUpdateContext               Context                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FAnimNodeReference               Node                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FAnimUpdateContext&        Context                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FAnimNodeReference&        Node                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
 void USpiderManAnimInstance::OnSpecialFallingToRunUpdate(const struct FAnimUpdateContext& Context, const struct FAnimNodeReference& Node)
 {
@@ -900,7 +900,7 @@ void ASpiderManCharacter::OnRep_AbilityState103614()
 // (Net, NetReliable, Native, Event, Public, NetServer)
 // Parameters:
 // float                                   NewGravityScale                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           SyncSignature                                          (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    SyncSignature                                          (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void ASpiderManCharacter::ServerChangeGravityScale(float NewGravityScale, const class FString& SyncSignature)
 {
@@ -1028,7 +1028,7 @@ void ASpiderManCharacter::SetIsSpecialFalling(bool IsSpecialFalling, bool ByCanc
 // Function Hero_1036.TabData_1036.OnAbilityUse
 // (Final, Native, Public, HasOutParams)
 // Parameters:
-// struct FActionLogAbilityRecord          Record                                                 (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FActionLogAbilityRecord&   Record                                                 (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UTabData_1036::OnAbilityUse(const struct FActionLogAbilityRecord& Record)
 {

@@ -17,40 +17,15 @@
 namespace SDK
 {
 
-// PythonFunction PyMarvelLobbyHUD.PyMarvelLobbyHUD.ReceiveEndPlay
+// PythonFunction PyMarvelLobbyHUD.PyLobbyAudioComponent.ReceiveBeginPlay
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// EEndPlayReason                          Reason                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void APyMarvelLobbyHUD::ReceiveEndPlay(EEndPlayReason Reason)
+void UPyLobbyAudioComponent::ReceiveBeginPlay()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PyMarvelLobbyHUD", "ReceiveEndPlay");
-
-	Params::PyMarvelLobbyHUD_ReceiveEndPlay Parms{};
-
-	Parms.Reason = Reason;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// PythonFunction PyMarvelLobbyHUD.PyMarvelLobbyHUD.ReceiveBeginPlay
-// (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
-
-void APyMarvelLobbyHUD::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PyMarvelLobbyHUD", "ReceiveBeginPlay");
+		Func = Class->GetFunction("PyLobbyAudioComponent", "ReceiveBeginPlay");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -86,20 +61,45 @@ void UPyLobbyAudioComponent::ReceiveEndPlay(EEndPlayReason EndPlayReason)
 }
 
 
-// PythonFunction PyMarvelLobbyHUD.PyLobbyAudioComponent.ReceiveBeginPlay
+// PythonFunction PyMarvelLobbyHUD.PyMarvelLobbyHUD.ReceiveBeginPlay
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 
-void UPyLobbyAudioComponent::ReceiveBeginPlay()
+void APyMarvelLobbyHUD::ReceiveBeginPlay()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PyLobbyAudioComponent", "ReceiveBeginPlay");
+		Func = Class->GetFunction("PyMarvelLobbyHUD", "ReceiveBeginPlay");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// PythonFunction PyMarvelLobbyHUD.PyMarvelLobbyHUD.ReceiveEndPlay
+// (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// EEndPlayReason                          Reason                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void APyMarvelLobbyHUD::ReceiveEndPlay(EEndPlayReason Reason)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyMarvelLobbyHUD", "ReceiveEndPlay");
+
+	Params::PyMarvelLobbyHUD_ReceiveEndPlay Parms{};
+
+	Parms.Reason = Reason;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 }

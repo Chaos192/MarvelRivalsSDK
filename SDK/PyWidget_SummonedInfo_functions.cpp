@@ -17,288 +17,6 @@
 namespace SDK
 {
 
-// PythonFunction PyWidget_SummonedInfo.PyWidget_SummonedNum.SetTotalNumCur
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// int32                                   InTotalNumCur                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UPyWidget_SummonedNum::SetTotalNumCur(int32 InTotalNumCur)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PyWidget_SummonedNum", "SetTotalNumCur");
-
-	Params::PyWidget_SummonedNum_SetTotalNumCur Parms{};
-
-	Parms.InTotalNumCur = InTotalNumCur;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// PythonFunction PyWidget_SummonedInfo.PyWidget_SummonedNum.SetTotalNumMax
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// int32                                   InTotalNumMax                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UPyWidget_SummonedNum::SetTotalNumMax(int32 InTotalNumMax)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PyWidget_SummonedNum", "SetTotalNumMax");
-
-	Params::PyWidget_SummonedNum_SetTotalNumMax Parms{};
-
-	Parms.InTotalNumMax = InTotalNumMax;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// PythonFunction PyWidget_SummonedInfo.PyWidget_SummonedNum.SetSummonedDesc
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class FText                             InDesc                                                 (Parm)
-
-void UPyWidget_SummonedNum::SetSummonedDesc(const class FText& InDesc)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PyWidget_SummonedNum", "SetSummonedDesc");
-
-	Params::PyWidget_SummonedNum_SetSummonedDesc Parms{};
-
-	Parms.InDesc = std::move(InDesc);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// PythonFunction PyWidget_SummonedInfo.PyWidget_SummonedNum.SetStyle
-// (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// struct FWidgetStyle_HealthBar_BattlePanelWidgetStyle                                            (ConstParm, Parm, OutParm, ReferenceParm)
-
-void UPyWidget_SummonedNum::SetStyle(const struct FWidgetStyle_HealthBar_BattlePanel& WidgetStyle)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PyWidget_SummonedNum", "SetStyle");
-
-	Params::PyWidget_SummonedNum_SetStyle Parms{};
-
-	Parms.WidgetStyle = std::move(WidgetStyle);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// PythonFunction PyWidget_SummonedInfo.PyWidget_SummonedNum.SetIcon
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// TSoftObjectPtr<class UTexture2D>        InIcon                                                 (Parm, UObjectWrapper, HasGetValueTypeHash)
-
-void UPyWidget_SummonedNum::SetIcon(TSoftObjectPtr<class UTexture2D> InIcon)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PyWidget_SummonedNum", "SetIcon");
-
-	Params::PyWidget_SummonedNum_SetIcon Parms{};
-
-	Parms.InIcon = InIcon;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// PythonFunction PyWidget_SummonedInfo.PyWidget_SummonedNum.MarvelRemoveFromParent
-// (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
-
-void UPyWidget_SummonedNum::MarvelRemoveFromParent()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PyWidget_SummonedNum", "MarvelRemoveFromParent");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// PythonFunction PyWidget_SummonedInfo.PyWidget_SummonedHpBar.SetTotalHpCur
-// (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// float                                   InTotalHpCur                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UPyWidget_SummonedHpBar::SetTotalHpCur(float InTotalHpCur)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PyWidget_SummonedHpBar", "SetTotalHpCur");
-
-	Params::PyWidget_SummonedHpBar_SetTotalHpCur Parms{};
-
-	Parms.InTotalHpCur = InTotalHpCur;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// PythonFunction PyWidget_SummonedInfo.PyWidget_SummonedHpBar.SetSummonedDesc
-// (Native, Public, BlueprintCallable)
-// Parameters:
-// class FText                             InDesc                                                 (Parm)
-
-void UPyWidget_SummonedHpBar::SetSummonedDesc(const class FText& InDesc)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PyWidget_SummonedHpBar", "SetSummonedDesc");
-
-	Params::PyWidget_SummonedHpBar_SetSummonedDesc Parms{};
-
-	Parms.InDesc = std::move(InDesc);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// PythonFunction PyWidget_SummonedInfo.PyWidget_SummonedHpBar.SetStyle
-// (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// struct FWidgetStyle_HealthBar_BattlePanelWidgetStyle                                            (ConstParm, Parm, OutParm, ReferenceParm)
-
-void UPyWidget_SummonedHpBar::SetStyle(const struct FWidgetStyle_HealthBar_BattlePanel& WidgetStyle)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PyWidget_SummonedHpBar", "SetStyle");
-
-	Params::PyWidget_SummonedHpBar_SetStyle Parms{};
-
-	Parms.WidgetStyle = std::move(WidgetStyle);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// PythonFunction PyWidget_SummonedInfo.PyWidget_SummonedHpBar.SetIcon
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// TSoftObjectPtr<class UTexture2D>        InIcon                                                 (Parm, UObjectWrapper, HasGetValueTypeHash)
-
-void UPyWidget_SummonedHpBar::SetIcon(TSoftObjectPtr<class UTexture2D> InIcon)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PyWidget_SummonedHpBar", "SetIcon");
-
-	Params::PyWidget_SummonedHpBar_SetIcon Parms{};
-
-	Parms.InIcon = InIcon;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// PythonFunction PyWidget_SummonedInfo.PyWidget_SummonedHpBar.MarvelVisibilityChanged
-// (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
-
-void UPyWidget_SummonedHpBar::MarvelVisibilityChanged()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PyWidget_SummonedHpBar", "MarvelVisibilityChanged");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// PythonFunction PyWidget_SummonedInfo.PyWidget_SummonedHpBar.MarvelRemoveFromParent
-// (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
-
-void UPyWidget_SummonedHpBar::MarvelRemoveFromParent()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PyWidget_SummonedHpBar", "MarvelRemoveFromParent");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // PythonFunction PyWidget_SummonedInfo.PyWidget_SummonedInfo.SetIsHp
 // (Native, Event, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -452,7 +170,7 @@ void UPyWidget_SummonedInfo::SetTotalNumMax(int32 InTotalNumMax)
 // PythonFunction PyWidget_SummonedInfo.PyWidget_SummonedInfo.SetSummonedDesc
 // (Native, Event, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FText                             InDesc                                                 (Parm)
+// const class FText&                      InDesc                                                 (Parm)
 
 void UPyWidget_SummonedInfo::SetSummonedDesc(const class FText& InDesc)
 {
@@ -477,7 +195,7 @@ void UPyWidget_SummonedInfo::SetSummonedDesc(const class FText& InDesc)
 // PythonFunction PyWidget_SummonedInfo.PyWidget_SummonedInfo.SetStyle
 // (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FWidgetStyle_HealthBar_BattlePanelWidgetStyle                                            (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FWidgetStyle_HealthBar_BattlePanel&WidgetStyle                                            (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyWidget_SummonedInfo::SetStyle(const struct FWidgetStyle_HealthBar_BattlePanel& WidgetStyle)
 {
@@ -646,7 +364,7 @@ void UPyWidget_SummonedInfoPanel::SetTotalNumMax(int32 InTotalNumMax)
 // PythonFunction PyWidget_SummonedInfo.PyWidget_SummonedInfoPanel.SetSummonedDesc
 // (Native, Public, BlueprintCallable)
 // Parameters:
-// class FText                             InDesc                                                 (Parm)
+// const class FText&                      InDesc                                                 (Parm)
 
 void UPyWidget_SummonedInfoPanel::SetSummonedDesc(const class FText& InDesc)
 {
@@ -671,7 +389,7 @@ void UPyWidget_SummonedInfoPanel::SetSummonedDesc(const class FText& InDesc)
 // PythonFunction PyWidget_SummonedInfo.PyWidget_SummonedInfoPanel.SetStyle
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FWidgetStyle_HealthBar_BattlePanelWidgetStyle                                            (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FWidgetStyle_HealthBar_BattlePanel&WidgetStyle                                            (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyWidget_SummonedInfoPanel::SetStyle(const struct FWidgetStyle_HealthBar_BattlePanel& WidgetStyle)
 {
@@ -777,6 +495,288 @@ void UPyWidget_SummonedInfoPanel::MarvelRemoveFromParent()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("PyWidget_SummonedInfoPanel", "MarvelRemoveFromParent");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// PythonFunction PyWidget_SummonedInfo.PyWidget_SummonedNum.SetTotalNumCur
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   InTotalNumCur                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UPyWidget_SummonedNum::SetTotalNumCur(int32 InTotalNumCur)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyWidget_SummonedNum", "SetTotalNumCur");
+
+	Params::PyWidget_SummonedNum_SetTotalNumCur Parms{};
+
+	Parms.InTotalNumCur = InTotalNumCur;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// PythonFunction PyWidget_SummonedInfo.PyWidget_SummonedNum.SetTotalNumMax
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   InTotalNumMax                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UPyWidget_SummonedNum::SetTotalNumMax(int32 InTotalNumMax)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyWidget_SummonedNum", "SetTotalNumMax");
+
+	Params::PyWidget_SummonedNum_SetTotalNumMax Parms{};
+
+	Parms.InTotalNumMax = InTotalNumMax;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// PythonFunction PyWidget_SummonedInfo.PyWidget_SummonedNum.SetSummonedDesc
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const class FText&                      InDesc                                                 (Parm)
+
+void UPyWidget_SummonedNum::SetSummonedDesc(const class FText& InDesc)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyWidget_SummonedNum", "SetSummonedDesc");
+
+	Params::PyWidget_SummonedNum_SetSummonedDesc Parms{};
+
+	Parms.InDesc = std::move(InDesc);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// PythonFunction PyWidget_SummonedInfo.PyWidget_SummonedNum.SetStyle
+// (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const struct FWidgetStyle_HealthBar_BattlePanel&WidgetStyle                                            (ConstParm, Parm, OutParm, ReferenceParm)
+
+void UPyWidget_SummonedNum::SetStyle(const struct FWidgetStyle_HealthBar_BattlePanel& WidgetStyle)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyWidget_SummonedNum", "SetStyle");
+
+	Params::PyWidget_SummonedNum_SetStyle Parms{};
+
+	Parms.WidgetStyle = std::move(WidgetStyle);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// PythonFunction PyWidget_SummonedInfo.PyWidget_SummonedNum.SetIcon
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// TSoftObjectPtr<class UTexture2D>        InIcon                                                 (Parm, UObjectWrapper, HasGetValueTypeHash)
+
+void UPyWidget_SummonedNum::SetIcon(TSoftObjectPtr<class UTexture2D> InIcon)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyWidget_SummonedNum", "SetIcon");
+
+	Params::PyWidget_SummonedNum_SetIcon Parms{};
+
+	Parms.InIcon = InIcon;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// PythonFunction PyWidget_SummonedInfo.PyWidget_SummonedNum.MarvelRemoveFromParent
+// (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
+
+void UPyWidget_SummonedNum::MarvelRemoveFromParent()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyWidget_SummonedNum", "MarvelRemoveFromParent");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// PythonFunction PyWidget_SummonedInfo.PyWidget_SummonedHpBar.SetTotalHpCur
+// (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// float                                   InTotalHpCur                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UPyWidget_SummonedHpBar::SetTotalHpCur(float InTotalHpCur)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyWidget_SummonedHpBar", "SetTotalHpCur");
+
+	Params::PyWidget_SummonedHpBar_SetTotalHpCur Parms{};
+
+	Parms.InTotalHpCur = InTotalHpCur;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// PythonFunction PyWidget_SummonedInfo.PyWidget_SummonedHpBar.SetSummonedDesc
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// const class FText&                      InDesc                                                 (Parm)
+
+void UPyWidget_SummonedHpBar::SetSummonedDesc(const class FText& InDesc)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyWidget_SummonedHpBar", "SetSummonedDesc");
+
+	Params::PyWidget_SummonedHpBar_SetSummonedDesc Parms{};
+
+	Parms.InDesc = std::move(InDesc);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// PythonFunction PyWidget_SummonedInfo.PyWidget_SummonedHpBar.SetStyle
+// (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const struct FWidgetStyle_HealthBar_BattlePanel&WidgetStyle                                            (ConstParm, Parm, OutParm, ReferenceParm)
+
+void UPyWidget_SummonedHpBar::SetStyle(const struct FWidgetStyle_HealthBar_BattlePanel& WidgetStyle)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyWidget_SummonedHpBar", "SetStyle");
+
+	Params::PyWidget_SummonedHpBar_SetStyle Parms{};
+
+	Parms.WidgetStyle = std::move(WidgetStyle);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// PythonFunction PyWidget_SummonedInfo.PyWidget_SummonedHpBar.SetIcon
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// TSoftObjectPtr<class UTexture2D>        InIcon                                                 (Parm, UObjectWrapper, HasGetValueTypeHash)
+
+void UPyWidget_SummonedHpBar::SetIcon(TSoftObjectPtr<class UTexture2D> InIcon)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyWidget_SummonedHpBar", "SetIcon");
+
+	Params::PyWidget_SummonedHpBar_SetIcon Parms{};
+
+	Parms.InIcon = InIcon;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// PythonFunction PyWidget_SummonedInfo.PyWidget_SummonedHpBar.MarvelVisibilityChanged
+// (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
+
+void UPyWidget_SummonedHpBar::MarvelVisibilityChanged()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyWidget_SummonedHpBar", "MarvelVisibilityChanged");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// PythonFunction PyWidget_SummonedInfo.PyWidget_SummonedHpBar.MarvelRemoveFromParent
+// (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
+
+void UPyWidget_SummonedHpBar::MarvelRemoveFromParent()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyWidget_SummonedHpBar", "MarvelRemoveFromParent");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

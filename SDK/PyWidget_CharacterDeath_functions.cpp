@@ -171,7 +171,7 @@ void UPyWidget3D_RespawnCountdown::SetCanBeResurrected(bool CanBeResurrected)
 // PythonFunction PyWidget_CharacterDeath.PyWidget3D_RespawnCountdown.SetProgressBarColor
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FLinearColor                     Color                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FLinearColor&              Color                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UPyWidget3D_RespawnCountdown::SetProgressBarColor(const struct FLinearColor& Color)
 {
@@ -221,7 +221,7 @@ bool UPyWidget3D_RespawnCountdown::ShouldBeVisible()
 // PythonFunction PyWidget_CharacterDeath.PyWidget3D_RespawnCountdown.OnAnimationStarted
 // (BlueprintCosmetic, Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UWidgetAnimation*                 Animation                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// const class UWidgetAnimation*           Animation                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 void UPyWidget3D_RespawnCountdown::OnAnimationStarted(const class UWidgetAnimation* Animation)
 {
@@ -328,7 +328,7 @@ void UPyWidget_Warning::SetWidgetComponentOwner(class UWidgetComponent* InWidget
 // PythonFunction PyWidget_CharacterDeath.PyWidget_Warning.OnAnimationFinished
 // (BlueprintCosmetic, Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UWidgetAnimation*                 Animation                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// const class UWidgetAnimation*           Animation                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 void UPyWidget_Warning::OnAnimationFinished(const class UWidgetAnimation* Animation)
 {

@@ -17,13 +17,13 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass SignalHandlerActorBP.SignalHandlerActorBP_C
-// 0x0018 (0x0888 - 0x0870)
+// 0x0018 (0x0878 - 0x0860)
 class ASignalHandlerActorBP_C final : public APySignalHandlerActor
 {
 public:
-	class UMarvelWidgetComponent*                 SignalWidgetComponent;                             // 0x0870(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UNiagaraComponent*                      Niagara;                                           // 0x0878(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class USceneComponent*                        DefaultSceneRoot;                                  // 0x0880(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UMarvelWidgetComponent*                 SignalWidgetComponent;                             // 0x0860(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UNiagaraComponent*                      Niagara;                                           // 0x0868(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class USceneComponent*                        DefaultSceneRoot;                                  // 0x0870(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

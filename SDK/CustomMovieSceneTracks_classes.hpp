@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "CustomMovieSceneTracks_structs.hpp"
 #include "MovieScene_structs.hpp"
 #include "MovieScene_classes.hpp"
+#include "CustomMovieSceneTracks_structs.hpp"
 #include "MovieSceneTracks_structs.hpp"
 #include "MovieSceneTracks_classes.hpp"
 

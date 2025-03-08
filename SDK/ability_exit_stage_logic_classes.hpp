@@ -239,7 +239,7 @@ public:
 
 // PythonClass ability_exit_stage_logic.PyAIAbilityExitStage_TooCloseToEnemy
 // 0x0008 (0x0040 - 0x0038)
-class UPyAIAbilityExitStage_TooCloseToEnemy final : public UPyAIAbilityExitStageLogicBase
+class UPyAIAbilityExitStage_TooCloseToEnemy : public UPyAIAbilityExitStageLogicBase
 {
 public:
 	float                                         AccessRange;                                       // 0x0038(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -275,7 +275,7 @@ public:
 
 // PythonClass ability_exit_stage_logic.PyAIAbilityExitStage_AmmoNumCheck
 // 0x0008 (0x0040 - 0x0038)
-class UPyAIAbilityExitStage_AmmoNumCheck final : public UPyAIAbilityExitStageLogicBase
+class UPyAIAbilityExitStage_AmmoNumCheck : public UPyAIAbilityExitStageLogicBase
 {
 public:
 	float                                         AmmoNumThreshold;                                  // 0x0038(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)

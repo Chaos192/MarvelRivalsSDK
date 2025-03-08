@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass EffectAbility_104661_BP.EffectAbility_104661_BP_C
-// 0x0000 (0x1100 - 0x1100)
+// 0x0000 (0x1108 - 0x1108)
 class UEffectAbility_104661_BP_C final : public UPyEffectAbility_104661
 {
 public:

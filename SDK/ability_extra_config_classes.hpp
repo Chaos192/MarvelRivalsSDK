@@ -32,25 +32,27 @@ public:
 	}
 };
 
-// PythonClass ability_extra_config.PyActivationExtraConfig_ForceConfig
+// PythonClass ability_extra_config.PyActivationExtraConfig_SkillTimeTriggerConfig
 // 0x0010 (0x0050 - 0x0040)
-class UPyActivationExtraConfig_ForceConfig final : public UPyAbilityActivationExtraConfigBase
+class UPyActivationExtraConfig_SkillTimeTriggerConfig final : public UPyAbilityActivationExtraConfigBase
 {
 public:
-	float                                         CheckRange;                                        // 0x0040(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         TeammateForce;                                     // 0x0044(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         EnemyForce;                                        // 0x0048(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ShouldHaveTeammate;                                // 0x004C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ShouldHaveEnemy;                                   // 0x004D(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FRange_FloatValue                      TimeRange;                                         // 0x0040(0x0008)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	int32                                         SkillID;                                           // 0x0048(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ForceActive;                                       // 0x004C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	void InitExtraConfig(class UObject* ai_owner);
+	class FString GetConfigName();
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"PyActivationExtraConfig_ForceConfig">();
+		return StaticClassImpl<"PyActivationExtraConfig_SkillTimeTriggerConfig">();
 	}
-	static class UPyActivationExtraConfig_ForceConfig* GetDefaultObj()
+	static class UPyActivationExtraConfig_SkillTimeTriggerConfig* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UPyActivationExtraConfig_ForceConfig>();
+		return GetDefaultObjImpl<UPyActivationExtraConfig_SkillTimeTriggerConfig>();
 	}
 };
 
@@ -97,27 +99,25 @@ public:
 	}
 };
 
-// PythonClass ability_extra_config.PyActivationExtraConfig_SkillTimeTriggerConfig
+// PythonClass ability_extra_config.PyActivationExtraConfig_ForceConfig
 // 0x0010 (0x0050 - 0x0040)
-class UPyActivationExtraConfig_SkillTimeTriggerConfig final : public UPyAbilityActivationExtraConfigBase
+class UPyActivationExtraConfig_ForceConfig final : public UPyAbilityActivationExtraConfigBase
 {
 public:
-	struct FRange_FloatValue                      TimeRange;                                         // 0x0040(0x0008)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	int32                                         SkillID;                                           // 0x0048(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ForceActive;                                       // 0x004C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-public:
-	void InitExtraConfig(class UObject* ai_owner);
-	class FString GetConfigName();
+	float                                         CheckRange;                                        // 0x0040(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         TeammateForce;                                     // 0x0044(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         EnemyForce;                                        // 0x0048(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ShouldHaveTeammate;                                // 0x004C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ShouldHaveEnemy;                                   // 0x004D(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"PyActivationExtraConfig_SkillTimeTriggerConfig">();
+		return StaticClassImpl<"PyActivationExtraConfig_ForceConfig">();
 	}
-	static class UPyActivationExtraConfig_SkillTimeTriggerConfig* GetDefaultObj()
+	static class UPyActivationExtraConfig_ForceConfig* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UPyActivationExtraConfig_SkillTimeTriggerConfig>();
+		return GetDefaultObjImpl<UPyActivationExtraConfig_ForceConfig>();
 	}
 };
 

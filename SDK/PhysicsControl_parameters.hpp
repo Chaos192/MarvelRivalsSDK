@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
-#include "PhysicsControl_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "PhysicsControl_structs.hpp"
+#include "Engine_structs.hpp"
 
 
 namespace SDK::Params
@@ -86,7 +86,7 @@ struct PhysicsControlComponent_CreateBodyModifiersFromLimbBones final
 {
 public:
 	struct FPhysicsControlNames                   AllBodyModifiers;                                  // 0x0000(0x0010)(Parm, OutParm, NativeAccessSpecifierPublic)
-	TMap<class FName, struct FPhysicsControlLimbBones> LimbBones;                                         // 0x0010(0x0050)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	TMap<class FName, struct FPhysicsControlLimbBones> LimbBones;                                    // 0x0010(0x0050)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	EPhysicsMovementType                          MovementType;                                      // 0x0060(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	ECollisionEnabled                             CollisionType;                                     // 0x0061(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_62[0x2];                                       // 0x0062(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
@@ -95,7 +95,7 @@ public:
 	bool                                          bUseSkeletalAnimation;                             // 0x006C(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bUpdateKinematicFromSimulation;                    // 0x006D(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_6E[0x2];                                       // 0x006E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<class FName, struct FPhysicsControlNames> ReturnValue;                                       // 0x0070(0x0050)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+	TMap<class FName, struct FPhysicsControlNames> ReturnValue;                                      // 0x0070(0x0050)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
 
 // Function PhysicsControl.PhysicsControlComponent.CreateBodyModifiersFromSkeletalMeshBelow
@@ -146,11 +146,11 @@ struct PhysicsControlComponent_CreateControlsAndBodyModifiersFromLimbBones final
 {
 public:
 	struct FPhysicsControlNames                   AllWorldSpaceControls;                             // 0x0000(0x0010)(Parm, OutParm, NativeAccessSpecifierPublic)
-	TMap<class FName, struct FPhysicsControlNames> LimbWorldSpaceControls;                            // 0x0010(0x0050)(Parm, OutParm, NativeAccessSpecifierPublic)
+	TMap<class FName, struct FPhysicsControlNames> LimbWorldSpaceControls;                           // 0x0010(0x0050)(Parm, OutParm, NativeAccessSpecifierPublic)
 	struct FPhysicsControlNames                   AllParentSpaceControls;                            // 0x0060(0x0010)(Parm, OutParm, NativeAccessSpecifierPublic)
-	TMap<class FName, struct FPhysicsControlNames> LimbParentSpaceControls;                           // 0x0070(0x0050)(Parm, OutParm, NativeAccessSpecifierPublic)
+	TMap<class FName, struct FPhysicsControlNames> LimbParentSpaceControls;                          // 0x0070(0x0050)(Parm, OutParm, NativeAccessSpecifierPublic)
 	struct FPhysicsControlNames                   AllBodyModifiers;                                  // 0x00C0(0x0010)(Parm, OutParm, NativeAccessSpecifierPublic)
-	TMap<class FName, struct FPhysicsControlNames> LimbBodyModifiers;                                 // 0x00D0(0x0050)(Parm, OutParm, NativeAccessSpecifierPublic)
+	TMap<class FName, struct FPhysicsControlNames> LimbBodyModifiers;                                // 0x00D0(0x0050)(Parm, OutParm, NativeAccessSpecifierPublic)
 	class USkeletalMeshComponent*                 SkeletalMeshComponent;                             // 0x0120(0x0008)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<struct FPhysicsControlLimbSetupData>   LimbSetupData;                                     // 0x0128(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 	struct FPhysicsControlData                    WorldSpaceControlData;                             // 0x0138(0x0020)(ConstParm, Parm, NoDestructor, NativeAccessSpecifierPublic)
@@ -174,7 +174,7 @@ struct PhysicsControlComponent_CreateControlsFromLimbBones final
 {
 public:
 	struct FPhysicsControlNames                   AllControls;                                       // 0x0000(0x0010)(Parm, OutParm, NativeAccessSpecifierPublic)
-	TMap<class FName, struct FPhysicsControlLimbBones> LimbBones;                                         // 0x0010(0x0050)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	TMap<class FName, struct FPhysicsControlLimbBones> LimbBones;                                    // 0x0010(0x0050)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	EPhysicsControlType                           ControlType;                                       // 0x0060(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_61[0x3];                                       // 0x0061(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FPhysicsControlData                    ControlData;                                       // 0x0064(0x0020)(ConstParm, Parm, NoDestructor, NativeAccessSpecifierPublic)
@@ -182,7 +182,7 @@ public:
 	struct FPhysicsControlSettings                ControlSettings;                                   // 0x0088(0x0028)(ConstParm, Parm, NoDestructor, NativeAccessSpecifierPublic)
 	bool                                          bEnabled;                                          // 0x00B0(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_B1[0x7];                                       // 0x00B1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<class FName, struct FPhysicsControlNames> ReturnValue;                                       // 0x00B8(0x0050)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+	TMap<class FName, struct FPhysicsControlNames> ReturnValue;                                      // 0x00B8(0x0050)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
 
 // Function PhysicsControl.PhysicsControlComponent.CreateControlsFromLimbBonesAndConstraintProfile
@@ -191,11 +191,11 @@ struct PhysicsControlComponent_CreateControlsFromLimbBonesAndConstraintProfile f
 {
 public:
 	struct FPhysicsControlNames                   AllControls;                                       // 0x0000(0x0010)(Parm, OutParm, NativeAccessSpecifierPublic)
-	TMap<class FName, struct FPhysicsControlLimbBones> LimbBones;                                         // 0x0010(0x0050)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	TMap<class FName, struct FPhysicsControlLimbBones> LimbBones;                                    // 0x0010(0x0050)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	class FName                                   ConstraintProfile;                                 // 0x0060(0x000C)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bEnabled;                                          // 0x006C(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_6D[0x3];                                       // 0x006D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<class FName, struct FPhysicsControlNames> ReturnValue;                                       // 0x0070(0x0050)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+	TMap<class FName, struct FPhysicsControlNames> ReturnValue;                                      // 0x0070(0x0050)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
 
 // Function PhysicsControl.PhysicsControlComponent.CreateControlsFromSkeletalMesh
@@ -1297,7 +1297,7 @@ struct PhysicsControlComponent_GetLimbBonesFromSkeletalMesh final
 public:
 	class USkeletalMeshComponent*                 SkeletalMeshComponent;                             // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<struct FPhysicsControlLimbSetupData>   LimbSetupData;                                     // 0x0008(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-	TMap<class FName, struct FPhysicsControlLimbBones> ReturnValue;                                       // 0x0018(0x0050)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+	TMap<class FName, struct FPhysicsControlLimbBones> ReturnValue;                                  // 0x0018(0x0050)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
 
 // Function PhysicsControl.PhysicsControlComponent.GetSetsContainingBodyModifier

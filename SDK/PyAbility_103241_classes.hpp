@@ -79,11 +79,11 @@ public:
 };
 
 // PythonClass PyAbility_103241.PyAbility_103241
-// 0x0010 (0x2598 - 0x2588)
+// 0x0010 (0x25A0 - 0x2590)
 class UPyAbility_103241 : public UAbility_108
 {
 public:
-	TMulticastInlineDelegate<void()>              OnRefreshAbility;                                  // 0x2588(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void()>              OnRefreshAbility;                                  // 0x2590(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 
 public:
 	void BeginPlay();
@@ -108,7 +108,7 @@ public:
 };
 
 // PythonClass PyAbility_103241.PyUIController_103241
-// 0x0000 (0x0C60 - 0x0C60)
+// 0x0000 (0x0C50 - 0x0C50)
 class UPyUIController_103241 final : public UUIC_Ability
 {
 public:

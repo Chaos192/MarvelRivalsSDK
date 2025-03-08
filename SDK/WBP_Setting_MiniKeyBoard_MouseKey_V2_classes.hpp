@@ -12,8 +12,8 @@
 
 #include "Engine_structs.hpp"
 #include "SlateCore_structs.hpp"
-#include "PyWidget_HostHandleUIPanel_classes.hpp"
 #include "CoreUObject_structs.hpp"
+#include "PyWidget_HostHandleUIPanel_classes.hpp"
 
 
 namespace SDK
@@ -28,7 +28,7 @@ public:
 	class UMarvelImage*                           img_bg;                                            // 0x0658(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UMarvelImage*                           Img_Bg_Frame;                                      // 0x0660(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	uint8                                         Pad_668[0x8];                                      // 0x0668(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSlateBrush                            Bg;                                                // 0x0670(0x00D0)(Edit, BlueprintVisible, ExposeOnSpawn)
+	struct FSlateBrush                            BG;                                                // 0x0670(0x00D0)(Edit, BlueprintVisible, ExposeOnSpawn)
 	struct FSlateBrush                            BgFrame;                                           // 0x0740(0x00D0)(Edit, BlueprintVisible, ExposeOnSpawn)
 	struct FLinearColor                           Bg_Color;                                          // 0x0810(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FLinearColor                           BgFrame_Color;                                     // 0x0820(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)

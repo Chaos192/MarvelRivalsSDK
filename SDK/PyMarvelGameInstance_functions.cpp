@@ -80,10 +80,118 @@ void UPyMarvelGameInstance::UpdateReplayEnv()
 }
 
 
+// PythonFunction PyMarvelGameInstance.PyMarvelGameInstance.OnHandShakeMsg
+// (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const class FString&                    sMsg                                                   (Parm, ZeroConstructor, HasGetValueTypeHash)
+
+void UPyMarvelGameInstance::OnHandShakeMsg(const class FString& sMsg)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyMarvelGameInstance", "OnHandShakeMsg");
+
+	Params::PyMarvelGameInstance_OnHandShakeMsg Parms{};
+
+	Parms.sMsg = std::move(sMsg);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// PythonFunction PyMarvelGameInstance.PyMarvelGameInstance.OnUELoginMsg
+// (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const class FString&                    sMsg                                                   (Parm, ZeroConstructor, HasGetValueTypeHash)
+
+void UPyMarvelGameInstance::OnUELoginMsg(const class FString& sMsg)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyMarvelGameInstance", "OnUELoginMsg");
+
+	Params::PyMarvelGameInstance_OnUELoginMsg Parms{};
+
+	Parms.sMsg = std::move(sMsg);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// PythonFunction PyMarvelGameInstance.PyMarvelGameInstance.OnUEConnectionTimeOut
+// (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const int64                             connectionId                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const int32                             State                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const class FString&                    msg                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+
+void UPyMarvelGameInstance::OnUEConnectionTimeOut(const int64 connectionId, const int32 State, const class FString& msg)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyMarvelGameInstance", "OnUEConnectionTimeOut");
+
+	Params::PyMarvelGameInstance_OnUEConnectionTimeOut Parms{};
+
+	Parms.connectionId = connectionId;
+	Parms.State = State;
+	Parms.msg = std::move(msg);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// PythonFunction PyMarvelGameInstance.PyMarvelGameInstance.OnUEConnectionFastTimeOut
+// (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const int64                             connectionId                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const int32                             State                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const class FString&                    msg                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+
+void UPyMarvelGameInstance::OnUEConnectionFastTimeOut(const int64 connectionId, const int32 State, const class FString& msg)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyMarvelGameInstance", "OnUEConnectionFastTimeOut");
+
+	Params::PyMarvelGameInstance_OnUEConnectionFastTimeOut Parms{};
+
+	Parms.connectionId = connectionId;
+	Parms.State = State;
+	Parms.msg = std::move(msg);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // PythonFunction PyMarvelGameInstance.PyMarvelGameInstance.CallEngineQuit
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           sReason                                                (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    sReason                                                (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyMarvelGameInstance::CallEngineQuit(const class FString& sReason)
 {
@@ -171,8 +279,8 @@ void UPyMarvelGameInstance::FakeTick()
 // PythonFunction PyMarvelGameInstance.PyMarvelGameInstance.ReceiveOnLoadComplete
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// float                                   LoadTime                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           MapName                                                (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const float                             LoadTime                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const class FString&                    MapName                                                (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyMarvelGameInstance::ReceiveOnLoadComplete(const float LoadTime, const class FString& MapName)
 {
@@ -217,7 +325,7 @@ void UPyMarvelGameInstance::ReceiveShutdown()
 // PythonFunction PyMarvelGameInstance.PyMarvelGameInstance.ReceiveDemoPlaybackFailure
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Error                                                  (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Error                                                  (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyMarvelGameInstance::ReceiveDemoPlaybackFailure(const class FString& Error)
 {
@@ -242,7 +350,7 @@ void UPyMarvelGameInstance::ReceiveDemoPlaybackFailure(const class FString& Erro
 // PythonFunction PyMarvelGameInstance.PyMarvelGameInstance.ReceiveSwitchEnvFailure
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Error                                                  (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Error                                                  (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyMarvelGameInstance::ReceiveSwitchEnvFailure(const class FString& Error)
 {
@@ -267,7 +375,7 @@ void UPyMarvelGameInstance::ReceiveSwitchEnvFailure(const class FString& Error)
 // PythonFunction PyMarvelGameInstance.PyMarvelGameInstance.OnDDosChecked
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Error                                                  (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Error                                                  (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyMarvelGameInstance::OnDDosChecked(const class FString& Error)
 {
@@ -292,7 +400,7 @@ void UPyMarvelGameInstance::OnDDosChecked(const class FString& Error)
 // PythonFunction PyMarvelGameInstance.PyMarvelGameInstance.ReceiveNetworkReplayVersion
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Error                                                  (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Error                                                  (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyMarvelGameInstance::ReceiveNetworkReplayVersion(const class FString& Error)
 {
@@ -342,8 +450,8 @@ class FString UPyMarvelGameInstance::WriteReplayLoadingInfo()
 // PythonFunction PyMarvelGameInstance.PyMarvelGameInstance.ProcessReplayLoadingInfo
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           SpecificData                                           (Parm, ZeroConstructor, HasGetValueTypeHash)
-// class FString                           Error                                                  (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    SpecificData                                           (Parm, ZeroConstructor, HasGetValueTypeHash)
+// class FString*                          Error                                                  (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyMarvelGameInstance::ProcessReplayLoadingInfo(const class FString& SpecificData, class FString* Error)
 {
@@ -368,11 +476,36 @@ void UPyMarvelGameInstance::ProcessReplayLoadingInfo(const class FString& Specif
 }
 
 
+// PythonFunction PyMarvelGameInstance.PyMarvelGameInstance.GetDemoObDelayTime
+// (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+float UPyMarvelGameInstance::GetDemoObDelayTime()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyMarvelGameInstance", "GetDemoObDelayTime");
+
+	Params::PyMarvelGameInstance_GetDemoObDelayTime Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // PythonFunction PyMarvelGameInstance.PyMarvelGameInstance.UploadDrpfData
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           DrpfType                                               (Parm, ZeroConstructor, HasGetValueTypeHash)
-// class FString                           DrpfData                                               (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    DrpfType                                               (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    DrpfData                                               (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyMarvelGameInstance::UploadDrpfData(const class FString& DrpfType, const class FString& DrpfData)
 {

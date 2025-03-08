@@ -521,7 +521,7 @@ public:
 struct FOptimusAnimAttributeArray final
 {
 public:
-	TArray<struct FOptimusAnimAttributeDescription> InnerArray;                                        // 0x0000(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FOptimusAnimAttributeDescription> InnerArray;                                      // 0x0000(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
 };
 
 // ScriptStruct OptimusCore.OptimusDebugDrawParameters

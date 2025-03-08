@@ -21,8 +21,8 @@ namespace SDK
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AMarvelAIController*              AIController                                           (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FMarvelAITarget                  OutAITarget                                            (Parm, OutParm, ReferenceParm, NoDestructor)
-// struct FAIAbilityUsage                  AbilityUsage                                           (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
+// struct FMarvelAITarget&                 OutAITarget                                            (Parm, OutParm, ReferenceParm, NoDestructor)
+// const struct FAIAbilityUsage&           AbilityUsage                                           (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 bool UPyAISelectTargetLogicBase::SelectTargetOrLocation(class AMarvelAIController* AIController, struct FMarvelAITarget& OutAITarget, const struct FAIAbilityUsage& AbilityUsage)
@@ -54,8 +54,8 @@ bool UPyAISelectTargetLogicBase::SelectTargetOrLocation(class AMarvelAIControlle
 // PythonFunction PyAISelectTargetLogicBase.PyAISelectTargetLogicBase.SelectTargetForAbilityCheck
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FRequiredAIDataForAutoAbility    AbilityContext                                         (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
-// struct FMarvelAITarget                  OutAITarget                                            (Parm, OutParm, ReferenceParm, NoDestructor)
+// const struct FRequiredAIDataForAutoAbility&AbilityContext                                         (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
+// struct FMarvelAITarget&                 OutAITarget                                            (Parm, OutParm, ReferenceParm, NoDestructor)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 bool UPyAISelectTargetLogicBase::SelectTargetForAbilityCheck(const struct FRequiredAIDataForAutoAbility& AbilityContext, struct FMarvelAITarget& OutAITarget)

@@ -14,9 +14,9 @@
 #include "Marvel_structs.hpp"
 #include "Marvel_classes.hpp"
 #include "GameplayTags_structs.hpp"
+#include "Engine_structs.hpp"
 #include "Hero_1014_structs.hpp"
 #include "Hero_1014_classes.hpp"
-#include "Engine_structs.hpp"
 
 
 namespace SDK
@@ -48,11 +48,12 @@ public:
 };
 
 // PythonClass PyAbility_101451.PyProjectile_10145101
-// 0x0010 (0x3060 - 0x3050)
+// 0x0010 (0x3120 - 0x3110)
 class APyProjectile_10145101 final : public AMarvelAbilityTargetActor_Projectile
 {
 public:
-	TMulticastInlineDelegate<void(struct FHitResult& ImpactResult)> OnProjectileHit_PyProjectile_10145101;             // 0x3050(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3108[0x8];                                     // 0x3108(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	TMulticastInlineDelegate<void(const struct FHitResult& ImpactResult)> OnProjectileHit_PyProjectile_10145101; // 0x3110(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 
 public:
 	void K2_OnBeginAgentTask();
@@ -67,6 +68,38 @@ public:
 	static class APyProjectile_10145101* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<APyProjectile_10145101>();
+	}
+};
+
+// PythonClass PyAbility_101451.PyAbility_101451
+// 0x0030 (0x25E8 - 0x25B8)
+class UPyAbility_101451 : public UAbility_101451
+{
+public:
+	TMulticastInlineDelegate<void()>              OnTrySpawnSuccess;                                 // 0x25B8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void()>              OnTraceStart;                                      // 0x25C8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(EZiplineLaunchResult LaunchResult)> OnCurrentZiplineLaunchEnd;     // 0x25D8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+
+public:
+	void BeginPlay();
+	void K2_ActivateAbility();
+	void MulticastTraceStartEvent();
+	void MulticastStartSpawnSuccess();
+	bool CanSpawnZipline();
+	void K2_OnEndAbility(bool bWasCancelled);
+	void MissileEventNotify();
+	EZiplineLaunchResult IsValidToSetupZipline(const struct FHitResult& Hit);
+	void OnZiplineLaunchEnd();
+	void NativeOnMontageCompleted(const class FString& EventTag);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PyAbility_101451">();
+	}
+	static class UPyAbility_101451* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPyAbility_101451>();
 	}
 };
 
@@ -89,44 +122,25 @@ public:
 	}
 };
 
-// PythonClass PyAbility_101451.PyCue_Ability_Loop_10145101
-// 0x0000 (0x0E50 - 0x0E50)
-class APyCue_Ability_Loop_10145101 final : public AMarvelCueNotify_Ability
-{
-public:
-	bool WhileActive(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters);
-	bool OnRemove(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters);
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"PyCue_Ability_Loop_10145101">();
-	}
-	static class APyCue_Ability_Loop_10145101* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<APyCue_Ability_Loop_10145101>();
-	}
-};
-
 // PythonClass PyAbility_101451.PySummoned_10145101
-// 0x1030 (0x1970 - 0x0940)
+// 0x1030 (0x19A0 - 0x0970)
 class APySummoned_10145101 : public ASummoned_10145101
 {
 public:
-	class AActor*                                 ProjectileClaw;                                    // 0x0940(0x0008)(BlueprintVisible, Net, ZeroConstructor, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EZiplineLaunchResult                          LastLaunchResult;                                  // 0x0948(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_949[0x7];                                      // 0x0949(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                ZiplineDirectionVector;                            // 0x0950(0x0018)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_968[0x8];                                      // 0x0968(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FMarvelAbilityTraceContext             CollisionWithSceneTraceParam;                      // 0x0970(0x0F90)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	bool                                          IsTestCaseSummon;                                  // 0x1900(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1901[0x7];                                     // 0x1901(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                CustomEndLocation;                                 // 0x1908(0x0018)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void()>              OnLaunchStateChanged;                              // 0x1920(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void()>              OnClawSpawnSuccess;                                // 0x1930(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void()>              OnLaunchEnd;                                       // 0x1940(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void()>              OnClawChanged;                                     // 0x1950(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void()>              OnSlideStateChanged;                               // 0x1960(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	class AActor*                                 ProjectileClaw;                                    // 0x0970(0x0008)(BlueprintVisible, Net, ZeroConstructor, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EZiplineLaunchResult                          LastLaunchResult;                                  // 0x0978(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_979[0x7];                                      // 0x0979(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                ZiplineDirectionVector;                            // 0x0980(0x0018)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_998[0x8];                                      // 0x0998(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FMarvelAbilityTraceContext             CollisionWithSceneTraceParam;                      // 0x09A0(0x0F90)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	bool                                          IsTestCaseSummon;                                  // 0x1930(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1931[0x7];                                     // 0x1931(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                CustomEndLocation;                                 // 0x1938(0x0018)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void()>              OnLaunchStateChanged;                              // 0x1950(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void()>              OnClawSpawnSuccess;                                // 0x1960(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void()>              OnLaunchEnd;                                       // 0x1970(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void()>              OnClawChanged;                                     // 0x1980(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void()>              OnSlideStateChanged;                               // 0x1990(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 
 public:
 	void K2_OnBeginAgentTask();
@@ -154,6 +168,25 @@ public:
 	static class APySummoned_10145101* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<APySummoned_10145101>();
+	}
+};
+
+// PythonClass PyAbility_101451.PyCue_Ability_Loop_10145101
+// 0x0000 (0x0E50 - 0x0E50)
+class APyCue_Ability_Loop_10145101 final : public AMarvelCueNotify_Ability
+{
+public:
+	bool WhileActive(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters);
+	bool OnRemove(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PyCue_Ability_Loop_10145101">();
+	}
+	static class APyCue_Ability_Loop_10145101* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<APyCue_Ability_Loop_10145101>();
 	}
 };
 
@@ -209,40 +242,8 @@ public:
 	}
 };
 
-// PythonClass PyAbility_101451.PyAbility_101451
-// 0x0030 (0x25E0 - 0x25B0)
-class UPyAbility_101451 : public UAbility_101451
-{
-public:
-	TMulticastInlineDelegate<void()>              OnTrySpawnSuccess;                                 // 0x25B0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void()>              OnTraceStart;                                      // 0x25C0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(EZiplineLaunchResult LaunchResult)> OnCurrentZiplineLaunchEnd;                         // 0x25D0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-
-public:
-	void BeginPlay();
-	void K2_ActivateAbility();
-	void MulticastTraceStartEvent();
-	void MulticastStartSpawnSuccess();
-	bool CanSpawnZipline();
-	void K2_OnEndAbility(bool bWasCancelled);
-	void MissileEventNotify();
-	EZiplineLaunchResult IsValidToSetupZipline(const struct FHitResult& Hit);
-	void OnZiplineLaunchEnd();
-	void NativeOnMontageCompleted(const class FString& EventTag);
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"PyAbility_101451">();
-	}
-	static class UPyAbility_101451* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UPyAbility_101451>();
-	}
-};
-
 // PythonClass PyAbility_101451.PyUIController_101451
-// 0x0000 (0x0C60 - 0x0C60)
+// 0x0000 (0x0C50 - 0x0C50)
 class UPyUIController_101451 final : public UUIC_Ability
 {
 public:

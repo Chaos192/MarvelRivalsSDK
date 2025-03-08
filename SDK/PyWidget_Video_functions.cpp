@@ -121,7 +121,7 @@ void UPyWidget_Video::ReplayVideo()
 // PythonFunction PyWidget_Video.PyWidget_Video.OnAnimationFinished
 // (BlueprintCosmetic, Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UWidgetAnimation*                 Animation                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// const class UWidgetAnimation*           Animation                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 void UPyWidget_Video::OnAnimationFinished(const class UWidgetAnimation* Animation)
 {

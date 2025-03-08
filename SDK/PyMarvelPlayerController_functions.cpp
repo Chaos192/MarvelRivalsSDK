@@ -39,7 +39,7 @@ void APyMarvelPlayerController::ReceiveBeginPlay()
 // PythonFunction PyMarvelPlayerController.PyMarvelPlayerController.OnCrashKeyPressed
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FKey                             Key                                                    (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
+// const struct FKey&                      Key                                                    (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
 
 void APyMarvelPlayerController::OnCrashKeyPressed(const struct FKey& Key)
 {
@@ -64,7 +64,7 @@ void APyMarvelPlayerController::OnCrashKeyPressed(const struct FKey& Key)
 // PythonFunction PyMarvelPlayerController.PyMarvelPlayerController.OnCrashKeyReleased
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FKey                             Key                                                    (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
+// const struct FKey&                      Key                                                    (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
 
 void APyMarvelPlayerController::OnCrashKeyReleased(const struct FKey& Key)
 {
@@ -89,7 +89,7 @@ void APyMarvelPlayerController::OnCrashKeyReleased(const struct FKey& Key)
 // PythonFunction PyMarvelPlayerController.PyMarvelPlayerController.OnTriggerCrashKeyPressed
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FKey                             Key                                                    (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
+// const struct FKey&                      Key                                                    (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
 
 void APyMarvelPlayerController::OnTriggerCrashKeyPressed(const struct FKey& Key)
 {
@@ -253,6 +253,25 @@ void APyMarvelPlayerController::C_ChangeHero(int32 HeroID, int32 SkinID)
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// PythonFunction PyMarvelPlayerController.PyMarvelPlayerController.C_NotifySelectedHeroPanelLoaded
+// (Net, NetReliable, Native, Public, NetServer, BlueprintCallable)
+
+void APyMarvelPlayerController::C_NotifySelectedHeroPanelLoaded()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyMarvelPlayerController", "C_NotifySelectedHeroPanelLoaded");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
 }
@@ -449,7 +468,7 @@ void APyMarvelPlayerController::C_VoteSelection(int32 idx)
 // PythonFunction PyMarvelPlayerController.PyMarvelPlayerController.ReqServerBuildSettings
 // (Net, NetReliable, Native, Public, NetServer, BlueprintCallable)
 // Parameters:
-// class FString                           client_changelist                                      (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    client_changelist                                      (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void APyMarvelPlayerController::ReqServerBuildSettings(const class FString& client_changelist)
 {
@@ -474,9 +493,9 @@ void APyMarvelPlayerController::ReqServerBuildSettings(const class FString& clie
 // PythonFunction PyMarvelPlayerController.PyMarvelPlayerController.RespServerBuildSettings
 // (Net, NetReliable, Native, Public, NetClient, BlueprintCallable)
 // Parameters:
-// class FString                           Changelist                                             (Parm, ZeroConstructor, HasGetValueTypeHash)
-// class FString                           BuildDate                                              (Parm, ZeroConstructor, HasGetValueTypeHash)
-// class FString                           BranchName                                             (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Changelist                                             (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    BuildDate                                              (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    BranchName                                             (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void APyMarvelPlayerController::RespServerBuildSettings(const class FString& Changelist, const class FString& BuildDate, const class FString& BranchName)
 {
@@ -547,8 +566,8 @@ void APyMarvelPlayerController::C_ReportFrameRate(int32 FrameCount)
 // PythonFunction PyMarvelPlayerController.PyMarvelPlayerController.ClientReceiveJson
 // (Net, Native, Public, NetClient, BlueprintCallable)
 // Parameters:
-// class FString                           Key                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
-// class FString                           json_str                                               (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Key                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    json_str                                               (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void APyMarvelPlayerController::ClientReceiveJson(const class FString& Key, const class FString& json_str)
 {
@@ -599,8 +618,8 @@ void APyMarvelPlayerController::S2CFrameRateResponse(int32 FrameCount)
 // PythonFunction PyMarvelPlayerController.PyMarvelPlayerController.OnCheckTag
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TArray<int32>                           ServerTagNum                                           (ConstParm, Parm, OutParm, ReferenceParm)
-// TArray<int32>                           ClientTagNum                                           (ConstParm, Parm, OutParm, ReferenceParm)
+// const TArray<int32>&                    ServerTagNum                                           (ConstParm, Parm, OutParm, ReferenceParm)
+// const TArray<int32>&                    ClientTagNum                                           (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyMarvelPlayerController::OnCheckTag(const TArray<int32>& ServerTagNum, const TArray<int32>& ClientTagNum)
 {
@@ -626,7 +645,7 @@ void APyMarvelPlayerController::OnCheckTag(const TArray<int32>& ServerTagNum, co
 // PythonFunction PyMarvelPlayerController.PyMarvelPlayerController.ServerDebugInput
 // (Net, NetReliable, Native, Public, NetServer, BlueprintCallable)
 // Parameters:
-// class FString                           Cmd                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Cmd                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void APyMarvelPlayerController::ServerDebugInput(const class FString& Cmd)
 {
@@ -651,7 +670,7 @@ void APyMarvelPlayerController::ServerDebugInput(const class FString& Cmd)
 // PythonFunction PyMarvelPlayerController.PyMarvelPlayerController.ClientReplyDebugInput
 // (Net, NetReliable, Native, Public, NetClient, BlueprintCallable)
 // Parameters:
-// class FString                           msg                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    msg                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void APyMarvelPlayerController::ClientReplyDebugInput(const class FString& msg)
 {
@@ -825,7 +844,7 @@ void APyMarvelPlayerController::RequestTrainComputerSpawnTrainHero(int32 train_n
 // int32                                   train_no                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // int32                                   UID                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // int32                                   hero_id                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// TArray<int32>                           limit_hero_list                                        (ConstParm, Parm, OutParm, ReferenceParm)
+// const TArray<int32>&                    limit_hero_list                                        (ConstParm, Parm, OutParm, ReferenceParm)
 // bool                                    Clear                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    Reset                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
@@ -1022,7 +1041,7 @@ void APyMarvelPlayerController::ServerInteractingWithNPC(class AActor* npc_actor
 // PythonFunction PyMarvelPlayerController.PyMarvelPlayerController.ServerInteractingWithNPCTags
 // (Net, NetReliable, Native, Public, NetServer, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<class FString>                   Tags_0                                                 (ConstParm, Parm, OutParm, ReferenceParm)
+// const TArray<class FString>&            Tags_0                                                 (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyMarvelPlayerController::ServerInteractingWithNPCTags(const TArray<class FString>& Tags_0)
 {
@@ -1050,7 +1069,7 @@ void APyMarvelPlayerController::ServerInteractingWithNPCTags(const TArray<class 
 // EMarvelVoiceType                        voice_type                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class AActor*                           Char                                                   (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // int32                                   voice_id                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FText                             voice_line                                             (Parm)
+// const class FText&                      voice_line                                             (Parm)
 // class AActor*                           to_char                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 void APyMarvelPlayerController::ServerHearingLevelVoice(EMarvelVoiceType voice_type, class AActor* Char, int32 voice_id, const class FText& voice_line, class AActor* to_char)
@@ -1132,8 +1151,8 @@ void APyMarvelPlayerController::on_controller_rotation_over(class AActor* level_
 // PythonFunction PyMarvelPlayerController.PyMarvelPlayerController.spawn_input_record_ai
 // (Net, NetReliable, Native, Public, NetServer, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FAISpawnParam                    ai_spawn_param                                         (ConstParm, Parm, OutParm, ReferenceParm)
-// class FString                           record_name                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const struct FAISpawnParam&             ai_spawn_param                                         (ConstParm, Parm, OutParm, ReferenceParm)
+// const class FString&                    record_name                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
 // EInputRecordPath                        record_path                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    discard_location_correction                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    loop_play                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -1401,11 +1420,113 @@ void APyMarvelPlayerController::ClientShowTutorialTips(int32 TipsID)
 }
 
 
+// PythonFunction PyMarvelPlayerController.PyMarvelPlayerController.OnServerReceiveMovementStatData
+// (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const struct FMovementStatData&         stat                                                   (ConstParm, Parm, OutParm, ReferenceParm)
+
+void APyMarvelPlayerController::OnServerReceiveMovementStatData(const struct FMovementStatData& stat)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyMarvelPlayerController", "OnServerReceiveMovementStatData");
+
+	Params::PyMarvelPlayerController_OnServerReceiveMovementStatData Parms{};
+
+	Parms.stat = std::move(stat);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// PythonFunction PyMarvelPlayerController.PyMarvelPlayerController.ClientEnableRecordMovementStat
+// (Net, NetReliable, Native, Public, NetClient, BlueprintCallable)
+// Parameters:
+// bool                                    bEnable                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void APyMarvelPlayerController::ClientEnableRecordMovementStat(bool bEnable)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyMarvelPlayerController", "ClientEnableRecordMovementStat");
+
+	Params::PyMarvelPlayerController_ClientEnableRecordMovementStat Parms{};
+
+	Parms.bEnable = bEnable;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// PythonFunction PyMarvelPlayerController.PyMarvelPlayerController.ClientCheckTraceCacheStat
+// (Net, NetReliable, Native, Public, NetClient, BlueprintCallable)
+// Parameters:
+// const class FString&                    ActorName                                              (Parm, ZeroConstructor, HasGetValueTypeHash)
+// bool                                    bInValid                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void APyMarvelPlayerController::ClientCheckTraceCacheStat(const class FString& ActorName, bool bInValid)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyMarvelPlayerController", "ClientCheckTraceCacheStat");
+
+	Params::PyMarvelPlayerController_ClientCheckTraceCacheStat Parms{};
+
+	Parms.ActorName = std::move(ActorName);
+	Parms.bInValid = bInValid;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// PythonFunction PyMarvelPlayerController.PyMarvelPlayerController.ClientStartRecordMovementStat
+// (Net, NetReliable, Native, Public, NetClient, BlueprintCallable)
+// Parameters:
+// bool                                    bForce                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void APyMarvelPlayerController::ClientStartRecordMovementStat(bool bForce)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyMarvelPlayerController", "ClientStartRecordMovementStat");
+
+	Params::PyMarvelPlayerController_ClientStartRecordMovementStat Parms{};
+
+	Parms.bForce = bForce;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // PythonFunction PyMarvelPlayerController.PyMarvelPlayerController.SendMessageToChatPanel
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent, Const)
 // Parameters:
-// class FString                           Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash)
-// class FString                           Message                                                (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Message                                                (Parm, ZeroConstructor, HasGetValueTypeHash)
 // int32                                   MessageSide                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // int32                                   Timestamp                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // int32                                   ChannelType                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)

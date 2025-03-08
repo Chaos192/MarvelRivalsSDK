@@ -16,6 +16,30 @@
 namespace SDK::Params
 {
 
+// PythonFunction PyWidget_Common_Button.PyWidget_CommonButton_Icon.SetBtnIsPressed
+// 0x0001 (0x0001 - 0x0000)
+struct PyWidget_CommonButton_Icon_SetBtnIsPressed final
+{
+public:
+	bool                                          IsBtnPressed_0;                                    // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+
+// PythonFunction PyWidget_Common_Button.PyWidget_CommonButton_Icon.SetIsHover
+// 0x0001 (0x0001 - 0x0000)
+struct PyWidget_CommonButton_Icon_SetIsHover final
+{
+public:
+	bool                                          IsHover_0;                                         // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+
+// PythonFunction PyWidget_Common_Button.PyWidget_CommonButton_Icon.SetBtnIsEnabled
+// 0x0001 (0x0001 - 0x0000)
+struct PyWidget_CommonButton_Icon_SetBtnIsEnabled final
+{
+public:
+	bool                                          Enabled;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+
 // PythonFunction PyWidget_Common_Button.PyWidget_BaseCommonButton.OnButtonVisibilityChanged
 // 0x0001 (0x0001 - 0x0000)
 struct PyWidget_BaseCommonButton_OnButtonVisibilityChanged final
@@ -48,14 +72,6 @@ public:
 	const class UWidgetAnimation*                 Animation;                                         // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 };
 
-// PythonFunction PyWidget_Common_Button.PyWidget_CommonButton_Lv1_W.OnAnimationFinished
-// 0x0008 (0x0008 - 0x0000)
-struct PyWidget_CommonButton_Lv1_W_OnAnimationFinished final
-{
-public:
-	const class UWidgetAnimation*                 Animation;                                         // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-};
-
 // PythonFunction PyWidget_Common_Button.PyWidget_CommonButton_Lv0.OnAnimationFinished
 // 0x0008 (0x0008 - 0x0000)
 struct PyWidget_CommonButton_Lv0_OnAnimationFinished final
@@ -64,28 +80,12 @@ public:
 	const class UWidgetAnimation*                 Animation;                                         // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 };
 
-// PythonFunction PyWidget_Common_Button.PyWidget_CommonButton_Icon.SetBtnIsPressed
-// 0x0001 (0x0001 - 0x0000)
-struct PyWidget_CommonButton_Icon_SetBtnIsPressed final
+// PythonFunction PyWidget_Common_Button.PyWidget_CommonButton_Lv1_W.OnAnimationFinished
+// 0x0008 (0x0008 - 0x0000)
+struct PyWidget_CommonButton_Lv1_W_OnAnimationFinished final
 {
 public:
-	bool                                          IsBtnPressed_0;                                    // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-
-// PythonFunction PyWidget_Common_Button.PyWidget_CommonButton_Icon.SetIsHover
-// 0x0001 (0x0001 - 0x0000)
-struct PyWidget_CommonButton_Icon_SetIsHover final
-{
-public:
-	bool                                          IsHover_0;                                         // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-
-// PythonFunction PyWidget_Common_Button.PyWidget_CommonButton_Icon.SetBtnIsEnabled
-// 0x0001 (0x0001 - 0x0000)
-struct PyWidget_CommonButton_Icon_SetBtnIsEnabled final
-{
-public:
-	bool                                          Enabled;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	const class UWidgetAnimation*                 Animation;                                         // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 };
 
 // PythonFunction PyWidget_Common_Button.PyWidget_CommonButton_Lv3.SetBtnIsEnabled

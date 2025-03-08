@@ -10,13 +10,13 @@
 
 #include "Basic.hpp"
 
-#include "MarvelLevel_structs.hpp"
-#include "PyCamp_classes.hpp"
 #include "CoreUObject_structs.hpp"
 #include "Marvel_structs.hpp"
 #include "Marvel_classes.hpp"
-#include "DeclarativeUnreal_structs.hpp"
+#include "MarvelLevel_structs.hpp"
+#include "PyCamp_classes.hpp"
 #include "Engine_structs.hpp"
+#include "DeclarativeUnreal_structs.hpp"
 
 
 namespace SDK
@@ -39,21 +39,21 @@ public:
 	float                                         TimeToLoseOccupy;                                  // 0x06E8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         TargetOccupyProgress;                              // 0x06EC(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FObjectiveLevelEventConfig             SingleLevelEvent;                                  // 0x06F0(0x0028)(Edit, NativeAccessSpecifierPublic)
-	TMap<int32, struct FObjectiveLevelEventConfig> RoundLevelEvents;                                  // 0x0718(0x0050)(Edit, NativeAccessSpecifierPublic)
+	TMap<int32, struct FObjectiveLevelEventConfig> RoundLevelEvents;                                 // 0x0718(0x0050)(Edit, NativeAccessSpecifierPublic)
 	class UParticleSystem*                        EmitterTemplate;                                   // 0x0768(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UNiagaraSystem*                         EmitterTemplateNS;                                 // 0x0770(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UMaterialInstance*                      MaterialColorWhite;                                // 0x0778(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UMaterialInstance*                      MaterialColorBlue;                                 // 0x0780(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UMaterialInstance*                      MaterialColorRed;                                  // 0x0788(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class AActor* Objective, float Progress)> ProgressChangedDispatcher;                         // 0x0790(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class AActor* Objective, float Progress)> ProgressChangedDispatcher; // 0x0790(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 	TMulticastInlineDelegate<void()>              ProgressFinish;                                    // 0x07A0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(float Progress, float Speed)> DispatcherProgressInfoChange;                      // 0x07B0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(float Progress, float Speed)> DispatcherProgressInfoChange;        // 0x07B0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 	TMulticastInlineDelegate<void()>              UpdateColorDispatcher;                             // 0x07C0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 	TMulticastInlineDelegate<void()>              ClientCampEndDispatcher;                           // 0x07D0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 	TMulticastInlineDelegate<void()>              OnBothSideIn;                                      // 0x07E0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 	TMulticastInlineDelegate<void()>              OnBothSideOut;                                     // 0x07F0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(int32 AttackCount)> OnlyAttackIn;                                      // 0x0800(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(int32 DefendCount)> OnlyDefendIn;                                      // 0x0810(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(int32 AttackCount)> OnlyAttackIn;                                  // 0x0800(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(int32 DefendCount)> OnlyDefendIn;                                  // 0x0810(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 	TMulticastInlineDelegate<void(int32 Stage)>   OnStageChange;                                     // 0x0820(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 
 public:

@@ -291,7 +291,7 @@ void APyHeroVoiceManager::OnActiveStateChanged(bool Active)
 // PythonFunction PyHeroVoiceManager.PyHeroVoiceManager.OnAudioCultureChanged
 // (Native, Public, BlueprintCallable)
 // Parameters:
-// class FString                           NewCulture                                             (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    NewCulture                                             (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void APyHeroVoiceManager::OnAudioCultureChanged(const class FString& NewCulture)
 {
@@ -316,7 +316,7 @@ void APyHeroVoiceManager::OnAudioCultureChanged(const class FString& NewCulture)
 // PythonFunction PyHeroVoiceManager.PyHeroVoiceManager.ReceivePostAbilityVoice
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class AMarvelBaseCharacter*             Character                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// const class AMarvelBaseCharacter*       Character                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // int32                                   AbilityID                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // EAbilityVoiceStage                      VoiceStage                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)

@@ -39,8 +39,8 @@ void APyProjectile_10475101::K2_OnBeginAgentTask()
 // PythonFunction PyAbility_104751.PyProjectile_10475101.K2_OnBounce
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FHitResult                       ImpactResult                                           (ConstParm, Parm, OutParm, ReferenceParm)
-// struct FVector                          ImpactVelocity                                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FHitResult&                ImpactResult                                           (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FVector&                   ImpactVelocity                                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void APyProjectile_10475101::K2_OnBounce(const struct FHitResult& ImpactResult, const struct FVector& ImpactVelocity)
 {
@@ -66,7 +66,7 @@ void APyProjectile_10475101::K2_OnBounce(const struct FHitResult& ImpactResult, 
 // PythonFunction PyAbility_104751.PyProjectile_10475101.K2_OnProcessHit
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FHitResult                       ImpactResult                                           (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FHitResult&                ImpactResult                                           (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyProjectile_10475101::K2_OnProcessHit(const struct FHitResult& ImpactResult)
 {
@@ -198,7 +198,7 @@ void UPyAbility_104751::K2_OnEndAbility(bool bWasCancelled)
 // PythonFunction PyAbility_104751.PyAbility_104751.NativeOnMontageCompleted
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_104751::NativeOnMontageCompleted(const class FString& Tag)
 {
@@ -223,7 +223,7 @@ void UPyAbility_104751::NativeOnMontageCompleted(const class FString& Tag)
 // PythonFunction PyAbility_104751.PyAbility_104751.NativeOnMontageBlendOut
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_104751::NativeOnMontageBlendOut(const class FString& Tag)
 {
@@ -248,7 +248,7 @@ void UPyAbility_104751::NativeOnMontageBlendOut(const class FString& Tag)
 // PythonFunction PyAbility_104751.PyAbility_104751.NativeOnMontageInterrupted
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_104751::NativeOnMontageInterrupted(const class FString& Tag)
 {
@@ -273,7 +273,7 @@ void UPyAbility_104751::NativeOnMontageInterrupted(const class FString& Tag)
 // PythonFunction PyAbility_104751.PyAbility_104751.NativeOnMontageCancelled
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_104751::NativeOnMontageCancelled(const class FString& Tag)
 {
@@ -299,7 +299,7 @@ void UPyAbility_104751::NativeOnMontageCancelled(const class FString& Tag)
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyCue_Projectile_Loop_10475101::OnExecuteForceEndFX(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
 {

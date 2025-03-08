@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass CollideKnockDown_104981_BP.CollideKnockDown_104981_BP_C
-// 0x0000 (0x1130 - 0x1130)
+// 0x0000 (0x1138 - 0x1138)
 class UCollideKnockDown_104981_BP_C final : public UMarvelGrabbedAbility
 {
 public:

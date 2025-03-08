@@ -10,11 +10,11 @@
 
 #include "Basic.hpp"
 
+#include "Chaos_structs.hpp"
 #include "Engine_classes.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
 #include "FieldSystemEngine_structs.hpp"
-#include "Chaos_structs.hpp"
 
 
 namespace SDK
@@ -57,18 +57,18 @@ public:
 };
 
 // Class FieldSystemEngine.FieldSystemComponent
-// 0x00D0 (0x0910 - 0x0840)
+// 0x00D0 (0x09A0 - 0x08D0)
 class UFieldSystemComponent final : public UPrimitiveComponent
 {
 public:
-	class UFieldSystem*                           FieldSystem;                                       // 0x0838(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, AdvancedDisplay, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIsWorldField;                                     // 0x0840(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIsChaosField;                                     // 0x0841(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_842[0x6];                                      // 0x0842(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<TSoftObjectPtr<class AChaosSolverActor>> SupportedSolvers;                                  // 0x0848(0x0010)(Edit, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
-	struct FFieldObjectCommands                   ConstructionCommands;                              // 0x0858(0x0030)(ContainsInstancedReference, NativeAccessSpecifierPublic)
-	struct FFieldObjectCommands                   BufferCommands;                                    // 0x0888(0x0030)(ContainsInstancedReference, NativeAccessSpecifierPublic)
-	uint8                                         Pad_8B8[0x58];                                     // 0x08B8(0x0058)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class UFieldSystem*                           FieldSystem;                                       // 0x08C8(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, AdvancedDisplay, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsWorldField;                                     // 0x08D0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsChaosField;                                     // 0x08D1(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_8D2[0x6];                                      // 0x08D2(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<TSoftObjectPtr<class AChaosSolverActor>> SupportedSolvers;                                // 0x08D8(0x0010)(Edit, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
+	struct FFieldObjectCommands                   ConstructionCommands;                              // 0x08E8(0x0030)(ContainsInstancedReference, NativeAccessSpecifierPublic)
+	struct FFieldObjectCommands                   BufferCommands;                                    // 0x0918(0x0030)(ContainsInstancedReference, NativeAccessSpecifierPublic)
+	uint8                                         Pad_948[0x58];                                     // 0x0948(0x0058)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void ActivateNiagaraFieldCache(bool Enabled);

@@ -23,7 +23,7 @@ namespace SDK
 {
 
 // PythonClass PyAbility_103941.PyConfig_103941
-// 0x1AB8 (0x1B50 - 0x0098)
+// 0x1B20 (0x1BB8 - 0x0098)
 class UPyConfig_103941 final : public UMarvelAbilityConfig
 {
 public:
@@ -48,6 +48,7 @@ public:
 	struct FMarvelApplyPinnedMotionConfig         PinnedConfig;                                      // 0x1850(0x0230)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
 	struct FGameplayTagContainer                  SourceTags;                                        // 0x1A80(0x0068)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
 	struct FGameplayTagContainer                  TargetTags;                                        // 0x1AE8(0x0068)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	struct FGameplayTagContainer                  RemoveEffectTagContainer;                          // 0x1B50(0x0068)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -80,16 +81,17 @@ public:
 };
 
 // PythonClass PyAbility_103941.PyAbility_103941
-// 0x1B60 (0x40E0 - 0x2580)
+// 0x1B68 (0x40F0 - 0x2588)
 class UPyAbility_103941 : public UAbility_103941
 {
 public:
-	struct FMarvelAbilityTraceContext             TraceContext;                                      // 0x2580(0x0F90)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NativeAccessSpecifierPublic)
-	struct FDashAbilityInfo                       CustomDashInfo;                                    // 0x3510(0x0BA8)(Transient, NativeAccessSpecifierPublic)
-	int32                                         AbilityState;                                      // 0x40B8(0x0004)(Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_40BC[0x4];                                     // 0x40BC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TMulticastInlineDelegate<void(int32 ST)>      AbilityStateDispatcher;                            // 0x40C0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class AActor* Target)> PinnedTargetDispatcher;                            // 0x40D0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2588[0x8];                                     // 0x2588(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FMarvelAbilityTraceContext             TraceContext;                                      // 0x2590(0x0F90)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	struct FDashAbilityInfo                       CustomDashInfo;                                    // 0x3520(0x0BA8)(Transient, NativeAccessSpecifierPublic)
+	int32                                         AbilityState;                                      // 0x40C8(0x0004)(Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_40CC[0x4];                                     // 0x40CC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TMulticastInlineDelegate<void(int32 ST)>      AbilityStateDispatcher;                            // 0x40D0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class AActor* Target)> PinnedTargetDispatcher;                     // 0x40E0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 
 public:
 	void OnRep_AbilityState(int32 ST);

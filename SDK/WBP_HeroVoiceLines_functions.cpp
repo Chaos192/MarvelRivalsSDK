@@ -21,8 +21,8 @@ namespace SDK
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           Character                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class FString                           Text                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-// class FString                           Out                                                    (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Text                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// class FString*                          Out                                                    (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
 
 void UWBP_HeroVoiceLines_C::CombineToString(class AActor* Character, const class FString& Text, class FString* Out)
 {
@@ -81,7 +81,7 @@ void UWBP_HeroVoiceLines_C::ExecuteUbergraph_WBP_HeroVoiceLines(int32 EntryPoint
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           Character                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class FString                           FailedCallStack                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    FailedCallStack                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // float                                   Cooldown                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UWBP_HeroVoiceLines_C::OnVoiceFailed(class AActor* Character, const class FString& FailedCallStack, float Cooldown)
@@ -107,7 +107,7 @@ void UWBP_HeroVoiceLines_C::OnVoiceFailed(class AActor* Character, const class F
 // EMarvelVoiceType                        VoiceType                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class AActor*                           Character                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // int32                                   VoiceID                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FText                             VoiceLine                                              (BlueprintVisible, BlueprintReadOnly, Parm)
+// const class FText&                      VoiceLine                                              (BlueprintVisible, BlueprintReadOnly, Parm)
 // class AActor*                           ToCharacter                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 void UWBP_HeroVoiceLines_C::OnVoicePosted(EMarvelVoiceType VoiceType, class AActor* Character, int32 VoiceID, const class FText& VoiceLine, class AActor* ToCharacter)
@@ -153,9 +153,9 @@ void UWBP_HeroVoiceLines_C::PreConstruct(bool IsDesignTime)
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           Character                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class FString                           Text                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Text                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // double                                  Cooldown                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    Result                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool*                                   Result                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UWBP_HeroVoiceLines_C::ReachCooldown(class AActor* Character, const class FString& Text, double Cooldown, bool* Result)
 {

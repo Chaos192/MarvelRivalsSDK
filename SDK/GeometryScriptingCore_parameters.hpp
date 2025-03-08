@@ -35,7 +35,7 @@ struct GeometryScriptLibrary_CollisionFunctions_SetDynamicMeshCollisionFromMesh 
 public:
 	class UDynamicMesh*                           FromDynamicMesh;                                   // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UDynamicMeshComponent*                  ToDynamicMeshComponent;                            // 0x0008(0x0008)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGeometryScriptCollisionFromMeshOptions OPTIONS;                                           // 0x0010(0x0030)(Parm, NoDestructor, NativeAccessSpecifierPublic)
+	struct FGeometryScriptCollisionFromMeshOptions OPTIONS;                                          // 0x0010(0x0030)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 	class UGeometryScriptDebug*                   Debug;                                             // 0x0040(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UDynamicMesh*                           ReturnValue;                                       // 0x0048(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
@@ -47,7 +47,7 @@ struct GeometryScriptLibrary_CollisionFunctions_SetStaticMeshCollisionFromCompon
 public:
 	class UStaticMesh*                            StaticMeshAsset;                                   // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UPrimitiveComponent*                    SourceComponent;                                   // 0x0008(0x0008)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGeometryScriptSetSimpleCollisionOptions OPTIONS;                                           // 0x0010(0x0001)(Parm, NoDestructor, NativeAccessSpecifierPublic)
+	struct FGeometryScriptSetSimpleCollisionOptions OPTIONS;                                         // 0x0010(0x0001)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UGeometryScriptDebug*                   Debug;                                             // 0x0018(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
@@ -59,7 +59,7 @@ struct GeometryScriptLibrary_CollisionFunctions_SetStaticMeshCollisionFromMesh f
 public:
 	class UDynamicMesh*                           FromDynamicMesh;                                   // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UStaticMesh*                            ToStaticMeshAsset;                                 // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGeometryScriptCollisionFromMeshOptions OPTIONS;                                           // 0x0010(0x0030)(Parm, NoDestructor, NativeAccessSpecifierPublic)
+	struct FGeometryScriptCollisionFromMeshOptions OPTIONS;                                          // 0x0010(0x0030)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 	class UGeometryScriptDebug*                   Debug;                                             // 0x0040(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UDynamicMesh*                           ReturnValue;                                       // 0x0048(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
@@ -72,7 +72,7 @@ public:
 	class UDynamicMesh*                           TargetMesh;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UDynamicMesh*                           CopyToMesh;                                        // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UDynamicMesh*                           CopyToMeshOut;                                     // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGeometryScriptConvexDecompositionOptions OPTIONS;                                           // 0x0018(0x0028)(Parm, NoDestructor, NativeAccessSpecifierPublic)
+	struct FGeometryScriptConvexDecompositionOptions OPTIONS;                                        // 0x0018(0x0028)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 	class UGeometryScriptDebug*                   Debug;                                             // 0x0040(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UDynamicMesh*                           ReturnValue;                                       // 0x0048(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
@@ -597,7 +597,7 @@ struct GeometryScriptLibrary_StaticMeshFunctions_CopyMeshFromSkeletalMesh final
 public:
 	class USkeletalMesh*                          FromSkeletalMeshAsset;                             // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UDynamicMesh*                           ToDynamicMesh;                                     // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGeometryScriptCopyMeshFromAssetOptions AssetOptions;                                      // 0x0010(0x0003)(Parm, NoDestructor, NativeAccessSpecifierPublic)
+	struct FGeometryScriptCopyMeshFromAssetOptions AssetOptions;                                     // 0x0010(0x0003)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 	uint8                                         Pad_13[0x1];                                       // 0x0013(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FGeometryScriptMeshReadLOD             RequestedLOD;                                      // 0x0014(0x0008)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 	EGeometryScriptOutcomePins                    Outcome;                                           // 0x001C(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -613,7 +613,7 @@ struct GeometryScriptLibrary_StaticMeshFunctions_CopyMeshFromStaticMesh final
 public:
 	class UStaticMesh*                            FromStaticMeshAsset;                               // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UDynamicMesh*                           ToDynamicMesh;                                     // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGeometryScriptCopyMeshFromAssetOptions AssetOptions;                                      // 0x0010(0x0003)(Parm, NoDestructor, NativeAccessSpecifierPublic)
+	struct FGeometryScriptCopyMeshFromAssetOptions AssetOptions;                                     // 0x0010(0x0003)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 	uint8                                         Pad_13[0x1];                                       // 0x0013(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FGeometryScriptMeshReadLOD             RequestedLOD;                                      // 0x0014(0x0008)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 	EGeometryScriptOutcomePins                    Outcome;                                           // 0x001C(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -697,7 +697,7 @@ public:
 	struct FGeometryScriptBakeTargetMeshOptions   TargetOptions;                                     // 0x0070(0x0004)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 	uint8                                         Pad_74[0x4];                                       // 0x0074(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class AActor*>                         SourceActors;                                      // 0x0078(0x0010)(ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
-	struct FGeometryScriptBakeRenderCaptureOptions BakeOptions;                                       // 0x0088(0x0028)(Parm, NoDestructor, NativeAccessSpecifierPublic)
+	struct FGeometryScriptBakeRenderCaptureOptions BakeOptions;                                      // 0x0088(0x0028)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 	class UGeometryScriptDebug*                   Debug;                                             // 0x00B0(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FGeometryScriptRenderCaptureTextures   ReturnValue;                                       // 0x00B8(0x0090)(Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 	uint8                                         Pad_148[0x8];                                      // 0x0148(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
@@ -1064,7 +1064,7 @@ struct GeometryScriptLibrary_MeshBoneWeightFunctions_ComputeSmoothBoneWeights fi
 public:
 	class UDynamicMesh*                           TargetMesh;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class USkeleton*                              Skeleton;                                          // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGeometryScriptSmoothBoneWeightsOptions OPTIONS;                                           // 0x0010(0x0010)(Parm, NoDestructor, NativeAccessSpecifierPublic)
+	struct FGeometryScriptSmoothBoneWeightsOptions OPTIONS;                                          // 0x0010(0x0010)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 	struct FGeometryScriptBoneWeightProfile       Profile;                                           // 0x0020(0x000C)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UGeometryScriptDebug*                   Debug;                                             // 0x0030(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -1262,7 +1262,7 @@ struct GeometryScriptLibrary_MeshBoneWeightFunctions_TransferBoneWeightsFromMesh
 public:
 	class UDynamicMesh*                           SourceMesh;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UDynamicMesh*                           TargetMesh;                                        // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGeometryScriptTransferBoneWeightsOptions OPTIONS;                                           // 0x0010(0x0048)(Parm, NoDestructor, NativeAccessSpecifierPublic)
+	struct FGeometryScriptTransferBoneWeightsOptions OPTIONS;                                        // 0x0010(0x0048)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 	class UGeometryScriptDebug*                   Debug;                                             // 0x0058(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UDynamicMesh*                           ReturnValue;                                       // 0x0060(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
@@ -1380,7 +1380,7 @@ struct GeometryScriptLibrary_MeshComparisonFunctions_MeasureDistancesBetweenMesh
 public:
 	class UDynamicMesh*                           TargetMesh;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UDynamicMesh*                           OtherMesh;                                         // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGeometryScriptMeasureMeshDistanceOptions OPTIONS;                                           // 0x0010(0x0001)(Parm, NoDestructor, NativeAccessSpecifierPublic)
+	struct FGeometryScriptMeasureMeshDistanceOptions OPTIONS;                                        // 0x0010(0x0001)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	double                                        MaxDistance;                                       // 0x0018(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	double                                        MinDistance;                                       // 0x0020(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -1508,7 +1508,7 @@ public:
 	class UDynamicMesh*                           TargetMesh;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UTexture2D*                             Texture;                                           // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FGeometryScriptMeshSelection           Selection;                                         // 0x0010(0x0010)(Parm, NativeAccessSpecifierPublic)
-	struct FGeometryScriptDisplaceFromTextureOptions OPTIONS;                                           // 0x0020(0x0038)(Parm, NoDestructor, NativeAccessSpecifierPublic)
+	struct FGeometryScriptDisplaceFromTextureOptions OPTIONS;                                        // 0x0020(0x0038)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 	int32                                         UVLayer;                                           // 0x0058(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_5C[0x4];                                       // 0x005C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UGeometryScriptDebug*                   Debug;                                             // 0x0060(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -1539,7 +1539,7 @@ struct GeometryScriptLibrary_MeshDeformFunctions_ApplyIterativeSmoothingToMesh f
 public:
 	class UDynamicMesh*                           TargetMesh;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FGeometryScriptMeshSelection           Selection;                                         // 0x0008(0x0010)(Parm, NativeAccessSpecifierPublic)
-	struct FGeometryScriptIterativeMeshSmoothingOptions OPTIONS;                                           // 0x0018(0x000C)(Parm, NoDestructor, NativeAccessSpecifierPublic)
+	struct FGeometryScriptIterativeMeshSmoothingOptions OPTIONS;                                     // 0x0018(0x000C)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UGeometryScriptDebug*                   Debug;                                             // 0x0028(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UDynamicMesh*                           ReturnValue;                                       // 0x0030(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -1842,7 +1842,7 @@ public:
 	struct FGeometryScriptMeshSelection           Selection;                                         // 0x0008(0x0010)(Parm, NativeAccessSpecifierPublic)
 	EGeometryScriptMeshBevelSelectionMode         BevelMode;                                         // 0x0018(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_19[0x3];                                       // 0x0019(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FGeometryScriptMeshBevelSelectionOptions BevelOptions;                                      // 0x001C(0x000C)(Parm, NoDestructor, NativeAccessSpecifierPublic)
+	struct FGeometryScriptMeshBevelSelectionOptions BevelOptions;                                    // 0x001C(0x000C)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 	class UGeometryScriptDebug*                   Debug;                                             // 0x0028(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UDynamicMesh*                           ReturnValue;                                       // 0x0030(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
@@ -1868,7 +1868,7 @@ public:
 	class UDynamicMesh*                           TargetMesh;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FGeometryScriptMeshSelection           Selection;                                         // 0x0008(0x0010)(Parm, NativeAccessSpecifierPublic)
 	struct FGeometryScriptMeshSelection           NewTriangles;                                      // 0x0018(0x0010)(Parm, OutParm, NativeAccessSpecifierPublic)
-	struct FGeometryScriptMeshEditPolygroupOptions GroupOptions;                                      // 0x0028(0x0008)(Parm, NoDestructor, NativeAccessSpecifierPublic)
+	struct FGeometryScriptMeshEditPolygroupOptions GroupOptions;                                     // 0x0028(0x0008)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 	class UGeometryScriptDebug*                   Debug;                                             // 0x0030(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UDynamicMesh*                           ReturnValue;                                       // 0x0038(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
@@ -1890,7 +1890,7 @@ struct GeometryScriptLibrary_MeshModelingFunctions_ApplyMeshInsetOutsetFaces fin
 {
 public:
 	class UDynamicMesh*                           TargetMesh;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGeometryScriptMeshInsetOutsetFacesOptions OPTIONS;                                           // 0x0008(0x0020)(Parm, NoDestructor, NativeAccessSpecifierPublic)
+	struct FGeometryScriptMeshInsetOutsetFacesOptions OPTIONS;                                       // 0x0008(0x0020)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 	struct FGeometryScriptMeshSelection           Selection;                                         // 0x0028(0x0010)(Parm, NativeAccessSpecifierPublic)
 	class UGeometryScriptDebug*                   Debug;                                             // 0x0038(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UDynamicMesh*                           ReturnValue;                                       // 0x0040(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -1902,7 +1902,7 @@ struct GeometryScriptLibrary_MeshModelingFunctions_ApplyMeshLinearExtrudeFaces f
 {
 public:
 	class UDynamicMesh*                           TargetMesh;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGeometryScriptMeshLinearExtrudeOptions OPTIONS;                                           // 0x0008(0x0038)(Parm, NoDestructor, NativeAccessSpecifierPublic)
+	struct FGeometryScriptMeshLinearExtrudeOptions OPTIONS;                                          // 0x0008(0x0038)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 	struct FGeometryScriptMeshSelection           Selection;                                         // 0x0040(0x0010)(Parm, NativeAccessSpecifierPublic)
 	class UGeometryScriptDebug*                   Debug;                                             // 0x0050(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UDynamicMesh*                           ReturnValue;                                       // 0x0058(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -2472,7 +2472,7 @@ public:
 	struct FTransform                             Transform;                                         // 0x0010(0x0060)(Parm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<struct FVector2D>                      VertexPositions;                                   // 0x0070(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 	TArray<struct FIntPoint>                      ConstrainedEdges;                                  // 0x0080(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-	struct FGeometryScriptConstrainedDelaunayTriangulationOptions TriangulationOptions;                              // 0x0090(0x0003)(Parm, NoDestructor, NativeAccessSpecifierPublic)
+	struct FGeometryScriptConstrainedDelaunayTriangulationOptions TriangulationOptions;              // 0x0090(0x0003)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 	uint8                                         Pad_93[0x5];                                       // 0x0093(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<int32>                                 PositionsToVertexIDs;                              // 0x0098(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 	bool                                          bHasDuplicateVertices;                             // 0x00A8(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -2531,7 +2531,7 @@ public:
 	uint8                                         Pad_B[0x5];                                        // 0x000B(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FTransform                             Transform;                                         // 0x0010(0x0060)(Parm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FGeometryScriptGeneralPolygonList      PolygonList;                                       // 0x0070(0x0010)(Parm, NativeAccessSpecifierPublic)
-	struct FGeometryScriptPolygonsTriangulationOptions TriangulationOptions;                              // 0x0080(0x0001)(Parm, NoDestructor, NativeAccessSpecifierPublic)
+	struct FGeometryScriptPolygonsTriangulationOptions TriangulationOptions;                         // 0x0080(0x0001)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 	bool                                          bTriangulationError;                               // 0x0081(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_82[0x6];                                       // 0x0082(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	class UGeometryScriptDebug*                   Debug;                                             // 0x0088(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -3427,7 +3427,7 @@ struct GeometryScriptLibrary_MeshRepairFunctions_RemoveHiddenTriangles final
 {
 public:
 	class UDynamicMesh*                           TargetMesh;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGeometryScriptRemoveHiddenTrianglesOptions OPTIONS;                                           // 0x0008(0x001C)(Parm, NoDestructor, NativeAccessSpecifierPublic)
+	struct FGeometryScriptRemoveHiddenTrianglesOptions OPTIONS;                                      // 0x0008(0x001C)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UGeometryScriptDebug*                   Debug;                                             // 0x0028(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UDynamicMesh*                           ReturnValue;                                       // 0x0030(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -3439,7 +3439,7 @@ struct GeometryScriptLibrary_MeshRepairFunctions_RemoveSmallComponents final
 {
 public:
 	class UDynamicMesh*                           TargetMesh;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGeometryScriptRemoveSmallComponentOptions OPTIONS;                                           // 0x0008(0x000C)(Parm, NoDestructor, NativeAccessSpecifierPublic)
+	struct FGeometryScriptRemoveSmallComponentOptions OPTIONS;                                       // 0x0008(0x000C)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UGeometryScriptDebug*                   Debug;                                             // 0x0018(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UDynamicMesh*                           ReturnValue;                                       // 0x0020(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -3451,7 +3451,7 @@ struct GeometryScriptLibrary_MeshRepairFunctions_RepairMeshDegenerateGeometry fi
 {
 public:
 	class UDynamicMesh*                           TargetMesh;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGeometryScriptDegenerateTriangleOptions OPTIONS;                                           // 0x0008(0x0020)(Parm, NoDestructor, NativeAccessSpecifierPublic)
+	struct FGeometryScriptDegenerateTriangleOptions OPTIONS;                                         // 0x0008(0x0020)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 	class UGeometryScriptDebug*                   Debug;                                             // 0x0028(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UDynamicMesh*                           ReturnValue;                                       // 0x0030(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
@@ -3498,8 +3498,8 @@ struct GeometryScriptLibrary_MeshSamplingFunctions_ComputeNonUniformPointSamplin
 {
 public:
 	class UDynamicMesh*                           TargetMesh;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGeometryScriptMeshPointSamplingOptions OPTIONS;                                           // 0x0008(0x0018)(Parm, NoDestructor, NativeAccessSpecifierPublic)
-	struct FGeometryScriptNonUniformPointSamplingOptions NonUniformOptions;                                 // 0x0020(0x0018)(Parm, NoDestructor, NativeAccessSpecifierPublic)
+	struct FGeometryScriptMeshPointSamplingOptions OPTIONS;                                          // 0x0008(0x0018)(Parm, NoDestructor, NativeAccessSpecifierPublic)
+	struct FGeometryScriptNonUniformPointSamplingOptions NonUniformOptions;                          // 0x0020(0x0018)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 	TArray<struct FTransform>                     Samples;                                           // 0x0038(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 	TArray<double>                                SampleRadii;                                       // 0x0048(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 	struct FGeometryScriptIndexList               TriangleIDs;                                       // 0x0058(0x0018)(Parm, OutParm, NativeAccessSpecifierPublic)
@@ -3513,7 +3513,7 @@ struct GeometryScriptLibrary_MeshSamplingFunctions_ComputePointSampling final
 {
 public:
 	class UDynamicMesh*                           TargetMesh;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGeometryScriptMeshPointSamplingOptions OPTIONS;                                           // 0x0008(0x0018)(Parm, NoDestructor, NativeAccessSpecifierPublic)
+	struct FGeometryScriptMeshPointSamplingOptions OPTIONS;                                          // 0x0008(0x0018)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 	TArray<struct FTransform>                     Samples;                                           // 0x0020(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 	struct FGeometryScriptIndexList               TriangleIDs;                                       // 0x0030(0x0018)(Parm, OutParm, NativeAccessSpecifierPublic)
 	class UGeometryScriptDebug*                   Debug;                                             // 0x0048(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -3526,8 +3526,8 @@ struct GeometryScriptLibrary_MeshSamplingFunctions_ComputeVertexWeightedPointSam
 {
 public:
 	class UDynamicMesh*                           TargetMesh;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGeometryScriptMeshPointSamplingOptions OPTIONS;                                           // 0x0008(0x0018)(Parm, NoDestructor, NativeAccessSpecifierPublic)
-	struct FGeometryScriptNonUniformPointSamplingOptions NonUniformOptions;                                 // 0x0020(0x0018)(Parm, NoDestructor, NativeAccessSpecifierPublic)
+	struct FGeometryScriptMeshPointSamplingOptions OPTIONS;                                          // 0x0008(0x0018)(Parm, NoDestructor, NativeAccessSpecifierPublic)
+	struct FGeometryScriptNonUniformPointSamplingOptions NonUniformOptions;                          // 0x0020(0x0018)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 	struct FGeometryScriptScalarList              VertexWeights;                                     // 0x0038(0x0010)(Parm, NativeAccessSpecifierPublic)
 	TArray<struct FTransform>                     Samples;                                           // 0x0048(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 	TArray<double>                                SampleRadii;                                       // 0x0058(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
@@ -3832,7 +3832,7 @@ struct GeometryScriptLibrary_MeshSimplifyFunctions_ApplySimplifyToPolygroupTopol
 {
 public:
 	class UDynamicMesh*                           TargetMesh;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGeometryScriptPolygroupSimplifyOptions OPTIONS;                                           // 0x0008(0x0008)(Parm, NoDestructor, NativeAccessSpecifierPublic)
+	struct FGeometryScriptPolygroupSimplifyOptions OPTIONS;                                          // 0x0008(0x0008)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 	struct FGeometryScriptGroupLayer              GroupLayer;                                        // 0x0010(0x0008)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 	class UGeometryScriptDebug*                   Debug;                                             // 0x0018(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UDynamicMesh*                           ReturnValue;                                       // 0x0020(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -4011,7 +4011,7 @@ struct GeometryScriptLibrary_MeshSubdivideFunctions_ApplySelectiveTessellation f
 public:
 	class UDynamicMesh*                           TargetMesh;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FGeometryScriptMeshSelection           Selection;                                         // 0x0008(0x0010)(Parm, NativeAccessSpecifierPublic)
-	struct FGeometryScriptSelectiveTessellateOptions OPTIONS;                                           // 0x0018(0x0002)(Parm, NoDestructor, NativeAccessSpecifierPublic)
+	struct FGeometryScriptSelectiveTessellateOptions OPTIONS;                                        // 0x0018(0x0002)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 	uint8                                         Pad_1A[0x2];                                       // 0x001A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         TessellationLevel;                                 // 0x001C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	ESelectiveTessellatePatternType               PatternType;                                       // 0x0020(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -4430,7 +4430,7 @@ public:
 	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	double                                        Strength;                                          // 0x0020(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EGeometryScriptBlurColorMode                  BlurMode;                                          // 0x0028(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGeometryScriptBlurMeshVertexColorsOptions OPTIONS;                                           // 0x0029(0x0004)(Parm, NoDestructor, NativeAccessSpecifierPublic)
+	struct FGeometryScriptBlurMeshVertexColorsOptions OPTIONS;                                       // 0x0029(0x0004)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 	uint8                                         Pad_2D[0x3];                                       // 0x002D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	class UGeometryScriptDebug*                   Debug;                                             // 0x0030(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UDynamicMesh*                           ReturnValue;                                       // 0x0038(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -5203,7 +5203,7 @@ struct GeometryScriptLibrary_SceneUtilityFunctions_CopyMeshFromComponent final
 public:
 	class USceneComponent*                        Component;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UDynamicMesh*                           ToDynamicMesh;                                     // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGeometryScriptCopyMeshFromComponentOptions OPTIONS;                                           // 0x0010(0x000C)(Parm, NoDestructor, NativeAccessSpecifierPublic)
+	struct FGeometryScriptCopyMeshFromComponentOptions OPTIONS;                                      // 0x0010(0x000C)(Parm, NoDestructor, NativeAccessSpecifierPublic)
 	bool                                          bTransformToWorld;                                 // 0x001C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_1D[0x3];                                       // 0x001D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FTransform                             LocalToWorld;                                      // 0x0020(0x0060)(Parm, OutParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)

@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // PythonClass PyAbility_105042.PyAbility_105042
-// 0x0000 (0x2580 - 0x2580)
+// 0x0000 (0x2588 - 0x2588)
 class UPyAbility_105042 : public UMarvelGameplayAbility
 {
 public:

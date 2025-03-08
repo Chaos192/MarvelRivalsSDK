@@ -58,8 +58,8 @@ void UPyWidget_Common_SliderNumber::Destruct()
 // PythonFunction PyWidget_Common_SliderNumber.PyWidget_Common_SliderNumber.OnMouseEnter
 // (BlueprintCosmetic, Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGeometry                        MyGeometry                                             (Parm, IsPlainOldData, NoDestructor)
-// struct FPointerEvent                    MouseEvent                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGeometry&                 MyGeometry                                             (Parm, IsPlainOldData, NoDestructor)
+// const struct FPointerEvent&             MouseEvent                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyWidget_Common_SliderNumber::OnMouseEnter(const struct FGeometry& MyGeometry, const struct FPointerEvent& MouseEvent)
 {
@@ -85,7 +85,7 @@ void UPyWidget_Common_SliderNumber::OnMouseEnter(const struct FGeometry& MyGeome
 // PythonFunction PyWidget_Common_SliderNumber.PyWidget_Common_SliderNumber.OnMouseLeave
 // (BlueprintCosmetic, Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FPointerEvent                    MouseEvent                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FPointerEvent&             MouseEvent                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyWidget_Common_SliderNumber::OnMouseLeave(const struct FPointerEvent& MouseEvent)
 {

@@ -18,21 +18,6 @@
 namespace SDK
 {
 
-// PythonClass PyHeadHorizontalWidgets.PyHeadHorizontalWidgetsManager
-// 0x0000 (0x0030 - 0x0030)
-class UPyHeadHorizontalWidgetsManager final : public UObject
-{
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"PyHeadHorizontalWidgetsManager">();
-	}
-	static class UPyHeadHorizontalWidgetsManager* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UPyHeadHorizontalWidgetsManager>();
-	}
-};
-
 // PythonClass PyHeadHorizontalWidgets.PyWidgetExtension_HeadHorizontalWidgetAgent
 // 0x0000 (0x0030 - 0x0030)
 class UPyWidgetExtension_HeadHorizontalWidgetAgent final : public UMarvelUserWidgetExtension
@@ -51,6 +36,21 @@ public:
 	static class UPyWidgetExtension_HeadHorizontalWidgetAgent* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UPyWidgetExtension_HeadHorizontalWidgetAgent>();
+	}
+};
+
+// PythonClass PyHeadHorizontalWidgets.PyHeadHorizontalWidgetsManager
+// 0x0000 (0x0030 - 0x0030)
+class UPyHeadHorizontalWidgetsManager final : public UObject
+{
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PyHeadHorizontalWidgetsManager">();
+	}
+	static class UPyHeadHorizontalWidgetsManager* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPyHeadHorizontalWidgetsManager>();
 	}
 };
 

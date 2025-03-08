@@ -20,7 +20,7 @@ namespace SDK
 // Function LiveLinkComponents.LiveLinkComponentController.SetSubjectRepresentation
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// struct FLiveLinkSubjectRepresentation   InSubjectRepresentation                                (Parm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FLiveLinkSubjectRepresentation&InSubjectRepresentation                                (Parm, NoDestructor, NativeAccessSpecifierPublic)
 
 void ULiveLinkComponentController::SetSubjectRepresentation(const struct FLiveLinkSubjectRepresentation& InSubjectRepresentation)
 {

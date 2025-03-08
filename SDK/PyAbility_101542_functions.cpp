@@ -127,7 +127,7 @@ void UPyAbility_101542::K2_OnEndAbility(bool bCanceled)
 // PythonFunction PyAbility_101542.PyAbility_101542.NativeOnMontageEvent
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           EventTag                                               (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    EventTag                                               (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_101542::NativeOnMontageEvent(const class FString& EventTag)
 {
@@ -152,7 +152,7 @@ void UPyAbility_101542::NativeOnMontageEvent(const class FString& EventTag)
 // PythonFunction PyAbility_101542.PyAbility_101542.NativeOnMontageCompleted
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           EventTag                                               (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    EventTag                                               (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_101542::NativeOnMontageCompleted(const class FString& EventTag)
 {
@@ -223,7 +223,7 @@ void UPyUIController_101542::OnDestruct()
 // PythonFunction PyAbility_101542.PyUIController_101542.OnOwnedTagUpdate
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FGameplayTag                     InTag                                                  (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              InTag                                                  (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
 // bool                                    bInExist                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UPyUIController_101542::OnOwnedTagUpdate(const struct FGameplayTag& InTag, bool bInExist)

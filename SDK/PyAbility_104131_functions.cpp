@@ -172,7 +172,7 @@ void APyProjectile_10413101::K2_OnEndAgentTask()
 // PythonFunction PyAbility_104131.PyProjectile_10413101.K2_OnProcessHit
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FHitResult                       ImpactResult                                           (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FHitResult&                ImpactResult                                           (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyProjectile_10413101::K2_OnProcessHit(const struct FHitResult& ImpactResult)
 {
@@ -216,7 +216,7 @@ void APyProjectile_10413101::K2_OnRecycleAgentTask()
 // PythonFunction PyAbility_104131.PyEffectiveComponent_10413101.K2_OnPreApplyContainer
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<struct FHitResult>               HitResults                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const TArray<struct FHitResult>&        HitResults                                             (ConstParm, Parm, OutParm, ReferenceParm)
 // TArray<struct FHitResult>               ReturnValue                                            (Parm, OutParm, ReturnParm)
 
 TArray<struct FHitResult> UPyEffectiveComponent_10413101::K2_OnPreApplyContainer(const TArray<struct FHitResult>& HitResults)
@@ -402,7 +402,7 @@ void UPyAbility_104131::MissileEventNotify()
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int32                                   SocketId                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FMarvelAbilitySocketInfo         SocketInfo                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
+// const struct FMarvelAbilitySocketInfo&  SocketInfo                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
 
 void UPyAbility_104131::HandleAnimSocketInfo(int32 SocketId, const struct FMarvelAbilitySocketInfo& SocketInfo)
 {
@@ -491,7 +491,7 @@ void UPyAbility_104131::OnWaitServerSyncOvertime()
 // PythonFunction PyAbility_104131.PyAbility_104131.OnNetSync
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FGameplayAbilityTargetDataHandle Data                                                   (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayAbilityTargetDataHandle&Data                                                   (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyAbility_104131::OnNetSync(const struct FGameplayAbilityTargetDataHandle& Data)
 {
@@ -517,7 +517,7 @@ void UPyAbility_104131::OnNetSync(const struct FGameplayAbilityTargetDataHandle&
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // class AActor*                           SpawnActor                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayAbilityTargetDataHandle Data                                                   (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayAbilityTargetDataHandle&Data                                                   (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyAbility_104131::OnProjectileTaskSuccess(class AActor* SpawnActor, const struct FGameplayAbilityTargetDataHandle& Data)
 {
@@ -544,7 +544,7 @@ void UPyAbility_104131::OnProjectileTaskSuccess(class AActor* SpawnActor, const 
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // class AActor*                           SpawnActor                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayAbilityTargetDataHandle Data                                                   (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayAbilityTargetDataHandle&Data                                                   (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyAbility_104131::BackwardProjectileSuccess(class AActor* SpawnActor, const struct FGameplayAbilityTargetDataHandle& Data)
 {
@@ -614,7 +614,7 @@ void UPyAbility_104131::OnBackProjectileEndTask(class AActor* Projectile)
 // PythonFunction PyAbility_104131.PyAbility_104131.NativeOnMontageCompleted
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_104131::NativeOnMontageCompleted(const class FString& Tag)
 {
@@ -639,7 +639,7 @@ void UPyAbility_104131::NativeOnMontageCompleted(const class FString& Tag)
 // PythonFunction PyAbility_104131.PyAbility_104131.NativeOnMontageBlendOut
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_104131::NativeOnMontageBlendOut(const class FString& Tag)
 {
@@ -664,7 +664,7 @@ void UPyAbility_104131::NativeOnMontageBlendOut(const class FString& Tag)
 // PythonFunction PyAbility_104131.PyAbility_104131.NativeOnMontageInterrupted
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_104131::NativeOnMontageInterrupted(const class FString& Tag)
 {
@@ -689,7 +689,7 @@ void UPyAbility_104131::NativeOnMontageInterrupted(const class FString& Tag)
 // PythonFunction PyAbility_104131.PyAbility_104131.NativeOnMontageCancelled
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_104131::NativeOnMontageCancelled(const class FString& Tag)
 {
@@ -715,7 +715,7 @@ void UPyAbility_104131::NativeOnMontageCancelled(const class FString& Tag)
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 bool APyCue_Projectile_Loop_10413102::WhileActive(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)

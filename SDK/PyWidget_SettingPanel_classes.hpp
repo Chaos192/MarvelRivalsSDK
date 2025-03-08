@@ -11,15 +11,15 @@
 #include "Basic.hpp"
 
 #include "CoreUObject_structs.hpp"
-#include "PyWidget_ModuleMainPanel_classes.hpp"
 #include "SlateCore_structs.hpp"
+#include "PyWidget_ModuleMainPanel_classes.hpp"
 
 
 namespace SDK
 {
 
 // PythonClass PyWidget_SettingPanel.PyWidget_SettingPanel
-// 0x00C0 (0x06D8 - 0x0618)
+// 0x00C8 (0x06E0 - 0x0618)
 class UPyWidget_SettingPanel : public UPyWidget_ModuleMainPanel
 {
 public:
@@ -42,6 +42,7 @@ public:
 	class UInputAction*                           InputAction_OpenAccessibilityPreview;              // 0x06C0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UInputAction*                           InputAction_CloseAccessibilityPreview;             // 0x06C8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UInputAction*                           InputAction_SwitchAccessibilityPreviewScene;       // 0x06D0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSubclassOf<class UUserWidget>                WBP_Setting_Key_Class;                             // 0x06D8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void OnInitialized();

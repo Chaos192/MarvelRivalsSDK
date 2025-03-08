@@ -83,7 +83,7 @@ void UPyAbility_105061::K2_OnEndAbility(bool bWasCancelled)
 // PythonFunction PyAbility_105061.PyAbility_105061.NativeOnMontageEvent
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           EventTag                                               (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    EventTag                                               (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_105061::NativeOnMontageEvent(const class FString& EventTag)
 {
@@ -108,7 +108,7 @@ void UPyAbility_105061::NativeOnMontageEvent(const class FString& EventTag)
 // PythonFunction PyAbility_105061.PyAbility_105061.NativeOnMontageCompleted
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           EventTag                                               (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    EventTag                                               (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_105061::NativeOnMontageCompleted(const class FString& EventTag)
 {
@@ -133,7 +133,7 @@ void UPyAbility_105061::NativeOnMontageCompleted(const class FString& EventTag)
 // PythonFunction PyAbility_105061.PyAbility_105061.NativeOnMontageCancelled
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           EventTag                                               (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    EventTag                                               (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_105061::NativeOnMontageCancelled(const class FString& EventTag)
 {
@@ -229,7 +229,7 @@ void UPyAbility_105061::OnAbilityCancel()
 // Parameters:
 // class UNiagaraComponent*                InNSComponent                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyCue_Scope_End_105061::OnScopeNiagaraSpawned(class UNiagaraComponent* InNSComponent, class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
 {

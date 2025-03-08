@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "python_enums_structs.hpp"
 #include "Marvel_structs.hpp"
+#include "python_enums_structs.hpp"
 #include "PyWidget_ModuleMainPanel_classes.hpp"
 
 
@@ -51,6 +51,7 @@ public:
 	void SetCloseBtnText(const class FText& BtnText);
 	void SetBtnAboveTipsText(const class FText& LeftTips, const class FText& RightTips);
 	void SetLeftBtnEnabled(bool Enabled);
+	void SetRightBtnEnabled(bool Enabled);
 	void SetTitleVisible(bool Visible);
 	void SetBtnsVisible(bool Visible);
 	void SetLeftBtnVisible(bool Visible);

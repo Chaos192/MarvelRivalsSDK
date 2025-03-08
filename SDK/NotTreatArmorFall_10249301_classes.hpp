@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass NotTreatArmorFall_10249301.NotTreatArmorFall_10249301_C
-// 0x0000 (0x12B8 - 0x12B8)
+// 0x0000 (0x12C8 - 0x12C8)
 class UNotTreatArmorFall_10249301_C final : public UPyNotTreatFallAbility_102493
 {
 public:

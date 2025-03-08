@@ -17,11 +17,11 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass MarvelPlayerStateBP.MarvelPlayerStateBP_C
-// 0x0008 (0x0E00 - 0x0DF8)
+// 0x0008 (0x0EA0 - 0x0E98)
 class AMarvelPlayerStateBP_C final : public APyMarvelPlayerState
 {
 public:
-	class USceneComponent*                        DefaultSceneRoot;                                  // 0x0DF8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class USceneComponent*                        DefaultSceneRoot;                                  // 0x0E98(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

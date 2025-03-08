@@ -33,7 +33,7 @@ struct FConnectionAlwaysRelevantNodePair final
 {
 public:
 	class UNetConnection*                         NetConnection;                                     // 0x0000(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UReplicationGraphNode_AlwaysRelevant_ForConnection* Node;                                              // 0x0008(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UReplicationGraphNode_AlwaysRelevant_ForConnection* Node;                                  // 0x0008(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
 // ScriptStruct ReplicationGraph.AlwaysRelevantActorInfo

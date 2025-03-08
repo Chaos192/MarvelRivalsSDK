@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "python_enums_structs.hpp"
-#include "Marvel_structs.hpp"
-#include "GameplayTags_structs.hpp"
 #include "MarvelLevel_structs.hpp"
+#include "Marvel_structs.hpp"
+#include "python_enums_structs.hpp"
+#include "GameplayTags_structs.hpp"
 
 
 namespace SDK::Params

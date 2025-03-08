@@ -13,61 +13,12 @@
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
 #include "StructUtils_structs.hpp"
-#include "Engine_classes.hpp"
 #include "RemoteControl_structs.hpp"
+#include "Engine_classes.hpp"
 
 
 namespace SDK
 {
-
-// Class RemoteControl.RemoteControlAPITestObject
-// 0x02A0 (0x02D0 - 0x0030)
-class URemoteControlAPITestObject final : public UObject
-{
-public:
-	int32                                         CStyleIntArray[0x3];                               // 0x0030(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_3C[0x4];                                       // 0x003C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<int32>                                 IntArray;                                          // 0x0040(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FRemoteControlTestStructOuter>  StructOuterArray;                                  // 0x0050(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-	TSet<int32>                                   IntSet;                                            // 0x0060(0x0050)(Edit, NativeAccessSpecifierPublic)
-	TMap<int32, int32>                            IntMap;                                            // 0x00B0(0x0050)(Edit, NativeAccessSpecifierPublic)
-	TMap<int32, struct FRemoteControlTestStructOuter> StructOuterMap;                                    // 0x0100(0x0050)(Edit, NativeAccessSpecifierPublic)
-	TMap<class FString, struct FColor>            StringColorMap;                                    // 0x0150(0x0050)(Edit, NativeAccessSpecifierPublic)
-	TArray<struct FVector>                        ArrayOfVectors;                                    // 0x01A0(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-	class UStaticMeshComponent*                   StaticMeshComponent;                               // 0x01B0(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int8                                          Int8Value;                                         // 0x01B8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1B9[0x1];                                      // 0x01B9(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	int16                                         Int16Value;                                        // 0x01BA(0x0002)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Int32Value;                                        // 0x01BC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         FloatValue;                                        // 0x01C0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1C4[0x4];                                      // 0x01C4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	double                                        DoubleValue;                                       // 0x01C8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FRemoteControlTestStructOuter          RemoteControlTestStructOuter;                      // 0x01D0(0x0078)(Edit, NativeAccessSpecifierPublic)
-	class FString                                 StringValue;                                       // 0x0248(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   NameValue;                                         // 0x0258(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_264[0x4];                                      // 0x0264(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FText                                   TextValue;                                         // 0x0268(0x0018)(Edit, NativeAccessSpecifierPublic)
-	bool                                          bValue;                                            // 0x0280(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         ByteValue;                                         // 0x0281(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ERemoteControlEnum                            RemoteControlEnumByteValue;                        // 0x0282(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ERemoteControlEnumClass                       RemoteControlEnumValue;                            // 0x0283(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_284[0x4];                                      // 0x0284(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                VectorValue;                                       // 0x0288(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FRotator                               RotatorValue;                                      // 0x02A0(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	struct FColor                                 ColorValue;                                        // 0x02B8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FLinearColor                           LinearColorValue;                                  // 0x02BC(0x0010)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2CC[0x4];                                      // 0x02CC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"RemoteControlAPITestObject">();
-	}
-	static class URemoteControlAPITestObject* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<URemoteControlAPITestObject>();
-	}
-};
 
 // Class RemoteControl.RCVirtualPropertyBase
 // 0x0090 (0x00C0 - 0x0030)
@@ -140,7 +91,7 @@ public:
 class URCVirtualPropertyInContainer : public URCVirtualPropertyBase
 {
 public:
-	TWeakObjectPtr<class URCVirtualPropertyContainerBase> ContainerWeakPtr;                                  // 0x00C0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TWeakObjectPtr<class URCVirtualPropertyContainerBase> ContainerWeakPtr;                          // 0x00C0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -234,8 +185,8 @@ public:
 class URemoteControlLevelDependantBinding final : public URemoteControlBinding
 {
 public:
-	TMap<struct FSoftObjectPath, TSoftObjectPtr<class UObject>> BoundObjectMapByPath;                              // 0x0068(0x0050)(UObjectWrapper, NativeAccessSpecifierPrivate)
-	TMap<struct FSoftObjectPath, TSoftObjectPtr<class ULevel>> SubLevelSelectionMapByPath;                        // 0x00B8(0x0050)(UObjectWrapper, NativeAccessSpecifierPrivate)
+	TMap<struct FSoftObjectPath, TSoftObjectPtr<class UObject>> BoundObjectMapByPath;                // 0x0068(0x0050)(UObjectWrapper, NativeAccessSpecifierPrivate)
+	TMap<struct FSoftObjectPath, TSoftObjectPtr<class ULevel>> SubLevelSelectionMapByPath;           // 0x00B8(0x0050)(UObjectWrapper, NativeAccessSpecifierPrivate)
 	TSoftObjectPtr<class ULevel>                  LevelWithLastSuccessfulResolve;                    // 0x0108(0x0030)(UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	struct FRemoteControlInitialBindingContext    BindingContext;                                    // 0x0138(0x0090)(NativeAccessSpecifierPrivate)
 
@@ -327,7 +278,7 @@ class URemoteControlInterceptionTestObject final : public UObject
 public:
 	struct FRemoteControlInterceptionTestStruct   CustomStruct;                                      // 0x0030(0x0004)(Edit, NoDestructor, NativeAccessSpecifierPublic)
 	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FRemoteControlInterceptionFunctionParamStruct FunctionParamStruct;                               // 0x0038(0x0028)(Edit, NativeAccessSpecifierPublic)
+	struct FRemoteControlInterceptionFunctionParamStruct FunctionParamStruct;                        // 0x0038(0x0028)(Edit, NativeAccessSpecifierPublic)
 
 public:
 	struct FRemoteControlInterceptionFunctionParamStruct TestFunction(const struct FRemoteControlInterceptionFunctionParamStruct& InStruct, int32 InTestFactor);
@@ -388,6 +339,55 @@ public:
 	}
 };
 
+// Class RemoteControl.RemoteControlAPITestObject
+// 0x02A0 (0x02D0 - 0x0030)
+class URemoteControlAPITestObject final : public UObject
+{
+public:
+	int32                                         CStyleIntArray[0x3];                               // 0x0030(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3C[0x4];                                       // 0x003C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<int32>                                 IntArray;                                          // 0x0040(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FRemoteControlTestStructOuter>  StructOuterArray;                                  // 0x0050(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	TSet<int32>                                   IntSet;                                            // 0x0060(0x0050)(Edit, NativeAccessSpecifierPublic)
+	TMap<int32, int32>                            IntMap;                                            // 0x00B0(0x0050)(Edit, NativeAccessSpecifierPublic)
+	TMap<int32, struct FRemoteControlTestStructOuter> StructOuterMap;                                // 0x0100(0x0050)(Edit, NativeAccessSpecifierPublic)
+	TMap<class FString, struct FColor>            StringColorMap;                                    // 0x0150(0x0050)(Edit, NativeAccessSpecifierPublic)
+	TArray<struct FVector>                        ArrayOfVectors;                                    // 0x01A0(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	class UStaticMeshComponent*                   StaticMeshComponent;                               // 0x01B0(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int8                                          Int8Value;                                         // 0x01B8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1B9[0x1];                                      // 0x01B9(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	int16                                         Int16Value;                                        // 0x01BA(0x0002)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Int32Value;                                        // 0x01BC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         FloatValue;                                        // 0x01C0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1C4[0x4];                                      // 0x01C4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        DoubleValue;                                       // 0x01C8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FRemoteControlTestStructOuter          RemoteControlTestStructOuter;                      // 0x01D0(0x0078)(Edit, NativeAccessSpecifierPublic)
+	class FString                                 StringValue;                                       // 0x0248(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   NameValue;                                         // 0x0258(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_264[0x4];                                      // 0x0264(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FText                                   TextValue;                                         // 0x0268(0x0018)(Edit, NativeAccessSpecifierPublic)
+	bool                                          bValue;                                            // 0x0280(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         ByteValue;                                         // 0x0281(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ERemoteControlEnum                            RemoteControlEnumByteValue;                        // 0x0282(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ERemoteControlEnumClass                       RemoteControlEnumValue;                            // 0x0283(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_284[0x4];                                      // 0x0284(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                VectorValue;                                       // 0x0288(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FRotator                               RotatorValue;                                      // 0x02A0(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	struct FColor                                 ColorValue;                                        // 0x02B8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLinearColor                           LinearColorValue;                                  // 0x02BC(0x0010)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2CC[0x4];                                      // 0x02CC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"RemoteControlAPITestObject">();
+	}
+	static class URemoteControlAPITestObject* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<URemoteControlAPITestObject>();
+	}
+};
+
 // Class RemoteControl.RemoteControlTestObject
 // 0x0170 (0x01A0 - 0x0030)
 class URemoteControlTestObject final : public UObject
@@ -399,7 +399,7 @@ public:
 	TArray<float>                                 FloatArray;                                        // 0x0050(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 	TSet<int32>                                   IntSet;                                            // 0x0060(0x0050)(NativeAccessSpecifierPublic)
 	TMap<int32, int32>                            IntMap;                                            // 0x00B0(0x0050)(NativeAccessSpecifierPublic)
-	TMap<int32, struct FRemoteControlTestInnerStruct> IntInnerStructMap;                                 // 0x0100(0x0050)(NativeAccessSpecifierPublic)
+	TMap<int32, struct FRemoteControlTestInnerStruct> IntInnerStructMap;                             // 0x0100(0x0050)(NativeAccessSpecifierPublic)
 	TMap<class FString, struct FColor>            StringColorMap;                                    // 0x0150(0x0050)(NativeAccessSpecifierPublic)
 
 public:

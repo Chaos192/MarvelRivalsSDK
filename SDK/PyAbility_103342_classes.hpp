@@ -17,12 +17,12 @@ namespace SDK
 {
 
 // PythonClass PyAbility_103342.PyEffectAbility_GravityChange_103342
-// 0x0010 (0x1108 - 0x10F8)
+// 0x0010 (0x1110 - 0x1100)
 class UPyEffectAbility_GravityChange_103342 : public UMarvelEffectGameplayAbility
 {
 public:
-	class UCurveFloat*                            GravityScaleCurve;                                 // 0x10F8(0x0008)(Edit, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          Debug;                                             // 0x1100(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UCurveFloat*                            GravityScaleCurve;                                 // 0x1100(0x0008)(Edit, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          Debug;                                             // 0x1108(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void K2_ActivateAbility();

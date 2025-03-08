@@ -10,21 +10,22 @@
 
 #include "Basic.hpp"
 
+#include "Engine_structs.hpp"
 #include "Marvel_classes.hpp"
 #include "CoreUObject_structs.hpp"
-#include "Engine_structs.hpp"
 
 
 namespace SDK
 {
 
 // BlueprintGeneratedClass Projectile_10504101_BP.Projectile_10504101_BP_C
-// 0x0020 (0x3070 - 0x3050)
+// 0x0020 (0x3130 - 0x3110)
 class AProjectile_10504101_BP_C final : public AMarvelAbilityTargetActor_Projectile
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x3050(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	struct FVector                                Impact_Normal;                                     // 0x3058(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_3108[0x8];                                     // 0x3108(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x3110(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FVector                                Impact_Normal;                                     // 0x3118(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_Projectile_10504101_BP(int32 EntryPoint);

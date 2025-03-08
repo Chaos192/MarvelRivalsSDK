@@ -64,10 +64,10 @@ void UPyLevelNodeNiagaraComponent::ReceiveEndPlay(EEndPlayReason EndPlayReason)
 // PythonFunction PyLevelNodeNiagaraComponent.PyLevelNodeNiagaraComponent.PlayNiagaraEffect
 // (Net, NetReliable, Native, NetMulticast, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class FString                           InstanceName                                           (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    InstanceName                                           (Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UNiagaraSystem*                   Niagara                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FVector                          Location                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FRotator                         Rotation                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor)
+// const struct FVector&                   Location                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FRotator&                  Rotation                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor)
 
 void UPyLevelNodeNiagaraComponent::PlayNiagaraEffect(const class FString& InstanceName, class UNiagaraSystem* Niagara, const struct FVector& Location, const struct FRotator& Rotation)
 {
@@ -95,7 +95,7 @@ void UPyLevelNodeNiagaraComponent::PlayNiagaraEffect(const class FString& Instan
 // PythonFunction PyLevelNodeNiagaraComponent.PyLevelNodeNiagaraComponent.BanWeakenStep
 // (Net, NetReliable, Native, NetMulticast, Public, BlueprintCallable)
 // Parameters:
-// class FString                           InstanceName                                           (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    InstanceName                                           (Parm, ZeroConstructor, HasGetValueTypeHash)
 // int32                                   CurrentStage                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UPyLevelNodeNiagaraComponent::BanWeakenStep(const class FString& InstanceName, int32 CurrentStage)
@@ -122,7 +122,7 @@ void UPyLevelNodeNiagaraComponent::BanWeakenStep(const class FString& InstanceNa
 // PythonFunction PyLevelNodeNiagaraComponent.PyLevelNodeNiagaraComponent.PlayDoorEffect
 // (Net, NetReliable, Native, NetMulticast, Public, BlueprintCallable)
 // Parameters:
-// class FString                           InstanceName                                           (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    InstanceName                                           (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyLevelNodeNiagaraComponent::PlayDoorEffect(const class FString& InstanceName)
 {
@@ -147,7 +147,7 @@ void UPyLevelNodeNiagaraComponent::PlayDoorEffect(const class FString& InstanceN
 // PythonFunction PyLevelNodeNiagaraComponent.PyLevelNodeNiagaraComponent.EndDoorEffect
 // (Net, NetReliable, Native, NetMulticast, Public, BlueprintCallable)
 // Parameters:
-// class FString                           InstanceName                                           (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    InstanceName                                           (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyLevelNodeNiagaraComponent::EndDoorEffect(const class FString& InstanceName)
 {

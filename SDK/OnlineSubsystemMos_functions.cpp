@@ -20,7 +20,7 @@ namespace SDK
 // Function OnlineSubsystemMos.MosUEClient.Connect
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FString                           IP                                                     (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    IP                                                     (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   Port                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -119,7 +119,7 @@ void UMosUEClient::Initialize(class UGameInstance* InGameInstance)
 // Function OnlineSubsystemMos.MosUEClient.SendData
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<uint8>                           Data                                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TArray<uint8>&                    Data                                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UMosUEClient::SendData(const TArray<uint8>& Data)
 {

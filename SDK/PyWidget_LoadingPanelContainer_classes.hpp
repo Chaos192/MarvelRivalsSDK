@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // PythonClass PyWidget_LoadingPanelContainer.PyWidget_LoadingPanelContainer
-// 0x0088 (0x0468 - 0x03E0)
+// 0x0080 (0x0460 - 0x03E0)
 class UPyWidget_LoadingPanelContainer : public UWidget_LoadingPanelContainer
 {
 public:
@@ -34,9 +34,8 @@ public:
 	class ULazyWidget*                            Lazy_WBP_Loading_CareerHighLight;                  // 0x0430(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, Transient, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class ULazyWidget*                            Lazy_WBP_Common_Loading;                           // 0x0438(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, Transient, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class ULazyWidget*                            Lazy_WBP_Loading_Lobby;                            // 0x0440(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, Transient, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class ULazyWidget*                            Lazy_WBP_KillCam_Loading;                          // 0x0448(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, Transient, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class ULazyWidget*                            Lazy_WBP_Loading_HeroLogo;                         // 0x0450(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, Transient, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(bool bInVisible)> OnVisibleChanged;                                  // 0x0458(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	class ULazyWidget*                            Lazy_WBP_Loading_HeroLogo;                         // 0x0448(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, Transient, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(bool bInVisible)> OnVisibleChanged;                                // 0x0450(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 
 public:
 	void OnInitialized();

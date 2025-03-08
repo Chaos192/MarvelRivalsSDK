@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // PythonClass PyAbility_HulkSculpt.PyAbility_HulkSculpt
-// 0x0000 (0x2838 - 0x2838)
+// 0x0000 (0x2840 - 0x2840)
 class UPyAbility_HulkSculpt : public UAbility_109
 {
 public:

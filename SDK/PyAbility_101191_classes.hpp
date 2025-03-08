@@ -42,27 +42,6 @@ public:
 	}
 };
 
-// PythonClass PyAbility_101191.PyUIController_101191
-// 0x0000 (0x0D80 - 0x0D80)
-class UPyUIController_101191 final : public UUIController_101191
-{
-public:
-	void OnInit();
-	void OnDestruct();
-	void OnTagUpdate(const struct FGameplayTag& Tag, bool Exist);
-	bool PyInitChargeParam(bool bIsHulk);
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"PyUIController_101191">();
-	}
-	static class UPyUIController_101191* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UPyUIController_101191>();
-	}
-};
-
 // PythonClass PyAbility_101191.PyCue_Scope_HitImpact_10119101
 // 0x0000 (0x04D0 - 0x04D0)
 class UPyCue_Scope_HitImpact_10119101 final : public UMarvelCueNotify_HitImpact
@@ -78,97 +57,6 @@ public:
 	static class UPyCue_Scope_HitImpact_10119101* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UPyCue_Scope_HitImpact_10119101>();
-	}
-};
-
-// PythonClass PyAbility_101191.PyAbility_AirGrab_101191
-// 0x0010 (0x1178 - 0x1168)
-class UPyAbility_AirGrab_101191 : public UAbility_AirGrab
-{
-public:
-	struct FGameplayTag                           AbilityCueTag;                                     // 0x1168(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-public:
-	void OnActiveAbility();
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"PyAbility_AirGrab_101191">();
-	}
-	static class UPyAbility_AirGrab_101191* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UPyAbility_AirGrab_101191>();
-	}
-};
-
-// PythonClass PyAbility_101191.PyConfig_101191
-// 0x02F8 (0x03C8 - 0x00D0)
-class UPyConfig_101191 final : public UMarvelAbilityConfig_LongPressTrigger
-{
-public:
-	float                                         PressedSecondsMax;                                 // 0x00D0(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_D4[0x4];                                       // 0x00D4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UCurveFloat*                            JumpInitSpeedCurve;                                // 0x00D8(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         JumpIgnorePawnCollisionDuration;                   // 0x00E0(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         JumpStartLockMoveSeconds;                          // 0x00E4(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         LandAttackScopeID;                                 // 0x00E8(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FHulkJumpParam                         MoveLogicComponentParam;                           // 0x00EC(0x0078)(Edit, DisableEditOnInstance, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_164[0x4];                                      // 0x0164(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FMarvelApplyPinnedMotionConfig         PinnedConfig;                                      // 0x0168(0x0230)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
-	float                                         GrabEnableMinHeight;                               // 0x0398(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         GrabScopeID;                                       // 0x039C(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                GrabScopeLocOffset;                                // 0x03A0(0x0018)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         GrabBuffID;                                        // 0x03B8(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         GrabBuffID_CollideKonckDown;                       // 0x03BC(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         CollideKnockDamage;                                // 0x03C0(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"PyConfig_101191">();
-	}
-	static class UPyConfig_101191* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UPyConfig_101191>();
-	}
-};
-
-// PythonClass PyAbility_101191.PyAbility_101191
-// 0x0028 (0x2678 - 0x2650)
-class UPyAbility_101191 : public UAbility_101191
-{
-public:
-	bool                                          IsAttackEnd;                                       // 0x2650(0x0001)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2651[0x7];                                     // 0x2651(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TMulticastInlineDelegate<void(struct FVector& ImpactPoint, class AMarvelBaseCharacter* target_actor)> DelegateGrabEnemyInAir;                            // 0x2658(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void()>              DelegateOnAttackEnd;                               // 0x2668(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-
-public:
-	void OnRep_IsAttackEnd();
-	void BeginPlay();
-	bool CanActivate();
-	void K2_ActivateGameplay();
-	void OnAbilityCancel();
-	void OnTriggerGrabScope(class AActor* SpawnActor, const struct FGameplayAbilityTargetDataHandle& Data);
-	float GetCollideKnockDownDamage();
-	void K2_TriggerGameplay(float HoldTime);
-	void K2_OnShiftJumpLaunched();
-	void OnGrabScopeSpawned(class AActor* SpawnActor, const struct FGameplayAbilityTargetDataHandle& Data);
-	void OnShiftJumpLanded();
-	void OnShiftJumpInterrupted();
-	void OnHulkShiftJumpStopped();
-	void K2_OnEndAbility(bool Cancel);
-	void NativeOnMontageCompleted(const class FString& EventTag);
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"PyAbility_101191">();
-	}
-	static class UPyAbility_101191* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UPyAbility_101191>();
 	}
 };
 
@@ -211,6 +99,118 @@ public:
 	static class UPyWidget_AbilityEnergy_101191* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UPyWidget_AbilityEnergy_101191>();
+	}
+};
+
+// PythonClass PyAbility_101191.PyConfig_101191
+// 0x02F8 (0x03C8 - 0x00D0)
+class UPyConfig_101191 final : public UMarvelAbilityConfig_LongPressTrigger
+{
+public:
+	float                                         PressedSecondsMax;                                 // 0x00D0(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D4[0x4];                                       // 0x00D4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UCurveFloat*                            JumpInitSpeedCurve;                                // 0x00D8(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         JumpIgnorePawnCollisionDuration;                   // 0x00E0(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         JumpStartLockMoveSeconds;                          // 0x00E4(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         LandAttackScopeID;                                 // 0x00E8(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FHulkJumpParam                         MoveLogicComponentParam;                           // 0x00EC(0x0078)(Edit, DisableEditOnInstance, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_164[0x4];                                      // 0x0164(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FMarvelApplyPinnedMotionConfig         PinnedConfig;                                      // 0x0168(0x0230)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	float                                         GrabEnableMinHeight;                               // 0x0398(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         GrabScopeID;                                       // 0x039C(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                GrabScopeLocOffset;                                // 0x03A0(0x0018)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         GrabBuffID;                                        // 0x03B8(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         GrabBuffID_CollideKonckDown;                       // 0x03BC(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         CollideKnockDamage;                                // 0x03C0(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PyConfig_101191">();
+	}
+	static class UPyConfig_101191* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPyConfig_101191>();
+	}
+};
+
+// PythonClass PyAbility_101191.PyAbility_101191
+// 0x0028 (0x2680 - 0x2658)
+class UPyAbility_101191 : public UAbility_101191
+{
+public:
+	bool                                          IsAttackEnd;                                       // 0x2658(0x0001)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2659[0x7];                                     // 0x2659(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TMulticastInlineDelegate<void(const struct FVector& ImpactPoint, class AMarvelBaseCharacter* target_actor)> DelegateGrabEnemyInAir; // 0x2660(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void()>              DelegateOnAttackEnd;                               // 0x2670(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+
+public:
+	void OnRep_IsAttackEnd();
+	void BeginPlay();
+	bool CanActivate();
+	void K2_ActivateGameplay();
+	void OnAbilityCancel();
+	void OnTriggerGrabScope(class AActor* SpawnActor, const struct FGameplayAbilityTargetDataHandle& Data);
+	float GetCollideKnockDownDamage();
+	void K2_TriggerGameplay(float HoldTime);
+	void K2_OnShiftJumpLaunched();
+	void OnGrabScopeSpawned(class AActor* SpawnActor, const struct FGameplayAbilityTargetDataHandle& Data);
+	void OnShiftJumpLanded();
+	void OnShiftJumpInterrupted();
+	void OnHulkShiftJumpStopped();
+	void K2_OnEndAbility(bool Cancel);
+	void NativeOnMontageCompleted(const class FString& EventTag);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PyAbility_101191">();
+	}
+	static class UPyAbility_101191* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPyAbility_101191>();
+	}
+};
+
+// PythonClass PyAbility_101191.PyUIController_101191
+// 0x0000 (0x0D70 - 0x0D70)
+class UPyUIController_101191 final : public UUIController_101191
+{
+public:
+	void OnInit();
+	void OnDestruct();
+	void OnTagUpdate(const struct FGameplayTag& Tag, bool Exist);
+	bool PyInitChargeParam(bool bIsHulk);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PyUIController_101191">();
+	}
+	static class UPyUIController_101191* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPyUIController_101191>();
+	}
+};
+
+// PythonClass PyAbility_101191.PyAbility_AirGrab_101191
+// 0x0010 (0x1180 - 0x1170)
+class UPyAbility_AirGrab_101191 : public UAbility_AirGrab
+{
+public:
+	struct FGameplayTag                           AbilityCueTag;                                     // 0x1170(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	void OnActiveAbility();
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PyAbility_AirGrab_101191">();
+	}
+	static class UPyAbility_AirGrab_101191* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPyAbility_AirGrab_101191>();
 	}
 };
 

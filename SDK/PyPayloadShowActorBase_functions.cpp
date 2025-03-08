@@ -41,7 +41,7 @@ void APyPayloadShowActorBase::AlignToRealPayload()
 // Parameters:
 // class USkeletalMeshComponent*           MeshComp                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // class UAnimSequenceBase*                Animation                                              (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FAnimNotifyEventReference        EventReference                                         (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FAnimNotifyEventReference& EventReference                                         (ConstParm, Parm, OutParm, ReferenceParm)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 bool UPyPayloadShowActorEndShowAnimNotify::Received_Notify(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation, const struct FAnimNotifyEventReference& EventReference) const

@@ -45,7 +45,7 @@ bool APyProjectile_10305101::ShouldEndTaskOverMaxDistance()
 // PythonFunction PyAbility_103051.PyProjectile_10305101.K2_OnProcessHit
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FHitResult                       Hit                                                    (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FHitResult&                Hit                                                    (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyProjectile_10305101::K2_OnProcessHit(const struct FHitResult& Hit)
 {
@@ -70,7 +70,7 @@ void APyProjectile_10305101::K2_OnProcessHit(const struct FHitResult& Hit)
 // PythonFunction PyAbility_103051.PyProjectile_10305101.K2_OnFlyOverMaxDistance
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FHitResult                       Hit                                                    (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FHitResult&                Hit                                                    (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyProjectile_10305101::K2_OnFlyOverMaxDistance(const struct FHitResult& Hit)
 {

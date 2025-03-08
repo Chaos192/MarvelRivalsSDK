@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Stealth_101641_Phantom_BP.Stealth_101641_Phantom_BP_C
-// 0x0000 (0x1318 - 0x1318)
+// 0x0000 (0x1320 - 0x1320)
 class UStealth_101641_Phantom_BP_C final : public UMarvelStealthAbility
 {
 public:

@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
+#include "InterchangeImport_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
 #include "InterchangeCore_classes.hpp"
-#include "InterchangeImport_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
 
@@ -21,9 +21,27 @@
 namespace SDK
 {
 
+// Class InterchangeImport.InterchangeIESTranslator
+// 0x0008 (0x0048 - 0x0040)
+class UInterchangeIESTranslator final : public UInterchangeTranslatorBase
+{
+public:
+	uint8                                         Pad_40[0x8];                                       // 0x0040(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"InterchangeIESTranslator">();
+	}
+	static class UInterchangeIESTranslator* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UInterchangeIESTranslator>();
+	}
+};
+
 // Class InterchangeImport.InterchangeAnimationPayloadInterface
-// 0x0000 (0x0030 - 0x0030)
-class IInterchangeAnimationPayloadInterface final : public IInterface
+// 0x0000 (0x0000 - 0x0000)
+class IInterchangeAnimationPayloadInterface final
 {
 public:
 	static class UClass* StaticClass()
@@ -33,6 +51,15 @@ public:
 	static class IInterchangeAnimationPayloadInterface* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<IInterchangeAnimationPayloadInterface>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
 	}
 };
 
@@ -55,8 +82,8 @@ public:
 };
 
 // Class InterchangeImport.InterchangeBlockedTexturePayloadInterface
-// 0x0000 (0x0030 - 0x0030)
-class IInterchangeBlockedTexturePayloadInterface final : public IInterface
+// 0x0000 (0x0000 - 0x0000)
+class IInterchangeBlockedTexturePayloadInterface final
 {
 public:
 	static class UClass* StaticClass()
@@ -66,6 +93,15 @@ public:
 	static class IInterchangeBlockedTexturePayloadInterface* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<IInterchangeBlockedTexturePayloadInterface>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
 	}
 };
 
@@ -81,6 +117,24 @@ public:
 	static class UInterchangeActorFactory* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UInterchangeActorFactory>();
+	}
+};
+
+// Class InterchangeImport.InterchangePSDTranslator
+// 0x0008 (0x0048 - 0x0040)
+class UInterchangePSDTranslator final : public UInterchangeTranslatorBase
+{
+public:
+	uint8                                         Pad_40[0x8];                                       // 0x0040(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"InterchangePSDTranslator">();
+	}
+	static class UInterchangePSDTranslator* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UInterchangePSDTranslator>();
 	}
 };
 
@@ -100,8 +154,8 @@ public:
 };
 
 // Class InterchangeImport.InterchangeMeshPayloadInterface
-// 0x0000 (0x0030 - 0x0030)
-class IInterchangeMeshPayloadInterface final : public IInterface
+// 0x0000 (0x0000 - 0x0000)
+class IInterchangeMeshPayloadInterface final
 {
 public:
 	static class UClass* StaticClass()
@@ -111,6 +165,30 @@ public:
 	static class IInterchangeMeshPayloadInterface* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<IInterchangeMeshPayloadInterface>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
+};
+
+// Class InterchangeImport.InterchangeStaticMeshActorFactory
+// 0x0000 (0x0038 - 0x0038)
+class UInterchangeStaticMeshActorFactory final : public UInterchangeActorFactory
+{
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"InterchangeStaticMeshActorFactory">();
+	}
+	static class UInterchangeStaticMeshActorFactory* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UInterchangeStaticMeshActorFactory>();
 	}
 };
 
@@ -148,8 +226,8 @@ public:
 };
 
 // Class InterchangeImport.InterchangeSlicedTexturePayloadInterface
-// 0x0000 (0x0030 - 0x0030)
-class IInterchangeSlicedTexturePayloadInterface final : public IInterface
+// 0x0000 (0x0000 - 0x0000)
+class IInterchangeSlicedTexturePayloadInterface final
 {
 public:
 	static class UClass* StaticClass()
@@ -160,11 +238,20 @@ public:
 	{
 		return GetDefaultObjImpl<IInterchangeSlicedTexturePayloadInterface>();
 	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
 };
 
 // Class InterchangeImport.InterchangeTextureLightProfilePayloadInterface
-// 0x0000 (0x0030 - 0x0030)
-class IInterchangeTextureLightProfilePayloadInterface final : public IInterface
+// 0x0000 (0x0000 - 0x0000)
+class IInterchangeTextureLightProfilePayloadInterface final
 {
 public:
 	static class UClass* StaticClass()
@@ -175,11 +262,20 @@ public:
 	{
 		return GetDefaultObjImpl<IInterchangeTextureLightProfilePayloadInterface>();
 	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
 };
 
 // Class InterchangeImport.InterchangeTexturePayloadInterface
-// 0x0000 (0x0030 - 0x0030)
-class IInterchangeTexturePayloadInterface final : public IInterface
+// 0x0000 (0x0000 - 0x0000)
+class IInterchangeTexturePayloadInterface final
 {
 public:
 	static class UClass* StaticClass()
@@ -190,11 +286,20 @@ public:
 	{
 		return GetDefaultObjImpl<IInterchangeTexturePayloadInterface>();
 	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
 };
 
 // Class InterchangeImport.InterchangeVariantSetPayloadInterface
-// 0x0000 (0x0030 - 0x0030)
-class IInterchangeVariantSetPayloadInterface final : public IInterface
+// 0x0000 (0x0000 - 0x0000)
+class IInterchangeVariantSetPayloadInterface final
 {
 public:
 	static class UClass* StaticClass()
@@ -205,23 +310,14 @@ public:
 	{
 		return GetDefaultObjImpl<IInterchangeVariantSetPayloadInterface>();
 	}
-};
 
-// Class InterchangeImport.InterchangePSDTranslator
-// 0x0008 (0x0048 - 0x0040)
-class UInterchangePSDTranslator final : public UInterchangeTranslatorBase
-{
-public:
-	uint8                                         Pad_40[0x8];                                       // 0x0040(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
+	class UObject* AsUObject()
 	{
-		return StaticClassImpl<"InterchangePSDTranslator">();
+		return reinterpret_cast<UObject*>(this);
 	}
-	static class UInterchangePSDTranslator* GetDefaultObj()
+	const class UObject* AsUObject() const
 	{
-		return GetDefaultObjImpl<UInterchangePSDTranslator>();
+		return reinterpret_cast<const UObject*>(this);
 	}
 };
 
@@ -813,6 +909,21 @@ public:
 	}
 };
 
+// Class InterchangeImport.InterchangeSkeletalMeshActorFactory
+// 0x0000 (0x0038 - 0x0038)
+class UInterchangeSkeletalMeshActorFactory final : public UInterchangeActorFactory
+{
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"InterchangeSkeletalMeshActorFactory">();
+	}
+	static class UInterchangeSkeletalMeshActorFactory* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UInterchangeSkeletalMeshActorFactory>();
+	}
+};
+
 // Class InterchangeImport.MaterialExpressionMaterialXScreen
 // 0x0098 (0x0150 - 0x00B8)
 class UMaterialExpressionMaterialXScreen final : public UMaterialExpression
@@ -856,6 +967,21 @@ public:
 	static class UMaterialExpressionMaterialXSplitLeftRight* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UMaterialExpressionMaterialXSplitLeftRight>();
+	}
+};
+
+// Class InterchangeImport.InterchangePhysicsAssetFactory
+// 0x0000 (0x0038 - 0x0038)
+class UInterchangePhysicsAssetFactory final : public UInterchangeFactoryBase
+{
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"InterchangePhysicsAssetFactory">();
+	}
+	static class UInterchangePhysicsAssetFactory* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UInterchangePhysicsAssetFactory>();
 	}
 };
 
@@ -942,6 +1068,21 @@ public:
 	}
 };
 
+// Class InterchangeImport.InterchangeCineCameraActorFactory
+// 0x0000 (0x0038 - 0x0038)
+class UInterchangeCineCameraActorFactory final : public UInterchangeActorFactory
+{
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"InterchangeCineCameraActorFactory">();
+	}
+	static class UInterchangeCineCameraActorFactory* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UInterchangeCineCameraActorFactory>();
+	}
+};
+
 // Class InterchangeImport.InterchangeMaterialFactory
 // 0x0008 (0x0040 - 0x0038)
 class UInterchangeMaterialFactory final : public UInterchangeFactoryBase
@@ -996,21 +1137,6 @@ public:
 	}
 };
 
-// Class InterchangeImport.InterchangePhysicsAssetFactory
-// 0x0000 (0x0038 - 0x0038)
-class UInterchangePhysicsAssetFactory final : public UInterchangeFactoryBase
-{
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"InterchangePhysicsAssetFactory">();
-	}
-	static class UInterchangePhysicsAssetFactory* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UInterchangePhysicsAssetFactory>();
-	}
-};
-
 // Class InterchangeImport.InterchangeSkeletalMeshFactory
 // 0x0030 (0x0068 - 0x0038)
 class UInterchangeSkeletalMeshFactory final : public UInterchangeFactoryBase
@@ -1062,21 +1188,6 @@ public:
 	}
 };
 
-// Class InterchangeImport.InterchangeCineCameraActorFactory
-// 0x0000 (0x0038 - 0x0038)
-class UInterchangeCineCameraActorFactory final : public UInterchangeActorFactory
-{
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"InterchangeCineCameraActorFactory">();
-	}
-	static class UInterchangeCineCameraActorFactory* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UInterchangeCineCameraActorFactory>();
-	}
-};
-
 // Class InterchangeImport.InterchangeCameraActorFactory
 // 0x0000 (0x0038 - 0x0038)
 class UInterchangeCameraActorFactory final : public UInterchangeActorFactory
@@ -1089,54 +1200,6 @@ public:
 	static class UInterchangeCameraActorFactory* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UInterchangeCameraActorFactory>();
-	}
-};
-
-// Class InterchangeImport.InterchangeSkeletalMeshActorFactory
-// 0x0000 (0x0038 - 0x0038)
-class UInterchangeSkeletalMeshActorFactory final : public UInterchangeActorFactory
-{
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"InterchangeSkeletalMeshActorFactory">();
-	}
-	static class UInterchangeSkeletalMeshActorFactory* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UInterchangeSkeletalMeshActorFactory>();
-	}
-};
-
-// Class InterchangeImport.InterchangeTextureFactory
-// 0x0090 (0x00C8 - 0x0038)
-class UInterchangeTextureFactory final : public UInterchangeFactoryBase
-{
-public:
-	uint8                                         Pad_38[0x90];                                      // 0x0038(0x0090)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"InterchangeTextureFactory">();
-	}
-	static class UInterchangeTextureFactory* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UInterchangeTextureFactory>();
-	}
-};
-
-// Class InterchangeImport.InterchangeStaticMeshActorFactory
-// 0x0000 (0x0038 - 0x0038)
-class UInterchangeStaticMeshActorFactory final : public UInterchangeActorFactory
-{
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"InterchangeStaticMeshActorFactory">();
-	}
-	static class UInterchangeStaticMeshActorFactory* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UInterchangeStaticMeshActorFactory>();
 	}
 };
 
@@ -1155,24 +1218,6 @@ public:
 	static class UInterchangeDDSTranslator* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UInterchangeDDSTranslator>();
-	}
-};
-
-// Class InterchangeImport.InterchangeIESTranslator
-// 0x0008 (0x0048 - 0x0040)
-class UInterchangeIESTranslator final : public UInterchangeTranslatorBase
-{
-public:
-	uint8                                         Pad_40[0x8];                                       // 0x0040(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"InterchangeIESTranslator">();
-	}
-	static class UInterchangeIESTranslator* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UInterchangeIESTranslator>();
 	}
 };
 
@@ -1227,6 +1272,24 @@ public:
 	static class UInterchangePCXTranslator* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UInterchangePCXTranslator>();
+	}
+};
+
+// Class InterchangeImport.InterchangeTextureFactory
+// 0x0090 (0x00C8 - 0x0038)
+class UInterchangeTextureFactory final : public UInterchangeFactoryBase
+{
+public:
+	uint8                                         Pad_38[0x90];                                      // 0x0038(0x0090)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"InterchangeTextureFactory">();
+	}
+	static class UInterchangeTextureFactory* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UInterchangeTextureFactory>();
 	}
 };
 

@@ -40,8 +40,8 @@ void AProjectile_10503101_BP_C::ExecuteUbergraph_Projectile_10503101_BP(int32 En
 // Function Projectile_10503101_BP.Projectile_10503101_BP_C.K2_OnPenetrate
 // (Event, Public, HasOutParams, BlueprintEvent)
 // Parameters:
-// struct FHitResult                       ImpactResult                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, ContainsInstancedReference)
-// struct FVector                          ImpactVelocity                                         (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FHitResult&                ImpactResult                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, ContainsInstancedReference)
+// const struct FVector&                   ImpactVelocity                                         (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void AProjectile_10503101_BP_C::K2_OnPenetrate(const struct FHitResult& ImpactResult, const struct FVector& ImpactVelocity)
 {

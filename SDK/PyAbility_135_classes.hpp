@@ -16,25 +16,6 @@
 namespace SDK
 {
 
-// PythonClass PyAbility_135.PyCue_Ability_Loop_13503
-// 0x0000 (0x0E50 - 0x0E50)
-class APyCue_Ability_Loop_13503 final : public AMarvelCueNotify_Ability
-{
-public:
-	void WhileActiveFX(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters);
-	void OnRemoveFX(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters);
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"PyCue_Ability_Loop_13503">();
-	}
-	static class APyCue_Ability_Loop_13503* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<APyCue_Ability_Loop_13503>();
-	}
-};
-
 // PythonClass PyAbility_135.PyConfig_135
 // 0x0000 (0x10A0 - 0x10A0)
 class UPyConfig_135 final : public UConfig_135
@@ -47,6 +28,49 @@ public:
 	static class UPyConfig_135* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UPyConfig_135>();
+	}
+};
+
+// PythonClass PyAbility_135.PyCue_Summoner_Loop_13502
+// 0x0000 (0x0E90 - 0x0E90)
+class APyCue_Summoner_Loop_13502 final : public AMarvelCueNotify_Summoned
+{
+public:
+	bool WhileActive(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters);
+	bool OnRemove(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters);
+	void OnRelevantChanged(bool relevant);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PyCue_Summoner_Loop_13502">();
+	}
+	static class APyCue_Summoner_Loop_13502* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<APyCue_Summoner_Loop_13502>();
+	}
+};
+
+// PythonClass PyAbility_135.PyAbility_135
+// 0x0000 (0x2588 - 0x2588)
+class UPyAbility_135 : public UMarvelGameplayAbility
+{
+public:
+	void BeginPlay();
+	void K2_ActivateAbility();
+	void MissileEventNotify();
+	void K2_OnEndAbility(bool Cancel);
+	void NativeOnMontageInterrupted(const class FString& Tag);
+	void NativeOnMontageCancelled(const class FString& Tag);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PyAbility_135">();
+	}
+	static class UPyAbility_135* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPyAbility_135>();
 	}
 };
 
@@ -75,46 +99,22 @@ public:
 	}
 };
 
-// PythonClass PyAbility_135.PyAbility_135
-// 0x0000 (0x2580 - 0x2580)
-class UPyAbility_135 : public UMarvelGameplayAbility
+// PythonClass PyAbility_135.PyCue_Ability_Loop_13503
+// 0x0000 (0x0E50 - 0x0E50)
+class APyCue_Ability_Loop_13503 final : public AMarvelCueNotify_Ability
 {
 public:
-	void BeginPlay();
-	void K2_ActivateAbility();
-	void MissileEventNotify();
-	void K2_OnEndAbility(bool Cancel);
-	void NativeOnMontageInterrupted(const class FString& Tag);
-	void NativeOnMontageCancelled(const class FString& Tag);
+	void WhileActiveFX(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters);
+	void OnRemoveFX(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters);
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"PyAbility_135">();
+		return StaticClassImpl<"PyCue_Ability_Loop_13503">();
 	}
-	static class UPyAbility_135* GetDefaultObj()
+	static class APyCue_Ability_Loop_13503* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UPyAbility_135>();
-	}
-};
-
-// PythonClass PyAbility_135.PyCue_Summoner_Loop_13502
-// 0x0000 (0x0E90 - 0x0E90)
-class APyCue_Summoner_Loop_13502 final : public AMarvelCueNotify_Summoned
-{
-public:
-	bool WhileActive(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters);
-	bool OnRemove(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters);
-	void OnRelevantChanged(bool relevant);
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"PyCue_Summoner_Loop_13502">();
-	}
-	static class APyCue_Summoner_Loop_13502* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<APyCue_Summoner_Loop_13502>();
+		return GetDefaultObjImpl<APyCue_Ability_Loop_13503>();
 	}
 };
 

@@ -17,11 +17,11 @@ namespace SDK
 {
 
 // PythonClass PyAbility_102371.PyAbility_102371
-// 0x0008 (0x25E0 - 0x25D8)
+// 0x0008 (0x25E8 - 0x25E0)
 class UPyAbility_102371 : public UAbility_111
 {
 public:
-	int32                                         WeaponIdleState;                                   // 0x25D8(0x0004)(Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         WeaponIdleState;                                   // 0x25E0(0x0004)(Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void K2_ActivateAbility();

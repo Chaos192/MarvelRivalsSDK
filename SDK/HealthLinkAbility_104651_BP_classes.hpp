@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass HealthLinkAbility_104651_BP.HealthLinkAbility_104651_BP_C
-// 0x0000 (0x1140 - 0x1140)
+// 0x0000 (0x1148 - 0x1148)
 class UHealthLinkAbility_104651_BP_C final : public UHealthLinkAbility_104651
 {
 public:

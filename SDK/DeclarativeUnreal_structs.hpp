@@ -16,20 +16,20 @@
 namespace SDK
 {
 
-// ScriptStruct DeclarativeUnreal.TimerTickFunction
-// 0x0008 (0x0038 - 0x0030)
-struct FTimerTickFunction final : public FTickFunction
-{
-public:
-	uint8                                         Pad_30[0x8];                                       // 0x0030(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-
 // ScriptStruct DeclarativeUnreal.DeclarationHolder
 // 0x0010 (0x0010 - 0x0000)
 struct alignas(0x08) FDeclarationHolder final
 {
 public:
 	uint8                                         Pad_0[0x10];                                       // 0x0000(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+
+// ScriptStruct DeclarativeUnreal.TimerTickFunction
+// 0x0008 (0x0038 - 0x0030)
+struct FTimerTickFunction final : public FTickFunction
+{
+public:
+	uint8                                         Pad_30[0x8];                                       // 0x0030(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 
 // ScriptStruct DeclarativeUnreal.ReactiveTimer

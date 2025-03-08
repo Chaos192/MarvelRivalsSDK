@@ -20,7 +20,7 @@ namespace SDK
 // PythonFunction PyAbility_102132.PyEffectiveComponent_10213201.K2_OnPreApplyContainer
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<struct FHitResult>               HitResults                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const TArray<struct FHitResult>&        HitResults                                             (ConstParm, Parm, OutParm, ReferenceParm)
 // TArray<struct FHitResult>               ReturnValue                                            (Parm, OutParm, ReturnParm)
 
 TArray<struct FHitResult> UPyEffectiveComponent_10213201::K2_OnPreApplyContainer(const TArray<struct FHitResult>& HitResults)
@@ -48,7 +48,7 @@ TArray<struct FHitResult> UPyEffectiveComponent_10213201::K2_OnPreApplyContainer
 // PythonFunction PyAbility_102132.PyProjectile_10213201.K2_OnProcessHit
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FHitResult                       ImpactResult                                           (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FHitResult&                ImpactResult                                           (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyProjectile_10213201::K2_OnProcessHit(const struct FHitResult& ImpactResult)
 {
@@ -156,7 +156,7 @@ void UPyUIController_102132::OnDestruct()
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyCue_Projectile_HitImpact_10213201::OnExecuteAudio(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters) const
 {
@@ -183,7 +183,7 @@ void UPyCue_Projectile_HitImpact_10213201::OnExecuteAudio(class AActor* MyTarget
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyCue_Projectile_Loop_10213201::WhileActiveFX(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
 {

@@ -20,13 +20,13 @@ namespace SDK
 {
 
 // PythonClass PyAbility_103613.PyUIController_103613
-// 0x0018 (0x0C78 - 0x0C60)
+// 0x0018 (0x0C68 - 0x0C50)
 class UPyUIController_103613 final : public UUIC_Ability
 {
 public:
-	class UTexture2D*                             Icon103611;                                        // 0x0C60(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UTexture2D*                             Icon103613;                                        // 0x0C68(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UTexture2D*                             Icon103614;                                        // 0x0C70(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UTexture2D*                             Icon103611;                                        // 0x0C50(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UTexture2D*                             Icon103613;                                        // 0x0C58(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UTexture2D*                             Icon103614;                                        // 0x0C60(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void OnInit();
@@ -66,7 +66,7 @@ public:
 };
 
 // PythonClass PyAbility_103613.PyAbility_103613
-// 0x0000 (0x2588 - 0x2588)
+// 0x0000 (0x2590 - 0x2590)
 class UPyAbility_103613 : public UAbility_108
 {
 public:

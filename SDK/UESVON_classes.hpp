@@ -10,13 +10,13 @@
 
 #include "Basic.hpp"
 
-#include "UESVON_structs.hpp"
-#include "Engine_structs.hpp"
-#include "Engine_classes.hpp"
 #include "AIModule_structs.hpp"
 #include "AIModule_classes.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
+#include "Engine_structs.hpp"
+#include "Engine_classes.hpp"
+#include "UESVON_structs.hpp"
 
 
 namespace SDK
@@ -29,7 +29,7 @@ class UAITask_SVONMoveTo final : public UAITask
 public:
 	TMulticastInlineDelegate<void()>              OnRequestFailed;                                   // 0x0080(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	uint8                                         Pad_90[0x8];                                       // 0x0090(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	TMulticastInlineDelegate<void(EPathFollowingResult Result, class AAIController* AIController)> OnMoveFinished;                                    // 0x0098(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, Protected, NativeAccessSpecifierProtected)
+	TMulticastInlineDelegate<void(EPathFollowingResult Result, class AAIController* AIController)> OnMoveFinished; // 0x0098(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, Protected, NativeAccessSpecifierProtected)
 	struct FAIMoveRequest                         MoveRequest;                                       // 0x00A8(0x0050)(Protected, NativeAccessSpecifierProtected)
 	uint8                                         Pad_F8[0x80];                                      // 0x00F8(0x0080)(Fixing Size After Last Property [ Dumper-7 ])
 	class USVONNavigationComponent*               myNavComponent;                                    // 0x0178(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
@@ -152,16 +152,16 @@ public:
 };
 
 // Class UESVON.SvonNavDataRenderingComponent
-// 0x0040 (0x0880 - 0x0840)
+// 0x0040 (0x0910 - 0x08D0)
 class USvonNavDataRenderingComponent final : public UPrimitiveComponent
 {
 public:
-	class FString                                 DrawFlagName;                                      // 0x0838(0x0010)(Edit, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         bForcesUpdate : 1;                                 // 0x0848(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected))
-	uint8                                         bDrawOnlyWhenSelected : 1;                         // 0x0848(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected))
-	uint8                                         Pad_849[0x7];                                      // 0x0849(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UMaterial*                              DebugMeshMaterialFakeLight;                        // 0x0850(0x0008)(ZeroConstructor, Transient, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_858[0x28];                                     // 0x0858(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class FString                                 DrawFlagName;                                      // 0x08C8(0x0010)(Edit, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         bForcesUpdate : 1;                                 // 0x08D8(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected))
+	uint8                                         bDrawOnlyWhenSelected : 1;                         // 0x08D8(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected))
+	uint8                                         Pad_8D9[0x7];                                      // 0x08D9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UMaterial*                              DebugMeshMaterialFakeLight;                        // 0x08E0(0x0008)(ZeroConstructor, Transient, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_8E8[0x28];                                     // 0x08E8(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void CleanDataDrawing();

@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass 1041_CharacterBP.1041_CharacterBP_C
-// 0x0000 (0x1820 - 0x1820)
+// 0x0000 (0x1880 - 0x1880)
 class AOne041_CharacterBP_C final : public APyWinterSoldierCharacter
 {
 public:

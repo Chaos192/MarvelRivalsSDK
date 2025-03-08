@@ -18,17 +18,17 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Summoned_10238201.Summoned_10238201_C
-// 0x0030 (0x08E0 - 0x08B0)
+// 0x0030 (0x0910 - 0x08E0)
 class ASummoned_10238201_C final : public APySummoned_102382
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x08A8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class USummonedMovementComponent*             SummonedMovement;                                  // 0x08B0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UMarvelRespawnerMovementComponent*      ProjectileComponent;                               // 0x08B8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class USphereComponent*                       Up_Collision;                                      // 0x08C0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UBoxComponent*                          Down_Collision;                                    // 0x08C8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UMoveIgnoreActorControllerComponent*    MoveIgnoreActorController;                         // 0x08D0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UGATask_SpawnScope*                     法术场task;                                        // 0x08D8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x08D8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class USummonedMovementComponent*             SummonedMovement;                                  // 0x08E0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UMarvelRespawnerMovementComponent*      ProjectileComponent;                               // 0x08E8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class USphereComponent*                       Up_Collision;                                      // 0x08F0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UBoxComponent*                          Down_Collision;                                    // 0x08F8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UMoveIgnoreActorControllerComponent*    MoveIgnoreActorController;                         // 0x0900(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UGATask_SpawnScope*                     法术场task;                                        // 0x0908(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_Summoned_10238201(int32 EntryPoint);

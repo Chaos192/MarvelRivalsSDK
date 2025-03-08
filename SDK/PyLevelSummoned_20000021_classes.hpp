@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
+#include "MarvelLevel_classes.hpp"
 #include "CoreUObject_structs.hpp"
 #include "Marvel_structs.hpp"
 #include "Marvel_classes.hpp"
-#include "MarvelLevel_classes.hpp"
 #include "Engine_structs.hpp"
 
 
@@ -40,18 +40,18 @@ public:
 };
 
 // PythonClass PyLevelSummoned_20000021.PyLevelSummoned_20000021
-// 0x0030 (0x08F0 - 0x08C0)
+// 0x0030 (0x0920 - 0x08F0)
 class APyLevelSummoned_20000021 final : public AMarvelLevelSummonedBase
 {
 public:
-	uint8                                         Pad_8B8[0x8];                                      // 0x08B8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	EBattleSide                                   BattleSide;                                        // 0x08C0(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_8C1[0x3];                                      // 0x08C1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         PickUpUID;                                         // 0x08C4(0x0004)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIsLanded;                                         // 0x08C8(0x0001)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIsLaunched;                                       // 0x08C9(0x0001)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_8CA[0x6];                                      // 0x08CA(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                InitialVelocity;                                   // 0x08D0(0x0018)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_8E8[0x8];                                      // 0x08E8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	EBattleSide                                   BattleSide;                                        // 0x08F0(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_8F1[0x3];                                      // 0x08F1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         PickUpUID;                                         // 0x08F4(0x0004)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsLanded;                                         // 0x08F8(0x0001)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsLaunched;                                       // 0x08F9(0x0001)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_8FA[0x6];                                      // 0x08FA(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                InitialVelocity;                                   // 0x0900(0x0018)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void ReceiveBeginPlay();
@@ -114,14 +114,14 @@ public:
 };
 
 // PythonClass PyLevelSummoned_20000021.PyLevelSummoned_20000022
-// 0x0030 (0x08F0 - 0x08C0)
+// 0x0030 (0x0920 - 0x08F0)
 class APyLevelSummoned_20000022 final : public AMarvelLevelSummonedBase
 {
 public:
-	uint8                                         Pad_8B8[0x8];                                      // 0x08B8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	class UNiagaraSystem*                         AppearFX;                                          // 0x08C0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UNiagaraSystem*                         ReleaseFX;                                         // 0x08C8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                Velocity;                                          // 0x08D0(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_8E8[0x8];                                      // 0x08E8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	class UNiagaraSystem*                         AppearFX;                                          // 0x08F0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UNiagaraSystem*                         ReleaseFX;                                         // 0x08F8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                Velocity;                                          // 0x0900(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void ReceiveBeginPlay();

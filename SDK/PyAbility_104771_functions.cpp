@@ -48,7 +48,7 @@ void APyCue_Buff_10477110::OnWidgetShowUp(class AMarvelBaseCharacter* TargetChar
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyCue_Buff_10477110::OnRemoveFX(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
 {
@@ -235,8 +235,8 @@ void UPyAbility_104771_New::OnSelectRegionWarningFinish()
 // PythonFunction PyAbility_104771.PyAbility_104771_New.OnDevourSwimMontageEvent
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FGameplayTag                     Tag                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayEventData               Data                                                   (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayTag&              Tag                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayEventData&        Data                                                   (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyAbility_104771_New::OnDevourSwimMontageEvent(const struct FGameplayTag& Tag, const struct FGameplayEventData& Data)
 {
@@ -425,7 +425,7 @@ void UPyAbility_104771_New::OnTryGetOnWallCancelled(float Time)
 // PythonFunction PyAbility_104771.PyAbility_104771_New.OnNetSync
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FGameplayAbilityTargetDataHandle Data                                                   (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayAbilityTargetDataHandle&Data                                                   (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyAbility_104771_New::OnNetSync(const struct FGameplayAbilityTargetDataHandle& Data)
 {
@@ -450,7 +450,7 @@ void UPyAbility_104771_New::OnNetSync(const struct FGameplayAbilityTargetDataHan
 // PythonFunction PyAbility_104771.PyAbility_104771_New.TryMakeTriggerContext
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayEventData               EventData                                              (Parm, OutParm, ReferenceParm)
+// struct FGameplayEventData&              EventData                                              (Parm, OutParm, ReferenceParm)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 bool UPyAbility_104771_New::TryMakeTriggerContext(struct FGameplayEventData& EventData)
@@ -480,7 +480,7 @@ bool UPyAbility_104771_New::TryMakeTriggerContext(struct FGameplayEventData& Eve
 // PythonFunction PyAbility_104771.PyAbility_104771_New.K2_ActivateAbilityFromEvent
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayEventData               EventData                                              (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayEventData&        EventData                                              (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyAbility_104771_New::K2_ActivateAbilityFromEvent(const struct FGameplayEventData& EventData)
 {
@@ -505,7 +505,7 @@ void UPyAbility_104771_New::K2_ActivateAbilityFromEvent(const struct FGameplayEv
 // PythonFunction PyAbility_104771.PyAbility_104771_New.NativeOnMontageEvent
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           EventTag                                               (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    EventTag                                               (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_104771_New::NativeOnMontageEvent(const class FString& EventTag)
 {
@@ -556,7 +556,7 @@ void UPyAbility_104771_New::K2_OnEndAbility(bool bWasCancelled)
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyCue_Scope_HitImpact_10477101::OnExecuteAudio(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters) const
 {

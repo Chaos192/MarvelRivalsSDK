@@ -38,7 +38,7 @@ public:
 };
 
 // PythonClass PyAbility_102304.PyAbility_102304
-// 0x0000 (0x2598 - 0x2598)
+// 0x0000 (0x25A0 - 0x25A0)
 class UPyAbility_102304 : public UWallRunningPassiveAbility
 {
 public:
@@ -53,7 +53,7 @@ public:
 };
 
 // PythonClass PyAbility_102304.PyUIController_102304
-// 0x0000 (0x0C60 - 0x0C60)
+// 0x0000 (0x0C50 - 0x0C50)
 class UPyUIController_102304 final : public UUIC_Ability
 {
 public:

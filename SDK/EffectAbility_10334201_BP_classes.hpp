@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass EffectAbility_10334201_BP.EffectAbility_10334201_BP_C
-// 0x0000 (0x1108 - 0x1108)
+// 0x0000 (0x1110 - 0x1110)
 class UEffectAbility_10334201_BP_C final : public UPyEffectAbility_GravityChange_103342
 {
 public:

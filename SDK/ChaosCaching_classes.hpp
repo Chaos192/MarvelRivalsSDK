@@ -12,11 +12,11 @@
 
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
+#include "MovieScene_classes.hpp"
 #include "ChaosCaching_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
 #include "MovieSceneTracks_classes.hpp"
-#include "MovieScene_classes.hpp"
 
 
 namespace SDK
@@ -105,9 +105,9 @@ public:
 	TArray<struct FPerParticleCacheData>          ParticleTracks;                                    // 0x0048(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 	TArray<int32>                                 ChannelCurveToParticle;                            // 0x0058(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 	TMap<class FName, struct FRichCurves>         ChannelsTracks;                                    // 0x0068(0x0050)(NativeAccessSpecifierPublic)
-	TMap<class FName, struct FCompressedRichCurves> CompressedChannelsTracks;                          // 0x00B8(0x0050)(NativeAccessSpecifierPublic)
+	TMap<class FName, struct FCompressedRichCurves> CompressedChannelsTracks;                        // 0x00B8(0x0050)(NativeAccessSpecifierPublic)
 	TMap<class FName, struct FRichCurve>          CurveData;                                         // 0x0108(0x0050)(NativeAccessSpecifierPublic)
-	TMap<class FName, struct FParticleTransformTrack> NamedTransformTracks;                              // 0x0158(0x0050)(NativeAccessSpecifierPublic)
+	TMap<class FName, struct FParticleTransformTrack> NamedTransformTracks;                          // 0x0158(0x0050)(NativeAccessSpecifierPublic)
 	bool                                          bCompressChannels;                                 // 0x01A8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_1A9[0x3];                                      // 0x01A9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         ChannelsCompressionErrorThreshold;                 // 0x01AC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)

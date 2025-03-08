@@ -20,12 +20,12 @@ namespace SDK
 {
 
 // PythonClass PyHulkBannerCharacter.PyHulkBannerCharacter
-// 0x0010 (0x18D0 - 0x18C0)
+// 0x0010 (0x1920 - 0x1910)
 class APyHulkBannerCharacter : public AHulkBannerCharacter
 {
 public:
-	class UMarveSculptConfigComponent*            HulkHeroSculptConfigComponent;                     // 0x18C0(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UMarveSculptConfigComponent*            HulkMonsterSculptConfigComponent;                  // 0x18C8(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UMarveSculptConfigComponent*            HulkHeroSculptConfigComponent;                     // 0x1910(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UMarveSculptConfigComponent*            HulkMonsterSculptConfigComponent;                  // 0x1918(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void ReceiveBeginPlay();

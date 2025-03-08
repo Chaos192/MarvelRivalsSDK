@@ -37,7 +37,7 @@ public:
 };
 
 // PythonClass PyAbility_101542.PyAbility_101542
-// 0x0000 (0x2580 - 0x2580)
+// 0x0000 (0x2588 - 0x2588)
 class UPyAbility_101542 : public UMarvelGameplayAbility
 {
 public:
@@ -61,12 +61,12 @@ public:
 };
 
 // PythonClass PyAbility_101542.PyUIController_101542
-// 0x0010 (0x0C70 - 0x0C60)
+// 0x0010 (0x0C60 - 0x0C50)
 class UPyUIController_101542 final : public UUIC_Ability
 {
 public:
-	class UTexture2D*                             StormWeatherAbilityIcon;                           // 0x0C60(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UTexture2D*                             ThunderWeatherAbilityIcon;                         // 0x0C68(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UTexture2D*                             StormWeatherAbilityIcon;                           // 0x0C50(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UTexture2D*                             ThunderWeatherAbilityIcon;                         // 0x0C58(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void SetAbility(int32 InAbilityId, class UGameplayAbility* InAbility);

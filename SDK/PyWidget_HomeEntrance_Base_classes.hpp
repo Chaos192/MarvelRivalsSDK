@@ -18,7 +18,7 @@ namespace SDK
 
 // PythonClass PyWidget_HomeEntrance_Base.PyWidget_HomeEntrance_Item_Container_Widget_Base
 // 0x0000 (0x05F0 - 0x05F0)
-class UPyWidget_HomeEntrance_Item_Container_Widget_Base final : public UPyMarvelUserWidget
+class UPyWidget_HomeEntrance_Item_Container_Widget_Base : public UPyMarvelUserWidget
 {
 public:
 	void OnInitialized();
@@ -39,7 +39,8 @@ public:
 
 // PythonClass PyWidget_HomeEntrance_Base.PyWidget_HomeEntrance_Item_Container_Nav_Widget_Base
 // 0x0000 (0x05F0 - 0x05F0)
-class UPyWidget_HomeEntrance_Item_Container_Nav_Widget_Base final : public UPyMarvelUserWidget
+#pragma pack(push, 0x1)
+class alignas(0x08) UPyWidget_HomeEntrance_Item_Container_Nav_Widget_Base : public UPyMarvelUserWidget
 {
 public:
 	void Construct();
@@ -54,6 +55,7 @@ public:
 		return GetDefaultObjImpl<UPyWidget_HomeEntrance_Item_Container_Nav_Widget_Base>();
 	}
 };
+#pragma pack(pop)
 
 }
 

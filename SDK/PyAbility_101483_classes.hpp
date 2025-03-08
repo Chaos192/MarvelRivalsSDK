@@ -53,23 +53,30 @@ public:
 	}
 };
 
-// PythonClass PyAbility_101483.PyWeapon_101483
-// 0x0000 (0x0C90 - 0x0C90)
-class APyWeapon_101483 : public AShootingWeapon
+// PythonClass PyAbility_101483.PyProjectile_101483
+// 0x0010 (0x3120 - 0x3110)
+class APyProjectile_101483 : public AMarvelAbilityTargetActor_Projectile
 {
+public:
+	uint8                                         Pad_3108[0x8];                                     // 0x3108(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	class UProjectileHomingComponent*             HomingComponent;                                   // 0x3110(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	void K2_OnBeginAgentTask();
+
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"PyWeapon_101483">();
+		return StaticClassImpl<"PyProjectile_101483">();
 	}
-	static class APyWeapon_101483* GetDefaultObj()
+	static class APyProjectile_101483* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<APyWeapon_101483>();
+		return GetDefaultObjImpl<APyProjectile_101483>();
 	}
 };
 
 // PythonClass PyAbility_101483.PyAbility_101483
-// 0x0000 (0x2580 - 0x2580)
+// 0x0000 (0x2588 - 0x2588)
 class UPyAbility_101483 : public UMarvelGameplayAbility
 {
 public:
@@ -77,6 +84,7 @@ public:
 	void ParentAbilityChange(EState_101481 State);
 	void EndPlay();
 	void K2_ActivateAbility();
+	void K2_ActivateAbilityFromEvent(const struct FGameplayEventData& EventData);
 	void K2_OnEndAbility(bool Cancel);
 
 public:
@@ -90,24 +98,18 @@ public:
 	}
 };
 
-// PythonClass PyAbility_101483.PyProjectile_101483
-// 0x0010 (0x3060 - 0x3050)
-class APyProjectile_101483 : public AMarvelAbilityTargetActor_Projectile
+// PythonClass PyAbility_101483.PyWeapon_101483
+// 0x0000 (0x0C80 - 0x0C80)
+class APyWeapon_101483 : public AShootingWeapon
 {
-public:
-	class UProjectileHomingComponent*             HomingComponent;                                   // 0x3050(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-public:
-	void K2_OnBeginAgentTask();
-
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"PyProjectile_101483">();
+		return StaticClassImpl<"PyWeapon_101483">();
 	}
-	static class APyProjectile_101483* GetDefaultObj()
+	static class APyWeapon_101483* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<APyProjectile_101483>();
+		return GetDefaultObjImpl<APyWeapon_101483>();
 	}
 };
 

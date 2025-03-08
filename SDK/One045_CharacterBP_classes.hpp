@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass 1045_CharacterBP.1045_CharacterBP_C
-// 0x0000 (0x1850 - 0x1850)
+// 0x0000 (0x18A0 - 0x18A0)
 class AOne045_CharacterBP_C final : public APyNamorCharacter
 {
 public:

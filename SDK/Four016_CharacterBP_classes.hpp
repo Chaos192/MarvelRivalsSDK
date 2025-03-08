@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass 4016_CharacterBP.4016_CharacterBP_C
-// 0x0000 (0x1810 - 0x1810)
+// 0x0000 (0x1870 - 0x1870)
 class AFour016_CharacterBP_C final : public AMarvelBaseCharacter
 {
 public:

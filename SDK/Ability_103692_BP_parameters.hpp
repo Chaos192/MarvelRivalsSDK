@@ -39,7 +39,7 @@ public:
 	uint8                                         Pad_61[0x3];                                       // 0x0061(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FGameplayTag                           K2Node_CustomEvent_TriggerNotifyTagEventDelegate__DelegateSignature_EventTag; // 0x0064(0x000C)(NoDestructor, HasGetValueTypeHash)
 	class UGATask_SpawnScope*                     CallFunc_SpawnScope_ReturnValue_1;                 // 0x0070(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	TDelegate<void(const struct FGameplayTag& EventTag)> K2Node_CreateDelegate_OutputDelegate_1;            // 0x0078(0x0014)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	TDelegate<void(const struct FGameplayTag& EventTag)> K2Node_CreateDelegate_OutputDelegate_1;     // 0x0078(0x0014)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_IsValid_ReturnValue_3;                    // 0x008C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_8D[0x3];                                       // 0x008D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate_2;            // 0x0090(0x0014)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
@@ -53,7 +53,7 @@ public:
 	class UGATask_WaitTime*                       CallFunc_WaitTimeSeconds_ReturnValue_1;            // 0x00D8(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_IsValid_ReturnValue_5;                    // 0x00E0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_E1[0x3];                                       // 0x00E1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	TDelegate<void(const struct FGameplayTag& EventTag)> K2Node_CreateDelegate_OutputDelegate_4;            // 0x00E4(0x0014)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	TDelegate<void(const struct FGameplayTag& EventTag)> K2Node_CreateDelegate_OutputDelegate_4;     // 0x00E4(0x0014)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	bool                                          K2Node_Event_bWasCancelled;                        // 0x00F8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 

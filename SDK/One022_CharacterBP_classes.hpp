@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass 1022_CharacterBP.1022_CharacterBP_C
-// 0x0000 (0x1820 - 0x1820)
+// 0x0000 (0x1890 - 0x1890)
 class AOne022_CharacterBP_C final : public APyCaptainAmericaCharacter
 {
 public:

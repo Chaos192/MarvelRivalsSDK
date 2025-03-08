@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BuffAbility_10396101_BP.BuffAbility_10396101_BP_C
-// 0x0000 (0x1178 - 0x1178)
+// 0x0000 (0x1180 - 0x1180)
 class UBuffAbility_10396101_BP_C final : public UPySkillEnergyFastRegenAbility_103961
 {
 public:

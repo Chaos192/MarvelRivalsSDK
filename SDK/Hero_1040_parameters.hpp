@@ -117,6 +117,30 @@ public:
 	TArray<struct FHitResult>                     ReturnValue;                                       // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 };
 
+// Function Hero_1040.Ability_104032.GetCacheTLIndex
+// 0x0001 (0x0001 - 0x0000)
+struct Ability_104032_GetCacheTLIndex final
+{
+public:
+	uint8                                         ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function Hero_1040.Ability_104032.HasLeftArmMissile
+// 0x0001 (0x0001 - 0x0000)
+struct Ability_104032_HasLeftArmMissile final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function Hero_1040.Ability_104032.OnMyProjectileHit
+// 0x0170 (0x0170 - 0x0000)
+struct Ability_104032_OnMyProjectileHit final
+{
+public:
+	struct FHitResult                             Hit;                                               // 0x0000(0x0170)(ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+};
+
 // Function Hero_1040.Ability_104011.OnAbilityHit
 // 0x0018 (0x0018 - 0x0000)
 struct Ability_104011_OnAbilityHit final
@@ -151,56 +175,6 @@ public:
 	struct FHitResult                             Hit;                                               // 0x0000(0x0170)(ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 };
 
-// Function Hero_1040.MisterFantasticCharacter.AddExpandStateBuff
-// 0x0001 (0x0001 - 0x0000)
-struct MisterFantasticCharacter_AddExpandStateBuff final
-{
-public:
-	EMisterFantasticState                         CurrentState;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function Hero_1040.MisterFantasticCharacter.AddNormalStateBuff
-// 0x0001 (0x0001 - 0x0000)
-struct MisterFantasticCharacter_AddNormalStateBuff final
-{
-public:
-	EMisterFantasticState                         CurrentState;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function Hero_1040.MisterFantasticCharacter.AddSkillEnergy
-// 0x0010 (0x0010 - 0x0000)
-struct MisterFantasticCharacter_AddSkillEnergy final
-{
-public:
-	class UGameplayAbility*                       InstigateAbility;                                  // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Value;                                             // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-
-// Function Hero_1040.MisterFantasticCharacter.GetCurrentState
-// 0x0001 (0x0001 - 0x0000)
-struct MisterFantasticCharacter_GetCurrentState final
-{
-public:
-	EMisterFantasticState                         ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function Hero_1040.MisterFantasticCharacter.OnAbilityActivated
-// 0x0008 (0x0008 - 0x0000)
-struct MisterFantasticCharacter_OnAbilityActivated final
-{
-public:
-	class UGameplayAbility*                       InAbility;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function Hero_1040.MisterFantasticCharacter.ResetSkillEnergyReduceTiming
-// 0x0004 (0x0004 - 0x0000)
-struct MisterFantasticCharacter_ResetSkillEnergyReduceTiming final
-{
-public:
-	float                                         Timing;                                            // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
 // Function Hero_1040.Cue_Ability_Loop_10403102.GetOwnerAbility
 // 0x0008 (0x0008 - 0x0000)
 struct Cue_Ability_Loop_10403102_GetOwnerAbility final
@@ -215,58 +189,6 @@ struct Cue_Ability_Loop_10403102_OnProjectileEnd final
 {
 public:
 	class AActor*                                 InProjectile;                                      // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function Hero_1040.Ability_104032.GetCacheTLIndex
-// 0x0001 (0x0001 - 0x0000)
-struct Ability_104032_GetCacheTLIndex final
-{
-public:
-	uint8                                         ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function Hero_1040.Ability_104032.HasLeftArmMissile
-// 0x0001 (0x0001 - 0x0000)
-struct Ability_104032_HasLeftArmMissile final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function Hero_1040.Ability_104032.OnMyProjectileHit
-// 0x0170 (0x0170 - 0x0000)
-struct Ability_104032_OnMyProjectileHit final
-{
-public:
-	struct FHitResult                             Hit;                                               // 0x0000(0x0170)(ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-};
-
-// Function Hero_1040.MisterFantasticChildActor.OnCharacterWillDeath
-// 0x0028 (0x0028 - 0x0000)
-struct MisterFantasticChildActor_OnCharacterWillDeath final
-{
-public:
-	class AActor*                                 DamageCauser;                                      // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class AActor*                                 TargetActor;                                       // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FAttributeModifierHandle               ModifierParameterHandle;                           // 0x0010(0x0018)(ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function Hero_1040.MisterFantasticChildActor.OnTagUpdated
-// 0x0010 (0x0010 - 0x0000)
-struct MisterFantasticChildActor_OnTagUpdated final
-{
-public:
-	struct FGameplayTag                           Tag;                                               // 0x0000(0x000C)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bInExist;                                          // 0x000C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-
-// Function Hero_1040.MisterFantasticChildActor.ShouldEnableURO
-// 0x0001 (0x0001 - 0x0000)
-struct MisterFantasticChildActor_ShouldEnableURO final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
 // Function Hero_1040.Ability_104041.OnCharacterDeath
@@ -392,6 +314,84 @@ struct MisterFantasticAnimInstance_On104032LeftHandHit final
 {
 public:
 	struct FVector                                InHitLocation;                                     // 0x0000(0x0018)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function Hero_1040.MisterFantasticCharacter.AddExpandStateBuff
+// 0x0001 (0x0001 - 0x0000)
+struct MisterFantasticCharacter_AddExpandStateBuff final
+{
+public:
+	EMisterFantasticState                         CurrentState;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function Hero_1040.MisterFantasticCharacter.AddNormalStateBuff
+// 0x0001 (0x0001 - 0x0000)
+struct MisterFantasticCharacter_AddNormalStateBuff final
+{
+public:
+	EMisterFantasticState                         CurrentState;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function Hero_1040.MisterFantasticCharacter.AddSkillEnergy
+// 0x0010 (0x0010 - 0x0000)
+struct MisterFantasticCharacter_AddSkillEnergy final
+{
+public:
+	class UGameplayAbility*                       InstigateAbility;                                  // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Value;                                             // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+
+// Function Hero_1040.MisterFantasticCharacter.GetCurrentState
+// 0x0001 (0x0001 - 0x0000)
+struct MisterFantasticCharacter_GetCurrentState final
+{
+public:
+	EMisterFantasticState                         ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function Hero_1040.MisterFantasticCharacter.OnAbilityActivated
+// 0x0008 (0x0008 - 0x0000)
+struct MisterFantasticCharacter_OnAbilityActivated final
+{
+public:
+	class UGameplayAbility*                       InAbility;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function Hero_1040.MisterFantasticCharacter.ResetSkillEnergyReduceTiming
+// 0x0004 (0x0004 - 0x0000)
+struct MisterFantasticCharacter_ResetSkillEnergyReduceTiming final
+{
+public:
+	float                                         Timing;                                            // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function Hero_1040.MisterFantasticChildActor.OnCharacterWillDeath
+// 0x0028 (0x0028 - 0x0000)
+struct MisterFantasticChildActor_OnCharacterWillDeath final
+{
+public:
+	class AActor*                                 DamageCauser;                                      // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AActor*                                 TargetActor;                                       // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FAttributeModifierHandle               ModifierParameterHandle;                           // 0x0010(0x0018)(ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function Hero_1040.MisterFantasticChildActor.OnTagUpdated
+// 0x0010 (0x0010 - 0x0000)
+struct MisterFantasticChildActor_OnTagUpdated final
+{
+public:
+	struct FGameplayTag                           Tag;                                               // 0x0000(0x000C)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bInExist;                                          // 0x000C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+
+// Function Hero_1040.MisterFantasticChildActor.ShouldEnableURO
+// 0x0001 (0x0001 - 0x0000)
+struct MisterFantasticChildActor_ShouldEnableURO final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
 }

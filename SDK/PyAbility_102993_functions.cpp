@@ -121,7 +121,7 @@ void UPyAbility_102993::K2_OnEndAbility(bool bWasCancelled)
 // PythonFunction PyAbility_102993.PyAbility_102993.NativeOnMontageCancelled
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           EventTag                                               (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    EventTag                                               (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_102993::NativeOnMontageCancelled(const class FString& EventTag)
 {
@@ -146,7 +146,7 @@ void UPyAbility_102993::NativeOnMontageCancelled(const class FString& EventTag)
 // PythonFunction PyAbility_102993.PyAbility_102993.NativeOnMontageEvent
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           EventTag                                               (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    EventTag                                               (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_102993::NativeOnMontageEvent(const class FString& EventTag)
 {
@@ -267,7 +267,7 @@ void APySummoned_10299301::K2_OnSummonedRecycleAgentTask()
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyCue_Summoned_Loop_10299301::WhileActiveFX(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
 {
@@ -293,7 +293,7 @@ void APyCue_Summoned_Loop_10299301::WhileActiveFX(class AActor* MyTarget, const 
 // PythonFunction PyAbility_102993.PyCue_Summoned_Loop_10299301.K2_UpdateTeamVisualEffect
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FTeamVisual                      NewTeamVisual                                          (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
+// const struct FTeamVisual&               NewTeamVisual                                          (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
 
 void APyCue_Summoned_Loop_10299301::K2_UpdateTeamVisualEffect(const struct FTeamVisual& NewTeamVisual)
 {
@@ -319,7 +319,7 @@ void APyCue_Summoned_Loop_10299301::K2_UpdateTeamVisualEffect(const struct FTeam
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyCue_Summoned_Loop_10299301::OnExecuteFX(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
 {
@@ -346,7 +346,7 @@ void APyCue_Summoned_Loop_10299301::OnExecuteFX(class AActor* MyTarget, const st
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyCue_Summoned_Loop_10299301::OnRemoveFX(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
 {

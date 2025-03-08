@@ -21,7 +21,7 @@ namespace SDK
 {
 
 // PythonClass PyAbility_133.PyProjectile_13301
-// 0x0000 (0x3050 - 0x3050)
+// 0x0000 (0x3110 - 0x3110)
 class APyProjectile_13301 : public AMarvelAbilityTargetActor_Projectile
 {
 public:
@@ -132,12 +132,12 @@ public:
 #pragma pack(pop)
 
 // PythonClass PyAbility_133.PyAbility_133
-// 0x0020 (0x2828 - 0x2808)
+// 0x0020 (0x2830 - 0x2810)
 class UPyAbility_133 : public UAbility_133
 {
 public:
-	TMulticastInlineDelegate<void(struct FHitResult& InHitResult)> Delegate_ProjetileHitDispatcher;                   // 0x2808(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void()>              Delegate_ProjetileFlyOverMaxDistanceDispatcher;    // 0x2818(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const struct FHitResult& InHitResult)> Delegate_ProjetileHitDispatcher; // 0x2810(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void()>              Delegate_ProjetileFlyOverMaxDistanceDispatcher;    // 0x2820(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 
 public:
 	void BeginPlay();

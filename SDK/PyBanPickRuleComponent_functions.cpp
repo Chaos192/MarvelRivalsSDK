@@ -17,31 +17,6 @@
 namespace SDK
 {
 
-// PythonFunction PyBanPickRuleComponent.PyBanPickRuleComponent.ReceiveEndPlay
-// (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// EEndPlayReason                          EndPlayReason                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UPyBanPickRuleComponent::ReceiveEndPlay(EEndPlayReason EndPlayReason)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PyBanPickRuleComponent", "ReceiveEndPlay");
-
-	Params::PyBanPickRuleComponent_ReceiveEndPlay Parms{};
-
-	Parms.EndPlayReason = EndPlayReason;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // PythonFunction PyBanPickRuleComponent.PyBanPickRuleComponent.MulticastPreSelectHeroDisplayStageStart
 // (Net, NetReliable, Native, NetMulticast, Public, BlueprintCallable)
 

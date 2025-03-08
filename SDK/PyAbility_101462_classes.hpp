@@ -17,11 +17,11 @@ namespace SDK
 {
 
 // PythonClass PyAbility_101462.PyAbility_101462
-// 0x0008 (0x25D0 - 0x25C8)
+// 0x0008 (0x25D8 - 0x25D0)
 class UPyAbility_101462 : public UAbility_105
 {
 public:
-	bool                                          IsTurretFiring;                                    // 0x25C8(0x0001)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsTurretFiring;                                    // 0x25D0(0x0001)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void BeginPlay();

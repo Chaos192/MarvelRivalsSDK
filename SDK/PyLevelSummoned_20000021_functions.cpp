@@ -178,8 +178,8 @@ void APyLevelSummoned_20000021::StopMovement()
 // PythonFunction PyLevelSummoned_20000021.PyLevelSummoned_20000021.MulticastLocationAndVelocity
 // (Net, Native, NetMulticast, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FVector                          CurLocation                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FVector                          CurVelocity                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVector&                   CurLocation                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVector&                   CurVelocity                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void APyLevelSummoned_20000021::MulticastLocationAndVelocity(const struct FVector& CurLocation, const struct FVector& CurVelocity)
 {
@@ -205,7 +205,7 @@ void APyLevelSummoned_20000021::MulticastLocationAndVelocity(const struct FVecto
 // PythonFunction PyLevelSummoned_20000021.PyLevelSummoned_20000021.MulticastStopSimulating
 // (Net, NetReliable, Native, NetMulticast, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FVector                          EndLocation                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVector&                   EndLocation                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void APyLevelSummoned_20000021::MulticastStopSimulating(const struct FVector& EndLocation)
 {
@@ -268,7 +268,7 @@ void APyLevelSummoned_20000021::OnRep_PickUpUID()
 // PythonFunction PyLevelSummoned_20000021.PyCue_Summoner_Loop_20030001_BP.K2_GetCustomTeamVisual
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayCueParameters           CueParameters                                          (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    CueParameters                                          (ConstParm, Parm, OutParm, ReferenceParm)
 // struct FTeamVisual                      ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor)
 
 struct FTeamVisual APyCue_Summoner_Loop_20030001_BP::K2_GetCustomTeamVisual(const struct FGameplayCueParameters& CueParameters)

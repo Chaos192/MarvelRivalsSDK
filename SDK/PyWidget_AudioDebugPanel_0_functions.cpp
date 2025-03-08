@@ -240,7 +240,7 @@ void UPyAudioDebugPanel_TriggerDisplay::OnAudioTypeEnabledChanged(int32 EnableMa
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // EMarvelAudioType                        AudioType                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           Prefix                                                 (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Prefix                                                 (Parm, ZeroConstructor, HasGetValueTypeHash)
 // class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash)
 
 class FString UPyAudioDebugPanel_TriggerDisplay::GetTextOfType(EMarvelAudioType AudioType, const class FString& Prefix)

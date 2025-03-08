@@ -114,7 +114,7 @@ void UCommonInputSubsystem::SetCurrentInputType(ECommonInputType NewInputType)
 // Function CommonInput.CommonInputSubsystem.SetGamepadInputType
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FName                             InGamepadInputType                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       InGamepadInputType                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UCommonInputSubsystem::SetGamepadInputType(const class FName InGamepadInputType)
 {

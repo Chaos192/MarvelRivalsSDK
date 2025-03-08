@@ -13,8 +13,8 @@
 #include "GameplayTags_structs.hpp"
 #include "Marvel_structs.hpp"
 #include "Marvel_classes.hpp"
-#include "DeclarativeUnreal_structs.hpp"
 #include "Engine_structs.hpp"
+#include "DeclarativeUnreal_structs.hpp"
 #include "Hero_1038_structs.hpp"
 
 
@@ -147,12 +147,12 @@ public:
 };
 
 // Class Hero_1038.Ability_103831
-// 0x0008 (0x2590 - 0x2588)
+// 0x0008 (0x2598 - 0x2590)
 class UAbility_103831 : public UAbility_108
 {
 public:
-	bool                                          HasProjectileEnd;                                  // 0x2588(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2589[0x7];                                     // 0x2589(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	bool                                          HasProjectileEnd;                                  // 0x2590(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2591[0x7];                                     // 0x2591(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -166,13 +166,13 @@ public:
 };
 
 // Class Hero_1038.UIController_103831
-// 0x0038 (0x0C98 - 0x0C60)
+// 0x0038 (0x0C88 - 0x0C50)
 class UUIController_103831 final : public UUIC_Ability
 {
 public:
-	uint8                                         Pad_C60[0x18];                                     // 0x0C60(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTimerHandle                           TimerHandle;                                       // 0x0C78(0x0018)(HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C90[0x8];                                      // 0x0C90(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C50[0x18];                                     // 0x0C50(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTimerHandle                           TimerHandle;                                       // 0x0C68(0x0018)(HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C80[0x8];                                      // 0x0C80(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void OnTagUpdate(const struct FGameplayTag& TagUpdated, bool TagExists);
@@ -236,7 +236,7 @@ public:
 	class UMaterialInstanceDynamic*               GlassBrokenMI;                                     // 0x0F80(0x0008)(ZeroConstructor, Transient, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	class UMaterialInstanceDynamic*               HueSeparateMI;                                     // 0x0F88(0x0008)(ZeroConstructor, Transient, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	uint8                                         Pad_F90[0x30];                                     // 0x0F90(0x0030)(Fixing Size After Last Property [ Dumper-7 ])
-	TDelegate<void(EClientPlayerViewSide InViewSide)> ViewSideDelegate;                                  // 0x0FC0(0x0014)(ZeroConstructor, InstancedReference, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	TDelegate<void(EClientPlayerViewSide InViewSide)> ViewSideDelegate;                              // 0x0FC0(0x0014)(ZeroConstructor, InstancedReference, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	uint8                                         Pad_FD4[0x1C];                                     // 0x0FD4(0x001C)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
@@ -277,12 +277,12 @@ public:
 };
 
 // Class Hero_1038.UIController_103871
-// 0x0030 (0x0C90 - 0x0C60)
+// 0x0030 (0x0C80 - 0x0C50)
 class UUIController_103871 final : public UUIC_Ability
 {
 public:
-	uint8                                         Pad_C60[0x18];                                     // 0x0C60(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTimerHandle                           TimerHandle;                                       // 0x0C78(0x0018)(HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C50[0x18];                                     // 0x0C50(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTimerHandle                           TimerHandle;                                       // 0x0C68(0x0018)(HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void OnTagUpdate(const struct FGameplayTag& TagUpdated, bool TagExists);
@@ -347,9 +347,6 @@ public:
 	uint8                                         Pad_938[0x38];                                     // 0x0938(0x0038)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
-	void HandleTeleportAnim();
-
-public:
 	static class UClass* StaticClass()
 	{
 		return StaticClassImpl<"ScarletWitchAnimInstance">();
@@ -361,12 +358,11 @@ public:
 };
 
 // Class Hero_1038.ScarletWitchCharacter
-// 0x0010 (0x1820 - 0x1810)
+// 0x0000 (0x1870 - 0x1870)
 class AScarletWitchCharacter : public AMarvelBaseCharacter
 {
 public:
-	class UScarletWitchMoveLogicBaseComponent*    ScarletWitchMoveLogic;                             // 0x1810(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_1818[0x8];                                     // 0x1818(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class UScarletWitchMoveLogicBaseComponent*    ScarletWitchMoveLogic;                             // 0x1868(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 
 public:
 	static class UClass* StaticClass()
@@ -423,7 +419,7 @@ public:
 };
 
 // Class Hero_1038.ScarletWitchAudioComponent
-// 0x0000 (0x0C90 - 0x0C90)
+// 0x0000 (0x0C80 - 0x0C80)
 class UScarletWitchAudioComponent final : public UCharacterAudioComponent
 {
 public:
@@ -453,7 +449,7 @@ public:
 };
 
 // Class Hero_1038.ScarletWitchMovementComponent
-// 0x0000 (0x1B60 - 0x1B60)
+// 0x0000 (0x1BA0 - 0x1BA0)
 class UScarletWitchMovementComponent final : public UMarvelCharacterMovementComponent
 {
 public:

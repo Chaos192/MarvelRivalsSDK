@@ -10,34 +10,34 @@
 
 #include "Basic.hpp"
 
-#include "DeclarativeUnreal_structs.hpp"
-#include "Engine_structs.hpp"
 #include "Marvel_structs.hpp"
 #include "Marvel_classes.hpp"
+#include "Engine_structs.hpp"
+#include "DeclarativeUnreal_structs.hpp"
 
 
 namespace SDK
 {
 
 // BlueprintGeneratedClass WC_CharacterCommunicationSign_BP.WC_CharacterCommunicationSign_BP_C
-// 0x02B0 (0x0DC0 - 0x0B10)
+// 0x02A0 (0x0E40 - 0x0BA0)
 class UWC_CharacterCommunicationSign_BP_C final : public UMarvelWidgetComponent
 {
 public:
-	uint8                                         Pad_B08[0x8];                                      // 0x0B08(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0B10(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	struct FDeclarationHolder                     ViewerSideHolder;                                  // 0x0B18(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
-	TSoftObjectPtr<class UTexture2D>              Texture;                                           // 0x0B28(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
-	struct FWidgetStyle_SceneIndicator_Ability    OffScreenInvisibleWidgetStyle;                     // 0x0B58(0x0088)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor)
-	struct FWidgetStyle_SceneIndicator_Ability    OffScreenVisibleWidgetStyle;                       // 0x0BE0(0x0088)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor)
-	struct FMarvelBattleCommunicationRow          CommRow;                                           // 0x0C68(0x0118)(Edit, BlueprintVisible, DisableEditOnInstance)
-	bool                                          Visible;                                           // 0x0D80(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_D81[0x7];                                      // 0x0D81(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTimerHandle                           ShowTimer;                                         // 0x0D88(0x0018)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
-	int32                                         CurCommID;                                         // 0x0DA0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_DA4[0x4];                                      // 0x0DA4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	double                                        RemainTime;                                        // 0x0DA8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	EClientPlayerViewSide                         CurrentViewSide;                                   // 0x0DB0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_B98[0x8];                                      // 0x0B98(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0BA0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FDeclarationHolder                     ViewerSideHolder;                                  // 0x0BA8(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	TSoftObjectPtr<class UTexture2D>              Texture;                                           // 0x0BB8(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	struct FWidgetStyle_SceneIndicator_Ability    OffScreenInvisibleWidgetStyle;                     // 0x0BE8(0x0088)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor)
+	struct FWidgetStyle_SceneIndicator_Ability    OffScreenVisibleWidgetStyle;                       // 0x0C70(0x0088)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor)
+	struct FMarvelBattleCommunicationRow          CommRow;                                           // 0x0CF8(0x0108)(Edit, BlueprintVisible, DisableEditOnInstance)
+	bool                                          Visible;                                           // 0x0E00(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_E01[0x7];                                      // 0x0E01(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTimerHandle                           ShowTimer;                                         // 0x0E08(0x0018)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	int32                                         CurCommID;                                         // 0x0E20(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_E24[0x4];                                      // 0x0E24(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        RemainTime;                                        // 0x0E28(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EClientPlayerViewSide                         CurrentViewSide;                                   // 0x0E30(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_WC_CharacterCommunicationSign_BP(int32 EntryPoint);

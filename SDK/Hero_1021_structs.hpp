@@ -41,15 +41,6 @@ public:
 	class UAfterImageComponent*                   AfterImageComponent;                               // 0x0070(0x0008)(ExportObject, ZeroConstructor, InstancedReference, RepSkip, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
-// ScriptStruct Hero_1021.AfterImageSpecContainer
-// 0x0018 (0x0128 - 0x0110)
-struct FAfterImageSpecContainer final : public FFastArraySerializer
-{
-public:
-	TArray<struct FAfterImageSpec>                Items;                                             // 0x0110(0x0010)(ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
-	class ASummoned_102181*                       Owner;                                             // 0x0120(0x0008)(ZeroConstructor, RepSkip, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
 // ScriptStruct Hero_1021.HawkeyeArrowData
 // 0x0058 (0x0058 - 0x0000)
 struct FHawkeyeArrowData final
@@ -71,6 +62,15 @@ struct FSpecialMeshSetting final
 {
 public:
 	TArray<class FName>                           HiddenBones;                                       // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPublic)
+};
+
+// ScriptStruct Hero_1021.AfterImageSpecContainer
+// 0x0018 (0x0128 - 0x0110)
+struct FAfterImageSpecContainer final : public FFastArraySerializer
+{
+public:
+	TArray<struct FAfterImageSpec>                Items;                                             // 0x0110(0x0010)(ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	class ASummoned_102181*                       Owner;                                             // 0x0120(0x0008)(ZeroConstructor, RepSkip, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
 // ScriptStruct Hero_1021.PoseMeshItem

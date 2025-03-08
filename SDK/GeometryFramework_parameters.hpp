@@ -17,22 +17,6 @@
 namespace SDK::Params
 {
 
-// Function GeometryFramework.DynamicMeshPool.RequestMesh
-// 0x0008 (0x0008 - 0x0000)
-struct DynamicMeshPool_RequestMesh final
-{
-public:
-	class UDynamicMesh*                           ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function GeometryFramework.DynamicMeshPool.ReturnMesh
-// 0x0008 (0x0008 - 0x0000)
-struct DynamicMeshPool_ReturnMesh final
-{
-public:
-	class UDynamicMesh*                           Mesh;                                              // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
 // Function GeometryFramework.BaseDynamicMeshComponent.GetDynamicMesh
 // 0x0008 (0x0008 - 0x0000)
 struct BaseDynamicMeshComponent_GetDynamicMesh final
@@ -380,6 +364,22 @@ struct DynamicMesh_IsEmpty final
 {
 public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function GeometryFramework.DynamicMeshPool.RequestMesh
+// 0x0008 (0x0008 - 0x0000)
+struct DynamicMeshPool_RequestMesh final
+{
+public:
+	class UDynamicMesh*                           ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function GeometryFramework.DynamicMeshPool.ReturnMesh
+// 0x0008 (0x0008 - 0x0000)
+struct DynamicMeshPool_ReturnMesh final
+{
+public:
+	class UDynamicMesh*                           Mesh;                                              // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
 }

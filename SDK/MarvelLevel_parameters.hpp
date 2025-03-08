@@ -11,9 +11,9 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
+#include "MarvelLevel_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "Marvel_structs.hpp"
-#include "MarvelLevel_structs.hpp"
 #include "GameplayTags_structs.hpp"
 
 
@@ -122,7 +122,7 @@ struct LevelFunctionLibrary_GetAllActorsWithTagInWorld final
 public:
 	class UObject*                                WorldContextObject;                                // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<class FName>                           Tags;                                              // 0x0008(0x0010)(ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
-	TMap<class FName, struct FActorsWithSameOneTag> OutActors;                                         // 0x0018(0x0050)(Parm, OutParm, NativeAccessSpecifierPublic)
+	TMap<class FName, struct FActorsWithSameOneTag> OutActors;                                       // 0x0018(0x0050)(Parm, OutParm, NativeAccessSpecifierPublic)
 };
 
 // Function MarvelLevel.LevelFunctionLibrary.GetSequenceLength
@@ -143,6 +143,26 @@ public:
 	class ULevelSequencePlayer*                   LevelSequencePlayer;                               // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+
+// Function MarvelLevel.LevelFunctionLibrary.IsActorInAABBRange
+// 0x0090 (0x0090 - 0x0000)
+struct LevelFunctionLibrary_IsActorInAABBRange final
+{
+public:
+	struct FTransform                             LocalTransform;                                    // 0x0000(0x0060)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                BorderHalfSize;                                    // 0x0060(0x0018)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AMarvelBaseCharacter*                   InActor;                                           // 0x0078(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0080(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_81[0xF];                                       // 0x0081(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+
+// Function MarvelLevel.LevelFunctionLibrary.IsEnableLevelAsyncLoadInQueue
+// 0x0001 (0x0001 - 0x0000)
+struct LevelFunctionLibrary_IsEnableLevelAsyncLoadInQueue final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
 // Function MarvelLevel.LevelFunctionLibrary.LevelSetClientTravel

@@ -40,11 +40,11 @@ public:
 };
 
 // PythonClass PyAbility_102331.PyAbility_102331
-// 0x0008 (0x2590 - 0x2588)
+// 0x0008 (0x2598 - 0x2590)
 class UPyAbility_102331 : public UAbility_108
 {
 public:
-	bool                                          IsLaunch;                                          // 0x2588(0x0001)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsLaunch;                                          // 0x2590(0x0001)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void BeginPlay();

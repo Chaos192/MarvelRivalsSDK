@@ -58,7 +58,7 @@ void UPyAbility_104553::EndPlay()
 // PythonFunction PyAbility_104553.PyAbility_104553.OnTagUpdate
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FGameplayTag                     TagUpdated                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              TagUpdated                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
 // bool                                    TagExists                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UPyAbility_104553::OnTagUpdate(const struct FGameplayTag& TagUpdated, bool TagExists)
@@ -110,7 +110,7 @@ bool UPyAbility_104553::CanActivate()
 // PythonFunction PyAbility_104553.PyAbility_104553.NativeOnMontageEvent
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_104553::NativeOnMontageEvent(const class FString& Tag)
 {

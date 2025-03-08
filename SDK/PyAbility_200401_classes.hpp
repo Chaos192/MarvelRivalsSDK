@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
+#include "MarvelLevel_classes.hpp"
 #include "Marvel_structs.hpp"
 #include "Marvel_classes.hpp"
 #include "GameplayTags_structs.hpp"
-#include "MarvelLevel_classes.hpp"
 
 
 namespace SDK
@@ -47,7 +47,7 @@ class UPyAbility_200401 : public UAbility_200401
 public:
 	struct FGameplayTagQuery                      BlockAbilityQuery;                                 // 0x5C00(0x0048)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
 	struct FGameplayTagContainer                  SpecialBlockAbilityTags;                           // 0x5C48(0x0068)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	TSubclassOf<class UMarvelGameplayEffectTemplate> GravityZoneEfectTemplate;                          // 0x5CB0(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSubclassOf<class UMarvelGameplayEffectTemplate> GravityZoneEfectTemplate;                       // 0x5CB0(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void K2_ActivateAbility();

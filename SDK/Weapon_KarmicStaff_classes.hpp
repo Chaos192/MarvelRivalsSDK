@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Weapon_KarmicStaff.Weapon_KarmicStaff_C
-// 0x0000 (0x0C90 - 0x0C90)
+// 0x0000 (0x0C80 - 0x0C80)
 class AWeapon_KarmicStaff_C final : public AShootingWeapon
 {
 public:

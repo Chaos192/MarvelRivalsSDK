@@ -162,7 +162,7 @@ struct FVector UBTT_PyTryExitInvalidLocationMove::GetMoveTargetLocation(class AA
 // PythonFunction BTT_PyTryExitInvalidLocation.BTT_PyTryExitInvalidLocationMove.OnMoveCompleted
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FAIRequestID                     RequestID                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
+// const struct FAIRequestID&              RequestID                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
 // EPathFollowingResult                    Result                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UBTT_PyTryExitInvalidLocationMove::OnMoveCompleted(const struct FAIRequestID& RequestID, EPathFollowingResult Result)

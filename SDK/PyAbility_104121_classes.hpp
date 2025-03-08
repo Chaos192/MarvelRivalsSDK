@@ -63,7 +63,7 @@ public:
 };
 
 // PythonClass PyAbility_104121.PyAbility_104121
-// 0x0000 (0x2698 - 0x2698)
+// 0x0000 (0x26A0 - 0x26A0)
 class UPyAbility_104121 : public UAbility_106
 {
 public:
@@ -81,7 +81,7 @@ public:
 };
 
 // PythonClass PyAbility_104121.PyProjectile_10412101
-// 0x0000 (0x3050 - 0x3050)
+// 0x0000 (0x3110 - 0x3110)
 class APyProjectile_10412101 final : public AMarvelAbilityTargetActor_Projectile
 {
 public:
@@ -145,7 +145,7 @@ public:
 };
 
 // PythonClass PyAbility_104121.PyCue_Weapon_Loop_104121
-// 0x0000 (0x10B0 - 0x10B0)
+// 0x0000 (0x10B8 - 0x10B8)
 class APyCue_Weapon_Loop_104121 final : public ACue_Weapon_Loop_104121
 {
 public:

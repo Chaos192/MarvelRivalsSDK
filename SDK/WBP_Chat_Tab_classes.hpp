@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "ChatTabSwitcher_classes.hpp"
 #include "SlateCore_structs.hpp"
 #include "CoreUObject_structs.hpp"
-#include "ChatTabSwitcher_classes.hpp"
 
 
 namespace SDK

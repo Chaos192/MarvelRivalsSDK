@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Ammo_103322_BP.Ammo_103322_BP_C
-// 0x0000 (0x0D80 - 0x0D80)
+// 0x0000 (0x0D70 - 0x0D70)
 class AAmmo_103322_BP_C final : public AInstantAmmo
 {
 public:

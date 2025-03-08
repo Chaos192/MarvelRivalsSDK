@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BuffAbility_10396102_BP.BuffAbility_10396102_BP_C
-// 0x0000 (0x1D98 - 0x1D98)
+// 0x0000 (0x1DA8 - 0x1DA8)
 class UBuffAbility_10396102_BP_C final : public UMarvelKnockUpAbility
 {
 public:

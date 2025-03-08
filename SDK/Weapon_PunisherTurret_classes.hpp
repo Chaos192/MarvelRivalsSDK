@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Weapon_PunisherTurret.Weapon_PunisherTurret_C
-// 0x0000 (0x0C90 - 0x0C90)
+// 0x0000 (0x0C80 - 0x0C80)
 class AWeapon_PunisherTurret_C final : public AWeapon_101406
 {
 public:

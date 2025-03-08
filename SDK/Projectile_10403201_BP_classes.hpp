@@ -17,11 +17,11 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Projectile_10403201_BP.Projectile_10403201_BP_C
-// 0x0010 (0x3080 - 0x3070)
+// 0x0010 (0x3130 - 0x3120)
 class AProjectile_10403201_BP_C final : public AProjectile_10403201
 {
 public:
-	class UProjectileHomingComponent*             ProjectileHoming;                                  // 0x3070(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UProjectileHomingComponent*             ProjectileHoming;                                  // 0x3120(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

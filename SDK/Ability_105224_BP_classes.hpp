@@ -19,14 +19,13 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Ability_105224_BP.Ability_105224_BP_C
-// 0x2B98 (0x5190 - 0x25F8)
+// 0x2B90 (0x5190 - 0x2600)
 class UAbility_105224_BP_C final : public UMarvelAbility_SelectTarget
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x25F8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	struct FDashAbilityInfo                       Dash_Info;                                         // 0x2600(0x0BA8)(Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FMarvelTraceRule                       Target_Class;                                      // 0x31A8(0x0390)(Edit, BlueprintVisible, DisableEditOnInstance)
-	uint8                                         Pad_3538[0x8];                                     // 0x3538(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x2600(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FDashAbilityInfo                       Dash_Info;                                         // 0x2608(0x0BA8)(Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FMarvelTraceRule                       Target_Class;                                      // 0x31B0(0x0390)(Edit, BlueprintVisible, DisableEditOnInstance)
 	struct FSelectTaskParam                       选取参数;                                          // 0x3540(0x10A0)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
 	struct FDashAbilityInfo                       Attach_Dash;                                       // 0x45E0(0x0BA8)(Edit, BlueprintVisible, DisableEditOnInstance)
 

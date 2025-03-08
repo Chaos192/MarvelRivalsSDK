@@ -10,14 +10,83 @@
 
 #include "Basic.hpp"
 
-#include "Hero_1020_classes.hpp"
 #include "Marvel_structs.hpp"
 #include "Marvel_classes.hpp"
 #include "GameplayTags_structs.hpp"
+#include "Hero_1020_classes.hpp"
 
 
 namespace SDK
 {
+
+// PythonClass PyAbility_102092.PyConfig_10209_Base
+// 0x1138 (0x11D0 - 0x0098)
+class UPyConfig_10209_Base final : public UMarvelAbilityConfig
+{
+public:
+	uint8                                         Pad_98[0x8];                                       // 0x0098(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSelectTaskParam                       SelectTaskParams;                                  // 0x00A0(0x10A0)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	int32                                         ExplodeScopeID;                                    // 0x1140(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1144[0x4];                                     // 0x1144(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<int32>                                 BuffIDList;                                        // 0x1148(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	int32                                         MaxTargetNum;                                      // 0x1158(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGameplayTag                           PreMissileCueTag;                                  // 0x115C(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<EPhysicsWeaponType>                    PhysicsItemTypeList;                               // 0x1168(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	TMap<EPhysicsWeaponType, float>               HealthReduceValue;                                 // 0x1178(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PyConfig_10209_Base">();
+	}
+	static class UPyConfig_10209_Base* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPyConfig_10209_Base>();
+	}
+};
+
+// PythonClass PyAbility_102092.PyAbility_10209_Base
+// 0x0000 (0x2590 - 0x2590)
+class UPyAbility_10209_Base : public UAbility_108
+{
+public:
+	void BeginPlay();
+	bool CanActivate();
+	bool TryMakeTriggerContext(struct FGameplayEventData& EventData);
+	void K2_ActivateAbilityFromEvent(const struct FGameplayEventData& EventData);
+	void MissileEventNotify();
+	void NativeOnMontageEvent(const class FString& EventTag);
+	void K2_OnEndAbility(bool bWasCancelled);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PyAbility_10209_Base">();
+	}
+	static class UPyAbility_10209_Base* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPyAbility_10209_Base>();
+	}
+};
+
+// PythonClass PyAbility_102092.PyTraceComponent_10209_Base
+// 0x0000 (0x1710 - 0x1710)
+class UPyTraceComponent_10209_Base final : public UMarvelAgentTraceComponent
+{
+public:
+	void K2_Initialize();
+	void OnTrace(class UObject* TraceSource, const TArray<struct FHitResult>& HitResults);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PyTraceComponent_10209_Base">();
+	}
+	static class UPyTraceComponent_10209_Base* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPyTraceComponent_10209_Base>();
+	}
+};
 
 // PythonClass PyAbility_102092.PyCue_Scope_Loop_10209201
 // 0x0030 (0x0DD0 - 0x0DA0)
@@ -66,75 +135,6 @@ public:
 	static class APyScope_10209_Base* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<APyScope_10209_Base>();
-	}
-};
-
-// PythonClass PyAbility_102092.PyConfig_10209_Base
-// 0x1138 (0x11D0 - 0x0098)
-class UPyConfig_10209_Base final : public UMarvelAbilityConfig
-{
-public:
-	uint8                                         Pad_98[0x8];                                       // 0x0098(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSelectTaskParam                       SelectTaskParams;                                  // 0x00A0(0x10A0)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	int32                                         ExplodeScopeID;                                    // 0x1140(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1144[0x4];                                     // 0x1144(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<int32>                                 BuffIDList;                                        // 0x1148(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	int32                                         MaxTargetNum;                                      // 0x1158(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGameplayTag                           PreMissileCueTag;                                  // 0x115C(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<EPhysicsWeaponType>                    PhysicsItemTypeList;                               // 0x1168(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	TMap<EPhysicsWeaponType, float>               HealthReduceValue;                                 // 0x1178(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"PyConfig_10209_Base">();
-	}
-	static class UPyConfig_10209_Base* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UPyConfig_10209_Base>();
-	}
-};
-
-// PythonClass PyAbility_102092.PyAbility_10209_Base
-// 0x0000 (0x2588 - 0x2588)
-class UPyAbility_10209_Base : public UAbility_108
-{
-public:
-	void BeginPlay();
-	bool CanActivate();
-	bool TryMakeTriggerContext(struct FGameplayEventData& EventData);
-	void K2_ActivateAbilityFromEvent(const struct FGameplayEventData& EventData);
-	void MissileEventNotify();
-	void NativeOnMontageEvent(const class FString& EventTag);
-	void K2_OnEndAbility(bool bWasCancelled);
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"PyAbility_10209_Base">();
-	}
-	static class UPyAbility_10209_Base* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UPyAbility_10209_Base>();
-	}
-};
-
-// PythonClass PyAbility_102092.PyTraceComponent_10209_Base
-// 0x0000 (0x1710 - 0x1710)
-class UPyTraceComponent_10209_Base final : public UMarvelAgentTraceComponent
-{
-public:
-	void K2_Initialize();
-	void OnTrace(class UObject* TraceSource, const TArray<struct FHitResult>& HitResults);
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"PyTraceComponent_10209_Base">();
-	}
-	static class UPyTraceComponent_10209_Base* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UPyTraceComponent_10209_Base>();
 	}
 };
 

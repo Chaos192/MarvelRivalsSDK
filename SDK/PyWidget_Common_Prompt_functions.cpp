@@ -45,7 +45,7 @@ void UPyWidget_Common_Prompt::SetImgPromptBg(bool IsWarning)
 // PythonFunction PyWidget_Common_Prompt.PyWidget_Common_Prompt.SetTipsText
 // (Native, Public, BlueprintCallable)
 // Parameters:
-// class FText                             Tips                                                   (Parm)
+// const class FText&                      Tips                                                   (Parm)
 
 void UPyWidget_Common_Prompt::SetTipsText(const class FText& Tips)
 {

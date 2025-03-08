@@ -48,9 +48,9 @@ bool UVideoCapturerFunctionLibrary::CaptureVideoAndSave(int32 Milliseconds)
 // Function VideoCapturer.VideoCapturerFunctionLibrary.LaunchCapturer
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           Filename                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           TargetDirectory                                        (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           SourceDirectory                                        (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Filename                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    TargetDirectory                                        (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    SourceDirectory                                        (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UVideoCapturerFunctionLibrary::LaunchCapturer(const class FString& Filename, const class FString& TargetDirectory, const class FString& SourceDirectory)
 {

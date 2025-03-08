@@ -119,7 +119,7 @@ public:
 struct AppdumpLibrary_SetEventOccurCallback final
 {
 public:
-	TDelegate<void(int32 EventType, const class FString& eventInfo)> tOnEventOccurBLCallback;                           // 0x0000(0x0014)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(int32 EventType, const class FString& eventInfo)> tOnEventOccurBLCallback;        // 0x0000(0x0014)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
 // Function Appdump.AppdumpLibrary.SetHost

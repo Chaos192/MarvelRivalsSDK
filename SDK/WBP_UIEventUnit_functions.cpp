@@ -42,7 +42,7 @@ void UWBP_UIEventUnit_C::ExecuteUbergraph_WBP_UIEventUnit(int32 EntryPoint)
 // Parameters:
 // class UAkComponent*                     AkComp                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 // class UAkAudioEvent*                    AkEvent_0                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class FString                           EventName_0                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    EventName_0                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UWBP_UIEventUnit_C::Init(class UAkComponent* AkComp, class UAkAudioEvent* AkEvent_0, const class FString& EventName_0)
 {
@@ -64,7 +64,7 @@ void UWBP_UIEventUnit_C::Init(class UAkComponent* AkComp, class UAkAudioEvent* A
 // Function WBP_UIEventUnit.WBP_UIEventUnit_C.OnAnimationFinished
 // (BlueprintCosmetic, Event, Protected, BlueprintEvent)
 // Parameters:
-// class UWidgetAnimation*                 Animation                                              (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// const class UWidgetAnimation*           Animation                                              (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 void UWBP_UIEventUnit_C::OnAnimationFinished(const class UWidgetAnimation* Animation)
 {
@@ -112,7 +112,7 @@ void UWBP_UIEventUnit_C::PostByName()
 // Function WBP_UIEventUnit.WBP_UIEventUnit_C.Tick
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// struct FGeometry                        MyGeometry                                             (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
+// const struct FGeometry&                 MyGeometry                                             (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
 // float                                   InDeltaTime                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UWBP_UIEventUnit_C::Tick(const struct FGeometry& MyGeometry, float InDeltaTime)

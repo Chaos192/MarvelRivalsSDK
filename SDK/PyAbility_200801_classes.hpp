@@ -63,13 +63,13 @@ public:
 };
 
 // PythonClass PyAbility_200801.PyAbility_200801
-// 0x0010 (0x2590 - 0x2580)
+// 0x0010 (0x2598 - 0x2588)
 class UPyAbility_200801 : public UMarvelGameplayAbility
 {
 public:
-	float                                         TraceProgress;                                     // 0x2580(0x0004)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2584[0x4];                                     // 0x2584(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class AActor*                                 TargetTrajectoryPortal;                            // 0x2588(0x0008)(BlueprintVisible, Net, ZeroConstructor, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         TraceProgress;                                     // 0x2588(0x0004)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_258C[0x4];                                     // 0x258C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class AActor*                                 TargetTrajectoryPortal;                            // 0x2590(0x0008)(BlueprintVisible, Net, ZeroConstructor, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void BeginPlay();

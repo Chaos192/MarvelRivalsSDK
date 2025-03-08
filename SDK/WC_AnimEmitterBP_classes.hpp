@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass WC_AnimEmitterBP.WC_AnimEmitterBP_C
-// 0x0000 (0x0A20 - 0x0A20)
+// 0x0000 (0x0AB0 - 0x0AB0)
 class UWC_AnimEmitterBP_C final : public UWidgetComponent
 {
 public:

@@ -10,12 +10,11 @@
 
 #include "Basic.hpp"
 
+#include "Marvel_structs.hpp"
 #include "MarvelLevel_structs.hpp"
 #include "MarvelLevel_classes.hpp"
 #include "python_enums_structs.hpp"
-#include "Marvel_structs.hpp"
 #include "PyRuleComponent_classes.hpp"
-#include "Engine_structs.hpp"
 
 
 namespace SDK
@@ -85,7 +84,6 @@ public:
 	struct FReplicateTimer                        BanPickAnnouncementTimer;                          // 0x0270(0x0078)(BlueprintVisible, Net, NativeAccessSpecifierPublic)
 
 public:
-	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
 	void MulticastPreSelectHeroDisplayStageStart();
 	void MulticastBanPickDisplayStageStart();
 	void S_pre_select_hero_cb();

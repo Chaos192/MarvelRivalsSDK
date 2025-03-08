@@ -334,7 +334,7 @@ void UPyWidget_Button::SetIsHover(bool IsHover_0)
 // PythonFunction PyWidget_Button.PyWidget_Button.SetBtnText
 // (Native, Public, BlueprintCallable)
 // Parameters:
-// class FText                             BtnText_0                                              (Parm)
+// const class FText&                      BtnText_0                                              (Parm)
 
 void UPyWidget_Button::SetBtnText(const class FText& BtnText_0)
 {
@@ -384,8 +384,8 @@ void UPyWidget_Button::SetEnableRightClick(bool IsEnableRightClick_0)
 // PythonFunction PyWidget_Button.PyWidget_Button.OnReceiveInputKey
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FKey                             Key                                                    (Parm, HasGetValueTypeHash)
-// EInputEvent                             EventType                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FKey&                      Key                                                    (Parm, HasGetValueTypeHash)
+// const EInputEvent                       EventType                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UPyWidget_Button::OnReceiveInputKey(const struct FKey& Key, const EInputEvent EventType)
 {

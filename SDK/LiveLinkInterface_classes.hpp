@@ -85,7 +85,7 @@ class ULiveLinkSourceSettings : public UObject
 public:
 	ELiveLinkSourceMode                           Mode;                                              // 0x0030(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_31[0x7];                                       // 0x0031(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FLiveLinkSourceBufferManagementSettings BufferSettings;                                    // 0x0038(0x0060)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FLiveLinkSourceBufferManagementSettings BufferSettings;                                   // 0x0038(0x0060)(Edit, NoDestructor, NativeAccessSpecifierPublic)
 	class FString                                 ConnectionString;                                  // 0x0098(0x0010)(Edit, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TSubclassOf<class ULiveLinkSourceFactory>     Factory;                                           // 0x00A8(0x0008)(Edit, ZeroConstructor, EditConst, NoDestructor, AdvancedDisplay, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 

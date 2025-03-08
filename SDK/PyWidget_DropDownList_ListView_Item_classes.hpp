@@ -20,7 +20,7 @@ namespace SDK
 
 // PythonClass PyWidget_DropDownList_ListView_Item.PyWidget_DropDownList_ItemData
 // 0x0078 (0x00A8 - 0x0030)
-class UPyWidget_DropDownList_ItemData final : public UObject
+class UPyWidget_DropDownList_ItemData : public UObject
 {
 public:
 	class UUserWidget*                            MainPanel;                                         // 0x0030(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -55,9 +55,9 @@ class UPyWidget_DropDownList_ListView_Item : public UPyWidget_Button
 public:
 	class UObject*                                ItemObject;                                        // 0x0750(0x0008)(BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UNamedSlot*                             Slot_NewReddot;                                    // 0x0758(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class UObject* ItemData)> OnItemClicked;                                     // 0x0760(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(bool IsHover, float ItemId)> OnItemHovered;                                     // 0x0770(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(bool IsPressed, float ItemId)> OnItemPressed;                                     // 0x0780(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class UObject* ItemData)> OnItemClicked;                           // 0x0760(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(bool IsHover, float ItemId)> OnItemHovered;                        // 0x0770(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(bool IsPressed, float ItemId)> OnItemPressed;                      // 0x0780(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 
 public:
 	void OnInitialized();

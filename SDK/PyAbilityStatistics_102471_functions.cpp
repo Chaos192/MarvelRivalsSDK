@@ -58,7 +58,7 @@ void UPyAbilityStatistics_102471::K2_OnShutdown()
 // PythonFunction PyAbilityStatistics_102471.PyAbilityStatistics_102471.OnAbilityActivate
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FActionLogAbilityContext         AbilityInfoContext                                     (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FActionLogAbilityContext&  AbilityInfoContext                                     (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyAbilityStatistics_102471::OnAbilityActivate(const struct FActionLogAbilityContext& AbilityInfoContext)
 {
@@ -83,8 +83,8 @@ void UPyAbilityStatistics_102471::OnAbilityActivate(const struct FActionLogAbili
 // PythonFunction PyAbilityStatistics_102471.PyAbilityStatistics_102471.OnAbilityHit
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FActionLogBattleContext          BattleContext                                          (ConstParm, Parm, OutParm, ReferenceParm)
-// struct FAttributeModifierHandle         ParameterHandle                                        (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
+// const struct FActionLogBattleContext&   BattleContext                                          (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FAttributeModifierHandle&  ParameterHandle                                        (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
 
 void UPyAbilityStatistics_102471::OnAbilityHit(const struct FActionLogBattleContext& BattleContext, const struct FAttributeModifierHandle& ParameterHandle)
 {
@@ -111,7 +111,7 @@ void UPyAbilityStatistics_102471::OnAbilityHit(const struct FActionLogBattleCont
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           Instigator                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FMarvelTargetActorGenerateInfo   GenerateInfo                                           (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FMarvelTargetActorGenerateInfo&GenerateInfo                                           (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyAbilityStatistics_102471::OnAbilityScopeBegin(class AActor* Instigator, const struct FMarvelTargetActorGenerateInfo& GenerateInfo)
 {
@@ -138,7 +138,7 @@ void UPyAbilityStatistics_102471::OnAbilityScopeBegin(class AActor* Instigator, 
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           Instigator                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FMarvelTargetActorGenerateInfo   GenerateInfo                                           (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FMarvelTargetActorGenerateInfo&GenerateInfo                                           (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyAbilityStatistics_102471::OnAbilityProjectileBegin(class AActor* Instigator, const struct FMarvelTargetActorGenerateInfo& GenerateInfo)
 {
@@ -165,8 +165,8 @@ void UPyAbilityStatistics_102471::OnAbilityProjectileBegin(class AActor* Instiga
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           Instigator                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FMarvelTargetActorGenerateInfo   GenerateInfo                                           (ConstParm, Parm, OutParm, ReferenceParm)
-// struct FEndAgentTaskInfo                EndInfo                                                (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
+// const struct FMarvelTargetActorGenerateInfo&GenerateInfo                                           (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FEndAgentTaskInfo&         EndInfo                                                (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
 
 void UPyAbilityStatistics_102471::OnAbilityEndAgentTask(class AActor* Instigator, const struct FMarvelTargetActorGenerateInfo& GenerateInfo, const struct FEndAgentTaskInfo& EndInfo)
 {
@@ -194,8 +194,8 @@ void UPyAbilityStatistics_102471::OnAbilityEndAgentTask(class AActor* Instigator
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           Instigator                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FMarvelTargetActorGenerateInfo   GenerateInfo                                           (ConstParm, Parm, OutParm, ReferenceParm)
-// struct FEndAgentTaskInfo                EndInfo                                                (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
+// const struct FMarvelTargetActorGenerateInfo&GenerateInfo                                           (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FEndAgentTaskInfo&         EndInfo                                                (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
 
 void UPyAbilityStatistics_102471::OnAbilityRecycleAgentTask(class AActor* Instigator, const struct FMarvelTargetActorGenerateInfo& GenerateInfo, const struct FEndAgentTaskInfo& EndInfo)
 {
@@ -222,7 +222,7 @@ void UPyAbilityStatistics_102471::OnAbilityRecycleAgentTask(class AActor* Instig
 // PythonFunction PyAbilityStatistics_102471.PyAbilityStatistics_102471.OnAbilityMissile
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FActionLogAbilityContext         AbilityInfoContext                                     (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FActionLogAbilityContext&  AbilityInfoContext                                     (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyAbilityStatistics_102471::OnAbilityMissile(const struct FActionLogAbilityContext& AbilityInfoContext)
 {
@@ -247,7 +247,7 @@ void UPyAbilityStatistics_102471::OnAbilityMissile(const struct FActionLogAbilit
 // PythonFunction PyAbilityStatistics_102471.PyAbilityStatistics_102471.OnAbilityEnd
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FActionLogAbilityContext         AbilityInfoContext                                     (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FActionLogAbilityContext&  AbilityInfoContext                                     (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyAbilityStatistics_102471::OnAbilityEnd(const struct FActionLogAbilityContext& AbilityInfoContext)
 {

@@ -84,7 +84,7 @@ void UPyWidget_CommonPageCutting::OnInitialized()
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class FName                             ActionName                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// EInputEvent                             EventType                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const EInputEvent                       EventType                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UPyWidget_CommonPageCutting::OnReceiveInputAction(class FName ActionName, const EInputEvent EventType)
 {

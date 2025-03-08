@@ -96,7 +96,7 @@ void UPyWidget_S1SeasonStory_Event::OnAniSwitchEvent()
 // PythonFunction PyWidget_S1SeasonStory_Event.PyWidget_S1SeasonStory_Event.OnAnimationFinished
 // (BlueprintCosmetic, Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UWidgetAnimation*                 Animation                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// const class UWidgetAnimation*           Animation                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 void UPyWidget_S1SeasonStory_Event::OnAnimationFinished(const class UWidgetAnimation* Animation)
 {

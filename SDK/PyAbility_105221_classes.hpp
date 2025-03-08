@@ -11,9 +11,9 @@
 #include "Basic.hpp"
 
 #include "Hero_1052_classes.hpp"
-#include "GameplayTags_structs.hpp"
 #include "Marvel_structs.hpp"
 #include "Marvel_classes.hpp"
+#include "GameplayTags_structs.hpp"
 #include "Engine_structs.hpp"
 
 
@@ -21,7 +21,7 @@ namespace SDK
 {
 
 // PythonClass PyAbility_105221.PyConfig_105221
-// 0x6918 (0x69B0 - 0x0098)
+// 0x78B8 (0x7950 - 0x0098)
 class UPyConfig_105221 final : public UMarvelAbilityConfig
 {
 public:
@@ -44,6 +44,9 @@ public:
 	float                                         FloatingHorizontalDec;                             // 0x693C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FGameplayTagContainer                  BlockDashTag;                                      // 0x6940(0x0068)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	float                                         CSLocationDiffMax;                                 // 0x69A8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_69AC[0x4];                                     // 0x69AC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FMarvelAbilityTraceContext             TraceFloor;                                        // 0x69B0(0x0F90)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	float                                         MinFloatingHit;                                    // 0x7940(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -57,7 +60,7 @@ public:
 };
 
 // PythonClass PyAbility_105221.PyAbility_105221
-// 0x0000 (0x2590 - 0x2590)
+// 0x0000 (0x2598 - 0x2598)
 class UPyAbility_105221 : public UAbility_105221
 {
 public:

@@ -19,12 +19,12 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Summoner_10309101_BP.Summoner_10309101_BP_C
-// 0x0010 (0x08A0 - 0x0890)
+// 0x0010 (0x08D0 - 0x08C0)
 class ASummoner_10309101_BP_C final : public AMarvelSummonerBase
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0890(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UMarvelProjectileComponent*             Gravity;                                           // 0x0898(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x08C0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UMarvelProjectileComponent*             Gravity;                                           // 0x08C8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_Summoner_10309101_BP(int32 EntryPoint);

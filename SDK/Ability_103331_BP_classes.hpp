@@ -10,20 +10,20 @@
 
 #include "Basic.hpp"
 
-#include "PyAbility_103331_classes.hpp"
 #include "Engine_structs.hpp"
+#include "PyAbility_103331_classes.hpp"
 
 
 namespace SDK
 {
 
 // BlueprintGeneratedClass Ability_103331_BP.Ability_103331_BP_C
-// 0x0010 (0x25A0 - 0x2590)
+// 0x0010 (0x25A8 - 0x2598)
 class UAbility_103331_BP_C final : public UPyAbility_103331
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x2590(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	bool                                          是否成功激活了二阶段技能;                          // 0x2598(0x0001)(Edit, BlueprintVisible, ZeroConstructor, Transient, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x2598(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	bool                                          是否成功激活了二阶段技能;                          // 0x25A0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, Transient, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_Ability_103331_BP(int32 EntryPoint);

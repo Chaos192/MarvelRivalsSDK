@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
+#include "Marvel_structs.hpp"
 #include "MarvelLevel_structs.hpp"
 #include "MarvelLevel_classes.hpp"
 #include "python_enums_structs.hpp"
-#include "Marvel_structs.hpp"
 
 
 namespace SDK
@@ -41,8 +41,8 @@ public:
 	int32                                         TrainRet;                                          // 0x0248(0x0004)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          IsTrainFinish;                                     // 0x024C(0x0001)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_24D[0x3];                                      // 0x024D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	TMulticastInlineDelegate<void(ETrainAction Action, int32 UID)> TrainEnd;                                          // 0x0250(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(ETrainAction Action, int32 UID)> DelayQuickTrainEnd;                                // 0x0260(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(ETrainAction Action, int32 UID)> TrainEnd;                         // 0x0250(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(ETrainAction Action, int32 UID)> DelayQuickTrainEnd;               // 0x0260(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 
 public:
 	void ReceiveInitializeComponent();

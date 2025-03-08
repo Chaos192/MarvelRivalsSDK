@@ -10,39 +10,54 @@
 
 #include "Basic.hpp"
 
+#include "InputCore_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "Marvel_structs.hpp"
-#include "PyWidget_Common_Button_classes.hpp"
-#include "InputCore_structs.hpp"
 #include "SlateCore_structs.hpp"
 #include "PyMarvelUserWidget_classes.hpp"
-#include "PyWidget_CommonCheckBox_classes.hpp"
 #include "Engine_structs.hpp"
+#include "PyWidget_Common_Button_classes.hpp"
+#include "PyWidget_CommonCheckBox_classes.hpp"
 
 
 namespace SDK
 {
 
-// PythonClass PyWidget_Squad_MatchPanel.PyWidget_Squad_RecommendAIDifficulty
-// 0x0010 (0x0900 - 0x08F0)
-class UPyWidget_Squad_RecommendAIDifficulty final : public UPyWidget_CommonButton_Lv4
+// PythonClass PyWidget_Squad_MatchPanel.PyWidget_Squad_MatchPanel
+// 0x01A8 (0x0798 - 0x05F0)
+class UPyWidget_Squad_MatchPanel : public UPyMarvelUserWidget
 {
 public:
-	int32                                         AIDiff;                                            // 0x08E8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_8EC[0x4];                                      // 0x08EC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TMulticastInlineDelegate<void(int32 ai_diff)> AIDiffChange;                                      // 0x08F0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5E9[0x7];                                      // 0x05E9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FGuideTipsStyle>                SelectGuideTipsStyles;                             // 0x05F0(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	class UWidget*                                WBP_Squad_StartGameBtn;                            // 0x0600(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, Transient, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UWidget*                                WBP_Squad_Tips;                                    // 0x0608(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, Transient, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UWidget*                                CanvasPanel_Hover;                                 // 0x0610(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, Transient, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UWidgetAnimation*                       Anim_Hover_FadeIn;                                 // 0x0618(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UWidgetAnimation*                       Anim_Hover_Loop;                                   // 0x0620(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UWidgetAnimation*                       Anim_Mode_FadeIn;                                  // 0x0628(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UWidgetAnimation*                       Anim_Match_Start;                                  // 0x0630(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UWidgetAnimation*                       Anim_Match_Cancel;                                 // 0x0638(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FSlateColor                            Color_Normal;                                      // 0x0640(0x0014)(Edit, BlueprintVisible, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	struct FSlateColor                            Color_Warning;                                     // 0x0654(0x0014)(Edit, BlueprintVisible, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	struct FGuideTipsStyle                        TestGuideTipsStyle;                                // 0x0668(0x0110)(Edit, BlueprintVisible, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	struct FKey                                   RuleKey_Gamepad;                                   // 0x0778(0x0020)(Edit, BlueprintVisible, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void OnInitialized();
+	void Construct();
+	void Destruct();
+	void MarvelSetVisible(bool Visible);
+	void OnReceiveInputKey(const struct FKey& InKey, const EInputEvent EventType);
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"PyWidget_Squad_RecommendAIDifficulty">();
+		return StaticClassImpl<"PyWidget_Squad_MatchPanel">();
 	}
-	static class UPyWidget_Squad_RecommendAIDifficulty* GetDefaultObj()
+	static class UPyWidget_Squad_MatchPanel* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UPyWidget_Squad_RecommendAIDifficulty>();
+		return GetDefaultObjImpl<UPyWidget_Squad_MatchPanel>();
 	}
 };
 
@@ -85,64 +100,6 @@ public:
 	}
 };
 
-// PythonClass PyWidget_Squad_MatchPanel.PyWidget_Squad_MatchPanel
-// 0x01A8 (0x0798 - 0x05F0)
-class UPyWidget_Squad_MatchPanel : public UPyMarvelUserWidget
-{
-public:
-	uint8                                         Pad_5E9[0x7];                                      // 0x05E9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FGuideTipsStyle>                SelectGuideTipsStyles;                             // 0x05F0(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance, NativeAccessSpecifierPublic)
-	class UWidget*                                WBP_Squad_StartGameBtn;                            // 0x0600(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, Transient, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UWidget*                                WBP_Squad_Tips;                                    // 0x0608(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, Transient, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UWidget*                                CanvasPanel_Hover;                                 // 0x0610(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, Transient, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UWidgetAnimation*                       Anim_Hover_FadeIn;                                 // 0x0618(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UWidgetAnimation*                       Anim_Hover_Loop;                                   // 0x0620(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UWidgetAnimation*                       Anim_Mode_FadeIn;                                  // 0x0628(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UWidgetAnimation*                       Anim_Match_Start;                                  // 0x0630(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UWidgetAnimation*                       Anim_Match_Cancel;                                 // 0x0638(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FSlateColor                            Color_Normal;                                      // 0x0640(0x0014)(Edit, BlueprintVisible, DisableEditOnInstance, NativeAccessSpecifierPublic)
-	struct FSlateColor                            Color_Warning;                                     // 0x0654(0x0014)(Edit, BlueprintVisible, DisableEditOnInstance, NativeAccessSpecifierPublic)
-	struct FGuideTipsStyle                        TestGuideTipsStyle;                                // 0x0668(0x0110)(Edit, BlueprintVisible, DisableEditOnInstance, NativeAccessSpecifierPublic)
-	struct FKey                                   RuleKey_Gamepad;                                   // 0x0778(0x0020)(Edit, BlueprintVisible, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-public:
-	void OnInitialized();
-	void Construct();
-	void Destruct();
-	void MarvelSetVisible(bool Visible);
-	void OnReceiveInputKey(const struct FKey& InKey, const EInputEvent EventType);
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"PyWidget_Squad_MatchPanel">();
-	}
-	static class UPyWidget_Squad_MatchPanel* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UPyWidget_Squad_MatchPanel>();
-	}
-};
-
-// PythonClass PyWidget_Squad_MatchPanel.PyWidget_Squad_WarningTips
-// 0x0020 (0x0610 - 0x05F0)
-class UPyWidget_Squad_WarningTips : public UPyMarvelUserWidget
-{
-public:
-	uint8                                         Pad_5E9[0x7];                                      // 0x05E9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UWidget*                                Text_Prompt_Tip;                                   // 0x05F0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, Transient, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FSlateColor                            Text_Prompt_Tip_Color;                             // 0x05F8(0x0014)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"PyWidget_Squad_WarningTips">();
-	}
-	static class UPyWidget_Squad_WarningTips* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UPyWidget_Squad_WarningTips>();
-	}
-};
-
 // PythonClass PyWidget_Squad_MatchPanel.PyWidget_Squad_ModeSelectionBtn
 // 0x0090 (0x0680 - 0x05F0)
 class UPyWidget_Squad_ModeSelectionBtn : public UPyMarvelUserWidget
@@ -179,9 +136,32 @@ public:
 	}
 };
 
+// PythonClass PyWidget_Squad_MatchPanel.PyWidget_Squad_RecommendAIDifficulty
+// 0x0010 (0x0900 - 0x08F0)
+class UPyWidget_Squad_RecommendAIDifficulty final : public UPyWidget_CommonButton_Lv4
+{
+public:
+	int32                                         AIDiff;                                            // 0x08E8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_8EC[0x4];                                      // 0x08EC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TMulticastInlineDelegate<void(int32 ai_diff)> AIDiffChange;                                      // 0x08F0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+
+public:
+	void OnInitialized();
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PyWidget_Squad_RecommendAIDifficulty">();
+	}
+	static class UPyWidget_Squad_RecommendAIDifficulty* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPyWidget_Squad_RecommendAIDifficulty>();
+	}
+};
+
 // PythonClass PyWidget_Squad_MatchPanel.PyWidget_Squad_MatchInfo
 // 0x0090 (0x0680 - 0x05F0)
-class UPyWidget_Squad_MatchInfo final : public UPyMarvelUserWidget
+class UPyWidget_Squad_MatchInfo : public UPyMarvelUserWidget
 {
 public:
 	uint8                                         Pad_5E9[0x7];                                      // 0x05E9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
@@ -219,6 +199,26 @@ public:
 	static class UPyWidget_Squad_MatchInfo* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UPyWidget_Squad_MatchInfo>();
+	}
+};
+
+// PythonClass PyWidget_Squad_MatchPanel.PyWidget_Squad_WarningTips
+// 0x0020 (0x0610 - 0x05F0)
+class UPyWidget_Squad_WarningTips : public UPyMarvelUserWidget
+{
+public:
+	uint8                                         Pad_5E9[0x7];                                      // 0x05E9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UWidget*                                Text_Prompt_Tip;                                   // 0x05F0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, Transient, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FSlateColor                            Text_Prompt_Tip_Color;                             // 0x05F8(0x0014)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PyWidget_Squad_WarningTips">();
+	}
+	static class UPyWidget_Squad_WarningTips* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPyWidget_Squad_WarningTips>();
 	}
 };
 

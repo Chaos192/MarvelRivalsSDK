@@ -39,7 +39,7 @@ void UPyWidget_Common_Tips::OnInitialized()
 // PythonFunction PyWidget_Common_Tips.PyWidget_Common_Tips.ResetOffset
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FVector2D                        NewOffset                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVector2D&                 NewOffset                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UPyWidget_Common_Tips::ResetOffset(const struct FVector2D& NewOffset)
 {
@@ -102,7 +102,7 @@ void UPyWidget_Common_Host_Tips::OnInitialized()
 // PythonFunction PyWidget_Common_Tips.PyWidget_Common_Host_Tips.ResetOffset
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FVector2D                        NewOffset                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVector2D&                 NewOffset                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UPyWidget_Common_Host_Tips::ResetOffset(const struct FVector2D& NewOffset)
 {

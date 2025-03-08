@@ -14,8 +14,8 @@
 #include "CoreUObject_classes.hpp"
 #include "Marvel_structs.hpp"
 #include "Marvel_classes.hpp"
-#include "Hero_1027_structs.hpp"
 #include "DeclarativeUnreal_structs.hpp"
+#include "Hero_1027_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
 #include "GameplayTags_structs.hpp"
@@ -27,14 +27,14 @@ namespace SDK
 {
 
 // Class Hero_1027.Projectile_10271101
-// 0x0010 (0x3060 - 0x3050)
+// 0x0010 (0x3120 - 0x3110)
 class AProjectile_10271101 : public AMarvelAbilityTargetActor_Projectile
 {
 public:
-	float                                         CancelIfOffCenterYawGreaterThan;                   // 0x3050(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         CancelIfOffCenterPitchGreaterThan;                 // 0x3054(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         ComboStateIndex;                                   // 0x3058(0x0001)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_3059[0x7];                                     // 0x3059(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	float                                         CancelIfOffCenterYawGreaterThan;                   // 0x3108(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         CancelIfOffCenterPitchGreaterThan;                 // 0x310C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         ComboStateIndex;                                   // 0x3110(0x0001)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3111[0xF];                                     // 0x3111(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	float GetProjectileRadius() const;
@@ -53,12 +53,12 @@ public:
 };
 
 // Class Hero_1027.Ability_102711
-// 0x0010 (0x2598 - 0x2588)
+// 0x0010 (0x25A0 - 0x2590)
 class UAbility_102711 : public UAbility_108
 {
 public:
-	class AActor*                                 LeftProjectile;                                    // 0x2588(0x0008)(BlueprintVisible, Net, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class AActor*                                 RightProjectile;                                   // 0x2590(0x0008)(BlueprintVisible, Net, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AActor*                                 LeftProjectile;                                    // 0x2590(0x0008)(BlueprintVisible, Net, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AActor*                                 RightProjectile;                                   // 0x2598(0x0008)(BlueprintVisible, Net, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -116,7 +116,7 @@ public:
 };
 
 // Class Hero_1027.Projectile_10273101
-// 0x0000 (0x3050 - 0x3050)
+// 0x0000 (0x3110 - 0x3110)
 class AProjectile_10273101 : public AMarvelAbilityTargetActor_Projectile
 {
 public:
@@ -134,14 +134,14 @@ public:
 };
 
 // Class Hero_1027.Projectile_10273102
-// 0x0010 (0x3060 - 0x3050)
+// 0x0010 (0x3120 - 0x3110)
 class AProjectile_10273102 : public AMarvelAbilityTargetActor_Projectile
 {
 public:
-	float                                         ProjectileRandomSpeed;                             // 0x3050(0x0004)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         ProjectileSpeedMin;                                // 0x3054(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         ProjectileSpeedMax;                                // 0x3058(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_305C[0x4];                                     // 0x305C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	float                                         ProjectileRandomSpeed;                             // 0x3108(0x0004)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ProjectileSpeedMin;                                // 0x310C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ProjectileSpeedMax;                                // 0x3110(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3114[0xC];                                     // 0x3114(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -155,50 +155,50 @@ public:
 };
 
 // Class Hero_1027.MarvelWallBuildingActor
-// 0x0620 (0x0EB0 - 0x0890)
+// 0x0620 (0x0EE0 - 0x08C0)
 class AMarvelWallBuildingActor : public AMarvelSummonerBase
 {
 public:
-	TMulticastInlineDelegate<void()>              OnWallScaleApproved;                               // 0x0890(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(EWallHealthState NewState, EWallHealthState OldState)> OnWallHealthStateChange;                           // 0x08A0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(bool bNewState)> OnWallActivateStateChange_Async;                   // 0x08B0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	class USceneComponent*                        IndicatorComponent;                                // 0x08C0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UMarvelSummonedComp_WallBuilding*       InstancedSummonedComponent;                        // 0x08C8(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnTemplate, Transient, EditConst, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         WallBuildingMaxPlanks;                             // 0x08D0(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_8D4[0x4];                                      // 0x08D4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                WallBuildingMaxPlankExtend;                        // 0x08D8(0x0018)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<class UBoxComponent*>                  PlankBoxColliders;                                 // 0x08F0(0x0010)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, ContainsInstancedReference, NativeAccessSpecifierPublic)
-	class UBoxComponent*                          FullBoxCollider;                                   // 0x0900(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         bCanBuildingOnEdges : 1;                           // 0x0908(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_909[0x3];                                      // 0x0909(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         WallBuildingTotalTime;                             // 0x090C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         WallBuildingMinPlankScale;                         // 0x0910(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         WallBuildingMinMajorPlankScale;                    // 0x0914(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ReclaimIfTotalScaleLessThen;                       // 0x0918(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         PaybackCooldownRatio;                              // 0x091C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         TreatApplyInterval;                                // 0x0920(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         TreatValuePerSecond;                               // 0x0924(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         TreatRatioPerSecond;                               // 0x0928(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         TreatInhibitingTimeAfterTakeDamage;                // 0x092C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         PenetratingTestTimeInterval;                       // 0x0930(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_934[0x4];                                      // 0x0934(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<ECollisionChannel, ECollisionResponse>   PenetratingTestChannels;                           // 0x0938(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NativeAccessSpecifierPublic)
-	TMap<ECollisionChannel, ECollisionResponse>   WallBuildingOverrideChannels;                      // 0x0988(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NativeAccessSpecifierPublic)
-	TMap<ECollisionChannel, ECollisionResponse>   WallTargetingOverrideChannels;                     // 0x09D8(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NativeAccessSpecifierPublic)
-	TMap<EWallHealthState, struct FWallHealthStateConfig> WallHealthStateConfigs;                            // 0x0A28(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NativeAccessSpecifierPublic)
-	float                                         WallActionDurationTimeForSelf;                     // 0x0A78(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         WallActionDurationTimeForAlly;                     // 0x0A7C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FMarvelGameplayTagRequirements         WallActionTargetRequirements;                      // 0x0A80(0x00D0)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NativeAccessSpecifierPublic)
-	int32                                         GrootEnergyAuraScopeID;                            // 0x0B50(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EWallHealthState                              HealthState;                                       // 0x0B54(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnTemplate, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_B55[0x3];                                      // 0x0B55(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         WallFillColorIndex;                                // 0x0B58(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnTemplate, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_B5C[0x4];                                      // 0x0B5C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FFindBuildingPlace>             SuccessorBuildingQueue;                            // 0x0B60(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnTemplate, EditConst, ContainsInstancedReference, NativeAccessSpecifierPublic)
-	TWeakObjectPtr<class AMarvelWallBuildingActor> ParentWallActor;                                   // 0x0B70(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, DisableEditOnTemplate, EditConst, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<class AMarvelWallBuildingActor*>       ChildrenWallActors;                                // 0x0B78(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, DisableEditOnTemplate, EditConst, NativeAccessSpecifierPublic)
-	uint8                                         Pad_B88[0x48];                                     // 0x0B88(0x0048)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FMarvelWallBuildingContext             BuildingContext;                                   // 0x0BD0(0x02E0)(Transient, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void()>              OnWallScaleApproved;                               // 0x08C0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(EWallHealthState NewState, EWallHealthState OldState)> OnWallHealthStateChange; // 0x08D0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(bool bNewState)> OnWallActivateStateChange_Async;                  // 0x08E0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	class USceneComponent*                        IndicatorComponent;                                // 0x08F0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UMarvelSummonedComp_WallBuilding*       InstancedSummonedComponent;                        // 0x08F8(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnTemplate, Transient, EditConst, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         WallBuildingMaxPlanks;                             // 0x0900(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_904[0x4];                                      // 0x0904(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                WallBuildingMaxPlankExtend;                        // 0x0908(0x0018)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<class UBoxComponent*>                  PlankBoxColliders;                                 // 0x0920(0x0010)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	class UBoxComponent*                          FullBoxCollider;                                   // 0x0930(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         bCanBuildingOnEdges : 1;                           // 0x0938(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_939[0x3];                                      // 0x0939(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         WallBuildingTotalTime;                             // 0x093C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         WallBuildingMinPlankScale;                         // 0x0940(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         WallBuildingMinMajorPlankScale;                    // 0x0944(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ReclaimIfTotalScaleLessThen;                       // 0x0948(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         PaybackCooldownRatio;                              // 0x094C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         TreatApplyInterval;                                // 0x0950(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         TreatValuePerSecond;                               // 0x0954(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         TreatRatioPerSecond;                               // 0x0958(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         TreatInhibitingTimeAfterTakeDamage;                // 0x095C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         PenetratingTestTimeInterval;                       // 0x0960(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_964[0x4];                                      // 0x0964(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<ECollisionChannel, ECollisionResponse>   PenetratingTestChannels;                           // 0x0968(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	TMap<ECollisionChannel, ECollisionResponse>   WallBuildingOverrideChannels;                      // 0x09B8(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	TMap<ECollisionChannel, ECollisionResponse>   WallTargetingOverrideChannels;                     // 0x0A08(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	TMap<EWallHealthState, struct FWallHealthStateConfig> WallHealthStateConfigs;                    // 0x0A58(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	float                                         WallActionDurationTimeForSelf;                     // 0x0AA8(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         WallActionDurationTimeForAlly;                     // 0x0AAC(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FMarvelGameplayTagRequirements         WallActionTargetRequirements;                      // 0x0AB0(0x00D0)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	int32                                         GrootEnergyAuraScopeID;                            // 0x0B80(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EWallHealthState                              HealthState;                                       // 0x0B84(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnTemplate, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_B85[0x3];                                      // 0x0B85(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         WallFillColorIndex;                                // 0x0B88(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnTemplate, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_B8C[0x4];                                      // 0x0B8C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FFindBuildingPlace>             SuccessorBuildingQueue;                            // 0x0B90(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnTemplate, EditConst, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	TWeakObjectPtr<class AMarvelWallBuildingActor> ParentWallActor;                                  // 0x0BA0(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, DisableEditOnTemplate, EditConst, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<class AMarvelWallBuildingActor*>       ChildrenWallActors;                                // 0x0BA8(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, DisableEditOnTemplate, EditConst, NativeAccessSpecifierPublic)
+	uint8                                         Pad_BB8[0x48];                                     // 0x0BB8(0x0048)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FMarvelWallBuildingContext             BuildingContext;                                   // 0x0C00(0x02E0)(Transient, NativeAccessSpecifierPublic)
 
 public:
 	void AddSuccessorBuildingPlace(const struct FFindBuildingPlace& InBuildingPlace);
@@ -255,15 +255,15 @@ public:
 };
 
 // Class Hero_1027.Summoned_10274101
-// 0x0040 (0x0EF0 - 0x0EB0)
+// 0x0040 (0x0F20 - 0x0EE0)
 class ASummoned_10274101 : public AMarvelWallBuildingActor
 {
 public:
-	TMulticastInlineDelegate<void(bool bAttackFront)> OnWallAttackStart;                                 // 0x0EB0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	int32                                         WallAttackScopeID;                                 // 0x0EC0(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         WallAttackMissileDelay;                            // 0x0EC4(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         WallHalfHeightForOcclusion;                        // 0x0EC8(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_ECC[0x24];                                     // 0x0ECC(0x0024)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	TMulticastInlineDelegate<void(bool bAttackFront)> OnWallAttackStart;                             // 0x0EE0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	int32                                         WallAttackScopeID;                                 // 0x0EF0(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         WallAttackMissileDelay;                            // 0x0EF4(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         WallHalfHeightForOcclusion;                        // 0x0EF8(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_EFC[0x24];                                     // 0x0EFC(0x0024)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -355,7 +355,7 @@ public:
 };
 
 // Class Hero_1027.MarvelWallBuildingAbilityConfig
-// 0x0298 (0x0330 - 0x0098)
+// 0x02F8 (0x0390 - 0x0098)
 class UMarvelWallBuildingAbilityConfig : public UMarvelAbilityConfig
 {
 public:
@@ -382,12 +382,14 @@ public:
 	float                                         MaxFloorDist;                                      // 0x00E4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<class FName>                           WallBuildingDenyCollisionPresets;                  // 0x00E8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
 	TArray<class FName>                           WallBuildingIgnoreCollisionPresets;                // 0x00F8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<EWallBuildingMode>                     AvailableBuildingModes;                            // 0x0108(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	struct FGameplayTag                           TraceActorCueTag;                                  // 0x0118(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_124[0x4];                                      // 0x0124(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FGameplayTagContainer                  WallPushingTargetGrantTags;                        // 0x0128(0x0068)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FMarvelGameplayTagRequirements         WallPushUtmostlyTargetRequirements;                // 0x0190(0x00D0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FMarvelGameplayTagRequirements         WallPushNormallyTargetRequirements;                // 0x0260(0x00D0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	TArray<class FName>                           WallBlockTargetingCollisionPresets;                // 0x0108(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TSet<ECollisionChannel>                       WallBlockTargetingCollisionChannels;               // 0x0118(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	TArray<EWallBuildingMode>                     AvailableBuildingModes;                            // 0x0168(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	struct FGameplayTag                           TraceActorCueTag;                                  // 0x0178(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_184[0x4];                                      // 0x0184(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FGameplayTagContainer                  WallPushingTargetGrantTags;                        // 0x0188(0x0068)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FMarvelGameplayTagRequirements         WallPushUtmostlyTargetRequirements;                // 0x01F0(0x00D0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FMarvelGameplayTagRequirements         WallPushNormallyTargetRequirements;                // 0x02C0(0x00D0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 
 public:
 	class AMarvelWallBuildingActor* GetWallActorCDO() const;
@@ -404,7 +406,7 @@ public:
 };
 
 // Class Hero_1027.Config_102741
-// 0x0000 (0x0330 - 0x0330)
+// 0x0000 (0x0390 - 0x0390)
 class UConfig_102741 : public UMarvelWallBuildingAbilityConfig
 {
 public:
@@ -419,20 +421,20 @@ public:
 };
 
 // Class Hero_1027.Ability_102741
-// 0x0070 (0x25F0 - 0x2580)
+// 0x0070 (0x25F8 - 0x2588)
 class UAbility_102741 : public UMarvelGameplayAbility
 {
 public:
-	uint8                                         Pad_2580[0x20];                                    // 0x2580(0x0020)(Fixing Size After Last Property [ Dumper-7 ])
-	TMulticastInlineDelegate<void(EWallBuildingMode InMode)> OnWallBuildingModeChanged;                         // 0x25A0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(int32 NumWalls, int32 MaxWalls)> OnNumOwnedWallsChanged;                            // 0x25B0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	EWallBuildingMode                             ReplicatedBuildingMode;                            // 0x25C0(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnTemplate, Transient, EditConst, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_25C1[0x3];                                     // 0x25C1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         ActivateCostValueOverride;                         // 0x25C4(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnTemplate, Transient, EditConst, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	int32                                         ReplicatedNumOwnedWalls;                           // 0x25C8(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, DisableEditOnTemplate, Transient, EditConst, IsPlainOldData, RepNotify, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_25CC[0x4];                                     // 0x25CC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class AMarvelWallBuildingActor*>       OwnedWallActors;                                   // 0x25D0(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, DisableEditOnTemplate, Transient, EditConst, RepNotify, Protected, NativeAccessSpecifierProtected)
-	uint8                                         Pad_25E0[0x10];                                    // 0x25E0(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2588[0x20];                                    // 0x2588(0x0020)(Fixing Size After Last Property [ Dumper-7 ])
+	TMulticastInlineDelegate<void(EWallBuildingMode InMode)> OnWallBuildingModeChanged;              // 0x25A8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(int32 NumWalls, int32 MaxWalls)> OnNumOwnedWallsChanged;           // 0x25B8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	EWallBuildingMode                             ReplicatedBuildingMode;                            // 0x25C8(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnTemplate, Transient, EditConst, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_25C9[0x3];                                     // 0x25C9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         ActivateCostValueOverride;                         // 0x25CC(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnTemplate, Transient, EditConst, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	int32                                         ReplicatedNumOwnedWalls;                           // 0x25D0(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, DisableEditOnTemplate, Transient, EditConst, IsPlainOldData, RepNotify, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_25D4[0x4];                                     // 0x25D4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class AMarvelWallBuildingActor*>       OwnedWallActors;                                   // 0x25D8(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, DisableEditOnTemplate, Transient, EditConst, RepNotify, Protected, NativeAccessSpecifierProtected)
+	uint8                                         Pad_25E8[0x10];                                    // 0x25E8(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void K2_CommitCustomAbilityCost(int32 Multiplier);
@@ -486,7 +488,7 @@ public:
 };
 
 // Class Hero_1027.Cue_Summoner_Loop_10274101
-// 0x0410 (0x12A0 - 0x0E90)
+// 0x03D0 (0x1260 - 0x0E90)
 #pragma pack(push, 0x1)
 class alignas(0x10) ACue_Summoner_Loop_10274101 : public AMarvelCueNotify_Summoned
 {
@@ -524,36 +526,28 @@ public:
 	float                                         WallBuildingDeltaTime;                             // 0x10E8(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnTemplate, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_10EC[0x4];                                     // 0x10EC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class UMaterialInstanceDynamic*>       WallEntityMIDs;                                    // 0x10F0(0x0010)(Edit, ExportObject, ZeroConstructor, DisableEditOnTemplate, Transient, ContainsInstancedReference, NativeAccessSpecifierPublic)
-	TArray<int32>                                 HitWallAbilityIDArray;                             // 0x1100(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPublic)
-	float                                         MaxChangeTime;                                     // 0x1110(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ChangeTimeInterval;                                // 0x1114(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         RadiusValue;                                       // 0x1118(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         WidthValue;                                        // 0x111C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1120[0x1C];                                    // 0x1120(0x001C)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         WallEntityFXActivateTime;                          // 0x113C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         WallActiveFXActivateTime;                          // 0x1140(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         WallGroundFXActivateTime;                          // 0x1144(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         WallThornFXActivateTime;                           // 0x1148(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_114C[0x6C];                                    // 0x114C(0x006C)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         WallMoreSemiDamageAudioId;                         // 0x11B8(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	int32                                         WallMoreMostDamageAudioId;                         // 0x11BC(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	int32                                         WallLessHealthyAudioId;                            // 0x11C0(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	int32                                         WallLessSemiDamageAudioId;                         // 0x11C4(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class UFXSystemAsset*                         EnhancedGroundFX;                                  // 0x11C8(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class UFXSystemAsset*                         EnhancedBurstFX;                                   // 0x11D0(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	int32                                         EnhancedAudioID;                                   // 0x11D8(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_11DC[0x4];                                     // 0x11DC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FCueHintData                           HintData;                                          // 0x11E0(0x0098)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, Protected, NativeAccessSpecifierProtected)
-	class UFXSystemComponent*                     EnhancedGroundFXComponent;                         // 0x1278(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class UFXSystemComponent*                     EnhancedBurstFXComponent;                          // 0x1280(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_1288[0x8];                                     // 0x1288(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	class UMarvelUserWidget*                      UIWidget;                                          // 0x1290(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, InstancedReference, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         WallEntityFXActivateTime;                          // 0x1100(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         WallActiveFXActivateTime;                          // 0x1104(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         WallGroundFXActivateTime;                          // 0x1108(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         WallThornFXActivateTime;                           // 0x110C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1110[0x68];                                    // 0x1110(0x0068)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         WallMoreSemiDamageAudioId;                         // 0x1178(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	int32                                         WallMoreMostDamageAudioId;                         // 0x117C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	int32                                         WallLessHealthyAudioId;                            // 0x1180(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	int32                                         WallLessSemiDamageAudioId;                         // 0x1184(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UFXSystemAsset*                         EnhancedGroundFX;                                  // 0x1188(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UFXSystemAsset*                         EnhancedBurstFX;                                   // 0x1190(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	int32                                         EnhancedAudioID;                                   // 0x1198(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_119C[0x4];                                     // 0x119C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FCueHintData                           HintData;                                          // 0x11A0(0x0098)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, Protected, NativeAccessSpecifierProtected)
+	class UFXSystemComponent*                     EnhancedGroundFXComponent;                         // 0x1238(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UFXSystemComponent*                     EnhancedBurstFXComponent;                          // 0x1240(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_1248[0x8];                                     // 0x1248(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	class UMarvelUserWidget*                      UIWidget;                                          // 0x1250(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, InstancedReference, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 
 public:
-	void ChangeRadiusValue();
 	class UMarvelUserWidget* GetUIWidget();
 	void OnEnhanceStateChanged(bool bIsEnhanced);
-	void OnTakeDamage(class AActor* InSource, class AActor* InSourceAvatar, const struct FAttributeModifierHandle& ModifierParameterHandle);
 	void OnWallActivateStateChange_ThreadSafe(bool bNewState);
 	void OnWallAttackStart(bool bAttackFront);
 	void OnWallHealthStateChange(const EWallHealthState NewState, const EWallHealthState OldState);
@@ -594,7 +588,7 @@ public:
 };
 
 // Class Hero_1027.StableAxisXBoxComponent
-// 0x0000 (0x08A0 - 0x08A0)
+// 0x0000 (0x0930 - 0x0930)
 class UStableAxisXBoxComponent final : public UBoxComponent
 {
 public:
@@ -609,8 +603,8 @@ public:
 };
 
 // Class Hero_1027.MarvelWallBuildingAbilityInterface
-// 0x0000 (0x0030 - 0x0030)
-class IMarvelWallBuildingAbilityInterface final : public IInterface
+// 0x0000 (0x0000 - 0x0000)
+class IMarvelWallBuildingAbilityInterface final
 {
 public:
 	void TrySwitchBuildingMode();
@@ -624,11 +618,20 @@ public:
 	{
 		return GetDefaultObjImpl<IMarvelWallBuildingAbilityInterface>();
 	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
 };
 
 // Class Hero_1027.MarvelSummonedAbilityInterface
-// 0x0000 (0x0030 - 0x0030)
-class IMarvelSummonedAbilityInterface final : public IInterface
+// 0x0000 (0x0000 - 0x0000)
+class IMarvelSummonedAbilityInterface final
 {
 public:
 	void BindSummonedChangeDelegate(const TDelegate<void(class AActor* InActor, bool bIsAdd)>& InDelegate);
@@ -644,6 +647,15 @@ public:
 	{
 		return GetDefaultObjImpl<IMarvelSummonedAbilityInterface>();
 	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
 };
 
 // Class Hero_1027.MarvelAbilityTargetActor_WallBuilding
@@ -651,7 +663,7 @@ public:
 class AMarvelAbilityTargetActor_WallBuilding final : public AGameplayAbilityTargetActor
 {
 public:
-	TMulticastInlineDelegate<void(EWallPreviewState InPreviewState)> OnWallPreviewStateChange;                          // 0x0730(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(EWallPreviewState InPreviewState)> OnWallPreviewStateChange;       // 0x0730(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	TMulticastInlineDelegate<void()>              OnWallPreviewUpdate;                               // 0x0740(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	TMulticastInlineDelegate<void()>              OnWallBuildingModeChange;                          // 0x0750(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	uint8                                         Pad_760[0x10];                                     // 0x0760(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
@@ -667,11 +679,11 @@ public:
 	TArray<float>                                 PreviewScaleOfPlanks;                              // 0x0790(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnTemplate, Transient, EditConst, NativeAccessSpecifierPublic)
 	struct FFindBuildingPlace                     BuildingPlace;                                     // 0x07A0(0x0240)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnTemplate, Transient, EditConst, ContainsInstancedReference, NativeAccessSpecifierPublic)
 	struct FVector                                LastBuildingNormal;                                // 0x09E0(0x0018)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnTemplate, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<class AMarvelAbilityTargetActor_WallBuilding*> FollowerTraceActors;                               // 0x09F8(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnTemplate, Transient, EditConst, NativeAccessSpecifierPublic)
+	TArray<class AMarvelAbilityTargetActor_WallBuilding*> FollowerTraceActors;                       // 0x09F8(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnTemplate, Transient, EditConst, NativeAccessSpecifierPublic)
 	uint8                                         Pad_A08[0x140];                                    // 0x0A08(0x0140)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FGameplayTag                           TraceActorCueTag;                                  // 0x0B48(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnTemplate, Transient, EditConst, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	uint8                                         Pad_B54[0x4];                                      // 0x0B54(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TScriptInterface<class IMarvelWallBuildingAbilityInterface> BuildingAbilityInterface;                          // 0x0B58(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnTemplate, Transient, EditConst, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	TScriptInterface<class IMarvelWallBuildingAbilityInterface> BuildingAbilityInterface;            // 0x0B58(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnTemplate, Transient, EditConst, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	struct FDeclarationHolder                     DeclareViewSideHolder;                             // 0x0B68(0x0010)(Transient, Protected, NativeAccessSpecifierProtected)
 	uint8                                         Pad_B78[0x8];                                      // 0x0B78(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FMarvelWallBuildingContext             BuildingContext;                                   // 0x0B80(0x02E0)(Transient, Protected, NativeAccessSpecifierProtected)
@@ -702,7 +714,7 @@ public:
 	EWallBuildingMode                             BuildingMode;                                      // 0x01E0(0x0001)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	bool                                          bIsConfirmingStage;                                // 0x01E1(0x0001)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	uint8                                         Pad_1E2[0x6];                                      // 0x01E2(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	TSubclassOf<class AMarvelAbilityTargetActor_WallBuilding> TraceActorClass;                                   // 0x01E8(0x0008)(BlueprintVisible, ZeroConstructor, Transient, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	TSubclassOf<class AMarvelAbilityTargetActor_WallBuilding> TraceActorClass;                       // 0x01E8(0x0008)(BlueprintVisible, ZeroConstructor, Transient, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	class UMarvelWallBuildingAbilityConfig*       AbilityConfig;                                     // 0x01F0(0x0008)(ZeroConstructor, Transient, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	class AMarvelAbilityTargetActor_WallBuilding* AbilityTraceActor;                                 // 0x01F8(0x0008)(ZeroConstructor, Transient, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 
@@ -748,12 +760,12 @@ public:
 };
 
 // Class Hero_1027.Ability_102742
-// 0x0010 (0x2590 - 0x2580)
+// 0x0010 (0x2598 - 0x2588)
 class UAbility_102742 : public UMarvelGameplayAbility
 {
 public:
-	class UConfig_102742*                         MyConfig;                                          // 0x2580(0x0008)(ZeroConstructor, Transient, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class UMarvelAbilityTask_SelectTarget*        SelectTask;                                        // 0x2588(0x0008)(BlueprintVisible, ZeroConstructor, Transient, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UConfig_102742*                         MyConfig;                                          // 0x2588(0x0008)(ZeroConstructor, Transient, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UMarvelAbilityTask_SelectTarget*        SelectTask;                                        // 0x2590(0x0008)(BlueprintVisible, ZeroConstructor, Transient, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 
 public:
 	class AActor* GetSelectTarget();
@@ -847,13 +859,13 @@ public:
 };
 
 // Class Hero_1027.Summoned_10275101
-// 0x0020 (0x0ED0 - 0x0EB0)
+// 0x0020 (0x0F00 - 0x0EE0)
 class ASummoned_10275101 : public AMarvelWallBuildingActor
 {
 public:
-	TMulticastInlineDelegate<void(struct FWallDefendNotify& NewDefendNotify)> OnWallDefenceApply;                                // 0x0EB0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	int32                                         WallDefendBuffID;                                  // 0x0EC0(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_EC4[0xC];                                      // 0x0EC4(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	TMulticastInlineDelegate<void(const struct FWallDefendNotify& NewDefendNotify)> OnWallDefenceApply; // 0x0EE0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	int32                                         WallDefendBuffID;                                  // 0x0EF0(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_EF4[0xC];                                      // 0x0EF4(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -889,7 +901,7 @@ public:
 };
 
 // Class Hero_1027.Config_102751
-// 0x0000 (0x0330 - 0x0330)
+// 0x0000 (0x0390 - 0x0390)
 class UConfig_102751 final : public UConfig_102741
 {
 public:
@@ -919,17 +931,17 @@ public:
 };
 
 // Class Hero_1027.Cue_Summoner_Loop_10275101
-// 0x0080 (0x1320 - 0x12A0)
+// 0x0080 (0x12E0 - 0x1260)
 class ACue_Summoner_Loop_10275101 : public ACue_Summoner_Loop_10274101
 {
 public:
-	class USkeletalMeshComponent*                 WallShellMesh01;                                   // 0x1298(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class USkeletalMeshComponent*                 WallShellMesh02;                                   // 0x12A0(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UAnimMontage*                           WallShellMesh01_DefenceApplyAnimation;             // 0x12A8(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UAnimMontage*                           WallShellMesh02_DefenceApplyAnimation;             // 0x12B0(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMap<class FName, class UCurveFloat*>         WallShellMeshCurves;                               // 0x12B8(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	TArray<class UMaterialInstanceDynamic*>       WallShellMeshMIDS;                                 // 0x1308(0x0010)(Edit, ExportObject, ZeroConstructor, DisableEditOnTemplate, Transient, ContainsInstancedReference, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1318[0x8];                                     // 0x1318(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class USkeletalMeshComponent*                 WallShellMesh01;                                   // 0x1258(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class USkeletalMeshComponent*                 WallShellMesh02;                                   // 0x1260(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UAnimMontage*                           WallShellMesh01_DefenceApplyAnimation;             // 0x1268(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UAnimMontage*                           WallShellMesh02_DefenceApplyAnimation;             // 0x1270(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TMap<class FName, class UCurveFloat*>         WallShellMeshCurves;                               // 0x1278(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	TArray<class UMaterialInstanceDynamic*>       WallShellMeshMIDS;                                 // 0x12C8(0x0010)(Edit, ExportObject, ZeroConstructor, DisableEditOnTemplate, Transient, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	uint8                                         Pad_12D8[0x8];                                     // 0x12D8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void OnWallDefenceApply(const struct FWallDefendNotify& NewWallDefendNotify);
@@ -995,24 +1007,24 @@ public:
 };
 
 // Class Hero_1027.BuffAbility_ForceMoveTo_10276103
-// 0x0D58 (0x1E50 - 0x10F8)
+// 0x0D58 (0x1E58 - 0x1100)
 class UBuffAbility_ForceMoveTo_10276103 : public UMarvelEffectGameplayAbility
 {
 public:
-	int32                                         DashBuffID;                                        // 0x10F8(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         DashCoreRadius;                                    // 0x10FC(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         DashStartDelay;                                    // 0x1100(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_1104[0x4];                                     // 0x1104(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FDashAbilityInfo                       DashInfo;                                          // 0x1108(0x0BA8)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, Protected, NativeAccessSpecifierProtected)
-	struct FTimerHandle                           DashStartTimerHandle;                              // 0x1CB0(0x0018)(Transient, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FVector                                TargetLocation;                                    // 0x1CC8(0x0018)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FVector                                TargetDirection;                                   // 0x1CE0(0x0018)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class UMarvelAbilityTask_Dash*                DashAbilityTask;                                   // 0x1CF8(0x0008)(ZeroConstructor, Transient, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bIsTargetInKnockOutState;                          // 0x1D00(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_1D01[0x3];                                     // 0x1D01(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FGameplayTag                           SetBeingKnockOutTag;                               // 0x1D04(0x000C)(Edit, BlueprintVisible, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FPredictionKey                         ApplyDashTaskKey;                                  // 0x1D10(0x00A0)(HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FPredictionKey                         OnDashTaskFinishedKey;                             // 0x1DB0(0x00A0)(HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         DashBuffID;                                        // 0x1100(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         DashCoreRadius;                                    // 0x1104(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         DashStartDelay;                                    // 0x1108(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_110C[0x4];                                     // 0x110C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FDashAbilityInfo                       DashInfo;                                          // 0x1110(0x0BA8)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, Protected, NativeAccessSpecifierProtected)
+	struct FTimerHandle                           DashStartTimerHandle;                              // 0x1CB8(0x0018)(Transient, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FVector                                TargetLocation;                                    // 0x1CD0(0x0018)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FVector                                TargetDirection;                                   // 0x1CE8(0x0018)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UMarvelAbilityTask_Dash*                DashAbilityTask;                                   // 0x1D00(0x0008)(ZeroConstructor, Transient, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bIsTargetInKnockOutState;                          // 0x1D08(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_1D09[0x3];                                     // 0x1D09(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FGameplayTag                           SetBeingKnockOutTag;                               // 0x1D0C(0x000C)(Edit, BlueprintVisible, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FPredictionKey                         ApplyDashTaskKey;                                  // 0x1D18(0x00A0)(HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FPredictionKey                         OnDashTaskFinishedKey;                             // 0x1DB8(0x00A0)(HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void OnDashAbilityFinish(EDashStopReason Reason);
@@ -1025,6 +1037,21 @@ public:
 	static class UBuffAbility_ForceMoveTo_10276103* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UBuffAbility_ForceMoveTo_10276103>();
+	}
+};
+
+// Class Hero_1027.GrootMoveLogicBaseComponent
+// 0x0000 (0x03F0 - 0x03F0)
+class UGrootMoveLogicBaseComponent final : public UMarvelMoveLogicBaseComponent
+{
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"GrootMoveLogicBaseComponent">();
+	}
+	static class UGrootMoveLogicBaseComponent* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UGrootMoveLogicBaseComponent>();
 	}
 };
 
@@ -1209,14 +1236,13 @@ public:
 };
 
 // Class Hero_1027.GrootCharacter
-// 0x0020 (0x1830 - 0x1810)
+// 0x0010 (0x1880 - 0x1870)
 class AGrootCharacter : public AMarvelBaseCharacter
 {
 public:
-	class UGrootMoveLogicBaseComponent*           GrootMoveLogic;                                    // 0x1810(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class USceneComponent*                        RightHand;                                         // 0x1818(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class USceneComponent*                        LeftHand;                                          // 0x1820(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_1828[0x8];                                     // 0x1828(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class UGrootMoveLogicBaseComponent*           GrootMoveLogic;                                    // 0x1868(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class USceneComponent*                        RightHand;                                         // 0x1870(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class USceneComponent*                        LeftHand;                                          // 0x1878(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 
 public:
 	static class UClass* StaticClass()
@@ -1229,23 +1255,8 @@ public:
 	}
 };
 
-// Class Hero_1027.GrootMoveLogicBaseComponent
-// 0x0000 (0x03F0 - 0x03F0)
-class UGrootMoveLogicBaseComponent final : public UMarvelMoveLogicBaseComponent
-{
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"GrootMoveLogicBaseComponent">();
-	}
-	static class UGrootMoveLogicBaseComponent* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UGrootMoveLogicBaseComponent>();
-	}
-};
-
 // Class Hero_1027.GrootMovementComponent
-// 0x0000 (0x1B60 - 0x1B60)
+// 0x0000 (0x1BA0 - 0x1BA0)
 class UGrootMovementComponent final : public UMarvelCharacterMovementComponent
 {
 public:

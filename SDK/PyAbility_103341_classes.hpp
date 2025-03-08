@@ -10,21 +10,22 @@
 
 #include "Basic.hpp"
 
-#include "Marvel_structs.hpp"
-#include "Marvel_classes.hpp"
 #include "Hero_1033_structs.hpp"
 #include "Hero_1033_classes.hpp"
+#include "Marvel_structs.hpp"
+#include "Marvel_classes.hpp"
 
 
 namespace SDK
 {
 
 // PythonClass PyAbility_103341.PyProjectile_10334101
-// 0x0010 (0x3060 - 0x3050)
+// 0x0010 (0x3120 - 0x3110)
 class APyProjectile_10334101 final : public AMarvelAbilityTargetActor_Projectile
 {
 public:
-	TMulticastInlineDelegate<void()>              OnProjectileReachMaxDistance;                      // 0x3050(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3108[0x8];                                     // 0x3108(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	TMulticastInlineDelegate<void()>              OnProjectileReachMaxDistance;                      // 0x3110(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 
 public:
 	void K2_OnProcessHit(const struct FHitResult& Hit);
@@ -101,11 +102,11 @@ public:
 };
 
 // PythonClass PyAbility_103341.PyAbility_103341
-// 0x0008 (0x2588 - 0x2580)
+// 0x0008 (0x2590 - 0x2588)
 class UPyAbility_103341 : public UAbility_103341
 {
 public:
-	int32                                         JumpAbilityID;                                     // 0x2580(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         JumpAbilityID;                                     // 0x2588(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void BeginPlay();

@@ -17,11 +17,11 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Ability_105241_BP.Ability_105241_BP_C
-// 0x0008 (0x2588 - 0x2580)
+// 0x0008 (0x2590 - 0x2588)
 class UAbility_105241_BP_C final : public UPyAbility_105241
 {
 public:
-	bool                                          NewVar;                                            // 0x2580(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          NewVar;                                            // 0x2588(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

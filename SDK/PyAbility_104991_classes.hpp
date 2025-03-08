@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Marvel_structs.hpp"
 #include "Hero_1049_classes.hpp"
+#include "Marvel_structs.hpp"
 #include "CoreUObject_structs.hpp"
 
 
@@ -34,11 +34,13 @@ public:
 };
 
 // PythonClass PyAbility_104991.PyConfig_104991
-// 0x0020 (0x22C0 - 0x22A0)
+// 0x0FB0 (0x3250 - 0x22A0)
 class UPyConfig_104991 final : public UConfig_104991
 {
 public:
 	struct FVector                                CapsuleLocationOffset;                             // 0x22A0(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_22B8[0x8];                                     // 0x22B8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FMarvelAbilityTraceContext             TraceContext;                                      // 0x22C0(0x0F90)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -52,7 +54,7 @@ public:
 };
 
 // PythonClass PyAbility_104991.PyAbility_104991
-// 0x0000 (0x2D28 - 0x2D28)
+// 0x0000 (0x2DD0 - 0x2DD0)
 class UPyAbility_104991 : public UAbility_104991
 {
 public:

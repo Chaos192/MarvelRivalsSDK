@@ -17,11 +17,11 @@ namespace SDK
 {
 
 // PythonClass PyLokiCharacter.PyLokiCharacter
-// 0x0010 (0x1850 - 0x1840)
+// 0x0010 (0x18B0 - 0x18A0)
 class APyLokiCharacter : public ALokiCharacter
 {
 public:
-	int32                                         PhantomAbilityID;                                  // 0x1840(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         PhantomAbilityID;                                  // 0x18A0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void SpawnLokiPhantom(const struct FTransform& InTransform, const class UMarvelGameplayAbility* InAbility);

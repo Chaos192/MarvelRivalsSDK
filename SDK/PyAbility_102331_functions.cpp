@@ -58,7 +58,7 @@ void UPyAbility_102331::K2_ActivateAbility()
 // PythonFunction PyAbility_102331.PyAbility_102331.K2_ActivateAbilityFromEvent
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayEventData               EventData                                              (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayEventData&        EventData                                              (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyAbility_102331::K2_ActivateAbilityFromEvent(const struct FGameplayEventData& EventData)
 {
@@ -83,7 +83,7 @@ void UPyAbility_102331::K2_ActivateAbilityFromEvent(const struct FGameplayEventD
 // PythonFunction PyAbility_102331.PyAbility_102331.TryMakeTriggerContext
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayEventData               EventData                                              (Parm, OutParm, ReferenceParm)
+// struct FGameplayEventData&              EventData                                              (Parm, OutParm, ReferenceParm)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 bool UPyAbility_102331::TryMakeTriggerContext(struct FGameplayEventData& EventData)

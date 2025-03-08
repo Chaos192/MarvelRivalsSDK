@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // PythonClass PyAbility_105212.PyAbility_105212
-// 0x0000 (0x2678 - 0x2678)
+// 0x0000 (0x2680 - 0x2680)
 class UPyAbility_105212 : public UMarvelAbility_DoubleJump
 {
 public:
@@ -43,7 +43,7 @@ public:
 };
 
 // PythonClass PyAbility_105212.PyUIController_105212
-// 0x0000 (0x0C60 - 0x0C60)
+// 0x0000 (0x0C50 - 0x0C50)
 class UPyUIController_105212 final : public UUIC_Ability
 {
 public:

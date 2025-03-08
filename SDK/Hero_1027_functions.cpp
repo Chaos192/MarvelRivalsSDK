@@ -97,8 +97,8 @@ bool AProjectile_10271101::IsProjectileOffCenter() const
 // Parameters:
 // class AMarvelBaseCharacter*             InCharacter                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AProjectile_10271101*             InProjectile                                           (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          SourceLocation                                         (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FTransform                       TargetTransform                                        (Parm, OutParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVector*                         SourceLocation                                         (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FTransform*                      TargetTransform                                        (Parm, OutParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void ACue_Projectile_Loop_10271101::GetPrickleVineTrans(class AMarvelBaseCharacter* InCharacter, class AProjectile_10271101* InProjectile, struct FVector* SourceLocation, struct FTransform* TargetTransform)
 {
@@ -238,7 +238,7 @@ int32 AProjectile_10273101::GetProjectileRandSeed() const
 // Function Hero_1027.MarvelWallBuildingActor.AddSuccessorBuildingPlace
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FFindBuildingPlace               InBuildingPlace                                        (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FFindBuildingPlace&        InBuildingPlace                                        (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 void AMarvelWallBuildingActor::AddSuccessorBuildingPlace(const struct FFindBuildingPlace& InBuildingPlace)
 {
@@ -264,7 +264,7 @@ void AMarvelWallBuildingActor::AddSuccessorBuildingPlace(const struct FFindBuild
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // EWallBuildingMode                       InWallBuildingMode                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FHitResult                       InHitResult                                            (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FHitResult&                InHitResult                                            (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool AMarvelWallBuildingActor::InitializeWallBuildingData(EWallBuildingMode InWallBuildingMode, const struct FHitResult& InHitResult)
@@ -295,7 +295,7 @@ bool AMarvelWallBuildingActor::InitializeWallBuildingData(EWallBuildingMode InWa
 // Parameters:
 // class AActor*                           InSourceAvatar                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           InTargetAvatar                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FAttributeModifierHandle         ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FAttributeModifierHandle&  ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void AMarvelWallBuildingActor::OnApplyDamage(class AActor* InSourceAvatar, class AActor* InTargetAvatar, const struct FAttributeModifierHandle& ModifierParameterHandle)
 {
@@ -417,7 +417,7 @@ void AMarvelWallBuildingActor::OnPivotComponentCollisionChange(class UPrimitiveC
 // (Final, Native, Public, HasDefaults)
 // Parameters:
 // class FName                             BoneName                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          ImpactPoint                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   ImpactPoint                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void AMarvelWallBuildingActor::OnPivotDestructibleFracture(class FName BoneName, const struct FVector& ImpactPoint)
 {
@@ -685,7 +685,7 @@ int32 AMarvelWallBuildingActor::GetCentricRightPlankID() const
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                                    bIncludeAllDescendants                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<class AMarvelWallBuildingActor*> ChildrenWalls                                          (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+// TArray<class AMarvelWallBuildingActor*>*ChildrenWalls                                          (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 
 void AMarvelWallBuildingActor::GetChildrenWallActors(bool bIncludeAllDescendants, TArray<class AMarvelWallBuildingActor*>* ChildrenWalls) const
 {
@@ -713,7 +713,7 @@ void AMarvelWallBuildingActor::GetChildrenWallActors(bool bIncludeAllDescendants
 // Function Hero_1027.MarvelWallBuildingActor.GetDependentWallActors
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// TArray<class AMarvelWallBuildingActor*> DependentWalls                                         (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+// TArray<class AMarvelWallBuildingActor*>*DependentWalls                                         (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 
 void AMarvelWallBuildingActor::GetDependentWallActors(TArray<class AMarvelWallBuildingActor*>* DependentWalls) const
 {
@@ -764,7 +764,7 @@ bool AMarvelWallBuildingActor::GetFullBoxEnabled() const
 // Function Hero_1027.MarvelWallBuildingActor.GetFullBoxExtent
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// struct FVector                          OutPlankExtent                                         (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVector*                         OutPlankExtent                                         (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool AMarvelWallBuildingActor::GetFullBoxExtent(struct FVector* OutPlankExtent) const
@@ -793,7 +793,7 @@ bool AMarvelWallBuildingActor::GetFullBoxExtent(struct FVector* OutPlankExtent) 
 // Function Hero_1027.MarvelWallBuildingActor.GetFullBoxLength
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// float                                   OutPlankLength                                         (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float*                                  OutPlankLength                                         (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool AMarvelWallBuildingActor::GetFullBoxLength(float* OutPlankLength) const
@@ -822,7 +822,7 @@ bool AMarvelWallBuildingActor::GetFullBoxLength(float* OutPlankLength) const
 // Function Hero_1027.MarvelWallBuildingActor.GetFullBoxScale
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// float                                   OutPlankScale                                          (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float*                                  OutPlankScale                                          (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool AMarvelWallBuildingActor::GetFullBoxScale(float* OutPlankScale) const
@@ -983,7 +983,7 @@ bool AMarvelWallBuildingActor::GetPlankEnabled(int32 PlankID) const
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // int32                                   PlankID                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          OutPlankExtent                                         (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVector*                         OutPlankExtent                                         (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool AMarvelWallBuildingActor::GetPlankExtent(int32 PlankID, struct FVector* OutPlankExtent) const
@@ -1015,7 +1015,7 @@ bool AMarvelWallBuildingActor::GetPlankExtent(int32 PlankID, struct FVector* Out
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // int32                                   PlankID                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   OutPlankLength                                         (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float*                                  OutPlankLength                                         (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool AMarvelWallBuildingActor::GetPlankLength(int32 PlankID, float* OutPlankLength) const
@@ -1047,7 +1047,7 @@ bool AMarvelWallBuildingActor::GetPlankLength(int32 PlankID, float* OutPlankLeng
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // int32                                   PlankID                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   OutPlankScale                                          (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float*                                  OutPlankScale                                          (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool AMarvelWallBuildingActor::GetPlankScale(int32 PlankID, float* OutPlankScale) const
@@ -1691,25 +1691,6 @@ void ACue_TraceActor_10274101::OnWallPreviewUpdate()
 }
 
 
-// Function Hero_1027.Cue_Summoner_Loop_10274101.ChangeRadiusValue
-// (Final, Native, Public)
-
-void ACue_Summoner_Loop_10274101::ChangeRadiusValue()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Cue_Summoner_Loop_10274101", "ChangeRadiusValue");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // Function Hero_1027.Cue_Summoner_Loop_10274101.GetUIWidget
 // (Native, Event, Public, BlueprintEvent)
 // Parameters:
@@ -1750,35 +1731,6 @@ void ACue_Summoner_Loop_10274101::OnEnhanceStateChanged(bool bIsEnhanced)
 	Params::Cue_Summoner_Loop_10274101_OnEnhanceStateChanged Parms{};
 
 	Parms.bIsEnhanced = bIsEnhanced;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Hero_1027.Cue_Summoner_Loop_10274101.OnTakeDamage
-// (Final, Native, Public, HasOutParams)
-// Parameters:
-// class AActor*                           InSource                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class AActor*                           InSourceAvatar                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FAttributeModifierHandle         ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ACue_Summoner_Loop_10274101::OnTakeDamage(class AActor* InSource, class AActor* InSourceAvatar, const struct FAttributeModifierHandle& ModifierParameterHandle)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Cue_Summoner_Loop_10274101", "OnTakeDamage");
-
-	Params::Cue_Summoner_Loop_10274101_OnTakeDamage Parms{};
-
-	Parms.InSource = InSource;
-	Parms.InSourceAvatar = InSourceAvatar;
-	Parms.ModifierParameterHandle = std::move(ModifierParameterHandle);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1842,8 +1794,8 @@ void ACue_Summoner_Loop_10274101::OnWallAttackStart(bool bAttackFront)
 // Function Hero_1027.Cue_Summoner_Loop_10274101.OnWallHealthStateChange
 // (Native, Event, Public, BlueprintEvent)
 // Parameters:
-// EWallHealthState                        NewState                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EWallHealthState                        OldState                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const EWallHealthState                  NewState                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const EWallHealthState                  OldState                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void ACue_Summoner_Loop_10274101::OnWallHealthStateChange(const EWallHealthState NewState, const EWallHealthState OldState)
 {
@@ -1888,7 +1840,7 @@ void ACue_Summoner_Loop_10274101::OnWallScaleApproved()
 // Function Hero_1027.Cue_Summoner_Loop_10274101.ComputeClipLength
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// float                                   InScale                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             InScale                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 float ACue_Summoner_Loop_10274101::ComputeClipLength(const float InScale) const
@@ -1921,12 +1873,12 @@ void IMarvelWallBuildingAbilityInterface::TrySwitchBuildingMode()
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("MarvelWallBuildingAbilityInterface", "TrySwitchBuildingMode");
+		Func = AsUObject()->Class->GetFunction("MarvelWallBuildingAbilityInterface", "TrySwitchBuildingMode");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, nullptr);
+	AsUObject()->ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
 }
@@ -1935,14 +1887,14 @@ void IMarvelWallBuildingAbilityInterface::TrySwitchBuildingMode()
 // Function Hero_1027.MarvelSummonedAbilityInterface.BindSummonedChangeDelegate
 // (Native, Public, HasOutParams)
 // Parameters:
-// TDelegate<void(class AActor* InActor, bool bIsAdd)>InDelegate                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TDelegate<void(class AActor* InActor, bool bIsAdd)>&InDelegate                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void IMarvelSummonedAbilityInterface::BindSummonedChangeDelegate(const TDelegate<void(class AActor* InActor, bool bIsAdd)>& InDelegate)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("MarvelSummonedAbilityInterface", "BindSummonedChangeDelegate");
+		Func = AsUObject()->Class->GetFunction("MarvelSummonedAbilityInterface", "BindSummonedChangeDelegate");
 
 	Params::MarvelSummonedAbilityInterface_BindSummonedChangeDelegate Parms{};
 
@@ -1951,7 +1903,7 @@ void IMarvelSummonedAbilityInterface::BindSummonedChangeDelegate(const TDelegate
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	AsUObject()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 }
@@ -1967,14 +1919,14 @@ TMulticastInlineDelegate<void(class AActor* InActor, bool bIsAdd)> IMarvelSummon
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("MarvelSummonedAbilityInterface", "GetOnSummonedChangeDelegate");
+		Func = AsUObject()->Class->GetFunction("MarvelSummonedAbilityInterface", "GetOnSummonedChangeDelegate");
 
 	Params::MarvelSummonedAbilityInterface_GetOnSummonedChangeDelegate Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	AsUObject()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 
@@ -1985,14 +1937,14 @@ TMulticastInlineDelegate<void(class AActor* InActor, bool bIsAdd)> IMarvelSummon
 // Function Hero_1027.MarvelSummonedAbilityInterface.UnBindSummonedChangeDelegate
 // (Native, Public, HasOutParams)
 // Parameters:
-// TDelegate<void(class AActor* InActor, bool bIsAdd)>InDelegate                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TDelegate<void(class AActor* InActor, bool bIsAdd)>&InDelegate                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void IMarvelSummonedAbilityInterface::UnBindSummonedChangeDelegate(const TDelegate<void(class AActor* InActor, bool bIsAdd)>& InDelegate)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("MarvelSummonedAbilityInterface", "UnBindSummonedChangeDelegate");
+		Func = AsUObject()->Class->GetFunction("MarvelSummonedAbilityInterface", "UnBindSummonedChangeDelegate");
 
 	Params::MarvelSummonedAbilityInterface_UnBindSummonedChangeDelegate Parms{};
 
@@ -2001,7 +1953,7 @@ void IMarvelSummonedAbilityInterface::UnBindSummonedChangeDelegate(const TDelega
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	AsUObject()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 }
@@ -2159,7 +2111,7 @@ void UMarvelAbilityTask_FindBuildingLoc::SetIsConfirmingStage(bool bNewState)
 // Function Hero_1027.MarvelAbilityTask_FindBuildingLoc.GetFindBuildingPlaces
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// TArray<struct FFindBuildingPlace>       OutPlaces                                              (Parm, OutParm, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// TArray<struct FFindBuildingPlace>*      OutPlaces                                              (Parm, OutParm, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UMarvelAbilityTask_FindBuildingLoc::GetFindBuildingPlaces(TArray<struct FFindBuildingPlace>* OutPlaces) const
@@ -2266,10 +2218,10 @@ bool UAbility_102742::VerifyPrimaryTarget(class AActor* InTarget)
 // Function Hero_1027.Cue_Scope_Loop_10274301.CreateAuraPlantFX
 // (Native, Event, Public, HasOutParams, HasDefaults, BlueprintEvent)
 // Parameters:
-// struct FAuraPlantActiveFXSpec           OutActiveFXSpec                                        (Parm, OutParm, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
-// struct FVector                          InOrigin                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FAuraPlantActiveFXSpec*          OutActiveFXSpec                                        (Parm, OutParm, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FVector&                   InOrigin                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UFXSystemAsset*                   FXAsset                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          InLocation                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   InLocation                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool ACue_Scope_Loop_10274301::CreateAuraPlantFX(struct FAuraPlantActiveFXSpec* OutActiveFXSpec, const struct FVector& InOrigin, class UFXSystemAsset* FXAsset, const struct FVector& InLocation)
@@ -2421,7 +2373,7 @@ void USummonedComp_10275101::OnRep_WallDefendNotify()
 // Function Hero_1027.Cue_Summoner_Loop_10275101.OnWallDefenceApply
 // (Native, Event, Public, HasOutParams, BlueprintEvent)
 // Parameters:
-// struct FWallDefendNotify                NewWallDefendNotify                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FWallDefendNotify&         NewWallDefendNotify                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
 void ACue_Summoner_Loop_10275101::OnWallDefenceApply(const struct FWallDefendNotify& NewWallDefendNotify)
 {
@@ -2509,7 +2461,7 @@ void ACue_Buff_10276102::PlayPeriodicDamageFX()
 // Function Hero_1027.Cue_Buff_10276103.OnTargetCharacterTagUpdated
 // (Final, Native, Protected, HasOutParams)
 // Parameters:
-// struct FGameplayTag                     Tag                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              Tag                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bTagExists                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void ACue_Buff_10276103::OnTargetCharacterTagUpdated(const struct FGameplayTag& Tag, bool bTagExists)
@@ -2537,8 +2489,8 @@ void ACue_Buff_10276103::OnTargetCharacterTagUpdated(const struct FGameplayTag& 
 // (Final, Native, Public, HasOutParams)
 // Parameters:
 // class UAbilitySystemComponent*          ASC                                                    (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayEffectSpecStackHandle   GameplayEffectSpecHandle                               (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-// struct FActiveGameplayEffectHandle      ActiveGameplayEffectHandle                             (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayEffectSpecStackHandle&GameplayEffectSpecHandle                               (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FActiveGameplayEffectHandle&ActiveGameplayEffectHandle                             (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UEpicMomentAction_1027::OnGameplayEffectAppliedToTarget(class UAbilitySystemComponent* ASC, const struct FGameplayEffectSpecStackHandle& GameplayEffectSpecHandle, const struct FActiveGameplayEffectHandle& ActiveGameplayEffectHandle)
 {
@@ -2592,8 +2544,8 @@ void AGrootChildActor::OnPlayerViewSideChanged(EClientPlayerViewSide InViewSide)
 // Parameters:
 // class AActor*                           Instigator                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           Target                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FAttributeModifierHandle         ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGlobalEventExtraData            ExtraData                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FAttributeModifierHandle&  ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGlobalEventExtraData&     ExtraData                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
 void UTabData_1027::OnActorTakeDamage(class AActor* Instigator, class AActor* Target, const struct FAttributeModifierHandle& ModifierParameterHandle, const struct FGlobalEventExtraData& ExtraData)
 {
@@ -2621,11 +2573,11 @@ void UTabData_1027::OnActorTakeDamage(class AActor* Instigator, class AActor* Ta
 // Function Hero_1027.WallBuildingStatics.CalcBuildingEdgeByLoc3
 // (Final, Native, Static, Public, HasOutParams, HasDefaults)
 // Parameters:
-// EWallBuildingEdge                       OutBuildingEdge                                        (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          InLocation                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          InWallExtend                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FTransform                       InWallTransform                                        (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector2D                        ErrorTolerance                                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EWallBuildingEdge*                      OutBuildingEdge                                        (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   InLocation                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   InWallExtend                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FTransform&                InWallTransform                                        (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector2D&                 ErrorTolerance                                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UWallBuildingStatics::CalcBuildingEdgeByLoc3(EWallBuildingEdge* OutBuildingEdge, const struct FVector& InLocation, const struct FVector& InWallExtend, const struct FTransform& InWallTransform, const struct FVector2D& ErrorTolerance)
@@ -2659,12 +2611,12 @@ bool UWallBuildingStatics::CalcBuildingEdgeByLoc3(EWallBuildingEdge* OutBuilding
 // Function Hero_1027.WallBuildingStatics.CalcBuildingEdgeByLoc4
 // (Final, Native, Static, Public, HasOutParams, HasDefaults)
 // Parameters:
-// EWallBuildingEdge                       OutBuildingEdge                                        (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          InLocation                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EWallBuildingEdge*                      OutBuildingEdge                                        (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   InLocation                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // EWallBuildingMode                       InBuildingMode                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          InWallExtend                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FTransform                       InWallTransform                                        (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector2D                        ErrorTolerance                                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   InWallExtend                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FTransform&                InWallTransform                                        (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector2D&                 ErrorTolerance                                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UWallBuildingStatics::CalcBuildingEdgeByLoc4(EWallBuildingEdge* OutBuildingEdge, const struct FVector& InLocation, EWallBuildingMode InBuildingMode, const struct FVector& InWallExtend, const struct FTransform& InWallTransform, const struct FVector2D& ErrorTolerance)

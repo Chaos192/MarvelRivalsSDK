@@ -60,5 +60,43 @@ void APyLevelPortal::ReceiveEndPlay(EEndPlayReason _)
 	Func->FunctionFlags = Flgs;
 }
 
+
+// PythonFunction PyLevelPortal.PyLevelPortal.PlayInAudio
+// (Net, Native, NetMulticast, Public, BlueprintCallable)
+
+void APyLevelPortal::PlayInAudio()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyLevelPortal", "PlayInAudio");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// PythonFunction PyLevelPortal.PyLevelPortal.PlayOutAudio
+// (Net, Native, NetMulticast, Public, BlueprintCallable)
+
+void APyLevelPortal::PlayOutAudio()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyLevelPortal", "PlayOutAudio");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
 }
 

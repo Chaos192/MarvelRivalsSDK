@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Ability_NotTreatImmunityBlockFall.Ability_NotTreatImmunityBlockFall_C
-// 0x0000 (0x1320 - 0x1320)
+// 0x0000 (0x1330 - 0x1330)
 class UAbility_NotTreatImmunityBlockFall_C : public UMarvelNotTreatImmunityBlockFallAbility
 {
 public:

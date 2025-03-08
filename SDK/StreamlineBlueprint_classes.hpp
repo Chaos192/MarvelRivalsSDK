@@ -45,12 +45,15 @@ class UStreamlineLibraryDLSSG final : public UBlueprintFunctionLibrary
 public:
 	static EUStreamlineDLSSGMode GetDefaultDLSSGMode();
 	static void GetDLSSGFrameTiming(float* FrameRateInHertz, int32* FramesPresented);
+	static void GetDLSSGGeneratedFramesRange(int32* MinNumGeneratedFrames, int32* MaxNumGeneratedFrames);
 	static EUStreamlineDLSSGMode GetDLSSGMode();
+	static int32 GetDLSSGNumberOfFramestoGenerate();
 	static TArray<EUStreamlineDLSSGMode> GetSupportedDLSSGModes();
 	static bool IsDLSSGModeSupported(EUStreamlineDLSSGMode DLSSGMode);
 	static bool IsDLSSGSupported();
 	static EUStreamlineFeatureSupport QueryDLSSGSupport();
 	static void SetDLSSGMode(EUStreamlineDLSSGMode DLSSGMode);
+	static void SetDLSSGNumberOfFramestoGenerate(int32 NumberOfFrames);
 
 public:
 	static class UClass* StaticClass()

@@ -19,7 +19,7 @@ namespace SDK
 
 // PythonClass PyLevelController_MVP.PyLevelController_MVP
 // 0x0018 (0x04A8 - 0x0490)
-class APyLevelController_MVP final : public AActor
+class APyLevelController_MVP : public AActor
 {
 public:
 	class UTextureRenderTarget*                   MVP_RimLight_RT;                                   // 0x0490(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)

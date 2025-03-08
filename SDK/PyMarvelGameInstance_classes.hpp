@@ -17,24 +17,28 @@ namespace SDK
 {
 
 // PythonClass PyMarvelGameInstance.PyMarvelGameInstance
-// 0x0058 (0x0540 - 0x04E8)
+// 0x0058 (0x0558 - 0x0500)
 class UPyMarvelGameInstance : public UMarvelGameInstance
 {
 public:
-	int32                                         LobbyConnectionID;                                 // 0x04E8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4EC[0x4];                                      // 0x04EC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 PlayerName;                                        // 0x04F0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         ModeID;                                            // 0x0500(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         LobbyConnectionID;                                 // 0x0500(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_504[0x4];                                      // 0x0504(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 LoginKey;                                          // 0x0508(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UObject*                                ColorManager;                                      // 0x0518(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(const class FString& Error)> OnReceiveDemoPlaybackFailure;                      // 0x0520(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(int32 Switch_Key, bool is_enabled)> OnSystemSwitchChanged;                             // 0x0530(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	class FString                                 PlayerName;                                        // 0x0508(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ModeID;                                            // 0x0518(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_51C[0x4];                                      // 0x051C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 LoginKey;                                          // 0x0520(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UObject*                                ColorManager;                                      // 0x0530(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const class FString& Error)> OnReceiveDemoPlaybackFailure;         // 0x0538(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(int32 Switch_Key, bool is_enabled)> OnSystemSwitchChanged;         // 0x0548(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 
 public:
 	int32 GetClientPort();
 	void ReceiveInit();
 	void UpdateReplayEnv();
+	void OnHandShakeMsg(const class FString& sMsg);
+	void OnUELoginMsg(const class FString& sMsg);
+	void OnUEConnectionTimeOut(const int64 connectionId, const int32 State, const class FString& msg);
+	void OnUEConnectionFastTimeOut(const int64 connectionId, const int32 State, const class FString& msg);
 	void CallEngineQuit(const class FString& sReason);
 	void ReceiveOnStart();
 	void OnFrameEnd(float FrameTime);
@@ -47,6 +51,7 @@ public:
 	void ReceiveNetworkReplayVersion(const class FString& Error);
 	class FString WriteReplayLoadingInfo();
 	void ProcessReplayLoadingInfo(const class FString& SpecificData, class FString* Error);
+	float GetDemoObDelayTime();
 	void UploadDrpfData(const class FString& DrpfType, const class FString& DrpfData);
 	void ReqServerBuildSettings();
 	void ReceiveOnAfterForkInChild();

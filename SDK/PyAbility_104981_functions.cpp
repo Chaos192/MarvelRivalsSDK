@@ -17,55 +17,6 @@
 namespace SDK
 {
 
-// PythonFunction PyAbility_104981.PyAbility_AirGrab_104981.OnActiveAbility
-// (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
-
-void UPyAbility_AirGrab_104981::OnActiveAbility()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PyAbility_AirGrab_104981", "OnActiveAbility");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// PythonFunction PyAbility_104981.PyAbility_AirGrab_104981.K2_ShouldSkipInstigatorHit
-// (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class AActor*                           SelfActor                                              (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FHitResult                       InHit                                                  (ConstParm, Parm, OutParm, ReferenceParm)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-bool UPyAbility_AirGrab_104981::K2_ShouldSkipInstigatorHit(class AActor* SelfActor, const struct FHitResult& InHit)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PyAbility_AirGrab_104981", "K2_ShouldSkipInstigatorHit");
-
-	Params::PyAbility_AirGrab_104981_K2_ShouldSkipInstigatorHit Parms{};
-
-	Parms.SelfActor = SelfActor;
-	Parms.InHit = std::move(InHit);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
 // PythonFunction PyAbility_104981.PyAbility_104981.BeginPlay
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 
@@ -148,6 +99,25 @@ void UPyAbility_104981::MissileEventNotify()
 }
 
 
+// PythonFunction PyAbility_104981.PyAbility_104981.BreakEventNotify
+// (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
+
+void UPyAbility_104981::BreakEventNotify()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyAbility_104981", "BreakEventNotify");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // PythonFunction PyAbility_104981.PyAbility_104981.OnRaiseDashFinish
 // (Native, Public, BlueprintCallable)
 // Parameters:
@@ -195,7 +165,7 @@ void UPyAbility_104981::OnReachedJumpApex()
 // PythonFunction PyAbility_104981.PyAbility_104981.OnSelectConfirm
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FGameplayAbilityTargetDataHandle Data                                                   (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayAbilityTargetDataHandle&Data                                                   (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyAbility_104981::OnSelectConfirm(const struct FGameplayAbilityTargetDataHandle& Data)
 {
@@ -220,7 +190,7 @@ void UPyAbility_104981::OnSelectConfirm(const struct FGameplayAbilityTargetDataH
 // PythonFunction PyAbility_104981.PyAbility_104981.OnTraceResults
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<struct FHitResult>               HitResults                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const TArray<struct FHitResult>&        HitResults                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyAbility_104981::OnTraceResults(const TArray<struct FHitResult>& HitResults)
 {
@@ -295,7 +265,7 @@ void UPyAbility_104981::OnDashFinish(EDashStopReason Reason)
 // PythonFunction PyAbility_104981.PyAbility_104981.OnHoverBuffRemove
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FGameplayEffectRemovalInfo       InGameplayEffectRemovalInfo                            (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayEffectRemovalInfo&InGameplayEffectRemovalInfo                            (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyAbility_104981::OnHoverBuffRemove(const struct FGameplayEffectRemovalInfo& InGameplayEffectRemovalInfo)
 {
@@ -339,6 +309,55 @@ void UPyAbility_104981::K2_OnEndAbility(bool bWasCancelled)
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+}
+
+
+// PythonFunction PyAbility_104981.PyAbility_AirGrab_104981.OnActiveAbility
+// (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
+
+void UPyAbility_AirGrab_104981::OnActiveAbility()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyAbility_AirGrab_104981", "OnActiveAbility");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// PythonFunction PyAbility_104981.PyAbility_AirGrab_104981.K2_ShouldSkipInstigatorHit
+// (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class AActor*                           SelfActor                                              (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// const struct FHitResult&                InHit                                                  (ConstParm, Parm, OutParm, ReferenceParm)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+bool UPyAbility_AirGrab_104981::K2_ShouldSkipInstigatorHit(class AActor* SelfActor, const struct FHitResult& InHit)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyAbility_AirGrab_104981", "K2_ShouldSkipInstigatorHit");
+
+	Params::PyAbility_AirGrab_104981_K2_ShouldSkipInstigatorHit Parms{};
+
+	Parms.SelfActor = SelfActor;
+	Parms.InHit = std::move(InHit);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 }

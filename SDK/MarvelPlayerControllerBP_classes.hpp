@@ -26,15 +26,15 @@ public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x11A0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 	class UPythonComponent*                       Wizcmd;                                            // 0x11A8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 	TMulticastInlineDelegate<void()>              OnClientCharacterBeginPlay;                        // 0x11B0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
-	TMulticastInlineDelegate<void(class FText Message)> OnServerCmdMsg;                                    // 0x11C0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
-	TMulticastInlineDelegate<void(class FText Message)> OnShowMessage;                                     // 0x11D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
+	TMulticastInlineDelegate<void(class FText Message)> OnServerCmdMsg;                              // 0x11C0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
+	TMulticastInlineDelegate<void(class FText Message)> OnShowMessage;                               // 0x11D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
 	TMulticastInlineDelegate<void()>              Ability1ReleaseDispatcher;                         // 0x11E0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
 	TMulticastInlineDelegate<void()>              Ability2ReleaseDispatcher;                         // 0x11F0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
 	TMulticastInlineDelegate<void()>              Ability5ReleaseDispatcher;                         // 0x1200(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
 	TMulticastInlineDelegate<void()>              Ability5PressDispatcher;                           // 0x1210(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
 	struct FGameplayEffectSpecHandle              EffectHandle;                                      // 0x1220(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
 	double                                        AttributeData;                                     // 0x1230(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TMulticastInlineDelegate<void(class FText Message, int32 Type)> OnShowPlayerMessage;                               // 0x1238(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
+	TMulticastInlineDelegate<void(class FText Message, int32 Type)> OnShowPlayerMessage;             // 0x1238(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
 
 public:
 	void ShowMessageToChatPanelWithType(const class FString& Message, int32 Type);

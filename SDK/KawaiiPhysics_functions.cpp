@@ -20,8 +20,8 @@ namespace SDK
 // Function KawaiiPhysics.KawaiiPhysicsLibrary.ConvertToKawaiiPhysics
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FAnimNodeReference               Node                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-// EAnimNodeReferenceConversionResult      Result                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FAnimNodeReference&        Node                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// EAnimNodeReferenceConversionResult*     Result                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FKawaiiPhysicsReference          ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
 struct FKawaiiPhysicsReference UKawaiiPhysicsLibrary::ConvertToKawaiiPhysics(const struct FAnimNodeReference& Node, EAnimNodeReferenceConversionResult* Result)
@@ -52,9 +52,9 @@ struct FKawaiiPhysicsReference UKawaiiPhysicsLibrary::ConvertToKawaiiPhysics(con
 // Function KawaiiPhysics.KawaiiPhysicsLibrary.ConvertToKawaiiPhysicsPure
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FAnimNodeReference               Node                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-// struct FKawaiiPhysicsReference          KawaiiPhysics                                          (Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
-// bool                                    Result                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FAnimNodeReference&        Node                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// struct FKawaiiPhysicsReference*         KawaiiPhysics                                          (Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
+// bool*                                   Result                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKawaiiPhysicsLibrary::ConvertToKawaiiPhysicsPure(const struct FAnimNodeReference& Node, struct FKawaiiPhysicsReference* KawaiiPhysics, bool* Result)
 {
@@ -85,7 +85,7 @@ void UKawaiiPhysicsLibrary::ConvertToKawaiiPhysicsPure(const struct FAnimNodeRef
 // Function KawaiiPhysics.KawaiiPhysicsLibrary.GetAllowWorldCollision
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FKawaiiPhysicsReference          KawaiiPhysics                                          (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FKawaiiPhysicsReference&   KawaiiPhysics                                          (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UKawaiiPhysicsLibrary::GetAllowWorldCollision(const struct FKawaiiPhysicsReference& KawaiiPhysics)
@@ -113,7 +113,7 @@ bool UKawaiiPhysicsLibrary::GetAllowWorldCollision(const struct FKawaiiPhysicsRe
 // Function KawaiiPhysics.KawaiiPhysicsLibrary.GetDummyBoneLength
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FKawaiiPhysicsReference          KawaiiPhysics                                          (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FKawaiiPhysicsReference&   KawaiiPhysics                                          (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 float UKawaiiPhysicsLibrary::GetDummyBoneLength(const struct FKawaiiPhysicsReference& KawaiiPhysics)
@@ -141,7 +141,7 @@ float UKawaiiPhysicsLibrary::GetDummyBoneLength(const struct FKawaiiPhysicsRefer
 // Function KawaiiPhysics.KawaiiPhysicsLibrary.GetEnableWind
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FKawaiiPhysicsReference          KawaiiPhysics                                          (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FKawaiiPhysicsReference&   KawaiiPhysics                                          (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UKawaiiPhysicsLibrary::GetEnableWind(const struct FKawaiiPhysicsReference& KawaiiPhysics)
@@ -169,7 +169,7 @@ bool UKawaiiPhysicsLibrary::GetEnableWind(const struct FKawaiiPhysicsReference& 
 // Function KawaiiPhysics.KawaiiPhysicsLibrary.GetGravity
 // (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FKawaiiPhysicsReference          KawaiiPhysics                                          (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FKawaiiPhysicsReference&   KawaiiPhysics                                          (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 struct FVector UKawaiiPhysicsLibrary::GetGravity(const struct FKawaiiPhysicsReference& KawaiiPhysics)
@@ -197,7 +197,7 @@ struct FVector UKawaiiPhysicsLibrary::GetGravity(const struct FKawaiiPhysicsRefe
 // Function KawaiiPhysics.KawaiiPhysicsLibrary.GetNeedWarmUp
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FKawaiiPhysicsReference          KawaiiPhysics                                          (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FKawaiiPhysicsReference&   KawaiiPhysics                                          (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UKawaiiPhysicsLibrary::GetNeedWarmUp(const struct FKawaiiPhysicsReference& KawaiiPhysics)
@@ -225,7 +225,7 @@ bool UKawaiiPhysicsLibrary::GetNeedWarmUp(const struct FKawaiiPhysicsReference& 
 // Function KawaiiPhysics.KawaiiPhysicsLibrary.GetPhysicsSettings
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FKawaiiPhysicsReference          KawaiiPhysics                                          (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FKawaiiPhysicsReference&   KawaiiPhysics                                          (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // struct FKawaiiPhysicsSettings           ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
 struct FKawaiiPhysicsSettings UKawaiiPhysicsLibrary::GetPhysicsSettings(const struct FKawaiiPhysicsReference& KawaiiPhysics)
@@ -253,7 +253,7 @@ struct FKawaiiPhysicsSettings UKawaiiPhysicsLibrary::GetPhysicsSettings(const st
 // Function KawaiiPhysics.KawaiiPhysicsLibrary.GetTeleportDistanceThreshold
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FKawaiiPhysicsReference          KawaiiPhysics                                          (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FKawaiiPhysicsReference&   KawaiiPhysics                                          (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 float UKawaiiPhysicsLibrary::GetTeleportDistanceThreshold(const struct FKawaiiPhysicsReference& KawaiiPhysics)
@@ -281,7 +281,7 @@ float UKawaiiPhysicsLibrary::GetTeleportDistanceThreshold(const struct FKawaiiPh
 // Function KawaiiPhysics.KawaiiPhysicsLibrary.GetTeleportRotationThreshold
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FKawaiiPhysicsReference          KawaiiPhysics                                          (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FKawaiiPhysicsReference&   KawaiiPhysics                                          (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 float UKawaiiPhysicsLibrary::GetTeleportRotationThreshold(const struct FKawaiiPhysicsReference& KawaiiPhysics)
@@ -309,7 +309,7 @@ float UKawaiiPhysicsLibrary::GetTeleportRotationThreshold(const struct FKawaiiPh
 // Function KawaiiPhysics.KawaiiPhysicsLibrary.GetWindScale
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FKawaiiPhysicsReference          KawaiiPhysics                                          (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FKawaiiPhysicsReference&   KawaiiPhysics                                          (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 float UKawaiiPhysicsLibrary::GetWindScale(const struct FKawaiiPhysicsReference& KawaiiPhysics)
@@ -337,7 +337,7 @@ float UKawaiiPhysicsLibrary::GetWindScale(const struct FKawaiiPhysicsReference& 
 // Function KawaiiPhysics.KawaiiPhysicsLibrary.ResetDynamics
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FKawaiiPhysicsReference          KawaiiPhysics                                          (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FKawaiiPhysicsReference&   KawaiiPhysics                                          (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // struct FKawaiiPhysicsReference          ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
 struct FKawaiiPhysicsReference UKawaiiPhysicsLibrary::ResetDynamics(const struct FKawaiiPhysicsReference& KawaiiPhysics)
@@ -365,7 +365,7 @@ struct FKawaiiPhysicsReference UKawaiiPhysicsLibrary::ResetDynamics(const struct
 // Function KawaiiPhysics.KawaiiPhysicsLibrary.SetAllowWorldCollision
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FKawaiiPhysicsReference          KawaiiPhysics                                          (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FKawaiiPhysicsReference&   KawaiiPhysics                                          (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // bool                                    AllowWorldCollision                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FKawaiiPhysicsReference          ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
@@ -395,7 +395,7 @@ struct FKawaiiPhysicsReference UKawaiiPhysicsLibrary::SetAllowWorldCollision(con
 // Function KawaiiPhysics.KawaiiPhysicsLibrary.SetDummyBoneLength
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FKawaiiPhysicsReference          KawaiiPhysics                                          (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FKawaiiPhysicsReference&   KawaiiPhysics                                          (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // float                                   DummyBoneLength                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FKawaiiPhysicsReference          ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
@@ -425,7 +425,7 @@ struct FKawaiiPhysicsReference UKawaiiPhysicsLibrary::SetDummyBoneLength(const s
 // Function KawaiiPhysics.KawaiiPhysicsLibrary.SetEnableWind
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FKawaiiPhysicsReference          KawaiiPhysics                                          (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FKawaiiPhysicsReference&   KawaiiPhysics                                          (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // bool                                    EnableWind                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FKawaiiPhysicsReference          ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
@@ -455,8 +455,8 @@ struct FKawaiiPhysicsReference UKawaiiPhysicsLibrary::SetEnableWind(const struct
 // Function KawaiiPhysics.KawaiiPhysicsLibrary.SetGravity
 // (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FKawaiiPhysicsReference          KawaiiPhysics                                          (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-// struct FVector                          Gravity                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FKawaiiPhysicsReference&   KawaiiPhysics                                          (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FVector&                   Gravity                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FKawaiiPhysicsReference          ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
 struct FKawaiiPhysicsReference UKawaiiPhysicsLibrary::SetGravity(const struct FKawaiiPhysicsReference& KawaiiPhysics, const struct FVector& Gravity)
@@ -485,7 +485,7 @@ struct FKawaiiPhysicsReference UKawaiiPhysicsLibrary::SetGravity(const struct FK
 // Function KawaiiPhysics.KawaiiPhysicsLibrary.SetNeedWarmUp
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FKawaiiPhysicsReference          KawaiiPhysics                                          (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FKawaiiPhysicsReference&   KawaiiPhysics                                          (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // bool                                    NeedWarmUp                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FKawaiiPhysicsReference          ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
@@ -515,8 +515,8 @@ struct FKawaiiPhysicsReference UKawaiiPhysicsLibrary::SetNeedWarmUp(const struct
 // Function KawaiiPhysics.KawaiiPhysicsLibrary.SetPhysicsSettings
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FKawaiiPhysicsReference          KawaiiPhysics                                          (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-// struct FKawaiiPhysicsSettings           PhysicsSettings                                        (Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FKawaiiPhysicsReference&   KawaiiPhysics                                          (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// struct FKawaiiPhysicsSettings&          PhysicsSettings                                        (Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // struct FKawaiiPhysicsReference          ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
 struct FKawaiiPhysicsReference UKawaiiPhysicsLibrary::SetPhysicsSettings(const struct FKawaiiPhysicsReference& KawaiiPhysics, struct FKawaiiPhysicsSettings& PhysicsSettings)
@@ -547,7 +547,7 @@ struct FKawaiiPhysicsReference UKawaiiPhysicsLibrary::SetPhysicsSettings(const s
 // Function KawaiiPhysics.KawaiiPhysicsLibrary.SetTeleportDistanceThreshold
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FKawaiiPhysicsReference          KawaiiPhysics                                          (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FKawaiiPhysicsReference&   KawaiiPhysics                                          (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // float                                   TeleportDistanceThreshold                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FKawaiiPhysicsReference          ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
@@ -577,7 +577,7 @@ struct FKawaiiPhysicsReference UKawaiiPhysicsLibrary::SetTeleportDistanceThresho
 // Function KawaiiPhysics.KawaiiPhysicsLibrary.SetTeleportRotationThreshold
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FKawaiiPhysicsReference          KawaiiPhysics                                          (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FKawaiiPhysicsReference&   KawaiiPhysics                                          (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // float                                   TeleportRotationThreshold                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FKawaiiPhysicsReference          ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
@@ -607,7 +607,7 @@ struct FKawaiiPhysicsReference UKawaiiPhysicsLibrary::SetTeleportRotationThresho
 // Function KawaiiPhysics.KawaiiPhysicsLibrary.SetWindScale
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FKawaiiPhysicsReference          KawaiiPhysics                                          (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FKawaiiPhysicsReference&   KawaiiPhysics                                          (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // float                                   WindScale                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FKawaiiPhysicsReference          ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 

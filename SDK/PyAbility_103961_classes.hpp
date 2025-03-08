@@ -21,32 +21,6 @@
 namespace SDK
 {
 
-// PythonClass PyAbility_103961.PyUIController_103961
-// 0x0018 (0x0C78 - 0x0C60)
-class UPyUIController_103961 final : public UUIC_Ability
-{
-public:
-	EAbilityState_103961                          ActivateStage;                                     // 0x0C60(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EAbilityState_103961                          DeactivateStage;                                   // 0x0C61(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C62[0x6];                                      // 0x0C62(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FWidget_ActionTip>              ActionTips;                                        // 0x0C68(0x0010)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-
-public:
-	void OnInit();
-	void OnAbilityStateChange(int32 ST);
-	void OnDestruct();
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"PyUIController_103961">();
-	}
-	static class UPyUIController_103961* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UPyUIController_103961>();
-	}
-};
-
 // PythonClass PyAbility_103961.PyConfig_103961
 // 0x2340 (0x23F0 - 0x00B0)
 class UPyConfig_103961 final : public UConfig_103961
@@ -74,38 +48,11 @@ public:
 	}
 };
 
-// PythonClass PyAbility_103961.PyCue_Ability_Loop_10396104
-// 0x0048 (0x0E98 - 0x0E50)
-class APyCue_Ability_Loop_10396104 final : public AMarvelCueNotify_Ability
-{
-public:
-	TArray<class UFXSystemAsset*>                 FirstFx;                                           // 0x0E50(0x0010)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	TArray<class FName>                           FirstSockets;                                      // 0x0E60(0x0010)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	TArray<class UFXSystemAsset*>                 SecondFx;                                          // 0x0E70(0x0010)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	TArray<class FName>                           SecondSockets;                                     // 0x0E80(0x0010)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	float                                         SecondFxPlayTime;                                  // 0x0E90(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-public:
-	void WhileActiveFX(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters);
-	void OnRemoveFX(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters);
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"PyCue_Ability_Loop_10396104">();
-	}
-	static class APyCue_Ability_Loop_10396104* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<APyCue_Ability_Loop_10396104>();
-	}
-};
-
 // PythonClass PyAbility_103961.PyAbility_103961
-// 0x1B58 (0x40E0 - 0x2588)
+// 0x1B50 (0x40E0 - 0x2590)
 class UPyAbility_103961 : public UAbility_103961
 {
 public:
-	uint8                                         Pad_2588[0x8];                                     // 0x2588(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FMarvelAbilityTraceContext             TraceContext;                                      // 0x2590(0x0F90)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NativeAccessSpecifierPublic)
 	struct FDashAbilityInfo                       RiseDashInfo;                                      // 0x3520(0x0BA8)(Transient, NativeAccessSpecifierPublic)
 	int32                                         RepState;                                          // 0x40C8(0x0004)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -134,14 +81,14 @@ public:
 };
 
 // PythonClass PyAbility_103961.PySkillEnergyFastRegenAbility_103961
-// 0x0080 (0x1178 - 0x10F8)
+// 0x0080 (0x1180 - 0x1100)
 class UPySkillEnergyFastRegenAbility_103961 : public UMarvelEffectGameplayAbility
 {
 public:
-	float                                         RegenRatio;                                        // 0x10F8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_10FC[0x4];                                     // 0x10FC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FGameplayTagContainer                  CustomEffectSkillEnergyRegen;                      // 0x1100(0x0068)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NativeAccessSpecifierPublic)
-	struct FGameplayTag                           HeroAttributeData;                                 // 0x1168(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         RegenRatio;                                        // 0x1100(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1104[0x4];                                     // 0x1104(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FGameplayTagContainer                  CustomEffectSkillEnergyRegen;                      // 0x1108(0x0068)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	struct FGameplayTag                           HeroAttributeData;                                 // 0x1170(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void BeginPlay();
@@ -201,6 +148,58 @@ public:
 	static class APyCue_Ability_Loop_10396103* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<APyCue_Ability_Loop_10396103>();
+	}
+};
+
+// PythonClass PyAbility_103961.PyCue_Ability_Loop_10396104
+// 0x0048 (0x0E98 - 0x0E50)
+class APyCue_Ability_Loop_10396104 final : public AMarvelCueNotify_Ability
+{
+public:
+	TArray<class UFXSystemAsset*>                 FirstFx;                                           // 0x0E50(0x0010)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	TArray<class FName>                           FirstSockets;                                      // 0x0E60(0x0010)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	TArray<class UFXSystemAsset*>                 SecondFx;                                          // 0x0E70(0x0010)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	TArray<class FName>                           SecondSockets;                                     // 0x0E80(0x0010)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	float                                         SecondFxPlayTime;                                  // 0x0E90(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	void WhileActiveFX(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters);
+	void OnRemoveFX(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PyCue_Ability_Loop_10396104">();
+	}
+	static class APyCue_Ability_Loop_10396104* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<APyCue_Ability_Loop_10396104>();
+	}
+};
+
+// PythonClass PyAbility_103961.PyUIController_103961
+// 0x0018 (0x0C68 - 0x0C50)
+class UPyUIController_103961 final : public UUIC_Ability
+{
+public:
+	EAbilityState_103961                          ActivateStage;                                     // 0x0C50(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EAbilityState_103961                          DeactivateStage;                                   // 0x0C51(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C52[0x6];                                      // 0x0C52(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FWidget_ActionTip>              ActionTips;                                        // 0x0C58(0x0010)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+
+public:
+	void OnInit();
+	void OnAbilityStateChange(int32 ST);
+	void OnDestruct();
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PyUIController_103961">();
+	}
+	static class UPyUIController_103961* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPyUIController_103961>();
 	}
 };
 

@@ -10,7 +10,6 @@
 
 #include "Basic.hpp"
 
-#include "GraphAbility_structs.hpp"
 #include "GameplayAbilities_structs.hpp"
 #include "GameplayAbilities_classes.hpp"
 #include "Engine_structs.hpp"
@@ -18,6 +17,7 @@
 #include "CoreUObject_structs.hpp"
 #include "Marvel_structs.hpp"
 #include "GameplayTags_structs.hpp"
+#include "GraphAbility_structs.hpp"
 
 
 namespace SDK
@@ -106,7 +106,7 @@ public:
 	uint8                                         Pad_12C0[0x20];                                    // 0x12C0(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
-	static class UGASpecTask_SelectTarget* AsSelectTargetAbility(class UGameplayAbility* OwningAbility, TDelegate<void(struct FHitResult& HitInfo, bool* bResult)> FilterDelegate, const struct FSelectTaskParam& SelectParam, bool bAutoBeginSelect, bool bShouldCheckActivate);
+	static class UGASpecTask_SelectTarget* AsSelectTargetAbility(class UGameplayAbility* OwningAbility, TDelegate<void(const struct FHitResult& HitInfo, bool* bResult)> FilterDelegate, const struct FSelectTaskParam& SelectParam, bool bAutoBeginSelect, bool bShouldCheckActivate);
 
 	void BeginSelect();
 	void EndSelect();
@@ -129,8 +129,8 @@ class UGATask_ApplyDash final : public UGATaskBase
 {
 public:
 	class UMarvelAbilityTask_Dash*                SubDashTask;                                       // 0x0208(0x0008)(ZeroConstructor, Transient, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	TMulticastInlineDelegate<void(class AActor* HitTarget, struct FHitResult& HitInfo)> OnHit;                                             // 0x0210(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(EDashStopReason Reason, struct FHitResult& HitInfo)> OnEnd;                                             // 0x0220(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class AActor* HitTarget, const struct FHitResult& HitInfo)> OnHit; // 0x0210(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(EDashStopReason Reason, const struct FHitResult& HitInfo)> OnEnd;  // 0x0220(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	struct FDashAbilityInfo                       DashInfo;                                          // 0x0230(0x0BA8)(Transient, NativeAccessSpecifierPrivate)
 	struct FVector                                DashToLocation;                                    // 0x0DD8(0x0018)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	struct FVector                                DashToDirection;                                   // 0x0DF0(0x0018)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
@@ -160,7 +160,7 @@ public:
 class UGATask_Gather final : public UGATaskBase
 {
 public:
-	TMulticastInlineDelegate<void(float TotalTime, int32 GatherIndex)> OnStopDelegate;                                    // 0x0208(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(float TotalTime, int32 GatherIndex)> OnStopDelegate;               // 0x0208(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	TMulticastInlineDelegate<void(int32 Value)>   OnGatherCallbackDelegate;                          // 0x0218(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	uint8                                         Pad_228[0x10];                                     // 0x0228(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
@@ -188,11 +188,11 @@ public:
 class UGATask_PlayTimeline final : public UGATaskBase
 {
 public:
-	TMulticastInlineDelegate<void(const struct FGameplayTag& EventTag)> OnCompletedDelegate;                               // 0x0208(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(const struct FGameplayTag& EventTag)> OnBlendOutDelegate;                                // 0x0218(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(const struct FGameplayTag& EventTag)> OnInterruptedDelegate;                             // 0x0228(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(const struct FGameplayTag& EventTag)> OnCancelledDelegate;                               // 0x0238(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(const struct FGameplayTag& EventTag)> OnTriggerEvent;                                    // 0x0248(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const struct FGameplayTag& EventTag)> OnCompletedDelegate;         // 0x0208(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const struct FGameplayTag& EventTag)> OnBlendOutDelegate;          // 0x0218(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const struct FGameplayTag& EventTag)> OnInterruptedDelegate;       // 0x0228(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const struct FGameplayTag& EventTag)> OnCancelledDelegate;         // 0x0238(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const struct FGameplayTag& EventTag)> OnTriggerEvent;              // 0x0248(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	TArray<class UAnimTimeline*>                  Timelines;                                         // 0x0258(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
 	TArray<int32>                                 AnimIndexs;                                        // 0x0268(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
 	TArray<int32>                                 TimelineIndexs;                                    // 0x0278(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
@@ -225,10 +225,10 @@ public:
 class UGATask_ProjectileHoming final : public UGATaskBase
 {
 public:
-	TMulticastInlineDelegate<void(class AMarvelAbilityTargetActor_Projectile* Projectile)> OnFinished;                                        // 0x0208(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class AMarvelAbilityTargetActor_Projectile* Projectile)> OnOvertime;                                        // 0x0218(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class AMarvelAbilityTargetActor_Projectile* Projectile)> OnTargetLose;                                      // 0x0228(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class AMarvelAbilityTargetActor_Projectile* Projectile)> OnCanceled;                                        // 0x0238(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class AMarvelAbilityTargetActor_Projectile* Projectile)> OnFinished; // 0x0208(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class AMarvelAbilityTargetActor_Projectile* Projectile)> OnOvertime; // 0x0218(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class AMarvelAbilityTargetActor_Projectile* Projectile)> OnTargetLose; // 0x0228(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class AMarvelAbilityTargetActor_Projectile* Projectile)> OnCanceled; // 0x0238(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	class AMarvelAbilityTargetActor_Projectile*   Projectile;                                        // 0x0248(0x0008)(ZeroConstructor, Transient, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	class AActor*                                 HomingTarget;                                      // 0x0250(0x0008)(ZeroConstructor, Transient, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 
@@ -255,10 +255,10 @@ class UGATask_SpawnProjectile final : public UGATaskBase
 {
 public:
 	class AMarvelAbilityTargetActor_Projectile*   Projectile;                                        // 0x0208(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class AMarvelAbilityTargetActor_Projectile* Projectile)> OnBegin;                                           // 0x0210(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class AMarvelAbilityTargetActor_Projectile* Projectile)> OnEnd;                                             // 0x0220(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class AMarvelAbilityTargetActor_Projectile* Projectile, class AActor* HitTarget, const struct FVector& HitLocation)> OnHit;                                             // 0x0230(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class AMarvelAbilityTargetActor_Projectile* Projectile)> OnDamage;                                          // 0x0240(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class AMarvelAbilityTargetActor_Projectile* Projectile)> OnBegin;  // 0x0210(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class AMarvelAbilityTargetActor_Projectile* Projectile)> OnEnd;    // 0x0220(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class AMarvelAbilityTargetActor_Projectile* Projectile, class AActor* HitTarget, const struct FVector& HitLocation)> OnHit; // 0x0230(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class AMarvelAbilityTargetActor_Projectile* Projectile)> OnDamage; // 0x0240(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	int32                                         ProjectileID;                                      // 0x0250(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	uint8                                         Pad_254[0x4];                                      // 0x0254(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class AActor*                                 SourceActor;                                       // 0x0258(0x0008)(ZeroConstructor, Transient, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
@@ -296,11 +296,11 @@ public:
 	class AMarvelAbilityTargetActor_Scope*        ScopeActor;                                        // 0x0208(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UMarvelAgentTraceComponent*             ScopeTraceComp;                                    // 0x0210(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UMarvelAgentEffectiveComponent*         ScopeEffectComp;                                   // 0x0218(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class AMarvelAbilityTargetActor_Scope* ScopeActor)> OnBegin;                                           // 0x0220(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class AMarvelAbilityTargetActor_Scope* ScopeActor)> OnEnd;                                             // 0x0230(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class AMarvelAbilityTargetActor_Scope* ScopeActor, class AActor* Target, const struct FVector& Location)> OnHit;                                             // 0x0240(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class AMarvelAbilityTargetActor_Scope* ScopeActor, TArray<struct FHitResult>& HitInfos)> OnHitAll;                                          // 0x0250(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class AMarvelAbilityTargetActor_Scope* ScopeActor)> OnDamage;                                          // 0x0260(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class AMarvelAbilityTargetActor_Scope* ScopeActor)> OnBegin;       // 0x0220(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class AMarvelAbilityTargetActor_Scope* ScopeActor)> OnEnd;         // 0x0230(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class AMarvelAbilityTargetActor_Scope* ScopeActor, class AActor* Target, const struct FVector& Location)> OnHit; // 0x0240(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class AMarvelAbilityTargetActor_Scope* ScopeActor, const TArray<struct FHitResult>& HitInfos)> OnHitAll; // 0x0250(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class AMarvelAbilityTargetActor_Scope* ScopeActor)> OnDamage;      // 0x0260(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	int32                                         ScopeId;                                           // 0x0270(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	uint8                                         Pad_274[0x4];                                      // 0x0274(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class AActor*                                 SourceActor;                                       // 0x0278(0x0008)(ZeroConstructor, Transient, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
@@ -337,9 +337,9 @@ class UGATask_SpawnSummoned final : public UGATaskBase
 {
 public:
 	class AActor*                                 SummonedActor;                                     // 0x0208(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class AActor* Summoner)> OnBegin;                                           // 0x0210(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class AActor* Summoner)> OnEnd;                                             // 0x0220(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class AActor* Summoner)> OnDeath;                                           // 0x0230(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class AActor* Summoner)> OnBegin;                                  // 0x0210(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class AActor* Summoner)> OnEnd;                                    // 0x0220(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class AActor* Summoner)> OnDeath;                                  // 0x0230(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	int32                                         SummonedID;                                        // 0x0240(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	uint8                                         Pad_244[0x4];                                      // 0x0244(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class AActor*                                 SourceActor;                                       // 0x0248(0x0008)(ZeroConstructor, Transient, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
@@ -373,8 +373,8 @@ public:
 class UGATask_WaitAttributeChange final : public UGATaskBase
 {
 public:
-	TMulticastInlineDelegate<void(float NewValue)> OnInRange;                                         // 0x0208(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(float NewValue)> OnOutRange;                                        // 0x0218(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(float NewValue)> OnInRange;                                        // 0x0208(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(float NewValue)> OnOutRange;                                       // 0x0218(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	struct FGameplayAttribute                     Attribute;                                         // 0x0228(0x0040)(Transient, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	float                                         MinValue;                                          // 0x0268(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	bool                                          bIncludeMin;                                       // 0x026C(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
@@ -408,8 +408,8 @@ class UGATask_WaitBuffEvent final : public UGATaskBase
 {
 public:
 	uint8                                         Pad_208[0x18];                                     // 0x0208(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
-	TMulticastInlineDelegate<void(int32 NewStackCount, int32 OldStackCount)> OnApplied;                                         // 0x0220(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(int32 NewStackCount, int32 OldStackCount)> OnRemoved;                                         // 0x0230(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(int32 NewStackCount, int32 OldStackCount)> OnApplied;              // 0x0220(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(int32 NewStackCount, int32 OldStackCount)> OnRemoved;              // 0x0230(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	int32                                         BuffID;                                            // 0x0240(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	uint8                                         Pad_244[0x4];                                      // 0x0244(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UAbilitySystemComponent*                TargetASC;                                         // 0x0248(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
@@ -484,7 +484,7 @@ public:
 class UGATask_WaitDamageEvent final : public UGATaskBase
 {
 public:
-	TMulticastInlineDelegate<void(class AActor* OtherActor, struct FAttributeModifierHandle& ModifierParameterHandle)> OnDamageOrTreatEvent;                              // 0x0208(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class AActor* OtherActor, const struct FAttributeModifierHandle& ModifierParameterHandle)> OnDamageOrTreatEvent; // 0x0208(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	class UMarvelBaseAbilitySystemComponent*      SourceASC;                                         // 0x0218(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	uint8                                         Pad_220[0xA8];                                     // 0x0220(0x00A8)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
@@ -510,7 +510,7 @@ public:
 class UGATask_WaitKillEvent final : public UGATaskBase
 {
 public:
-	TMulticastInlineDelegate<void(struct FUIKillInfo& KillInfo)> OnKillEvent;                                       // 0x0208(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPrivate)
+	TMulticastInlineDelegate<void(const struct FUIKillInfo& KillInfo)> OnKillEvent;                  // 0x0208(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPrivate)
 	uint8                                         Pad_218[0xA8];                                     // 0x0218(0x00A8)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
@@ -535,9 +535,9 @@ public:
 class UGATask_WaitInput final : public UGATaskBase
 {
 public:
-	TMulticastInlineDelegate<void(float Duration)> OnPress;                                           // 0x0208(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(float Duration)> OnRelease;                                         // 0x0218(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(float Duration)> OnTimeout;                                         // 0x0228(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(float Duration)> OnPress;                                          // 0x0208(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(float Duration)> OnRelease;                                        // 0x0218(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(float Duration)> OnTimeout;                                        // 0x0228(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	EAbilityInputBinds                            InputBind;                                         // 0x0238(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	bool                                          bSkipNowTrigger;                                   // 0x0239(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	uint8                                         Pad_23A[0x2];                                      // 0x023A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
@@ -579,7 +579,7 @@ public:
 class UGATask_WaitOwnerKillOther final : public UGATaskBase
 {
 public:
-	TMulticastInlineDelegate<void(class AActor* InSourceAvatar, class AActor* InTargetAvatar, struct FAttributeModifierHandle& ModifierParameterHandle)> OnCharacterKillOther;                              // 0x0208(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class AActor* InSourceAvatar, class AActor* InTargetAvatar, const struct FAttributeModifierHandle& ModifierParameterHandle)> OnCharacterKillOther; // 0x0208(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	struct FPredictionKey                         OnKillOtherKey;                                    // 0x0218(0x00A0)(Transient, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	class AMarvelBaseCharacter*                   TargetCharacter;                                   // 0x02B8(0x0008)(ZeroConstructor, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 
@@ -633,7 +633,7 @@ public:
 class UGATask_WaitTargetData final : public UGATaskBase
 {
 public:
-	TMulticastInlineDelegate<void(const struct FVector& Location)> OnConfirm;                                         // 0x0208(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const struct FVector& Location)> OnConfirm;                        // 0x0208(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	TMulticastInlineDelegate<void()>              OnCancel;                                          // 0x0218(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	uint8                                         Pad_228[0x8];                                      // 0x0228(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FFindGroundParam                       TraceParams;                                       // 0x0230(0x0FD0)(Transient, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)

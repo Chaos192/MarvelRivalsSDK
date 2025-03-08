@@ -22,7 +22,7 @@ namespace SDK
 // Parameters:
 // class AMarvelBaseCharacter*             InOwnerCharacter                                       (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // int32                                   InOwnerAbilityID                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FBondInstance                    InBondInstance                                         (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FBondInstance&             InBondInstance                                         (ConstParm, Parm, OutParm, ReferenceParm)
 // class AMarvelBaseCharacter*             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash)
 
 class AMarvelBaseCharacter* UPyBondEnhanceSourceResolver_104781::GetEnhanceSource(class AMarvelBaseCharacter* InOwnerCharacter, int32 InOwnerAbilityID, const struct FBondInstance& InBondInstance)
@@ -96,7 +96,7 @@ bool UPyAbility_104781::CanActivate()
 // PythonFunction PyAbility_104781.PyAbility_104781.K2_ActivateAbilityFromEvent
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayEventData               EventData                                              (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayEventData&        EventData                                              (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyAbility_104781::K2_ActivateAbilityFromEvent(const struct FGameplayEventData& EventData)
 {
@@ -121,7 +121,7 @@ void UPyAbility_104781::K2_ActivateAbilityFromEvent(const struct FGameplayEventD
 // PythonFunction PyAbility_104781.PyAbility_104781.CheckViewportTarget
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class AActor*                           InTarget                                               (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// const class AActor*                     InTarget                                               (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 bool UPyAbility_104781::CheckViewportTarget(const class AActor* InTarget)

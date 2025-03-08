@@ -234,7 +234,7 @@ bool UPyWidget3D_SummonedMarker::ShouldBeVisible()
 // PythonFunction PyWidget3D__SummonedMarker.PyWidget3D_SummonedMarker.OnAnimationStarted
 // (BlueprintCosmetic, Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UWidgetAnimation*                 Animation                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// const class UWidgetAnimation*           Animation                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 void UPyWidget3D_SummonedMarker::OnAnimationStarted(const class UWidgetAnimation* Animation)
 {
@@ -259,7 +259,7 @@ void UPyWidget3D_SummonedMarker::OnAnimationStarted(const class UWidgetAnimation
 // PythonFunction PyWidget3D__SummonedMarker.PyWidget3D_SummonedMarker.OnAnimationFinished
 // (BlueprintCosmetic, Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UWidgetAnimation*                 Animation                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// const class UWidgetAnimation*           Animation                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 void UPyWidget3D_SummonedMarker::OnAnimationFinished(const class UWidgetAnimation* Animation)
 {
@@ -284,7 +284,7 @@ void UPyWidget3D_SummonedMarker::OnAnimationFinished(const class UWidgetAnimatio
 // PythonFunction PyWidget3D__SummonedMarker.PyWidget3D_SummonedMarker.StartHandlerSignal
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FSignalResult                    Result                                                 (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FSignalResult&             Result                                                 (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyWidget3D_SummonedMarker::StartHandlerSignal(const struct FSignalResult& Result)
 {
@@ -309,7 +309,7 @@ void UPyWidget3D_SummonedMarker::StartHandlerSignal(const struct FSignalResult& 
 // PythonFunction PyWidget3D__SummonedMarker.PyWidget3D_SummonedMarker.EndHandlerSignal
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FSignalResult                    Result                                                 (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FSignalResult&             Result                                                 (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyWidget3D_SummonedMarker::EndHandlerSignal(const struct FSignalResult& Result)
 {

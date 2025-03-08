@@ -69,7 +69,7 @@ void UWBP_HeroVoiceLineUnit_C::FadeOut()
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           InCharacter                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class FString                           EnName                                                 (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
+// class FString*                          EnName                                                 (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
 
 void UWBP_HeroVoiceLineUnit_C::GetHeroName(class AActor* InCharacter, class FString* EnName)
 {
@@ -92,9 +92,9 @@ void UWBP_HeroVoiceLineUnit_C::GetHeroName(class AActor* InCharacter, class FStr
 // Function WBP_HeroVoiceLineUnit.WBP_HeroVoiceLineUnit_C.GetPrefixOrFullStr
 // (Private, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// class FString                           InStr                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-// class FString                           Prefix                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-// class FString                           OutStr                                                 (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    InStr                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Prefix                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// class FString*                          OutStr                                                 (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
 
 void UWBP_HeroVoiceLineUnit_C::GetPrefixOrFullStr(const class FString& InStr, const class FString& Prefix, class FString* OutStr)
 {
@@ -120,7 +120,7 @@ void UWBP_HeroVoiceLineUnit_C::GetPrefixOrFullStr(const class FString& InStr, co
 // Parameters:
 // class AActor*                           InActor                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // EMarvelVoiceType                        VoiceType                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FLinearColor                     Color                                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FLinearColor*                    Color                                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UWBP_HeroVoiceLineUnit_C::GetVoiceDisColor(class AActor* InActor, EMarvelVoiceType VoiceType, struct FLinearColor* Color)
 {
@@ -146,7 +146,7 @@ void UWBP_HeroVoiceLineUnit_C::GetVoiceDisColor(class AActor* InActor, EMarvelVo
 // Parameters:
 // class AActor*                           CharacterFrom                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // class AActor*                           CharacterTo                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class FString                           OutString                                              (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
+// class FString*                          OutString                                              (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
 
 void UWBP_HeroVoiceLineUnit_C::GetVoiceToString(class AActor* CharacterFrom, class AActor* CharacterTo, class FString* OutString)
 {
@@ -171,7 +171,7 @@ void UWBP_HeroVoiceLineUnit_C::GetVoiceToString(class AActor* CharacterFrom, cla
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           Actor                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class FString                           Texts                                                  (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Texts                                                  (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UWBP_HeroVoiceLineUnit_C::InitFailedVoice(class AActor* Actor, const class FString& Texts)
 {
@@ -194,7 +194,7 @@ void UWBP_HeroVoiceLineUnit_C::InitFailedVoice(class AActor* Actor, const class 
 // Parameters:
 // EMarvelVoiceType                        VoiceType                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class AActor*                           Character                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class FText                             Line                                                   (BlueprintVisible, BlueprintReadOnly, Parm)
+// const class FText&                      Line                                                   (BlueprintVisible, BlueprintReadOnly, Parm)
 // int32                                   VoiceID                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class AActor*                           ToCharacter                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
@@ -221,7 +221,7 @@ void UWBP_HeroVoiceLineUnit_C::InitPostedVoice(EMarvelVoiceType VoiceType, class
 // (Private, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
 // int32                                   VoiceID                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           OutPrefix                                              (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
+// class FString*                          OutPrefix                                              (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
 
 void UWBP_HeroVoiceLineUnit_C::MakeVoiceLineTypePrefix(int32 VoiceID, class FString* OutPrefix)
 {
@@ -244,8 +244,8 @@ void UWBP_HeroVoiceLineUnit_C::MakeVoiceLineTypePrefix(int32 VoiceID, class FStr
 // Function WBP_HeroVoiceLineUnit.WBP_HeroVoiceLineUnit_C.PostProcessVoiceLineType
 // (Private, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// class FString                           InStr                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-// class FString                           OutStr                                                 (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    InStr                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// class FString*                          OutStr                                                 (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
 
 void UWBP_HeroVoiceLineUnit_C::PostProcessVoiceLineType(const class FString& InStr, class FString* OutStr)
 {
@@ -288,7 +288,7 @@ void UWBP_HeroVoiceLineUnit_C::PreConstruct(bool IsDesignTime)
 // Function WBP_HeroVoiceLineUnit.WBP_HeroVoiceLineUnit_C.SetDisplayText
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FText                             Text                                                   (BlueprintVisible, BlueprintReadOnly, Parm)
+// const class FText&                      Text                                                   (BlueprintVisible, BlueprintReadOnly, Parm)
 // class AActor*                           Actor                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // EMarvelVoiceType                        Type                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 

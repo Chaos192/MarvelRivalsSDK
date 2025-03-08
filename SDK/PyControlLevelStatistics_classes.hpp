@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "PyLevelStatistics_classes.hpp"
 #include "Marvel_structs.hpp"
+#include "PyLevelStatistics_classes.hpp"
 
 
 namespace SDK

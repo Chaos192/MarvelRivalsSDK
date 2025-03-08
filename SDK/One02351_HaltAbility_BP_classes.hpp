@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass 102351_HaltAbility_BP.102351_HaltAbility_BP_C
-// 0x0000 (0x2C80 - 0x2C80)
+// 0x0000 (0x2C90 - 0x2C90)
 class UOne02351_HaltAbility_BP_C final : public UMarvelMoveToAbility
 {
 public:

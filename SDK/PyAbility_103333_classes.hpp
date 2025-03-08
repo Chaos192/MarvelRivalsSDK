@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "Hero_1033_classes.hpp"
 #include "Marvel_classes.hpp"
 #include "GameplayTags_structs.hpp"
-#include "Hero_1033_classes.hpp"
 
 
 namespace SDK
@@ -37,11 +37,11 @@ public:
 };
 
 // PythonClass PyAbility_103333.PyAbility_103333
-// 0x0010 (0x31F8 - 0x31E8)
+// 0x0010 (0x3200 - 0x31F0)
 class UPyAbility_103333 : public UAbility_103333
 {
 public:
-	struct FGameplayTag                           HitCueTag;                                         // 0x31E8(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGameplayTag                           HitCueTag;                                         // 0x31F0(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void PlayHitCue(class ACharacter* Target);

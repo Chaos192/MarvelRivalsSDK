@@ -20,7 +20,7 @@ namespace SDK
 // Function Hero_1014.Ability_101411.ServerApplyEffect
 // (Net, NetReliable, Native, Event, Public, NetServer)
 // Parameters:
-// TArray<class AActor*>                   Actors                                                 (ConstParm, Parm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TArray<class AActor*>&            Actors                                                 (ConstParm, Parm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UAbility_101411::ServerApplyEffect(const TArray<class AActor*>& Actors)
 {
@@ -45,7 +45,7 @@ void UAbility_101411::ServerApplyEffect(const TArray<class AActor*>& Actors)
 // Function Hero_1014.CueNotify_10141101.GetHealthStatus
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class UMarvelAttributeSet*              AttributeSet                                           (ConstParm, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UMarvelAttributeSet*        AttributeSet                                           (ConstParm, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // EHealthStatus                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 EHealthStatus ACueNotify_10141101::GetHealthStatus(const class UMarvelAttributeSet* AttributeSet)
@@ -170,7 +170,7 @@ void ACueNotify_10141101::SetVisibleLevel(int32 FillColorIndex) const
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // int32                                   NumTargets                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   OutIndex                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32*                                  OutIndex                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UConfig_101421::FindEffectIndex(int32 NumTargets, int32* OutIndex) const
@@ -201,7 +201,7 @@ bool UConfig_101421::FindEffectIndex(int32 NumTargets, int32* OutIndex) const
 // Function Hero_1014.Ability_101421.GetTraceTargetNumber
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<struct FHitResult>               HitResults                                             (Parm, OutParm, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// TArray<struct FHitResult>*              HitResults                                             (Parm, OutParm, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 // int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 int32 UAbility_101421::GetTraceTargetNumber(TArray<struct FHitResult>* HitResults)
@@ -232,7 +232,7 @@ int32 UAbility_101421::GetTraceTargetNumber(TArray<struct FHitResult>* HitResult
 // Parameters:
 // class AActor*                           InSourceAvatar                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           InTargetAvatar                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FAttributeModifierHandle         ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FAttributeModifierHandle&  ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UAbility_101421::OnOwnerApplyDamage(class AActor* InSourceAvatar, class AActor* InTargetAvatar, const struct FAttributeModifierHandle& ModifierParameterHandle)
 {
@@ -278,7 +278,7 @@ void UPunisherCableComponent::ResetParticlesLocationFromStartToEnd()
 // Function Hero_1014.PunisherCableComponent.SetAnchorLocation
 // (Final, Native, Public, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FVector                          InAnchorLocation                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   InAnchorLocation                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UPunisherCableComponent::SetAnchorLocation(const struct FVector& InAnchorLocation)
 {
@@ -382,9 +382,9 @@ void ASummoned_10145101::OnRep_SlideStateChanged()
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
 // bool                                    bEnable                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          Start                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          End                                                    (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FPortalSegments                  PortalSegments                                         (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FVector&                   Start                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   End                                                    (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FPortalSegments&           PortalSegments                                         (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 void ASummoned_10145101::UpdateBoxCollision(bool bEnable, const struct FVector& Start, const struct FVector& End, const struct FPortalSegments& PortalSegments)
 {
@@ -445,7 +445,7 @@ void ASummoned_10145101::ZiplineEndingChanged()
 // Function Hero_1014.SummonedMovementComponent_10145101.BindClawHitResult
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FHitResult                       InHitResult                                            (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FHitResult&                InHitResult                                            (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 void USummonedMovementComponent_10145101::BindClawHitResult(const struct FHitResult& InHitResult)
 {
@@ -496,7 +496,7 @@ void USummonedMovementComponent_10145101::OnClawHitComponentCollisionChanged(cla
 // (Final, Native, Public, HasDefaults)
 // Parameters:
 // class FName                             BoneName                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          ImpactPoint                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   ImpactPoint                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void USummonedMovementComponent_10145101::OnClawPivotDestructibleFracture(class FName BoneName, const struct FVector& ImpactPoint)
 {
@@ -522,8 +522,8 @@ void USummonedMovementComponent_10145101::OnClawPivotDestructibleFracture(class 
 // Function Hero_1014.Ability_101451.CanInstallZipline
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FVector                          Location                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FHitResult                       HitResult                                              (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FVector&                   Location                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FHitResult&                HitResult                                              (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UAbility_101451::CanInstallZipline(const struct FVector& Location, const struct FHitResult& HitResult)
@@ -657,10 +657,10 @@ void ASummoned_10145201::OnRep_SlideStateChanged()
 // Function Hero_1014.Ability_101452.ComputeSlideDirection
 // (Final, Native, Static, Public, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FVector                          ZiplineSegmentStart                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          ZiplineSegmentEnd                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          StartPosition                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          CameraDirection                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   ZiplineSegmentStart                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   ZiplineSegmentEnd                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   StartPosition                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   CameraDirection                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // EZiplineSlideDirection                  ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 EZiplineSlideDirection UAbility_101452::ComputeSlideDirection(const struct FVector& ZiplineSegmentStart, const struct FVector& ZiplineSegmentEnd, const struct FVector& StartPosition, const struct FVector& CameraDirection)
@@ -803,8 +803,8 @@ void UAbility_101452::OnAbilityStageChanged()
 // (Final, Native, Public, HasDefaults, BlueprintCallable)
 // Parameters:
 // float                                   DeltaSeconds                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          OldLocation                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          OldVelocity                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   OldLocation                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   OldVelocity                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UAbility_101452::OnCharacterMovementUpdated(float DeltaSeconds, const struct FVector& OldLocation, const struct FVector& OldVelocity)
 {
@@ -881,7 +881,7 @@ void UAbility_101452::OnSummonedUnregister(class UMarvelSummonedComponent* Summo
 // Function Hero_1014.Ability_101452.TraceForZipline
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FHitResult                       OutHit                                                 (Parm, OutParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// struct FHitResult*                      OutHit                                                 (Parm, OutParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UAbility_101452::TraceForZipline(struct FHitResult* OutHit)
@@ -1399,7 +1399,7 @@ void UTurret3PAnimInstance::AnimNotify_LeaveGetOutState()
 // Function Hero_1014.PunisherAnimInstance.OnCharacterTagUpdate
 // (Final, Native, Public, HasOutParams)
 // Parameters:
-// struct FGameplayTag                     Tag                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              Tag                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bTagExists                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UPunisherAnimInstance::OnCharacterTagUpdate(const struct FGameplayTag& Tag, bool bTagExists)

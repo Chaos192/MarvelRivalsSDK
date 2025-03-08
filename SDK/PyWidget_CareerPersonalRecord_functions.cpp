@@ -102,7 +102,7 @@ void UPyWidget_CareerPersonalRecord_Item::SetInfoDict(class UObject* Info)
 // PythonFunction PyWidget_CareerPersonalRecord.PyWidget_CareerPersonalRecord_Item.OnAnimationFinished
 // (BlueprintCosmetic, Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UWidgetAnimation*                 Animation                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// const class UWidgetAnimation*           Animation                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 void UPyWidget_CareerPersonalRecord_Item::OnAnimationFinished(const class UWidgetAnimation* Animation)
 {

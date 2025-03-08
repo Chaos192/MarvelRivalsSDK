@@ -20,7 +20,7 @@ namespace SDK
 // PythonFunction PyAbility_104971.PyEffectiveComponent_10497101.K2_OnPreApplyContainer
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<struct FHitResult>               HitResults                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const TArray<struct FHitResult>&        HitResults                                             (ConstParm, Parm, OutParm, ReferenceParm)
 // TArray<struct FHitResult>               ReturnValue                                            (Parm, OutParm, ReturnParm)
 
 TArray<struct FHitResult> UPyEffectiveComponent_10497101::K2_OnPreApplyContainer(const TArray<struct FHitResult>& HitResults)
@@ -42,6 +42,25 @@ TArray<struct FHitResult> UPyEffectiveComponent_10497101::K2_OnPreApplyContainer
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
+}
+
+
+// PythonFunction PyAbility_104971.PyAbility_AirGrab_104971.OnActiveAbility
+// (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
+
+void UPyAbility_AirGrab_104971::OnActiveAbility()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyAbility_AirGrab_104971", "OnActiveAbility");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
 }
 
 
@@ -112,7 +131,7 @@ void UPyAbility_104971::K2_ActivateAbility()
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int32                                   SocketId                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FMarvelAbilitySocketInfo         SocketInfo                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
+// const struct FMarvelAbilitySocketInfo&  SocketInfo                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
 
 void UPyAbility_104971::HandleAnimSocketInfo(int32 SocketId, const struct FMarvelAbilitySocketInfo& SocketInfo)
 {
@@ -138,7 +157,7 @@ void UPyAbility_104971::HandleAnimSocketInfo(int32 SocketId, const struct FMarve
 // PythonFunction PyAbility_104971.PyAbility_104971.OnTraceResults
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<struct FHitResult>               HitResults                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const TArray<struct FHitResult>&        HitResults                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyAbility_104971::OnTraceResults(const TArray<struct FHitResult>& HitResults)
 {
@@ -225,6 +244,31 @@ void UPyAbility_104971::InternalGrabTarget(class ACharacter* Target)
 	Params::PyAbility_104971_InternalGrabTarget Parms{};
 
 	Parms.Target = Target;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// PythonFunction PyAbility_104971.PyAbility_104971.OnPredictingClientGrabTargetPredictFailed
+// (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class ACharacter*                       InCharacter                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+
+void UPyAbility_104971::OnPredictingClientGrabTargetPredictFailed(class ACharacter* InCharacter)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyAbility_104971", "OnPredictingClientGrabTargetPredictFailed");
+
+	Params::PyAbility_104971_OnPredictingClientGrabTargetPredictFailed Parms{};
+
+	Parms.InCharacter = InCharacter;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -393,7 +437,7 @@ void UPyAbility_104971::BreakEventNotify()
 // PythonFunction PyAbility_104971.PyAbility_104971.OnLanded
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FHitResult                       Hit                                                    (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FHitResult&                Hit                                                    (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyAbility_104971::OnLanded(const struct FHitResult& Hit)
 {
@@ -456,7 +500,7 @@ void UPyAbility_104971::EndScope()
 // PythonFunction PyAbility_104971.PyAbility_104971.NativeOnMontageCompleted
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_104971::NativeOnMontageCompleted(const class FString& Tag)
 {
@@ -481,7 +525,7 @@ void UPyAbility_104971::NativeOnMontageCompleted(const class FString& Tag)
 // PythonFunction PyAbility_104971.PyAbility_104971.NativeOnMontageInterrupted
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_104971::NativeOnMontageInterrupted(const class FString& Tag)
 {
@@ -506,7 +550,7 @@ void UPyAbility_104971::NativeOnMontageInterrupted(const class FString& Tag)
 // PythonFunction PyAbility_104971.PyAbility_104971.NativeOnMontageCancelled
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_104971::NativeOnMontageCancelled(const class FString& Tag)
 {
@@ -523,25 +567,6 @@ void UPyAbility_104971::NativeOnMontageCancelled(const class FString& Tag)
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// PythonFunction PyAbility_104971.PyAbility_AirGrab_104971.OnActiveAbility
-// (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
-
-void UPyAbility_AirGrab_104971::OnActiveAbility()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PyAbility_AirGrab_104971", "OnActiveAbility");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
 }

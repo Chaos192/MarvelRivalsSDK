@@ -16,20 +16,20 @@
 namespace SDK::Params
 {
 
-// PythonFunction PyMarvelLobbyHUD.PyMarvelLobbyHUD.ReceiveEndPlay
-// 0x0001 (0x0001 - 0x0000)
-struct PyMarvelLobbyHUD_ReceiveEndPlay final
-{
-public:
-	EEndPlayReason                                Reason;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-
 // PythonFunction PyMarvelLobbyHUD.PyLobbyAudioComponent.ReceiveEndPlay
 // 0x0001 (0x0001 - 0x0000)
 struct PyLobbyAudioComponent_ReceiveEndPlay final
 {
 public:
 	EEndPlayReason                                EndPlayReason;                                     // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+
+// PythonFunction PyMarvelLobbyHUD.PyMarvelLobbyHUD.ReceiveEndPlay
+// 0x0001 (0x0001 - 0x0000)
+struct PyMarvelLobbyHUD_ReceiveEndPlay final
+{
+public:
+	EEndPlayReason                                Reason;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 
 }

@@ -19,7 +19,7 @@ namespace SDK
 {
 
 // PythonClass PyAbility_102741.PyAbility_102741
-// 0x0000 (0x25F0 - 0x25F0)
+// 0x0000 (0x25F8 - 0x25F8)
 class UPyAbility_102741 : public UAbility_102741
 {
 public:
@@ -54,7 +54,7 @@ public:
 };
 
 // PythonClass PyAbility_102741.PyCue_Summoner_Loop_10274101
-// 0x0000 (0x12A0 - 0x12A0)
+// 0x0000 (0x1260 - 0x1260)
 class APyCue_Summoner_Loop_10274101 final : public ACue_Summoner_Loop_10274101
 {
 public:
@@ -69,7 +69,7 @@ public:
 };
 
 // PythonClass PyAbility_102741.PyUIController_102741
-// 0x0000 (0x0C60 - 0x0C60)
+// 0x0000 (0x0C50 - 0x0C50)
 class UPyUIController_102741 final : public UUIC_Ability
 {
 public:

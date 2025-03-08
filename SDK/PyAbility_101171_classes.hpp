@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "PyWidget_AbilityTarget_classes.hpp"
 #include "GameplayTags_structs.hpp"
 #include "Hero_1011_classes.hpp"
-#include "PyWidget_AbilityTarget_classes.hpp"
 
 
 namespace SDK
@@ -70,7 +70,7 @@ public:
 };
 
 // PythonClass PyAbility_101171.PyAbility_101171
-// 0x0000 (0x2588 - 0x2588)
+// 0x0000 (0x2590 - 0x2590)
 class UPyAbility_101171 : public UAbility_101171
 {
 public:

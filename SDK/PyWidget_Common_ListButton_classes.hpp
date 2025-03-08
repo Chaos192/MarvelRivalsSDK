@@ -68,7 +68,7 @@ public:
 
 // PythonClass PyWidget_Common_ListButton.PyWidget_CommonVXButtonV3
 // 0x0000 (0x0980 - 0x0980)
-class UPyWidget_CommonVXButtonV3 final : public UPyWidget_CommonVXButton
+class UPyWidget_CommonVXButtonV3 : public UPyWidget_CommonVXButton
 {
 public:
 	static class UClass* StaticClass()

@@ -49,8 +49,8 @@ public:
 };
 
 // Class AssetRegistry.AssetRegistry
-// 0x0000 (0x0030 - 0x0030)
-class IAssetRegistry final : public IInterface
+// 0x0000 (0x0000 - 0x0000)
+class IAssetRegistry final
 {
 public:
 	void PrioritizeSearchPath(const class FString& PathToPrioritize);
@@ -90,6 +90,15 @@ public:
 	static class IAssetRegistry* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<IAssetRegistry>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
 	}
 };
 

@@ -19,13 +19,13 @@ namespace SDK
 {
 
 // PythonClass PyAbility_104231.PyAbility_104231
-// 0x0018 (0x25A0 - 0x2588)
+// 0x0018 (0x25A8 - 0x2590)
 class UPyAbility_104231 : public UAbility_108
 {
 public:
-	int32                                         CurrentWebNum;                                     // 0x2588(0x0004)(Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_258C[0x4];                                     // 0x258C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TMulticastInlineDelegate<void(int32 CurrentWebNum)> OnCurrentWebNumUpdate;                             // 0x2590(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	int32                                         CurrentWebNum;                                     // 0x2590(0x0004)(Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2594[0x4];                                     // 0x2594(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TMulticastInlineDelegate<void(int32 CurrentWebNum)> OnCurrentWebNumUpdate;                       // 0x2598(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 
 public:
 	void OnRep_CurrentWebNum();
@@ -42,7 +42,7 @@ public:
 };
 
 // PythonClass PyAbility_104231.PyProjectile_10423101
-// 0x0000 (0x3050 - 0x3050)
+// 0x0000 (0x3110 - 0x3110)
 class APyProjectile_10423101 final : public AMarvelAbilityTargetActor_Projectile
 {
 public:
@@ -128,14 +128,14 @@ public:
 };
 
 // PythonClass PyAbility_104231.PyUIController_104231
-// 0x0060 (0x0CC0 - 0x0C60)
+// 0x0060 (0x0CB0 - 0x0C50)
 class UPyUIController_104231 final : public UUIC_Ability
 {
 public:
-	TMap<EClientPlayerViewSide, struct FWidgetStyle_HealthBar_BattlePanel> SideConfig;                                        // 0x0C60(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	int32                                         MaxNum;                                            // 0x0CB0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_CB4[0x4];                                      // 0x0CB4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TSubclassOf<class UPyWidget_SummonedInfoPanel> NumClass;                                          // 0x0CB8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TMap<EClientPlayerViewSide, struct FWidgetStyle_HealthBar_BattlePanel> SideConfig;               // 0x0C50(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	int32                                         MaxNum;                                            // 0x0CA0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_CA4[0x4];                                      // 0x0CA4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TSubclassOf<class UPyWidget_SummonedInfoPanel> NumClass;                                         // 0x0CA8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void SetAbility(int32 InAbilityId, class UGameplayAbility* InAbility);

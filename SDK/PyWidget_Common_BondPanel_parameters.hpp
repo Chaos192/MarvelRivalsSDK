@@ -10,9 +10,19 @@
 
 #include "Basic.hpp"
 
+#include "python_enums_structs.hpp"
+
 
 namespace SDK::Params
 {
+
+// PythonFunction PyWidget_Common_BondPanel.PyWidget_Common_BondPanel.OnBanPickStateChanged
+// 0x0001 (0x0001 - 0x0000)
+struct PyWidget_Common_BondPanel_OnBanPickStateChanged final
+{
+public:
+	EBanPickState                                 BanPickState;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
 
 // PythonFunction PyWidget_Common_BondPanel.PyWidget_Common_BondPanel.MarvelSetVisible
 // 0x0001 (0x0001 - 0x0000)

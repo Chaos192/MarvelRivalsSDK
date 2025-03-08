@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // PythonClass PyWC_LevelActor.PyWC_LevelActor
-// 0x0000 (0x0B10 - 0x0B10)
+// 0x0000 (0x0BA0 - 0x0BA0)
 class UPyWC_LevelActor final : public UMarvelWidgetComponent
 {
 public:

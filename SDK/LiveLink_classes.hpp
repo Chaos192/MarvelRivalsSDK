@@ -12,8 +12,8 @@
 
 #include "LiveLinkInterface_structs.hpp"
 #include "LiveLinkInterface_classes.hpp"
-#include "Engine_classes.hpp"
 #include "LiveLink_structs.hpp"
+#include "Engine_classes.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
 #include "TimeManagement_classes.hpp"
@@ -136,7 +136,7 @@ public:
 class ULiveLinkComponent final : public UActorComponent
 {
 public:
-	TMulticastInlineDelegate<void(float DeltaTime)> OnLiveLinkUpdated;                                 // 0x00F0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(float DeltaTime)> OnLiveLinkUpdated;                               // 0x00F0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	uint8                                         Pad_100[0x10];                                     // 0x0100(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
@@ -283,7 +283,7 @@ class ULiveLinkSettings final : public UObject
 {
 public:
 	TArray<struct FLiveLinkRoleProjectSetting>    DefaultRoleSettings;                               // 0x0030(0x0010)(Edit, ZeroConstructor, Config, Protected, NativeAccessSpecifierProtected)
-	TSubclassOf<class ULiveLinkFrameInterpolationProcessor> FrameInterpolationProcessor;                       // 0x0040(0x0008)(ZeroConstructor, Config, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSubclassOf<class ULiveLinkFrameInterpolationProcessor> FrameInterpolationProcessor;             // 0x0040(0x0008)(ZeroConstructor, Config, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TSoftObjectPtr<class ULiveLinkPreset>         DefaultLiveLinkPreset;                             // 0x0048(0x0030)(Edit, Config, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         ClockOffsetCorrectionStep;                         // 0x0078(0x0004)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	ELiveLinkSourceMode                           DefaultMessageBusSourceMode;                       // 0x007C(0x0001)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)

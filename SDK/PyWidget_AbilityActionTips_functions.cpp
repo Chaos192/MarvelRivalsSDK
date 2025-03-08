@@ -39,7 +39,7 @@ void UPyWidget_CommonAbilityActionTip::Construct()
 // PythonFunction PyWidget_AbilityActionTips.PyWidget_CommonAbilityActionTip.SetHintText
 // (Native, Public, BlueprintCallable)
 // Parameters:
-// class FText                             InText                                                 (Parm)
+// const class FText&                      InText                                                 (Parm)
 
 void UPyWidget_CommonAbilityActionTip::SetHintText(const class FText& InText)
 {
@@ -64,7 +64,7 @@ void UPyWidget_CommonAbilityActionTip::SetHintText(const class FText& InText)
 // PythonFunction PyWidget_AbilityActionTips.PyWidget_CommonAbilityActionTip.SetStyle
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FWidget_ActionTip                Style                                                  (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FWidget_ActionTip&         Style                                                  (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyWidget_CommonAbilityActionTip::SetStyle(const struct FWidget_ActionTip& Style)
 {
@@ -89,7 +89,7 @@ void UPyWidget_CommonAbilityActionTip::SetStyle(const struct FWidget_ActionTip& 
 // PythonFunction PyWidget_AbilityActionTips.PyWidget_CommonAbilityActionTip.SetAction
 // (Native, Public, BlueprintCallable)
 // Parameters:
-// class FString                           InActionName                                           (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    InActionName                                           (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyWidget_CommonAbilityActionTip::SetAction(const class FString& InActionName)
 {
@@ -196,8 +196,8 @@ void UPyWidget_CommonAbilityActionTips::SetVisible(bool bVisible_0)
 // PythonFunction PyWidget_AbilityActionTips.PyWidget_CommonAbilityActionTips.AddTips
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   InAbilityId                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FWidget_ActionTip                Tips                                                   (Parm)
+// const int32                             InAbilityId                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FWidget_ActionTip&         Tips                                                   (Parm)
 
 void UPyWidget_CommonAbilityActionTips::AddTips(const int32 InAbilityId, const struct FWidget_ActionTip& Tips)
 {
@@ -223,7 +223,7 @@ void UPyWidget_CommonAbilityActionTips::AddTips(const int32 InAbilityId, const s
 // PythonFunction PyWidget_AbilityActionTips.PyWidget_CommonAbilityActionTips.RemoveTips
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   InAbilityId                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const int32                             InAbilityId                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UPyWidget_CommonAbilityActionTips::RemoveTips(const int32 InAbilityId)
 {
@@ -248,8 +248,8 @@ void UPyWidget_CommonAbilityActionTips::RemoveTips(const int32 InAbilityId)
 // PythonFunction PyWidget_AbilityActionTips.PyWidget_CommonAbilityActionTips.RemoveOnlyTips
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   InAbilityId                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FWidget_ActionTip                Tips                                                   (Parm)
+// const int32                             InAbilityId                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FWidget_ActionTip&         Tips                                                   (Parm)
 
 void UPyWidget_CommonAbilityActionTips::RemoveOnlyTips(const int32 InAbilityId, const struct FWidget_ActionTip& Tips)
 {
@@ -275,8 +275,8 @@ void UPyWidget_CommonAbilityActionTips::RemoveOnlyTips(const int32 InAbilityId, 
 // PythonFunction PyWidget_AbilityActionTips.PyWidget_CommonAbilityActionTips.AddTipsByActionTipsParam
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   IndexID                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FActionTipsParam                 Tips                                                   (Parm)
+// const int32                             IndexID                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FActionTipsParam&          Tips                                                   (Parm)
 
 void UPyWidget_CommonAbilityActionTips::AddTipsByActionTipsParam(const int32 IndexID, const struct FActionTipsParam& Tips)
 {
@@ -302,8 +302,8 @@ void UPyWidget_CommonAbilityActionTips::AddTipsByActionTipsParam(const int32 Ind
 // PythonFunction PyWidget_AbilityActionTips.PyWidget_CommonAbilityActionTips.RemoveOnlyTipsByActionTipsParam
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   IndexID                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FActionTipsParam                 Tips                                                   (Parm)
+// const int32                             IndexID                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FActionTipsParam&          Tips                                                   (Parm)
 
 void UPyWidget_CommonAbilityActionTips::RemoveOnlyTipsByActionTipsParam(const int32 IndexID, const struct FActionTipsParam& Tips)
 {

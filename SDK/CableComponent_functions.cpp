@@ -39,8 +39,8 @@ void UCableComponent::ForceStraightenAtOnce()
 // Function CableComponent.CableComponent.GetEndPositions
 // (Native, Protected, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FVector                          OutStartPosition                                       (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          OutEndPosition                                         (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVector*                         OutStartPosition                                       (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVector*                         OutEndPosition                                         (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UCableComponent::GetEndPositions(struct FVector* OutStartPosition, struct FVector* OutEndPosition)
 {
@@ -214,7 +214,7 @@ void UCableComponent::TryToForceStraighten(bool bForce)
 // (Final, Native, Protected, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
 // float                                   InSubstepTime                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          Gravity                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   Gravity                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UCableComponent::VerletIntegrate(float InSubstepTime, const struct FVector& Gravity)
 {
@@ -290,7 +290,7 @@ class USceneComponent* UCableComponent::GetAttachedComponent() const
 // Function CableComponent.CableComponent.GetCableParticleLocations
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// TArray<struct FVector>                  Locations                                              (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+// TArray<struct FVector>*                 Locations                                              (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 
 void UCableComponent::GetCableParticleLocations(TArray<struct FVector>* Locations) const
 {

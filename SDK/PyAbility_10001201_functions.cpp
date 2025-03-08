@@ -21,7 +21,7 @@ namespace SDK
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyCue_Buff_Loop_10001201::WhileActiveUI(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
 {
@@ -48,7 +48,7 @@ void APyCue_Buff_Loop_10001201::WhileActiveUI(class AActor* MyTarget, const stru
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyCue_Buff_Loop_10001201::OnRemoveUI(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
 {
@@ -143,7 +143,7 @@ void UPyBuffAbility_10001201::OnGiftedAbilityActivate(class UGameplayAbility* Ac
 // PythonFunction PyAbility_10001201.PyBuffAbility_10001201.OnCooldownTagUpdated
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FGameplayTag                     TagUpdated                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              TagUpdated                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
 // bool                                    TagExists                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UPyBuffAbility_10001201::OnCooldownTagUpdated(const struct FGameplayTag& TagUpdated, bool TagExists)
@@ -191,7 +191,7 @@ void UPyBuffAbility_10001201::NextFrameRecoverCD()
 // Parameters:
 // class UMarvelGameplayAbility*           Ability                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // float                                   CostValue                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayTag                     CostTag                                                (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              CostTag                                                (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
 
 void UPyBuffAbility_10001201::OnAbilityConsumeCost(class UMarvelGameplayAbility* Ability, float CostValue, const struct FGameplayTag& CostTag)
 {

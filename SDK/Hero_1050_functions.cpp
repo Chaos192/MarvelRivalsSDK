@@ -119,7 +119,7 @@ void ASummoned_1050_Base::MulticastResetSummonedLifeSpan(float InLifeTime)
 // Function Hero_1050.Summoned_1050_Base.SetSummonedAttributeValue
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// EMarvelAttributeType                    InAttributeType                                        (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const EMarvelAttributeType              InAttributeType                                        (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void ASummoned_1050_Base::SetSummonedAttributeValue(const EMarvelAttributeType InAttributeType, float NewValue)
@@ -272,7 +272,7 @@ void UNotTreatShield_NonOverflow::OnGenerateAttribute()
 // Function Hero_1050.NotTreatShield_NonOverflow.ShouldExecuteNotTreatShield
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// float                                   OutMagnitude                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float*                                  OutMagnitude                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UNotTreatShield_NonOverflow::ShouldExecuteNotTreatShield(float* OutMagnitude) const
@@ -323,7 +323,7 @@ void ACueNotify_Buff_105002::OnMaterialChanged()
 // class AActor*                           SourceActor                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UMarvelGameplayAbility*           SourceAbility                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           Scope                                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FMarvelTargetActorGenerateInfo   GenerateInfo                                           (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FMarvelTargetActorGenerateInfo&GenerateInfo                                           (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UEpicMomentAction_1050::OnScopeBegin(class AActor* SourceActor, class UMarvelGameplayAbility* SourceAbility, class AActor* Scope, const struct FMarvelTargetActorGenerateInfo& GenerateInfo)
 {
@@ -423,7 +423,7 @@ class UScope_105071_Manager* UScope_105071_Manager::Get(class UObject* WorldCont
 // Function Hero_1050.Scope_105071_Manager.CheckCanReleaseScope
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class AActor*                           InActor                                                (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class AActor*                     InActor                                                (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UScope_105071_Manager::CheckCanReleaseScope(const class AActor* InActor)
@@ -451,8 +451,8 @@ bool UScope_105071_Manager::CheckCanReleaseScope(const class AActor* InActor)
 // Function Hero_1050.Stealth_105002.OnAbilityActivateFailed
 // (Final, Native, Public, HasOutParams)
 // Parameters:
-// class UGameplayAbility*                 Ability                                                (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayTagContainer            GameplayTags                                           (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const class UGameplayAbility*           Ability                                                (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTagContainer&     GameplayTags                                           (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UStealth_105002::OnAbilityActivateFailed(const class UGameplayAbility* Ability, const struct FGameplayTagContainer& GameplayTags)
 {

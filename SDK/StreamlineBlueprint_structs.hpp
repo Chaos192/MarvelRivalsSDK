@@ -15,13 +15,14 @@ namespace SDK
 {
 
 // Enum StreamlineBlueprint.UStreamlineFeature
-// NumValues: 0x0004
+// NumValues: 0x0005
 enum class EUStreamlineFeature : uint8
 {
 	DLSSG                                    = 0,
 	Reflex                                   = 1,
-	Count                                    = 2,
-	UStreamlineFeature_MAX                   = 3,
+	DeepDVC                                  = 2,
+	Count                                    = 3,
+	UStreamlineFeature_MAX                   = 4,
 };
 
 // Enum StreamlineBlueprint.UStreamlineFeatureSupport

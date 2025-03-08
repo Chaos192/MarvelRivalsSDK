@@ -64,8 +64,8 @@ void UPyLevelNodeRebirthComponent::ReceiveEndPlay(EEndPlayReason EndPlayReason)
 // PythonFunction PyLevelNodeRebirthComponent.PyLevelNodeRebirthComponent.SetBirthBasePlayerstart
 // (Net, NetReliable, Native, NetMulticast, Public, BlueprintCallable)
 // Parameters:
-// class FString                           BirthBaseName                                          (Parm, ZeroConstructor, HasGetValueTypeHash)
-// class FString                           PlayerStartName                                        (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    BirthBaseName                                          (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    PlayerStartName                                        (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyLevelNodeRebirthComponent::SetBirthBasePlayerstart(const class FString& BirthBaseName, const class FString& PlayerStartName)
 {

@@ -114,7 +114,7 @@ void UPyAbility_101403::OnMontageMissileEvent()
 // PythonFunction PyAbility_101403.PyAbility_101403.NativeOnMontageEvent
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_101403::NativeOnMontageEvent(const class FString& Tag)
 {

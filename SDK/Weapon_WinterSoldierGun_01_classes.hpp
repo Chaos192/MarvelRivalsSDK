@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Weapon_WinterSoldierGun_01.Weapon_WinterSoldierGun_01_C
-// 0x0000 (0x0C90 - 0x0C90)
+// 0x0000 (0x0C80 - 0x0C80)
 class AWeapon_WinterSoldierGun_01_C final : public AShootingWeapon
 {
 public:

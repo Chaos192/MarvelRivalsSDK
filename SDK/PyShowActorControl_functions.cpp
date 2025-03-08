@@ -89,7 +89,7 @@ void APyShowActorControl::LoadShowActorAssetFinished(class AActor* ShowActor)
 // PythonFunction PyShowActorControl.PyShowActorControl.LoadShowActor
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<class UObject*>                  Assets                                                 (ConstParm, Parm, OutParm, ReferenceParm)
+// const TArray<class UObject*>&           Assets                                                 (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyShowActorControl::LoadShowActor(const TArray<class UObject*>& Assets)
 {

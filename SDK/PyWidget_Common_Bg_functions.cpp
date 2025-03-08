@@ -17,15 +17,15 @@
 namespace SDK
 {
 
-// PythonFunction PyWidget_Common_Bg.PyExtension_CommonBg_RegisterNavigationLv2.BP_Construct
+// PythonFunction PyWidget_Common_Bg.PyExtension_CommonBg_RegisterNavigationLv1.BP_Construct
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 
-void UPyExtension_CommonBg_RegisterNavigationLv2::BP_Construct()
+void UPyExtension_CommonBg_RegisterNavigationLv1::BP_Construct()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PyExtension_CommonBg_RegisterNavigationLv2", "BP_Construct");
+		Func = Class->GetFunction("PyExtension_CommonBg_RegisterNavigationLv1", "BP_Construct");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -36,23 +36,21 @@ void UPyExtension_CommonBg_RegisterNavigationLv2::BP_Construct()
 }
 
 
-// PythonFunction PyWidget_Common_Bg.PyExtension_CommonBg_RegisterNavigationLv2.OnSubNavClicked
+// PythonFunction PyWidget_Common_Bg.PyExtension_CommonBg_RegisterNavigationLv1.OnNavClicked
 // (Native, Public, BlueprintCallable)
 // Parameters:
-// int32                                   ParentIndex                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// int32                                   ChildIndex                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UPyExtension_CommonBg_RegisterNavigationLv2::OnSubNavClicked(int32 ParentIndex, int32 ChildIndex)
+void UPyExtension_CommonBg_RegisterNavigationLv1::OnNavClicked(int32 Index_0)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PyExtension_CommonBg_RegisterNavigationLv2", "OnSubNavClicked");
+		Func = Class->GetFunction("PyExtension_CommonBg_RegisterNavigationLv1", "OnNavClicked");
 
-	Params::PyExtension_CommonBg_RegisterNavigationLv2_OnSubNavClicked Parms{};
+	Params::PyExtension_CommonBg_RegisterNavigationLv1_OnNavClicked Parms{};
 
-	Parms.ParentIndex = ParentIndex;
-	Parms.ChildIndex = ChildIndex;
+	Parms.Index_0 = Index_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -63,15 +61,15 @@ void UPyExtension_CommonBg_RegisterNavigationLv2::OnSubNavClicked(int32 ParentIn
 }
 
 
-// PythonFunction PyWidget_Common_Bg.PyExtension_CommonBg_RegisterNavigationLv2.FlushCommonBg
+// PythonFunction PyWidget_Common_Bg.PyExtension_CommonBg_RegisterNavigationLv1.FlushCommonBg
 // (Native, Public, BlueprintCallable)
 
-void UPyExtension_CommonBg_RegisterNavigationLv2::FlushCommonBg()
+void UPyExtension_CommonBg_RegisterNavigationLv1::FlushCommonBg()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PyExtension_CommonBg_RegisterNavigationLv2", "FlushCommonBg");
+		Func = Class->GetFunction("PyExtension_CommonBg_RegisterNavigationLv1", "FlushCommonBg");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -82,20 +80,45 @@ void UPyExtension_CommonBg_RegisterNavigationLv2::FlushCommonBg()
 }
 
 
-// PythonFunction PyWidget_Common_Bg.PyExtension_CommonBg_RegisterNavigationLv2.BP_Destruct
+// PythonFunction PyWidget_Common_Bg.PyExtension_CommonBg_RegisterNavigationLv1.BP_Destruct
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 
-void UPyExtension_CommonBg_RegisterNavigationLv2::BP_Destruct()
+void UPyExtension_CommonBg_RegisterNavigationLv1::BP_Destruct()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PyExtension_CommonBg_RegisterNavigationLv2", "BP_Destruct");
+		Func = Class->GetFunction("PyExtension_CommonBg_RegisterNavigationLv1", "BP_Destruct");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// PythonFunction PyWidget_Common_Bg.PyExtension_Career_RegisterNavigationLv1.OnNavClicked
+// (Native, Protected, BlueprintCallable)
+// Parameters:
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UPyExtension_Career_RegisterNavigationLv1::OnNavClicked(int32 Index_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyExtension_Career_RegisterNavigationLv1", "OnNavClicked");
+
+	Params::PyExtension_Career_RegisterNavigationLv1_OnNavClicked Parms{};
+
+	Parms.Index_0 = Index_0;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 }
@@ -213,7 +236,7 @@ void UPyWidget_Common_Bg::OnParentVisibilityChange(ESlateVisibility InVisilibity
 // PythonFunction PyWidget_Common_Bg.PyWidget_Common_Bg.OnAnimationFinished
 // (BlueprintCosmetic, Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UWidgetAnimation*                 Animation                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// const class UWidgetAnimation*           Animation                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 void UPyWidget_Common_Bg::OnAnimationFinished(const class UWidgetAnimation* Animation)
 {
@@ -342,15 +365,15 @@ void UPyExtension_CommonBg_HideWhenWidgetShow::OnWidgetVisibilityChange(ESlateVi
 }
 
 
-// PythonFunction PyWidget_Common_Bg.PyExtension_CommonBg_RegisterNavigationLv1.BP_Construct
+// PythonFunction PyWidget_Common_Bg.PyExtension_CommonBg_RegisterNavigationLv2.BP_Construct
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 
-void UPyExtension_CommonBg_RegisterNavigationLv1::BP_Construct()
+void UPyExtension_CommonBg_RegisterNavigationLv2::BP_Construct()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PyExtension_CommonBg_RegisterNavigationLv1", "BP_Construct");
+		Func = Class->GetFunction("PyExtension_CommonBg_RegisterNavigationLv2", "BP_Construct");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -361,21 +384,23 @@ void UPyExtension_CommonBg_RegisterNavigationLv1::BP_Construct()
 }
 
 
-// PythonFunction PyWidget_Common_Bg.PyExtension_CommonBg_RegisterNavigationLv1.OnNavClicked
+// PythonFunction PyWidget_Common_Bg.PyExtension_CommonBg_RegisterNavigationLv2.OnSubNavClicked
 // (Native, Public, BlueprintCallable)
 // Parameters:
-// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   ParentIndex                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   ChildIndex                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UPyExtension_CommonBg_RegisterNavigationLv1::OnNavClicked(int32 Index_0)
+void UPyExtension_CommonBg_RegisterNavigationLv2::OnSubNavClicked(int32 ParentIndex, int32 ChildIndex)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PyExtension_CommonBg_RegisterNavigationLv1", "OnNavClicked");
+		Func = Class->GetFunction("PyExtension_CommonBg_RegisterNavigationLv2", "OnSubNavClicked");
 
-	Params::PyExtension_CommonBg_RegisterNavigationLv1_OnNavClicked Parms{};
+	Params::PyExtension_CommonBg_RegisterNavigationLv2_OnSubNavClicked Parms{};
 
-	Parms.Index_0 = Index_0;
+	Parms.ParentIndex = ParentIndex;
+	Parms.ChildIndex = ChildIndex;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -386,15 +411,15 @@ void UPyExtension_CommonBg_RegisterNavigationLv1::OnNavClicked(int32 Index_0)
 }
 
 
-// PythonFunction PyWidget_Common_Bg.PyExtension_CommonBg_RegisterNavigationLv1.FlushCommonBg
+// PythonFunction PyWidget_Common_Bg.PyExtension_CommonBg_RegisterNavigationLv2.FlushCommonBg
 // (Native, Public, BlueprintCallable)
 
-void UPyExtension_CommonBg_RegisterNavigationLv1::FlushCommonBg()
+void UPyExtension_CommonBg_RegisterNavigationLv2::FlushCommonBg()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PyExtension_CommonBg_RegisterNavigationLv1", "FlushCommonBg");
+		Func = Class->GetFunction("PyExtension_CommonBg_RegisterNavigationLv2", "FlushCommonBg");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -405,45 +430,20 @@ void UPyExtension_CommonBg_RegisterNavigationLv1::FlushCommonBg()
 }
 
 
-// PythonFunction PyWidget_Common_Bg.PyExtension_CommonBg_RegisterNavigationLv1.BP_Destruct
+// PythonFunction PyWidget_Common_Bg.PyExtension_CommonBg_RegisterNavigationLv2.BP_Destruct
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 
-void UPyExtension_CommonBg_RegisterNavigationLv1::BP_Destruct()
+void UPyExtension_CommonBg_RegisterNavigationLv2::BP_Destruct()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PyExtension_CommonBg_RegisterNavigationLv1", "BP_Destruct");
+		Func = Class->GetFunction("PyExtension_CommonBg_RegisterNavigationLv2", "BP_Destruct");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// PythonFunction PyWidget_Common_Bg.PyExtension_Career_RegisterNavigationLv1.OnNavClicked
-// (Native, Protected, BlueprintCallable)
-// Parameters:
-// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UPyExtension_Career_RegisterNavigationLv1::OnNavClicked(int32 Index_0)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PyExtension_Career_RegisterNavigationLv1", "OnNavClicked");
-
-	Params::PyExtension_Career_RegisterNavigationLv1_OnNavClicked Parms{};
-
-	Parms.Index_0 = Index_0;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 }

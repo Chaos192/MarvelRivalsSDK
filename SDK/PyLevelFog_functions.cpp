@@ -55,6 +55,25 @@ void APyLevelFog::ReceiveBeginPlay()
 }
 
 
+// PythonFunction PyLevelFog.PyLevelFog.PostRewindForReplay
+// (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
+
+void APyLevelFog::PostRewindForReplay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyLevelFog", "PostRewindForReplay");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // PythonFunction PyLevelFog.PyLevelFog.OnLevelStart
 // (Native, Public, BlueprintCallable)
 
@@ -172,7 +191,7 @@ void APyLevelFog::ReceiveEndPlay(EEndPlayReason EndPlayReason)
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 bool APyCue_Summoner_Loop_20020902::WhileActive(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)

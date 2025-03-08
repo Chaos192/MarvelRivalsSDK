@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Ability_104895_BP.Ability_104895_BP_C
-// 0x0000 (0x2648 - 0x2648)
+// 0x0000 (0x2650 - 0x2650)
 class UAbility_104895_BP_C final : public UMarvelBackTrackAbility
 {
 public:

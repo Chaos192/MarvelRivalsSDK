@@ -54,8 +54,8 @@ void AProjectile_10251101_C::K2_OnBeginAgentTask_GraphAbility()
 // Function Projectile_10251101.Projectile_10251101_C.K2_OnBounce
 // (Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FHitResult                       ImpactResult                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, ContainsInstancedReference)
-// struct FVector                          ImpactVelocity                                         (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FHitResult&                ImpactResult                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, ContainsInstancedReference)
+// const struct FVector&                   ImpactVelocity                                         (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void AProjectile_10251101_C::K2_OnBounce(const struct FHitResult& ImpactResult, const struct FVector& ImpactVelocity)
 {
@@ -76,7 +76,7 @@ void AProjectile_10251101_C::K2_OnBounce(const struct FHitResult& ImpactResult, 
 // Function Projectile_10251101.Projectile_10251101_C.K2_OnProcessHit
 // (Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FHitResult                       ImpactResult                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, ContainsInstancedReference)
+// const struct FHitResult&                ImpactResult                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, ContainsInstancedReference)
 
 void AProjectile_10251101_C::K2_OnProcessHit(const struct FHitResult& ImpactResult)
 {
@@ -118,7 +118,7 @@ void AProjectile_10251101_C::OnFinished_0D091C2E468C9A372E3E349E5C8ACDF7(class A
 // Parameters:
 // class AMarvelAbilityTargetActor_Scope*  OnTargetEventDelegate__DelegateSignature_ScopeActor    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // class AActor*                           OnTargetEventDelegate__DelegateSignature_Target        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FVector                          OnTargetEventDelegate__DelegateSignature_Location      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVector&                   OnTargetEventDelegate__DelegateSignature_Location      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void AProjectile_10251101_C::OnHit_6685D1E644E830DE9BF6FE913937B6C8(class AMarvelAbilityTargetActor_Scope* OnTargetEventDelegate__DelegateSignature_ScopeActor, class AActor* OnTargetEventDelegate__DelegateSignature_Target, const struct FVector& OnTargetEventDelegate__DelegateSignature_Location)
 {

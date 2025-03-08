@@ -17,12 +17,12 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Summoned_10224101_BP.Summoned_10224101_BP_C
-// 0x0010 (0x0950 - 0x0940)
+// 0x0010 (0x0980 - 0x0970)
 class ASummoned_10224101_BP_C final : public APySummoned_102241
 {
 public:
-	class UStaticMeshComponent*                   Cylinder1;                                         // 0x0938(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UStaticMeshComponent*                   Cylinder;                                          // 0x0940(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UStaticMeshComponent*                   Cylinder1;                                         // 0x0968(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UStaticMeshComponent*                   Cylinder;                                          // 0x0970(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

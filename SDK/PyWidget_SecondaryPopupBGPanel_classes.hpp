@@ -42,6 +42,7 @@ public:
 	void SetLeftWhiteBtnVisible(bool Visible);
 	void SetLeftBtnTipsVisible(bool Visible);
 	void SetButtonEnabled(bool Enabled);
+	void SetRightButtonEnabled(bool Enabled);
 	void SetRightBtnVisible(bool Visible);
 	void SetRightBtnTipsVisible(bool Visible);
 	void SetBtnAboveTipsVisible(bool Visible);

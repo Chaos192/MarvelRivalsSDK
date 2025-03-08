@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "SlateCore_structs.hpp"
-#include "Marvel_classes.hpp"
 #include "python_enums_structs.hpp"
+#include "Marvel_classes.hpp"
 
 
 namespace SDK
@@ -50,6 +50,7 @@ public:
 	void PyOnPostLoadMap(class UWorld* WorldObj);
 	void OnSelectHeroWorldLoaded(const class FString& LoadedWorld);
 	void OnServerFirstMapLoaded();
+	void LevelLoadingPercent(int32 Percent);
 	void OnEndReached();
 
 public:

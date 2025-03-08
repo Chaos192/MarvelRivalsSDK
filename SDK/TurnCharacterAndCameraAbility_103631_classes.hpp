@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass TurnCharacterAndCameraAbility_103631.TurnCharacterAndCameraAbility_103631_C
-// 0x0000 (0x1118 - 0x1118)
+// 0x0000 (0x1120 - 0x1120)
 class UTurnCharacterAndCameraAbility_103631_C final : public UMarvelTurnCharacterAndCameraAbility_103631
 {
 public:

@@ -17,11 +17,11 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass 1021_CharacterBP.1021_CharacterBP_C
-// 0x0010 (0x1950 - 0x1940)
+// 0x0010 (0x19B0 - 0x19A0)
 class AOne021_CharacterBP_C final : public APyHawkeyeCharacter
 {
 public:
-	class UPhysicalInteractionComponent*          PhysicalInteraction;                               // 0x1940(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UPhysicalInteractionComponent*          PhysicalInteraction;                               // 0x19A0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

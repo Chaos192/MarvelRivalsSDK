@@ -77,7 +77,7 @@ void UPyWidget_HomeEntrance_Main::Destruct()
 // PythonFunction PyWidget_HomeEntrance_Main.PyWidget_HomeEntrance_Main.OnAnimationFinished
 // (BlueprintCosmetic, Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UWidgetAnimation*                 Animation                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// const class UWidgetAnimation*           Animation                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 void UPyWidget_HomeEntrance_Main::OnAnimationFinished(const class UWidgetAnimation* Animation)
 {

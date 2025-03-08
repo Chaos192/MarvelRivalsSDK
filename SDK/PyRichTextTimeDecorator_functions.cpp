@@ -20,7 +20,7 @@ namespace SDK
 // PythonFunction PyRichTextTimeDecorator.PyRichTextTimeDecorator.FormatTimeFromPython
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           TimeString                                             (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    TimeString                                             (Parm, ZeroConstructor, HasGetValueTypeHash)
 // class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash)
 
 class FString UPyRichTextTimeDecorator::FormatTimeFromPython(const class FString& TimeString)

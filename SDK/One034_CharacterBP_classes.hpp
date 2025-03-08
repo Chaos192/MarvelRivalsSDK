@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass 1034_CharacterBP.1034_CharacterBP_C
-// 0x0000 (0x1850 - 0x1850)
+// 0x0000 (0x18A0 - 0x18A0)
 class AOne034_CharacterBP_C final : public APyIronManCharacter
 {
 public:

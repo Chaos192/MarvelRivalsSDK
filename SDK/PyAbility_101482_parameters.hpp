@@ -17,6 +17,30 @@
 namespace SDK::Params
 {
 
+// PythonFunction PyAbility_101482.PyAbility_101482.ParentAbilityChange
+// 0x0001 (0x0001 - 0x0000)
+struct PyAbility_101482_ParentAbilityChange final
+{
+public:
+	EState_101481                                 State;                                             // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+
+// PythonFunction PyAbility_101482.PyAbility_101482.NativeOnMontageCompleted
+// 0x0010 (0x0010 - 0x0000)
+struct PyAbility_101482_NativeOnMontageCompleted final
+{
+public:
+	class FString                                 Tag;                                               // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash)
+};
+
+// PythonFunction PyAbility_101482.PyAbility_101482.K2_OnEndAbility
+// 0x0001 (0x0001 - 0x0000)
+struct PyAbility_101482_K2_OnEndAbility final
+{
+public:
+	bool                                          Cancel;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+
 // PythonFunction PyAbility_101482.PyCue_Ability_Loop_101482.WhileActive
 // 0x01C8 (0x01C8 - 0x0000)
 struct PyCue_Ability_Loop_101482_WhileActive final
@@ -43,30 +67,6 @@ struct PyCue_Ability_Loop_101482_ToggleGunMaterial final
 {
 public:
 	bool                                          WarmUp;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-
-// PythonFunction PyAbility_101482.PyAbility_101482.ParentAbilityChange
-// 0x0001 (0x0001 - 0x0000)
-struct PyAbility_101482_ParentAbilityChange final
-{
-public:
-	EState_101481                                 State;                                             // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-
-// PythonFunction PyAbility_101482.PyAbility_101482.NativeOnMontageCompleted
-// 0x0010 (0x0010 - 0x0000)
-struct PyAbility_101482_NativeOnMontageCompleted final
-{
-public:
-	class FString                                 Tag;                                               // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash)
-};
-
-// PythonFunction PyAbility_101482.PyAbility_101482.K2_OnEndAbility
-// 0x0001 (0x0001 - 0x0000)
-struct PyAbility_101482_K2_OnEndAbility final
-{
-public:
-	bool                                          Cancel;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 
 }

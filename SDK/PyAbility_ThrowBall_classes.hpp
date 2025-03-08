@@ -19,98 +19,6 @@
 namespace SDK
 {
 
-// PythonClass PyAbility_ThrowBall.PyCue_Buff_20050101
-// 0x0060 (0x1098 - 0x1038)
-class APyCue_Buff_20050101 final : public AMarvelCueNotify_Buff
-{
-public:
-	class FString                                 OpenParemName;                                     // 0x1038(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 ColorParamName;                                    // 0x1048(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 FractionParamName;                                 // 0x1058(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                FresnelColor;                                      // 0x1068(0x0018)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                FresnelParam;                                      // 0x1080(0x0018)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-public:
-	void WhileActiveFX(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters);
-	void OnRemoveFX(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters);
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"PyCue_Buff_20050101">();
-	}
-	static class APyCue_Buff_20050101* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<APyCue_Buff_20050101>();
-	}
-};
-
-// PythonClass PyAbility_ThrowBall.PySummonedComp_Ball
-// 0x00D0 (0x0D70 - 0x0CA0)
-class UPySummonedComp_Ball final : public UMarvelSummonedComponent
-{
-public:
-	int32                                         Status;                                            // 0x0CA0(0x0004)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_CA4[0x4];                                      // 0x0CA4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class AMarvelBaseCharacter*                   Holder;                                            // 0x0CA8(0x0008)(BlueprintVisible, Net, ZeroConstructor, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         ThrowTeamID;                                       // 0x0CB0(0x0004)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_CB4[0x4];                                      // 0x0CB4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                RelativeBias;                                      // 0x0CB8(0x0018)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGameplayTag                           HoldingBallTag;                                    // 0x0CD0(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         HoldingBallBuffID;                                 // 0x0CDC(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         ForbidHoldBallBuffID;                              // 0x0CE0(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         ThrowForbidHoldBallBuffID;                         // 0x0CE4(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<int32>                                 CancelHoldingBuffIDs;                              // 0x0CE8(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	float                                         ThrowForbidHoldTime;                               // 0x0CF8(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ForbidHoldTime;                                    // 0x0CFC(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UCurveFloat*                            ThrowVelocityCurve;                                // 0x0D00(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UCurveFloat*                            NewThrowVelocityCurve;                             // 0x0D08(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(bool ThrowState)> OnThrowStateChanged;                               // 0x0D10(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(bool HoldingState)> OnHoldingStateChanged;                             // 0x0D20(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(struct FHitResult& OutHitResult, bool bIsThrowing, struct FVector& Impulse)> OnCollision;                                       // 0x0D30(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class AMarvelBaseCharacter* LastHolder, bool bIsLongPass)> OnThrowed;                                         // 0x0D40(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class AMarvelBaseCharacter* NewHolder)> OnHolderChanged;                                   // 0x0D50(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class AMarvelBaseCharacter* Tackler, class AMarvelBaseCharacter* SourceCharacter, int32 AbilityID)> OnTackleOccurred;                                  // 0x0D60(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-
-public:
-	void ReceiveBeginPlay();
-	void OnMapLoaded();
-	void OnRep_ActorStatus();
-	void OnRep_ThrowTeamID();
-	void OnRep_Holder();
-	void OnComponentHit(class UPrimitiveComponent* Comp, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, const struct FVector& Impulse, const struct FHitResult& Result);
-	void MulticastOnComponentHit(const struct FHitResult& Result, bool bIsThrowing, const struct FVector& Impulse);
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"PySummonedComp_Ball">();
-	}
-	static class UPySummonedComp_Ball* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UPySummonedComp_Ball>();
-	}
-};
-
-// PythonClass PyAbility_ThrowBall.PyOverlapHandlerComponent_Ball
-// 0x0000 (0x0C30 - 0x0C30)
-class UPyOverlapHandlerComponent_Ball final : public UOverlapHandlerComponent
-{
-public:
-	void ReceiveBeginPlay();
-	void ApplyEffectOnActorOverlap(class AActor* InActor);
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"PyOverlapHandlerComponent_Ball">();
-	}
-	static class UPyOverlapHandlerComponent_Ball* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UPyOverlapHandlerComponent_Ball>();
-	}
-};
-
 // PythonClass PyAbility_ThrowBall.PyCue_Summoned_Loop_Ball
 // 0x0108 (0x0F98 - 0x0E90)
 class APyCue_Summoned_Loop_Ball final : public AMarvelCueNotify_Summoned
@@ -169,6 +77,121 @@ public:
 	}
 };
 
+// PythonClass PyAbility_ThrowBall.PySummonedComp_Ball
+// 0x00D0 (0x0D70 - 0x0CA0)
+class UPySummonedComp_Ball final : public UMarvelSummonedComponent
+{
+public:
+	int32                                         Status;                                            // 0x0CA0(0x0004)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_CA4[0x4];                                      // 0x0CA4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class AMarvelBaseCharacter*                   Holder;                                            // 0x0CA8(0x0008)(BlueprintVisible, Net, ZeroConstructor, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ThrowTeamID;                                       // 0x0CB0(0x0004)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_CB4[0x4];                                      // 0x0CB4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                RelativeBias;                                      // 0x0CB8(0x0018)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGameplayTag                           HoldingBallTag;                                    // 0x0CD0(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         HoldingBallBuffID;                                 // 0x0CDC(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ForbidHoldBallBuffID;                              // 0x0CE0(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ThrowForbidHoldBallBuffID;                         // 0x0CE4(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<int32>                                 CancelHoldingBuffIDs;                              // 0x0CE8(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	float                                         ThrowForbidHoldTime;                               // 0x0CF8(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ForbidHoldTime;                                    // 0x0CFC(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UCurveFloat*                            ThrowVelocityCurve;                                // 0x0D00(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UCurveFloat*                            NewThrowVelocityCurve;                             // 0x0D08(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(bool ThrowState)> OnThrowStateChanged;                             // 0x0D10(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(bool HoldingState)> OnHoldingStateChanged;                         // 0x0D20(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const struct FHitResult& OutHitResult, bool bIsThrowing, const struct FVector& Impulse)> OnCollision; // 0x0D30(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class AMarvelBaseCharacter* LastHolder, bool bIsLongPass)> OnThrowed; // 0x0D40(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class AMarvelBaseCharacter* NewHolder)> OnHolderChanged;           // 0x0D50(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class AMarvelBaseCharacter* Tackler, class AMarvelBaseCharacter* SourceCharacter, int32 AbilityID)> OnTackleOccurred; // 0x0D60(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+
+public:
+	void ReceiveBeginPlay();
+	void OnMapLoaded();
+	void OnRep_ActorStatus();
+	void OnRep_ThrowTeamID();
+	void OnRep_Holder();
+	void OnComponentHit(class UPrimitiveComponent* Comp, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, const struct FVector& Impulse, const struct FHitResult& Result);
+	void MulticastOnComponentHit(const struct FHitResult& Result, bool bIsThrowing, const struct FVector& Impulse);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PySummonedComp_Ball">();
+	}
+	static class UPySummonedComp_Ball* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPySummonedComp_Ball>();
+	}
+};
+
+// PythonClass PyAbility_ThrowBall.PyUIController_ThrowBall
+// 0x0008 (0x0C58 - 0x0C50)
+class UPyUIController_ThrowBall final : public UUIC_Ability
+{
+public:
+	float                                         MaxDuration;                                       // 0x0C50(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	void OnInit();
+	void ReceiveTick(float DeltaTime);
+	void Destruct();
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PyUIController_ThrowBall">();
+	}
+	static class UPyUIController_ThrowBall* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPyUIController_ThrowBall>();
+	}
+};
+
+// PythonClass PyAbility_ThrowBall.PyOverlapHandlerComponent_Ball
+// 0x0000 (0x0C30 - 0x0C30)
+class UPyOverlapHandlerComponent_Ball final : public UOverlapHandlerComponent
+{
+public:
+	void ReceiveBeginPlay();
+	void ApplyEffectOnActorOverlap(class AActor* InActor);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PyOverlapHandlerComponent_Ball">();
+	}
+	static class UPyOverlapHandlerComponent_Ball* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPyOverlapHandlerComponent_Ball>();
+	}
+};
+
+// PythonClass PyAbility_ThrowBall.PyCue_Buff_20050101
+// 0x0060 (0x1098 - 0x1038)
+class APyCue_Buff_20050101 final : public AMarvelCueNotify_Buff
+{
+public:
+	class FString                                 OpenParemName;                                     // 0x1038(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ColorParamName;                                    // 0x1048(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 FractionParamName;                                 // 0x1058(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                FresnelColor;                                      // 0x1068(0x0018)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                FresnelParam;                                      // 0x1080(0x0018)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	void WhileActiveFX(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters);
+	void OnRemoveFX(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PyCue_Buff_20050101">();
+	}
+	static class APyCue_Buff_20050101* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<APyCue_Buff_20050101>();
+	}
+};
+
 // PythonClass PyAbility_ThrowBall.PyConfig_ThrowBall
 // 0x0008 (0x00D8 - 0x00D0)
 class UPyConfig_ThrowBall final : public UMarvelAbilityConfig_LongPressTrigger
@@ -188,7 +211,7 @@ public:
 };
 
 // PythonClass PyAbility_ThrowBall.PyAbility_ThrowBall
-// 0x0000 (0x2598 - 0x2598)
+// 0x0000 (0x25A0 - 0x25A0)
 class UPyAbility_ThrowBall : public UMarvelAbility_LongPressTrigger
 {
 public:
@@ -210,29 +233,6 @@ public:
 	static class UPyAbility_ThrowBall* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UPyAbility_ThrowBall>();
-	}
-};
-
-// PythonClass PyAbility_ThrowBall.PyUIController_ThrowBall
-// 0x0008 (0x0C68 - 0x0C60)
-class UPyUIController_ThrowBall final : public UUIC_Ability
-{
-public:
-	float                                         MaxDuration;                                       // 0x0C60(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-public:
-	void OnInit();
-	void ReceiveTick(float DeltaTime);
-	void Destruct();
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"PyUIController_ThrowBall">();
-	}
-	static class UPyUIController_ThrowBall* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UPyUIController_ThrowBall>();
 	}
 };
 

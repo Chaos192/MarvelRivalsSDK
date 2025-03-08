@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass KnockUp_10477109_BP.KnockUp_10477109_BP_C
-// 0x0000 (0x1DB8 - 0x1DB8)
+// 0x0000 (0x1DC8 - 0x1DC8)
 class UKnockUp_10477109_BP_C final : public UKnockUp_10477109
 {
 public:

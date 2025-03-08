@@ -18,11 +18,11 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Ability_ThrowBall_BP.Ability_ThrowBall_BP_C
-// 0x0008 (0x25A0 - 0x2598)
+// 0x0008 (0x25A8 - 0x25A0)
 class UAbility_ThrowBall_BP_C : public UPyAbility_ThrowBall
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x2598(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x25A0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
 	void ExecuteUbergraph_Ability_ThrowBall_BP(int32 EntryPoint);

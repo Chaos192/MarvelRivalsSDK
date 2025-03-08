@@ -81,6 +81,14 @@ public:
 	bool                                          ReturnValue;                                       // 0x01C0(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 
+// PythonFunction PyAbility_102571.PyCue_Ability_Loop_10257101.OnMontageEnded
+// 0x0010 (0x0010 - 0x0000)
+struct PyCue_Ability_Loop_10257101_OnMontageEnded final
+{
+public:
+	class FString                                 NotifyName;                                        // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash)
+};
+
 // PythonFunction PyAbility_102571.PyCue_Ability_Loop_10257101.OnAbilityInit
 // 0x0004 (0x0004 - 0x0000)
 struct PyCue_Ability_Loop_10257101_OnAbilityInit final
@@ -155,6 +163,14 @@ struct PyScope_10257101_OnFloorLocation final
 {
 public:
 	struct FVector                                InLocation;                                        // 0x0000(0x0018)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+
+// PythonFunction PyAbility_102571.PyAbility_102571.OnSculptChanged
+// 0x0004 (0x0004 - 0x0000)
+struct PyAbility_102571_OnSculptChanged final
+{
+public:
+	int32                                         SculptID;                                          // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 
 // PythonFunction PyAbility_102571.PyAbility_102571.ReceiveTick

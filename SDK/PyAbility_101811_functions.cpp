@@ -39,7 +39,7 @@ void APyProjectile_10181111::K2_OnInitializeData()
 // PythonFunction PyAbility_101811.PyProjectile_10181111.K2_OnProjectileInfoForceChanged_ThreadSafe
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FProjectileForceChangedInfo      InProjectileForceChangedInfo                           (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FProjectileForceChangedInfo&InProjectileForceChangedInfo                           (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyProjectile_10181111::K2_OnProjectileInfoForceChanged_ThreadSafe(const struct FProjectileForceChangedInfo& InProjectileForceChangedInfo)
 {
@@ -103,7 +103,7 @@ void UPyAbility_101811::K2_ActivateAbility()
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int32                                   SocketId                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FMarvelAbilitySocketInfo         SocketInfo                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
+// const struct FMarvelAbilitySocketInfo&  SocketInfo                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
 
 void UPyAbility_101811::HandleAnimSocketInfo(int32 SocketId, const struct FMarvelAbilitySocketInfo& SocketInfo)
 {

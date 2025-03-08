@@ -20,6 +20,16 @@
 namespace SDK::Params
 {
 
+// PythonFunction PyAbility_104831.PyCue_Projectile_HitImpact_10483102.OnNiagaraSpawned
+// 0x01C8 (0x01C8 - 0x0000)
+struct PyCue_Projectile_HitImpact_10483102_OnNiagaraSpawned final
+{
+public:
+	class UNiagaraComponent*                      InNiagaraComponent;                                // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 MyTarget;                                          // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	struct FGameplayCueParameters                 Parameters;                                        // 0x0010(0x01B8)(ConstParm, Parm, OutParm, ReferenceParm)
+};
+
 // PythonFunction PyAbility_104831.PyAbility_104831.CanActivate
 // 0x0001 (0x0001 - 0x0000)
 struct PyAbility_104831_CanActivate final
@@ -160,16 +170,6 @@ struct PyCue_Projectile_Loop_10483101_OnShurikenStateChange final
 {
 public:
 	EShurikenState                                NewState;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-
-// PythonFunction PyAbility_104831.PyCue_Projectile_HitImpact_10483102.OnNiagaraSpawned
-// 0x01C8 (0x01C8 - 0x0000)
-struct PyCue_Projectile_HitImpact_10483102_OnNiagaraSpawned final
-{
-public:
-	class UNiagaraComponent*                      InNiagaraComponent;                                // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class AActor*                                 MyTarget;                                          // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	struct FGameplayCueParameters                 Parameters;                                        // 0x0010(0x01B8)(ConstParm, Parm, OutParm, ReferenceParm)
 };
 
 // PythonFunction PyAbility_104831.PyUIController_104831.SetAbility

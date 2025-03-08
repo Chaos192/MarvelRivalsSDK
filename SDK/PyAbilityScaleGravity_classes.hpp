@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // PythonClass PyAbilityScaleGravity.PyAbilityScaleGravity
-// 0x0000 (0x10F8 - 0x10F8)
+// 0x0000 (0x1100 - 0x1100)
 class UPyAbilityScaleGravity final : public UMarvelEffectGameplayAbility
 {
 public:

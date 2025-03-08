@@ -20,9 +20,9 @@ namespace SDK
 // Function LevelBPFunctionLibrary.LevelBPFunctionLibrary_C.AssaultHint
 // (Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           UINAME                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-// class FString                           RedSideHit                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-// class FString                           BlueSideHit                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    UINAME                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    RedSideHit                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    BlueSideHit                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 void ULevelBPFunctionLibrary_C::AssaultHint(const class FString& UINAME, const class FString& RedSideHit, const class FString& BlueSideHit, class UObject* __WorldContext)
@@ -46,8 +46,8 @@ void ULevelBPFunctionLibrary_C::AssaultHint(const class FString& UINAME, const c
 // Function LevelBPFunctionLibrary.LevelBPFunctionLibrary_C.AssaultObjectiveClose
 // (Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           CampName                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-// class FString                           UINAME                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    CampName                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    UINAME                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 void ULevelBPFunctionLibrary_C::AssaultObjectiveClose(const class FString& CampName, const class FString& UINAME, class UObject* __WorldContext)
@@ -70,8 +70,8 @@ void ULevelBPFunctionLibrary_C::AssaultObjectiveClose(const class FString& CampN
 // Function LevelBPFunctionLibrary.LevelBPFunctionLibrary_C.AssaultObjectiveUnlock
 // (Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           CampName                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-// class FString                           UINAME                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    CampName                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    UINAME                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 void ULevelBPFunctionLibrary_C::AssaultObjectiveUnlock(const class FString& CampName, const class FString& UINAME, class UObject* __WorldContext)
@@ -94,7 +94,7 @@ void ULevelBPFunctionLibrary_C::AssaultObjectiveUnlock(const class FString& Camp
 // Function LevelBPFunctionLibrary.LevelBPFunctionLibrary_C.ChangeControlColor
 // (Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           UINAME                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    UINAME                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // EOwnershipType                          OwnerSide                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
@@ -119,7 +119,7 @@ void ULevelBPFunctionLibrary_C::ChangeControlColor(const class FString& UINAME, 
 // (Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class UPyHeroComponent*                 HeroComponent                                          (Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+// class UPyHeroComponent**                HeroComponent                                          (Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 
 void ULevelBPFunctionLibrary_C::GetHeroComponent(class UObject* __WorldContext, class UPyHeroComponent** HeroComponent)
 {
@@ -143,7 +143,7 @@ void ULevelBPFunctionLibrary_C::GetHeroComponent(class UObject* __WorldContext, 
 // (Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class AMarvelGameStateBP_C*             MarvelGameStateBP                                      (Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class AMarvelGameStateBP_C**            MarvelGameStateBP                                      (Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 void ULevelBPFunctionLibrary_C::GetMarvelGameState(class UObject* __WorldContext, class AMarvelGameStateBP_C** MarvelGameStateBP)
 {
@@ -168,7 +168,7 @@ void ULevelBPFunctionLibrary_C::GetMarvelGameState(class UObject* __WorldContext
 // Parameters:
 // int32                                   UID                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class AMarvelPlayerStateBP_C*           NewParam                                               (Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class AMarvelPlayerStateBP_C**          NewParam                                               (Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 void ULevelBPFunctionLibrary_C::GetMarvelPlayerStateByUID(int32 UID, class UObject* __WorldContext, class AMarvelPlayerStateBP_C** NewParam)
 {
@@ -193,7 +193,7 @@ void ULevelBPFunctionLibrary_C::GetMarvelPlayerStateByUID(int32 UID, class UObje
 // (Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// TArray<class AMarvelPlayerStateBP_C*>   MarvelPlayerStateList                                  (Parm, OutParm)
+// TArray<class AMarvelPlayerStateBP_C*>*  MarvelPlayerStateList                                  (Parm, OutParm)
 
 void ULevelBPFunctionLibrary_C::GetMarvelPlayerStateList(class UObject* __WorldContext, TArray<class AMarvelPlayerStateBP_C*>* MarvelPlayerStateList)
 {
@@ -217,7 +217,7 @@ void ULevelBPFunctionLibrary_C::GetMarvelPlayerStateList(class UObject* __WorldC
 // (Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class UPyModularRuleComponent*          ModularRuleComponent                                   (Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+// class UPyModularRuleComponent**         ModularRuleComponent                                   (Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 
 void ULevelBPFunctionLibrary_C::GetModularRuleComponent(class UObject* __WorldContext, class UPyModularRuleComponent** ModularRuleComponent)
 {
@@ -241,7 +241,7 @@ void ULevelBPFunctionLibrary_C::GetModularRuleComponent(class UObject* __WorldCo
 // (Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class UPyModularRuleControlComponent*   ModularRuleComponent                                   (Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+// class UPyModularRuleControlComponent**  ModularRuleComponent                                   (Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 
 void ULevelBPFunctionLibrary_C::GetModularRuleControlComponent(class UObject* __WorldContext, class UPyModularRuleControlComponent** ModularRuleComponent)
 {
@@ -265,7 +265,7 @@ void ULevelBPFunctionLibrary_C::GetModularRuleControlComponent(class UObject* __
 // (Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class UPyModuleUIComponent*             ModuleUIComponent                                      (Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+// class UPyModuleUIComponent**            ModuleUIComponent                                      (Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 
 void ULevelBPFunctionLibrary_C::GetModuleUIComponent(class UObject* __WorldContext, class UPyModuleUIComponent** ModuleUIComponent)
 {
@@ -288,7 +288,7 @@ void ULevelBPFunctionLibrary_C::GetModuleUIComponent(class UObject* __WorldConte
 // Function LevelBPFunctionLibrary.LevelBPFunctionLibrary_C.SetRoute
 // (Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TArray<double>                          RouteLength                                            (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// TArray<double>&                         RouteLength                                            (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 void ULevelBPFunctionLibrary_C::SetRoute(TArray<double>& RouteLength, class UObject* __WorldContext)
@@ -313,8 +313,8 @@ void ULevelBPFunctionLibrary_C::SetRoute(TArray<double>& RouteLength, class UObj
 // (Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // double                                  CurrentProgress                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// TArray<double>                          OccupyProgressStage                                    (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// class FString                           UINAME                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// TArray<double>&                         OccupyProgressStage                                    (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// const class FString&                    UINAME                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 void ULevelBPFunctionLibrary_C::UpdateAssaultBarProcess(double CurrentProgress, TArray<double>& OccupyProgressStage, const class FString& UINAME, class UObject* __WorldContext)
@@ -342,8 +342,8 @@ void ULevelBPFunctionLibrary_C::UpdateAssaultBarProcess(double CurrentProgress, 
 // Parameters:
 // double                                  CurrentProgress                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // double                                  TotalProgress                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           CampName                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-// class FString                           UINAME                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    CampName                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    UINAME                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 void ULevelBPFunctionLibrary_C::UpdateAssaultPieOccupy(double CurrentProgress, double TotalProgress, const class FString& CampName, const class FString& UINAME, class UObject* __WorldContext)
@@ -369,7 +369,7 @@ void ULevelBPFunctionLibrary_C::UpdateAssaultPieOccupy(double CurrentProgress, d
 // (Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // double                                  Percent                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           UINAME                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    UINAME                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 void ULevelBPFunctionLibrary_C::UpdateVictoryProgressText(double Percent, const class FString& UINAME, class UObject* __WorldContext)
@@ -393,7 +393,7 @@ void ULevelBPFunctionLibrary_C::UpdateVictoryProgressText(double Percent, const 
 // (Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UMarvelSplineComponent*           MarvelSpline                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-// struct FVector                          Color                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVector&                   Color                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 void ULevelBPFunctionLibrary_C::修改条带颜色(class UMarvelSplineComponent* MarvelSpline, const struct FVector& Color, class UObject* __WorldContext)
@@ -456,7 +456,7 @@ void ULevelBPFunctionLibrary_C::切换下个重生室(class UObject* __WorldCont
 // Function LevelBPFunctionLibrary.LevelBPFunctionLibrary_C.占点结束
 // (Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           实例名                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    实例名                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 void ULevelBPFunctionLibrary_C::占点结束(const class FString& 实例名, class UObject* __WorldContext)
@@ -479,7 +479,7 @@ void ULevelBPFunctionLibrary_C::占点结束(const class FString& 实例名, cla
 // (Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int32                                   BuffID                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// TArray<int32>                           ActorList                                              (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// TArray<int32>&                          ActorList                                              (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 void ULevelBPFunctionLibrary_C::对指定角色施加BUFF(int32 BuffID, TArray<int32>& ActorList, class UObject* __WorldContext)
@@ -505,7 +505,7 @@ void ULevelBPFunctionLibrary_C::对指定角色施加BUFF(int32 BuffID, TArray<i
 // (Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int32                                   BuffID                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// TArray<int32>                           ActorList                                              (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// TArray<int32>&                          ActorList                                              (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 void ULevelBPFunctionLibrary_C::对指定角色移除BUFF(int32 BuffID, TArray<int32>& ActorList, class UObject* __WorldContext)
@@ -554,7 +554,7 @@ void ULevelBPFunctionLibrary_C::广播关卡机关触发(class AActor* Trigger, 
 // Function LevelBPFunctionLibrary.LevelBPFunctionLibrary_C.开关克拉克门
 // (Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           实例名                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    实例名                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // bool                                    开关                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
@@ -600,8 +600,8 @@ void ULevelBPFunctionLibrary_C::快速充能玩家大招(class AMarvelBaseCharac
 // Function LevelBPFunctionLibrary.LevelBPFunctionLibrary_C.播放环境音效(实例组件)
 // (Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           实例名                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-// class FString                           组件名                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    实例名                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    组件名                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // TSoftObjectPtr<class UAkAudioEvent>     AudioEvent                                             (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
@@ -627,7 +627,7 @@ void ULevelBPFunctionLibrary_C::播放环境音效_实例组件_(const class FSt
 // (Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int32                                   Index_0                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           UI_NAME                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    UI_NAME                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 void ULevelBPFunctionLibrary_C::改变据点状态_UI(int32 Index_0, const class FString& UI_NAME, class UObject* __WorldContext)
@@ -650,7 +650,7 @@ void ULevelBPFunctionLibrary_C::改变据点状态_UI(int32 Index_0, const class
 // Function LevelBPFunctionLibrary.LevelBPFunctionLibrary_C.攻防点结束
 // (Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           实例名                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    实例名                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // EBattleSide                             胜利方                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
@@ -675,7 +675,7 @@ void ULevelBPFunctionLibrary_C::攻防点结束(const class FString& 实例名, 
 // (Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// bool                                    NewParam                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool*                                   NewParam                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void ULevelBPFunctionLibrary_C::是否进攻方_客户端_(class UObject* __WorldContext, bool* NewParam)
 {
@@ -698,7 +698,7 @@ void ULevelBPFunctionLibrary_C::是否进攻方_客户端_(class UObject* __Worl
 // Function LevelBPFunctionLibrary.LevelBPFunctionLibrary_C.显示 UI
 // (Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           UI_NAME                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    UI_NAME                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // double                                  Duration_Time                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // int32                                   Player_UID                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
@@ -724,7 +724,7 @@ void ULevelBPFunctionLibrary_C::显示_UI(const class FString& UI_NAME, double D
 // Function LevelBPFunctionLibrary.LevelBPFunctionLibrary_C.隐藏浮标
 // (Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           ActorName                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    ActorName                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // bool                                    Hidden                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
@@ -748,8 +748,8 @@ void ULevelBPFunctionLibrary_C::隐藏浮标(const class FString& ActorName, boo
 // Function LevelBPFunctionLibrary.LevelBPFunctionLibrary_C.显示通用文本UI
 // (Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Input                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-// class FString                           UI_NAME                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Input                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    UI_NAME                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // double                                  DurationTime                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
@@ -775,7 +775,7 @@ void ULevelBPFunctionLibrary_C::显示通用文本UI(const class FString& Input,
 // (Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // double                                  Percent                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           UI_NAME                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    UI_NAME                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 void ULevelBPFunctionLibrary_C::更新进度条_UI(double Percent, const class FString& UI_NAME, class UObject* __WorldContext)
@@ -799,7 +799,7 @@ void ULevelBPFunctionLibrary_C::更新进度条_UI(double Percent, const class F
 // (Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // double                                  Percent                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           UI_NAME                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    UI_NAME                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 void ULevelBPFunctionLibrary_C::更新饼状UI(double Percent, const class FString& UI_NAME, class UObject* __WorldContext)
@@ -823,7 +823,7 @@ void ULevelBPFunctionLibrary_C::更新饼状UI(double Percent, const class FStri
 // (Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// bool                                    存在                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool*                                   存在                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void ULevelBPFunctionLibrary_C::最近是否有攻击方在车边(class UObject* __WorldContext, bool* 存在)
 {
@@ -847,7 +847,7 @@ void ULevelBPFunctionLibrary_C::最近是否有攻击方在车边(class UObject*
 // (Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// bool                                    存在                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool*                                   存在                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void ULevelBPFunctionLibrary_C::最近是否有防守方在车边(class UObject* __WorldContext, bool* 存在)
 {
@@ -870,7 +870,7 @@ void ULevelBPFunctionLibrary_C::最近是否有防守方在车边(class UObject*
 // Function LevelBPFunctionLibrary.LevelBPFunctionLibrary_C.根据人数设置占点占领速度
 // (Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           实例名                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    实例名                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 void ULevelBPFunctionLibrary_C::根据人数设置占点占领速度(const class FString& 实例名, class UObject* __WorldContext)
@@ -892,7 +892,7 @@ void ULevelBPFunctionLibrary_C::根据人数设置占点占领速度(const class
 // Function LevelBPFunctionLibrary.LevelBPFunctionLibrary_C.根据人数设置占点占领速度_MineControl
 // (Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           实例名                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    实例名                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 void ULevelBPFunctionLibrary_C::根据人数设置占点占领速度_MineControl(const class FString& 实例名, class UObject* __WorldContext)
@@ -914,7 +914,7 @@ void ULevelBPFunctionLibrary_C::根据人数设置占点占领速度_MineControl
 // Function LevelBPFunctionLibrary.LevelBPFunctionLibrary_C.根据攻方人数设置攻防点速度
 // (Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           实例名                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    实例名                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 void ULevelBPFunctionLibrary_C::根据攻方人数设置攻防点速度(const class FString& 实例名, class UObject* __WorldContext)
@@ -938,15 +938,15 @@ void ULevelBPFunctionLibrary_C::根据攻方人数设置攻防点速度(const cl
 // Parameters:
 // int32                                   HeroID                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // EBattleSide                             BattleSide                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FVector                          position                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FRotator                         Rotation                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-// class FString                           Name_0                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-// class FString                           TreePath                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-// struct FVector                          RelivePosition                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVector&                   position                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FRotator&                  Rotation                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// const class FString&                    Name_0                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    TreePath                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const struct FVector&                   RelivePosition                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // double                                  ReliveTime                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    IsScore                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class AActor*                           Actor                                                  (Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class AActor**                          Actor                                                  (Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 void ULevelBPFunctionLibrary_C::模块化创建_AI玩家(int32 HeroID, EBattleSide BattleSide, const struct FVector& position, const struct FRotator& Rotation, const class FString& Name_0, const class FString& TreePath, const struct FVector& RelivePosition, double ReliveTime, bool IsScore, class UObject* __WorldContext, class AActor** Actor)
 {
@@ -1022,7 +1022,7 @@ void ULevelBPFunctionLibrary_C::消除玩家所有技能_CD一次(class AMarvelB
 // Function LevelBPFunctionLibrary.LevelBPFunctionLibrary_C.激活控制组件
 // (Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           实例名                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    实例名                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 void ULevelBPFunctionLibrary_C::激活控制组件(const class FString& 实例名, class UObject* __WorldContext)
@@ -1064,7 +1064,7 @@ void ULevelBPFunctionLibrary_C::激活推车组件(class UObject* __WorldContext
 // Function LevelBPFunctionLibrary.LevelBPFunctionLibrary_C.激活攻防组件
 // (Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           实例名                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    实例名                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 void ULevelBPFunctionLibrary_C::激活攻防组件(const class FString& 实例名, class UObject* __WorldContext)
@@ -1087,7 +1087,7 @@ void ULevelBPFunctionLibrary_C::激活攻防组件(const class FString& 实例�
 // (Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// TArray<int32>                           OutputList                                             (Parm, OutParm)
+// TArray<int32>*                          OutputList                                             (Parm, OutParm)
 
 void ULevelBPFunctionLibrary_C::获取全部玩家(class UObject* __WorldContext, TArray<int32>* OutputList)
 {
@@ -1110,9 +1110,9 @@ void ULevelBPFunctionLibrary_C::获取全部玩家(class UObject* __WorldContext
 // Function LevelBPFunctionLibrary.LevelBPFunctionLibrary_C.获取关卡定时器剩余时间
 // (Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// class FString                           定时器名                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    定时器名                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// double                                  剩余时间                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// double*                                 剩余时间                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void ULevelBPFunctionLibrary_C::获取关卡定时器剩余时间(const class FString& 定时器名, class UObject* __WorldContext, double* 剩余时间)
 {
@@ -1136,9 +1136,9 @@ void ULevelBPFunctionLibrary_C::获取关卡定时器剩余时间(const class FS
 // Function LevelBPFunctionLibrary.LevelBPFunctionLibrary_C.获取关卡定时器过去时间
 // (Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// class FString                           定时器名                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    定时器名                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// double                                  过去时间                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// double*                                 过去时间                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void ULevelBPFunctionLibrary_C::获取关卡定时器过去时间(const class FString& 定时器名, class UObject* __WorldContext, double* 过去时间)
 {
@@ -1163,7 +1163,7 @@ void ULevelBPFunctionLibrary_C::获取关卡定时器过去时间(const class FS
 // (Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// int32                                   加时状态                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32*                                  加时状态                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void ULevelBPFunctionLibrary_C::获取加时状态(class UObject* __WorldContext, int32* 加时状态)
 {
@@ -1186,10 +1186,10 @@ void ULevelBPFunctionLibrary_C::获取加时状态(class UObject* __WorldContext
 // Function LevelBPFunctionLibrary.LevelBPFunctionLibrary_C.获取占点人数
 // (Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// class FString                           实例名                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    实例名                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // EBattleSide                             阵营                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// int32                                   人数                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32*                                  人数                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void ULevelBPFunctionLibrary_C::获取占点人数(const class FString& 实例名, EBattleSide 阵营, class UObject* __WorldContext, int32* 人数)
 {
@@ -1214,9 +1214,9 @@ void ULevelBPFunctionLibrary_C::获取占点人数(const class FString& 实例�
 // Function LevelBPFunctionLibrary.LevelBPFunctionLibrary_C.获取占点占领进度
 // (Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// class FString                           实例名                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    实例名                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// double                                  进度                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// double*                                 进度                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void ULevelBPFunctionLibrary_C::获取占点占领进度(const class FString& 实例名, class UObject* __WorldContext, double* 进度)
 {
@@ -1240,9 +1240,9 @@ void ULevelBPFunctionLibrary_C::获取占点占领进度(const class FString& �
 // Function LevelBPFunctionLibrary.LevelBPFunctionLibrary_C.获取占点占领阵营
 // (Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// class FString                           实例名                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    实例名                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// EOwnershipType                          当前阵营                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// EOwnershipType*                         当前阵营                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void ULevelBPFunctionLibrary_C::获取占点占领阵营(const class FString& 实例名, class UObject* __WorldContext, EOwnershipType* 当前阵营)
 {
@@ -1266,9 +1266,9 @@ void ULevelBPFunctionLibrary_C::获取占点占领阵营(const class FString& �
 // Function LevelBPFunctionLibrary.LevelBPFunctionLibrary_C.获取占点胜利进度
 // (Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// class FString                           实例名                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    实例名                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// double                                  进度                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// double*                                 进度                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void ULevelBPFunctionLibrary_C::获取占点胜利进度(const class FString& 实例名, class UObject* __WorldContext, double* 进度)
 {
@@ -1292,9 +1292,9 @@ void ULevelBPFunctionLibrary_C::获取占点胜利进度(const class FString& �
 // Function LevelBPFunctionLibrary.LevelBPFunctionLibrary_C.获取实例
 // (Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// class FString                           实例名                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    实例名                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class AActor*                           Result                                                 (Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class AActor**                          Result                                                 (Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 void ULevelBPFunctionLibrary_C::获取实例(const class FString& 实例名, class UObject* __WorldContext, class AActor** Result)
 {
@@ -1319,7 +1319,7 @@ void ULevelBPFunctionLibrary_C::获取实例(const class FString& 实例名, cla
 // (Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// EMatchState                             MatchState                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// EMatchState*                            MatchState                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void ULevelBPFunctionLibrary_C::获取当前游戏阶段(class UObject* __WorldContext, EMatchState* MatchState)
 {
@@ -1344,7 +1344,7 @@ void ULevelBPFunctionLibrary_C::获取当前游戏阶段(class UObject* __WorldC
 // Parameters:
 // EPlayerLivingState                      PlayerLivingState                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// TArray<int32>                           PlayerUIDList                                          (Parm, OutParm)
+// TArray<int32>*                          PlayerUIDList                                          (Parm, OutParm)
 
 void ULevelBPFunctionLibrary_C::获取指定存活状态玩家(EPlayerLivingState PlayerLivingState, class UObject* __WorldContext, TArray<int32>* PlayerUIDList)
 {
@@ -1370,7 +1370,7 @@ void ULevelBPFunctionLibrary_C::获取指定存活状态玩家(EPlayerLivingStat
 // Parameters:
 // EBattleSide                             BattleSide                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// TArray<int32>                           PlayerUIDList                                          (Parm, OutParm)
+// TArray<int32>*                          PlayerUIDList                                          (Parm, OutParm)
 
 void ULevelBPFunctionLibrary_C::获取指定阵营玩家(EBattleSide BattleSide, class UObject* __WorldContext, TArray<int32>* PlayerUIDList)
 {
@@ -1395,7 +1395,7 @@ void ULevelBPFunctionLibrary_C::获取指定阵营玩家(EBattleSide BattleSide,
 // (Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class APyPayload*                       Payload                                                (Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class APyPayload**                      Payload                                                (Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 void ULevelBPFunctionLibrary_C::获取推车(class UObject* __WorldContext, class APyPayload** Payload)
 {
@@ -1418,9 +1418,9 @@ void ULevelBPFunctionLibrary_C::获取推车(class UObject* __WorldContext, clas
 // Function LevelBPFunctionLibrary.LevelBPFunctionLibrary_C.获取攻防点
 // (Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           实例名                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    实例名                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class APyObjective*                     Objective                                              (Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class APyObjective**                    Objective                                              (Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 void ULevelBPFunctionLibrary_C::获取攻防点(const class FString& 实例名, class UObject* __WorldContext, class APyObjective** Objective)
 {
@@ -1444,9 +1444,9 @@ void ULevelBPFunctionLibrary_C::获取攻防点(const class FString& 实例名, 
 // Function LevelBPFunctionLibrary.LevelBPFunctionLibrary_C.获取攻防点速度
 // (Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           实例名                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    实例名                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// double                                  速度                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// double*                                 速度                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void ULevelBPFunctionLibrary_C::获取攻防点速度(const class FString& 实例名, class UObject* __WorldContext, double* 速度)
 {
@@ -1472,7 +1472,7 @@ void ULevelBPFunctionLibrary_C::获取攻防点速度(const class FString& 实�
 // Parameters:
 // int32                                   UID                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// EPlayerLivingState                      PlayerLivingState                                      (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// EPlayerLivingState*                     PlayerLivingState                                      (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void ULevelBPFunctionLibrary_C::获取玩家存活状态(int32 UID, class UObject* __WorldContext, EPlayerLivingState* PlayerLivingState)
 {
@@ -1498,14 +1498,14 @@ void ULevelBPFunctionLibrary_C::获取玩家存活状态(int32 UID, class UObjec
 // Parameters:
 // int32                                   UID                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// int32                                   击杀次数                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// int32                                   连杀                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// int32                                   助攻次数                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// int32                                   死亡次数                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// double                                  主武器命中率                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// double                                  总伤害                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// double                                  总治疗                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// double                                  总承伤                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32*                                  击杀次数                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32*                                  连杀                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32*                                  助攻次数                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32*                                  死亡次数                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// double*                                 主武器命中率                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// double*                                 总伤害                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// double*                                 总治疗                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// double*                                 总承伤                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void ULevelBPFunctionLibrary_C::获取玩家战斗信息(int32 UID, class UObject* __WorldContext, int32* 击杀次数, int32* 连杀, int32* 助攻次数, int32* 死亡次数, double* 主武器命中率, double* 总伤害, double* 总治疗, double* 总承伤)
 {
@@ -1552,7 +1552,7 @@ void ULevelBPFunctionLibrary_C::获取玩家战斗信息(int32 UID, class UObjec
 // Parameters:
 // int32                                   UID                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// int32                                   HeroID                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32*                                  HeroID                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void ULevelBPFunctionLibrary_C::获取玩家所选择英雄(int32 UID, class UObject* __WorldContext, int32* HeroID)
 {
@@ -1578,7 +1578,7 @@ void ULevelBPFunctionLibrary_C::获取玩家所选择英雄(int32 UID, class UOb
 // Parameters:
 // int32                                   UID                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// EBattleSide                             BattleSide                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// EBattleSide*                            BattleSide                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void ULevelBPFunctionLibrary_C::获取玩家阵营(int32 UID, class UObject* __WorldContext, EBattleSide* BattleSide)
 {
@@ -1602,9 +1602,9 @@ void ULevelBPFunctionLibrary_C::获取玩家阵营(int32 UID, class UObject* __W
 // Function LevelBPFunctionLibrary.LevelBPFunctionLibrary_C.获取移动Actor倒数剩余时间
 // (Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// class FString                           实例名                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    实例名                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// double                                  进度                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// double*                                 进度                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void ULevelBPFunctionLibrary_C::获取移动Actor倒数剩余时间(const class FString& 实例名, class UObject* __WorldContext, double* 进度)
 {
@@ -1630,7 +1630,7 @@ void ULevelBPFunctionLibrary_C::获取移动Actor倒数剩余时间(const class 
 // Parameters:
 // class UClass*                           Class_0                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class UActorComponent*                  Component                                              (Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+// class UActorComponent**                 Component                                              (Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 
 void ULevelBPFunctionLibrary_C::获取规则组件_旧_(class UClass* Class_0, class UObject* __WorldContext, class UActorComponent** Component)
 {
@@ -1654,9 +1654,9 @@ void ULevelBPFunctionLibrary_C::获取规则组件_旧_(class UClass* Class_0, c
 // Function LevelBPFunctionLibrary.LevelBPFunctionLibrary_C.获取路线
 // (Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           实例名                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    实例名                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class APyPayloadTrace*                  PayloadTrace                                           (Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class APyPayloadTrace**                 PayloadTrace                                           (Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 void ULevelBPFunctionLibrary_C::获取路线(const class FString& 实例名, class UObject* __WorldContext, class APyPayloadTrace** PayloadTrace)
 {
@@ -1681,7 +1681,7 @@ void ULevelBPFunctionLibrary_C::获取路线(const class FString& 实例名, cla
 // (Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// EOwnershipType                          OwnerSide                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// EOwnershipType*                         OwnerSide                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void ULevelBPFunctionLibrary_C::获取载具占领方(class UObject* __WorldContext, EOwnershipType* OwnerSide)
 {
@@ -1706,7 +1706,7 @@ void ULevelBPFunctionLibrary_C::获取载具占领方(class UObject* __WorldCont
 // Parameters:
 // int32                                   HeroID                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// TArray<int64>                           PlayerUIDList                                          (Parm, OutParm)
+// TArray<int64>*                          PlayerUIDList                                          (Parm, OutParm)
 
 void ULevelBPFunctionLibrary_C::获取选择指定英雄玩家(int32 HeroID, class UObject* __WorldContext, TArray<int64>* PlayerUIDList)
 {
@@ -1730,7 +1730,7 @@ void ULevelBPFunctionLibrary_C::获取选择指定英雄玩家(int32 HeroID, cla
 // Function LevelBPFunctionLibrary.LevelBPFunctionLibrary_C.蜘蛛零下落
 // (Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           实例名                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    实例名                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 void ULevelBPFunctionLibrary_C::蜘蛛零下落(const class FString& 实例名, class UObject* __WorldContext)
@@ -1752,7 +1752,7 @@ void ULevelBPFunctionLibrary_C::蜘蛛零下落(const class FString& 实例名, 
 // Function LevelBPFunctionLibrary.LevelBPFunctionLibrary_C.蜘蛛零禁锢弱化
 // (Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           实例名                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    实例名                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 void ULevelBPFunctionLibrary_C::蜘蛛零禁锢弱化(const class FString& 实例名, class UObject* __WorldContext)
@@ -1774,7 +1774,7 @@ void ULevelBPFunctionLibrary_C::蜘蛛零禁锢弱化(const class FString& 实�
 // Function LevelBPFunctionLibrary.LevelBPFunctionLibrary_C.蜘蛛零随机idle动画
 // (Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           实例名                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    实例名                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 void ULevelBPFunctionLibrary_C::蜘蛛零随机idle动画(const class FString& 实例名, class UObject* __WorldContext)
@@ -1796,7 +1796,7 @@ void ULevelBPFunctionLibrary_C::蜘蛛零随机idle动画(const class FString& �
 // Function LevelBPFunctionLibrary.LevelBPFunctionLibrary_C.视频面板播放
 // (Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           实例名                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    实例名                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 void ULevelBPFunctionLibrary_C::视频面板播放(const class FString& 实例名, class UObject* __WorldContext)
@@ -1818,7 +1818,7 @@ void ULevelBPFunctionLibrary_C::视频面板播放(const class FString& 实例�
 // Function LevelBPFunctionLibrary.LevelBPFunctionLibrary_C.触发 Actor组移动根据时间
 // (Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           实例名                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    实例名                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // double                                  移动时间                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // double                                  回复时间                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // double                                  延迟回复时间                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -1850,7 +1850,7 @@ void ULevelBPFunctionLibrary_C::触发_Actor组移动根据时间(const class FS
 // Function LevelBPFunctionLibrary.LevelBPFunctionLibrary_C.触发Actor组移动
 // (Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           实例名                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    实例名                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // double                                  移动速度                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // double                                  回复速度                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // double                                  延迟回复时间                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -1882,7 +1882,7 @@ void ULevelBPFunctionLibrary_C::触发Actor组移动(const class FString& 实例
 // Function LevelBPFunctionLibrary.LevelBPFunctionLibrary_C.触发多Actor组联动根据时间
 // (Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TArray<struct FGroupMoveActorsContainner>实例组                                                 (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// TArray<struct FGroupMoveActorsContainner>&实例组                                                 (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 void ULevelBPFunctionLibrary_C::触发多Actor组联动根据时间(TArray<struct FGroupMoveActorsContainner>& 实例组, class UObject* __WorldContext)
@@ -1928,7 +1928,7 @@ void ULevelBPFunctionLibrary_C::设置加时状态(EOvertimeState EOvertimeState
 // Function LevelBPFunctionLibrary.LevelBPFunctionLibrary_C.设置占点占领速度
 // (Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           实例名                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    实例名                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // double                                  速度                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
@@ -1952,7 +1952,7 @@ void ULevelBPFunctionLibrary_C::设置占点占领速度(const class FString& �
 // Function LevelBPFunctionLibrary.LevelBPFunctionLibrary_C.设置攻防点速度
 // (Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           实例名                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    实例名                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // double                                  速度                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
@@ -1998,8 +1998,8 @@ void ULevelBPFunctionLibrary_C::设置载具速度(double 速度, class UObject*
 // Function LevelBPFunctionLibrary.LevelBPFunctionLibrary_C.设置重生室复活点
 // (Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           重生室名                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-// class FString                           重生点名                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    重生室名                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    重生点名                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 void ULevelBPFunctionLibrary_C::设置重生室复活点(const class FString& 重生室名, const class FString& 重生点名, class UObject* __WorldContext)
@@ -2022,7 +2022,7 @@ void ULevelBPFunctionLibrary_C::设置重生室复活点(const class FString& �
 // Function LevelBPFunctionLibrary.LevelBPFunctionLibrary_C.设置重生室状态
 // (Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TMap<class FString, bool>               BirthbaseState                                         (BlueprintVisible, BlueprintReadOnly, Parm)
+// const TMap<class FString, bool>&        BirthbaseState                                         (BlueprintVisible, BlueprintReadOnly, Parm)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 void ULevelBPFunctionLibrary_C::设置重生室状态(const TMap<class FString, bool>& BirthbaseState, class UObject* __WorldContext)
@@ -2064,9 +2064,9 @@ void ULevelBPFunctionLibrary_C::载具开始回退(class UObject* __WorldContext
 // Function LevelBPFunctionLibrary.LevelBPFunctionLibrary_C.载具当前路线名
 // (Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// class FString                           实例名                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    实例名                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class FString                           路线名                                                 (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
+// class FString*                          路线名                                                 (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
 
 void ULevelBPFunctionLibrary_C::载具当前路线名(const class FString& 实例名, class UObject* __WorldContext, class FString* 路线名)
 {
@@ -2091,7 +2091,7 @@ void ULevelBPFunctionLibrary_C::载具当前路线名(const class FString& 实�
 // (Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// double                                  进度_百分比为整数_                                     (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// double*                                 进度_百分比为整数_                                     (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void ULevelBPFunctionLibrary_C::载具当前进度(class UObject* __WorldContext, double* 进度_百分比为整数_)
 {
@@ -2134,7 +2134,7 @@ void ULevelBPFunctionLibrary_C::载具根据攻方人数前进(class UObject* __
 // Function LevelBPFunctionLibrary.LevelBPFunctionLibrary_C.载具结束
 // (Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           实例名                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    实例名                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // EBattleSide                             胜利方                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
@@ -2158,7 +2158,7 @@ void ULevelBPFunctionLibrary_C::载具结束(const class FString& 实例名, EBa
 // Function LevelBPFunctionLibrary.LevelBPFunctionLibrary_C.通过 ID播放音频(可带字幕)
 // (Static, Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           实例名                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    实例名                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // int32                                   语音ID1                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // int32                                   语音ID2                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // int32                                   语音ID3                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -2208,7 +2208,7 @@ void ULevelBPFunctionLibrary_C::重生室开门(EBattleSide 阵营, class UObjec
 // Function LevelBPFunctionLibrary.LevelBPFunctionLibrary_C.重设占点参数
 // (Static, Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           实例名                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    实例名                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // double                                  衰退速度                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // double                                  衰退延时                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // double                                  占领速度仅1人                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -2246,7 +2246,7 @@ void ULevelBPFunctionLibrary_C::重设占点参数(const class FString& 实例�
 // Function LevelBPFunctionLibrary.LevelBPFunctionLibrary_C.重设攻防点参数
 // (Static, Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           实例名                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    实例名                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // double                                  衰退延迟                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // double                                  衰退速度                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // double                                  仅攻方1人                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -2284,7 +2284,7 @@ void ULevelBPFunctionLibrary_C::重设攻防点参数(const class FString& 实�
 // Function LevelBPFunctionLibrary.LevelBPFunctionLibrary_C.重设载具参数
 // (Static, Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           实例名                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    实例名                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // double                                  回退速度                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // double                                  前进延迟                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // double                                  后退延迟                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -2326,7 +2326,7 @@ void ULevelBPFunctionLibrary_C::重设载具参数(const class FString& 实例�
 // Function LevelBPFunctionLibrary.LevelBPFunctionLibrary_C.隐藏UI
 // (Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           UI_NAME                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    UI_NAME                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // int32                                   Player_UID                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 

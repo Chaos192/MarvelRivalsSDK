@@ -12,8 +12,8 @@
 
 #include "CoreUObject_structs.hpp"
 #include "Marvel_structs.hpp"
-#include "MarvelWidgets_classes.hpp"
 #include "SlateCore_structs.hpp"
+#include "MarvelWidgets_classes.hpp"
 #include "UMG_classes.hpp"
 
 

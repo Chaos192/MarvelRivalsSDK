@@ -17,6 +17,26 @@
 namespace SDK
 {
 
+// Function Hero_1042.Summoned_10424101.GetCurrentState
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// EState_10424101                         ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+EState_10424101 ASummoned_10424101::GetCurrentState()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Summoned_10424101", "GetCurrentState");
+
+	Params::Summoned_10424101_GetCurrentState Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
 // Function Hero_1042.Ability_104202.ClimbEnd
 // (Final, Native, Public, BlueprintCallable)
 
@@ -90,26 +110,6 @@ void UAbility_104202::UpdateAbilityResources()
 	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Hero_1042.Summoned_10424101.GetCurrentState
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// EState_10424101                         ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-EState_10424101 ASummoned_10424101::GetCurrentState()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Summoned_10424101", "GetCurrentState");
-
-	Params::Summoned_10424101_GetCurrentState Parms{};
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	return Parms.ReturnValue;
 }
 
 
@@ -193,8 +193,8 @@ bool ASummoned_10424102::IsConfigValid()
 // Function Hero_1042.Summoned_10424102.MulticastLaunch
 // (Net, NetReliable, Native, Event, NetMulticast, Public, HasDefaults)
 // Parameters:
-// struct FVector                          StartLocation                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          Velocity                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   StartLocation                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   Velocity                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void ASummoned_10424102::MulticastLaunch(const struct FVector& StartLocation, const struct FVector& Velocity)
 {
@@ -220,7 +220,7 @@ void ASummoned_10424102::MulticastLaunch(const struct FVector& StartLocation, co
 // Function Hero_1042.Summoned_10424102.MulticastRegisterSpider
 // (Net, NetReliable, Native, Event, NetMulticast, Public)
 // Parameters:
-// struct FSpiderSpawnInfo                 SpawnInfo                                              (Parm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FSpiderSpawnInfo&          SpawnInfo                                              (Parm, NoDestructor, NativeAccessSpecifierPublic)
 
 void ASummoned_10424102::MulticastRegisterSpider(const struct FSpiderSpawnInfo& SpawnInfo)
 {
@@ -308,7 +308,7 @@ void ASummoned_10424102::OnSpiderMovingStateChange(bool bNewIsMoving)
 // Function Hero_1042.Summoned_10424102.OnSpiderProjectileStop
 // (Final, Native, Public, HasOutParams)
 // Parameters:
-// struct FHitResult                       ImpactResult                                           (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FHitResult&                ImpactResult                                           (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 void ASummoned_10424102::OnSpiderProjectileStop(const struct FHitResult& ImpactResult)
 {
@@ -448,7 +448,7 @@ class UMarvelGenMeshComponent* ASummoned_10424103::GetGenMeshComponent()
 // Function Hero_1042.Summoned_10424103.GetPyramidMeshVertices
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<struct FVector>                  Vertices                                               (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+// TArray<struct FVector>*                 Vertices                                               (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 
 void ASummoned_10424103::GetPyramidMeshVertices(TArray<struct FVector>* Vertices)
 {
@@ -474,7 +474,7 @@ void ASummoned_10424103::GetPyramidMeshVertices(TArray<struct FVector>* Vertices
 // Function Hero_1042.Summoned_10424103.GetWebCentralLocation
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FVector                          OutLocation                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVector*                         OutLocation                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool ASummoned_10424103::GetWebCentralLocation(struct FVector* OutLocation)
@@ -528,7 +528,7 @@ float ASummoned_10424103::GetWebMaxOffsetDistance()
 // Function Hero_1042.Summoned_10424103.GetWebValidNodesNum
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// int32                                   OutNum                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32*                                  OutNum                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void ASummoned_10424103::GetWebValidNodesNum(int32* OutNum)
 {
@@ -1042,7 +1042,7 @@ void USummonedComp_10424103::K2_OnWebActive()
 // Function Hero_1042.TraceComponent_10424103.OnPreOutTraceResults
 // (Native, Public, HasOutParams)
 // Parameters:
-// struct FHitResult                       Hit                                                    (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FHitResult&                Hit                                                    (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UTraceComponent_10424103::OnPreOutTraceResults(const struct FHitResult& Hit)
@@ -1071,7 +1071,7 @@ bool UTraceComponent_10424103::OnPreOutTraceResults(const struct FHitResult& Hit
 // (Final, Native, Public, HasOutParams)
 // Parameters:
 // class AMarvelBaseCharacter*             TargetActor                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// uint32                                  OutNearestIndex                                        (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// uint32*                                 OutNearestIndex                                        (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UMarvelWebEntity*                 ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class UMarvelWebEntity* UTraceComponent_10420102::FindNearestLinkedWeb(class AMarvelBaseCharacter* TargetActor, uint32* OutNearestIndex)
@@ -1121,8 +1121,8 @@ void UTraceComponent_10420102::InitCheckPoints()
 // Function Hero_1042.EffectiveComponent_10420102.FindNearestLinkedWeb
 // (Final, Native, Public, HasOutParams, HasDefaults)
 // Parameters:
-// struct FVector                          TargetActor                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// uint32                                  OutNearestIndex                                        (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   TargetActor                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// uint32*                                 OutNearestIndex                                        (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UMarvelWebEntity*                 ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class UMarvelWebEntity* UEffectiveComponent_10420102::FindNearestLinkedWeb(const struct FVector& TargetActor, uint32* OutNearestIndex)
@@ -1385,7 +1385,7 @@ void USummonedComp_10425101::OnRep_TriggerActorChange()
 // Function Hero_1042.SummonedComp_10425101.OnScopeTraceResult
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// TArray<struct FHitResult>               HitResults                                             (Parm, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const TArray<struct FHitResult>&        HitResults                                             (Parm, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 void USummonedComp_10425101::OnScopeTraceResult(const TArray<struct FHitResult>& HitResults)
 {
@@ -1564,8 +1564,8 @@ float UAbility_104261::GetDashDeltaLength()
 // Function Hero_1042.Ability_104261.GetSilkLengthState
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// int32                                   OutStage                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   OutProgress                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32*                                  OutStage                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float*                                  OutProgress                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UAbility_104261::GetSilkLengthState(int32* OutStage, float* OutProgress)
 {
@@ -1848,10 +1848,10 @@ void UAbility_104261::OnRep_IsLinked()
 // Function Hero_1042.Ability_104261.Server_StartDash
 // (Net, NetReliable, Native, Event, Public, NetServer, HasDefaults)
 // Parameters:
-// struct FVector                          TargetPosition                                         (ConstParm, Parm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   MaxSpeed                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   DashDuration                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FPortalSegments                  InSegment                                              (ConstParm, Parm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FVector&                   TargetPosition                                         (ConstParm, Parm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             MaxSpeed                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             DashDuration                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FPortalSegments&           InSegment                                              (ConstParm, Parm, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UAbility_104261::Server_StartDash(const struct FVector& TargetPosition, const float MaxSpeed, const float DashDuration, const struct FPortalSegments& InSegment)
 {
@@ -1929,7 +1929,7 @@ void UAbility_104261::SetLinkState(bool bNewState)
 // Function Hero_1042.Ability_104261.SetPortalSegments
 // (Final, Native, Public, HasOutParams)
 // Parameters:
-// struct FPortalSegments                  InSegments                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FPortalSegments&           InSegments                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UAbility_104261::SetPortalSegments(const struct FPortalSegments& InSegments)
 {
@@ -1954,10 +1954,10 @@ void UAbility_104261::SetPortalSegments(const struct FPortalSegments& InSegments
 // Function Hero_1042.Ability_104261.StartDash
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FVector                          TargetPosition                                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   MaxSpeed                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   DashDuration                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FPortalSegments                  InSegment                                              (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FVector&                   TargetPosition                                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             MaxSpeed                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             DashDuration                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FPortalSegments&           InSegment                                              (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UAbility_104261::StartDash(const struct FVector& TargetPosition, const float MaxSpeed, const float DashDuration, const struct FPortalSegments& InSegment)
 {
@@ -2198,7 +2198,7 @@ void UWidget_10427101::UpdateRunSpeedLine(bool bIsRunState)
 // Parameters:
 // class AActor*                           Source                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   AbilityID                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           SessionID                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    SessionID                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UMarvelGameplayAbility*           SourceAbility                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UEpicMomentAction_1042::OnActorAbilityCancel(class AActor* Source, int32 AbilityID, const class FString& SessionID, class UMarvelGameplayAbility* SourceAbility)
@@ -2229,8 +2229,8 @@ void UEpicMomentAction_1042::OnActorAbilityCancel(class AActor* Source, int32 Ab
 // Parameters:
 // class AActor*                           Instigator                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           Target                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FAttributeModifierHandle         ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGlobalEventExtraData            ExtraData                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FAttributeModifierHandle&  ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGlobalEventExtraData&     ExtraData                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
 void UEpicMomentAction_1042::OnActorTakeDamage(class AActor* Instigator, class AActor* Target, const struct FAttributeModifierHandle& ModifierParameterHandle, const struct FGlobalEventExtraData& ExtraData)
 {
@@ -2261,7 +2261,7 @@ void UEpicMomentAction_1042::OnActorTakeDamage(class AActor* Instigator, class A
 // class AActor*                           SourceActor                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UMarvelGameplayAbility*           SourceAbility                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           Projectile                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FMarvelTargetActorGenerateInfo   GenerateInfo                                           (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FMarvelTargetActorGenerateInfo&GenerateInfo                                           (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UEpicMomentAction_1042::OnProjectileBegin(class AActor* SourceActor, class UMarvelGameplayAbility* SourceAbility, class AActor* Projectile, const struct FMarvelTargetActorGenerateInfo& GenerateInfo)
 {
@@ -2289,7 +2289,7 @@ void UEpicMomentAction_1042::OnProjectileBegin(class AActor* SourceActor, class 
 // Function Hero_1042.EpicMomentAction_1042.OnProjectileHit
 // (Final, Native, Public, HasOutParams)
 // Parameters:
-// struct FHitResult                       Hit                                                    (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FHitResult&                Hit                                                    (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 void UEpicMomentAction_1042::OnProjectileHit(const struct FHitResult& Hit)
 {
@@ -2315,7 +2315,7 @@ void UEpicMomentAction_1042::OnProjectileHit(const struct FHitResult& Hit)
 // (Final, Native, Public, HasOutParams, HasDefaults)
 // Parameters:
 // class AMarvelBaseCharacter*             OtherChar                                              (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          NodeLoc                                                (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVector*                         NodeLoc                                                (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UMarvelWebEntity::FindNearestNodeLocation(class AMarvelBaseCharacter* OtherChar, struct FVector* NodeLoc)
@@ -2346,7 +2346,7 @@ bool UMarvelWebEntity::FindNearestNodeLocation(class AMarvelBaseCharacter* Other
 // Function Hero_1042.MarvelWebEntity.IsOverlapping
 // (Final, Native, Public, HasDefaults)
 // Parameters:
-// struct FVector                          Point                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   Point                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   Radius                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -2463,10 +2463,10 @@ class UMarvelWebEntity* UMarvelSpiderAndWebManager::GetWebEntity(class AMarvelGe
 // Parameters:
 // class AActor*                           SpiderOwner                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           AttachedWebOwner                                       (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FMarvelWebNode                   InNode                                                 (Parm, NativeAccessSpecifierPublic)
+// const struct FMarvelWebNode&            InNode                                                 (Parm, NativeAccessSpecifierPublic)
 // class AMarvelBaseCharacter*             InChar                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           NextWebOwner                                           (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FMarvelWebNode                   InNextWebNode                                          (Parm, NativeAccessSpecifierPublic)
+// const struct FMarvelWebNode&            InNextWebNode                                          (Parm, NativeAccessSpecifierPublic)
 
 void UMarvelSpiderAndWebManager::MulticastSetSpiderTarget(class AActor* SpiderOwner, class AActor* AttachedWebOwner, const struct FMarvelWebNode& InNode, class AMarvelBaseCharacter* InChar, class AActor* NextWebOwner, const struct FMarvelWebNode& InNextWebNode)
 {
@@ -2548,8 +2548,8 @@ void UMarvelSpiderAndWebManager::OnViewTargetChange(class AActor* ViewTarget)
 // Function Hero_1042.PeniParkerAnimInstance.RelevantUltimateArmedNode
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FAnimUpdateContext               Context                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FAnimNodeReference               Node                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FAnimUpdateContext&        Context                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FAnimNodeReference&        Node                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
 void UPeniParkerAnimInstance::RelevantUltimateArmedNode(const struct FAnimUpdateContext& Context, const struct FAnimNodeReference& Node)
 {
@@ -2740,7 +2740,7 @@ void APeniParkerCharacter::OnAbilityInitialize(int32 AbilityID)
 // Function Hero_1042.PeniParkerCharacter.OnDashStart
 // (Final, Native, Public, HasDefaults)
 // Parameters:
-// struct FVector                          InDirection                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   InDirection                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void APeniParkerCharacter::OnDashStart(const struct FVector& InDirection)
 {
@@ -3055,7 +3055,7 @@ void AFormalPeniParkerChildActor::OnArmedStateChanged(bool NewState)
 // Function Hero_1042.FormalPeniParkerChildActor.OnBlockAimTagsUpdate
 // (Final, Native, Public, HasOutParams)
 // Parameters:
-// struct FGameplayTag                     Tag                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              Tag                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    TagExists                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void AFormalPeniParkerChildActor::OnBlockAimTagsUpdate(const struct FGameplayTag& Tag, bool TagExists)

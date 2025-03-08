@@ -20,7 +20,7 @@ namespace SDK
 // Function CustomMovieSceneTracks.MovieSceneCableAttachmentSection.SetConstraintBindingID
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FMovieSceneObjectBindingID       InConstraintBindingID                                  (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FMovieSceneObjectBindingID&InConstraintBindingID                                  (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UMovieSceneCableAttachmentSection::SetConstraintBindingID(const struct FMovieSceneObjectBindingID& InConstraintBindingID)
 {

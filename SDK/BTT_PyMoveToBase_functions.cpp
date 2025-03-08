@@ -163,7 +163,7 @@ struct FVector UBTT_PyMoveToBase::GetMoveTargetLocation(class AAIController* Own
 // PythonFunction BTT_PyMoveToBase.BTT_PyMoveToBase.OnMoveCompleted
 // (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FAIRequestID                     RequestID                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
+// const struct FAIRequestID&              RequestID                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
 // EPathFollowingResult                    Result                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UBTT_PyMoveToBase::OnMoveCompleted(const struct FAIRequestID& RequestID, EPathFollowingResult Result)

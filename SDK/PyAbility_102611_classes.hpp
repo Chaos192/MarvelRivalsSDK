@@ -32,7 +32,7 @@ public:
 };
 
 // PythonClass PyAbility_102611.PyAbility_102611
-// 0x0000 (0x2608 - 0x2608)
+// 0x0000 (0x2610 - 0x2610)
 class UPyAbility_102611 : public UWallRunningAbility
 {
 public:

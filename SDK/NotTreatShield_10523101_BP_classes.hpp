@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass NotTreatShield_10523101_BP.NotTreatShield_10523101_BP_C
-// 0x0000 (0x1320 - 0x1320)
+// 0x0000 (0x1330 - 0x1330)
 class UNotTreatShield_10523101_BP_C final : public UAbility_NotTreatImmunityBlockFall_C
 {
 public:

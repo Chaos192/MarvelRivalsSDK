@@ -23,7 +23,7 @@ namespace SDK
 class APyHeroVoiceManager : public AHeroVoiceManager
 {
 public:
-	TMulticastInlineDelegate<void(class AActor* Character, const class FString& FailedCallStack, float Cooldown)> OnVoicePostFailed;                                 // 0x0870(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class AActor* Character, const class FString& FailedCallStack, float Cooldown)> OnVoicePostFailed; // 0x0870(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 
 public:
 	void ReceiveInitialize();

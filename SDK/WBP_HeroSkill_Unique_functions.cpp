@@ -102,8 +102,8 @@ void UWBP_HeroSkill_Unique_C::PreConstruct(bool IsDesignTime)
 // Function WBP_HeroSkill_Unique.WBP_HeroSkill_Unique_C.SetAbilityData
 // (Event, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FText                             Name_0                                                 (BlueprintVisible, BlueprintReadOnly, Parm)
-// class FText                             Desc                                                   (BlueprintVisible, BlueprintReadOnly, Parm)
+// const class FText&                      Name_0                                                 (BlueprintVisible, BlueprintReadOnly, Parm)
+// const class FText&                      Desc                                                   (BlueprintVisible, BlueprintReadOnly, Parm)
 // TSoftObjectPtr<class UTexture2D>        Icon                                                   (BlueprintVisible, BlueprintReadOnly, Parm, UObjectWrapper, HasGetValueTypeHash)
 // EAbilityInputBinds                      InptuAction                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 

@@ -129,7 +129,7 @@ void APyMisterFantasticCharacter::OnScheduleTimeout()
 // Parameters:
 // class AController*                      InSource                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // class AActor*                           InSourceAvatar                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FAttributeModifierHandle         ModifierParameter                                      (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
+// const struct FAttributeModifierHandle&  ModifierParameter                                      (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
 
 void APyMisterFantasticCharacter::OnPreDeath(class AController* InSource, class AActor* InSourceAvatar, const struct FAttributeModifierHandle& ModifierParameter)
 {
@@ -156,7 +156,7 @@ void APyMisterFantasticCharacter::OnPreDeath(class AController* InSource, class 
 // PythonFunction PyMisterFantasticCharacter.PyMisterFantasticCharacter.OnReborn
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FCharacterRebornParam            RebornParameter                                        (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FCharacterRebornParam&     RebornParameter                                        (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyMisterFantasticCharacter::OnReborn(const struct FCharacterRebornParam& RebornParameter)
 {

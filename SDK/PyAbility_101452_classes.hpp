@@ -71,12 +71,12 @@ public:
 };
 
 // PythonClass PyAbility_101452.PySummoned_10145201
-// 0x0020 (0x08F0 - 0x08D0)
+// 0x0020 (0x0920 - 0x0900)
 class APySummoned_10145201 : public ASummoned_10145201
 {
 public:
-	TArray<class AActor*>                         SweepIgnoreActors;                                 // 0x08D0(0x0010)(NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void()>              OnSlideStateChanged;                               // 0x08E0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TArray<class AActor*>                         SweepIgnoreActors;                                 // 0x0900(0x0010)(NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void()>              OnSlideStateChanged;                               // 0x0910(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 
 public:
 	void ReceiveBeginPlay();

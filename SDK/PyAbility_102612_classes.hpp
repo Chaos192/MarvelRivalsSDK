@@ -18,11 +18,11 @@ namespace SDK
 {
 
 // PythonClass PyAbility_102612.PyAbility_102612
-// 0x0008 (0x25A0 - 0x2598)
+// 0x0008 (0x25A8 - 0x25A0)
 class UPyAbility_102612 : public UWallRunningPassiveAbility
 {
 public:
-	bool                                          CanAirJump;                                        // 0x2598(0x0001)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          CanAirJump;                                        // 0x25A0(0x0001)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void BeginPlay();

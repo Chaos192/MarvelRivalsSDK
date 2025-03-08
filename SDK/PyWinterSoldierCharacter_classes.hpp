@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // PythonClass PyWinterSoldierCharacter.PyWinterSoldierCharacter
-// 0x0000 (0x1820 - 0x1820)
+// 0x0000 (0x1880 - 0x1880)
 class APyWinterSoldierCharacter : public AWinterSoldierCharacter
 {
 public:

@@ -17,12 +17,12 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Summoned_10146101_BP.Summoned_10146101_BP_C
-// 0x0010 (0x0AC0 - 0x0AB0)
+// 0x0010 (0x0AF0 - 0x0AE0)
 class ASummoned_10146101_BP_C final : public APySummoner_101461
 {
 public:
-	class USummonedMovementComponent*             SummonedMovement;                                  // 0x0AB0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UCharacterCollisionComponent*           SummonerCollisionComp;                             // 0x0AB8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class USummonedMovementComponent*             SummonedMovement;                                  // 0x0AE0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UCharacterCollisionComponent*           SummonerCollisionComp;                             // 0x0AE8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

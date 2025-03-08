@@ -20,7 +20,7 @@ namespace SDK
 
 // PythonClass PyWidget_MallRecharge.PyWidget_MallRecharge
 // 0x0000 (0x0618 - 0x0618)
-class UPyWidget_MallRecharge final : public UPyWidget_MallChildPanel
+class UPyWidget_MallRecharge : public UPyWidget_MallChildPanel
 {
 public:
 	void OnInitialized();
@@ -41,7 +41,7 @@ public:
 
 // PythonClass PyWidget_MallRecharge.PyWidget_MallRecharge_SmallItem
 // 0x0010 (0x0600 - 0x05F0)
-class UPyWidget_MallRecharge_SmallItem final : public UPyMarvelUserWidget
+class UPyWidget_MallRecharge_SmallItem : public UPyMarvelUserWidget
 {
 public:
 	uint8                                         Pad_5E9[0x3];                                      // 0x05E9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
@@ -63,7 +63,7 @@ public:
 
 // PythonClass PyWidget_MallRecharge.PyWidget_MallRecharge_BigItem
 // 0x0010 (0x0600 - 0x05F0)
-class UPyWidget_MallRecharge_BigItem final : public UPyMarvelUserWidget
+class UPyWidget_MallRecharge_BigItem : public UPyMarvelUserWidget
 {
 public:
 	uint8                                         Pad_5E9[0x3];                                      // 0x05E9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])

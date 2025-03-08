@@ -85,7 +85,7 @@ void UPyUIController_103613::Destruct()
 // PythonFunction PyAbility_103613.PyUIController_103613.OnTagUpdate
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FGameplayTag                     Tag                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              Tag                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
 // bool                                    Exist                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UPyUIController_103613::OnTagUpdate(const struct FGameplayTag& Tag, bool Exist)
@@ -368,7 +368,7 @@ void UPyAbility_103613::OnSkillEnded(class UGameplayAbility* Ability)
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // class UGameplayAbility*                 Ability                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FAttributeModifierHandle         ParamHandle                                            (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
+// const struct FAttributeModifierHandle&  ParamHandle                                            (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
 
 void UPyAbility_103613::OnSkillDamage(class UGameplayAbility* Ability, const struct FAttributeModifierHandle& ParamHandle)
 {
@@ -394,9 +394,9 @@ void UPyAbility_103613::OnSkillDamage(class UGameplayAbility* Ability, const str
 // PythonFunction PyAbility_103613.PyAbility_103613.ModifyDeathImpulseInfo
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   ImpulseLevel                                           (Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FVector                          DeathDir                                               (Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FAttributeModifierParameter      ModifierParameter                                      (ConstParm, Parm, OutParm, ReferenceParm)
+// int32&                                  ImpulseLevel                                           (Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FVector&                         DeathDir                                               (Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FAttributeModifierParameter&ModifierParameter                                      (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyAbility_103613::ModifyDeathImpulseInfo(int32& ImpulseLevel, struct FVector& DeathDir, const struct FAttributeModifierParameter& ModifierParameter)
 {

@@ -12,9 +12,9 @@
 
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
-#include "StructUtils_structs.hpp"
-#include "RemoteControlLogic_structs.hpp"
 #include "RemoteControl_classes.hpp"
+#include "RemoteControlLogic_structs.hpp"
+#include "StructUtils_structs.hpp"
 
 
 namespace SDK
@@ -171,7 +171,7 @@ public:
 class URCBehaviourConditional final : public URCBehaviour
 {
 public:
-	TMap<class URCAction*, struct FRCBehaviourCondition> Conditions;                                        // 0x0098(0x0050)(NativeAccessSpecifierPublic)
+	TMap<class URCAction*, struct FRCBehaviourCondition> Conditions;                                 // 0x0098(0x0050)(NativeAccessSpecifierPublic)
 	class URCVirtualPropertySelfContainer*        Comparand;                                         // 0x00E8(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
@@ -361,7 +361,7 @@ class URCRangeMapBehaviour final : public URCBehaviour
 {
 public:
 	class URCVirtualPropertyContainerBase*        PropertyContainer;                                 // 0x0098(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMap<class URCAction*, struct FRCRangeMapInput> RangeMapActionContainer;                           // 0x00A0(0x0050)(NativeAccessSpecifierPublic)
+	TMap<class URCAction*, struct FRCRangeMapInput> RangeMapActionContainer;                         // 0x00A0(0x0050)(NativeAccessSpecifierPublic)
 	uint8                                         Pad_F0[0x18];                                      // 0x00F0(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:

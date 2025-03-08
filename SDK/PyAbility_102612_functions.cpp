@@ -181,7 +181,7 @@ void UPyAbility_102612::OnMovementChanged(class ACharacter* MyCharacter, EMoveme
 // PythonFunction PyAbility_102612.PyAbility_102612.OnCooldownTagUpdated
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FGameplayTag                     TagUpdated                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              TagUpdated                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
 // bool                                    TagExists                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UPyAbility_102612::OnCooldownTagUpdated(const struct FGameplayTag& TagUpdated, bool TagExists)

@@ -40,11 +40,11 @@ public:
 };
 
 // PythonClass PyAbility_104553.PyAbility_104553
-// 0x0008 (0x2590 - 0x2588)
+// 0x0008 (0x2598 - 0x2590)
 class UPyAbility_104553 : public UAbility_104553
 {
 public:
-	float                                         LastShootTime;                                     // 0x2588(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         LastShootTime;                                     // 0x2590(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void BeginPlay();

@@ -37,11 +37,11 @@ public:
 };
 
 // PythonClass PyAbility_104275.PyUIController_104275
-// 0x0010 (0x0C70 - 0x0C60)
+// 0x0010 (0x0C60 - 0x0C50)
 class UPyUIController_104275 final : public UUIC_Ability
 {
 public:
-	struct FGameplayTag                           SpecialAbilityTag;                                 // 0x0C60(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGameplayTag                           SpecialAbilityTag;                                 // 0x0C50(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void SetAbility(int32 InAbilityId, class UGameplayAbility* InAbility);
@@ -59,7 +59,7 @@ public:
 };
 
 // PythonClass PyAbility_104275.PyAbility_104275
-// 0x0000 (0x2588 - 0x2588)
+// 0x0000 (0x2590 - 0x2590)
 class UPyAbility_104275 : public UAbility_108
 {
 public:

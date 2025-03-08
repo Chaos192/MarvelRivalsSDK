@@ -102,8 +102,8 @@ void UPyWidget_InvitePopupBase::MarvelSetVisible(bool Visible)
 // PythonFunction PyWidget_InvitePopup.PyWidget_InvitePopupBase.OnMouseEnter
 // (BlueprintCosmetic, Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGeometry                        MyGeometry                                             (Parm, IsPlainOldData, NoDestructor)
-// struct FPointerEvent                    MouseEvent                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGeometry&                 MyGeometry                                             (Parm, IsPlainOldData, NoDestructor)
+// const struct FPointerEvent&             MouseEvent                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyWidget_InvitePopupBase::OnMouseEnter(const struct FGeometry& MyGeometry, const struct FPointerEvent& MouseEvent)
 {
@@ -129,7 +129,7 @@ void UPyWidget_InvitePopupBase::OnMouseEnter(const struct FGeometry& MyGeometry,
 // PythonFunction PyWidget_InvitePopup.PyWidget_InvitePopupBase.OnMouseLeave
 // (BlueprintCosmetic, Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FPointerEvent                    MouseEvent                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FPointerEvent&             MouseEvent                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyWidget_InvitePopupBase::OnMouseLeave(const struct FPointerEvent& MouseEvent)
 {

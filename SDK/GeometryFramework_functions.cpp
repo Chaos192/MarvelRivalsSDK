@@ -17,94 +17,6 @@
 namespace SDK
 {
 
-// Function GeometryFramework.DynamicMeshPool.FreeAllMeshes
-// (Final, RequiredAPI, Native, Public, BlueprintCallable)
-
-void UDynamicMeshPool::FreeAllMeshes()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("DynamicMeshPool", "FreeAllMeshes");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GeometryFramework.DynamicMeshPool.RequestMesh
-// (Final, RequiredAPI, Native, Public, BlueprintCallable)
-// Parameters:
-// class UDynamicMesh*                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UDynamicMesh* UDynamicMeshPool::RequestMesh()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("DynamicMeshPool", "RequestMesh");
-
-	Params::DynamicMeshPool_RequestMesh Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function GeometryFramework.DynamicMeshPool.ReturnAllMeshes
-// (Final, RequiredAPI, Native, Public, BlueprintCallable)
-
-void UDynamicMeshPool::ReturnAllMeshes()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("DynamicMeshPool", "ReturnAllMeshes");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GeometryFramework.DynamicMeshPool.ReturnMesh
-// (Final, RequiredAPI, Native, Public, BlueprintCallable)
-// Parameters:
-// class UDynamicMesh*                     Mesh                                                   (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UDynamicMeshPool::ReturnMesh(class UDynamicMesh* Mesh)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("DynamicMeshPool", "ReturnMesh");
-
-	Params::DynamicMeshPool_ReturnMesh Parms{};
-
-	Parms.Mesh = Mesh;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // Function GeometryFramework.BaseDynamicMeshComponent.ClearOverrideRenderMaterial
 // (RequiredAPI, Native, Public, BlueprintCallable)
 
@@ -196,7 +108,7 @@ void UBaseDynamicMeshComponent::SetColorOverrideMode(EDynamicMeshComponentColorO
 // Function GeometryFramework.BaseDynamicMeshComponent.SetConstantOverrideColor
 // (RequiredAPI, Native, Public, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FColor                           NewColor                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FColor&                    NewColor                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UBaseDynamicMeshComponent::SetConstantOverrideColor(const struct FColor& NewColor)
 {
@@ -752,7 +664,7 @@ bool UBaseDynamicMeshComponent::HasOverrideRenderMaterial(int32 K) const
 // Function GeometryFramework.DynamicMeshComponent.ConfigureMaterialSet
 // (Final, RequiredAPI, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<class UMaterialInterface*>       NewMaterialSet                                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TArray<class UMaterialInterface*>&NewMaterialSet                                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UDynamicMeshComponent::ConfigureMaterialSet(const TArray<class UMaterialInterface*>& NewMaterialSet)
 {
@@ -1290,6 +1202,94 @@ bool UDynamicMesh::IsEmpty() const
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
+}
+
+
+// Function GeometryFramework.DynamicMeshPool.FreeAllMeshes
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
+
+void UDynamicMeshPool::FreeAllMeshes()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("DynamicMeshPool", "FreeAllMeshes");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GeometryFramework.DynamicMeshPool.RequestMesh
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
+// Parameters:
+// class UDynamicMesh*                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UDynamicMesh* UDynamicMeshPool::RequestMesh()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("DynamicMeshPool", "RequestMesh");
+
+	Params::DynamicMeshPool_RequestMesh Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GeometryFramework.DynamicMeshPool.ReturnAllMeshes
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
+
+void UDynamicMeshPool::ReturnAllMeshes()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("DynamicMeshPool", "ReturnAllMeshes");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GeometryFramework.DynamicMeshPool.ReturnMesh
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
+// Parameters:
+// class UDynamicMesh*                     Mesh                                                   (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UDynamicMeshPool::ReturnMesh(class UDynamicMesh* Mesh)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("DynamicMeshPool", "ReturnMesh");
+
+	Params::DynamicMeshPool_ReturnMesh Parms{};
+
+	Parms.Mesh = Mesh;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 }
 
 }

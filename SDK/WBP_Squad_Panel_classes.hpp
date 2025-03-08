@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "PyWidget_Squad_MainPanel_classes.hpp"
 #include "Engine_structs.hpp"
+#include "PyWidget_Squad_MainPanel_classes.hpp"
 
 
 namespace SDK

@@ -19,6 +19,48 @@
 namespace SDK
 {
 
+// PythonClass PyAbility_104261.PyWBP_Ability_DrawLine
+// 0x0018 (0x05C0 - 0x05A8)
+class UPyWBP_Ability_DrawLine final : public UMarvelUserWidget
+{
+public:
+	struct FLinearColor                           LineColor;                                         // 0x05A8(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         LineThickness;                                     // 0x05B8(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	void OnPaint(struct FPaintContext& Context) const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PyWBP_Ability_DrawLine">();
+	}
+	static class UPyWBP_Ability_DrawLine* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPyWBP_Ability_DrawLine>();
+	}
+};
+
+// PythonClass PyAbility_104261.PyConfig_104261
+// 0x0020 (0x2D10 - 0x2CF0)
+class UPyConfig_104261 final : public UConfig_104261
+{
+public:
+	int32                                         SpiderWebSummonedID;                               // 0x2CF0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2CF4[0x4];                                     // 0x2CF4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<int32>                                 NoEndTimelineAbilityIDs;                           // 0x2CF8(0x0010)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PyConfig_104261">();
+	}
+	static class UPyConfig_104261* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPyConfig_104261>();
+	}
+};
+
 // PythonClass PyAbility_104261.PyExtraWidget_104261_Arrow
 // 0x0050 (0x0408 - 0x03B8)
 class UPyExtraWidget_104261_Arrow final : public UUserWidget
@@ -64,10 +106,10 @@ public:
 
 public:
 	class UMarvelGameplayAbility* GetOwnerAbility();
-	void WhileActiveFX(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters);
+	bool WhileActive(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters);
 	void OnCobwebAssigned();
 	void OnLinkStateChange();
-	void OnRemoveFX(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters);
+	bool OnRemove(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters);
 	void WhileActiveAudio(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters);
 	void OnDashStart(const struct FVector& Direction);
 	void OnDashStop();
@@ -85,34 +127,14 @@ public:
 	}
 };
 
-// PythonClass PyAbility_104261.PyConfig_104261
-// 0x0020 (0x2D10 - 0x2CF0)
-class UPyConfig_104261 final : public UConfig_104261
-{
-public:
-	int32                                         SpiderWebSummonedID;                               // 0x2CF0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2CF4[0x4];                                     // 0x2CF4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<int32>                                 NoEndTimelineAbilityIDs;                           // 0x2CF8(0x0010)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"PyConfig_104261">();
-	}
-	static class UPyConfig_104261* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UPyConfig_104261>();
-	}
-};
-
 // PythonClass PyAbility_104261.PyAbility_104261
-// 0x0010 (0x3660 - 0x3650)
+// 0x0010 (0x3670 - 0x3660)
 class UPyAbility_104261 : public UAbility_104261
 {
 public:
-	bool                                          ShouldAddCue;                                      // 0x3650(0x0001)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_3651[0x7];                                     // 0x3651(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class AActor*                                 SpawnWeb;                                          // 0x3658(0x0008)(BlueprintVisible, Net, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ShouldAddCue;                                      // 0x3660(0x0001)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3661[0x7];                                     // 0x3661(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class AActor*                                 SpawnWeb;                                          // 0x3668(0x0008)(BlueprintVisible, Net, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void BeginPlay();
@@ -133,6 +155,7 @@ public:
 	void OnCobwebReform();
 	void OnRep_ShouldAddCue();
 	void NativeOnMontageEvent(const class FString& Tag);
+	void NativeOnMontageCancelled(const class FString& Tag);
 	void NativeOnMontageCompleted(const class FString& Tag);
 	void K2_OnEndAbility(bool bWasCancelled);
 
@@ -144,28 +167,6 @@ public:
 	static class UPyAbility_104261* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UPyAbility_104261>();
-	}
-};
-
-// PythonClass PyAbility_104261.PyWBP_Ability_DrawLine
-// 0x0018 (0x05C0 - 0x05A8)
-class UPyWBP_Ability_DrawLine final : public UMarvelUserWidget
-{
-public:
-	struct FLinearColor                           LineColor;                                         // 0x05A8(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         LineThickness;                                     // 0x05B8(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-public:
-	void OnPaint(struct FPaintContext& Context) const;
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"PyWBP_Ability_DrawLine">();
-	}
-	static class UPyWBP_Ability_DrawLine* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UPyWBP_Ability_DrawLine>();
 	}
 };
 
@@ -192,7 +193,7 @@ public:
 };
 
 // PythonClass PyAbility_104261.PyUIController_104261
-// 0x0000 (0x0C60 - 0x0C60)
+// 0x0000 (0x0C50 - 0x0C50)
 class UPyUIController_104261 final : public UUIC_Ability
 {
 public:

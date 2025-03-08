@@ -20,7 +20,7 @@ namespace SDK
 // Function MarvelOnlineServices.MarvelOnlineServicesEventSubsystem.Get
 // (Final, Native, Static, Public)
 // Parameters:
-// class UObject*                          WorldContextObject                                     (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UObject*                    WorldContextObject                                     (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UMarvelOnlineServicesEventSubsystem*ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class UMarvelOnlineServicesEventSubsystem* UMarvelOnlineServicesEventSubsystem::Get(const class UObject* WorldContextObject)
@@ -99,7 +99,7 @@ class FString UMarvelOSFunctionLibrary::GetPlayerNickName()
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // EMarvelUserPrivilege                    UserPrivilege                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TDelegate<void(uint32 PrivilegeResults)>Delegate                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TDelegate<void(uint32 PrivilegeResults)>&Delegate                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UMarvelOSFunctionLibrary::GetUserPrivilege(EMarvelUserPrivilege UserPrivilege, const TDelegate<void(uint32 PrivilegeResults)>& Delegate)
 {

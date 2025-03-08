@@ -30,7 +30,7 @@ class UPyWidget_ScreenFXManager final : public UWidget_ScreenFXManager
 {
 public:
 	TMap<struct FGameplayTag, class FString>      FXWidgetsNames;                                    // 0x05D8(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	TMap<struct FGameplayTag, struct FGameplayTag> BlockCueTagsMap;                                   // 0x0628(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	TMap<struct FGameplayTag, struct FGameplayTag> BlockCueTagsMap;                                  // 0x0628(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
 
 public:
 	void OnInitialized();
@@ -60,8 +60,8 @@ public:
 	struct FLinearColor                           HpColor;                                           // 0x079C(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_7AC[0x4];                                      // 0x07AC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class FString>                         BuffWidgetsPrefix;                                 // 0x07B0(0x0010)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	TMap<struct FGameplayTag, struct FBuffFrameInfo> BuffWidgets;                                       // 0x07C0(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	TMap<struct FGameplayTag, struct FGameplayTag> BlockCueTagsMap;                                   // 0x0810(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	TMap<struct FGameplayTag, struct FBuffFrameInfo> BuffWidgets;                                    // 0x07C0(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	TMap<struct FGameplayTag, struct FGameplayTag> BlockCueTagsMap;                                  // 0x0810(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
 	TSubclassOf<class UUserWidget>                HpBarVxClass;                                      // 0x0860(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TMulticastInlineDelegate<void()>              BreakEndedDispatcher;                              // 0x0868(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 
@@ -178,7 +178,7 @@ class UPyWidget_BattleHpBar_V3 : public UWidget_ViewTargetHpBar
 {
 public:
 	TMap<struct FGameplayTag, struct FSlateBrush> CueTagIconsMap;                                    // 0x05E0(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NativeAccessSpecifierPublic)
-	TMap<struct FGameplayTag, struct FGameplayTag> BlockCueTagsMap;                                   // 0x0630(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	TMap<struct FGameplayTag, struct FGameplayTag> BlockCueTagsMap;                                  // 0x0630(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NativeAccessSpecifierPublic)
 	float                                         CustomColorPreview_Health;                         // 0x0680(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         CustomColorPreview_Shield;                         // 0x0684(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 

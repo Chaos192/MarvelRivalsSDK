@@ -42,12 +42,13 @@ public:
 };
 
 // PythonClass PyAbility_101122.PyProjectile_10112301
-// 0x0020 (0x3070 - 0x3050)
+// 0x0020 (0x3130 - 0x3110)
 class APyProjectile_10112301 final : public AMarvelAbilityTargetActor_Projectile
 {
 public:
-	TArray<class AMarvelBaseCharacter*>           HittedActors;                                      // 0x3050(0x0010)(BlueprintVisible, BlueprintReadOnly, Net, NativeAccessSpecifierPublic)
-	TArray<struct FVector>                        HitLocations;                                      // 0x3060(0x0010)(BlueprintVisible, BlueprintReadOnly, Net, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3108[0x8];                                     // 0x3108(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class AMarvelBaseCharacter*>           HittedActors;                                      // 0x3110(0x0010)(BlueprintVisible, BlueprintReadOnly, Net, NativeAccessSpecifierPublic)
+	TArray<struct FVector>                        HitLocations;                                      // 0x3120(0x0010)(BlueprintVisible, BlueprintReadOnly, Net, NativeAccessSpecifierPublic)
 
 public:
 	void K2_OnProcessHit(const struct FHitResult& ImpactResult);
@@ -129,7 +130,7 @@ public:
 };
 
 // PythonClass PyAbility_101122.PyKnockUp_101122
-// 0x0000 (0x1D98 - 0x1D98)
+// 0x0000 (0x1DA8 - 0x1DA8)
 class UPyKnockUp_101122 : public UMarvelKnockUpAbility
 {
 public:

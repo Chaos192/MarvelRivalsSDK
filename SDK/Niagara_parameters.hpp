@@ -266,6 +266,509 @@ public:
 	class UNiagaraDataChannelWriter*              ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
+// Function Niagara.NiagaraDataInterfaceCombineTriggerFX.AddInstances
+// 0x0040 (0x0040 - 0x0000)
+struct NiagaraDataInterfaceCombineTriggerFX_AddInstances final
+{
+public:
+	struct FCombineTriggerFXInstanceData          InDatas;                                           // 0x0000(0x0040)(Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+
+// Function Niagara.NiagaraDataInterfaceCombineTriggerFX.AddUniqueInstanceData
+// 0x0040 (0x0040 - 0x0000)
+struct NiagaraDataInterfaceCombineTriggerFX_AddUniqueInstanceData final
+{
+public:
+	struct FCombineTriggerFXInstanceData          InDatas;                                           // 0x0000(0x0040)(Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+
+// Function Niagara.NiagaraDataInterfaceCombineTriggerFX.DeleteUniqueInstanceWithUID
+// 0x0008 (0x0008 - 0x0000)
+struct NiagaraDataInterfaceCombineTriggerFX_DeleteUniqueInstanceWithUID final
+{
+public:
+	int32                                         UID;                                               // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0004(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+
+// Function Niagara.NiagaraDataInterfaceCombineTriggerFX.ModifyUniqueInstanceDataWithUID
+// 0x0050 (0x0050 - 0x0000)
+struct NiagaraDataInterfaceCombineTriggerFX_ModifyUniqueInstanceDataWithUID final
+{
+public:
+	int32                                         UID;                                               // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FCombineTriggerFXInstanceData          InDatas;                                           // 0x0008(0x0040)(Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0048(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_49[0x7];                                       // 0x0049(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+
+// Function Niagara.NiagaraDataInterfaceCombineTriggerFX.GetInstancesUniqueID
+// 0x0010 (0x0010 - 0x0000)
+struct NiagaraDataInterfaceCombineTriggerFX_GetInstancesUniqueID final
+{
+public:
+	TArray<int32>                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+};
+
+// Function Niagara.NiagaraDataInterfaceFunctionLibrary.AddCombineProjectileData
+// 0x0050 (0x0050 - 0x0000)
+struct NiagaraDataInterfaceFunctionLibrary_AddCombineProjectileData final
+{
+public:
+	class UNiagaraComponent*                      TargetComponent;                                   // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FCombineTriggerFXInstanceData          InInstanceData;                                    // 0x0008(0x0040)(Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0048(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_49[0x7];                                       // 0x0049(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+
+// Function Niagara.NiagaraDataInterfaceFunctionLibrary.CreateRandomPosition
+// 0x0028 (0x0028 - 0x0000)
+struct NiagaraDataInterfaceFunctionLibrary_CreateRandomPosition final
+{
+public:
+	class UNiagaraComponent*                      InComponent;                                       // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         PositionCount;                                     // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FVector>                        OutPositions;                                      // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0020(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+
+// Function Niagara.NiagaraDataInterfaceFunctionLibrary.FindOrAddCombineFXComponent
+// 0x0028 (0x0028 - 0x0000)
+struct NiagaraDataInterfaceFunctionLibrary_FindOrAddCombineFXComponent final
+{
+public:
+	class USceneComponent*                        AttachedParent;                                    // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UFXSystemAsset*                         Template;                                          // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   SocketName;                                        // 0x0010(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UNiagaraComponent*                      ReturnValue;                                       // 0x0020(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function Niagara.NiagaraDataInterfaceFunctionLibrary.IsCombineFXEnable
+// 0x0001 (0x0001 - 0x0000)
+struct NiagaraDataInterfaceFunctionLibrary_IsCombineFXEnable final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function Niagara.NiagaraDataInterfaceFunctionLibrary.ModifyCombineProjectileData
+// 0x0058 (0x0058 - 0x0000)
+struct NiagaraDataInterfaceFunctionLibrary_ModifyCombineProjectileData final
+{
+public:
+	class UNiagaraComponent*                      TargetComponent;                                   // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         UID;                                               // 0x0008(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FCombineTriggerFXInstanceData          InInstanceData;                                    // 0x0010(0x0040)(Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0050(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_51[0x7];                                       // 0x0051(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+
+// Function Niagara.NiagaraDataInterfaceFunctionLibrary.RemoveProjectileDataWithUID
+// 0x0010 (0x0010 - 0x0000)
+struct NiagaraDataInterfaceFunctionLibrary_RemoveProjectileDataWithUID final
+{
+public:
+	class UNiagaraComponent*                      TargetComponent;                                   // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         UID;                                               // 0x0008(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x000C(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+
+// Function Niagara.NiagaraDataInterfaceFunctionLibrary.SendAttachedCombineFXDataToNiagara
+// 0x0068 (0x0068 - 0x0000)
+struct NiagaraDataInterfaceFunctionLibrary_SendAttachedCombineFXDataToNiagara final
+{
+public:
+	class USceneComponent*                        AttachedParent;                                    // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UFXSystemAsset*                         Template;                                          // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   SocketName;                                        // 0x0010(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FCombineTriggerFXInstanceData          InInstanceData;                                    // 0x0020(0x0040)(Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	class UNiagaraComponent*                      ReturnValue;                                       // 0x0060(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function Niagara.NiagaraDataInterfaceFunctionLibrary.SendWorldCombineFXDataToNiagara
+// 0x0058 (0x0058 - 0x0000)
+struct NiagaraDataInterfaceFunctionLibrary_SendWorldCombineFXDataToNiagara final
+{
+public:
+	class AActor*                                 AttachedParent;                                    // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UFXSystemAsset*                         Template;                                          // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FCombineTriggerFXInstanceData          InInstanceData;                                    // 0x0010(0x0040)(Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	class UNiagaraComponent*                      ReturnValue;                                       // 0x0050(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function Niagara.NiagaraDataInterfaceFunctionLibrary.UpdatePosition
+// 0x0020 (0x0020 - 0x0000)
+struct NiagaraDataInterfaceFunctionLibrary_UpdatePosition final
+{
+public:
+	float                                         Distance;                                          // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FVector>                        InPositions;                                       // 0x0008(0x0010)(Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0018(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+
+// Function Niagara.NiagaraPreviewAxis.ApplyToPreview
+// 0x0020 (0x0020 - 0x0000)
+struct NiagaraPreviewAxis_ApplyToPreview final
+{
+public:
+	class UNiagaraComponent*                      PreviewComponent;                                  // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         PreviewIndex;                                      // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsXAxis;                                          // 0x000C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 OutLabelText;                                      // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function Niagara.NiagaraPreviewAxis.Num
+// 0x0004 (0x0004 - 0x0000)
+struct NiagaraPreviewAxis_Num final
+{
+public:
+	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function Niagara.NiagaraSimCacheFunctionLibrary.CaptureNiagaraSimCacheImmediate
+// 0x0080 (0x0080 - 0x0000)
+struct NiagaraSimCacheFunctionLibrary_CaptureNiagaraSimCacheImmediate final
+{
+public:
+	class UNiagaraSimCache*                       SimCache;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FNiagaraSimCacheCreateParameters       CreateParameters;                                  // 0x0008(0x0058)(Parm, NativeAccessSpecifierPublic)
+	class UNiagaraComponent*                      NiagaraComponent;                                  // 0x0060(0x0008)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UNiagaraSimCache*                       OutSimCache;                                       // 0x0068(0x0008)(Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bAdvanceSimulation;                                // 0x0070(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_71[0x3];                                       // 0x0071(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         AdvanceDeltaTime;                                  // 0x0074(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0078(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_79[0x7];                                       // 0x0079(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+
+// Function Niagara.NiagaraSimCacheFunctionLibrary.CreateNiagaraSimCache
+// 0x0010 (0x0010 - 0x0000)
+struct NiagaraSimCacheFunctionLibrary_CreateNiagaraSimCache final
+{
+public:
+	class UObject*                                WorldContextObject;                                // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UNiagaraSimCache*                       ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function Niagara.NiagaraPreviewGrid.ActivatePreviews
+// 0x0001 (0x0001 - 0x0000)
+struct NiagaraPreviewGrid_ActivatePreviews final
+{
+public:
+	bool                                          bReset;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function Niagara.NiagaraPreviewGrid.GetPreviews
+// 0x0010 (0x0010 - 0x0000)
+struct NiagaraPreviewGrid_GetPreviews final
+{
+public:
+	TArray<class UNiagaraComponent*>              OutPreviews;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+};
+
+// Function Niagara.NiagaraPreviewGrid.SetPaused
+// 0x0001 (0x0001 - 0x0000)
+struct NiagaraPreviewGrid_SetPaused final
+{
+public:
+	bool                                          bPaused;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function Niagara.NiagaraDataInterfaceSceneCapture2D.SetSceneCapture2DManagedShowOnlyActors
+// 0x0028 (0x0028 - 0x0000)
+struct NiagaraDataInterfaceSceneCapture2D_SetSceneCapture2DManagedShowOnlyActors final
+{
+public:
+	class UNiagaraComponent*                      NiagaraSystem;                                     // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   ParameterName;                                     // 0x0008(0x000C)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class AActor*>                         ShowOnlyActors;                                    // 0x0018(0x0010)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+
+// Function Niagara.NiagaraSimCache.GetAttributeCaptureMode
+// 0x0001 (0x0001 - 0x0000)
+struct NiagaraSimCache_GetAttributeCaptureMode final
+{
+public:
+	ENiagaraSimCacheAttributeCaptureMode          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function Niagara.NiagaraSimCache.GetEmitterName
+// 0x0010 (0x0010 - 0x0000)
+struct NiagaraSimCache_GetEmitterName final
+{
+public:
+	int32                                         EmitterIndex;                                      // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   ReturnValue;                                       // 0x0004(0x000C)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function Niagara.NiagaraSimCache.GetEmitterNames
+// 0x0010 (0x0010 - 0x0000)
+struct NiagaraSimCache_GetEmitterNames final
+{
+public:
+	TArray<class FName>                           ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+};
+
+// Function Niagara.NiagaraSimCache.GetNumEmitters
+// 0x0004 (0x0004 - 0x0000)
+struct NiagaraSimCache_GetNumEmitters final
+{
+public:
+	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function Niagara.NiagaraSimCache.GetNumFrames
+// 0x0004 (0x0004 - 0x0000)
+struct NiagaraSimCache_GetNumFrames final
+{
+public:
+	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function Niagara.NiagaraSimCache.GetStartSeconds
+// 0x0004 (0x0004 - 0x0000)
+struct NiagaraSimCache_GetStartSeconds final
+{
+public:
+	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function Niagara.NiagaraSimCache.IsCacheValid
+// 0x0001 (0x0001 - 0x0000)
+struct NiagaraSimCache_IsCacheValid final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function Niagara.NiagaraSimCache.IsEmpty
+// 0x0001 (0x0001 - 0x0000)
+struct NiagaraSimCache_IsEmpty final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function Niagara.NiagaraSimCache.ReadColorAttribute
+// 0x0030 (0x0030 - 0x0000)
+struct NiagaraSimCache_ReadColorAttribute final
+{
+public:
+	TArray<struct FLinearColor>                   OutValues;                                         // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+	class FName                                   AttributeName;                                     // 0x0010(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   EmitterName;                                       // 0x001C(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         FrameIndex;                                        // 0x0028(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+
+// Function Niagara.NiagaraSimCache.ReadFloatAttribute
+// 0x0030 (0x0030 - 0x0000)
+struct NiagaraSimCache_ReadFloatAttribute final
+{
+public:
+	TArray<float>                                 OutValues;                                         // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+	class FName                                   AttributeName;                                     // 0x0010(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   EmitterName;                                       // 0x001C(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         FrameIndex;                                        // 0x0028(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+
+// Function Niagara.NiagaraSimCache.ReadIDAttribute
+// 0x0030 (0x0030 - 0x0000)
+struct NiagaraSimCache_ReadIDAttribute final
+{
+public:
+	TArray<struct FNiagaraID>                     OutValues;                                         // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+	class FName                                   AttributeName;                                     // 0x0010(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   EmitterName;                                       // 0x001C(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         FrameIndex;                                        // 0x0028(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+
+// Function Niagara.NiagaraSimCache.ReadIntAttribute
+// 0x0030 (0x0030 - 0x0000)
+struct NiagaraSimCache_ReadIntAttribute final
+{
+public:
+	TArray<int32>                                 OutValues;                                         // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+	class FName                                   AttributeName;                                     // 0x0010(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   EmitterName;                                       // 0x001C(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         FrameIndex;                                        // 0x0028(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+
+// Function Niagara.NiagaraSimCache.ReadPositionAttribute
+// 0x0030 (0x0030 - 0x0000)
+struct NiagaraSimCache_ReadPositionAttribute final
+{
+public:
+	TArray<struct FVector>                        OutValues;                                         // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+	class FName                                   AttributeName;                                     // 0x0010(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   EmitterName;                                       // 0x001C(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bLocalSpaceToWorld;                                // 0x0028(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_29[0x3];                                       // 0x0029(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         FrameIndex;                                        // 0x002C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function Niagara.NiagaraSimCache.ReadPositionAttributeWithRebase
+// 0x0090 (0x0090 - 0x0000)
+struct NiagaraSimCache_ReadPositionAttributeWithRebase final
+{
+public:
+	TArray<struct FVector>                        OutValues;                                         // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+	struct FTransform                             Transform;                                         // 0x0010(0x0060)(Parm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   AttributeName;                                     // 0x0070(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   EmitterName;                                       // 0x007C(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         FrameIndex;                                        // 0x0088(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_8C[0x4];                                       // 0x008C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+
+// Function Niagara.NiagaraSimCache.ReadQuatAttribute
+// 0x0030 (0x0030 - 0x0000)
+struct NiagaraSimCache_ReadQuatAttribute final
+{
+public:
+	TArray<struct FQuat>                          OutValues;                                         // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+	class FName                                   AttributeName;                                     // 0x0010(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   EmitterName;                                       // 0x001C(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bLocalSpaceToWorld;                                // 0x0028(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_29[0x3];                                       // 0x0029(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         FrameIndex;                                        // 0x002C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function Niagara.NiagaraSimCache.ReadQuatAttributeWithRebase
+// 0x0050 (0x0050 - 0x0000)
+struct NiagaraSimCache_ReadQuatAttributeWithRebase final
+{
+public:
+	TArray<struct FQuat>                          OutValues;                                         // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+	struct FQuat                                  Quat;                                              // 0x0010(0x0020)(Parm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   AttributeName;                                     // 0x0030(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   EmitterName;                                       // 0x003C(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         FrameIndex;                                        // 0x0048(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4C[0x4];                                       // 0x004C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+
+// Function Niagara.NiagaraSimCache.ReadVector2Attribute
+// 0x0030 (0x0030 - 0x0000)
+struct NiagaraSimCache_ReadVector2Attribute final
+{
+public:
+	TArray<struct FVector2D>                      OutValues;                                         // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+	class FName                                   AttributeName;                                     // 0x0010(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   EmitterName;                                       // 0x001C(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         FrameIndex;                                        // 0x0028(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+
+// Function Niagara.NiagaraSimCache.ReadVector4Attribute
+// 0x0030 (0x0030 - 0x0000)
+struct NiagaraSimCache_ReadVector4Attribute final
+{
+public:
+	TArray<struct FVector4>                       OutValues;                                         // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+	class FName                                   AttributeName;                                     // 0x0010(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   EmitterName;                                       // 0x001C(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         FrameIndex;                                        // 0x0028(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+
+// Function Niagara.NiagaraSimCache.ReadVectorAttribute
+// 0x0030 (0x0030 - 0x0000)
+struct NiagaraSimCache_ReadVectorAttribute final
+{
+public:
+	TArray<struct FVector>                        OutValues;                                         // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+	class FName                                   AttributeName;                                     // 0x0010(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   EmitterName;                                       // 0x001C(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         FrameIndex;                                        // 0x0028(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+
+// Function Niagara.NiagaraDataInterfaceStaticMesh.SetNiagaraStaticMeshDIInstanceIndex
+// 0x0018 (0x0018 - 0x0000)
+struct NiagaraDataInterfaceStaticMesh_SetNiagaraStaticMeshDIInstanceIndex final
+{
+public:
+	class UNiagaraComponent*                      NiagaraSystem;                                     // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   UserParameterName;                                 // 0x0008(0x000C)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         NewInstanceIndex;                                  // 0x0014(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function Niagara.NiagaraDataInterfaceStaticMesh.OnSourceEndPlay
+// 0x0010 (0x0010 - 0x0000)
+struct NiagaraDataInterfaceStaticMesh_OnSourceEndPlay final
+{
+public:
+	class AActor*                                 InSource;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EEndPlayReason                                Reason;                                            // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+
+// Function Niagara.NiagaraDataInterfaceUObjectPropertyReader.SetUObjectReaderPropertyRemap
+// 0x0030 (0x0030 - 0x0000)
+struct NiagaraDataInterfaceUObjectPropertyReader_SetUObjectReaderPropertyRemap final
+{
+public:
+	class UNiagaraComponent*                      NiagaraComponent;                                  // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   UserParameterName;                                 // 0x0008(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   GraphName;                                         // 0x0014(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   RemapName;                                         // 0x0020(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+
+// Function Niagara.NiagaraSystem.GetSystemSkillLevel
+// 0x0001 (0x0001 - 0x0000)
+struct NiagaraSystem_GetSystemSkillLevel final
+{
+public:
+	ENiagaraSkillLevel                            ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function Niagara.NiagaraSystem.HasEnableEmitter
+// 0x0001 (0x0001 - 0x0000)
+struct NiagaraSystem_HasEnableEmitter final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function Niagara.NiagaraActor.OnNiagaraSystemFinished
+// 0x0008 (0x0008 - 0x0000)
+struct NiagaraActor_OnNiagaraSystemFinished final
+{
+public:
+	class UNiagaraComponent*                      FinishedComponent;                                 // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function Niagara.NiagaraActor.SetDestroyOnSystemFinish
+// 0x0001 (0x0001 - 0x0000)
+struct NiagaraActor_SetDestroyOnSystemFinish final
+{
+public:
+	bool                                          bShouldDestroyOnSystemFinish;                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function Niagara.NiagaraActor.GetDestroyOnSystemFinish
+// 0x0001 (0x0001 - 0x0000)
+struct NiagaraActor_GetDestroyOnSystemFinish final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
 // Function Niagara.NiagaraComponent.AdvanceSimulation
 // 0x0008 (0x0008 - 0x0000)
 struct NiagaraComponent_AdvanceSimulation final
@@ -1002,275 +1505,6 @@ public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
-// Function Niagara.NiagaraActor.OnNiagaraSystemFinished
-// 0x0008 (0x0008 - 0x0000)
-struct NiagaraActor_OnNiagaraSystemFinished final
-{
-public:
-	class UNiagaraComponent*                      FinishedComponent;                                 // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function Niagara.NiagaraActor.SetDestroyOnSystemFinish
-// 0x0001 (0x0001 - 0x0000)
-struct NiagaraActor_SetDestroyOnSystemFinish final
-{
-public:
-	bool                                          bShouldDestroyOnSystemFinish;                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function Niagara.NiagaraActor.GetDestroyOnSystemFinish
-// 0x0001 (0x0001 - 0x0000)
-struct NiagaraActor_GetDestroyOnSystemFinish final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function Niagara.NiagaraDataInterfaceCombineTriggerFX.AddInstances
-// 0x0040 (0x0040 - 0x0000)
-struct NiagaraDataInterfaceCombineTriggerFX_AddInstances final
-{
-public:
-	struct FCombineTriggerFXInstanceData          InDatas;                                           // 0x0000(0x0040)(Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-};
-
-// Function Niagara.NiagaraDataInterfaceCombineTriggerFX.AddUniqueInstanceData
-// 0x0040 (0x0040 - 0x0000)
-struct NiagaraDataInterfaceCombineTriggerFX_AddUniqueInstanceData final
-{
-public:
-	struct FCombineTriggerFXInstanceData          InDatas;                                           // 0x0000(0x0040)(Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-};
-
-// Function Niagara.NiagaraDataInterfaceCombineTriggerFX.DeleteUniqueInstanceWithUID
-// 0x0008 (0x0008 - 0x0000)
-struct NiagaraDataInterfaceCombineTriggerFX_DeleteUniqueInstanceWithUID final
-{
-public:
-	int32                                         UID;                                               // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0004(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-
-// Function Niagara.NiagaraDataInterfaceCombineTriggerFX.ModifyUniqueInstanceDataWithUID
-// 0x0050 (0x0050 - 0x0000)
-struct NiagaraDataInterfaceCombineTriggerFX_ModifyUniqueInstanceDataWithUID final
-{
-public:
-	int32                                         UID;                                               // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FCombineTriggerFXInstanceData          InDatas;                                           // 0x0008(0x0040)(Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0048(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_49[0x7];                                       // 0x0049(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-
-// Function Niagara.NiagaraDataInterfaceCombineTriggerFX.GetInstancesUniqueID
-// 0x0010 (0x0010 - 0x0000)
-struct NiagaraDataInterfaceCombineTriggerFX_GetInstancesUniqueID final
-{
-public:
-	TArray<int32>                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
-};
-
-// Function Niagara.NiagaraDataInterfaceFunctionLibrary.AddCombineProjectileData
-// 0x0050 (0x0050 - 0x0000)
-struct NiagaraDataInterfaceFunctionLibrary_AddCombineProjectileData final
-{
-public:
-	class UNiagaraComponent*                      TargetComponent;                                   // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FCombineTriggerFXInstanceData          InInstanceData;                                    // 0x0008(0x0040)(Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0048(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_49[0x7];                                       // 0x0049(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-
-// Function Niagara.NiagaraDataInterfaceFunctionLibrary.CreateRandomPosition
-// 0x0028 (0x0028 - 0x0000)
-struct NiagaraDataInterfaceFunctionLibrary_CreateRandomPosition final
-{
-public:
-	class UNiagaraComponent*                      InComponent;                                       // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         PositionCount;                                     // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FVector>                        OutPositions;                                      // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0020(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-
-// Function Niagara.NiagaraDataInterfaceFunctionLibrary.FindOrAddCombineFXComponent
-// 0x0028 (0x0028 - 0x0000)
-struct NiagaraDataInterfaceFunctionLibrary_FindOrAddCombineFXComponent final
-{
-public:
-	class USceneComponent*                        AttachedParent;                                    // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UFXSystemAsset*                         Template;                                          // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   SocketName;                                        // 0x0010(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UNiagaraComponent*                      ReturnValue;                                       // 0x0020(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function Niagara.NiagaraDataInterfaceFunctionLibrary.IsCombineFXEnable
-// 0x0001 (0x0001 - 0x0000)
-struct NiagaraDataInterfaceFunctionLibrary_IsCombineFXEnable final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function Niagara.NiagaraDataInterfaceFunctionLibrary.ModifyCombineProjectileData
-// 0x0058 (0x0058 - 0x0000)
-struct NiagaraDataInterfaceFunctionLibrary_ModifyCombineProjectileData final
-{
-public:
-	class UNiagaraComponent*                      TargetComponent;                                   // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         UID;                                               // 0x0008(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FCombineTriggerFXInstanceData          InInstanceData;                                    // 0x0010(0x0040)(Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0050(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_51[0x7];                                       // 0x0051(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-
-// Function Niagara.NiagaraDataInterfaceFunctionLibrary.RemoveProjectileDataWithUID
-// 0x0010 (0x0010 - 0x0000)
-struct NiagaraDataInterfaceFunctionLibrary_RemoveProjectileDataWithUID final
-{
-public:
-	class UNiagaraComponent*                      TargetComponent;                                   // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         UID;                                               // 0x0008(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x000C(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-
-// Function Niagara.NiagaraDataInterfaceFunctionLibrary.SendAttachedCombineFXDataToNiagara
-// 0x0068 (0x0068 - 0x0000)
-struct NiagaraDataInterfaceFunctionLibrary_SendAttachedCombineFXDataToNiagara final
-{
-public:
-	class USceneComponent*                        AttachedParent;                                    // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UFXSystemAsset*                         Template;                                          // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   SocketName;                                        // 0x0010(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FCombineTriggerFXInstanceData          InInstanceData;                                    // 0x0020(0x0040)(Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	class UNiagaraComponent*                      ReturnValue;                                       // 0x0060(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function Niagara.NiagaraDataInterfaceFunctionLibrary.SendWorldCombineFXDataToNiagara
-// 0x0058 (0x0058 - 0x0000)
-struct NiagaraDataInterfaceFunctionLibrary_SendWorldCombineFXDataToNiagara final
-{
-public:
-	class AActor*                                 AttachedParent;                                    // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UFXSystemAsset*                         Template;                                          // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FCombineTriggerFXInstanceData          InInstanceData;                                    // 0x0010(0x0040)(Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	class UNiagaraComponent*                      ReturnValue;                                       // 0x0050(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function Niagara.NiagaraDataInterfaceFunctionLibrary.UpdatePosition
-// 0x0020 (0x0020 - 0x0000)
-struct NiagaraDataInterfaceFunctionLibrary_UpdatePosition final
-{
-public:
-	float                                         Distance;                                          // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FVector>                        InPositions;                                       // 0x0008(0x0010)(Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0018(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-
-// Function Niagara.NiagaraBaselineController.GetSystem
-// 0x0008 (0x0008 - 0x0000)
-struct NiagaraBaselineController_GetSystem final
-{
-public:
-	class UNiagaraSystem*                         ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function Niagara.NiagaraBaselineController.OnEndTest
-// 0x0010 (0x0010 - 0x0000)
-struct NiagaraBaselineController_OnEndTest final
-{
-public:
-	struct FNiagaraPerfBaselineStats              Stats;                                             // 0x0000(0x0010)(Parm, NoDestructor, NativeAccessSpecifierPublic)
-};
-
-// Function Niagara.NiagaraBaselineController.OnOwnerTick
-// 0x0004 (0x0004 - 0x0000)
-struct NiagaraBaselineController_OnOwnerTick final
-{
-public:
-	float                                         DeltaTime;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function Niagara.NiagaraBaselineController.OnTickTest
-// 0x0001 (0x0001 - 0x0000)
-struct NiagaraBaselineController_OnTickTest final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function Niagara.NiagaraPreviewAxis.ApplyToPreview
-// 0x0020 (0x0020 - 0x0000)
-struct NiagaraPreviewAxis_ApplyToPreview final
-{
-public:
-	class UNiagaraComponent*                      PreviewComponent;                                  // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         PreviewIndex;                                      // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIsXAxis;                                          // 0x000C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 OutLabelText;                                      // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function Niagara.NiagaraPreviewAxis.Num
-// 0x0004 (0x0004 - 0x0000)
-struct NiagaraPreviewAxis_Num final
-{
-public:
-	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function Niagara.NiagaraDataInterfaceSceneCapture2D.SetSceneCapture2DManagedShowOnlyActors
-// 0x0028 (0x0028 - 0x0000)
-struct NiagaraDataInterfaceSceneCapture2D_SetSceneCapture2DManagedShowOnlyActors final
-{
-public:
-	class UNiagaraComponent*                      NiagaraSystem;                                     // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   ParameterName;                                     // 0x0008(0x000C)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class AActor*>                         ShowOnlyActors;                                    // 0x0018(0x0010)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-
-// Function Niagara.NiagaraDataInterfaceStaticMesh.SetNiagaraStaticMeshDIInstanceIndex
-// 0x0018 (0x0018 - 0x0000)
-struct NiagaraDataInterfaceStaticMesh_SetNiagaraStaticMeshDIInstanceIndex final
-{
-public:
-	class UNiagaraComponent*                      NiagaraSystem;                                     // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   UserParameterName;                                 // 0x0008(0x000C)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         NewInstanceIndex;                                  // 0x0014(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function Niagara.NiagaraDataInterfaceStaticMesh.OnSourceEndPlay
-// 0x0010 (0x0010 - 0x0000)
-struct NiagaraDataInterfaceStaticMesh_OnSourceEndPlay final
-{
-public:
-	class AActor*                                 InSource;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EEndPlayReason                                Reason;                                            // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-
-// Function Niagara.NiagaraDataInterfaceUObjectPropertyReader.SetUObjectReaderPropertyRemap
-// 0x0030 (0x0030 - 0x0000)
-struct NiagaraDataInterfaceUObjectPropertyReader_SetUObjectReaderPropertyRemap final
-{
-public:
-	class UNiagaraComponent*                      NiagaraComponent;                                  // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   UserParameterName;                                 // 0x0008(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   GraphName;                                         // 0x0014(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   RemapName;                                         // 0x0020(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-
 // Function Niagara.NiagaraDataChannelLibrary.GetNiagaraDataChannel
 // 0x0018 (0x0018 - 0x0000)
 struct NiagaraDataChannelLibrary_GetNiagaraDataChannel final
@@ -1977,6 +2211,16 @@ public:
 	class UNiagaraParameterCollectionInstance*    ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
+// Function Niagara.NiagaraFunctionLibrary.IsNiagaraHasActiveParticles
+// 0x0010 (0x0010 - 0x0000)
+struct NiagaraFunctionLibrary_IsNiagaraHasActiveParticles final
+{
+public:
+	class UNiagaraComponent*                      NiagaraComponent;                                  // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+
 // Function Niagara.NiagaraFunctionLibrary.NiagaraMaterialFlagCheck
 // 0x0008 (0x0008 - 0x0000)
 struct NiagaraFunctionLibrary_NiagaraMaterialFlagCheck final
@@ -2315,6 +2559,38 @@ public:
 	struct FVector                                InValue;                                           // 0x0010(0x0018)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
+// Function Niagara.NiagaraBaselineController.GetSystem
+// 0x0008 (0x0008 - 0x0000)
+struct NiagaraBaselineController_GetSystem final
+{
+public:
+	class UNiagaraSystem*                         ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function Niagara.NiagaraBaselineController.OnEndTest
+// 0x0010 (0x0010 - 0x0000)
+struct NiagaraBaselineController_OnEndTest final
+{
+public:
+	struct FNiagaraPerfBaselineStats              Stats;                                             // 0x0000(0x0010)(Parm, NoDestructor, NativeAccessSpecifierPublic)
+};
+
+// Function Niagara.NiagaraBaselineController.OnOwnerTick
+// 0x0004 (0x0004 - 0x0000)
+struct NiagaraBaselineController_OnOwnerTick final
+{
+public:
+	float                                         DeltaTime;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function Niagara.NiagaraBaselineController.OnTickTest
+// 0x0001 (0x0001 - 0x0000)
+struct NiagaraBaselineController_OnTickTest final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
 // Function Niagara.NiagaraPreviewBase.SetLabelText
 // 0x0030 (0x0030 - 0x0000)
 struct NiagaraPreviewBase_SetLabelText final
@@ -2330,231 +2606,6 @@ struct NiagaraPreviewBase_SetSystem final
 {
 public:
 	class UNiagaraSystem*                         InSystem;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function Niagara.NiagaraPreviewGrid.ActivatePreviews
-// 0x0001 (0x0001 - 0x0000)
-struct NiagaraPreviewGrid_ActivatePreviews final
-{
-public:
-	bool                                          bReset;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function Niagara.NiagaraPreviewGrid.GetPreviews
-// 0x0010 (0x0010 - 0x0000)
-struct NiagaraPreviewGrid_GetPreviews final
-{
-public:
-	TArray<class UNiagaraComponent*>              OutPreviews;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
-};
-
-// Function Niagara.NiagaraPreviewGrid.SetPaused
-// 0x0001 (0x0001 - 0x0000)
-struct NiagaraPreviewGrid_SetPaused final
-{
-public:
-	bool                                          bPaused;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function Niagara.NiagaraSimCache.GetAttributeCaptureMode
-// 0x0001 (0x0001 - 0x0000)
-struct NiagaraSimCache_GetAttributeCaptureMode final
-{
-public:
-	ENiagaraSimCacheAttributeCaptureMode          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function Niagara.NiagaraSimCache.GetEmitterName
-// 0x0010 (0x0010 - 0x0000)
-struct NiagaraSimCache_GetEmitterName final
-{
-public:
-	int32                                         EmitterIndex;                                      // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   ReturnValue;                                       // 0x0004(0x000C)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function Niagara.NiagaraSimCache.GetEmitterNames
-// 0x0010 (0x0010 - 0x0000)
-struct NiagaraSimCache_GetEmitterNames final
-{
-public:
-	TArray<class FName>                           ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
-};
-
-// Function Niagara.NiagaraSimCache.GetNumEmitters
-// 0x0004 (0x0004 - 0x0000)
-struct NiagaraSimCache_GetNumEmitters final
-{
-public:
-	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function Niagara.NiagaraSimCache.GetNumFrames
-// 0x0004 (0x0004 - 0x0000)
-struct NiagaraSimCache_GetNumFrames final
-{
-public:
-	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function Niagara.NiagaraSimCache.GetStartSeconds
-// 0x0004 (0x0004 - 0x0000)
-struct NiagaraSimCache_GetStartSeconds final
-{
-public:
-	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function Niagara.NiagaraSimCache.IsCacheValid
-// 0x0001 (0x0001 - 0x0000)
-struct NiagaraSimCache_IsCacheValid final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function Niagara.NiagaraSimCache.IsEmpty
-// 0x0001 (0x0001 - 0x0000)
-struct NiagaraSimCache_IsEmpty final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function Niagara.NiagaraSimCache.ReadColorAttribute
-// 0x0030 (0x0030 - 0x0000)
-struct NiagaraSimCache_ReadColorAttribute final
-{
-public:
-	TArray<struct FLinearColor>                   OutValues;                                         // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
-	class FName                                   AttributeName;                                     // 0x0010(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   EmitterName;                                       // 0x001C(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         FrameIndex;                                        // 0x0028(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-
-// Function Niagara.NiagaraSimCache.ReadFloatAttribute
-// 0x0030 (0x0030 - 0x0000)
-struct NiagaraSimCache_ReadFloatAttribute final
-{
-public:
-	TArray<float>                                 OutValues;                                         // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
-	class FName                                   AttributeName;                                     // 0x0010(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   EmitterName;                                       // 0x001C(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         FrameIndex;                                        // 0x0028(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-
-// Function Niagara.NiagaraSimCache.ReadIDAttribute
-// 0x0030 (0x0030 - 0x0000)
-struct NiagaraSimCache_ReadIDAttribute final
-{
-public:
-	TArray<struct FNiagaraID>                     OutValues;                                         // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
-	class FName                                   AttributeName;                                     // 0x0010(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   EmitterName;                                       // 0x001C(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         FrameIndex;                                        // 0x0028(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-
-// Function Niagara.NiagaraSimCache.ReadIntAttribute
-// 0x0030 (0x0030 - 0x0000)
-struct NiagaraSimCache_ReadIntAttribute final
-{
-public:
-	TArray<int32>                                 OutValues;                                         // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
-	class FName                                   AttributeName;                                     // 0x0010(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   EmitterName;                                       // 0x001C(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         FrameIndex;                                        // 0x0028(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-
-// Function Niagara.NiagaraSimCache.ReadPositionAttribute
-// 0x0030 (0x0030 - 0x0000)
-struct NiagaraSimCache_ReadPositionAttribute final
-{
-public:
-	TArray<struct FVector>                        OutValues;                                         // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
-	class FName                                   AttributeName;                                     // 0x0010(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   EmitterName;                                       // 0x001C(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bLocalSpaceToWorld;                                // 0x0028(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_29[0x3];                                       // 0x0029(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         FrameIndex;                                        // 0x002C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function Niagara.NiagaraSimCache.ReadPositionAttributeWithRebase
-// 0x0090 (0x0090 - 0x0000)
-struct NiagaraSimCache_ReadPositionAttributeWithRebase final
-{
-public:
-	TArray<struct FVector>                        OutValues;                                         // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
-	struct FTransform                             Transform;                                         // 0x0010(0x0060)(Parm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   AttributeName;                                     // 0x0070(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   EmitterName;                                       // 0x007C(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         FrameIndex;                                        // 0x0088(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_8C[0x4];                                       // 0x008C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-
-// Function Niagara.NiagaraSimCache.ReadQuatAttribute
-// 0x0030 (0x0030 - 0x0000)
-struct NiagaraSimCache_ReadQuatAttribute final
-{
-public:
-	TArray<struct FQuat>                          OutValues;                                         // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
-	class FName                                   AttributeName;                                     // 0x0010(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   EmitterName;                                       // 0x001C(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bLocalSpaceToWorld;                                // 0x0028(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_29[0x3];                                       // 0x0029(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         FrameIndex;                                        // 0x002C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function Niagara.NiagaraSimCache.ReadQuatAttributeWithRebase
-// 0x0050 (0x0050 - 0x0000)
-struct NiagaraSimCache_ReadQuatAttributeWithRebase final
-{
-public:
-	TArray<struct FQuat>                          OutValues;                                         // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
-	struct FQuat                                  Quat;                                              // 0x0010(0x0020)(Parm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   AttributeName;                                     // 0x0030(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   EmitterName;                                       // 0x003C(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         FrameIndex;                                        // 0x0048(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4C[0x4];                                       // 0x004C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-
-// Function Niagara.NiagaraSimCache.ReadVector2Attribute
-// 0x0030 (0x0030 - 0x0000)
-struct NiagaraSimCache_ReadVector2Attribute final
-{
-public:
-	TArray<struct FVector2D>                      OutValues;                                         // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
-	class FName                                   AttributeName;                                     // 0x0010(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   EmitterName;                                       // 0x001C(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         FrameIndex;                                        // 0x0028(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-
-// Function Niagara.NiagaraSimCache.ReadVector4Attribute
-// 0x0030 (0x0030 - 0x0000)
-struct NiagaraSimCache_ReadVector4Attribute final
-{
-public:
-	TArray<struct FVector4>                       OutValues;                                         // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
-	class FName                                   AttributeName;                                     // 0x0010(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   EmitterName;                                       // 0x001C(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         FrameIndex;                                        // 0x0028(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-
-// Function Niagara.NiagaraSimCache.ReadVectorAttribute
-// 0x0030 (0x0030 - 0x0000)
-struct NiagaraSimCache_ReadVectorAttribute final
-{
-public:
-	TArray<struct FVector>                        OutValues;                                         // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
-	class FName                                   AttributeName;                                     // 0x0010(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   EmitterName;                                       // 0x001C(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         FrameIndex;                                        // 0x0028(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 
 // Function Niagara.AsyncNiagaraCaptureSimCache.CaptureNiagaraSimCache
@@ -2603,47 +2654,6 @@ public:
 	float                                         AdvanceDeltaTime;                                  // 0x0078(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_7C[0x4];                                       // 0x007C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UAsyncNiagaraCaptureSimCache*           ReturnValue;                                       // 0x0080(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function Niagara.NiagaraSimCacheFunctionLibrary.CaptureNiagaraSimCacheImmediate
-// 0x0080 (0x0080 - 0x0000)
-struct NiagaraSimCacheFunctionLibrary_CaptureNiagaraSimCacheImmediate final
-{
-public:
-	class UNiagaraSimCache*                       SimCache;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FNiagaraSimCacheCreateParameters       CreateParameters;                                  // 0x0008(0x0058)(Parm, NativeAccessSpecifierPublic)
-	class UNiagaraComponent*                      NiagaraComponent;                                  // 0x0060(0x0008)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UNiagaraSimCache*                       OutSimCache;                                       // 0x0068(0x0008)(Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bAdvanceSimulation;                                // 0x0070(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_71[0x3];                                       // 0x0071(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         AdvanceDeltaTime;                                  // 0x0074(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0078(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_79[0x7];                                       // 0x0079(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-
-// Function Niagara.NiagaraSimCacheFunctionLibrary.CreateNiagaraSimCache
-// 0x0010 (0x0010 - 0x0000)
-struct NiagaraSimCacheFunctionLibrary_CreateNiagaraSimCache final
-{
-public:
-	class UObject*                                WorldContextObject;                                // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UNiagaraSimCache*                       ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function Niagara.NiagaraSystem.GetSystemSkillLevel
-// 0x0001 (0x0001 - 0x0000)
-struct NiagaraSystem_GetSystemSkillLevel final
-{
-public:
-	ENiagaraSkillLevel                            ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-
-// Function Niagara.NiagaraSystem.HasEnableEmitter
-// 0x0001 (0x0001 - 0x0000)
-struct NiagaraSystem_HasEnableEmitter final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
 }

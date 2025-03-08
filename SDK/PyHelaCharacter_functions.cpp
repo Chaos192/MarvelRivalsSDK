@@ -20,7 +20,7 @@ namespace SDK
 // PythonFunction PyHelaCharacter.PyHelaChildActor.OnGenericGameplayTagUpdate
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayTag                     InTag                                                  (ConstParm, Parm, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              InTag                                                  (ConstParm, Parm, NoDestructor, HasGetValueTypeHash)
 // int32                                   Count                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void APyHelaChildActor::OnGenericGameplayTagUpdate(const struct FGameplayTag& InTag, int32 Count)

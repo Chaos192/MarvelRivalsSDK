@@ -22,7 +22,7 @@ class APyGroupMoveActor final : public AModuleControlBase
 {
 public:
 	TMulticastInlineDelegate<void()>              DispatcherCountdownStep;                           // 0x04A8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(float delay_time)> DispatcherStartDelayWait;                          // 0x04B8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(float delay_time)> DispatcherStartDelayWait;                       // 0x04B8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 	TMulticastInlineDelegate<void(float Degree)>  SpeedForward;                                      // 0x04C8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 	TMulticastInlineDelegate<void(float Degree)>  SpeedBackToForward;                                // 0x04D8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 	TMulticastInlineDelegate<void(float Degree)>  SpeedBack;                                         // 0x04E8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)

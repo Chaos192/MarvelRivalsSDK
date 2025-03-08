@@ -39,7 +39,7 @@ void UPyAIAbilityExitStageLogicBase::InitLogic()
 // PythonFunction ability_exit_stage_logic.PyAIAbilityExitStageLogicBase.CheckLogic
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FAIAbilityUsage                  AbilityUsage                                           (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
+// const struct FAIAbilityUsage&           AbilityUsage                                           (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
 // class AMarvelAIController*              Controller                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 

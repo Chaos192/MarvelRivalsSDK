@@ -23,9 +23,9 @@ class UMarvelAudioAdminBP_C final : public UPyMarvelAudioAdmin
 {
 public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0158(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	TMap<TSoftObjectPtr<class UAkComponent>, TSoftObjectPtr<class UWC_AudioEmitterBP_C>> AudioEmitterWCs;                                   // 0x0160(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
+	TMap<TSoftObjectPtr<class UAkComponent>, TSoftObjectPtr<class UWC_AudioEmitterBP_C>> AudioEmitterWCs; // 0x0160(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
 	class UWC_AnimEmitterBP_C*                    AnimEmitterBP;                                     // 0x01B0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	TMap<TSoftObjectPtr<class UAkComponent>, TSoftObjectPtr<class UWC_AnimEmitterBP_C>> AnimEmitterWCs;                                    // 0x01B8(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
+	TMap<TSoftObjectPtr<class UAkComponent>, TSoftObjectPtr<class UWC_AnimEmitterBP_C>> AnimEmitterWCs; // 0x01B8(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
 
 public:
 	void ExecuteUbergraph_MarvelAudioAdminBP(int32 EntryPoint);

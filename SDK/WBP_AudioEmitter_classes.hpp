@@ -34,7 +34,7 @@ public:
 	struct FMargin                                UnitMargin;                                        // 0x03F0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 	TSet<class UAkAudioEvent*>                    PlayingEvents;                                     // 0x0400(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
 	class UAkComponent*                           AkComp;                                            // 0x0450(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	TMap<class UAkAudioEvent*, class UWBP_AudioEmitterLine_C*> PlayingLines;                                      // 0x0458(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
+	TMap<class UAkAudioEvent*, class UWBP_AudioEmitterLine_C*> PlayingLines;                         // 0x0458(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
 	class UWBP_AudioEmitterLine_C*                tmpLine;                                           // 0x04A8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
 	class UMarvelAudioAdmin*                      CachedAdmin;                                       // 0x04B0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 

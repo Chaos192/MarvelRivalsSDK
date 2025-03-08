@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass ArmorAttenuation_10227101_BP.ArmorAttenuation_10227101_BP_C
-// 0x0000 (0x12B8 - 0x12B8)
+// 0x0000 (0x12C8 - 0x12C8)
 class UArmorAttenuation_10227101_BP_C final : public UArmorAttenuation_102271
 {
 public:

@@ -20,7 +20,7 @@ namespace SDK
 // Function LiveLinkCurveDebugUI.LiveLinkDebuggerBlueprintLibrary.DisplayLiveLinkDebugger
 // (Final, Native, Static, Private, BlueprintCallable)
 // Parameters:
-// class FString                           SubjectName                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    SubjectName                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void ULiveLinkDebuggerBlueprintLibrary::DisplayLiveLinkDebugger(const class FString& SubjectName)
 {
@@ -92,7 +92,7 @@ struct FSlateColor ULiveLinkDebuggerSettings::GetBarColorForCurveValue(float Cur
 // Function LiveLinkCurveDebugUI.LiveLinkDebuggerSettings.GetDPIScaleBasedOnSize
 // (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// struct FIntPoint                        Size                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FIntPoint&                 Size                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 float ULiveLinkDebuggerSettings::GetDPIScaleBasedOnSize(const struct FIntPoint& Size) const

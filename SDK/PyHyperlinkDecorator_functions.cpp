@@ -21,7 +21,7 @@ namespace SDK
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // EHyperlinkType                          LinkType                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           Args                                                   (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Args                                                   (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyHyperlinkDecorator::OnClickHyperlink(EHyperlinkType LinkType, const class FString& Args)
 {
@@ -48,7 +48,7 @@ void UPyHyperlinkDecorator::OnClickHyperlink(EHyperlinkType LinkType, const clas
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // EHyperlinkType                          LinkType                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           Args                                                   (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Args                                                   (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyHyperlinkDecorator::OnRightClickHyperlink(EHyperlinkType LinkType, const class FString& Args)
 {
@@ -75,7 +75,7 @@ void UPyHyperlinkDecorator::OnRightClickHyperlink(EHyperlinkType LinkType, const
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // EHyperlinkType                          LinkType                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           Args                                                   (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Args                                                   (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyHyperlinkDecorator::OnHoveredHyperlink(EHyperlinkType LinkType, const class FString& Args)
 {
@@ -102,7 +102,7 @@ void UPyHyperlinkDecorator::OnHoveredHyperlink(EHyperlinkType LinkType, const cl
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // EHyperlinkType                          LinkType                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           Args                                                   (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Args                                                   (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyHyperlinkDecorator::OnUnhoveredHyperlink(EHyperlinkType LinkType, const class FString& Args)
 {
@@ -129,7 +129,7 @@ void UPyHyperlinkDecorator::OnUnhoveredHyperlink(EHyperlinkType LinkType, const 
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // EHyperlinkType                          LinkType                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           Args                                                   (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Args                                                   (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyHyperlinkImageDecorator::OnClickHyperlink(EHyperlinkType LinkType, const class FString& Args)
 {

@@ -96,7 +96,7 @@ void UPyModularRuleComponent::OnFightStart()
 // PythonFunction PyModularRuleComponent.PyModularRuleComponent.OnCampStart
 // (Native, Public, BlueprintCallable)
 // Parameters:
-// class FString                           Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash)
 // EBattleSide                             AttackSide                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // int32                                   RemainTime                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
@@ -150,7 +150,7 @@ class AActor* UPyModularRuleComponent::GetCurrentCamp()
 // PythonFunction PyModularRuleComponent.PyModularRuleComponent.GetCampByName
 // (Native, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// class FString                           CampName                                               (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    CampName                                               (Parm, ZeroConstructor, HasGetValueTypeHash)
 // class AActor*                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash)
 
 class AActor* UPyModularRuleComponent::GetCampByName(const class FString& CampName)
@@ -279,7 +279,7 @@ void UPyModularRuleComponent::SetDefaultHeroID(int32 HeroID)
 // PythonFunction PyModularRuleComponent.PyModularRuleComponent.SetBattleSideDefaultHeroID
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TMap<EBattleSide, int32>                DefaultHeroMap                                         (ConstParm, Parm, OutParm, ReferenceParm)
+// const TMap<EBattleSide, int32>&         DefaultHeroMap                                         (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyModularRuleComponent::SetBattleSideDefaultHeroID(const TMap<EBattleSide, int32>& DefaultHeroMap)
 {
@@ -544,7 +544,7 @@ void UPyModularRuleComponent::OnSpawnCharacterBP(class AMarvelBaseCharacter* Cha
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // int32                                   BuffID                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// TArray<int32>                           ActorList                                              (ConstParm, Parm, OutParm, ReferenceParm)
+// const TArray<int32>&                    ActorList                                              (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyModularRuleComponent::AddBuffToPlayer(int32 BuffID, const TArray<int32>& ActorList)
 {
@@ -571,7 +571,7 @@ void UPyModularRuleComponent::AddBuffToPlayer(int32 BuffID, const TArray<int32>&
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // int32                                   BuffID                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// TArray<int32>                           PlayerUIDList                                          (ConstParm, Parm, OutParm, ReferenceParm)
+// const TArray<int32>&                    PlayerUIDList                                          (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyModularRuleComponent::RemoveBuffToPlayer(int32 BuffID, const TArray<int32>& PlayerUIDList)
 {
@@ -597,7 +597,7 @@ void UPyModularRuleComponent::RemoveBuffToPlayer(int32 BuffID, const TArray<int3
 // PythonFunction PyModularRuleComponent.PyModularRuleComponent.RespawnPlayer
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<int32>                           ActorList                                              (ConstParm, Parm, OutParm, ReferenceParm)
+// const TArray<int32>&                    ActorList                                              (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyModularRuleComponent::RespawnPlayer(const TArray<int32>& ActorList)
 {
@@ -694,9 +694,9 @@ void UPyModularRuleComponent::SetInstantReborn()
 // PythonFunction PyModularRuleComponent.PyModularRuleComponent.OnPlayerAbilityHit
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<int32>                           PlayerList                                             (ConstParm, Parm, OutParm, ReferenceParm)
-// TArray<int32>                           AbilityList                                            (ConstParm, Parm, OutParm, ReferenceParm)
-// class FString                           EventName                                              (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const TArray<int32>&                    PlayerList                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const TArray<int32>&                    AbilityList                                            (ConstParm, Parm, OutParm, ReferenceParm)
+// const class FString&                    EventName                                              (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyModularRuleComponent::OnPlayerAbilityHit(const TArray<int32>& PlayerList, const TArray<int32>& AbilityList, const class FString& EventName)
 {
@@ -728,7 +728,7 @@ void UPyModularRuleComponent::OnPlayerAbilityHit(const TArray<int32>& PlayerList
 // int32                                   AbilityID                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    bHit                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    bIsCritHit                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FGlobalEventExtraData            ExtraData                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
+// const struct FGlobalEventExtraData&     ExtraData                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
 
 void UPyModularRuleComponent::OnActorWeaponAmmoUse(class AActor* Source, class AActor* Target, int32 AbilityID, bool bHit, bool bIsCritHit, const struct FGlobalEventExtraData& ExtraData)
 {
@@ -816,7 +816,7 @@ void UPyModularRuleComponent::ReduceCharHealthAttr(int32 PlayerUID, float Percen
 // PythonFunction PyModularRuleComponent.PyModularRuleComponent.SetBirthBaseState
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TMap<class FString, bool>               BirthbaseState                                         (ConstParm, Parm, OutParm, ReferenceParm)
+// const TMap<class FString, bool>&        BirthbaseState                                         (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyModularRuleComponent::SetBirthBaseState(const TMap<class FString, bool>& BirthbaseState)
 {
@@ -841,7 +841,7 @@ void UPyModularRuleComponent::SetBirthBaseState(const TMap<class FString, bool>&
 // PythonFunction PyModularRuleComponent.PyModularRuleComponent.SetBirthBaseOpen
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TMap<class FString, bool>               BirthbaseState                                         (ConstParm, Parm, OutParm, ReferenceParm)
+// const TMap<class FString, bool>&        BirthbaseState                                         (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyModularRuleComponent::SetBirthBaseOpen(const TMap<class FString, bool>& BirthbaseState)
 {
@@ -911,7 +911,7 @@ void UPyModularRuleComponent::UILoaded()
 // (Native, Public, BlueprintCallable)
 // Parameters:
 // int32                                   PlayerUID                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           EventName                                              (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    EventName                                              (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyModularRuleComponent::BindPlayerDeathEvent(int32 PlayerUID, const class FString& EventName)
 {

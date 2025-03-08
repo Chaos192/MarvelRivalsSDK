@@ -25,8 +25,8 @@ public:
 	int32                                         CardId;                                            // 0x05EC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
-	void Construct();
 	void Destruct();
+	void Construct();
 	void OnInitialized();
 
 public:

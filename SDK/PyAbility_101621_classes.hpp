@@ -33,7 +33,7 @@ public:
 };
 
 // PythonClass PyAbility_101621.PyProjectile_10162101
-// 0x0000 (0x3070 - 0x3070)
+// 0x0000 (0x3120 - 0x3120)
 class APyProjectile_10162101 final : public AProjectile_10162101
 {
 public:
@@ -48,11 +48,11 @@ public:
 };
 
 // PythonClass PyAbility_101621.PyAbility_101621
-// 0x0010 (0x2590 - 0x2580)
+// 0x0010 (0x2598 - 0x2588)
 class UPyAbility_101621 : public UAbility_101621
 {
 public:
-	TMulticastInlineDelegate<void(class AActor* SpawnActor)> OnSourceCharacterProjectileSuccess;                // 0x2580(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class AActor* SpawnActor)> OnSourceCharacterProjectileSuccess;     // 0x2588(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 
 public:
 	void BeginPlay();

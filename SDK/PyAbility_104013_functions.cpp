@@ -84,7 +84,7 @@ void UPyAbility_104013::K2_ActivateAbility()
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // class UGameplayAbility*                 Ability                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// TArray<struct FHitResult>               Result                                                 (ConstParm, Parm, OutParm, ReferenceParm)
+// const TArray<struct FHitResult>&        Result                                                 (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyAbility_104013::OnAbilityHit(class UGameplayAbility* Ability, const TArray<struct FHitResult>& Result)
 {
@@ -200,7 +200,7 @@ void UPyAbility_104013::K2_OnEndAbility(bool bWasCancelled)
 // PythonFunction PyAbility_104013.PyAbility_104013.NativeOnMontageCompleted
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_104013::NativeOnMontageCompleted(const class FString& Tag)
 {
@@ -225,7 +225,7 @@ void UPyAbility_104013::NativeOnMontageCompleted(const class FString& Tag)
 // PythonFunction PyAbility_104013.PyAbility_104013.NativeOnMontageInterrupted
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_104013::NativeOnMontageInterrupted(const class FString& Tag)
 {
@@ -250,7 +250,7 @@ void UPyAbility_104013::NativeOnMontageInterrupted(const class FString& Tag)
 // PythonFunction PyAbility_104013.PyAbility_104013.NativeOnMontageCancelled
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_104013::NativeOnMontageCancelled(const class FString& Tag)
 {
@@ -275,7 +275,7 @@ void UPyAbility_104013::NativeOnMontageCancelled(const class FString& Tag)
 // PythonFunction PyAbility_104013.PyAbility_104013.NativeOnMontageEvent
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_104013::NativeOnMontageEvent(const class FString& Tag)
 {
@@ -338,7 +338,7 @@ void UPyEffectiveComponent_10401301::K2_OnInitialized()
 // PythonFunction PyAbility_104013.PyEffectiveComponent_10401301.K2_OnPreApplyContainer
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<struct FHitResult>               HitResults                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const TArray<struct FHitResult>&        HitResults                                             (ConstParm, Parm, OutParm, ReferenceParm)
 // TArray<struct FHitResult>               ReturnValue                                            (Parm, OutParm, ReturnParm)
 
 TArray<struct FHitResult> UPyEffectiveComponent_10401301::K2_OnPreApplyContainer(const TArray<struct FHitResult>& HitResults)
@@ -367,7 +367,7 @@ TArray<struct FHitResult> UPyEffectiveComponent_10401301::K2_OnPreApplyContainer
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 bool UPyCue_Ability_Instant_10401301::OnExecute(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters) const

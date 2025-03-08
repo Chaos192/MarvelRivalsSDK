@@ -205,7 +205,7 @@ public:
 struct LevelSequenceBurnIn_GetSettingsClass final
 {
 public:
-	TSubclassOf<class ULevelSequenceBurnInInitSettings> ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSubclassOf<class ULevelSequenceBurnInInitSettings> ReturnValue;                                 // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
 // Function LevelSequence.LevelSequenceDirector.GetBoundActor

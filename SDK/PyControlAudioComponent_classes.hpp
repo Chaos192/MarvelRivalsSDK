@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "Marvel_structs.hpp"
 #include "MarvelLevel_structs.hpp"
 #include "MarvelLevel_classes.hpp"
-#include "Marvel_structs.hpp"
 #include "PyModeAudioComponent_classes.hpp"
 
 

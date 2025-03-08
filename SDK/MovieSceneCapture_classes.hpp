@@ -136,8 +136,8 @@ public:
 };
 
 // Class MovieSceneCapture.MovieSceneCaptureInterface
-// 0x0000 (0x0030 - 0x0030)
-class IMovieSceneCaptureInterface final : public IInterface
+// 0x0000 (0x0000 - 0x0000)
+class IMovieSceneCaptureInterface final
 {
 public:
 	static class UClass* StaticClass()
@@ -147,6 +147,15 @@ public:
 	static class IMovieSceneCaptureInterface* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<IMovieSceneCaptureInterface>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
 	}
 };
 

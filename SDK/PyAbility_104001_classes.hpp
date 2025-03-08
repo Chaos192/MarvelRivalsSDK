@@ -17,23 +17,8 @@
 namespace SDK
 {
 
-// PythonClass PyAbility_104001.PyConfig_104001
-// 0x0000 (0x0108 - 0x0108)
-class UPyConfig_104001 final : public UConfig_104001
-{
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"PyConfig_104001">();
-	}
-	static class UPyConfig_104001* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UPyConfig_104001>();
-	}
-};
-
 // PythonClass PyAbility_104001.PyUIController_104001
-// 0x0000 (0x0C60 - 0x0C60)
+// 0x0000 (0x0C50 - 0x0C50)
 class UPyUIController_104001 final : public UUIC_Ability
 {
 public:
@@ -51,8 +36,42 @@ public:
 	}
 };
 
+// PythonClass PyAbility_104001.PyConfig_104001
+// 0x0000 (0x0108 - 0x0108)
+class UPyConfig_104001 final : public UConfig_104001
+{
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PyConfig_104001">();
+	}
+	static class UPyConfig_104001* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPyConfig_104001>();
+	}
+};
+
+// PythonClass PyAbility_104001.PyCue_Buff_Loop_10400103
+// 0x0000 (0x1038 - 0x1038)
+class APyCue_Buff_Loop_10400103 final : public AMarvelCueNotify_Buff
+{
+public:
+	void WhileActiveAudio(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters);
+	void OnRemoveAudio(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PyCue_Buff_Loop_10400103">();
+	}
+	static class APyCue_Buff_Loop_10400103* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<APyCue_Buff_Loop_10400103>();
+	}
+};
+
 // PythonClass PyAbility_104001.PyAbility_104001
-// 0x0000 (0x2590 - 0x2590)
+// 0x0000 (0x2598 - 0x2598)
 class UPyAbility_104001 : public UAbility_104001
 {
 public:

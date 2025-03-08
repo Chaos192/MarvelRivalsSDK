@@ -39,7 +39,7 @@ void UPyAbility_104541::K2_ActivateAbility()
 // PythonFunction PyAbility_104541.PyAbility_104541.NativeOnMontageEvent
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_104541::NativeOnMontageEvent(const class FString& Tag)
 {
@@ -83,7 +83,7 @@ void UPyAbility_104541::OnDurationEnd()
 // PythonFunction PyAbility_104541.PyAbility_104541.NativeOnMontageCompleted
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_104541::NativeOnMontageCompleted(const class FString& Tag)
 {
@@ -108,8 +108,8 @@ void UPyAbility_104541::NativeOnMontageCompleted(const class FString& Tag)
 // PythonFunction PyAbility_104541.PySummoned_10454101.K2_OnSummonedBeHit
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class AActor*                           InActor                                                (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FHitResult                       InHitResult                                            (ConstParm, Parm, OutParm, ReferenceParm)
+// const class AActor*                     InActor                                                (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// const struct FHitResult&                InHitResult                                            (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APySummoned_10454101::K2_OnSummonedBeHit(const class AActor* InActor, const struct FHitResult& InHitResult)
 {
@@ -136,7 +136,7 @@ void APySummoned_10454101::K2_OnSummonedBeHit(const class AActor* InActor, const
 // (Net, NetReliable, Native, NetMulticast, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // class AActor*                           InActor                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FHitResult                       InHitResult                                            (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FHitResult&                InHitResult                                            (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APySummoned_10454101::MulticastExecuteBeHitCue(class AActor* InActor, const struct FHitResult& InHitResult)
 {

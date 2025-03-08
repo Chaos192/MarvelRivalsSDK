@@ -58,7 +58,7 @@ void UPyWidget_League_Tips::Destruct()
 // PythonFunction PyWidget_League_Tips.PyWidget_League_Tips.OnAnimationFinished
 // (BlueprintCosmetic, Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UWidgetAnimation*                 Animation                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// const class UWidgetAnimation*           Animation                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 void UPyWidget_League_Tips::OnAnimationFinished(const class UWidgetAnimation* Animation)
 {

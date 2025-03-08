@@ -18,11 +18,11 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Ability_103531_BP.Ability_103531_BP_C
-// 0x0008 (0x2A10 - 0x2A08)
+// 0x0008 (0x2A18 - 0x2A10)
 class UAbility_103531_BP_C final : public UAbility_103531
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x2A08(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x2A10(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
 	void ExecuteUbergraph_Ability_103531_BP(int32 EntryPoint);

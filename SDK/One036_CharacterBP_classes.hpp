@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass 1036_CharacterBP.1036_CharacterBP_C
-// 0x0000 (0x1880 - 0x1880)
+// 0x0000 (0x18E0 - 0x18E0)
 class AOne036_CharacterBP_C final : public APySpiderManCharacter
 {
 public:

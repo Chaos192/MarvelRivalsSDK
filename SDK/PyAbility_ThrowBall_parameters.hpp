@@ -18,55 +18,6 @@
 namespace SDK::Params
 {
 
-// PythonFunction PyAbility_ThrowBall.PyCue_Buff_20050101.WhileActiveFX
-// 0x01C0 (0x01C0 - 0x0000)
-struct PyCue_Buff_20050101_WhileActiveFX final
-{
-public:
-	class AActor*                                 MyTarget;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	struct FGameplayCueParameters                 Parameters;                                        // 0x0008(0x01B8)(ConstParm, Parm, OutParm, ReferenceParm)
-};
-
-// PythonFunction PyAbility_ThrowBall.PyCue_Buff_20050101.OnRemoveFX
-// 0x01C0 (0x01C0 - 0x0000)
-struct PyCue_Buff_20050101_OnRemoveFX final
-{
-public:
-	class AActor*                                 MyTarget;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	struct FGameplayCueParameters                 Parameters;                                        // 0x0008(0x01B8)(ConstParm, Parm, OutParm, ReferenceParm)
-};
-
-// PythonFunction PyAbility_ThrowBall.PySummonedComp_Ball.OnComponentHit
-// 0x01A0 (0x01A0 - 0x0000)
-struct PySummonedComp_Ball_OnComponentHit final
-{
-public:
-	class UPrimitiveComponent*                    Comp;                                              // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class AActor*                                 OtherActor;                                        // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class UPrimitiveComponent*                    OtherComp;                                         // 0x0010(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                Impulse;                                           // 0x0018(0x0018)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FHitResult                             Result;                                            // 0x0030(0x0170)(ConstParm, Parm, OutParm, ReferenceParm)
-};
-
-// PythonFunction PyAbility_ThrowBall.PySummonedComp_Ball.MulticastOnComponentHit
-// 0x0190 (0x0190 - 0x0000)
-struct PySummonedComp_Ball_MulticastOnComponentHit final
-{
-public:
-	struct FHitResult                             Result;                                            // 0x0000(0x0170)(ConstParm, Parm, OutParm, ReferenceParm)
-	bool                                          bIsThrowing;                                       // 0x0170(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_171[0x7];                                      // 0x0171(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                Impulse;                                           // 0x0178(0x0018)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-
-// PythonFunction PyAbility_ThrowBall.PyOverlapHandlerComponent_Ball.ApplyEffectOnActorOverlap
-// 0x0008 (0x0008 - 0x0000)
-struct PyOverlapHandlerComponent_Ball_ApplyEffectOnActorOverlap final
-{
-public:
-	class AActor*                                 InActor;                                           // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-};
-
 // PythonFunction PyAbility_ThrowBall.PyCue_Summoned_Loop_Ball.WhileActiveFX
 // 0x01C0 (0x01C0 - 0x0000)
 struct PyCue_Summoned_Loop_Ball_WhileActiveFX final
@@ -128,6 +79,63 @@ public:
 	struct FVector                                Impulse;                                           // 0x0178(0x0018)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 
+// PythonFunction PyAbility_ThrowBall.PySummonedComp_Ball.OnComponentHit
+// 0x01A0 (0x01A0 - 0x0000)
+struct PySummonedComp_Ball_OnComponentHit final
+{
+public:
+	class UPrimitiveComponent*                    Comp;                                              // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 OtherActor;                                        // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class UPrimitiveComponent*                    OtherComp;                                         // 0x0010(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                Impulse;                                           // 0x0018(0x0018)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FHitResult                             Result;                                            // 0x0030(0x0170)(ConstParm, Parm, OutParm, ReferenceParm)
+};
+
+// PythonFunction PyAbility_ThrowBall.PySummonedComp_Ball.MulticastOnComponentHit
+// 0x0190 (0x0190 - 0x0000)
+struct PySummonedComp_Ball_MulticastOnComponentHit final
+{
+public:
+	struct FHitResult                             Result;                                            // 0x0000(0x0170)(ConstParm, Parm, OutParm, ReferenceParm)
+	bool                                          bIsThrowing;                                       // 0x0170(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_171[0x7];                                      // 0x0171(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                Impulse;                                           // 0x0178(0x0018)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+
+// PythonFunction PyAbility_ThrowBall.PyUIController_ThrowBall.ReceiveTick
+// 0x0004 (0x0004 - 0x0000)
+struct PyUIController_ThrowBall_ReceiveTick final
+{
+public:
+	float                                         DeltaTime;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+
+// PythonFunction PyAbility_ThrowBall.PyOverlapHandlerComponent_Ball.ApplyEffectOnActorOverlap
+// 0x0008 (0x0008 - 0x0000)
+struct PyOverlapHandlerComponent_Ball_ApplyEffectOnActorOverlap final
+{
+public:
+	class AActor*                                 InActor;                                           // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+};
+
+// PythonFunction PyAbility_ThrowBall.PyCue_Buff_20050101.WhileActiveFX
+// 0x01C0 (0x01C0 - 0x0000)
+struct PyCue_Buff_20050101_WhileActiveFX final
+{
+public:
+	class AActor*                                 MyTarget;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	struct FGameplayCueParameters                 Parameters;                                        // 0x0008(0x01B8)(ConstParm, Parm, OutParm, ReferenceParm)
+};
+
+// PythonFunction PyAbility_ThrowBall.PyCue_Buff_20050101.OnRemoveFX
+// 0x01C0 (0x01C0 - 0x0000)
+struct PyCue_Buff_20050101_OnRemoveFX final
+{
+public:
+	class AActor*                                 MyTarget;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	struct FGameplayCueParameters                 Parameters;                                        // 0x0008(0x01B8)(ConstParm, Parm, OutParm, ReferenceParm)
+};
+
 // PythonFunction PyAbility_ThrowBall.PyAbility_ThrowBall.NativeOnMontageCompleted
 // 0x0010 (0x0010 - 0x0000)
 struct PyAbility_ThrowBall_NativeOnMontageCompleted final
@@ -175,14 +183,6 @@ struct PyAbility_ThrowBall_ServerThrowEndPoint final
 public:
 	struct FVector                                TargetPoint;                                       // 0x0000(0x0018)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         HoldTime;                                          // 0x0018(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-
-// PythonFunction PyAbility_ThrowBall.PyUIController_ThrowBall.ReceiveTick
-// 0x0004 (0x0004 - 0x0000)
-struct PyUIController_ThrowBall_ReceiveTick final
-{
-public:
-	float                                         DeltaTime;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 
 }

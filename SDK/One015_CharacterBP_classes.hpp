@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass 1015_CharacterBP.1015_CharacterBP_C
-// 0x0000 (0x1890 - 0x1890)
+// 0x0000 (0x18F0 - 0x18F0)
 class AOne015_CharacterBP_C final : public APyStormCharacter
 {
 public:

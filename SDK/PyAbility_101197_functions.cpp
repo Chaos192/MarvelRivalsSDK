@@ -39,7 +39,7 @@ void UPyAbility_101197::BeginPlay()
 // PythonFunction PyAbility_101197.PyAbility_101197.K2_ActivateAbilityFromEvent
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayEventData               EventData                                              (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayEventData&        EventData                                              (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyAbility_101197::K2_ActivateAbilityFromEvent(const struct FGameplayEventData& EventData)
 {
@@ -127,7 +127,7 @@ void UPyAbility_101197::Python_OnRideCancel()
 // PythonFunction PyAbility_101197.PyAbility_101197.OnOwnerTagUpdated
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FGameplayTag                     Tag                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              Tag                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
 // bool                                    Exist                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UPyAbility_101197::OnOwnerTagUpdated(const struct FGameplayTag& Tag, bool Exist)
@@ -154,7 +154,7 @@ void UPyAbility_101197::OnOwnerTagUpdated(const struct FGameplayTag& Tag, bool E
 // PythonFunction PyAbility_101197.PyAbility_101197.OnConfimedTargetTagUpdated
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FGameplayTag                     Tag                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              Tag                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
 // bool                                    Exist                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UPyAbility_101197::OnConfimedTargetTagUpdated(const struct FGameplayTag& Tag, bool Exist)

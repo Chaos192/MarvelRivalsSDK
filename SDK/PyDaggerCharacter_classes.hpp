@@ -10,46 +10,23 @@
 
 #include "Basic.hpp"
 
-#include "PyUIController_CharacterAbilities_classes.hpp"
 #include "Hero_1025_structs.hpp"
 #include "Hero_1025_classes.hpp"
 #include "Engine_structs.hpp"
+#include "PyUIController_CharacterAbilities_classes.hpp"
 #include "PyMarvelUserWidget_classes.hpp"
 
 
 namespace SDK
 {
 
-// PythonClass PyDaggerCharacter.PyUIController_CloakAndDaggerAbilities
-// 0x0008 (0x0048 - 0x0040)
-class UPyUIController_CloakAndDaggerAbilities final : public UPyUIController_CharacterAbilities
-{
-public:
-	TSubclassOf<class UUserWidget>                SkillCDListClass;                                  // 0x0040(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-public:
-	void Construct();
-	void Destruct();
-	void OnMarvelSculptChanged(int32 sculpt_id);
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"PyUIController_CloakAndDaggerAbilities">();
-	}
-	static class UPyUIController_CloakAndDaggerAbilities* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UPyUIController_CloakAndDaggerAbilities>();
-	}
-};
-
 // PythonClass PyDaggerCharacter.PyCloakAndDaggerCharacter
-// 0x0010 (0x1830 - 0x1820)
+// 0x0010 (0x1890 - 0x1880)
 class APyCloakAndDaggerCharacter : public ACloakAndDaggerCharacter
 {
 public:
-	class UMarveSculptConfigComponent*            DaggerHeroSculptConfigComponent;                   // 0x1820(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UMarveSculptConfigComponent*            CloakHeroSculptConfigComponent;                    // 0x1828(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UMarveSculptConfigComponent*            DaggerHeroSculptConfigComponent;                   // 0x1880(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UMarveSculptConfigComponent*            CloakHeroSculptConfigComponent;                    // 0x1888(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void ReceiveBeginPlay();
@@ -82,6 +59,29 @@ public:
 	static class UPyWidget_AbilityHUD_1025SkillCDList* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UPyWidget_AbilityHUD_1025SkillCDList>();
+	}
+};
+
+// PythonClass PyDaggerCharacter.PyUIController_CloakAndDaggerAbilities
+// 0x0008 (0x0048 - 0x0040)
+class UPyUIController_CloakAndDaggerAbilities final : public UPyUIController_CharacterAbilities
+{
+public:
+	TSubclassOf<class UUserWidget>                SkillCDListClass;                                  // 0x0040(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	void Construct();
+	void Destruct();
+	void OnMarvelSculptChanged(int32 sculpt_id);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PyUIController_CloakAndDaggerAbilities">();
+	}
+	static class UPyUIController_CloakAndDaggerAbilities* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPyUIController_CloakAndDaggerAbilities>();
 	}
 };
 

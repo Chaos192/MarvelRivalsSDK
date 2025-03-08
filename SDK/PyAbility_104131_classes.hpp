@@ -19,12 +19,13 @@ namespace SDK
 {
 
 // PythonClass PyAbility_104131.PyProjectile_10413102
-// 0x0010 (0x3060 - 0x3050)
+// 0x0010 (0x3120 - 0x3110)
 class APyProjectile_10413102 : public AMarvelAbilityTargetActor_Projectile
 {
 public:
-	class UProjectileHomingComponent*             HomingComponent;                                   // 0x3050(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          IsRealHit;                                         // 0x3058(0x0001)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3108[0x8];                                     // 0x3108(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	class UProjectileHomingComponent*             HomingComponent;                                   // 0x3110(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsRealHit;                                         // 0x3118(0x0001)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void K2_OnInitializeData();
@@ -72,14 +73,15 @@ public:
 };
 
 // PythonClass PyAbility_104131.PyProjectile_10413101
-// 0x0020 (0x3070 - 0x3050)
+// 0x0020 (0x3130 - 0x3110)
 class APyProjectile_10413101 : public AMarvelAbilityTargetActor_Projectile
 {
 public:
-	float                                         AccumulateTime;                                    // 0x3050(0x0004)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_3054[0x4];                                     // 0x3054(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class APyProjectile_10413102*                 BackProjectile;                                    // 0x3058(0x0008)(BlueprintVisible, Net, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          IsRealHit;                                         // 0x3060(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3108[0x8];                                     // 0x3108(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         AccumulateTime;                                    // 0x3110(0x0004)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3114[0x4];                                     // 0x3114(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class APyProjectile_10413102*                 BackProjectile;                                    // 0x3118(0x0008)(BlueprintVisible, Net, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsRealHit;                                         // 0x3120(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void K2_OnInitializeData();
@@ -119,15 +121,15 @@ public:
 };
 
 // PythonClass PyAbility_104131.PyAbility_104131
-// 0x0028 (0x2790 - 0x2768)
+// 0x0028 (0x2798 - 0x2770)
 class UPyAbility_104131 : public UAbility_104131
 {
 public:
-	class APyProjectile_10413101*                 LaunchProjectile;                                  // 0x2768(0x0008)(BlueprintVisible, Net, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          AbilityIsRealHit;                                  // 0x2770(0x0001)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2771[0x7];                                     // 0x2771(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UMarvelAbilityTask_NetworkSyncPointWithPayload* NetSyncTask;                                       // 0x2778(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void()>              OnTriggerAbility;                                  // 0x2780(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	class APyProjectile_10413101*                 LaunchProjectile;                                  // 0x2770(0x0008)(BlueprintVisible, Net, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          AbilityIsRealHit;                                  // 0x2778(0x0001)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2779[0x7];                                     // 0x2779(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UMarvelAbilityTask_NetworkSyncPointWithPayload* NetSyncTask;                               // 0x2780(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void()>              OnTriggerAbility;                                  // 0x2788(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 
 public:
 	void BeginPlay();
@@ -185,7 +187,7 @@ public:
 };
 
 // PythonClass PyAbility_104131.PyUIController_104131
-// 0x0000 (0x0C78 - 0x0C78)
+// 0x0000 (0x0C68 - 0x0C68)
 class UPyUIController_104131 final : public UUIController_104131
 {
 public:

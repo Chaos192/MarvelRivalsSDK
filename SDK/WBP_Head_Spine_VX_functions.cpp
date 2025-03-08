@@ -54,7 +54,7 @@ void UWBP_Head_Spine_VX_C::ExecuteUbergraph_WBP_Head_Spine_VX(int32 EntryPoint)
 // Function WBP_Head_Spine_VX.WBP_Head_Spine_VX_C.Tick
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// struct FGeometry                        MyGeometry                                             (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
+// const struct FGeometry&                 MyGeometry                                             (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
 // float                                   InDeltaTime                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UWBP_Head_Spine_VX_C::Tick(const struct FGeometry& MyGeometry, float InDeltaTime)

@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Marvel_classes.hpp"
 #include "Hero_1020_classes.hpp"
+#include "Marvel_classes.hpp"
 #include "PyUIController_CharacterAbilities_classes.hpp"
 
 
@@ -34,13 +34,13 @@ public:
 };
 
 // PythonClass PyMantisCharacter.PyMantisCharacter
-// 0x0020 (0x1850 - 0x1830)
+// 0x0020 (0x18A0 - 0x1880)
 class APyMantisCharacter : public AMantisCharacter
 {
 public:
-	int32                                         HealingBuffID;                                     // 0x1830(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         BoostedBuffID;                                     // 0x1834(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class AMarvelBaseCharacter* Target, int32 Action)> OnBuffedTeammatesUpdateDispatcher;                 // 0x1838(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	int32                                         HealingBuffID;                                     // 0x1880(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         BoostedBuffID;                                     // 0x1884(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class AMarvelBaseCharacter* Target, int32 Action)> OnBuffedTeammatesUpdateDispatcher; // 0x1888(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()

@@ -77,7 +77,7 @@ void UPyWidget_Common_SceneMask::Destruct()
 // PythonFunction PyWidget_Common_SceneMask.PyWidget_Common_SceneMask.OnAnimationFinished
 // (BlueprintCosmetic, Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UWidgetAnimation*                 Animation                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// const class UWidgetAnimation*           Animation                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 void UPyWidget_Common_SceneMask::OnAnimationFinished(const class UWidgetAnimation* Animation)
 {

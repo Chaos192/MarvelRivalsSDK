@@ -62,11 +62,11 @@ public:
 };
 
 // PythonClass PyAbility_104771.PyAbility_104771_New
-// 0x0008 (0x2A30 - 0x2A28)
+// 0x0008 (0x2A38 - 0x2A30)
 class UPyAbility_104771_New : public UAbility_104771
 {
 public:
-	EAbilityCameraState_104771                    AbilityCameraState;                                // 0x2A28(0x0001)(Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EAbilityCameraState_104771                    AbilityCameraState;                                // 0x2A30(0x0001)(Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void OnRep_AbilityCameraState();
@@ -120,7 +120,7 @@ public:
 };
 
 // PythonClass PyAbility_104771.PyUIController_104771
-// 0x0000 (0x0C60 - 0x0C60)
+// 0x0000 (0x0C50 - 0x0C50)
 class UPyUIController_104771 final : public UUIC_Ability
 {
 public:

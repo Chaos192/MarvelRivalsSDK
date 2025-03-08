@@ -39,7 +39,7 @@ public:
 	void K2_OnDeInitialize();
 	void K2_OnInitialize();
 	void ResetScoreReportConfig(float NewLSThreshold, float NewRSThreshold, float NewLTThreshold, float NewRTThreshold, float NewInterval);
-	void SendWarning(const class FString& WarningStr);
+	void SendWarning(const TArray<int32>& LSScores, const TArray<int32>& RSScores, const TArray<int32>& LTScores, const TArray<int32>& RTScores);
 	void SetDeviceInfo(int32 vendorId_0, int32 ProductId_0);
 	void WriteToLog();
 

@@ -20,7 +20,7 @@ namespace SDK
 // PythonFunction ability_condition.PyAIConditionBase.CouldPass
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FRequiredAIDataForAutoAbility    AIAutoAbilityContext                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
+// const struct FRequiredAIDataForAutoAbility&AIAutoAbilityContext                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 bool UPyAIConditionBase::CouldPass(const struct FRequiredAIDataForAutoAbility& AIAutoAbilityContext)

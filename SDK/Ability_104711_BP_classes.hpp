@@ -18,11 +18,11 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Ability_104711_BP.Ability_104711_BP_C
-// 0x0008 (0x25D8 - 0x25D0)
+// 0x0008 (0x25E0 - 0x25D8)
 class UAbility_104711_BP_C final : public UAbility_104711
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x25D0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x25D8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
 	void DelayEnterSectionEnd();

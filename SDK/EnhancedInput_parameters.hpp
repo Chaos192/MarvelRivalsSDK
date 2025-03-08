@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "GameplayTags_structs.hpp"
 #include "EnhancedInput_structs.hpp"
 #include "InputCore_structs.hpp"
-#include "GameplayTags_structs.hpp"
 #include "CoreUObject_structs.hpp"
 
 
@@ -545,7 +545,7 @@ public:
 struct EnhancedInputSubsystemInterface_OnUserKeyProfileChanged final
 {
 public:
-	const class UEnhancedPlayerMappableKeyProfile* InNewProfile;                                      // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	const class UEnhancedPlayerMappableKeyProfile* InNewProfile;                                     // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
 // Function EnhancedInput.EnhancedInputSubsystemInterface.OnUserSettingsChanged

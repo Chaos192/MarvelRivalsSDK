@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "GameplayTags_structs.hpp"
 #include "Marvel_structs.hpp"
 #include "Marvel_classes.hpp"
+#include "GameplayTags_structs.hpp"
 #include "Hero_1014_structs.hpp"
 #include "Hero_1014_classes.hpp"
 #include "DeclarativeUnreal_structs.hpp"
@@ -47,11 +47,11 @@ public:
 };
 
 // PythonClass PyAbility_101461.PySummoner_101461
-// 0x0010 (0x0AB0 - 0x0AA0)
+// 0x0010 (0x0AE0 - 0x0AD0)
 class APySummoner_101461 : public ASummoned_10146101
 {
 public:
-	TMulticastInlineDelegate<void()>              OnTurretGetOutStart;                               // 0x0AA0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void()>              OnTurretGetOutStart;                               // 0x0AD0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 
 public:
 	void K2_OnBeginAgentTask();
@@ -69,13 +69,13 @@ public:
 };
 
 // PythonClass PyAbility_101461.PyAbility_101461
-// 0x0018 (0x2598 - 0x2580)
+// 0x0018 (0x25A0 - 0x2588)
 class UPyAbility_101461 : public UMarvelGameplayAbility
 {
 public:
-	int32                                         CurTurretState;                                    // 0x2580(0x0004)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         DistanceThreshole;                                 // 0x2584(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(bool InTurret)> TurretStateDispatcher;                             // 0x2588(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	int32                                         CurTurretState;                                    // 0x2588(0x0004)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         DistanceThreshole;                                 // 0x258C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(bool InTurret)> TurretStateDispatcher;                             // 0x2590(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 
 public:
 	void BeginPlay();
@@ -179,7 +179,7 @@ public:
 };
 
 // PythonClass PyAbility_101461.PyUIController_101461
-// 0x0000 (0x0C60 - 0x0C60)
+// 0x0000 (0x0C50 - 0x0C50)
 class UPyUIController_101461 final : public UUIC_Ability
 {
 public:

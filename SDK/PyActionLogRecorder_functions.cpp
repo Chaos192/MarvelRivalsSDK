@@ -58,9 +58,9 @@ void UPyActionLogRecorder::OnShutdown()
 // PythonFunction PyActionLogRecorder.PyActionLogRecorder.OnRecordActorDeath
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FActionLogDeathExtraInfo         DeathExtraInfo                                         (Parm, OutParm, NoDestructor)
-// struct FActionLogBattleContext          BattleContext                                          (Parm, OutParm)
-// struct FAttributeModifierHandle         ParameterHandle                                        (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
+// struct FActionLogDeathExtraInfo*        DeathExtraInfo                                         (Parm, OutParm, NoDestructor)
+// struct FActionLogBattleContext*         BattleContext                                          (Parm, OutParm)
+// const struct FAttributeModifierHandle&  ParameterHandle                                        (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
 
 void UPyActionLogRecorder::OnRecordActorDeath(struct FActionLogDeathExtraInfo* DeathExtraInfo, struct FActionLogBattleContext* BattleContext, const struct FAttributeModifierHandle& ParameterHandle)
 {
@@ -91,7 +91,7 @@ void UPyActionLogRecorder::OnRecordActorDeath(struct FActionLogDeathExtraInfo* D
 // PythonFunction PyActionLogRecorder.PyActionLogRecorder.OnRecordHeroSwitchOut
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FActionLogHeroUseRecord          HeroUseRecord                                          (Parm, OutParm, NoDestructor)
+// struct FActionLogHeroUseRecord*         HeroUseRecord                                          (Parm, OutParm, NoDestructor)
 
 void UPyActionLogRecorder::OnRecordHeroSwitchOut(struct FActionLogHeroUseRecord* HeroUseRecord)
 {
@@ -167,7 +167,7 @@ void UPyActionLogRecorder::OnRecordAbilityUseInfo(class UPyObjectWrapper* Abilit
 // PythonFunction PyActionLogRecorder.PyActionLogRecorder.OnRecordActorDamages
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FActionLogDamageMerge            LogStruct                                              (Parm)
+// const struct FActionLogDamageMerge&     LogStruct                                              (Parm)
 
 void UPyActionLogRecorder::OnRecordActorDamages(const struct FActionLogDamageMerge& LogStruct)
 {
@@ -192,8 +192,8 @@ void UPyActionLogRecorder::OnRecordActorDamages(const struct FActionLogDamageMer
 // PythonFunction PyActionLogRecorder.PyActionLogRecorder.OnRecordActorDamage
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FActionLogBattleContext          BattleContext                                          (ConstParm, Parm, OutParm, ReferenceParm)
-// struct FAttributeModifierHandle         ParameterHandle                                        (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
+// const struct FActionLogBattleContext&   BattleContext                                          (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FAttributeModifierHandle&  ParameterHandle                                        (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
 
 void UPyActionLogRecorder::OnRecordActorDamage(const struct FActionLogBattleContext& BattleContext, const struct FAttributeModifierHandle& ParameterHandle)
 {
@@ -220,7 +220,7 @@ void UPyActionLogRecorder::OnRecordActorDamage(const struct FActionLogBattleCont
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // EActionLogHealType                      HealType                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FActionLogDamageMerge            LogStruct                                              (Parm)
+// const struct FActionLogDamageMerge&     LogStruct                                              (Parm)
 
 void UPyActionLogRecorder::OnRecordActorHeals(EActionLogHealType HealType, const struct FActionLogDamageMerge& LogStruct)
 {
@@ -248,8 +248,8 @@ void UPyActionLogRecorder::OnRecordActorHeals(EActionLogHealType HealType, const
 // Parameters:
 // EActionLogHealType                      HealType                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    IsNearDeathHeal                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FActionLogBattleContext          BattleContext                                          (Parm, OutParm)
-// struct FAttributeModifierHandle         ParameterHandle                                        (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
+// struct FActionLogBattleContext*         BattleContext                                          (Parm, OutParm)
+// const struct FAttributeModifierHandle&  ParameterHandle                                        (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
 
 void UPyActionLogRecorder::OnRecordActorHeal(EActionLogHealType HealType, bool IsNearDeathHeal, struct FActionLogBattleContext* BattleContext, const struct FAttributeModifierHandle& ParameterHandle)
 {
@@ -304,7 +304,7 @@ void UPyActionLogRecorder::OnRecordBuffInfoCVer(class UPyObjectWrapper* Buff)
 // PythonFunction PyActionLogRecorder.PyActionLogRecorder.OnRecordBuffInfo
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FActionLogBuffRecord             BuffRecord                                             (Parm, OutParm)
+// struct FActionLogBuffRecord*            BuffRecord                                             (Parm, OutParm)
 
 void UPyActionLogRecorder::OnRecordBuffInfo(struct FActionLogBuffRecord* BuffRecord)
 {
@@ -330,7 +330,7 @@ void UPyActionLogRecorder::OnRecordBuffInfo(struct FActionLogBuffRecord* BuffRec
 // PythonFunction PyActionLogRecorder.PyActionLogRecorder.OnRecordHeroSculptIDChange
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FActionLogHeroSculptIDChangeRecordChangeRecord                                           (Parm, OutParm, NoDestructor)
+// struct FActionLogHeroSculptIDChangeRecord*ChangeRecord                                           (Parm, OutParm, NoDestructor)
 
 void UPyActionLogRecorder::OnRecordHeroSculptIDChange(struct FActionLogHeroSculptIDChangeRecord* ChangeRecord)
 {
@@ -381,7 +381,7 @@ void UPyActionLogRecorder::OnRecordEnergyChangedCVer(class UPyObjectWrapper* Ene
 // PythonFunction PyActionLogRecorder.PyActionLogRecorder.OnRecordEnergyChanged
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FActionLogEnergyChangeRecord     EnergyChangeRecord                                     (Parm, OutParm, NoDestructor)
+// struct FActionLogEnergyChangeRecord*    EnergyChangeRecord                                     (Parm, OutParm, NoDestructor)
 
 void UPyActionLogRecorder::OnRecordEnergyChanged(struct FActionLogEnergyChangeRecord* EnergyChangeRecord)
 {
@@ -407,7 +407,7 @@ void UPyActionLogRecorder::OnRecordEnergyChanged(struct FActionLogEnergyChangeRe
 // PythonFunction PyActionLogRecorder.PyActionLogRecorder.OnRecordSummonedInfo
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FActionLogSummonedRecord         SummonedRecord                                         (Parm, OutParm)
+// struct FActionLogSummonedRecord*        SummonedRecord                                         (Parm, OutParm)
 
 void UPyActionLogRecorder::OnRecordSummonedInfo(struct FActionLogSummonedRecord* SummonedRecord)
 {
@@ -433,7 +433,7 @@ void UPyActionLogRecorder::OnRecordSummonedInfo(struct FActionLogSummonedRecord*
 // PythonFunction PyActionLogRecorder.PyActionLogRecorder.OnRecordCompetitionInfo
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FActionLogCompetitionRecord      CompetitionRecord                                      (Parm, OutParm, NoDestructor)
+// struct FActionLogCompetitionRecord*     CompetitionRecord                                      (Parm, OutParm, NoDestructor)
 
 void UPyActionLogRecorder::OnRecordCompetitionInfo(struct FActionLogCompetitionRecord* CompetitionRecord)
 {
@@ -459,7 +459,7 @@ void UPyActionLogRecorder::OnRecordCompetitionInfo(struct FActionLogCompetitionR
 // PythonFunction PyActionLogRecorder.PyActionLogRecorder.OnRecordUltimateRelease
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FActionLogUltimateRelease        ReleaseRecord                                          (Parm, OutParm, NoDestructor)
+// struct FActionLogUltimateRelease*       ReleaseRecord                                          (Parm, OutParm, NoDestructor)
 
 void UPyActionLogRecorder::OnRecordUltimateRelease(struct FActionLogUltimateRelease* ReleaseRecord)
 {
@@ -485,8 +485,8 @@ void UPyActionLogRecorder::OnRecordUltimateRelease(struct FActionLogUltimateRele
 // PythonFunction PyActionLogRecorder.PyActionLogRecorder.OnRecordAbilityExtraNormal
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FAbilityExtraBaseInfo            BaseInfo                                               (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
-// class FString                           ExtraKey                                               (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const struct FAbilityExtraBaseInfo&     BaseInfo                                               (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
+// const class FString&                    ExtraKey                                               (Parm, ZeroConstructor, HasGetValueTypeHash)
 // float                                   ExtraValue                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UPyActionLogRecorder::OnRecordAbilityExtraNormal(const struct FAbilityExtraBaseInfo& BaseInfo, const class FString& ExtraKey, float ExtraValue)
@@ -514,9 +514,9 @@ void UPyActionLogRecorder::OnRecordAbilityExtraNormal(const struct FAbilityExtra
 // PythonFunction PyActionLogRecorder.PyActionLogRecorder.OnRecordAbilityExtraHitRate
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FAbilityExtraBaseInfo            BaseInfo                                               (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
-// class FString                           ExtraKey                                               (Parm, ZeroConstructor, HasGetValueTypeHash)
-// struct FAbilityExtraHitRate             ExtraHitRate                                           (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
+// const struct FAbilityExtraBaseInfo&     BaseInfo                                               (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
+// const class FString&                    ExtraKey                                               (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const struct FAbilityExtraHitRate&      ExtraHitRate                                           (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
 
 void UPyActionLogRecorder::OnRecordAbilityExtraHitRate(const struct FAbilityExtraBaseInfo& BaseInfo, const class FString& ExtraKey, const struct FAbilityExtraHitRate& ExtraHitRate)
 {
@@ -543,7 +543,7 @@ void UPyActionLogRecorder::OnRecordAbilityExtraHitRate(const struct FAbilityExtr
 // PythonFunction PyActionLogRecorder.PyActionLogRecorder.OnRecordFirstEnterBattle
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FActionLogFirstEnterBattle       FirstEnterBattle                                       (Parm, OutParm, NoDestructor)
+// struct FActionLogFirstEnterBattle*      FirstEnterBattle                                       (Parm, OutParm, NoDestructor)
 
 void UPyActionLogRecorder::OnRecordFirstEnterBattle(struct FActionLogFirstEnterBattle* FirstEnterBattle)
 {
@@ -569,7 +569,7 @@ void UPyActionLogRecorder::OnRecordFirstEnterBattle(struct FActionLogFirstEnterB
 // PythonFunction PyActionLogRecorder.PyActionLogRecorder.OnRecordHealPackRefreshInfo
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           HealPackName                                           (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    HealPackName                                           (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyActionLogRecorder::OnRecordHealPackRefreshInfo(const class FString& HealPackName)
 {
@@ -594,7 +594,7 @@ void UPyActionLogRecorder::OnRecordHealPackRefreshInfo(const class FString& Heal
 // PythonFunction PyActionLogRecorder.PyActionLogRecorder.OnRecordLevelTriggerInfo
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FActionLogLevelTriggerInfo       LevelTriggerInfo                                       (Parm, OutParm)
+// struct FActionLogLevelTriggerInfo*      LevelTriggerInfo                                       (Parm, OutParm)
 
 void UPyActionLogRecorder::OnRecordLevelTriggerInfo(struct FActionLogLevelTriggerInfo* LevelTriggerInfo)
 {
@@ -620,8 +620,8 @@ void UPyActionLogRecorder::OnRecordLevelTriggerInfo(struct FActionLogLevelTrigge
 // PythonFunction PyActionLogRecorder.PyActionLogRecorder.OnRecordDestructionDamage
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FActionLogDestructionDamage      DestructionDamage                                      (Parm, OutParm, NoDestructor)
-// struct FDestructionExtraInfo            ExtraInfo                                              (ConstParm, Parm, OutParm, ReferenceParm)
+// struct FActionLogDestructionDamage*     DestructionDamage                                      (Parm, OutParm, NoDestructor)
+// const struct FDestructionExtraInfo&     ExtraInfo                                              (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyActionLogRecorder::OnRecordDestructionDamage(struct FActionLogDestructionDamage* DestructionDamage, const struct FDestructionExtraInfo& ExtraInfo)
 {
@@ -649,7 +649,7 @@ void UPyActionLogRecorder::OnRecordDestructionDamage(struct FActionLogDestructio
 // PythonFunction PyActionLogRecorder.PyActionLogRecorder.OnRecordChaosDamages
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FActionLogChaosLogInfos          ChaosInfos                                             (Parm)
+// const struct FActionLogChaosLogInfos&   ChaosInfos                                             (Parm)
 
 void UPyActionLogRecorder::OnRecordChaosDamages(const struct FActionLogChaosLogInfos& ChaosInfos)
 {
@@ -674,7 +674,7 @@ void UPyActionLogRecorder::OnRecordChaosDamages(const struct FActionLogChaosLogI
 // PythonFunction PyActionLogRecorder.PyActionLogRecorder.OnRecordChaosDamage
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FActionLogChaosLogInfo           ChaosInfo                                              (Parm)
+// const struct FActionLogChaosLogInfo&    ChaosInfo                                              (Parm)
 
 void UPyActionLogRecorder::OnRecordChaosDamage(const struct FActionLogChaosLogInfo& ChaosInfo)
 {
@@ -699,7 +699,7 @@ void UPyActionLogRecorder::OnRecordChaosDamage(const struct FActionLogChaosLogIn
 // PythonFunction PyActionLogRecorder.PyActionLogRecorder.OnRecordChaosBreaks
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FActionLogChaosLogInfos          ChaosInfos                                             (Parm)
+// const struct FActionLogChaosLogInfos&   ChaosInfos                                             (Parm)
 
 void UPyActionLogRecorder::OnRecordChaosBreaks(const struct FActionLogChaosLogInfos& ChaosInfos)
 {
@@ -724,7 +724,7 @@ void UPyActionLogRecorder::OnRecordChaosBreaks(const struct FActionLogChaosLogIn
 // PythonFunction PyActionLogRecorder.PyActionLogRecorder.OnRecordChaosBreak
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FActionLogChaosLogInfo           ChaosInfo                                              (Parm)
+// const struct FActionLogChaosLogInfo&    ChaosInfo                                              (Parm)
 
 void UPyActionLogRecorder::OnRecordChaosBreak(const struct FActionLogChaosLogInfo& ChaosInfo)
 {
@@ -749,7 +749,7 @@ void UPyActionLogRecorder::OnRecordChaosBreak(const struct FActionLogChaosLogInf
 // PythonFunction PyActionLogRecorder.PyActionLogRecorder.OnRecordChaosRecover
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FActionLogChaosLogInfo           ChaosInfo                                              (Parm)
+// const struct FActionLogChaosLogInfo&    ChaosInfo                                              (Parm)
 
 void UPyActionLogRecorder::OnRecordChaosRecover(const struct FActionLogChaosLogInfo& ChaosInfo)
 {
@@ -774,7 +774,7 @@ void UPyActionLogRecorder::OnRecordChaosRecover(const struct FActionLogChaosLogI
 // PythonFunction PyActionLogRecorder.PyActionLogRecorder.OnRecordChaosCollapse
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FActionLogChaosLogInfo           ChaosInfo                                              (Parm)
+// const struct FActionLogChaosLogInfo&    ChaosInfo                                              (Parm)
 
 void UPyActionLogRecorder::OnRecordChaosCollapse(const struct FActionLogChaosLogInfo& ChaosInfo)
 {
@@ -799,7 +799,7 @@ void UPyActionLogRecorder::OnRecordChaosCollapse(const struct FActionLogChaosLog
 // PythonFunction PyActionLogRecorder.PyActionLogRecorder.OnRecordChaosEndPlay
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FActionLogChaosLogInfo           ChaosInfo                                              (Parm)
+// const struct FActionLogChaosLogInfo&    ChaosInfo                                              (Parm)
 
 void UPyActionLogRecorder::OnRecordChaosEndPlay(const struct FActionLogChaosLogInfo& ChaosInfo)
 {
@@ -824,7 +824,7 @@ void UPyActionLogRecorder::OnRecordChaosEndPlay(const struct FActionLogChaosLogI
 // PythonFunction PyActionLogRecorder.PyActionLogRecorder.OnRecordTeamComposition
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FActionLogTeamComposition        TeamComposition                                        (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FActionLogTeamComposition& TeamComposition                                        (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyActionLogRecorder::OnRecordTeamComposition(const struct FActionLogTeamComposition& TeamComposition)
 {

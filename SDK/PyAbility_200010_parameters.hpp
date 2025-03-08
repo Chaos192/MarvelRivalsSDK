@@ -10,20 +10,12 @@
 
 #include "Basic.hpp"
 
-#include "GameplayAbilities_structs.hpp"
 #include "GameplayTags_structs.hpp"
+#include "GameplayAbilities_structs.hpp"
 
 
 namespace SDK::Params
 {
-
-// PythonFunction PyAbility_200010.PyAbility_200010.K2_OnEndAbility
-// 0x0001 (0x0001 - 0x0000)
-struct PyAbility_200010_K2_OnEndAbility final
-{
-public:
-	bool                                          bWasCancelled;                                     // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
 
 // PythonFunction PyAbility_200010.PyAbility_200010.K2_CanActivateAbility
 // 0x00D0 (0x00D0 - 0x0000)

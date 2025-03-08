@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "PyAbility_102741_classes.hpp"
-#include "DeclarativeUnreal_structs.hpp"
 #include "Hero_1027_classes.hpp"
+#include "DeclarativeUnreal_structs.hpp"
 #include "Marvel_classes.hpp"
 
 
@@ -20,7 +20,7 @@ namespace SDK
 {
 
 // PythonClass PyAbility_102751.PyAbility_102751
-// 0x0000 (0x25F0 - 0x25F0)
+// 0x0000 (0x25F8 - 0x25F8)
 class UPyAbility_102751 : public UPyAbility_102741
 {
 public:
@@ -37,12 +37,31 @@ public:
 	}
 };
 
+// PythonClass PyAbility_102751.PyUIController_102751
+// 0x0000 (0x0C50 - 0x0C50)
+class UPyUIController_102751 final : public UUIC_Ability
+{
+public:
+	void SetAbility(int32 InAbilityId, class UGameplayAbility* InAbility);
+	void OnDestruct();
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PyUIController_102751">();
+	}
+	static class UPyUIController_102751* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPyUIController_102751>();
+	}
+};
+
 // PythonClass PyAbility_102751.PyCue_Summoner_Loop_10275101
-// 0x0010 (0x1330 - 0x1320)
+// 0x0010 (0x12F0 - 0x12E0)
 class APyCue_Summoner_Loop_10275101 final : public ACue_Summoner_Loop_10275101
 {
 public:
-	struct FDeclarationHolder                     ViewerSideWatcher;                                 // 0x1320(0x0010)(NativeAccessSpecifierPublic)
+	struct FDeclarationHolder                     ViewerSideWatcher;                                 // 0x12E0(0x0010)(NativeAccessSpecifierPublic)
 
 public:
 	bool WhileActive(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters);
@@ -61,25 +80,6 @@ public:
 	static class APyCue_Summoner_Loop_10275101* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<APyCue_Summoner_Loop_10275101>();
-	}
-};
-
-// PythonClass PyAbility_102751.PyUIController_102751
-// 0x0000 (0x0C60 - 0x0C60)
-class UPyUIController_102751 final : public UUIC_Ability
-{
-public:
-	void SetAbility(int32 InAbilityId, class UGameplayAbility* InAbility);
-	void OnDestruct();
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"PyUIController_102751">();
-	}
-	static class UPyUIController_102751* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UPyUIController_102751>();
 	}
 };
 

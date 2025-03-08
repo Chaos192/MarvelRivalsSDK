@@ -95,7 +95,7 @@ void UPyReticleManager::UpdateViewCharacterNextFrame(class AActor* InActor)
 // PythonFunction PyWidget_CommonReticle.PyReticleManager.OverwriteReticleStyleByUserSetting
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FReticleStyle                    InReticleStyle                                         (Parm, NoDestructor)
+// const struct FReticleStyle&             InReticleStyle                                         (Parm, NoDestructor)
 // struct FReticleStyle                    ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor)
 
 struct FReticleStyle UPyReticleManager::OverwriteReticleStyleByUserSetting(const struct FReticleStyle& InReticleStyle)
@@ -355,7 +355,7 @@ void UPyWidget_CommonReticle::OnCharReloadEnd()
 // Parameters:
 // class AActor*                           InSourceAvatar                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // class AActor*                           InTargetAvatar                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FAttributeModifierHandle         ParameterHandle                                        (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
+// const struct FAttributeModifierHandle&  ParameterHandle                                        (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
 
 void UPyWidget_CommonReticle::OnHitTarget(class AActor* InSourceAvatar, class AActor* InTargetAvatar, const struct FAttributeModifierHandle& ParameterHandle)
 {

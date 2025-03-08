@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "Hero_1015_classes.hpp"
 #include "GameplayTags_structs.hpp"
 #include "Marvel_classes.hpp"
-#include "Hero_1015_classes.hpp"
 
 
 namespace SDK
@@ -58,7 +58,7 @@ public:
 };
 
 // PythonClass PyAbility_101541.PyUIController_101541
-// 0x0000 (0x1C50 - 0x1C50)
+// 0x0000 (0x1C40 - 0x1C40)
 class UPyUIController_101541 final : public UUIController_101541
 {
 public:
@@ -79,7 +79,7 @@ public:
 };
 
 // PythonClass PyAbility_101541.PyAbility_101541
-// 0x0000 (0x2588 - 0x2588)
+// 0x0000 (0x2590 - 0x2590)
 class UPyAbility_101541 : public UAbility_101541
 {
 public:

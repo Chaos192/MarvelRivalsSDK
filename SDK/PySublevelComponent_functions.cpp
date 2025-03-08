@@ -159,7 +159,7 @@ void UPySublevelComponent::OnRep_HidenBattleEnvState()
 // PythonFunction PySublevelComponent.PySublevelComponent.GetLevelInstanceActor
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class FString                           instance_name                                          (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    instance_name                                          (Parm, ZeroConstructor, HasGetValueTypeHash)
 // class AActor*                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash)
 
 class AActor* UPySublevelComponent::GetLevelInstanceActor(const class FString& instance_name)

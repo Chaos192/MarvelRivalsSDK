@@ -17,12 +17,12 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Summoned_10325101_V2_BP.Summoned_10325101_V2_BP_C
-// 0x0010 (0x1260 - 0x1250)
+// 0x0010 (0x12A0 - 0x1290)
 class ASummoned_10325101_V2_BP_C final : public ASummoned_V2_10325101
 {
 public:
-	class UMarvelHitShape_Sphere*                 MarvelHitShape_Sphere;                             // 0x1250(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UCameraComponent*                       Camera;                                            // 0x1258(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UMarvelHitShape_Sphere*                 MarvelHitShape_Sphere;                             // 0x1290(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UCameraComponent*                       Camera;                                            // 0x1298(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

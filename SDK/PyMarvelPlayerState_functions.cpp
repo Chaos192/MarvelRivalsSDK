@@ -175,10 +175,35 @@ void APyMarvelPlayerState::OnRep_ReticleSetting()
 }
 
 
+// PythonFunction PyMarvelPlayerState.PyMarvelPlayerState.RegulatePreviewHeroID
+// (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   HeroID                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void APyMarvelPlayerState::RegulatePreviewHeroID(int32 HeroID)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyMarvelPlayerState", "RegulatePreviewHeroID");
+
+	Params::PyMarvelPlayerState_RegulatePreviewHeroID Parms{};
+
+	Parms.HeroID = HeroID;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // PythonFunction PyMarvelPlayerState.PyMarvelPlayerState.ServerChangeReticleSetting
 // (Net, NetReliable, Native, Public, NetServer, BlueprintCallable)
 // Parameters:
-// class FString                           config_str                                             (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    config_str                                             (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void APyMarvelPlayerState::ServerChangeReticleSetting(const class FString& config_str)
 {
@@ -253,7 +278,7 @@ void APyMarvelPlayerState::ServerChangeEquipSkinID(int32 skin_id)
 // PythonFunction PyMarvelPlayerState.PyMarvelPlayerState.ServerChangeBondSuggestionHeroIDList
 // (Net, NetReliable, Native, Public, NetServer, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<int32>                           hero_id_list                                           (ConstParm, Parm, OutParm, ReferenceParm)
+// const TArray<int32>&                    hero_id_list                                           (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyMarvelPlayerState::ServerChangeBondSuggestionHeroIDList(const TArray<int32>& hero_id_list)
 {
@@ -278,7 +303,7 @@ void APyMarvelPlayerState::ServerChangeBondSuggestionHeroIDList(const TArray<int
 // PythonFunction PyMarvelPlayerState.PyMarvelPlayerState.NetMulitcast_BondSuggestionHeroIDList
 // (Net, Native, NetMulticast, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<int32>                           hero_id_list                                           (ConstParm, Parm, OutParm, ReferenceParm)
+// const TArray<int32>&                    hero_id_list                                           (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyMarvelPlayerState::NetMulitcast_BondSuggestionHeroIDList(const TArray<int32>& hero_id_list)
 {
@@ -567,8 +592,8 @@ void APyMarvelPlayerState::ServerSetHasInactive(bool HasInactive_0)
 // PythonFunction PyMarvelPlayerState.PyMarvelPlayerState.RuncClientFunc
 // (Net, NetReliable, Native, Public, HasOutParams, NetClient, BlueprintCallable)
 // Parameters:
-// class FString                           func_name                                              (Parm, ZeroConstructor, HasGetValueTypeHash)
-// TArray<uint8>                           argsStr                                                (ConstParm, Parm, OutParm, ReferenceParm)
+// const class FString&                    func_name                                              (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const TArray<uint8>&                    argsStr                                                (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyMarvelPlayerState::RuncClientFunc(const class FString& func_name, const TArray<uint8>& argsStr)
 {
@@ -862,7 +887,7 @@ void APyMarvelPlayerState::NotifyClientCloseSelectHero(int32 SelectedHeroID_0, i
 // PythonFunction PyMarvelPlayerState.PyMarvelPlayerState.RequestTaskDatabaseData
 // (Net, NetReliable, Native, Public, NetServer, BlueprintCallable)
 // Parameters:
-// class FString                           task_json                                              (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    task_json                                              (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void APyMarvelPlayerState::RequestTaskDatabaseData(const class FString& task_json)
 {
@@ -887,7 +912,7 @@ void APyMarvelPlayerState::RequestTaskDatabaseData(const class FString& task_jso
 // PythonFunction PyMarvelPlayerState.PyMarvelPlayerState.ResponseTaskDatabaseData
 // (Net, NetReliable, Native, Public, NetClient, BlueprintCallable)
 // Parameters:
-// class FString                           data_str                                               (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    data_str                                               (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void APyMarvelPlayerState::ResponseTaskDatabaseData(const class FString& data_str)
 {
@@ -931,7 +956,7 @@ void APyMarvelPlayerState::RequestDatabaseData()
 // PythonFunction PyMarvelPlayerState.PyMarvelPlayerState.ResponseDatabaseData
 // (Net, NetReliable, Native, Public, NetClient, BlueprintCallable)
 // Parameters:
-// class FString                           data_str                                               (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    data_str                                               (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void APyMarvelPlayerState::ResponseDatabaseData(const class FString& data_str)
 {
@@ -1020,6 +1045,44 @@ void APyMarvelPlayerState::RespawnZoneTips()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("PyMarvelPlayerState", "RespawnZoneTips");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// PythonFunction PyMarvelPlayerState.PyMarvelPlayerState.OnRep_SelectHeroIDs
+// (Native, Public, BlueprintCallable)
+
+void APyMarvelPlayerState::OnRep_SelectHeroIDs()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyMarvelPlayerState", "OnRep_SelectHeroIDs");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// PythonFunction PyMarvelPlayerState.PyMarvelPlayerState.OnRep_IsCheckSelectable
+// (Native, Public, BlueprintCallable)
+
+void APyMarvelPlayerState::OnRep_IsCheckSelectable()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyMarvelPlayerState", "OnRep_IsCheckSelectable");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

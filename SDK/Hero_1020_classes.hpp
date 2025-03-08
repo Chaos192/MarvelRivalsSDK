@@ -80,7 +80,7 @@ public:
 };
 
 // Class Hero_1020.Ability_102071
-// 0x0000 (0x2588 - 0x2588)
+// 0x0000 (0x2590 - 0x2590)
 class UAbility_102071 : public UAbility_108
 {
 public:
@@ -184,12 +184,12 @@ public:
 };
 
 // Class Hero_1020.MantisCharacter
-// 0x0020 (0x1830 - 0x1810)
+// 0x0010 (0x1880 - 0x1870)
 class AMantisCharacter : public AMarvelBaseCharacter
 {
 public:
-	class UMantisMoveLogicBaseComponent*          MantisMoveLogic;                                   // 0x1810(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_1818[0x18];                                    // 0x1818(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class UMantisMoveLogicBaseComponent*          MantisMoveLogic;                                   // 0x1868(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_1870[0x10];                                    // 0x1870(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void AssignDeathCueTag(const struct FGameplayTag& InDeathCue);
@@ -221,7 +221,7 @@ public:
 };
 
 // Class Hero_1020.MantisMovementComponent
-// 0x0000 (0x1B60 - 0x1B60)
+// 0x0000 (0x1BA0 - 0x1BA0)
 class UMantisMovementComponent final : public UMarvelCharacterMovementComponent
 {
 public:

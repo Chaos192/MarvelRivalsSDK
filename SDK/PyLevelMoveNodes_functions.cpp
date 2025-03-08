@@ -116,7 +116,7 @@ void UPyLevelMoveNodes::TriggerGroupActorMoveByTime(class APyGroupMoveActor* Gro
 // (Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // class AMarvelGameState*                 GameState                                              (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// TArray<struct FGroupMoveActorsContainner>GroupActorsContainner                                  (ConstParm, Parm, OutParm, ReferenceParm)
+// const TArray<struct FGroupMoveActorsContainner>&GroupActorsContainner                                  (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyLevelMoveNodes::TriggerGroupActorsMoveByTime2(class AMarvelGameState* GameState, const TArray<struct FGroupMoveActorsContainner>& GroupActorsContainner)
 {

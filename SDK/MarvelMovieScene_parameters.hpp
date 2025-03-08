@@ -33,14 +33,6 @@ public:
 	struct FMovieSceneObjectBindingID             ReturnValue;                                       // 0x0000(0x0018)(ConstParm, Parm, OutParm, ReturnParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
-// Function MarvelMovieScene.PaintSceneManagerActor.OnScenePushPaintSceneCommands
-// 0x0050 (0x0050 - 0x0000)
-struct PaintSceneManagerActor_OnScenePushPaintSceneCommands final
-{
-public:
-	struct FPaintSceneCommand                     InCommand;                                         // 0x0000(0x0050)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-};
-
 // Function MarvelMovieScene.MovieSceneMarvelNiagaraSplineComponentSection.SetConstraintBindingID
 // 0x0018 (0x0018 - 0x0000)
 struct MovieSceneMarvelNiagaraSplineComponentSection_SetConstraintBindingID final
@@ -71,6 +63,14 @@ struct MovieSceneMarvelPortalLinkTargetSection_GetConstraintBindingID final
 {
 public:
 	struct FMovieSceneObjectBindingID             ReturnValue;                                       // 0x0000(0x0018)(ConstParm, Parm, OutParm, ReturnParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+
+// Function MarvelMovieScene.PaintSceneManagerActor.OnScenePushPaintSceneCommands
+// 0x0050 (0x0050 - 0x0000)
+struct PaintSceneManagerActor_OnScenePushPaintSceneCommands final
+{
+public:
+	struct FPaintSceneCommand                     InCommand;                                         // 0x0000(0x0050)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 };
 
 }

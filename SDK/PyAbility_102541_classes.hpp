@@ -16,6 +16,24 @@
 namespace SDK
 {
 
+// PythonClass PyAbility_102541.PyProjectile_10254101
+// 0x0000 (0x3110 - 0x3110)
+class APyProjectile_10254101 final : public AMarvelAbilityTargetActor_Projectile
+{
+public:
+	void K2_OnProcessHit(const struct FHitResult& ImpactResult);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PyProjectile_10254101">();
+	}
+	static class APyProjectile_10254101* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<APyProjectile_10254101>();
+	}
+};
+
 // PythonClass PyAbility_102541.PyConfig_102541
 // 0x0010 (0x00A8 - 0x0098)
 class UPyConfig_102541 final : public UMarvelAbilityConfig
@@ -37,26 +55,8 @@ public:
 	}
 };
 
-// PythonClass PyAbility_102541.PyProjectile_10254101
-// 0x0000 (0x3050 - 0x3050)
-class APyProjectile_10254101 final : public AMarvelAbilityTargetActor_Projectile
-{
-public:
-	void K2_OnProcessHit(const struct FHitResult& ImpactResult);
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"PyProjectile_10254101">();
-	}
-	static class APyProjectile_10254101* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<APyProjectile_10254101>();
-	}
-};
-
 // PythonClass PyAbility_102541.PyAbility_102541
-// 0x0000 (0x2588 - 0x2588)
+// 0x0000 (0x2590 - 0x2590)
 class UPyAbility_102541 : public UAbility_108
 {
 public:

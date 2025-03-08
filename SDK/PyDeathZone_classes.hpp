@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "Marvel_classes.hpp"
 #include "MarvelLevel_classes.hpp"
 #include "Engine_structs.hpp"
-#include "Marvel_classes.hpp"
 
 
 namespace SDK

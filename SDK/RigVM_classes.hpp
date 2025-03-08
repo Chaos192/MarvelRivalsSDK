@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_classes.hpp"
 #include "RigVM_structs.hpp"
+#include "CoreUObject_classes.hpp"
 #include "Engine_classes.hpp"
 #include "DeveloperSettings_classes.hpp"
 
@@ -20,8 +20,8 @@ namespace SDK
 {
 
 // Class RigVM.RigVMGraphFunctionHost
-// 0x0000 (0x0030 - 0x0030)
-class IRigVMGraphFunctionHost final : public IInterface
+// 0x0000 (0x0000 - 0x0000)
+class IRigVMGraphFunctionHost final
 {
 public:
 	static class UClass* StaticClass()
@@ -31,6 +31,15 @@ public:
 	static class IRigVMGraphFunctionHost* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<IRigVMGraphFunctionHost>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
 	}
 };
 
@@ -131,24 +140,6 @@ public:
 	}
 };
 
-// Class RigVM.RigVMNativized
-// 0x0028 (0x02D8 - 0x02B0)
-class URigVMNativized final : public URigVM
-{
-public:
-	uint8                                         Pad_2B0[0x28];                                     // 0x02B0(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"RigVMNativized">();
-	}
-	static class URigVMNativized* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<URigVMNativized>();
-	}
-};
-
 // Class RigVM.DataAssetLink
 // 0x0008 (0x0110 - 0x0108)
 class UDataAssetLink final : public UNameSpacedUserData
@@ -202,6 +193,24 @@ public:
 	static class URigVMMemoryStorage* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<URigVMMemoryStorage>();
+	}
+};
+
+// Class RigVM.RigVMNativized
+// 0x0028 (0x02D8 - 0x02B0)
+class URigVMNativized final : public URigVM
+{
+public:
+	uint8                                         Pad_2B0[0x28];                                     // 0x02B0(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"RigVMNativized">();
+	}
+	static class URigVMNativized* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<URigVMNativized>();
 	}
 };
 

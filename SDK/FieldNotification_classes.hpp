@@ -17,8 +17,8 @@ namespace SDK
 {
 
 // Class FieldNotification.NotifyFieldValueChanged
-// 0x0000 (0x0030 - 0x0030)
-class INotifyFieldValueChanged final : public IInterface
+// 0x0000 (0x0000 - 0x0000)
+class INotifyFieldValueChanged final
 {
 public:
 	static class UClass* StaticClass()
@@ -28,6 +28,15 @@ public:
 	static class INotifyFieldValueChanged* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<INotifyFieldValueChanged>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
 	}
 };
 

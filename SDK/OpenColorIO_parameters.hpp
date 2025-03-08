@@ -71,7 +71,7 @@ public:
 struct OpenColorIODisplayExtensionWrapper_SetSceneExtensionIsActiveFunctions final
 {
 public:
-	TArray<struct FSceneViewExtensionIsActiveFunctor> IsActiveFunctions;                                 // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TArray<struct FSceneViewExtensionIsActiveFunctor> IsActiveFunctions;                             // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 };
 
 // Function OpenColorIO.OpenColorIODisplayExtensionWrapper.GetOpenColorIOConfiguration

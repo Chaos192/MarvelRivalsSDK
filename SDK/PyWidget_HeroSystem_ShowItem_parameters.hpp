@@ -14,12 +14,28 @@
 namespace SDK::Params
 {
 
+// PythonFunction PyWidget_HeroSystem_ShowItem.PyWidget_HeroSystem_ShowItem.PreConstruct
+// 0x0001 (0x0001 - 0x0000)
+struct PyWidget_HeroSystem_ShowItem_PreConstruct final
+{
+public:
+	bool                                          IsDesignTime;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+
 // PythonFunction PyWidget_HeroSystem_ShowItem.PyWidget_HeroSystem_ShowItem.OnAnimationFinished
 // 0x0008 (0x0008 - 0x0000)
 struct PyWidget_HeroSystem_ShowItem_OnAnimationFinished final
 {
 public:
 	const class UWidgetAnimation*                 Animation;                                         // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+};
+
+// PythonFunction PyWidget_HeroSystem_ShowItem.PyWidget_HeroSystem_ShowItem.SetShowItemData
+// 0x0008 (0x0008 - 0x0000)
+struct PyWidget_HeroSystem_ShowItem_SetShowItemData final
+{
+public:
+	class UObject*                                ItemObject;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 };
 
 // PythonFunction PyWidget_HeroSystem_ShowItem.PyWidget_HeroSystem_ShowItem.SetIsHover

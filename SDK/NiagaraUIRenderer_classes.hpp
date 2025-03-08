@@ -24,7 +24,7 @@ class UNiagaraSystemWidget final : public UWidget
 {
 public:
 	class UNiagaraSystem*                         NiagaraSystemReference;                            // 0x01B8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMap<class UMaterialInterface*, class UMaterialInterface*> MaterialRemapList;                                 // 0x01C0(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	TMap<class UMaterialInterface*, class UMaterialInterface*> MaterialRemapList;                    // 0x01C0(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	bool                                          bIsActiveSystem;                                   // 0x0210(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bDeactivateImmediate;                              // 0x0211(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          TickWhenPaused;                                    // 0x0212(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -75,11 +75,11 @@ public:
 };
 
 // Class NiagaraUIRenderer.NiagaraUIComponent
-// 0x0010 (0x0B80 - 0x0B70)
+// 0x0010 (0x0C10 - 0x0C00)
 class UNiagaraUIComponent final : public UNiagaraComponent
 {
 public:
-	uint8                                         Pad_B70[0x10];                                     // 0x0B70(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C00[0x10];                                     // 0x0C00(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()

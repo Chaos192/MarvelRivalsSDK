@@ -15,11 +15,14 @@ namespace SDK::Params
 {
 
 // PythonFunction PyControlAnalyzerSubsystem.PyControlAnalyzerSubsystem.SendWarning
-// 0x0010 (0x0010 - 0x0000)
+// 0x0040 (0x0040 - 0x0000)
 struct PyControlAnalyzerSubsystem_SendWarning final
 {
 public:
-	class FString                                 warning_str;                                       // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash)
+	TArray<int32>                                 LSScores;                                          // 0x0000(0x0010)(ConstParm, Parm, OutParm, ReferenceParm)
+	TArray<int32>                                 RSScores;                                          // 0x0010(0x0010)(ConstParm, Parm, OutParm, ReferenceParm)
+	TArray<int32>                                 LTScores;                                          // 0x0020(0x0010)(ConstParm, Parm, OutParm, ReferenceParm)
+	TArray<int32>                                 RTScores;                                          // 0x0030(0x0010)(ConstParm, Parm, OutParm, ReferenceParm)
 };
 
 }

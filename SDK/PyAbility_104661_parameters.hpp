@@ -17,14 +17,6 @@
 namespace SDK::Params
 {
 
-// PythonFunction PyAbility_104661.PyUIController_104661_SetHeroPortait.SetReady
-// 0x0001 (0x0001 - 0x0000)
-struct PyUIController_104661_SetHeroPortait_SetReady final
-{
-public:
-	bool                                          bInReady;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-
 // PythonFunction PyAbility_104661.PyAbility_104661.K2_OnEndAbility
 // 0x0001 (0x0001 - 0x0000)
 struct PyAbility_104661_K2_OnEndAbility final
@@ -68,20 +60,20 @@ public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 
-// PythonFunction PyAbility_104661.PyScope_10466101.OnTraceResults
-// 0x0010 (0x0010 - 0x0000)
-struct PyScope_10466101_OnTraceResults final
-{
-public:
-	TArray<struct FHitResult>                     HitResults;                                        // 0x0000(0x0010)(ConstParm, Parm, OutParm, ReferenceParm)
-};
-
 // PythonFunction PyAbility_104661.PyResurrectionAbility_10466101.K2_OnEndAbility
 // 0x0001 (0x0001 - 0x0000)
 struct PyResurrectionAbility_10466101_K2_OnEndAbility final
 {
 public:
 	bool                                          bWasCancelled;                                     // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+
+// PythonFunction PyAbility_104661.PyScope_10466101.OnTraceResults
+// 0x0010 (0x0010 - 0x0000)
+struct PyScope_10466101_OnTraceResults final
+{
+public:
+	TArray<struct FHitResult>                     HitResults;                                        // 0x0000(0x0010)(ConstParm, Parm, OutParm, ReferenceParm)
 };
 
 // PythonFunction PyAbility_104661.PyEffectAbility_104661.K2_OnEndAbility
@@ -100,6 +92,14 @@ public:
 	class AActor*                                 TargetActor;                                       // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_8[0x8];                                        // 0x0008(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FCharacterRebornParam                  Param;                                             // 0x0010(0x0730)(ConstParm, Parm, OutParm, ReferenceParm)
+};
+
+// PythonFunction PyAbility_104661.PyUIController_104661_SetHeroPortait.SetReady
+// 0x0001 (0x0001 - 0x0000)
+struct PyUIController_104661_SetHeroPortait_SetReady final
+{
+public:
+	bool                                          bInReady;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 
 }

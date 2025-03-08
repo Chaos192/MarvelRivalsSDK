@@ -17,11 +17,11 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass 1011_CharacterBP.1011_CharacterBP_C
-// 0x0010 (0x18E0 - 0x18D0)
+// 0x0010 (0x1930 - 0x1920)
 class AOne011_CharacterBP_C final : public APyHulkBannerCharacter
 {
 public:
-	class UPhysicalInteractionComponent*          PhysicalInteraction;                               // 0x18D0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UPhysicalInteractionComponent*          PhysicalInteraction;                               // 0x1920(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

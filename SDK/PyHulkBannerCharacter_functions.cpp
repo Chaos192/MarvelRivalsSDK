@@ -91,7 +91,7 @@ void APyHulkBannerCharacter::OnHeroReviving(EPlayerLivingState State)
 // Parameters:
 // class AController*                      InSource                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // class AActor*                           InSourceAvatar                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FAttributeModifierHandle         ModifierParameter                                      (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
+// const struct FAttributeModifierHandle&  ModifierParameter                                      (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
 
 void APyHulkBannerCharacter::OnPreDeath(class AController* InSource, class AActor* InSourceAvatar, const struct FAttributeModifierHandle& ModifierParameter)
 {
@@ -168,7 +168,7 @@ void APyHulkBannerCharacter::OnLevelForceKill(class AActor* kill_target)
 // PythonFunction PyHulkBannerCharacter.PyHulkBannerCharacter.OnTagUpdate
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FGameplayTag                     Tag                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              Tag                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
 // bool                                    Exist                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void APyHulkBannerCharacter::OnTagUpdate(const struct FGameplayTag& Tag, bool Exist)
@@ -196,7 +196,7 @@ void APyHulkBannerCharacter::OnTagUpdate(const struct FGameplayTag& Tag, bool Ex
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // class AActor*                           TargetActor                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FCharacterRebornParam            Param                                                  (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FCharacterRebornParam&     Param                                                  (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyHulkBannerCharacter::OnCharacterReborn(class AActor* TargetActor, const struct FCharacterRebornParam& Param)
 {
@@ -285,7 +285,7 @@ void APyBannerBaseChildActor::ReceivePoolEndPlay()
 // PythonFunction PyHulkBannerCharacter.PyBannerBaseChildActor.OnGenericGameplayTagUpdate
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayTag                     InTag                                                  (ConstParm, Parm, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              InTag                                                  (ConstParm, Parm, NoDestructor, HasGetValueTypeHash)
 // int32                                   Count                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void APyBannerBaseChildActor::OnGenericGameplayTagUpdate(const struct FGameplayTag& InTag, int32 Count)

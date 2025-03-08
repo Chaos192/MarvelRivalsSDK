@@ -71,8 +71,8 @@ public:
 };
 
 // Class GameplayTags.GameplayTagAssetInterface
-// 0x0000 (0x0030 - 0x0030)
-class IGameplayTagAssetInterface final : public IInterface
+// 0x0000 (0x0000 - 0x0000)
+class IGameplayTagAssetInterface final
 {
 public:
 	void GetOwnedGameplayTags(struct FGameplayTagContainer* TagContainer) const;
@@ -89,6 +89,15 @@ public:
 	static class IGameplayTagAssetInterface* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<IGameplayTagAssetInterface>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
 	}
 };
 
@@ -187,7 +196,7 @@ public:
 class UEditableGameplayTagQueryExpression_AnyExprMatch final : public UEditableGameplayTagQueryExpression
 {
 public:
-	TArray<class UEditableGameplayTagQueryExpression*> Expressions;                                       // 0x0030(0x0010)(Edit, ExportObject, ZeroConstructor, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPublic)
+	TArray<class UEditableGameplayTagQueryExpression*> Expressions;                                  // 0x0030(0x0010)(Edit, ExportObject, ZeroConstructor, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -205,7 +214,7 @@ public:
 class UEditableGameplayTagQueryExpression_AllExprMatch final : public UEditableGameplayTagQueryExpression
 {
 public:
-	TArray<class UEditableGameplayTagQueryExpression*> Expressions;                                       // 0x0030(0x0010)(Edit, ExportObject, ZeroConstructor, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPublic)
+	TArray<class UEditableGameplayTagQueryExpression*> Expressions;                                  // 0x0030(0x0010)(Edit, ExportObject, ZeroConstructor, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -223,7 +232,7 @@ public:
 class UEditableGameplayTagQueryExpression_NoExprMatch final : public UEditableGameplayTagQueryExpression
 {
 public:
-	TArray<class UEditableGameplayTagQueryExpression*> Expressions;                                       // 0x0030(0x0010)(Edit, ExportObject, ZeroConstructor, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPublic)
+	TArray<class UEditableGameplayTagQueryExpression*> Expressions;                                  // 0x0030(0x0010)(Edit, ExportObject, ZeroConstructor, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()

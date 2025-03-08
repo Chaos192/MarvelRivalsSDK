@@ -19,15 +19,15 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Projectile_10251101.Projectile_10251101_C
-// 0x03B0 (0x3420 - 0x3070)
+// 0x03B0 (0x34D0 - 0x3120)
 class AProjectile_10251101_C final : public APyProjectile_10251101
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x3070(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UProjectileHomingComponent*             ProjectileHoming;                                  // 0x3078(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	ETargetActorDestroyReason                     Actor_Destroy_Reason;                              // 0x3080(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3081[0x7];                                     // 0x3081(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FMarvelTraceRule                       Trace_Rule;                                        // 0x3088(0x0390)(Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x3120(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UProjectileHomingComponent*             ProjectileHoming;                                  // 0x3128(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	ETargetActorDestroyReason                     Actor_Destroy_Reason;                              // 0x3130(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_3131[0x7];                                     // 0x3131(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FMarvelTraceRule                       Trace_Rule;                                        // 0x3138(0x0390)(Edit, BlueprintVisible, DisableEditOnInstance)
 
 public:
 	void ExecuteUbergraph_Projectile_10251101(int32 EntryPoint);

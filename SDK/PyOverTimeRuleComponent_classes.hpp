@@ -18,14 +18,16 @@ namespace SDK
 {
 
 // PythonClass PyOverTimeRuleComponent.PyOverTimeConfig
-// 0x0010 (0x0040 - 0x0030)
-class UPyOverTimeConfig : public UMarvelRuleConfig
+// 0x0018 (0x0048 - 0x0030)
+#pragma pack(push, 0x1)
+class alignas(0x08) UPyOverTimeConfig : public UMarvelRuleConfig
 {
 public:
 	float                                         OvertimeLength;                                    // 0x0030(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         OvertimeSpeedNoAttack;                             // 0x0034(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         OvertimeSpeedWithAttack;                           // 0x0038(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         OverTimeCheck;                                     // 0x003C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MisOperationThreshold;                             // 0x0040(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -37,13 +39,14 @@ public:
 		return GetDefaultObjImpl<UPyOverTimeConfig>();
 	}
 };
+#pragma pack(pop)
 
 // PythonClass PyOverTimeRuleComponent.PyControlOvertimeConfig
-// 0x0008 (0x0048 - 0x0040)
+// 0x0000 (0x0048 - 0x0048)
 class UPyControlOvertimeConfig final : public UPyOverTimeConfig
 {
 public:
-	float                                         OvertimeProgressBegin;                             // 0x0040(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         OvertimeProgressBegin;                             // 0x0044(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -68,6 +71,7 @@ public:
 	float                                         OvertimeSpeedNoAttack;                             // 0x0100(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         OvertimeSpeedWithAttack;                           // 0x0104(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         OverTimeCheck;                                     // 0x0108(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MisOperationThreshold;                             // 0x010C(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void OnRep_OvertimeState();

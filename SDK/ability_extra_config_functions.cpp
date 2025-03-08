@@ -17,31 +17,6 @@
 namespace SDK
 {
 
-// PythonFunction ability_extra_config.PyActivationExtraConfig_ThroughEnemyConfig.InitExtraConfig
-// (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UObject*                          ai_owner                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-
-void UPyActivationExtraConfig_ThroughEnemyConfig::InitExtraConfig(class UObject* ai_owner)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PyActivationExtraConfig_ThroughEnemyConfig", "InitExtraConfig");
-
-	Params::PyActivationExtraConfig_ThroughEnemyConfig_InitExtraConfig Parms{};
-
-	Parms.ai_owner = ai_owner;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // PythonFunction ability_extra_config.PyActivationExtraConfig_SkillTimeTriggerConfig.InitExtraConfig
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -89,6 +64,31 @@ class FString UPyActivationExtraConfig_SkillTimeTriggerConfig::GetConfigName()
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
+}
+
+
+// PythonFunction ability_extra_config.PyActivationExtraConfig_ThroughEnemyConfig.InitExtraConfig
+// (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UObject*                          ai_owner                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+
+void UPyActivationExtraConfig_ThroughEnemyConfig::InitExtraConfig(class UObject* ai_owner)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyActivationExtraConfig_ThroughEnemyConfig", "InitExtraConfig");
+
+	Params::PyActivationExtraConfig_ThroughEnemyConfig_InitExtraConfig Parms{};
+
+	Parms.ai_owner = ai_owner;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 }
 
 

@@ -134,7 +134,7 @@ void UPyAbility_102581::OnRep_CurrentAdsorbResult()
 // PythonFunction PyAbility_102581.PyAbility_102581.NativeOnMontageCompleted
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_102581::NativeOnMontageCompleted(const class FString& Tag)
 {

@@ -89,7 +89,7 @@ struct FMovieSceneCameraShakeSourceTriggerChannel final : public FMovieSceneChan
 {
 public:
 	TArray<struct FFrameNumber>                   KeyTimes;                                          // 0x0050(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
-	TArray<struct FMovieSceneCameraShakeSourceTrigger> KeyValues;                                         // 0x0060(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
+	TArray<struct FMovieSceneCameraShakeSourceTrigger> KeyValues;                                    // 0x0060(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
 	struct FMovieSceneKeyHandleMap                KeyHandles;                                        // 0x0070(0x0088)(Transient, NativeAccessSpecifierPrivate)
 };
 
@@ -252,7 +252,7 @@ struct FMovieSceneCameraShakeSourceTriggerSectionTemplate final : public FMovieS
 {
 public:
 	TArray<struct FFrameNumber>                   TriggerTimes;                                      // 0x0020(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
-	TArray<struct FMovieSceneCameraShakeSourceTrigger> TriggerValues;                                     // 0x0030(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
+	TArray<struct FMovieSceneCameraShakeSourceTrigger> TriggerValues;                                // 0x0030(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
 };
 
 // ScriptStruct MovieSceneTracks.MovieSceneCameraShakeSectionTemplate
@@ -387,10 +387,10 @@ struct FMovieSceneParameterSectionTemplate : public FMovieSceneEvalTemplate
 public:
 	TArray<struct FScalarParameterNameAndCurve>   Scalars;                                           // 0x0020(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
 	TArray<struct FBoolParameterNameAndCurve>     Bools;                                             // 0x0030(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
-	TArray<struct FVector2DParameterNameAndCurves> Vector2Ds;                                         // 0x0040(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
+	TArray<struct FVector2DParameterNameAndCurves> Vector2Ds;                                        // 0x0040(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
 	TArray<struct FVectorParameterNameAndCurves>  Vectors;                                           // 0x0050(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
 	TArray<struct FColorParameterNameAndCurves>   Colors;                                            // 0x0060(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
-	TArray<struct FTransformParameterNameAndCurves> Transforms;                                        // 0x0070(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
+	TArray<struct FTransformParameterNameAndCurves> Transforms;                                      // 0x0070(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
 };
 
 // ScriptStruct MovieSceneTracks.MovieSceneParticleParameterSectionTemplate
@@ -566,7 +566,7 @@ public:
 struct FMovieSceneConsoleVariableCollection final
 {
 public:
-	TScriptInterface<class IMovieSceneConsoleVariableTrackInterface> Interface;                                         // 0x0000(0x0010)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TScriptInterface<class IMovieSceneConsoleVariableTrackInterface> Interface;                      // 0x0000(0x0010)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bOnlyIncludeChecked;                               // 0x0010(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };

@@ -12,37 +12,11 @@
 
 #include "PyWidget_ModuleMainPanel_classes.hpp"
 #include "PyWidget_Common_Button_classes.hpp"
+#include "python_enums_structs.hpp"
 
 
 namespace SDK
 {
-
-// PythonClass PyWidget_Common_BondPanel.PyWidget_Common_BondPanel
-// 0x0020 (0x0638 - 0x0618)
-class UPyWidget_Common_BondPanel final : public UPyWidget_ModuleMainPanel
-{
-public:
-	uint8                                         Pad_611[0x7];                                      // 0x0611(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TSubclassOf<class UUserWidget>                BondUnitClass;                                     // 0x0618(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FText                                   Txt_HeroNoOpen;                                    // 0x0620(0x0018)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NativeAccessSpecifierPublic)
-
-public:
-	void OnInitialized();
-	void Construct();
-	void Destruct();
-	void OnOpenHeroListChange();
-	void MarvelSetVisible(bool Visible);
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"PyWidget_Common_BondPanel">();
-	}
-	static class UPyWidget_Common_BondPanel* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UPyWidget_Common_BondPanel>();
-	}
-};
 
 // PythonClass PyWidget_Common_BondPanel.PyWidget_BondPanel_FilterButton
 // 0x0000 (0x08F0 - 0x08F0)
@@ -59,6 +33,34 @@ public:
 	static class UPyWidget_BondPanel_FilterButton* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UPyWidget_BondPanel_FilterButton>();
+	}
+};
+
+// PythonClass PyWidget_Common_BondPanel.PyWidget_Common_BondPanel
+// 0x0020 (0x0638 - 0x0618)
+class UPyWidget_Common_BondPanel final : public UPyWidget_ModuleMainPanel
+{
+public:
+	uint8                                         Pad_611[0x7];                                      // 0x0611(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TSubclassOf<class UUserWidget>                BondUnitClass;                                     // 0x0618(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FText                                   Txt_HeroNoOpen;                                    // 0x0620(0x0018)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NativeAccessSpecifierPublic)
+
+public:
+	void OnInitialized();
+	void Construct();
+	void Destruct();
+	void OnOpenHeroListChange();
+	void OnBanPickStateChanged(EBanPickState BanPickState);
+	void MarvelSetVisible(bool Visible);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PyWidget_Common_BondPanel">();
+	}
+	static class UPyWidget_Common_BondPanel* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPyWidget_Common_BondPanel>();
 	}
 };
 

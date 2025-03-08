@@ -10,12 +10,12 @@
 
 #include "Basic.hpp"
 
-#include "Marvel_structs.hpp"
-#include "python_enums_structs.hpp"
 #include "Engine_structs.hpp"
-#include "MarvelAI_structs.hpp"
 #include "InputRecord_structs.hpp"
+#include "python_enums_structs.hpp"
 #include "InputCore_structs.hpp"
+#include "MarvelAI_structs.hpp"
+#include "Marvel_structs.hpp"
 
 
 namespace SDK::Params
@@ -378,6 +378,39 @@ struct PyMarvelPlayerController_ClientShowTutorialTips final
 {
 public:
 	int32                                         TipsID;                                            // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+
+// PythonFunction PyMarvelPlayerController.PyMarvelPlayerController.OnServerReceiveMovementStatData
+// 0x0168 (0x0168 - 0x0000)
+struct PyMarvelPlayerController_OnServerReceiveMovementStatData final
+{
+public:
+	struct FMovementStatData                      stat;                                              // 0x0000(0x0168)(ConstParm, Parm, OutParm, ReferenceParm)
+};
+
+// PythonFunction PyMarvelPlayerController.PyMarvelPlayerController.ClientEnableRecordMovementStat
+// 0x0001 (0x0001 - 0x0000)
+struct PyMarvelPlayerController_ClientEnableRecordMovementStat final
+{
+public:
+	bool                                          bEnable;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+
+// PythonFunction PyMarvelPlayerController.PyMarvelPlayerController.ClientCheckTraceCacheStat
+// 0x0018 (0x0018 - 0x0000)
+struct PyMarvelPlayerController_ClientCheckTraceCacheStat final
+{
+public:
+	class FString                                 ActorName;                                         // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash)
+	bool                                          bInValid;                                          // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+
+// PythonFunction PyMarvelPlayerController.PyMarvelPlayerController.ClientStartRecordMovementStat
+// 0x0001 (0x0001 - 0x0000)
+struct PyMarvelPlayerController_ClientStartRecordMovementStat final
+{
+public:
+	bool                                          bForce;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 
 // PythonFunction PyMarvelPlayerController.PyMarvelPlayerController.SendMessageToChatPanel

@@ -151,7 +151,7 @@ public:
 struct InterchangePipelineMeshesUtilities_SetContext final
 {
 public:
-	struct FInterchangePipelineMeshesUtilitiesContext Context;                                           // 0x0000(0x0005)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	struct FInterchangePipelineMeshesUtilitiesContext Context;                                       // 0x0000(0x0005)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 };
 
 }

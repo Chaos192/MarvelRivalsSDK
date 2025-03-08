@@ -54,7 +54,7 @@ void UAbility_104713_BP_C::ExecuteUbergraph_Ability_104713_BP(int32 EntryPoint)
 // Function Ability_104713_BP.Ability_104713_BP_C.GetDelaySectionTime
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// double                                  DelayTime                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// double*                                 DelayTime                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UAbility_104713_BP_C::GetDelaySectionTime(double* DelayTime)
 {

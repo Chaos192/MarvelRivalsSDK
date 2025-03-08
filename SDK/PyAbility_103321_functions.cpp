@@ -104,7 +104,7 @@ void UPyAbility_103321::BeginPlay()
 // PythonFunction PyAbility_103321.PyAbility_103321.OnActivateFailed
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FGameplayTagContainer            FailReason                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayTagContainer&     FailReason                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyAbility_103321::OnActivateFailed(const struct FGameplayTagContainer& FailReason)
 {
@@ -192,7 +192,7 @@ void UPyAbility_103321::MissileEventNotify()
 // PythonFunction PyAbility_103321.PyAbility_103321.NativeOnMontageCompleted
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           EventTag                                               (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    EventTag                                               (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_103321::NativeOnMontageCompleted(const class FString& EventTag)
 {
@@ -217,7 +217,7 @@ void UPyAbility_103321::NativeOnMontageCompleted(const class FString& EventTag)
 // PythonFunction PyAbility_103321.PyAbility_103321.NativeOnMontageCancelled
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           EventTag                                               (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    EventTag                                               (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_103321::NativeOnMontageCancelled(const class FString& EventTag)
 {
@@ -317,9 +317,9 @@ void UPyAbility_103321::OnLeftShootEnd(class UGameplayAbility* Ability)
 // PythonFunction PyAbility_103321.PyAbility_103321.K2_CanActivateAbility
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
 // Parameters:
-// struct FGameplayAbilityActorInfo        ActorInfo                                              (Parm)
-// struct FGameplayAbilitySpecHandle       Handle                                                 (ConstParm, Parm, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayTagContainer            RelevantTags                                           (Parm, OutParm)
+// const struct FGameplayAbilityActorInfo& ActorInfo                                              (Parm)
+// const struct FGameplayAbilitySpecHandle&Handle                                                 (ConstParm, Parm, NoDestructor, HasGetValueTypeHash)
+// struct FGameplayTagContainer*           RelevantTags                                           (Parm, OutParm)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 bool UPyAbility_103321::K2_CanActivateAbility(const struct FGameplayAbilityActorInfo& ActorInfo, const struct FGameplayAbilitySpecHandle& Handle, struct FGameplayTagContainer* RelevantTags) const
@@ -370,7 +370,7 @@ void UPyWidget_Reticle_103321::OnInitialized()
 // PythonFunction PyAbility_103321.PyWidget_Reticle_103321.OnAnimationFinished
 // (BlueprintCosmetic, Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UWidgetAnimation*                 Animation                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// const class UWidgetAnimation*           Animation                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 void UPyWidget_Reticle_103321::OnAnimationFinished(const class UWidgetAnimation* Animation)
 {

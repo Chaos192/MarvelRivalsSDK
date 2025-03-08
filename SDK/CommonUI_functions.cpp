@@ -45,7 +45,7 @@ void UCommonActionWidget::SetEnhancedInputAction(class UInputAction* InInputActi
 // Function CommonUI.CommonActionWidget.SetIconRimBrush
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// struct FSlateBrush                      InIconRimBrush                                         (Parm, NativeAccessSpecifierPublic)
+// const struct FSlateBrush&               InIconRimBrush                                         (Parm, NativeAccessSpecifierPublic)
 
 void UCommonActionWidget::SetIconRimBrush(const struct FSlateBrush& InIconRimBrush)
 {
@@ -70,7 +70,7 @@ void UCommonActionWidget::SetIconRimBrush(const struct FSlateBrush& InIconRimBru
 // Function CommonUI.CommonActionWidget.SetInputAction
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// struct FDataTableRowHandle              InputActionRow                                         (Parm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FDataTableRowHandle&       InputActionRow                                         (Parm, NoDestructor, NativeAccessSpecifierPublic)
 
 void UCommonActionWidget::SetInputAction(const struct FDataTableRowHandle& InputActionRow)
 {
@@ -95,7 +95,7 @@ void UCommonActionWidget::SetInputAction(const struct FDataTableRowHandle& Input
 // Function CommonUI.CommonActionWidget.SetInputActions
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// TArray<struct FDataTableRowHandle>      NewInputActions                                        (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+// const TArray<struct FDataTableRowHandle>&NewInputActions                                        (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 
 void UCommonActionWidget::SetInputActions(const TArray<struct FDataTableRowHandle>& NewInputActions)
 {
@@ -600,7 +600,7 @@ bool UCommonAnimatedSwitcher::IsTransitionPlaying() const
 // Function CommonUI.CommonBorderStyle.GetBackgroundBrush
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// struct FSlateBrush                      Brush                                                  (Parm, OutParm, NativeAccessSpecifierPublic)
+// struct FSlateBrush*                     Brush                                                  (Parm, OutParm, NativeAccessSpecifierPublic)
 
 void UCommonBorderStyle::GetBackgroundBrush(struct FSlateBrush* Brush) const
 {
@@ -651,7 +651,7 @@ void UCommonBorder::SetStyle(TSubclassOf<class UCommonBorderStyle> InStyle)
 // Function CommonUI.CommonButtonStyle.GetButtonPadding
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// struct FMargin                          OutButtonPadding                                       (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// struct FMargin*                         OutButtonPadding                                       (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 
 void UCommonButtonStyle::GetButtonPadding(struct FMargin* OutButtonPadding) const
 {
@@ -677,7 +677,7 @@ void UCommonButtonStyle::GetButtonPadding(struct FMargin* OutButtonPadding) cons
 // Function CommonUI.CommonButtonStyle.GetCustomPadding
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// struct FMargin                          OutCustomPadding                                       (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// struct FMargin*                         OutCustomPadding                                       (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 
 void UCommonButtonStyle::GetCustomPadding(struct FMargin* OutCustomPadding) const
 {
@@ -703,7 +703,7 @@ void UCommonButtonStyle::GetCustomPadding(struct FMargin* OutCustomPadding) cons
 // Function CommonUI.CommonButtonStyle.GetDisabledBrush
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// struct FSlateBrush                      Brush                                                  (Parm, OutParm, NativeAccessSpecifierPublic)
+// struct FSlateBrush*                     Brush                                                  (Parm, OutParm, NativeAccessSpecifierPublic)
 
 void UCommonButtonStyle::GetDisabledBrush(struct FSlateBrush* Brush) const
 {
@@ -754,7 +754,7 @@ class UCommonTextStyle* UCommonButtonStyle::GetDisabledTextStyle() const
 // Function CommonUI.CommonButtonStyle.GetMaterialBrush
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// struct FSlateBrush                      Brush                                                  (Parm, OutParm, NativeAccessSpecifierPublic)
+// struct FSlateBrush*                     Brush                                                  (Parm, OutParm, NativeAccessSpecifierPublic)
 
 void UCommonButtonStyle::GetMaterialBrush(struct FSlateBrush* Brush) const
 {
@@ -780,7 +780,7 @@ void UCommonButtonStyle::GetMaterialBrush(struct FSlateBrush* Brush) const
 // Function CommonUI.CommonButtonStyle.GetNormalBaseBrush
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// struct FSlateBrush                      Brush                                                  (Parm, OutParm, NativeAccessSpecifierPublic)
+// struct FSlateBrush*                     Brush                                                  (Parm, OutParm, NativeAccessSpecifierPublic)
 
 void UCommonButtonStyle::GetNormalBaseBrush(struct FSlateBrush* Brush) const
 {
@@ -806,7 +806,7 @@ void UCommonButtonStyle::GetNormalBaseBrush(struct FSlateBrush* Brush) const
 // Function CommonUI.CommonButtonStyle.GetNormalHoveredBrush
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// struct FSlateBrush                      Brush                                                  (Parm, OutParm, NativeAccessSpecifierPublic)
+// struct FSlateBrush*                     Brush                                                  (Parm, OutParm, NativeAccessSpecifierPublic)
 
 void UCommonButtonStyle::GetNormalHoveredBrush(struct FSlateBrush* Brush) const
 {
@@ -857,7 +857,7 @@ class UCommonTextStyle* UCommonButtonStyle::GetNormalHoveredTextStyle() const
 // Function CommonUI.CommonButtonStyle.GetNormalPressedBrush
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// struct FSlateBrush                      Brush                                                  (Parm, OutParm, NativeAccessSpecifierPublic)
+// struct FSlateBrush*                     Brush                                                  (Parm, OutParm, NativeAccessSpecifierPublic)
 
 void UCommonButtonStyle::GetNormalPressedBrush(struct FSlateBrush* Brush) const
 {
@@ -908,7 +908,7 @@ class UCommonTextStyle* UCommonButtonStyle::GetNormalTextStyle() const
 // Function CommonUI.CommonButtonStyle.GetSelectedBaseBrush
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// struct FSlateBrush                      Brush                                                  (Parm, OutParm, NativeAccessSpecifierPublic)
+// struct FSlateBrush*                     Brush                                                  (Parm, OutParm, NativeAccessSpecifierPublic)
 
 void UCommonButtonStyle::GetSelectedBaseBrush(struct FSlateBrush* Brush) const
 {
@@ -934,7 +934,7 @@ void UCommonButtonStyle::GetSelectedBaseBrush(struct FSlateBrush* Brush) const
 // Function CommonUI.CommonButtonStyle.GetSelectedHoveredBrush
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// struct FSlateBrush                      Brush                                                  (Parm, OutParm, NativeAccessSpecifierPublic)
+// struct FSlateBrush*                     Brush                                                  (Parm, OutParm, NativeAccessSpecifierPublic)
 
 void UCommonButtonStyle::GetSelectedHoveredBrush(struct FSlateBrush* Brush) const
 {
@@ -985,7 +985,7 @@ class UCommonTextStyle* UCommonButtonStyle::GetSelectedHoveredTextStyle() const
 // Function CommonUI.CommonButtonStyle.GetSelectedPressedBrush
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// struct FSlateBrush                      Brush                                                  (Parm, OutParm, NativeAccessSpecifierPublic)
+// struct FSlateBrush*                     Brush                                                  (Parm, OutParm, NativeAccessSpecifierPublic)
 
 void UCommonButtonStyle::GetSelectedPressedBrush(struct FSlateBrush* Brush) const
 {
@@ -1291,7 +1291,7 @@ void UCommonButtonBase::ClearSelection()
 // Function CommonUI.CommonButtonBase.DisableButtonWithReason
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class FText                             DisabledReason                                         (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const class FText&                      DisabledReason                                         (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UCommonButtonBase::DisableButtonWithReason(const class FText& DisabledReason)
 {
@@ -1436,7 +1436,7 @@ void UCommonButtonBase::HandleFocusReceived()
 // Function CommonUI.CommonButtonBase.HandleTriggeringActionCommited
 // (Native, Protected, HasOutParams)
 // Parameters:
-// bool                                    bPassThrough                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool*                                   bPassThrough                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UCommonButtonBase::HandleTriggeringActionCommited(bool* bPassThrough)
 {
@@ -1654,7 +1654,7 @@ void UCommonButtonBase::OnInputMethodChanged(ECommonInputType CurrentInputType)
 // Function CommonUI.CommonButtonBase.OnTriggeredInputActionChanged
 // (Event, Protected, HasOutParams, BlueprintEvent)
 // Parameters:
-// struct FDataTableRowHandle              NewTriggeredAction                                     (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FDataTableRowHandle&       NewTriggeredAction                                     (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
 void UCommonButtonBase::OnTriggeredInputActionChanged(const struct FDataTableRowHandle& NewTriggeredAction)
 {
@@ -1674,7 +1674,7 @@ void UCommonButtonBase::OnTriggeredInputActionChanged(const struct FDataTableRow
 // Function CommonUI.CommonButtonBase.OnTriggeringEnhancedInputActionChanged
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// class UInputAction*                     InInputAction                                          (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UInputAction*               InInputAction                                          (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UCommonButtonBase::OnTriggeringEnhancedInputActionChanged(const class UInputAction* InInputAction)
 {
@@ -1694,7 +1694,7 @@ void UCommonButtonBase::OnTriggeringEnhancedInputActionChanged(const class UInpu
 // Function CommonUI.CommonButtonBase.OnTriggeringInputActionChanged
 // (Event, Protected, HasOutParams, BlueprintEvent)
 // Parameters:
-// struct FDataTableRowHandle              NewTriggeredAction                                     (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FDataTableRowHandle&       NewTriggeredAction                                     (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
 void UCommonButtonBase::OnTriggeringInputActionChanged(const struct FDataTableRowHandle& NewTriggeredAction)
 {
@@ -1789,8 +1789,8 @@ void UCommonButtonBase::SetHoveredSoundOverride(class USoundBase* Sound)
 // Function CommonUI.CommonButtonBase.SetInputActionProgressMaterial
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FSlateBrush                      InProgressMaterialBrush                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// class FName                             InProgressMaterialParam                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FSlateBrush&               InProgressMaterialBrush                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const class FName&                      InProgressMaterialParam                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UCommonButtonBase::SetInputActionProgressMaterial(const struct FSlateBrush& InProgressMaterialBrush, const class FName& InProgressMaterialParam)
 {
@@ -2299,7 +2299,7 @@ void UCommonButtonBase::SetTouchMethod(EButtonTouchMethod InTouchMethod)
 // Function CommonUI.CommonButtonBase.SetTriggeredInputAction
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FDataTableRowHandle              InputActionRow                                         (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FDataTableRowHandle&       InputActionRow                                         (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
 void UCommonButtonBase::SetTriggeredInputAction(const struct FDataTableRowHandle& InputActionRow)
 {
@@ -2349,7 +2349,7 @@ void UCommonButtonBase::SetTriggeringEnhancedInputAction(class UInputAction* InI
 // Function CommonUI.CommonButtonBase.SetTriggeringInputAction
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FDataTableRowHandle              InputActionRow                                         (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FDataTableRowHandle&       InputActionRow                                         (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
 void UCommonButtonBase::SetTriggeringInputAction(const struct FDataTableRowHandle& InputActionRow)
 {
@@ -2418,7 +2418,7 @@ void UCommonButtonBase::UpdateHoldData(ECommonInputType CurrentInputType)
 // Function CommonUI.CommonButtonBase.GetCurrentButtonPadding
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// struct FMargin                          OutButtonPadding                                       (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// struct FMargin*                         OutButtonPadding                                       (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 
 void UCommonButtonBase::GetCurrentButtonPadding(struct FMargin* OutButtonPadding) const
 {
@@ -2444,7 +2444,7 @@ void UCommonButtonBase::GetCurrentButtonPadding(struct FMargin* OutButtonPadding
 // Function CommonUI.CommonButtonBase.GetCurrentCustomPadding
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// struct FMargin                          OutCustomPadding                                       (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// struct FMargin*                         OutCustomPadding                                       (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 
 void UCommonButtonBase::GetCurrentCustomPadding(struct FMargin* OutCustomPadding) const
 {
@@ -2545,7 +2545,7 @@ class UInputAction* UCommonButtonBase::GetEnhancedInputAction() const
 // Function CommonUI.CommonButtonBase.GetInputAction
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// struct FDataTableRowHandle              InputActionRow                                         (Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
+// struct FDataTableRowHandle*             InputActionRow                                         (Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UCommonButtonBase::GetInputAction(struct FDataTableRowHandle* InputActionRow) const
@@ -2843,7 +2843,7 @@ void UCommonTextBlock::SetLineHeightPercentage(float InLineHeightPercentage)
 // Function CommonUI.CommonTextBlock.SetMargin
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FMargin                          InMargin                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FMargin&                   InMargin                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 
 void UCommonTextBlock::SetMargin(const struct FMargin& InMargin)
 {
@@ -3018,7 +3018,7 @@ float UCommonTextBlock::GetMobileFontSizeMultiplier() const
 // Function CommonUI.CommonDateTimeTextBlock.SetCountDownCompletionText
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FText                             InCompletionText                                       (ConstParm, Parm, NativeAccessSpecifierPublic)
+// const class FText&                      InCompletionText                                       (ConstParm, Parm, NativeAccessSpecifierPublic)
 
 void UCommonDateTimeTextBlock::SetCountDownCompletionText(const class FText& InCompletionText)
 {
@@ -3043,7 +3043,7 @@ void UCommonDateTimeTextBlock::SetCountDownCompletionText(const class FText& InC
 // Function CommonUI.CommonDateTimeTextBlock.SetDateTimeValue
 // (Final, Native, Public, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FDateTime                        InDateTime                                             (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FDateTime&                 InDateTime                                             (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bShowAsCountdown                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   InRefreshDelay                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -3072,7 +3072,7 @@ void UCommonDateTimeTextBlock::SetDateTimeValue(const struct FDateTime& InDateTi
 // Function CommonUI.CommonDateTimeTextBlock.SetTimespanValue
 // (Final, Native, Public, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FTimespan                        InTimespan                                             (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FTimespan&                 InTimespan                                             (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UCommonDateTimeTextBlock::SetTimespanValue(const struct FTimespan& InTimespan)
 {
@@ -3122,7 +3122,7 @@ struct FDateTime UCommonDateTimeTextBlock::GetDateTime() const
 // Function CommonUI.CommonLazyImage.SetBrushFromLazyDisplayAsset
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TSoftObjectPtr<class UObject>           LazyObject                                             (ConstParm, Parm, OutParm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TSoftObjectPtr<class UObject>&    LazyObject                                             (ConstParm, Parm, OutParm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bMatchTextureSize                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UCommonLazyImage::SetBrushFromLazyDisplayAsset(const TSoftObjectPtr<class UObject>& LazyObject, bool bMatchTextureSize)
@@ -3149,7 +3149,7 @@ void UCommonLazyImage::SetBrushFromLazyDisplayAsset(const TSoftObjectPtr<class U
 // Function CommonUI.CommonLazyImage.SetBrushFromLazyMaterial
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TSoftObjectPtr<class UMaterialInterface>LazyMaterial                                           (ConstParm, Parm, OutParm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TSoftObjectPtr<class UMaterialInterface>&LazyMaterial                                           (ConstParm, Parm, OutParm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UCommonLazyImage::SetBrushFromLazyMaterial(const TSoftObjectPtr<class UMaterialInterface>& LazyMaterial)
 {
@@ -3174,7 +3174,7 @@ void UCommonLazyImage::SetBrushFromLazyMaterial(const TSoftObjectPtr<class UMate
 // Function CommonUI.CommonLazyImage.SetBrushFromLazyTexture
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TSoftObjectPtr<class UTexture2D>        LazyTexture                                            (ConstParm, Parm, OutParm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TSoftObjectPtr<class UTexture2D>& LazyTexture                                            (ConstParm, Parm, OutParm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bMatchSize                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UCommonLazyImage::SetBrushFromLazyTexture(const TSoftObjectPtr<class UTexture2D>& LazyTexture, bool bMatchSize)
@@ -3251,7 +3251,7 @@ bool UCommonLazyImage::IsLoading() const
 // Function CommonUI.CommonLazyWidget.SetLazyContent
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// TSoftClassPtr<class UClass>             SoftWidget                                             (ConstParm, Parm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TSoftClassPtr<class UClass>       SoftWidget                                             (ConstParm, Parm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UCommonLazyWidget::SetLazyContent(const TSoftClassPtr<class UClass> SoftWidget)
 {
@@ -3376,7 +3376,7 @@ void ULoadGuardSlot::SetHorizontalAlignment(EHorizontalAlignment InHorizontalAli
 // Function CommonUI.LoadGuardSlot.SetPadding
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// struct FMargin                          InPadding                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FMargin&                   InPadding                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 
 void ULoadGuardSlot::SetPadding(const struct FMargin& InPadding)
 {
@@ -3426,8 +3426,8 @@ void ULoadGuardSlot::SetVerticalAlignment(EVerticalAlignment InVerticalAlignment
 // Function CommonUI.CommonLoadGuard.BP_GuardAndLoadAsset
 // (Final, Native, Private, HasOutParams, BlueprintCallable)
 // Parameters:
-// TSoftObjectPtr<class UObject>           InLazyAsset                                            (ConstParm, Parm, OutParm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TDelegate<void(class UObject* Object)>  OnAssetLoaded                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TSoftObjectPtr<class UObject>&    InLazyAsset                                            (ConstParm, Parm, OutParm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TDelegate<void(class UObject* Object)>&OnAssetLoaded                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UCommonLoadGuard::BP_GuardAndLoadAsset(const TSoftObjectPtr<class UObject>& InLazyAsset, const TDelegate<void(class UObject* Object)>& OnAssetLoaded)
 {
@@ -3478,7 +3478,7 @@ void UCommonLoadGuard::SetIsLoading(bool bInIsLoading)
 // Function CommonUI.CommonLoadGuard.SetLoadingText
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class FText                             InLoadingText                                          (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const class FText&                      InLoadingText                                          (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UCommonLoadGuard::SetLoadingText(const class FText& InLoadingText)
 {
@@ -3528,7 +3528,7 @@ bool UCommonLoadGuard::IsLoading() const
 // Function CommonUI.CommonNumericTextBlock.InterpolateToValue
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// float                                   TargetValue                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             TargetValue                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   MaximumInterpolationDuration                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   MinimumChangeRate                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   OutroOffset                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -3559,7 +3559,7 @@ void UCommonNumericTextBlock::InterpolateToValue(const float TargetValue, float 
 // Function CommonUI.CommonNumericTextBlock.SetCurrentValue
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// float                                   NewValue                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             NewValue                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UCommonNumericTextBlock::SetCurrentValue(const float NewValue)
 {
@@ -3664,12 +3664,12 @@ void ICommonPoolableWidgetInterface::OnAcquireFromPool()
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CommonPoolableWidgetInterface", "OnAcquireFromPool");
+		Func = AsUObject()->Class->GetFunction("CommonPoolableWidgetInterface", "OnAcquireFromPool");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, nullptr);
+	AsUObject()->ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
 }
@@ -3683,12 +3683,12 @@ void ICommonPoolableWidgetInterface::OnReleaseToPool()
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CommonPoolableWidgetInterface", "OnReleaseToPool");
+		Func = AsUObject()->Class->GetFunction("CommonPoolableWidgetInterface", "OnReleaseToPool");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, nullptr);
+	AsUObject()->ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
 }
@@ -3762,7 +3762,7 @@ void UCommonRotator::BP_OnOptionsPopulated(int32 Count)
 // Function CommonUI.CommonRotator.PopulateTextLabels
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// TArray<class FText>                     Labels                                                 (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+// const TArray<class FText>&              Labels                                                 (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 
 void UCommonRotator::PopulateTextLabels(const TArray<class FText>& Labels)
 {
@@ -3901,7 +3901,7 @@ class FText UCommonRotator::GetSelectedText() const
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // class FName                             TabNameID                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FText                             Reason                                                 (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const class FText&                      Reason                                                 (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UCommonTabListWidgetBase::DisableTabWithReason(class FName TabNameID, const class FText& Reason)
 {
@@ -3927,7 +3927,7 @@ void UCommonTabListWidgetBase::DisableTabWithReason(class FName TabNameID, const
 // Function CommonUI.CommonTabListWidgetBase.HandleNextTabInputAction
 // (Final, Native, Protected, HasOutParams)
 // Parameters:
-// bool                                    bPassThrough                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool*                                   bPassThrough                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UCommonTabListWidgetBase::HandleNextTabInputAction(bool* bPassThrough)
 {
@@ -3981,7 +3981,7 @@ void UCommonTabListWidgetBase::HandlePreLinkedSwitcherChanged_BP()
 // Function CommonUI.CommonTabListWidgetBase.HandlePreviousTabInputAction
 // (Final, Native, Protected, HasOutParams)
 // Parameters:
-// bool                                    bPassThrough                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool*                                   bPassThrough                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UCommonTabListWidgetBase::HandlePreviousTabInputAction(bool* bPassThrough)
 {
@@ -4091,7 +4091,7 @@ void UCommonTabListWidgetBase::HandleTabRemoval(class FName TabNameID, class UCo
 // class FName                             TabNameID                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TSubclassOf<class UCommonButtonBase>    ButtonWidgetType                                       (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UWidget*                          ContentWidget                                          (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   TabIndex                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int32                             TabIndex                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UCommonTabListWidgetBase::RegisterTab(class FName TabNameID, TSubclassOf<class UCommonButtonBase> ButtonWidgetType, class UWidget* ContentWidget, const int32 TabIndex)
@@ -4486,7 +4486,7 @@ class FName UCommonTabListWidgetBase::GetTabIdAtIndex(int32 Index_0) const
 // Function CommonUI.CommonTextStyle.GetColor
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// struct FLinearColor                     OutColor                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FLinearColor*                    OutColor                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UCommonTextStyle::GetColor(struct FLinearColor* OutColor) const
 {
@@ -4512,7 +4512,7 @@ void UCommonTextStyle::GetColor(struct FLinearColor* OutColor) const
 // Function CommonUI.CommonTextStyle.GetFont
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// struct FSlateFontInfo                   OutFont                                                (Parm, OutParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FSlateFontInfo*                  OutFont                                                (Parm, OutParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UCommonTextStyle::GetFont(struct FSlateFontInfo* OutFont) const
 {
@@ -4563,7 +4563,7 @@ float UCommonTextStyle::GetLineHeightPercentage() const
 // Function CommonUI.CommonTextStyle.GetMargin
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// struct FMargin                          OutMargin                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// struct FMargin*                         OutMargin                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 
 void UCommonTextStyle::GetMargin(struct FMargin* OutMargin) const
 {
@@ -4589,7 +4589,7 @@ void UCommonTextStyle::GetMargin(struct FMargin* OutMargin) const
 // Function CommonUI.CommonTextStyle.GetShadowColor
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// struct FLinearColor                     OutColor                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FLinearColor*                    OutColor                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UCommonTextStyle::GetShadowColor(struct FLinearColor* OutColor) const
 {
@@ -4615,7 +4615,7 @@ void UCommonTextStyle::GetShadowColor(struct FLinearColor* OutColor) const
 // Function CommonUI.CommonTextStyle.GetShadowOffset
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// struct FVector2D                        OutShadowOffset                                        (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVector2D*                       OutShadowOffset                                        (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UCommonTextStyle::GetShadowOffset(struct FVector2D* OutShadowOffset) const
 {
@@ -4641,7 +4641,7 @@ void UCommonTextStyle::GetShadowOffset(struct FVector2D* OutShadowOffset) const
 // Function CommonUI.CommonTextStyle.GetStrikeBrush
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// struct FSlateBrush                      OutStrikeBrush                                         (Parm, OutParm, NativeAccessSpecifierPublic)
+// struct FSlateBrush*                     OutStrikeBrush                                         (Parm, OutParm, NativeAccessSpecifierPublic)
 
 void UCommonTextStyle::GetStrikeBrush(struct FSlateBrush* OutStrikeBrush) const
 {
@@ -4697,8 +4697,8 @@ class UWidget* UCommonUILibrary::FindParentWidgetOfType(class UWidget* StartingW
 // Function CommonUI.CommonUISubsystemBase.GetEnhancedInputActionButtonIcon
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// class UInputAction*                     InputAction                                            (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class ULocalPlayer*                     LocalPlayer                                            (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UInputAction*               InputAction                                            (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class ULocalPlayer*               LocalPlayer                                            (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FSlateBrush                      ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
 struct FSlateBrush UCommonUISubsystemBase::GetEnhancedInputActionButtonIcon(const class UInputAction* InputAction, const class ULocalPlayer* LocalPlayer) const
@@ -4727,9 +4727,9 @@ struct FSlateBrush UCommonUISubsystemBase::GetEnhancedInputActionButtonIcon(cons
 // Function CommonUI.CommonUISubsystemBase.GetInputActionButtonIcon
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// struct FDataTableRowHandle              InputActionRowHandle                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FDataTableRowHandle&       InputActionRowHandle                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // ECommonInputType                        InputType                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             GamepadName                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName&                      GamepadName                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FSlateBrush                      ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
 struct FSlateBrush UCommonUISubsystemBase::GetInputActionButtonIcon(const struct FDataTableRowHandle& InputActionRowHandle, ECommonInputType InputType, const class FName& GamepadName) const
@@ -4847,7 +4847,7 @@ void UCommonVisibilitySwitcher::IncrementActiveWidgetIndex(bool bAllowWrapping)
 // Function CommonUI.CommonVisibilitySwitcher.SetActiveWidget
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class UWidget*                          Widget                                                 (ConstParm, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UWidget*                    Widget                                                 (ConstParm, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UCommonVisibilitySwitcher::SetActiveWidget(const class UWidget* Widget)
 {
@@ -5452,7 +5452,7 @@ void UCommonButtonGroupBase::OnSelectionStateChangedBase(class UCommonButtonBase
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // int32                                   ButtonIndex                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bAllowSound                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bAllowSound                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UCommonButtonGroupBase::SelectButtonAtIndex(int32 ButtonIndex, const bool bAllowSound)
 {
@@ -5553,7 +5553,7 @@ void UCommonButtonGroupBase::SetSelectionRequired(bool bRequireSelection)
 // Function CommonUI.CommonButtonGroupBase.FindButtonIndex
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// class UCommonButtonBase*                ButtonToFind                                           (ConstParm, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UCommonButtonBase*          ButtonToFind                                           (ConstParm, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 int32 UCommonButtonGroupBase::FindButtonIndex(const class UCommonButtonBase* ButtonToFind) const

@@ -18,7 +18,7 @@ namespace SDK
 {
 
 // PythonClass PyAbility_101651.PyUIController_101651
-// 0x0000 (0x0C60 - 0x0C60)
+// 0x0000 (0x0C50 - 0x0C50)
 class UPyUIController_101651 final : public UUIC_Ability
 {
 public:
@@ -37,11 +37,11 @@ public:
 };
 
 // PythonClass PyAbility_101651.PySummoned_10165101
-// 0x0010 (0x0FF0 - 0x0FE0)
+// 0x0010 (0x1020 - 0x1010)
 class APySummoned_10165101 : public ASummoned_10165101
 {
 public:
-	TMulticastInlineDelegate<void(bool IsHidden)> DelegateOnHidePhantomWhenTeleport;                 // 0x0FE0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(bool IsHidden)> DelegateOnHidePhantomWhenTeleport;                 // 0x1010(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 
 public:
 	void BindMouseLeftForPhantom(bool bEnable);
@@ -59,11 +59,11 @@ public:
 };
 
 // PythonClass PyAbility_101651.PyAbility_101651
-// 0x0008 (0x2640 - 0x2638)
+// 0x0008 (0x2648 - 0x2640)
 class UPyAbility_101651 : public UAbility_101651
 {
 public:
-	class ASummonedCharacterBase*                 PhantomCharacter;                                  // 0x2638(0x0008)(BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class ASummonedCharacterBase*                 PhantomCharacter;                                  // 0x2640(0x0008)(BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void BeginPlay();

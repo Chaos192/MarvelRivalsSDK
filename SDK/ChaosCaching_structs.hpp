@@ -201,7 +201,7 @@ public:
 struct FMovieSceneChaosCacheSectionTemplate final : public FMovieSceneEvalTemplate
 {
 public:
-	struct FMovieSceneChaosCacheSectionTemplateParameters Params;                                            // 0x0020(0x0030)(NativeAccessSpecifierPublic)
+	struct FMovieSceneChaosCacheSectionTemplateParameters Params;                                    // 0x0020(0x0030)(NativeAccessSpecifierPublic)
 };
 
 }

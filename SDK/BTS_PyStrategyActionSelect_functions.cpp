@@ -77,36 +77,6 @@ bool URequirement_CheckSideNumeric::Requirement(class AAIController* OwnerContro
 }
 
 
-// PythonFunction BTS_PyStrategyActionSelect.Requirement_Timeout.Requirement
-// (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class AAIController*                    OwnerController                                        (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class AActor*                           ControlledPawn                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-bool URequirement_Timeout::Requirement(class AAIController* OwnerController, class AActor* ControlledPawn)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Requirement_Timeout", "Requirement");
-
-	Params::Requirement_Timeout_Requirement Parms{};
-
-	Parms.OwnerController = OwnerController;
-	Parms.ControlledPawn = ControlledPawn;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
 // PythonFunction BTS_PyStrategyActionSelect.Requirement_ControlSide.Requirement
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -152,6 +122,36 @@ bool URequirement_ControlSideProgress::Requirement(class AAIController* OwnerCon
 		Func = Class->GetFunction("Requirement_ControlSideProgress", "Requirement");
 
 	Params::Requirement_ControlSideProgress_Requirement Parms{};
+
+	Parms.OwnerController = OwnerController;
+	Parms.ControlledPawn = ControlledPawn;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// PythonFunction BTS_PyStrategyActionSelect.Requirement_Timeout.Requirement
+// (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class AAIController*                    OwnerController                                        (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class AActor*                           ControlledPawn                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+bool URequirement_Timeout::Requirement(class AAIController* OwnerController, class AActor* ControlledPawn)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Requirement_Timeout", "Requirement");
+
+	Params::Requirement_Timeout_Requirement Parms{};
 
 	Parms.OwnerController = OwnerController;
 	Parms.ControlledPawn = ControlledPawn;

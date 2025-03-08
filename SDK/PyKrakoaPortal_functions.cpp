@@ -84,7 +84,7 @@ void APyKrakoaPortal::ReceiveEndPlay(EEndPlayReason EndPlayReason)
 // (Net, NetReliable, Native, NetMulticast, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // class AMarvelBaseCharacter*             Character                                              (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FVector                          target_pos                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVector&                   target_pos                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void APyKrakoaPortal::CheckTeleportFinish(class AMarvelBaseCharacter* Character, const struct FVector& target_pos)
 {

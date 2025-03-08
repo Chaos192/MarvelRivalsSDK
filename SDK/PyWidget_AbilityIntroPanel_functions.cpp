@@ -225,7 +225,7 @@ void UPyWidget_AbilityIntroPanel::OnHeroLogoLoaded(class UTexture2D* Picture)
 // PythonFunction PyWidget_AbilityIntroPanel.PyWidget_AbilityIntroPanel.OnAnimationFinished
 // (BlueprintCosmetic, Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UWidgetAnimation*                 Animation                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// const class UWidgetAnimation*           Animation                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 void UPyWidget_AbilityIntroPanel::OnAnimationFinished(const class UWidgetAnimation* Animation)
 {

@@ -36,11 +36,11 @@ public:
 };
 
 // PythonClass PyAbility_103312.PyAbility_103312
-// 0x0008 (0x2588 - 0x2580)
+// 0x0008 (0x2590 - 0x2588)
 class UPyAbility_103312 : public UMarvelGameplayAbility
 {
 public:
-	int32                                         SniperRifleID;                                     // 0x2580(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         SniperRifleID;                                     // 0x2588(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	bool CanActivate();

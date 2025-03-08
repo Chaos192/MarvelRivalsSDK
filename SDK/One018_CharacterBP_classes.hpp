@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass 1018_CharacterBP.1018_CharacterBP_C
-// 0x0000 (0x1890 - 0x1890)
+// 0x0000 (0x18F0 - 0x18F0)
 class AOne018_CharacterBP_C final : public APyDoctorStrangeCharacter
 {
 public:

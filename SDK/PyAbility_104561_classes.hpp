@@ -10,92 +10,15 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_structs.hpp"
 #include "Marvel_structs.hpp"
 #include "Marvel_classes.hpp"
+#include "CoreUObject_structs.hpp"
 #include "GameplayTags_structs.hpp"
 #include "Hero_1045_classes.hpp"
 
 
 namespace SDK
 {
-
-// PythonClass PyAbility_104561.PyConfig_104561
-// 0x1020 (0x10C0 - 0x00A0)
-class UPyConfig_104561 final : public UConfig_104561
-{
-public:
-	struct FFindGroundParam                       SelectPointParm;                                   // 0x00A0(0x0FD0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FGameplayTag                           CueTag;                                            // 0x1070(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_107C[0x4];                                     // 0x107C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UCameraInterp*                          SelectingPointCameraInterp;                        // 0x1080(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         TaskCancelDelayEnd;                                // 0x1088(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         ProjectileWhaleID;                                 // 0x108C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         AbsorbScopeID;                                     // 0x1090(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1094[0x4];                                     // 0x1094(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                ProjectileStartOffset;                             // 0x1098(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         ScopeWhaleID;                                      // 0x10B0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"PyConfig_104561">();
-	}
-	static class UPyConfig_104561* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UPyConfig_104561>();
-	}
-};
-
-// PythonClass PyAbility_104561.PyAbility_104561
-// 0x0038 (0x25B8 - 0x2580)
-class UPyAbility_104561 : public UMarvelGameplayAbility
-{
-public:
-	struct FVector                                TargetLocation;                                    // 0x2580(0x0018)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void()>              OnAbilityConfirm;                                  // 0x2598(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void()>              OnAbilityTaskCancel;                               // 0x25A8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-
-public:
-	void BeginPlay();
-	void K2_ActivateAbility();
-	void OnWaitTaskConfirm(const struct FGameplayAbilityTargetDataHandle& Data);
-	void OnWaitTaskCancel(const struct FGameplayAbilityTargetDataHandle& Data);
-	void MissileEventNotify();
-	void NativeOnMontageCompleted(const class FString& Tag);
-	void BreakEventNotify();
-	void K2_OnEndAbility(bool bWasCancelled);
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"PyAbility_104561">();
-	}
-	static class UPyAbility_104561* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UPyAbility_104561>();
-	}
-};
-
-// PythonClass PyAbility_104561.PyProjectile_10456101
-// 0x0000 (0x3050 - 0x3050)
-class APyProjectile_10456101 final : public AMarvelAbilityTargetActor_Projectile
-{
-public:
-	void K2_OnBeginAgentTask();
-	void K2_OnInitializeData();
-	void K2_OnEndAgentTask();
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"PyProjectile_10456101">();
-	}
-	static class APyProjectile_10456101* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<APyProjectile_10456101>();
-	}
-};
 
 // PythonClass PyAbility_104561.PyCue_ProjectileLoop_10456101
 // 0x0030 (0x0DE0 - 0x0DB0)
@@ -127,6 +50,83 @@ public:
 	static class APyCue_ProjectileLoop_10456101* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<APyCue_ProjectileLoop_10456101>();
+	}
+};
+
+// PythonClass PyAbility_104561.PyConfig_104561
+// 0x1020 (0x10C0 - 0x00A0)
+class UPyConfig_104561 final : public UConfig_104561
+{
+public:
+	struct FFindGroundParam                       SelectPointParm;                                   // 0x00A0(0x0FD0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FGameplayTag                           CueTag;                                            // 0x1070(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_107C[0x4];                                     // 0x107C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UCameraInterp*                          SelectingPointCameraInterp;                        // 0x1080(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         TaskCancelDelayEnd;                                // 0x1088(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ProjectileWhaleID;                                 // 0x108C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         AbsorbScopeID;                                     // 0x1090(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1094[0x4];                                     // 0x1094(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                ProjectileStartOffset;                             // 0x1098(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ScopeWhaleID;                                      // 0x10B0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PyConfig_104561">();
+	}
+	static class UPyConfig_104561* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPyConfig_104561>();
+	}
+};
+
+// PythonClass PyAbility_104561.PyAbility_104561
+// 0x0038 (0x25C0 - 0x2588)
+class UPyAbility_104561 : public UMarvelGameplayAbility
+{
+public:
+	struct FVector                                TargetLocation;                                    // 0x2588(0x0018)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void()>              OnAbilityConfirm;                                  // 0x25A0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void()>              OnAbilityTaskCancel;                               // 0x25B0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+
+public:
+	void BeginPlay();
+	void K2_ActivateAbility();
+	void OnWaitTaskConfirm(const struct FGameplayAbilityTargetDataHandle& Data);
+	void OnWaitTaskCancel(const struct FGameplayAbilityTargetDataHandle& Data);
+	void MissileEventNotify();
+	void NativeOnMontageCompleted(const class FString& Tag);
+	void BreakEventNotify();
+	void K2_OnEndAbility(bool bWasCancelled);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PyAbility_104561">();
+	}
+	static class UPyAbility_104561* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPyAbility_104561>();
+	}
+};
+
+// PythonClass PyAbility_104561.PyProjectile_10456101
+// 0x0000 (0x3110 - 0x3110)
+class APyProjectile_10456101 final : public AMarvelAbilityTargetActor_Projectile
+{
+public:
+	void K2_OnBeginAgentTask();
+	void K2_OnInitializeData();
+	void K2_OnEndAgentTask();
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PyProjectile_10456101">();
+	}
+	static class APyProjectile_10456101* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<APyProjectile_10456101>();
 	}
 };
 

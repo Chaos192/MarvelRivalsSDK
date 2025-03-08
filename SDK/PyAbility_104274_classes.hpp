@@ -39,13 +39,14 @@ public:
 };
 
 // PythonClass PyAbility_104274.PyAbility_104274
-// 0x0000 (0x2580 - 0x2580)
+// 0x0000 (0x2588 - 0x2588)
 class UPyAbility_104274 : public UMarvelGameplayAbility
 {
 public:
 	void BeginPlay();
 	bool CanActivate();
 	void K2_ActivateAbilityFromEvent(const struct FGameplayEventData& EventData);
+	void OnWebSummonedSpawnSucceed(class AActor* SpawnActor);
 	void PreMissileEventNotify();
 	void MissileEventNotify();
 	void BreakEventNotify();

@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // PythonClass PyBlackPantherCharacter.PyBlackPantherCharacter
-// 0x0000 (0x1820 - 0x1820)
+// 0x0000 (0x1870 - 0x1870)
 class APyBlackPantherCharacter : public ABlackPantherCharacter
 {
 public:

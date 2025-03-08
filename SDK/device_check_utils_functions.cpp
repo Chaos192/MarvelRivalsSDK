@@ -67,10 +67,35 @@ class FString UDeviceFunctionLibrary::GetGpuInfo()
 }
 
 
+// PythonFunction device_check_utils.DeviceFunctionLibrary.GetDisplayDevicesInfo
+// (Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// TArray<class FString>                   ReturnValue                                            (Parm, OutParm, ReturnParm)
+
+TArray<class FString> UDeviceFunctionLibrary::GetDisplayDevicesInfo()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("DeviceFunctionLibrary", "GetDisplayDevicesInfo");
+
+	Params::DeviceFunctionLibrary_GetDisplayDevicesInfo Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // PythonFunction device_check_utils.DeviceFunctionLibrary.QueryCpuVendor
 // (Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class FString                           cpu_info                                               (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    cpu_info                                               (Parm, ZeroConstructor, HasGetValueTypeHash)
 // class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash)
 
 class FString UDeviceFunctionLibrary::QueryCpuVendor(const class FString& cpu_info)
@@ -98,7 +123,7 @@ class FString UDeviceFunctionLibrary::QueryCpuVendor(const class FString& cpu_in
 // PythonFunction device_check_utils.DeviceFunctionLibrary.QueryGpuVendor
 // (Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class FString                           gpu_info                                               (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    gpu_info                                               (Parm, ZeroConstructor, HasGetValueTypeHash)
 // class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash)
 
 class FString UDeviceFunctionLibrary::QueryGpuVendor(const class FString& gpu_info)

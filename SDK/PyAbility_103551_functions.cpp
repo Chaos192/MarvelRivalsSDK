@@ -40,7 +40,7 @@ void APyCue_AbilityLoop_103551::ResetDefault()
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 bool APyCue_AbilityLoop_103551::WhileActive(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
@@ -70,7 +70,7 @@ bool APyCue_AbilityLoop_103551::WhileActive(class AActor* MyTarget, const struct
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 bool APyCue_AbilityLoop_103551::OnRemove(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
@@ -143,7 +143,7 @@ void APyCue_AbilityLoop_103551::OnProjectileSpawned(class AActor* SpawnActor)
 // PythonFunction PyAbility_103551.PyCue_AbilityLoop_103551.OnProjectileHit
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FHitResult                       InHitResult                                            (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FHitResult&                InHitResult                                            (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyCue_AbilityLoop_103551::OnProjectileHit(const struct FHitResult& InHitResult)
 {

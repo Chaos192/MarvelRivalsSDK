@@ -39,7 +39,7 @@ void APyDoorV2::ReceiveBeginPlay()
 // PythonFunction PyDoorV2.PyDoorV2.S_payload_reach
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FGameplayTag                     event_name                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              event_name                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
 // float                                   event_args                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void APyDoorV2::S_payload_reach(const struct FGameplayTag& event_name, float event_args)

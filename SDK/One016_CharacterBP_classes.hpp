@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass 1016_CharacterBP.1016_CharacterBP_C
-// 0x0000 (0x1850 - 0x1850)
+// 0x0000 (0x18B0 - 0x18B0)
 class AOne016_CharacterBP_C final : public APyLokiCharacter
 {
 public:

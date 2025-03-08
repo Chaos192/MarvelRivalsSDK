@@ -60,8 +60,8 @@ void AMarvelStringDebugActor_C::ReceiveEndPlay(EEndPlayReason EndPlayReason)
 // Function MarvelStringDebugActor.MarvelStringDebugActor_C.SetDebugString
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           String                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-// struct FLinearColor                     Color                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const class FString&                    String                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const struct FLinearColor&              Color                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void AMarvelStringDebugActor_C::SetDebugString(const class FString& String, const struct FLinearColor& Color)
 {

@@ -141,7 +141,7 @@ void UPyMarvelUserWidget::OnBecomeNoneTop()
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class FName                             ActionName                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// EInputEvent                             EventType                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const EInputEvent                       EventType                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UPyMarvelUserWidget::OnReceiveInputAction(class FName ActionName, const EInputEvent EventType)
 {
@@ -167,7 +167,7 @@ void UPyMarvelUserWidget::OnReceiveInputAction(class FName ActionName, const EIn
 // PythonFunction PyMarvelUserWidget.PyMarvelUserWidget.OnReceiveEnhancedInputAction
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UInputAction*                     Action                                                 (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// const class UInputAction*               Action                                                 (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 void UPyMarvelUserWidget::OnReceiveEnhancedInputAction(const class UInputAction* Action)
 {
@@ -192,7 +192,7 @@ void UPyMarvelUserWidget::OnReceiveEnhancedInputAction(const class UInputAction*
 // PythonFunction PyMarvelUserWidget.PyMarvelUserWidget.OnReceiveEnhancedInputActionWithBoolValue
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UInputAction*                     Action                                                 (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// const class UInputAction*               Action                                                 (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // bool                                    Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UPyMarvelUserWidget::OnReceiveEnhancedInputActionWithBoolValue(const class UInputAction* Action, bool Value)
@@ -219,7 +219,7 @@ void UPyMarvelUserWidget::OnReceiveEnhancedInputActionWithBoolValue(const class 
 // PythonFunction PyMarvelUserWidget.PyMarvelUserWidget.OnReceiveEnhancedInputActionWithFloatValue
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UInputAction*                     Action                                                 (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// const class UInputAction*               Action                                                 (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // float                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UPyMarvelUserWidget::OnReceiveEnhancedInputActionWithFloatValue(const class UInputAction* Action, float Value)
@@ -246,8 +246,8 @@ void UPyMarvelUserWidget::OnReceiveEnhancedInputActionWithFloatValue(const class
 // PythonFunction PyMarvelUserWidget.PyMarvelUserWidget.OnReceiveEnhancedInputActionWithV2Value
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UInputAction*                     Action                                                 (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FVector2D                        Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const class UInputAction*               Action                                                 (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// const struct FVector2D&                 Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UPyMarvelUserWidget::OnReceiveEnhancedInputActionWithV2Value(const class UInputAction* Action, const struct FVector2D& Value)
 {
@@ -273,8 +273,8 @@ void UPyMarvelUserWidget::OnReceiveEnhancedInputActionWithV2Value(const class UI
 // PythonFunction PyMarvelUserWidget.PyMarvelUserWidget.OnReceiveEnhancedInputActionWithV3Value
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UInputAction*                     Action                                                 (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FVector                          Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const class UInputAction*               Action                                                 (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// const struct FVector&                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UPyMarvelUserWidget::OnReceiveEnhancedInputActionWithV3Value(const class UInputAction* Action, const struct FVector& Value)
 {
@@ -300,7 +300,7 @@ void UPyMarvelUserWidget::OnReceiveEnhancedInputActionWithV3Value(const class UI
 // PythonFunction PyMarvelUserWidget.PyMarvelUserWidget.OnReceiveEnhancedInputActionWithTriggerEvent
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UInputAction*                     Action                                                 (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// const class UInputAction*               Action                                                 (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // ETriggerEvent                           TriggerEvent                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UPyMarvelUserWidget::OnReceiveEnhancedInputActionWithTriggerEvent(const class UInputAction* Action, ETriggerEvent TriggerEvent)
@@ -354,8 +354,8 @@ void UPyMarvelUserWidget::OnReceiveInputAxis(class FName Axis, float AxisValue)
 // PythonFunction PyMarvelUserWidget.PyMarvelUserWidget.OnReceiveInputKey
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FKey                             InKey                                                  (Parm, HasGetValueTypeHash)
-// EInputEvent                             EventType                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FKey&                      InKey                                                  (Parm, HasGetValueTypeHash)
+// const EInputEvent                       EventType                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UPyMarvelUserWidget::OnReceiveInputKey(const struct FKey& InKey, const EInputEvent EventType)
 {
@@ -381,7 +381,7 @@ void UPyMarvelUserWidget::OnReceiveInputKey(const struct FKey& InKey, const EInp
 // PythonFunction PyMarvelUserWidget.PyMarvelUserWidget.OnReceiveAxisKey
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FKey                             InKey                                                  (Parm, HasGetValueTypeHash)
+// const struct FKey&                      InKey                                                  (Parm, HasGetValueTypeHash)
 // float                                   AxisValue                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UPyMarvelUserWidget::OnReceiveAxisKey(const struct FKey& InKey, float AxisValue)
@@ -616,7 +616,7 @@ void UPyMarvelUserWidget::PlayAnimationTimeRangeFixed(class UWidgetAnimation* An
 // PythonFunction PyMarvelUserWidget.PyMarvelUserWidget.OnAnimationFinished
 // (BlueprintCosmetic, Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UWidgetAnimation*                 Animation                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// const class UWidgetAnimation*           Animation                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 void UPyMarvelUserWidget::OnAnimationFinished(const class UWidgetAnimation* Animation)
 {
@@ -716,7 +716,7 @@ void UPyMarvelUserWidget::SetFocusingWidget(class UWidget* Widget)
 // PythonFunction PyMarvelUserWidget.PyMarvelUserWidget.OnAddedToFocusPath
 // (BlueprintCosmetic, Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FFocusEvent                      InFocusEvent                                           (Parm, NoDestructor)
+// const struct FFocusEvent&               InFocusEvent                                           (Parm, NoDestructor)
 
 void UPyMarvelUserWidget::OnAddedToFocusPath(const struct FFocusEvent& InFocusEvent)
 {
@@ -741,7 +741,7 @@ void UPyMarvelUserWidget::OnAddedToFocusPath(const struct FFocusEvent& InFocusEv
 // PythonFunction PyMarvelUserWidget.PyMarvelUserWidget.OnRemovedFromFocusPath
 // (BlueprintCosmetic, Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FFocusEvent                      InFocusEvent                                           (Parm, NoDestructor)
+// const struct FFocusEvent&               InFocusEvent                                           (Parm, NoDestructor)
 
 void UPyMarvelUserWidget::OnRemovedFromFocusPath(const struct FFocusEvent& InFocusEvent)
 {

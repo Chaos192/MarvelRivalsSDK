@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // PythonClass PyDoctorStrangeCharacter.PyDoctorStrangeCharacter
-// 0x0000 (0x1890 - 0x1890)
+// 0x0000 (0x18F0 - 0x18F0)
 class APyDoctorStrangeCharacter : public ADoctorStrangeCharacter
 {
 public:

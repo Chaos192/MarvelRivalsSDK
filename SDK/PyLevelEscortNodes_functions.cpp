@@ -21,9 +21,9 @@ namespace SDK
 // (Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // class APyPayload*                       Payload                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// TMap<int32, float>                      MoveSpeed                                              (ConstParm, Parm, OutParm, ReferenceParm)
+// const TMap<int32, float>&               MoveSpeed                                              (ConstParm, Parm, OutParm, ReferenceParm)
 // float                                   BackwordSpeed                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// TArray<int32>                           BuffID                                                 (ConstParm, Parm, OutParm, ReferenceParm)
+// const TArray<int32>&                    BuffID                                                 (ConstParm, Parm, OutParm, ReferenceParm)
 // float                                   DelayForwardTime                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                                   DelayBackTime                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 

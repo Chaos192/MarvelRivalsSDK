@@ -59,11 +59,11 @@ public:
 };
 
 // PythonClass PyAbility_105041.PyAbility_105041
-// 0x0008 (0x2600 - 0x25F8)
+// 0x0008 (0x2608 - 0x2600)
 class UPyAbility_105041 : public UMarvelAbility_SelectTarget
 {
 public:
-	class AMarvelBarrierBase*                     BarrierRef;                                        // 0x25F8(0x0008)(BlueprintVisible, Net, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AMarvelBarrierBase*                     BarrierRef;                                        // 0x2600(0x0008)(BlueprintVisible, Net, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void BeginPlay();
@@ -90,14 +90,14 @@ public:
 };
 
 // PythonClass PyAbility_105041.PySummoned_10504101
-// 0x0020 (0x0930 - 0x0910)
+// 0x0020 (0x0960 - 0x0940)
 class APySummoned_10504101 : public AMarvelBarrierBase
 {
 public:
-	int32                                         HealingScopeID;                                    // 0x0910(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_914[0x4];                                      // 0x0914(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class AActor*                                 BarrierTarget;                                     // 0x0918(0x0008)(Net, ZeroConstructor, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class AActor* NewTarget)> OnBarrierTargetChange;                             // 0x0920(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	int32                                         HealingScopeID;                                    // 0x0940(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_944[0x4];                                      // 0x0944(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class AActor*                                 BarrierTarget;                                     // 0x0948(0x0008)(Net, ZeroConstructor, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class AActor* NewTarget)> OnBarrierTargetChange;                   // 0x0950(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 
 public:
 	void K2_OnSummonedBeginAgentTask();

@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Marvel_structs.hpp"
 #include "CommonButtonStyle_structs.hpp"
+#include "Marvel_structs.hpp"
 #include "Engine_classes.hpp"
 
 
@@ -23,7 +23,7 @@ namespace SDK
 class UButtonStyleData_C final : public UPrimaryDataAsset
 {
 public:
-	TMap<EButtonTemplate, struct FCommonButtonStyle> ButtonStyles;                                      // 0x0038(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
+	TMap<EButtonTemplate, struct FCommonButtonStyle> ButtonStyles;                                   // 0x0038(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
 
 public:
 	static class UClass* StaticClass()

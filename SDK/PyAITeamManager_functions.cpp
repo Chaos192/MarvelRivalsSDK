@@ -84,7 +84,7 @@ void APyAITeamManager::UpdateTeamData()
 // (Native, Public, BlueprintCallable)
 // Parameters:
 // class AMarvelAIController*              MyAIController                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class FString                           DiscardReason                                          (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    DiscardReason                                          (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void APyAITeamManager::DiscardWayPointPath(class AMarvelAIController* MyAIController, const class FString& DiscardReason)
 {

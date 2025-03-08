@@ -72,8 +72,8 @@ public:
 };
 
 // Class NavigationSystem.NavigationPathGenerator
-// 0x0000 (0x0030 - 0x0030)
-class INavigationPathGenerator final : public IInterface
+// 0x0000 (0x0000 - 0x0000)
+class INavigationPathGenerator final
 {
 public:
 	static class UClass* StaticClass()
@@ -84,11 +84,20 @@ public:
 	{
 		return GetDefaultObjImpl<INavigationPathGenerator>();
 	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
 };
 
 // Class NavigationSystem.NavLinkCustomInterface
-// 0x0000 (0x0030 - 0x0030)
-class INavLinkCustomInterface final : public IInterface
+// 0x0000 (0x0000 - 0x0000)
+class INavLinkCustomInterface final
 {
 public:
 	static class UClass* StaticClass()
@@ -99,11 +108,20 @@ public:
 	{
 		return GetDefaultObjImpl<INavLinkCustomInterface>();
 	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
 };
 
 // Class NavigationSystem.NavLinkHostInterface
-// 0x0000 (0x0030 - 0x0030)
-class INavLinkHostInterface final : public IInterface
+// 0x0000 (0x0000 - 0x0000)
+class INavLinkHostInterface final
 {
 public:
 	static class UClass* StaticClass()
@@ -113,6 +131,15 @@ public:
 	static class INavLinkHostInterface* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<INavLinkHostInterface>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
 	}
 };
 
@@ -132,8 +159,8 @@ public:
 };
 
 // Class NavigationSystem.NavNodeInterface
-// 0x0000 (0x0030 - 0x0030)
-class INavNodeInterface final : public IInterface
+// 0x0000 (0x0000 - 0x0000)
+class INavNodeInterface final
 {
 public:
 	static class UClass* StaticClass()
@@ -143,6 +170,15 @@ public:
 	static class INavNodeInterface* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<INavNodeInterface>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
 	}
 };
 
@@ -443,7 +479,7 @@ public:
 class UNavigationPath final : public UObject
 {
 public:
-	TMulticastInlineDelegate<void(class UNavigationPath* AffectedPath, ENavPathEvent PathEvent)> PathUpdatedNotifier;                               // 0x0030(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class UNavigationPath* AffectedPath, ENavPathEvent PathEvent)> PathUpdatedNotifier; // 0x0030(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	TArray<struct FVector>                        PathPoints;                                        // 0x0040(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
 	ENavigationOptionFlag                         RecalculateOnInvalidation;                         // 0x0050(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_51[0x3F];                                      // 0x0051(0x003F)(Fixing Struct Size After Last Property [ Dumper-7 ])
@@ -508,8 +544,8 @@ public:
 	TArray<class ANavigationData*>                NavDataSet;                                        // 0x00F0(0x0010)(ZeroConstructor, Transient, UObjectWrapper, NativeAccessSpecifierPublic)
 	TArray<class ANavigationData*>                NavDataRegistrationQueue;                          // 0x0100(0x0010)(ZeroConstructor, Transient, UObjectWrapper, NativeAccessSpecifierPublic)
 	uint8                                         Pad_110[0x10];                                     // 0x0110(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
-	TMulticastInlineDelegate<void(class ANavigationData* NavData)> OnNavDataRegisteredEvent;                          // 0x0120(0x0010)(ZeroConstructor, Transient, InstancedReference, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class ANavigationData* NavData)> OnNavigationGenerationFinishedDelegate;            // 0x0130(0x0010)(ZeroConstructor, Transient, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class ANavigationData* NavData)> OnNavDataRegisteredEvent;         // 0x0120(0x0010)(ZeroConstructor, Transient, InstancedReference, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class ANavigationData* NavData)> OnNavigationGenerationFinishedDelegate; // 0x0130(0x0010)(ZeroConstructor, Transient, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	uint8                                         Pad_140[0xE0];                                     // 0x0140(0x00E0)(Fixing Size After Last Property [ Dumper-7 ])
 	EFNavigationSystemRunMode                     OperationMode;                                     // 0x0220(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	uint8                                         Pad_221[0x139F];                                   // 0x0221(0x139F)(Fixing Struct Size After Last Property [ Dumper-7 ])
@@ -630,12 +666,12 @@ public:
 };
 
 // Class NavigationSystem.NavLinkComponent
-// 0x0010 (0x0850 - 0x0840)
+// 0x0010 (0x08E0 - 0x08D0)
 class UNavLinkComponent final : public UPrimitiveComponent
 {
 public:
-	uint8                                         Pad_838[0x8];                                      // 0x0838(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FNavigationLink>                Links;                                             // 0x0840(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_8C8[0x8];                                      // 0x08C8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FNavigationLink>                Links;                                             // 0x08D0(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -715,7 +751,7 @@ public:
 };
 
 // Class NavigationSystem.NavLinkRenderingComponent
-// 0x0000 (0x0840 - 0x0840)
+// 0x0000 (0x08D0 - 0x08D0)
 class UNavLinkRenderingComponent final : public UPrimitiveComponent
 {
 public:
@@ -749,11 +785,11 @@ public:
 };
 
 // Class NavigationSystem.NavMeshRenderingComponent
-// 0x0020 (0x08B0 - 0x0890)
+// 0x0020 (0x0940 - 0x0920)
 class UNavMeshRenderingComponent final : public UDebugDrawComponent
 {
 public:
-	uint8                                         Pad_888[0x28];                                     // 0x0888(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_918[0x28];                                     // 0x0918(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -767,7 +803,7 @@ public:
 };
 
 // Class NavigationSystem.NavTestRenderingComponent
-// 0x0000 (0x0890 - 0x0890)
+// 0x0000 (0x0920 - 0x0920)
 class UNavTestRenderingComponent final : public UDebugDrawComponent
 {
 public:
@@ -787,11 +823,12 @@ class ARecastNavMesh final : public ANavigationData
 {
 public:
 	TArray<struct FExtraOffMeshCons>              ExtraOffMeshCons;                                  // 0x06B8(0x0010)(Edit, ZeroConstructor, EditConst, NativeAccessSpecifierPublic)
-	uint8                                         bDrawTriangleEdges : 1;                            // 0x06C8(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bDrawPolyEdges : 1;                                // 0x06C8(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, Config, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bDrawFilledPolys : 1;                              // 0x06C8(0x0001)(BitIndex: 0x02, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bDrawNavMeshEdges : 1;                             // 0x06C8(0x0001)(BitIndex: 0x03, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bDrawColorfulNavmeshEdges : 1;                     // 0x06C8(0x0001)(BitIndex: 0x04, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bNeedRuntimeUpdateExtraOffMeshCons : 1;            // 0x06C8(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bDrawTriangleEdges : 1;                            // 0x06C8(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bDrawPolyEdges : 1;                                // 0x06C8(0x0001)(BitIndex: 0x02, PropSize: 0x0001 (Edit, Config, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bDrawFilledPolys : 1;                              // 0x06C8(0x0001)(BitIndex: 0x03, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bDrawNavMeshEdges : 1;                             // 0x06C8(0x0001)(BitIndex: 0x04, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bDrawColorfulNavmeshEdges : 1;                     // 0x06C8(0x0001)(BitIndex: 0x05, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
 	uint8                                         Pad_6C9[0x3];                                      // 0x06C9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         MinLength;                                         // 0x06CC(0x0004)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         MaxLength;                                         // 0x06D0(0x0004)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)

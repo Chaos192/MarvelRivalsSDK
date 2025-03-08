@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // PythonClass PyAbility_103051.PyProjectile_10305101
-// 0x0000 (0x3050 - 0x3050)
+// 0x0000 (0x3110 - 0x3110)
 class APyProjectile_10305101 : public AProjectile_10305101
 {
 public:

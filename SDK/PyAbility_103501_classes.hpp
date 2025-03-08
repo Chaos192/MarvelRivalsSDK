@@ -58,7 +58,7 @@ public:
 };
 
 // PythonClass PyAbility_103501.PyAbility_103501
-// 0x0000 (0x2608 - 0x2608)
+// 0x0000 (0x2610 - 0x2610)
 class UPyAbility_103501 : public UPyAbility_131
 {
 public:
@@ -73,7 +73,7 @@ public:
 };
 
 // PythonClass PyAbility_103501.PyUIController_103501
-// 0x0000 (0x0C68 - 0x0C68)
+// 0x0000 (0x0C58 - 0x0C58)
 class UPyUIController_103501 final : public UPyUIController_131
 {
 public:

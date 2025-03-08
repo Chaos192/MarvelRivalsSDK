@@ -425,7 +425,7 @@ public:
 struct MediaPlayer_GetMediaMetadataItems final
 {
 public:
-	TMap<class FString, struct FMediaMetadataItemsBPT> ReturnValue;                                       // 0x0000(0x0050)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+	TMap<class FString, struct FMediaMetadataItemsBPT> ReturnValue;                                  // 0x0000(0x0050)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
 
 // Function MediaAssets.MediaPlayer.GetMediaName
@@ -1001,7 +1001,7 @@ public:
 struct MediaSoundComponent_GetNormalizedSpectralData final
 {
 public:
-	TArray<struct FMediaSoundComponentSpectralData> ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+	TArray<struct FMediaSoundComponentSpectralData> ReturnValue;                                     // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 };
 
 // Function MediaAssets.MediaSoundComponent.GetSpectralData
@@ -1009,7 +1009,7 @@ public:
 struct MediaSoundComponent_GetSpectralData final
 {
 public:
-	TArray<struct FMediaSoundComponentSpectralData> ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+	TArray<struct FMediaSoundComponentSpectralData> ReturnValue;                                     // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 };
 
 // Function MediaAssets.MediaSoundComponent.SetEnableEnvelopeFollowing

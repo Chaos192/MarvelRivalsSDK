@@ -73,7 +73,7 @@ public:
 class UPlatformSettingsManager final : public UObject
 {
 public:
-	TMap<TSubclassOf<class UPlatformSettings>, struct FPlatformSettingsInstances> SettingsMap;                                       // 0x0030(0x0050)(Transient, NativeAccessSpecifierPrivate)
+	TMap<TSubclassOf<class UPlatformSettings>, struct FPlatformSettingsInstances> SettingsMap;       // 0x0030(0x0050)(Transient, NativeAccessSpecifierPrivate)
 	uint8                                         Pad_80[0x10];                                      // 0x0080(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:

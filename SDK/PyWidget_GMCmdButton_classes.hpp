@@ -22,10 +22,10 @@ namespace SDK
 class UPyWidget_GMCmdButton : public UWidget_ListEntry
 {
 public:
-	TMulticastInlineDelegate<void(const class FString& Cmd, const class FString& CmdName)> OnCmdClicked;                                      // 0x05B0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(const class FString& Cmd, const class FString& CmdName, const class FString& Description)> OnCmdRightClicked;                                 // 0x05C0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const class FString& Cmd, const class FString& CmdName)> OnCmdClicked; // 0x05B0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const class FString& Cmd, const class FString& CmdName, const class FString& Description)> OnCmdRightClicked; // 0x05C0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 	TMulticastInlineDelegate<void()>              OnCmdCollectChanged;                               // 0x05D0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(const class FString& GroupName, const class FString& CmdName, const class FString& CmdStr)> OnCmdEditor;                                       // 0x05E0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const class FString& GroupName, const class FString& CmdName, const class FString& CmdStr)> OnCmdEditor; // 0x05E0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 	TSubclassOf<class UUserWidget>                GMCmd_Btn;                                         // 0x05F0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 Cmd;                                               // 0x05F8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 BtnName;                                           // 0x0608(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)

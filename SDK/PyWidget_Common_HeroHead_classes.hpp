@@ -44,7 +44,7 @@ public:
 	EHeroHeadType                                 HeroHeadType;                                      // 0x0430(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bClearImgDataOnEmptyTarget;                        // 0x0431(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_432[0x6];                                      // 0x0432(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	TMulticastInlineDelegate<void(class UTexture2D* Picture)> OnPictureLoadCompleted;                            // 0x0438(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class UTexture2D* Picture)> OnPictureLoadCompleted;                // 0x0438(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 
 public:
 	void OnInitialized();
@@ -124,8 +124,8 @@ public:
 class UPyWidget_MaskHeroHead : public UMaskImage
 {
 public:
-	TMulticastInlineDelegate<void(class UTexture2D* Mask)> OnMaskLoadCompleted;                               // 0x04A0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class UTexture2D* Picture)> OnPictureLoadCompleted;                            // 0x04B0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class UTexture2D* Mask)> OnMaskLoadCompleted;                      // 0x04A0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class UTexture2D* Picture)> OnPictureLoadCompleted;                // 0x04B0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 
 public:
 	void SetImgPicture(class UTexture2D* Img_Picture);

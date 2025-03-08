@@ -26,7 +26,7 @@ class ADestructibleActor final : public AActor
 {
 public:
 	class UDestructibleComponent*                 DestructibleComponent;                             // 0x0490(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	TMulticastInlineDelegate<void(struct FVector& HitPoint, struct FVector& HitDirection)> OnActorFracture;                                   // 0x0498(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const struct FVector& HitPoint, const struct FVector& HitDirection)> OnActorFracture; // 0x0498(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -40,18 +40,18 @@ public:
 };
 
 // Class ApexDestruction.DestructibleComponent
-// 0x00A0 (0x0D00 - 0x0C60)
+// 0x00A0 (0x0DC0 - 0x0D20)
 class UDestructibleComponent final : public USkinnedMeshComponent
 {
 public:
-	uint8                                         bFractureEffectOverride : 1;                       // 0x0C60(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_C61[0x7];                                      // 0x0C61(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FFractureEffect>                FractureEffects;                                   // 0x0C68(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, EditFixedSize, ZeroConstructor, NativeAccessSpecifierPublic)
-	bool                                          bEnableHardSleeping;                               // 0x0C78(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C79[0x3];                                      // 0x0C79(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         LargeChunkThreshold;                               // 0x0C7C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(struct FVector& HitPoint, struct FVector& HitDirection)> OnComponentFracture;                               // 0x0C80(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C90[0x70];                                     // 0x0C90(0x0070)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         bFractureEffectOverride : 1;                       // 0x0D20(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_D21[0x7];                                      // 0x0D21(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FFractureEffect>                FractureEffects;                                   // 0x0D28(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, EditFixedSize, ZeroConstructor, NativeAccessSpecifierPublic)
+	bool                                          bEnableHardSleeping;                               // 0x0D38(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D39[0x3];                                      // 0x0D39(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         LargeChunkThreshold;                               // 0x0D3C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const struct FVector& HitPoint, const struct FVector& HitDirection)> OnComponentFracture; // 0x0D40(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D50[0x70];                                     // 0x0D50(0x0070)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void ApplyDamage(float DamageAmount, const struct FVector& HitLocation, const struct FVector& ImpulseDir, float ImpulseStrength);

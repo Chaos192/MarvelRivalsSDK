@@ -83,7 +83,7 @@ bool UPyAbility_103612::CanActivate()
 // PythonFunction PyAbility_103612.PyAbility_103612.NativeOnMontageEvent
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_103612::NativeOnMontageEvent(const class FString& Tag)
 {
@@ -158,7 +158,7 @@ void UPyAbility_103612::OnAirAbilityActivated(class UGameplayAbility* Ability)
 // PythonFunction PyAbility_103612.PyAbility_103612.OnLandedCallback
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FHitResult                       Hit                                                    (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FHitResult&                Hit                                                    (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyAbility_103612::OnLandedCallback(const struct FHitResult& Hit)
 {
@@ -212,9 +212,9 @@ void UPyAbility_103612::OnMovementModeChanged(class ACharacter* MyCharacter, EMo
 // PythonFunction PyAbility_103612.PyAbility_103612.ModifyDeathImpulseInfo
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   ImpulseLevel                                           (Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FVector                          DeathDir                                               (Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FAttributeModifierParameter      ModifierParameter                                      (ConstParm, Parm, OutParm, ReferenceParm)
+// int32&                                  ImpulseLevel                                           (Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FVector&                         DeathDir                                               (Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FAttributeModifierParameter&ModifierParameter                                      (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyAbility_103612::ModifyDeathImpulseInfo(int32& ImpulseLevel, struct FVector& DeathDir, const struct FAttributeModifierParameter& ModifierParameter)
 {

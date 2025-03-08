@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Marvel_structs.hpp"
 #include "MarvelLevel_structs.hpp"
+#include "Marvel_structs.hpp"
 
 
 namespace SDK::Params

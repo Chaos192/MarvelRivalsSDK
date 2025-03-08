@@ -36,6 +36,25 @@ void UPyAbility_200009::K2_ActivateAbility()
 }
 
 
+// PythonFunction PyAbility_200009.PyAbility_200009.RecoverDelegate
+// (Native, Public, BlueprintCallable)
+
+void UPyAbility_200009::RecoverDelegate()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyAbility_200009", "RecoverDelegate");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // PythonFunction PyAbility_200009.PyAbility_200009.K2_OnEndAbility
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:

@@ -149,8 +149,8 @@ void UPyBuffAbility_10390101::K2_OnEndAbility(bool bWasCancelled)
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // class AActor*                           Source                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FAttributeModifierHandle         ParamHandle                                            (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
-// struct FNoTreatShieldChangeEventExtraDataExtraData                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
+// const struct FAttributeModifierHandle&  ParamHandle                                            (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
+// const struct FNoTreatShieldChangeEventExtraData&ExtraData                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
 
 void UPyBuffAbility_10390101::OnActorNoTreatShieldChanged(class AActor* Source, const struct FAttributeModifierHandle& ParamHandle, const struct FNoTreatShieldChangeEventExtraData& ExtraData)
 {
@@ -179,7 +179,7 @@ void UPyBuffAbility_10390101::OnActorNoTreatShieldChanged(class AActor* Source, 
 // Parameters:
 // class UMarvelGameplayAbility*           Ability                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // float                                   CostValue                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayTag                     CostType_0                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              CostType_0                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
 
 void UPyBuffAbility_10390101::OtherAbilityApplyCost(class UMarvelGameplayAbility* Ability, float CostValue, const struct FGameplayTag& CostType_0)
 {
@@ -245,7 +245,7 @@ void UPyBuffAbility_10390102::K2_ActivateAbility()
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // class UGameplayAbility*                 Ability                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FAttributeModifierHandle         ParamHandle                                            (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
+// const struct FAttributeModifierHandle&  ParamHandle                                            (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
 
 void UPyBuffAbility_10390102::OnAbilityDamage(class UGameplayAbility* Ability, const struct FAttributeModifierHandle& ParamHandle)
 {
@@ -524,7 +524,7 @@ void UPyWidget_EnergyUnit_103901::Restore()
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 bool APyCue_Buff_10390102::WhileActive(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
@@ -554,7 +554,7 @@ bool APyCue_Buff_10390102::WhileActive(class AActor* MyTarget, const struct FGam
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 bool APyCue_Buff_10390102::OnRemove(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)

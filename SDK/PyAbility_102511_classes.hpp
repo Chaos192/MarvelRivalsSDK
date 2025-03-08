@@ -18,11 +18,11 @@ namespace SDK
 {
 
 // PythonClass PyAbility_102511.PyProjectile_10251101
-// 0x0010 (0x3070 - 0x3060)
+// 0x0010 (0x3120 - 0x3110)
 class APyProjectile_10251101 : public AProjectile_10251101
 {
 public:
-	TMulticastInlineDelegate<void()>              OnProjectileBounce;                                // 0x3060(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void()>              OnProjectileBounce;                                // 0x3110(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 
 public:
 	void K2_OnProcessHit(const struct FHitResult& ImpactResult);

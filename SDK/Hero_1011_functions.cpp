@@ -39,7 +39,7 @@ void ACue_Weapon_Loop_101111::ChangeContainerState()
 // Function Hero_1011.Cue_Weapon_Loop_101111.OnOwnedTagUpdate
 // (Final, Native, Public, HasOutParams)
 // Parameters:
-// struct FGameplayTag                     TagUpdated                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              TagUpdated                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bTagExists                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void ACue_Weapon_Loop_101111::OnOwnedTagUpdate(const struct FGameplayTag& TagUpdated, bool bTagExists)
@@ -66,7 +66,7 @@ void ACue_Weapon_Loop_101111::OnOwnedTagUpdate(const struct FGameplayTag& TagUpd
 // Function Hero_1011.Ability_101171.CalcSmashLocation
 // (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure)
 // Parameters:
-// class AActor*                           TargetActor                                            (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class AActor*                     TargetActor                                            (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AMarvelBaseCharacter*             OutHulk                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -192,7 +192,7 @@ void UAbility_101191::LaunchCharacter()
 // Function Hero_1011.Ability_101191.OnServerReceiveLaunchVelocity
 // (Final, Native, Public, HasOutParams)
 // Parameters:
-// struct FGameplayAbilityTargetDataHandle Data                                                   (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FGameplayAbilityTargetDataHandle&Data                                                   (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UAbility_101191::OnServerReceiveLaunchVelocity(const struct FGameplayAbilityTargetDataHandle& Data)
 {
@@ -770,7 +770,7 @@ void UAbility_101192::OnClimbKeyRelease(float Time)
 // Function Hero_1011.Ability_101198.SwitchTimelineTask
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class FName                             SectionName                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName&                      SectionName                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UAbility_101198::SwitchTimelineTask(const class FName& SectionName)
 {
@@ -797,7 +797,7 @@ void UAbility_101198::SwitchTimelineTask(const class FName& SectionName)
 // Parameters:
 // class AActor*                           Source                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   AbilityID                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           SessionID                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    SessionID                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UMarvelGameplayAbility*           SourceAbility                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UEpicMomentAction_1011::OnActorAbilityCancel(class AActor* Source, int32 AbilityID, const class FString& SessionID, class UMarvelGameplayAbility* SourceAbility)
@@ -828,8 +828,8 @@ void UEpicMomentAction_1011::OnActorAbilityCancel(class AActor* Source, int32 Ab
 // Parameters:
 // class AActor*                           Instigator                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           Target                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FAttributeModifierHandle         ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGlobalEventExtraData            ExtraData                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FAttributeModifierHandle&  ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGlobalEventExtraData&     ExtraData                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
 void UEpicMomentAction_1011::OnActorTakeDamage(class AActor* Instigator, class AActor* Target, const struct FAttributeModifierHandle& ModifierParameterHandle, const struct FGlobalEventExtraData& ExtraData)
 {
@@ -858,7 +858,7 @@ void UEpicMomentAction_1011::OnActorTakeDamage(class AActor* Instigator, class A
 // (Native, Public, HasOutParams)
 // Parameters:
 // class AActor*                           Source                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayEffectSpec              BlockedSpec                                            (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FGameplayEffectSpec&       BlockedSpec                                            (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UEpicMomentAction_1011::OnEffectImmunityOrInhibitedCallback(class AActor* Source, const struct FGameplayEffectSpec& BlockedSpec)
 {
@@ -885,8 +885,8 @@ void UEpicMomentAction_1011::OnEffectImmunityOrInhibitedCallback(class AActor* S
 // (Final, Native, Public, HasOutParams)
 // Parameters:
 // class UAbilitySystemComponent*          ASC                                                    (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayEffectSpecStackHandle   GameplayEffectSpecHandle                               (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-// struct FActiveGameplayEffectHandle      ActiveGameplayEffectHandle                             (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayEffectSpecStackHandle&GameplayEffectSpecHandle                               (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FActiveGameplayEffectHandle&ActiveGameplayEffectHandle                             (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UEpicMomentAction_1011::OnGameplayEffectAppliedToTarget(class UAbilitySystemComponent* ASC, const struct FGameplayEffectSpecStackHandle& GameplayEffectSpecHandle, const struct FActiveGameplayEffectHandle& ActiveGameplayEffectHandle)
 {
@@ -976,7 +976,7 @@ void UHulkAnimInstance::FShiftSecondJump()
 // Function Hero_1011.HulkAnimInstance.GetSynergyRideAnimation
 // (Final, Native, Protected, HasOutParams)
 // Parameters:
-// struct FAnimUpdateContext               PoseContext                                            (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FAnimUpdateContext&        PoseContext                                            (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UHulkAnimInstance::GetSynergyRideAnimation(const struct FAnimUpdateContext& PoseContext)
 {
@@ -1001,7 +1001,7 @@ void UHulkAnimInstance::GetSynergyRideAnimation(const struct FAnimUpdateContext&
 // Function Hero_1011.HulkAnimInstance.GetSynergyRideStartAnimation
 // (Final, Native, Protected, HasOutParams)
 // Parameters:
-// struct FAnimUpdateContext               PoseContext                                            (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FAnimUpdateContext&        PoseContext                                            (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UHulkAnimInstance::GetSynergyRideStartAnimation(const struct FAnimUpdateContext& PoseContext)
 {
@@ -1026,7 +1026,7 @@ void UHulkAnimInstance::GetSynergyRideStartAnimation(const struct FAnimUpdateCon
 // Function Hero_1011.HulkAnimInstance.OnTagUpdated
 // (Final, Native, Protected, HasOutParams)
 // Parameters:
-// struct FGameplayTag                     TagUpdated                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              TagUpdated                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    TagExists                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UHulkAnimInstance::OnTagUpdated(const struct FGameplayTag& TagUpdated, bool TagExists)
@@ -1053,8 +1053,8 @@ void UHulkAnimInstance::OnTagUpdated(const struct FGameplayTag& TagUpdated, bool
 // Function Hero_1011.HulkAnimInstance.UpdateSynergyRideStartNode
 // (Final, Native, Protected, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FAnimUpdateContext               Context                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FAnimNodeReference               Node                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FAnimUpdateContext&        Context                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FAnimNodeReference&        Node                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
 void UHulkAnimInstance::UpdateSynergyRideStartNode(const struct FAnimUpdateContext& Context, const struct FAnimNodeReference& Node)
 {
@@ -1080,8 +1080,8 @@ void UHulkAnimInstance::UpdateSynergyRideStartNode(const struct FAnimUpdateConte
 // Function Hero_1011.HulkAnimInstance_101197.OnReleantSynergyRideNode
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FAnimUpdateContext               Context                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FAnimNodeReference               Node                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FAnimUpdateContext&        Context                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FAnimNodeReference&        Node                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
 void UHulkAnimInstance_101197::OnReleantSynergyRideNode(const struct FAnimUpdateContext& Context, const struct FAnimNodeReference& Node)
 {
@@ -1107,7 +1107,7 @@ void UHulkAnimInstance_101197::OnReleantSynergyRideNode(const struct FAnimUpdate
 // Function Hero_1011.HulkBannerAnimInstance.DetermineGroundMotionAnim_Implementation
 // (Final, Native, Public, HasOutParams, Const)
 // Parameters:
-// int32                                   AnimIndex                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32*                                  AnimIndex                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UHulkBannerAnimInstance::DetermineGroundMotionAnim_Implementation(int32* AnimIndex) const
 {
@@ -1246,7 +1246,7 @@ void AHulkBannerCharacter::OnRep_IsRecoverBuffApplyFailed()
 // Function Hero_1011.HulkBannerCharacter.OnSculptChanged
 // (Final, Native, Public)
 // Parameters:
-// int32                                   SculptID                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int32                             SculptID                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void AHulkBannerCharacter::OnSculptChanged(const int32 SculptID)
 {
@@ -1459,7 +1459,7 @@ void AHulkBannerCharacter::SetSynergyExtraCapsuleComponentEnabled(bool bEnabled)
 // Function Hero_1011.HulkBannerCharacter.TryCancelAbility
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<int32>                           AbilityIDs                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TArray<int32>&                    AbilityIDs                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
 void AHulkBannerCharacter::TryCancelAbility(const TArray<int32>& AbilityIDs)
 {
@@ -1487,8 +1487,8 @@ void AHulkBannerCharacter::TryCancelAbility(const TArray<int32>& AbilityIDs)
 // class UPrimitiveComponent*              HitComponent                                           (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           OtherActor                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UPrimitiveComponent*              OtherComp                                              (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          NormalImpulse                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FHitResult                       Hit                                                    (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FVector&                   NormalImpulse                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FHitResult&                Hit                                                    (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 void AHulkBannerCharacter::TryToClimbWhenHit(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, const struct FVector& NormalImpulse, const struct FHitResult& Hit)
 {
@@ -1699,8 +1699,8 @@ bool UHulkBannerMoveLogicBaseComponent::CheckClimbedWallValid()
 // Function Hero_1011.HulkBannerMoveLogicBaseComponent.ClientEnterClimb
 // (Net, NetReliable, Native, Event, NetMulticast, Public, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FVector                          Location                                               (ConstParm, Parm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FQuat                            Rotation                                               (ConstParm, Parm, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   Location                                               (ConstParm, Parm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FQuat&                     Rotation                                               (ConstParm, Parm, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UHulkBannerMoveLogicBaseComponent::ClientEnterClimb(const struct FVector& Location, const struct FQuat& Rotation)
 {
@@ -1726,7 +1726,7 @@ void UHulkBannerMoveLogicBaseComponent::ClientEnterClimb(const struct FVector& L
 // Function Hero_1011.HulkBannerMoveLogicBaseComponent.ClientLeaveClimb
 // (Net, NetReliable, Native, Event, NetMulticast, Public, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FVector                          Location                                               (ConstParm, Parm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   Location                                               (ConstParm, Parm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UHulkBannerMoveLogicBaseComponent::ClientLeaveClimb(const struct FVector& Location)
 {
@@ -1751,7 +1751,7 @@ void UHulkBannerMoveLogicBaseComponent::ClientLeaveClimb(const struct FVector& L
 // Function Hero_1011.HulkBannerMoveLogicBaseComponent.ClientOnLanded
 // (Net, NetReliable, Native, Event, NetMulticast, Protected)
 // Parameters:
-// struct FHitResult                       Hit                                                    (ConstParm, Parm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FHitResult&                Hit                                                    (ConstParm, Parm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 // bool                                    IsServerShiftJumpCancelled                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UHulkBannerMoveLogicBaseComponent::ClientOnLanded(const struct FHitResult& Hit, bool IsServerShiftJumpCancelled)
@@ -1880,7 +1880,7 @@ void UHulkBannerMoveLogicBaseComponent::MulticastCancelShiftJump()
 // Function Hero_1011.HulkBannerMoveLogicBaseComponent.OnFallingBlockedCallback
 // (Final, Native, Protected, HasOutParams)
 // Parameters:
-// struct FHitResult                       Hit                                                    (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FHitResult&                Hit                                                    (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 void UHulkBannerMoveLogicBaseComponent::OnFallingBlockedCallback(const struct FHitResult& Hit)
 {
@@ -1905,7 +1905,7 @@ void UHulkBannerMoveLogicBaseComponent::OnFallingBlockedCallback(const struct FH
 // Function Hero_1011.HulkBannerMoveLogicBaseComponent.OnLandedCallback
 // (Final, Native, Protected, HasOutParams)
 // Parameters:
-// struct FHitResult                       Hit                                                    (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FHitResult&                Hit                                                    (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 void UHulkBannerMoveLogicBaseComponent::OnLandedCallback(const struct FHitResult& Hit)
 {
@@ -1949,7 +1949,7 @@ void UHulkBannerMoveLogicBaseComponent::OnRep_InShiftJumpUpState()
 // Function Hero_1011.HulkBannerMoveLogicBaseComponent.OnTagUpdated
 // (Final, Native, Protected, HasOutParams)
 // Parameters:
-// struct FGameplayTag                     TagUpdated                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              TagUpdated                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    TagExists                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UHulkBannerMoveLogicBaseComponent::OnTagUpdated(const struct FGameplayTag& TagUpdated, bool TagExists)
@@ -1976,9 +1976,9 @@ void UHulkBannerMoveLogicBaseComponent::OnTagUpdated(const struct FGameplayTag& 
 // Function Hero_1011.HulkBannerMoveLogicBaseComponent.PredictShiftJumpDataWhenPressed
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FVector                          PredictVelocity                                        (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   PredictVelocity                                        (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bFromWall                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<struct FVector>                  PredictionPath                                         (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+// TArray<struct FVector>*                 PredictionPath                                         (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 // float                                   MaxFallSeconds                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   MaxJumpHeightDown                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -2013,7 +2013,7 @@ void UHulkBannerMoveLogicBaseComponent::PredictShiftJumpDataWhenPressed(const st
 // Parameters:
 // float                                   PredictSpeed                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bRemoteRole                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FRotator                         InRotator                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FRotator&                  InRotator                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 // struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 struct FVector UHulkBannerMoveLogicBaseComponent::PredictShiftJumpVelocity(float PredictSpeed, bool bRemoteRole, const struct FRotator& InRotator)
@@ -2112,7 +2112,7 @@ void UHulkBannerMoveLogicBaseComponent::ServerSetClimbState(ECLIMBSTATE State)
 // Function Hero_1011.HulkBannerMoveLogicBaseComponent.SetClimbParam
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FHulkClimbParam                  InClimbParam                                           (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FHulkClimbParam&           InClimbParam                                           (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
 void UHulkBannerMoveLogicBaseComponent::SetClimbParam(const struct FHulkClimbParam& InClimbParam)
 {
@@ -2162,7 +2162,7 @@ void UHulkBannerMoveLogicBaseComponent::SetGravityScale(float InGravityScale)
 // Function Hero_1011.HulkBannerMoveLogicBaseComponent.SetHulkJumpParam
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FHulkJumpParam                   InJumpParam                                            (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FHulkJumpParam&            InJumpParam                                            (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
 void UHulkBannerMoveLogicBaseComponent::SetHulkJumpParam(const struct FHulkJumpParam& InJumpParam)
 {
@@ -2372,8 +2372,8 @@ void UHulkBannerMoveLogicBaseComponent::UpdateClimbCustomMove(float DeltaTime)
 // (Final, Native, Public, HasDefaults)
 // Parameters:
 // float                                   DeltaSeconds                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          OldLocation                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          OldVelocity                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   OldLocation                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   OldVelocity                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UHulkBannerMoveLogicBaseComponent::UpdateShiftJumpUpState(float DeltaSeconds, const struct FVector& OldLocation, const struct FVector& OldVelocity)
 {
@@ -2501,8 +2501,8 @@ void UTabData_1011::AddTabDataValue(class AActor* InSource, class AActor* InTarg
 // Parameters:
 // class AActor*                           Killer                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           Target                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FAttributeModifierHandle         ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGlobalEventExtraData            ExtraData                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FAttributeModifierHandle&  ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGlobalEventExtraData&     ExtraData                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
 void UTabData_1011::OnActorDeath(class AActor* Killer, class AActor* Target, const struct FAttributeModifierHandle& ModifierParameterHandle, const struct FGlobalEventExtraData& ExtraData)
 {
@@ -2532,8 +2532,8 @@ void UTabData_1011::OnActorDeath(class AActor* Killer, class AActor* Target, con
 // Parameters:
 // class UAbilitySystemComponent*          Source                                                 (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UAbilitySystemComponent*          Target                                                 (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayEffectSpecStackHandle   EffectSpecStackHandle                                  (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-// struct FActiveGameplayEffectHandle      EffectHandle                                           (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayEffectSpecStackHandle&EffectSpecStackHandle                                  (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FActiveGameplayEffectHandle&EffectHandle                                           (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UTabData_1011::OnBuffApplied(class UAbilitySystemComponent* Source, class UAbilitySystemComponent* Target, const struct FGameplayEffectSpecStackHandle& EffectSpecStackHandle, const struct FActiveGameplayEffectHandle& EffectHandle)
 {

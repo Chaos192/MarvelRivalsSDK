@@ -58,7 +58,7 @@ void UPyWidget_SystemTipsPanel::Construct()
 // PythonFunction PyWidget_SystemTipsPanel.PyWidget_SystemTipsPanel.Tick
 // (BlueprintCosmetic, Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGeometry                        MyGeometry                                             (Parm, IsPlainOldData, NoDestructor)
+// const struct FGeometry&                 MyGeometry                                             (Parm, IsPlainOldData, NoDestructor)
 // float                                   InDeltaTime                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UPyWidget_SystemTipsPanel::Tick(const struct FGeometry& MyGeometry, float InDeltaTime)
@@ -104,7 +104,7 @@ void UPyWidget_SystemTipsPanel::Destruct()
 // PythonFunction PyWidget_SystemTipsPanel.PyWidget_SystemTipsPanel.OnAnimationFinished
 // (BlueprintCosmetic, Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UWidgetAnimation*                 Animation                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// const class UWidgetAnimation*           Animation                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 void UPyWidget_SystemTipsPanel::OnAnimationFinished(const class UWidgetAnimation* Animation)
 {

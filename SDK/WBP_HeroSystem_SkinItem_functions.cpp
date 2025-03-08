@@ -17,6 +17,60 @@
 namespace SDK
 {
 
+// Function WBP_HeroSystem_SkinItem.WBP_HeroSystem_SkinItem_C.BP_OnEntryReleased
+// (Event, Protected, BlueprintEvent)
+
+void UWBP_HeroSystem_SkinItem_C::BP_OnEntryReleased()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_HeroSystem_SkinItem_C", "BP_OnEntryReleased");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function WBP_HeroSystem_SkinItem.WBP_HeroSystem_SkinItem_C.BP_OnItemExpansionChanged
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// bool                                    bIsExpanded                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UWBP_HeroSystem_SkinItem_C::BP_OnItemExpansionChanged(bool bIsExpanded)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_HeroSystem_SkinItem_C", "BP_OnItemExpansionChanged");
+
+	Params::WBP_HeroSystem_SkinItem_C_BP_OnItemExpansionChanged Parms{};
+
+	Parms.bIsExpanded = bIsExpanded;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function WBP_HeroSystem_SkinItem.WBP_HeroSystem_SkinItem_C.BP_OnItemSelectionChanged
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// bool                                    bIsSelected                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UWBP_HeroSystem_SkinItem_C::BP_OnItemSelectionChanged(bool bIsSelected)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_HeroSystem_SkinItem_C", "BP_OnItemSelectionChanged");
+
+	Params::WBP_HeroSystem_SkinItem_C_BP_OnItemSelectionChanged Parms{};
+
+	Parms.bIsSelected = bIsSelected;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function WBP_HeroSystem_SkinItem.WBP_HeroSystem_SkinItem_C.ExecuteUbergraph_WBP_HeroSystem_SkinItem
 // (Final, UbergraphFunction)
 // Parameters:
@@ -37,45 +91,23 @@ void UWBP_HeroSystem_SkinItem_C::ExecuteUbergraph_WBP_HeroSystem_SkinItem(int32 
 }
 
 
-// Function WBP_HeroSystem_SkinItem.WBP_HeroSystem_SkinItem_C.RefreshItemEvent
-// (BlueprintCallable, BlueprintEvent)
+// Function WBP_HeroSystem_SkinItem.WBP_HeroSystem_SkinItem_C.OnListItemObjectSet
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// class UObject*                          ListItemObject                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void UWBP_HeroSystem_SkinItem_C::RefreshItemEvent()
+void UWBP_HeroSystem_SkinItem_C::OnListItemObjectSet(class UObject* ListItemObject)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_HeroSystem_SkinItem_C", "RefreshItemEvent");
+		Func = Class->GetFunction("WBP_HeroSystem_SkinItem_C", "OnListItemObjectSet");
 
-	UObject::ProcessEvent(Func, nullptr);
-}
+	Params::WBP_HeroSystem_SkinItem_C_OnListItemObjectSet Parms{};
 
+	Parms.ListItemObject = ListItemObject;
 
-// Function WBP_HeroSystem_SkinItem.WBP_HeroSystem_SkinItem_C.SequenceEvent__ENTRYPOINTWBP_HeroSystem_SkinItem
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UWBP_HeroSystem_SkinItem_C::SequenceEvent__ENTRYPOINTWBP_HeroSystem_SkinItem()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_HeroSystem_SkinItem_C", "SequenceEvent__ENTRYPOINTWBP_HeroSystem_SkinItem");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function WBP_HeroSystem_SkinItem.WBP_HeroSystem_SkinItem_C.SequenceEvent__ENTRYPOINTWBP_HeroSystem_SkinItem_0
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UWBP_HeroSystem_SkinItem_C::SequenceEvent__ENTRYPOINTWBP_HeroSystem_SkinItem_0()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_HeroSystem_SkinItem_C", "SequenceEvent__ENTRYPOINTWBP_HeroSystem_SkinItem_0");
-
-	UObject::ProcessEvent(Func, nullptr);
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 }

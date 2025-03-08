@@ -45,8 +45,8 @@ void UAbility_104621::SetMaxEnergyBallNum(int32 InNum)
 // Function Hero_1046.Ability_104621.OnAbilityActiveFailed
 // (Final, Native, Public, HasOutParams, Const)
 // Parameters:
-// class UGameplayAbility*                 InAbility                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayTagContainer            Tags                                                   (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const class UGameplayAbility*           InAbility                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTagContainer&     Tags                                                   (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UAbility_104621::OnAbilityActiveFailed(const class UGameplayAbility* InAbility, const struct FGameplayTagContainer& Tags) const
 {
@@ -137,7 +137,7 @@ void ACue_Scope_Loop_10464101::SpawnLinkEffect(class ACharacter* FromCharacter, 
 // Function Hero_1046.Ability_104651.OnOriginLinkGroupEnd
 // (Final, Native, Public)
 // Parameters:
-// class AActor*                           BuffInstigator                                         (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class AActor*                     BuffInstigator                                         (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UAbility_104651::OnOriginLinkGroupEnd(const class AActor* BuffInstigator)
 {
@@ -162,7 +162,7 @@ void UAbility_104651::OnOriginLinkGroupEnd(const class AActor* BuffInstigator)
 // Function Hero_1046.Cue_Ability_Loop_10465101.SpawnLinkEffects
 // (Final, Native, Public, HasOutParams)
 // Parameters:
-// TArray<class AActor*>                   LinkTargets                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TArray<class AActor*>&            LinkTargets                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
 void ACue_Ability_Loop_10465101::SpawnLinkEffects(const TArray<class AActor*>& LinkTargets)
 {
@@ -189,7 +189,7 @@ void ACue_Ability_Loop_10465101::SpawnLinkEffects(const TArray<class AActor*>& L
 // Parameters:
 // class AActor*                           DamageCauser                                           (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           TargetActor                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FAttributeModifierHandle         ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FAttributeModifierHandle&  ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void ACue_Buff_10465101::OnBuffOwnerDeath(class AActor* DamageCauser, class AActor* TargetActor, const struct FAttributeModifierHandle& ModifierParameterHandle)
 {
@@ -236,7 +236,7 @@ bool UAbility_104661::GetTraceTransform()
 // Function Hero_1046.Ability_104661.SetResurrectedActors
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// TArray<int32>                           InActors                                               (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+// const TArray<int32>&                    InActors                                               (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 
 void UAbility_104661::SetResurrectedActors(const TArray<int32>& InActors)
 {
@@ -287,7 +287,7 @@ void UEffectAbility_104661::StopKillCamImmediately(bool bSet)
 // (Final, Native, Public, HasOutParams)
 // Parameters:
 // class AActor*                           Target                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FCharacterRebornParam            Param                                                  (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FCharacterRebornParam&     Param                                                  (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 void ACue_Buff_10466103::OnOwnerRebornReset(class AActor* Target, const struct FCharacterRebornParam& Param)
 {
@@ -313,7 +313,7 @@ void ACue_Buff_10466103::OnOwnerRebornReset(class AActor* Target, const struct F
 // Function Hero_1046.AdamWarlockCharacter.AssignDeathCueTag
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FGameplayTag                     InDeathCue                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              InDeathCue                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void AAdamWarlockCharacter::AssignDeathCueTag(const struct FGameplayTag& InDeathCue)
 {
@@ -338,7 +338,7 @@ void AAdamWarlockCharacter::AssignDeathCueTag(const struct FGameplayTag& InDeath
 // Function Hero_1046.AdamWarlockCharacter.CanResurrectSelf
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FAttributeModifierHandle         ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FAttributeModifierHandle&  ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool AAdamWarlockCharacter::CanResurrectSelf(const struct FAttributeModifierHandle& ModifierParameterHandle)
@@ -368,7 +368,7 @@ bool AAdamWarlockCharacter::CanResurrectSelf(const struct FAttributeModifierHand
 // Parameters:
 // class AActor*                           Instigator                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           Target                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FAttributeModifierParameter      ModifierParameter                                      (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FAttributeModifierParameter&ModifierParameter                                      (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 void UEpicMomentAction_1046::OnActorResurrected(class AActor* Instigator, class AActor* Target, const struct FAttributeModifierParameter& ModifierParameter)
 {

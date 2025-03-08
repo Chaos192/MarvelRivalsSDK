@@ -17,11 +17,12 @@ namespace SDK
 {
 
 // PythonClass PyAbility_200009.PyAbility_200009
-// 0x0000 (0x2580 - 0x2580)
+// 0x0000 (0x2588 - 0x2588)
 class UPyAbility_200009 : public UMarvelGameplayAbility
 {
 public:
 	void K2_ActivateAbility();
+	void RecoverDelegate();
 	void K2_OnEndAbility(bool bWasCancelled);
 
 public:
@@ -36,13 +37,13 @@ public:
 };
 
 // PythonClass PyAbility_200009.PyUIController_200009
-// 0x0018 (0x0C78 - 0x0C60)
+// 0x0018 (0x0C68 - 0x0C50)
 class UPyUIController_200009 final : public UUIC_Ability
 {
 public:
-	class UAkAudioEvent*                          InteractiveAudio;                                  // 0x0C60(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UAkAudioEvent*                          ShowTipsAudio;                                     // 0x0C68(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UAkAudioEvent*                          ActiveAudio;                                       // 0x0C70(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UAkAudioEvent*                          InteractiveAudio;                                  // 0x0C50(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UAkAudioEvent*                          ShowTipsAudio;                                     // 0x0C58(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UAkAudioEvent*                          ActiveAudio;                                       // 0x0C60(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void OnInit();

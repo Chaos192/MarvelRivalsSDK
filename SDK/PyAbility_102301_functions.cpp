@@ -83,7 +83,7 @@ void UPyAbility_102301::ExtractInfoFromEventData(float EventMagnitude)
 // PythonFunction PyAbility_102301.PyAbility_102301.ModifyEventData
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayEventData               Data                                                   (Parm, OutParm, ReferenceParm)
+// struct FGameplayEventData&              Data                                                   (Parm, OutParm, ReferenceParm)
 
 void UPyAbility_102301::ModifyEventData(struct FGameplayEventData& Data)
 {
@@ -110,7 +110,7 @@ void UPyAbility_102301::ModifyEventData(struct FGameplayEventData& Data)
 // PythonFunction PyAbility_102301.PyAbility_102301.K2_ActivateAbilityFromEvent
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayEventData               EventData                                              (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayEventData&        EventData                                              (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyAbility_102301::K2_ActivateAbilityFromEvent(const struct FGameplayEventData& EventData)
 {

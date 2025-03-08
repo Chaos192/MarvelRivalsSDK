@@ -111,6 +111,31 @@ void UMarvelBackTrackAbility::OnCharacterMovementPreUpdated(float DeltaTime)
 }
 
 
+// Function Hero_Synergy.MarvelBackTrackAbility.OnCharTranslatedByLevelPortal
+// (Final, Native, Public, HasOutParams, HasDefaults)
+// Parameters:
+// const struct FTransform&                TargetTransform                                        (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMarvelBackTrackAbility::OnCharTranslatedByLevelPortal(const struct FTransform& TargetTransform)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MarvelBackTrackAbility", "OnCharTranslatedByLevelPortal");
+
+	Params::MarvelBackTrackAbility_OnCharTranslatedByLevelPortal Parms{};
+
+	Parms.TargetTransform = std::move(TargetTransform);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function Hero_Synergy.MarvelBackTrackAbility.OnCharTranslatedByPortal
 // (Final, Native, Public)
 // Parameters:
@@ -139,8 +164,8 @@ void UMarvelBackTrackAbility::OnCharTranslatedByPortal(class APortalViewActor* I
 // Function Hero_Synergy.MarvelBackTrackAbility.OnClientAckMoveWithStamp
 // (Final, Native, Public, HasOutParams, HasDefaults)
 // Parameters:
-// float                                   Timestamp                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          Location                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             Timestamp                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   Location                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UMarvelBackTrackAbility::OnClientAckMoveWithStamp(const float Timestamp, const struct FVector& Location)
 {
@@ -241,8 +266,8 @@ void UMarvelBackTrackAbility::OnLongPressTimeOverMaxHoldTime(float TimeHeld)
 // Function Hero_Synergy.MarvelBackTrackAbility.OnServerHandleClientMoveWithStamp
 // (Final, Native, Public, HasOutParams, HasDefaults)
 // Parameters:
-// float                                   Timestamp                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          Location                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             Timestamp                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   Location                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UMarvelBackTrackAbility::OnServerHandleClientMoveWithStamp(const float Timestamp, const struct FVector& Location)
 {
@@ -268,8 +293,8 @@ void UMarvelBackTrackAbility::OnServerHandleClientMoveWithStamp(const float Time
 // Function Hero_Synergy.MarvelBackTrackAbility.RecordState
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
-// float                                   Timestamp                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          Location                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             Timestamp                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   Location                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UMarvelBackTrackAbility::RecordState(const float Timestamp, const struct FVector& Location)
 {
@@ -295,7 +320,7 @@ void UMarvelBackTrackAbility::RecordState(const float Timestamp, const struct FV
 // Function Hero_Synergy.MarvelBackTrackAbility.ServerCheckClientLocValid
 // (Final, Native, Public, HasOutParams, HasDefaults)
 // Parameters:
-// struct FVector                          InTargetLoc                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   InTargetLoc                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bStrictCheck                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -325,7 +350,7 @@ bool UMarvelBackTrackAbility::ServerCheckClientLocValid(const struct FVector& In
 // Function Hero_Synergy.MarvelBackTrackAbility.ServerInterrupt
 // (Net, NetReliable, Native, Event, Public, NetServer, HasDefaults)
 // Parameters:
-// struct FVector                          InClientLocation                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   InClientLocation                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UMarvelBackTrackAbility::ServerInterrupt(const struct FVector& InClientLocation)
 {
@@ -432,8 +457,8 @@ void UMarvelBackTrackAbility::StopRecordState(bool bClearData)
 // Function Hero_Synergy.MarvelBackTrackAbility.SafeMoveTo
 // (Final, Native, Public, HasOutParams, HasDefaults, Const)
 // Parameters:
-// struct FVector                          TargetLoc                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FHitResult                       OutHit                                                 (Parm, OutParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FVector&                   TargetLoc                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FHitResult*                      OutHit                                                 (Parm, OutParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 // bool                                    bSweep                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -466,7 +491,7 @@ bool UMarvelBackTrackAbility::SafeMoveTo(const struct FVector& TargetLoc, struct
 // Function Hero_Synergy.TraceComponent_100009.OnPreOutTraceResults
 // (Native, Public, HasOutParams)
 // Parameters:
-// struct FHitResult                       Hit                                                    (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FHitResult&                Hit                                                    (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UTraceComponent_100009::OnPreOutTraceResults(const struct FHitResult& Hit)
@@ -545,8 +570,8 @@ void UBuffManagerAbility_100009::OnAbilityEnded(int32 AbilityID)
 // (Final, Native, Public, HasOutParams)
 // Parameters:
 // class UAbilitySystemComponent*          AbilitySystemComponent                                 (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayEffectSpecStackHandle   EffectSpecHandle                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-// struct FActiveGameplayEffectHandle      EffectHandle                                           (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayEffectSpecStackHandle&EffectSpecHandle                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FActiveGameplayEffectHandle&EffectHandle                                           (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UBuffManagerAbility_100009::OnBuffExecuted(class UAbilitySystemComponent* AbilitySystemComponent, const struct FGameplayEffectSpecStackHandle& EffectSpecHandle, const struct FActiveGameplayEffectHandle& EffectHandle)
 {
@@ -573,7 +598,7 @@ void UBuffManagerAbility_100009::OnBuffExecuted(class UAbilitySystemComponent* A
 // Function Hero_Synergy.BuffManagerAbility_100009.OnBuffRemoved
 // (Final, Native, Public, HasOutParams)
 // Parameters:
-// struct FGameplayEffectSpec              RemovedSpec                                            (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FGameplayEffectSpec&       RemovedSpec                                            (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // bool                                    bPrematureRemoval                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UBuffManagerAbility_100009::OnBuffRemoved(const struct FGameplayEffectSpec& RemovedSpec, bool bPrematureRemoval)
@@ -603,8 +628,8 @@ void UBuffManagerAbility_100009::OnBuffRemoved(const struct FGameplayEffectSpec&
 // class UPrimitiveComponent*              HitComponent                                           (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           OtherActor                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UPrimitiveComponent*              OtherComp                                              (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          NormalImpulse                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FHitResult                       Hit                                                    (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FVector&                   NormalImpulse                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FHitResult&                Hit                                                    (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 void UBuffManagerAbility_100009::OnOwnerCollide(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, const struct FVector& NormalImpulse, const struct FHitResult& Hit)
 {
@@ -635,7 +660,7 @@ void UBuffManagerAbility_100009::OnOwnerCollide(class UPrimitiveComponent* HitCo
 // Parameters:
 // class AActor*                           InSourceAvatar                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           InTargetAvatar                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FAttributeModifierHandle         ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FAttributeModifierHandle&  ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UBuffManagerAbility_100009::OnOwnerTakeDamage(class AActor* InSourceAvatar, class AActor* InTargetAvatar, const struct FAttributeModifierHandle& ModifierParameterHandle)
 {
@@ -700,7 +725,7 @@ void UBuffManagerAbility_100009::RestoreBuffToSelfWithDelay()
 // Function Hero_Synergy.Ability_100015.AddWavingData
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FHitResult                       InHitResult                                            (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FHitResult&                InHitResult                                            (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 void UAbility_100015::AddWavingData(const struct FHitResult& InHitResult)
 {
@@ -780,6 +805,31 @@ void UAbility_100015::ClearWavingHoldTimer()
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Hero_Synergy.Ability_100015.ClientCheckWavingState
+// (Final, Native, Protected)
+// Parameters:
+// ESynergyWavingState                     AuthorityRoleState                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UAbility_100015::ClientCheckWavingState(ESynergyWavingState AuthorityRoleState)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Ability_100015", "ClientCheckWavingState");
+
+	Params::Ability_100015_ClientCheckWavingState Parms{};
+
+	Parms.AuthorityRoleState = AuthorityRoleState;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 }
@@ -998,7 +1048,7 @@ void UAbility_100015::OnCoopAbilityTickStateChanged(bool bShouldAbilityTick)
 // Function Hero_Synergy.Ability_100015.OnOwnerGameplayTagUpdate
 // (Final, Native, Protected, HasOutParams)
 // Parameters:
-// struct FGameplayTag                     InTag                                                  (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              InTag                                                  (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bTagExists                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UAbility_100015::OnOwnerGameplayTagUpdate(const struct FGameplayTag& InTag, bool bTagExists)
@@ -1121,7 +1171,7 @@ void UAbility_100015::Python_OnRideCancel()
 // Function Hero_Synergy.Ability_100015.SetCurrentWavingCharacter
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class AActor*                           TargetActor                                            (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class AActor*                     TargetActor                                            (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UAbility_100015::SetCurrentWavingCharacter(const class AActor* TargetActor)
 {
@@ -1292,8 +1342,8 @@ void UAbility_100016::OnThrowCharacterCoopRideStateChanged(bool bIsRiding, class
 // Function Hero_Synergy.Ability_100016.PredictThrowDataWhenPressed
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FVector                          PredictVelocity                                        (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<struct FVector>                  PredictionPath                                         (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+// const struct FVector&                   PredictVelocity                                        (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TArray<struct FVector>*                 PredictionPath                                         (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 // float                                   MaxFallSeconds                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   MaxJumpHeightDown                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -1327,7 +1377,7 @@ void UAbility_100016::PredictThrowDataWhenPressed(const struct FVector& PredictV
 // Parameters:
 // float                                   PredictSpeed                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bRemoteRole                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FRotator                         InRotator                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FRotator&                  InRotator                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 // struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 struct FVector UAbility_100016::PredictThrowVelocity(float PredictSpeed, bool bRemoteRole, const struct FRotator& InRotator)

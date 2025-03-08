@@ -17,6 +17,94 @@
 namespace SDK
 {
 
+// PythonFunction PyWidget_BattlePass_PropView.PyWidget_BattlePass_CuttingItemList.OnInitialized
+// (BlueprintCosmetic, Native, Event, Protected, BlueprintCallable, BlueprintEvent)
+
+void UPyWidget_BattlePass_CuttingItemList::OnInitialized()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyWidget_BattlePass_CuttingItemList", "OnInitialized");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// PythonFunction PyWidget_BattlePass_PropView.PyWidget_BattlePass_CuttingItemList.MarvelSetVisible
+// (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    Visible                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UPyWidget_BattlePass_CuttingItemList::MarvelSetVisible(bool Visible)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyWidget_BattlePass_CuttingItemList", "MarvelSetVisible");
+
+	Params::PyWidget_BattlePass_CuttingItemList_MarvelSetVisible Parms{};
+
+	Parms.Visible = Visible;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// PythonFunction PyWidget_BattlePass_PropView.PyWidget_BattlePass_CuttingItemList.Destruct
+// (BlueprintCosmetic, Native, Event, Protected, BlueprintCallable, BlueprintEvent)
+
+void UPyWidget_BattlePass_CuttingItemList::Destruct()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyWidget_BattlePass_CuttingItemList", "Destruct");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// PythonFunction PyWidget_BattlePass_PropView.PyWidget_BattlePass_PageItem.OnCascadingVisibleChanged
+// (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    Visible                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UPyWidget_BattlePass_PageItem::OnCascadingVisibleChanged(bool Visible)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyWidget_BattlePass_PageItem", "OnCascadingVisibleChanged");
+
+	Params::PyWidget_BattlePass_PageItem_OnCascadingVisibleChanged Parms{};
+
+	Parms.Visible = Visible;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // PythonFunction PyWidget_BattlePass_PropView.PyWidget_BattlePass_PageItem.SetIsHover
 // (Native, Protected, BlueprintCallable)
 // Parameters:
@@ -202,7 +290,7 @@ void UPyWidget_BattlePass_CuttingItem::OnImgMaskLoaded(class UObject* ImgMask)
 // PythonFunction PyWidget_BattlePass_PropView.PyWidget_BattlePass_CuttingItem.OnAnimationFinished
 // (BlueprintCosmetic, Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UWidgetAnimation*                 Animation                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// const class UWidgetAnimation*           Animation                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 void UPyWidget_BattlePass_CuttingItem::OnAnimationFinished(const class UWidgetAnimation* Animation)
 {
@@ -219,69 +307,6 @@ void UPyWidget_BattlePass_CuttingItem::OnAnimationFinished(const class UWidgetAn
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// PythonFunction PyWidget_BattlePass_PropView.PyWidget_BattlePass_CuttingItemList.OnInitialized
-// (BlueprintCosmetic, Native, Event, Protected, BlueprintCallable, BlueprintEvent)
-
-void UPyWidget_BattlePass_CuttingItemList::OnInitialized()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PyWidget_BattlePass_CuttingItemList", "OnInitialized");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// PythonFunction PyWidget_BattlePass_PropView.PyWidget_BattlePass_CuttingItemList.MarvelSetVisible
-// (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                                    Visible                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UPyWidget_BattlePass_CuttingItemList::MarvelSetVisible(bool Visible)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PyWidget_BattlePass_CuttingItemList", "MarvelSetVisible");
-
-	Params::PyWidget_BattlePass_CuttingItemList_MarvelSetVisible Parms{};
-
-	Parms.Visible = Visible;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// PythonFunction PyWidget_BattlePass_PropView.PyWidget_BattlePass_CuttingItemList.Destruct
-// (BlueprintCosmetic, Native, Event, Protected, BlueprintCallable, BlueprintEvent)
-
-void UPyWidget_BattlePass_CuttingItemList::Destruct()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PyWidget_BattlePass_CuttingItemList", "Destruct");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
 }
@@ -395,6 +420,31 @@ void UPyWidget_BattlePass_PropView::MarvelSetVisible(bool Visible)
 		Func = Class->GetFunction("PyWidget_BattlePass_PropView", "MarvelSetVisible");
 
 	Params::PyWidget_BattlePass_PropView_MarvelSetVisible Parms{};
+
+	Parms.Visible = Visible;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// PythonFunction PyWidget_BattlePass_PropView.PyWidget_BattlePass_PropView.OnCascadingVisibleChanged
+// (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    Visible                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UPyWidget_BattlePass_PropView::OnCascadingVisibleChanged(bool Visible)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyWidget_BattlePass_PropView", "OnCascadingVisibleChanged");
+
+	Params::PyWidget_BattlePass_PropView_OnCascadingVisibleChanged Parms{};
 
 	Parms.Visible = Visible;
 

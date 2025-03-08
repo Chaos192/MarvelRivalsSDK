@@ -55,7 +55,7 @@ public:
 
 // PythonClass PyWidget_Common_Tips.PyWidget_Common_Host_Tips
 // 0x0000 (0x0608 - 0x0608)
-class UPyWidget_Common_Host_Tips final : public UPyWidget_CommonTipsBase
+class UPyWidget_Common_Host_Tips : public UPyWidget_CommonTipsBase
 {
 public:
 	void OnInitialized();

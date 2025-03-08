@@ -20,9 +20,9 @@ namespace SDK
 // Function WBP_DebugAudio.WBP_DebugAudio_C.Append
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// class FString                           Ori                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-// class FString                           Append_0                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-// class FString                           Out                                                    (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Ori                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Append_0                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// class FString*                          Out                                                    (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
 
 void UWBP_DebugAudio_C::Append(const class FString& Ori, const class FString& Append_0, class FString* Out)
 {
@@ -132,7 +132,7 @@ void UWBP_DebugAudio_C::BndEvt__WBP_DebugAudio_Btn_SwitchProcedure_K2Node_Compon
 // Parameters:
 // bool                                    Bool                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    Pass                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           Str                                                    (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
+// class FString*                          Str                                                    (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
 
 void UWBP_DebugAudio_C::BoolStr(bool Bool, bool Pass, class FString* Str)
 {
@@ -210,10 +210,10 @@ void UWBP_DebugAudio_C::ExecuteUbergraph_WBP_DebugAudio(int32 EntryPoint)
 // Function WBP_DebugAudio.WBP_DebugAudio_C.GetFormatedStr
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// TArray<class FString>                   StrArr                                                 (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// class FString                           PerPrefix                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-// class FString                           PerSuffix                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-// class FString                           OutStr                                                 (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
+// TArray<class FString>&                  StrArr                                                 (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// const class FString&                    PerPrefix                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    PerSuffix                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// class FString*                          OutStr                                                 (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
 
 void UWBP_DebugAudio_C::GetFormatedStr(TArray<class FString>& StrArr, const class FString& PerPrefix, const class FString& PerSuffix, class FString* OutStr)
 {
@@ -240,7 +240,7 @@ void UWBP_DebugAudio_C::GetFormatedStr(TArray<class FString>& StrArr, const clas
 // Function WBP_DebugAudio.WBP_DebugAudio_C.GetFrontedCharacter
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class AMarvelBaseCharacter*             FrontCharacter                                         (Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class AMarvelBaseCharacter**            FrontCharacter                                         (Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 void UWBP_DebugAudio_C::GetFrontedCharacter(class AMarvelBaseCharacter** FrontCharacter)
 {
@@ -262,7 +262,7 @@ void UWBP_DebugAudio_C::GetFrontedCharacter(class AMarvelBaseCharacter** FrontCh
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AMarvelBaseCharacter*             Char                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class FString                           TName                                                  (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
+// class FString*                          TName                                                  (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
 
 void UWBP_DebugAudio_C::GetHeroName(class AMarvelBaseCharacter* Char, class FString* TName)
 {
@@ -285,7 +285,7 @@ void UWBP_DebugAudio_C::GetHeroName(class AMarvelBaseCharacter* Char, class FStr
 // Function WBP_DebugAudio.WBP_DebugAudio_C.GetStateStrings
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// class FString                           OutStr                                                 (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
+// class FString*                          OutStr                                                 (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
 
 void UWBP_DebugAudio_C::GetStateStrings(class FString* OutStr)
 {

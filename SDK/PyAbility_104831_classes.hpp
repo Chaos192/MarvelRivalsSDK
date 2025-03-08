@@ -21,6 +21,24 @@
 namespace SDK
 {
 
+// PythonClass PyAbility_104831.PyCue_Projectile_HitImpact_10483102
+// 0x0000 (0x04D0 - 0x04D0)
+class UPyCue_Projectile_HitImpact_10483102 final : public UMarvelCueNotify_HitImpact
+{
+public:
+	void OnNiagaraSpawned(class UNiagaraComponent* InNiagaraComponent, class AActor* MyTarget, const struct FGameplayCueParameters& Parameters);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PyCue_Projectile_HitImpact_10483102">();
+	}
+	static class UPyCue_Projectile_HitImpact_10483102* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPyCue_Projectile_HitImpact_10483102>();
+	}
+};
+
 // PythonClass PyAbility_104831.PyConfig_104831
 // 0x08E0 (0x09B8 - 0x00D8)
 class UPyConfig_104831 final : public UConfig_104831
@@ -54,23 +72,8 @@ public:
 	}
 };
 
-// PythonClass PyAbility_104831.PyWidget_ResetWhenFadeOut
-// 0x0000 (0x05F0 - 0x05F0)
-class UPyWidget_ResetWhenFadeOut final : public UPyMarvelUserWidget
-{
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"PyWidget_ResetWhenFadeOut">();
-	}
-	static class UPyWidget_ResetWhenFadeOut* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UPyWidget_ResetWhenFadeOut>();
-	}
-};
-
 // PythonClass PyAbility_104831.PyAbility_104831
-// 0x0000 (0x25C0 - 0x25C0)
+// 0x0000 (0x25C8 - 0x25C8)
 class UPyAbility_104831 : public UAbility_104831
 {
 public:
@@ -98,7 +101,7 @@ public:
 };
 
 // PythonClass PyAbility_104831.PyProjectile_10483101
-// 0x0000 (0x30A0 - 0x30A0)
+// 0x0000 (0x3150 - 0x3150)
 class APyProjectile_10483101 final : public AProjectile_10483101
 {
 public:
@@ -119,8 +122,23 @@ public:
 	}
 };
 
+// PythonClass PyAbility_104831.PyWidget_ResetWhenFadeOut
+// 0x0000 (0x05F0 - 0x05F0)
+class UPyWidget_ResetWhenFadeOut final : public UPyMarvelUserWidget
+{
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PyWidget_ResetWhenFadeOut">();
+	}
+	static class UPyWidget_ResetWhenFadeOut* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPyWidget_ResetWhenFadeOut>();
+	}
+};
+
 // PythonClass PyAbility_104831.PyProjectile_10483102
-// 0x0000 (0x30A0 - 0x30A0)
+// 0x0000 (0x3160 - 0x3160)
 class APyProjectile_10483102 : public AProjectile_10483102
 {
 public:
@@ -167,31 +185,13 @@ public:
 	}
 };
 
-// PythonClass PyAbility_104831.PyCue_Projectile_HitImpact_10483102
-// 0x0000 (0x04D0 - 0x04D0)
-class UPyCue_Projectile_HitImpact_10483102 final : public UMarvelCueNotify_HitImpact
-{
-public:
-	void OnNiagaraSpawned(class UNiagaraComponent* InNiagaraComponent, class AActor* MyTarget, const struct FGameplayCueParameters& Parameters);
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"PyCue_Projectile_HitImpact_10483102">();
-	}
-	static class UPyCue_Projectile_HitImpact_10483102* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UPyCue_Projectile_HitImpact_10483102>();
-	}
-};
-
 // PythonClass PyAbility_104831.PyUIController_104831
-// 0x0010 (0x0C70 - 0x0C60)
+// 0x0010 (0x0C60 - 0x0C50)
 class UPyUIController_104831 final : public UUIC_Ability
 {
 public:
-	class UTexture2D*                             Icon_Normal;                                       // 0x0C60(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UTexture2D*                             Icon_Switch;                                       // 0x0C68(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UTexture2D*                             Icon_Normal;                                       // 0x0C50(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UTexture2D*                             Icon_Switch;                                       // 0x0C58(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void SetAbility(int32 InAbilityId, class UGameplayAbility* InAbility);

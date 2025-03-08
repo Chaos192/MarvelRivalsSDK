@@ -83,7 +83,7 @@ void UPyAbility_102731::K2_ActivateAbility()
 // PythonFunction PyAbility_102731.PyAbility_102731.NativeOnMontageCompleted
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_102731::NativeOnMontageCompleted(const class FString& Tag)
 {
@@ -108,7 +108,7 @@ void UPyAbility_102731::NativeOnMontageCompleted(const class FString& Tag)
 // PythonFunction PyAbility_102731.PyAbility_102731.NativeOnMontageBlendOut
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_102731::NativeOnMontageBlendOut(const class FString& Tag)
 {
@@ -133,7 +133,7 @@ void UPyAbility_102731::NativeOnMontageBlendOut(const class FString& Tag)
 // PythonFunction PyAbility_102731.PyAbility_102731.NativeOnMontageInterrupted
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_102731::NativeOnMontageInterrupted(const class FString& Tag)
 {
@@ -158,7 +158,7 @@ void UPyAbility_102731::NativeOnMontageInterrupted(const class FString& Tag)
 // PythonFunction PyAbility_102731.PyAbility_102731.NativeOnMontageCancelled
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_102731::NativeOnMontageCancelled(const class FString& Tag)
 {
@@ -202,7 +202,7 @@ void APyProjectile_10273101::K2_OnBeginAgentTask()
 // PythonFunction PyAbility_102731.PyProjectile_10273101.K2_OnProcessHit
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FHitResult                       ImpactResult                                           (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FHitResult&                ImpactResult                                           (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyProjectile_10273101::K2_OnProcessHit(const struct FHitResult& ImpactResult)
 {
@@ -248,7 +248,7 @@ void APyProjectile_10273101::K2_OnRecycleAgentTask()
 // Parameters:
 // class UNiagaraComponent*                InFXComponent                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyCue_Projectile_HitImpact_10273101::OnHitNiagaraSpawned(class UNiagaraComponent* InFXComponent, class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
 {
@@ -276,7 +276,7 @@ void UPyCue_Projectile_HitImpact_10273101::OnHitNiagaraSpawned(class UNiagaraCom
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyCue_Projectile_HitImpact_10273101::OnExecuteFX(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters) const
 {

@@ -17,6 +17,23 @@
 namespace SDK::Params
 {
 
+// PythonFunction PyWidget_Squad_MatchPanel.PyWidget_Squad_MatchPanel.MarvelSetVisible
+// 0x0001 (0x0001 - 0x0000)
+struct PyWidget_Squad_MatchPanel_MarvelSetVisible final
+{
+public:
+	bool                                          Visible;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+
+// PythonFunction PyWidget_Squad_MatchPanel.PyWidget_Squad_MatchPanel.OnReceiveInputKey
+// 0x0028 (0x0028 - 0x0000)
+struct PyWidget_Squad_MatchPanel_OnReceiveInputKey final
+{
+public:
+	struct FKey                                   InKey;                                             // 0x0000(0x0020)(Parm, HasGetValueTypeHash)
+	EInputEvent                                   EventType;                                         // 0x0020(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+
 // PythonFunction PyWidget_Squad_MatchPanel.PyWidget_Squad_MatchInfo_Card.MarvelSetVisibleImmediately
 // 0x0001 (0x0001 - 0x0000)
 struct PyWidget_Squad_MatchInfo_Card_MarvelSetVisibleImmediately final
@@ -39,23 +56,6 @@ struct PyWidget_Squad_MatchInfo_Card_OnAnimationFinished final
 {
 public:
 	const class UWidgetAnimation*                 Animation;                                         // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-};
-
-// PythonFunction PyWidget_Squad_MatchPanel.PyWidget_Squad_MatchPanel.MarvelSetVisible
-// 0x0001 (0x0001 - 0x0000)
-struct PyWidget_Squad_MatchPanel_MarvelSetVisible final
-{
-public:
-	bool                                          Visible;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-
-// PythonFunction PyWidget_Squad_MatchPanel.PyWidget_Squad_MatchPanel.OnReceiveInputKey
-// 0x0028 (0x0028 - 0x0000)
-struct PyWidget_Squad_MatchPanel_OnReceiveInputKey final
-{
-public:
-	struct FKey                                   InKey;                                             // 0x0000(0x0020)(Parm, HasGetValueTypeHash)
-	EInputEvent                                   EventType;                                         // 0x0020(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 
 // PythonFunction PyWidget_Squad_MatchPanel.PyWidget_Squad_ModeSelectionBtn.OnReceiveInputKey

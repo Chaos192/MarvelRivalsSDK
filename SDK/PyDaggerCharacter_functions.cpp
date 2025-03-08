@@ -17,69 +17,6 @@
 namespace SDK
 {
 
-// PythonFunction PyDaggerCharacter.PyUIController_CloakAndDaggerAbilities.Construct
-// (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
-
-void UPyUIController_CloakAndDaggerAbilities::Construct()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PyUIController_CloakAndDaggerAbilities", "Construct");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// PythonFunction PyDaggerCharacter.PyUIController_CloakAndDaggerAbilities.Destruct
-// (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
-
-void UPyUIController_CloakAndDaggerAbilities::Destruct()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PyUIController_CloakAndDaggerAbilities", "Destruct");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// PythonFunction PyDaggerCharacter.PyUIController_CloakAndDaggerAbilities.OnMarvelSculptChanged
-// (Native, Public, BlueprintCallable)
-// Parameters:
-// int32                                   sculpt_id                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UPyUIController_CloakAndDaggerAbilities::OnMarvelSculptChanged(int32 sculpt_id)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PyUIController_CloakAndDaggerAbilities", "OnMarvelSculptChanged");
-
-	Params::PyUIController_CloakAndDaggerAbilities_OnMarvelSculptChanged Parms{};
-
-	Parms.sculpt_id = sculpt_id;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // PythonFunction PyDaggerCharacter.PyCloakAndDaggerCharacter.ReceiveBeginPlay
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 
@@ -171,7 +108,7 @@ void APyCloakAndDaggerCharacter::OnMarvelCharacterReconnect()
 // PythonFunction PyDaggerCharacter.PyCloakAndDaggerCharacter.OnReborn
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FCharacterRebornParam            RebornParameter                                        (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FCharacterRebornParam&     RebornParameter                                        (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyCloakAndDaggerCharacter::OnReborn(const struct FCharacterRebornParam& RebornParameter)
 {
@@ -208,6 +145,69 @@ void APyCloakAndDaggerCharacter::ClientSetCharacterType(EDaggerCharacterType InT
 	Params::PyCloakAndDaggerCharacter_ClientSetCharacterType Parms{};
 
 	Parms.InType = InType;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// PythonFunction PyDaggerCharacter.PyUIController_CloakAndDaggerAbilities.Construct
+// (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
+
+void UPyUIController_CloakAndDaggerAbilities::Construct()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyUIController_CloakAndDaggerAbilities", "Construct");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// PythonFunction PyDaggerCharacter.PyUIController_CloakAndDaggerAbilities.Destruct
+// (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
+
+void UPyUIController_CloakAndDaggerAbilities::Destruct()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyUIController_CloakAndDaggerAbilities", "Destruct");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// PythonFunction PyDaggerCharacter.PyUIController_CloakAndDaggerAbilities.OnMarvelSculptChanged
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   sculpt_id                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UPyUIController_CloakAndDaggerAbilities::OnMarvelSculptChanged(int32 sculpt_id)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyUIController_CloakAndDaggerAbilities", "OnMarvelSculptChanged");
+
+	Params::PyUIController_CloakAndDaggerAbilities_OnMarvelSculptChanged Parms{};
+
+	Parms.sculpt_id = sculpt_id;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

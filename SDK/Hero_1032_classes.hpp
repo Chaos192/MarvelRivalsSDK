@@ -47,7 +47,7 @@ public:
 };
 
 // Class Hero_1032.Ability_103221
-// 0x0000 (0x2580 - 0x2580)
+// 0x0000 (0x2588 - 0x2588)
 class UAbility_103221 : public UMarvelGameplayAbility
 {
 public:
@@ -62,7 +62,7 @@ public:
 };
 
 // Class Hero_1032.Cue_Ability_Loop_10322103
-// 0x1018 (0x1E68 - 0x0E50)
+// 0x1008 (0x1E58 - 0x0E50)
 class ACue_Ability_Loop_10322103 : public AMarvelCueNotify_Ability
 {
 public:
@@ -73,8 +73,8 @@ public:
 	TArray<class USplineMeshComponent*>           SplineMeshCollection;                              // 0x0E70(0x0010)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 	int32                                         MaxNumOfSplineMeshUsed;                            // 0x0E80(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_E84[0x4];                                      // 0x0E84(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FMarvelProjectileAgentTable            ProjectileDate;                                    // 0x0E88(0x0FD8)(NativeAccessSpecifierPublic)
-	class ASquirrelGirlCharacter*                 OwnCharacter;                                      // 0x1E60(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FMarvelProjectileAgentTable            ProjectileDate;                                    // 0x0E88(0x0FC8)(NativeAccessSpecifierPublic)
+	class ASquirrelGirlCharacter*                 OwnCharacter;                                      // 0x1E50(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -88,7 +88,7 @@ public:
 };
 
 // Class Hero_1032.103221MovableSplineMeshComponent
-// 0x0000 (0x0A30 - 0x0A30)
+// 0x0000 (0x0AC0 - 0x0AC0)
 class UOne03221MovableSplineMeshComponent final : public USplineMeshComponent
 {
 public:
@@ -107,7 +107,7 @@ public:
 class USummonedMovementComponent_10324101 final : public USummonedMovementComponent
 {
 public:
-	TMulticastInlineDelegate<void(class AActor* Value)> OnSquirrelAttachDelegate;                          // 0x0A40(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class AActor* Value)> OnSquirrelAttachDelegate;                    // 0x0A40(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -121,12 +121,12 @@ public:
 };
 
 // Class Hero_1032.Summoned_10324101
-// 0x0010 (0x0970 - 0x0960)
+// 0x0010 (0x09A0 - 0x0990)
 class ASummoned_10324101 final : public AMarvelTraceableSummoner
 {
 public:
-	class USummonedMovementComponent*             SummonedMovement_10324101;                         // 0x0960(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_968[0x8];                                      // 0x0968(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class USummonedMovementComponent*             SummonedMovement_10324101;                         // 0x0990(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_998[0x8];                                      // 0x0998(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -140,22 +140,22 @@ public:
 };
 
 // Class Hero_1032.Summoned_V2_10325101
-// 0x03B0 (0x1250 - 0x0EA0)
+// 0x03C0 (0x1290 - 0x0ED0)
 class ASummoned_V2_10325101 : public ASummonedCharacterBase
 {
 public:
-	struct FVector                                CachedForward;                                     // 0x0E98(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bIsActorHit;                                       // 0x0EB0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bIsEndFlying;                                      // 0x0EB1(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_EB2[0x6];                                      // 0x0EB2(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	class UCharacterMovementComponent*            Movement;                                          // 0x0EB8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FVector                                ForwardVector;                                     // 0x0EC0(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class UConfig_103251*                         AbilityConfig;                                     // 0x0ED8(0x0008)(ZeroConstructor, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FGameplayCueParameters                 Parameter;                                         // 0x0EE0(0x01B8)(ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
-	struct FHitResult                             HitPoint;                                          // 0x1098(0x0170)(ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
-	struct FTimerHandle                           SetModeHandle;                                     // 0x1208(0x0018)(Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FVector                                LastHitPosition;                                   // 0x1220(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_1238[0x18];                                    // 0x1238(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FVector                                CachedForward;                                     // 0x0EC8(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bIsActorHit;                                       // 0x0EE0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bIsEndFlying;                                      // 0x0EE1(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_EE2[0x6];                                      // 0x0EE2(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class UCharacterMovementComponent*            Movement;                                          // 0x0EE8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FVector                                ForwardVector;                                     // 0x0EF0(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UConfig_103251*                         AbilityConfig;                                     // 0x0F08(0x0008)(ZeroConstructor, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FGameplayCueParameters                 Parameter;                                         // 0x0F10(0x01B8)(ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
+	struct FHitResult                             HitPoint;                                          // 0x10C8(0x0170)(ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
+	struct FTimerHandle                           SetModeHandle;                                     // 0x1238(0x0018)(Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FVector                                LastHitPosition;                                   // 0x1250(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_1268[0x28];                                    // 0x1268(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	class UConfig_103251* GetAbilityConfig();
@@ -167,6 +167,7 @@ public:
 	void SetMovementModeAndSmoothingMode();
 	void SquirrelClimbingWall(const struct FHitResult& Hit);
 	void SquirrelTurn(const struct FHitResult& Hit, float Angle, float ForceTurn);
+	void SquirrelTurnInternal(const struct FHitResult& Hit, const struct FVector& Vector);
 
 public:
 	static class UClass* StaticClass()
@@ -232,18 +233,18 @@ public:
 };
 
 // Class Hero_1032.Ability_103251
-// 0x0328 (0x28A8 - 0x2580)
+// 0x0328 (0x28B0 - 0x2588)
 class UAbility_103251 : public UMarvelGameplayAbility
 {
 public:
-	class UMarvelAbilityTask_PlayMontageAndWaitForEvent* TimelineTask;                                      // 0x2580(0x0008)(ZeroConstructor, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class UConfig_103251*                         AbilityConfig;                                     // 0x2588(0x0008)(ZeroConstructor, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	TMulticastInlineDelegate<void(bool Visible)>  OnUIControl;                                       // 0x2590(0x0010)(ZeroConstructor, InstancedReference, Protected, NativeAccessSpecifierProtected)
-	class UMarvelAbilityTask_WaitBindInput*       InputTaskCancel;                                   // 0x25A0(0x0008)(ZeroConstructor, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class UMarvelAbilityTask_WaitBindInput*       InputTaskConfirm;                                  // 0x25A8(0x0008)(ZeroConstructor, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FGameplayCueParameters                 Parameter;                                         // 0x25B0(0x01B8)(ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
-	struct FPredictionKey                         WaitTaskConfirmKey;                                // 0x2768(0x00A0)(Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FPredictionKey                         WaitTaskCancelKey;                                 // 0x2808(0x00A0)(Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UMarvelAbilityTask_PlayMontageAndWaitForEvent* TimelineTask;                               // 0x2588(0x0008)(ZeroConstructor, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UConfig_103251*                         AbilityConfig;                                     // 0x2590(0x0008)(ZeroConstructor, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	TMulticastInlineDelegate<void(bool Visible)>  OnUIControl;                                       // 0x2598(0x0010)(ZeroConstructor, InstancedReference, Protected, NativeAccessSpecifierProtected)
+	class UMarvelAbilityTask_WaitBindInput*       InputTaskCancel;                                   // 0x25A8(0x0008)(ZeroConstructor, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UMarvelAbilityTask_WaitBindInput*       InputTaskConfirm;                                  // 0x25B0(0x0008)(ZeroConstructor, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FGameplayCueParameters                 Parameter;                                         // 0x25B8(0x01B8)(ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
+	struct FPredictionKey                         WaitTaskConfirmKey;                                // 0x2770(0x00A0)(Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FPredictionKey                         WaitTaskCancelKey;                                 // 0x2810(0x00A0)(Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 
 public:
 	void OnWaitTaskCancel_ThreadSafe(float TimeWaited);
@@ -379,15 +380,14 @@ public:
 };
 
 // Class Hero_1032.SquirrelGirlCharacter
-// 0x0020 (0x1830 - 0x1810)
+// 0x0010 (0x1880 - 0x1870)
 class ASquirrelGirlCharacter : public AMarvelBaseCharacter
 {
 public:
-	bool                                          bIsShiftJumping;                                   // 0x1810(0x0001)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1811[0x7];                                     // 0x1811(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class AActor*                                 TempInstigator;                                    // 0x1818(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class USquirrelGirlMoveLogicBaseComponent*    SquirrelGirlMoveLogic;                             // 0x1820(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_1828[0x8];                                     // 0x1828(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	bool                                          bIsShiftJumping;                                   // 0x1868(0x0001)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1869[0x7];                                     // 0x1869(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class AActor*                                 TempInstigator;                                    // 0x1870(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class USquirrelGirlMoveLogicBaseComponent*    SquirrelGirlMoveLogic;                             // 0x1878(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 
 public:
 	void SetSquirrelGirlJump(bool NewState);
@@ -449,7 +449,7 @@ public:
 };
 
 // Class Hero_1032.SquirrelGirlMovementComponent
-// 0x0000 (0x1B60 - 0x1B60)
+// 0x0000 (0x1BA0 - 0x1BA0)
 class USquirrelGirlMovementComponent final : public UMarvelCharacterMovementComponent
 {
 public:

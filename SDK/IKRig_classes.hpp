@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "PBIK_structs.hpp"
+#include "IKRig_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
-#include "IKRig_structs.hpp"
+#include "PBIK_structs.hpp"
 #include "Engine_classes.hpp"
 
 
@@ -21,8 +21,8 @@ namespace SDK
 {
 
 // Class IKRig.IKGoalCreatorInterface
-// 0x0000 (0x0030 - 0x0030)
-class IIKGoalCreatorInterface final : public IInterface
+// 0x0000 (0x0000 - 0x0000)
+class IIKGoalCreatorInterface final
 {
 public:
 	void AddIKGoals(TMap<class FName, struct FIKRigGoal>* OutGoals);
@@ -35,6 +35,15 @@ public:
 	static class IIKGoalCreatorInterface* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<IIKGoalCreatorInterface>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
 	}
 };
 

@@ -58,7 +58,7 @@ void UPyMarvelAudioAdmin::K2_DeInit()
 // PythonFunction PyMarvelAudioAdmin.PyMarvelAudioAdmin.OnGetSoundOutputDeviceName
 // (Native, Public, BlueprintCallable)
 // Parameters:
-// class FString                           DeviceName                                             (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    DeviceName                                             (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyMarvelAudioAdmin::OnGetSoundOutputDeviceName(const class FString& DeviceName)
 {

@@ -10,6 +10,7 @@
 
 #include "Basic.hpp"
 
+#include "GameplayAbilities_structs.hpp"
 #include "Hero_1014_structs.hpp"
 
 
@@ -22,6 +23,14 @@ struct PyAbility_101483_ParentAbilityChange final
 {
 public:
 	EState_101481                                 State;                                             // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+
+// PythonFunction PyAbility_101483.PyAbility_101483.K2_ActivateAbilityFromEvent
+// 0x0290 (0x0290 - 0x0000)
+struct PyAbility_101483_K2_ActivateAbilityFromEvent final
+{
+public:
+	struct FGameplayEventData                     EventData;                                         // 0x0000(0x0290)(ConstParm, Parm, OutParm, ReferenceParm)
 };
 
 // PythonFunction PyAbility_101483.PyAbility_101483.K2_OnEndAbility

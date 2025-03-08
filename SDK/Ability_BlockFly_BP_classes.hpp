@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Ability_BlockFly_BP.Ability_BlockFly_BP_C
-// 0x0000 (0x1190 - 0x1190)
+// 0x0000 (0x1198 - 0x1198)
 class UAbility_BlockFly_BP_C final : public UEffectAbility_BlockFly
 {
 public:

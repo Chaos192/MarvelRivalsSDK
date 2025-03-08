@@ -45,7 +45,7 @@ public:
 };
 
 // PythonClass PyAbility_104202.PyAbility_104202
-// 0x0000 (0x2598 - 0x2598)
+// 0x0000 (0x25A0 - 0x25A0)
 class UPyAbility_104202 : public UWallRunningPassiveAbility
 {
 public:

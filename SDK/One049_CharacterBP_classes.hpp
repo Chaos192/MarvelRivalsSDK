@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass 1049_CharacterBP.1049_CharacterBP_C
-// 0x0000 (0x1870 - 0x1870)
+// 0x0000 (0x18D0 - 0x18D0)
 class AOne049_CharacterBP_C final : public APyWolverineCharacter
 {
 public:

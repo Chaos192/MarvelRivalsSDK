@@ -55,7 +55,7 @@ public:
 struct PyUIC_Summoned_HpBar_SetWidgetStyleConfig final
 {
 public:
-	TMap<EClientPlayerViewSide, struct FWidgetStyle_HealthBar_BattlePanel> WidgetStyleConfig;                                 // 0x0000(0x0050)(ConstParm, Parm, OutParm, ReferenceParm)
+	TMap<EClientPlayerViewSide, struct FWidgetStyle_HealthBar_BattlePanel> WidgetStyleConfig;        // 0x0000(0x0050)(ConstParm, Parm, OutParm, ReferenceParm)
 };
 
 // PythonFunction PyUIC_SummonedHpBar.PyUIC_Summoned_HpBar.ReceiveEndPlay

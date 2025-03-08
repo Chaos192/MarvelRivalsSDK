@@ -38,11 +38,11 @@ public:
 };
 
 // PythonClass PyPunisherCharacter.PyPunisherCharacter
-// 0x0010 (0x1870 - 0x1860)
+// 0x0010 (0x18D0 - 0x18C0)
 class APyPunisherCharacter : public APunisherCharacter
 {
 public:
-	struct FGameplayTag                           ShowGatlingTag;                                    // 0x1860(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGameplayTag                           ShowGatlingTag;                                    // 0x18C0(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void ReceiveBeginPlay();

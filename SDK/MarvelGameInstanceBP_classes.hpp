@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass MarvelGameInstanceBP.MarvelGameInstanceBP_C
-// 0x0000 (0x0540 - 0x0540)
+// 0x0000 (0x0558 - 0x0558)
 class UMarvelGameInstanceBP_C final : public UPyMarvelGameInstance
 {
 public:

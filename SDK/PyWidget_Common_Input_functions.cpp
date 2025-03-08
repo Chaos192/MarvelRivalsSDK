@@ -171,7 +171,7 @@ void UPyWidget_Common_Input::SetIsEditable(bool IsEditable)
 // PythonFunction PyWidget_Common_Input.PyWidget_Common_Input.SetInputHintText
 // (Native, Public, BlueprintCallable)
 // Parameters:
-// class FText                             HintText                                               (Parm)
+// const class FText&                      HintText                                               (Parm)
 
 void UPyWidget_Common_Input::SetInputHintText(const class FText& HintText)
 {
@@ -196,7 +196,7 @@ void UPyWidget_Common_Input::SetInputHintText(const class FText& HintText)
 // PythonFunction PyWidget_Common_Input.PyWidget_Common_Input.SetPromptHintText
 // (Native, Public, BlueprintCallable)
 // Parameters:
-// class FText                             HintText                                               (Parm)
+// const class FText&                      HintText                                               (Parm)
 
 void UPyWidget_Common_Input::SetPromptHintText(const class FText& HintText)
 {
@@ -221,7 +221,7 @@ void UPyWidget_Common_Input::SetPromptHintText(const class FText& HintText)
 // PythonFunction PyWidget_Common_Input.PyWidget_Common_Input.SetTextPrompt
 // (Native, Public, BlueprintCallable)
 // Parameters:
-// class FText                             Prompt                                                 (Parm)
+// const class FText&                      Prompt                                                 (Parm)
 
 void UPyWidget_Common_Input::SetTextPrompt(const class FText& Prompt)
 {
@@ -334,7 +334,7 @@ void UPyWidget_Common_Input::UpdateWidgetStyleWithEditState(bool IsEditing)
 // PythonFunction PyWidget_Common_Input.PyWidget_Common_Input.SetOperateBtnStyle
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FButtonStyle                     BtnStyle                                               (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FButtonStyle&              BtnStyle                                               (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyWidget_Common_Input::SetOperateBtnStyle(const struct FButtonStyle& BtnStyle)
 {
@@ -428,7 +428,7 @@ void UPyWidget_Common_Input::SetEnterEnabled()
 // PythonFunction PyWidget_Common_Input.PyWidget_Common_Input.GetLenUTFEight
 // (Native, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// class FString                           Str                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Str                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 // int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 int32 UPyWidget_Common_Input::GetLenUTFEight(const class FString& Str)
@@ -456,7 +456,7 @@ int32 UPyWidget_Common_Input::GetLenUTFEight(const class FString& Str)
 // PythonFunction PyWidget_Common_Input.PyWidget_Common_Input.SetInputText
 // (Native, Public, BlueprintCallable)
 // Parameters:
-// class FText                             Text                                                   (Parm)
+// const class FText&                      Text                                                   (Parm)
 
 void UPyWidget_Common_Input::SetInputText(const class FText& Text)
 {
@@ -506,7 +506,7 @@ class FText UPyWidget_Common_Input::GetInputText()
 // PythonFunction PyWidget_Common_Input.PyWidget_Common_Input.SetTipsText
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FInputTips                       Tips                                                   (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FInputTips&                Tips                                                   (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyWidget_Common_Input::SetTipsText(const struct FInputTips& Tips)
 {
@@ -556,7 +556,7 @@ void UPyWidget_Common_Input::SetTipEnabled(bool TipEnabled)
 // PythonFunction PyWidget_Common_Input.PyWidget_Common_Input.SubmitText
 // (Native, Public, BlueprintCallable)
 // Parameters:
-// class FText                             Text                                                   (Parm)
+// const class FText&                      Text                                                   (Parm)
 // bool                                    bIsEnter                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UPyWidget_Common_Input::SubmitText(const class FText& Text, bool bIsEnter)

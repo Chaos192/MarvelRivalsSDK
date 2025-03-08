@@ -42,7 +42,7 @@ public:
 };
 
 // PythonClass PyAbility_104341.PyCue_Weapon_Loop_10434101
-// 0x0000 (0x10A8 - 0x10A8)
+// 0x0000 (0x10B0 - 0x10B0)
 class APyCue_Weapon_Loop_10434101 final : public AMarvelCueNotify_Weapon_Loop_DualMesh
 {
 public:
@@ -61,11 +61,11 @@ public:
 };
 
 // PythonClass PyAbility_104341.PyAbility_104341
-// 0x0008 (0x2588 - 0x2580)
+// 0x0008 (0x2590 - 0x2588)
 class UPyAbility_104341 : public UMarvelGameplayAbility
 {
 public:
-	float                                         MaxDurationTime;                                   // 0x2580(0x0004)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MaxDurationTime;                                   // 0x2588(0x0004)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void BeginPlay();

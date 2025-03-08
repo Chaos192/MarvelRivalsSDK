@@ -19,26 +19,6 @@
 namespace SDK
 {
 
-// PythonClass PyAbility_104161.PyUIController_104161
-// 0x0000 (0x0C60 - 0x0C60)
-class UPyUIController_104161 final : public UUIC_Ability
-{
-public:
-	void OnInit();
-	void UpdateUIActionTips(bool is_need);
-	void OnDestruct();
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"PyUIController_104161">();
-	}
-	static class UPyUIController_104161* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UPyUIController_104161>();
-	}
-};
-
 // PythonClass PyAbility_104161.PyEffectiveComponent_10416101
 // 0x0000 (0x1C00 - 0x1C00)
 class UPyEffectiveComponent_10416101 final : public UEffectiveComponent_10416101
@@ -58,30 +38,28 @@ public:
 	}
 };
 
-// PythonClass PyAbility_104161.PyCue_Ability_Loop_10416101
-// 0x0028 (0x0E78 - 0x0E50)
-class APyCue_Ability_Loop_10416101 final : public AMarvelCueNotify_Ability
+// PythonClass PyAbility_104161.PyCue_Buff_10416105
+// 0x0008 (0x0ED0 - 0x0EC8)
+class APyCue_Buff_10416105 final : public AMarvelCueNotify_Loop
 {
 public:
-	class USkeletalMeshComponent*                 Tantacle;                                          // 0x0E50(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   AttachSocketName;                                  // 0x0E58(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_E64[0x4];                                      // 0x0E64(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UAnimMontage*                           AttackMT;                                          // 0x0E68(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UAnimMontage*                           SprintMT;                                          // 0x0E70(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UFXSystemAsset*                         KillEffect;                                        // 0x0EC8(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	bool WhileActive(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters);
 	bool OnRemove(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters);
-	void OnMontageNotifyBegin(class FName NotifyName);
+	void OnCharacterDeath(class AActor* DamageCauser, class AActor* TargetActor, const struct FAttributeModifierHandle& ParamHandle);
+	void WhileActiveAudio(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters);
+	void OnRemoveAudio(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters);
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"PyCue_Ability_Loop_10416101">();
+		return StaticClassImpl<"PyCue_Buff_10416105">();
 	}
-	static class APyCue_Ability_Loop_10416101* GetDefaultObj()
+	static class APyCue_Buff_10416105* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<APyCue_Ability_Loop_10416101>();
+		return GetDefaultObjImpl<APyCue_Buff_10416105>();
 	}
 };
 
@@ -108,22 +86,46 @@ public:
 	}
 };
 
+// PythonClass PyAbility_104161.PyCue_Buff_10416201
+// 0x0068 (0x0F30 - 0x0EC8)
+class APyCue_Buff_10416201 final : public AMarvelCueNotify_Loop
+{
+public:
+	struct FGameplayTagContainer                  HPBarEffectTag;                                    // 0x0EC8(0x0068)(Edit, BlueprintVisible, DisableEditOnInstance, NativeAccessSpecifierPublic)
+
+public:
+	bool WhileActive(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters);
+	bool OnRemove(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PyCue_Buff_10416201">();
+	}
+	static class APyCue_Buff_10416201* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<APyCue_Buff_10416201>();
+	}
+};
+
 // PythonClass PyAbility_104161.PyAbility_104161
-// 0x0030 (0x2988 - 0x2958)
+// 0x0038 (0x2998 - 0x2960)
 class UPyAbility_104161 : public UAbility_104161
 {
 public:
-	bool                                          ValidKillState;                                    // 0x2958(0x0001)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2959[0x7];                                     // 0x2959(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UMarvelAbilityTask_NetworkSyncPointWithHitResult* SmashDownNetSyncTask;                              // 0x2960(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void()>              OnBeforeSpwanScope;                                // 0x2968(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(bool bIsNeed)>  OnNeedShowUIActionTips;                            // 0x2978(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	bool                                          ValidKillState;                                    // 0x2960(0x0001)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2961[0x7];                                     // 0x2961(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UMarvelAbilityTask_NetworkSyncPointWithHitResult* SmashDownNetSyncTask;                    // 0x2968(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UAbilityTask_NetworkSyncPoint*          LaunchNetSyncTask;                                 // 0x2970(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void()>              OnBeforeSpwanScope;                                // 0x2978(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(bool bIsNeed)>  OnNeedShowUIActionTips;                            // 0x2988(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 
 public:
 	void BeginPlay();
 	bool CanActivate();
 	void K2_ActivateAbility();
 	void MissileEventNotify();
+	void OnLaunchTaskNetSync();
 	void K2_OnLaunchCharacterCallback();
 	void NativeOnMontageEvent(const class FString& Tag);
 	struct FVector GetJumpInitialDirection(bool bIsUp);
@@ -154,50 +156,50 @@ public:
 	}
 };
 
-// PythonClass PyAbility_104161.PyCue_Buff_10416201
-// 0x0068 (0x0F30 - 0x0EC8)
-class APyCue_Buff_10416201 final : public AMarvelCueNotify_Loop
+// PythonClass PyAbility_104161.PyUIController_104161
+// 0x0000 (0x0C50 - 0x0C50)
+class UPyUIController_104161 final : public UUIC_Ability
 {
 public:
-	struct FGameplayTagContainer                  HPBarEffectTag;                                    // 0x0EC8(0x0068)(Edit, BlueprintVisible, DisableEditOnInstance, NativeAccessSpecifierPublic)
-
-public:
-	bool WhileActive(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters);
-	bool OnRemove(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters);
+	void OnInit();
+	void UpdateUIActionTips(bool is_need);
+	void OnDestruct();
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"PyCue_Buff_10416201">();
+		return StaticClassImpl<"PyUIController_104161">();
 	}
-	static class APyCue_Buff_10416201* GetDefaultObj()
+	static class UPyUIController_104161* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<APyCue_Buff_10416201>();
+		return GetDefaultObjImpl<UPyUIController_104161>();
 	}
 };
 
-// PythonClass PyAbility_104161.PyCue_Buff_10416105
-// 0x0008 (0x0ED0 - 0x0EC8)
-class APyCue_Buff_10416105 final : public AMarvelCueNotify_Loop
+// PythonClass PyAbility_104161.PyCue_Ability_Loop_10416101
+// 0x0028 (0x0E78 - 0x0E50)
+class APyCue_Ability_Loop_10416101 final : public AMarvelCueNotify_Ability
 {
 public:
-	class UFXSystemAsset*                         KillEffect;                                        // 0x0EC8(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class USkeletalMeshComponent*                 Tantacle;                                          // 0x0E50(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   AttachSocketName;                                  // 0x0E58(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_E64[0x4];                                      // 0x0E64(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UAnimMontage*                           AttackMT;                                          // 0x0E68(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UAnimMontage*                           SprintMT;                                          // 0x0E70(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	bool WhileActive(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters);
 	bool OnRemove(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters);
-	void OnCharacterDeath(class AActor* DamageCauser, class AActor* TargetActor, const struct FAttributeModifierHandle& ParamHandle);
-	void WhileActiveAudio(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters);
-	void OnRemoveAudio(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters);
+	void OnMontageNotifyBegin(class FName NotifyName);
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"PyCue_Buff_10416105">();
+		return StaticClassImpl<"PyCue_Ability_Loop_10416101">();
 	}
-	static class APyCue_Buff_10416105* GetDefaultObj()
+	static class APyCue_Ability_Loop_10416101* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<APyCue_Buff_10416105>();
+		return GetDefaultObjImpl<APyCue_Ability_Loop_10416101>();
 	}
 };
 

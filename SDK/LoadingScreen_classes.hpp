@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "UMG_classes.hpp"
+#include "DeveloperSettings_classes.hpp"
 #include "LoadingScreen_structs.hpp"
 #include "SlateCore_structs.hpp"
-#include "DeveloperSettings_classes.hpp"
+#include "UMG_classes.hpp"
 
 
 namespace SDK

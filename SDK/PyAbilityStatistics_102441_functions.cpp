@@ -21,8 +21,8 @@ namespace SDK
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           Instigator                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FMarvelTargetActorGenerateInfo   GenerateInfo                                           (ConstParm, Parm, OutParm, ReferenceParm)
-// struct FEndAgentTaskInfo                EndAgentTaskInfo                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
+// const struct FMarvelTargetActorGenerateInfo&GenerateInfo                                           (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FEndAgentTaskInfo&         EndAgentTaskInfo                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
 
 void UPyAbilityStatistics_102441::OnAbilityRecycleAgentTask(class AActor* Instigator, const struct FMarvelTargetActorGenerateInfo& GenerateInfo, const struct FEndAgentTaskInfo& EndAgentTaskInfo)
 {
@@ -50,8 +50,8 @@ void UPyAbilityStatistics_102441::OnAbilityRecycleAgentTask(class AActor* Instig
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           Instigator                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FMarvelTargetActorGenerateInfo   GenerateInfo                                           (ConstParm, Parm, OutParm, ReferenceParm)
-// struct FEndAgentTaskInfo                EndAgentTaskInfo                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
+// const struct FMarvelTargetActorGenerateInfo&GenerateInfo                                           (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FEndAgentTaskInfo&         EndAgentTaskInfo                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
 
 void UPyAbilityStatistics_102441::OnAbilityEndAgentTask(class AActor* Instigator, const struct FMarvelTargetActorGenerateInfo& GenerateInfo, const struct FEndAgentTaskInfo& EndAgentTaskInfo)
 {

@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "Hero_1014_structs.hpp"
+#include "Engine_structs.hpp"
 #include "Marvel_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "GameplayAbilities_structs.hpp"
@@ -36,24 +36,37 @@ public:
 	struct FHitResult                             ImpactResult;                                      // 0x0000(0x0170)(ConstParm, Parm, OutParm, ReferenceParm)
 };
 
-// PythonFunction PyAbility_101451.PyCue_Ability_Loop_10145101.WhileActive
-// 0x01C8 (0x01C8 - 0x0000)
-struct PyCue_Ability_Loop_10145101_WhileActive final
+// PythonFunction PyAbility_101451.PyAbility_101451.CanSpawnZipline
+// 0x0001 (0x0001 - 0x0000)
+struct PyAbility_101451_CanSpawnZipline final
 {
 public:
-	class AActor*                                 MyTarget;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	struct FGameplayCueParameters                 Parameters;                                        // 0x0008(0x01B8)(ConstParm, Parm, OutParm, ReferenceParm)
-	bool                                          ReturnValue;                                       // 0x01C0(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 
-// PythonFunction PyAbility_101451.PyCue_Ability_Loop_10145101.OnRemove
-// 0x01C8 (0x01C8 - 0x0000)
-struct PyCue_Ability_Loop_10145101_OnRemove final
+// PythonFunction PyAbility_101451.PyAbility_101451.K2_OnEndAbility
+// 0x0001 (0x0001 - 0x0000)
+struct PyAbility_101451_K2_OnEndAbility final
 {
 public:
-	class AActor*                                 MyTarget;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	struct FGameplayCueParameters                 Parameters;                                        // 0x0008(0x01B8)(ConstParm, Parm, OutParm, ReferenceParm)
-	bool                                          ReturnValue;                                       // 0x01C0(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bWasCancelled;                                     // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+
+// PythonFunction PyAbility_101451.PyAbility_101451.IsValidToSetupZipline
+// 0x0178 (0x0178 - 0x0000)
+struct PyAbility_101451_IsValidToSetupZipline final
+{
+public:
+	struct FHitResult                             Hit;                                               // 0x0000(0x0170)(ConstParm, Parm, OutParm, ReferenceParm)
+	EZiplineLaunchResult                          ReturnValue;                                       // 0x0170(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+
+// PythonFunction PyAbility_101451.PyAbility_101451.NativeOnMontageCompleted
+// 0x0010 (0x0010 - 0x0000)
+struct PyAbility_101451_NativeOnMontageCompleted final
+{
+public:
+	class FString                                 EventTag;                                          // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash)
 };
 
 // PythonFunction PyAbility_101451.PySummoned_10145101.SetLaunchState
@@ -114,6 +127,26 @@ public:
 	EZiplineLaunchResult                          Result;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 
+// PythonFunction PyAbility_101451.PyCue_Ability_Loop_10145101.WhileActive
+// 0x01C8 (0x01C8 - 0x0000)
+struct PyCue_Ability_Loop_10145101_WhileActive final
+{
+public:
+	class AActor*                                 MyTarget;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	struct FGameplayCueParameters                 Parameters;                                        // 0x0008(0x01B8)(ConstParm, Parm, OutParm, ReferenceParm)
+	bool                                          ReturnValue;                                       // 0x01C0(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+
+// PythonFunction PyAbility_101451.PyCue_Ability_Loop_10145101.OnRemove
+// 0x01C8 (0x01C8 - 0x0000)
+struct PyCue_Ability_Loop_10145101_OnRemove final
+{
+public:
+	class AActor*                                 MyTarget;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	struct FGameplayCueParameters                 Parameters;                                        // 0x0008(0x01B8)(ConstParm, Parm, OutParm, ReferenceParm)
+	bool                                          ReturnValue;                                       // 0x01C0(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+
 // PythonFunction PyAbility_101451.PyCue_Projectile_HitImpact_10145101.OnExecute
 // 0x01C8 (0x01C8 - 0x0000)
 struct PyCue_Projectile_HitImpact_10145101_OnExecute final
@@ -164,39 +197,6 @@ struct PySummoned_Cue_10145101_Loop_SetCableVisibility final
 {
 public:
 	bool                                          Visible;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-
-// PythonFunction PyAbility_101451.PyAbility_101451.CanSpawnZipline
-// 0x0001 (0x0001 - 0x0000)
-struct PyAbility_101451_CanSpawnZipline final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-
-// PythonFunction PyAbility_101451.PyAbility_101451.K2_OnEndAbility
-// 0x0001 (0x0001 - 0x0000)
-struct PyAbility_101451_K2_OnEndAbility final
-{
-public:
-	bool                                          bWasCancelled;                                     // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-
-// PythonFunction PyAbility_101451.PyAbility_101451.IsValidToSetupZipline
-// 0x0178 (0x0178 - 0x0000)
-struct PyAbility_101451_IsValidToSetupZipline final
-{
-public:
-	struct FHitResult                             Hit;                                               // 0x0000(0x0170)(ConstParm, Parm, OutParm, ReferenceParm)
-	EZiplineLaunchResult                          ReturnValue;                                       // 0x0170(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-
-// PythonFunction PyAbility_101451.PyAbility_101451.NativeOnMontageCompleted
-// 0x0010 (0x0010 - 0x0000)
-struct PyAbility_101451_NativeOnMontageCompleted final
-{
-public:
-	class FString                                 EventTag;                                          // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash)
 };
 
 // PythonFunction PyAbility_101451.PyUIController_101451.SetAbility

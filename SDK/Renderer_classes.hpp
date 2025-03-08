@@ -18,23 +18,23 @@ namespace SDK
 {
 
 // Class Renderer.SparseVolumeTextureViewerComponent
-// 0x0040 (0x0880 - 0x0840)
+// 0x0040 (0x0910 - 0x08D0)
 class USparseVolumeTextureViewerComponent final : public UPrimitiveComponent
 {
 public:
-	class USparseVolumeTexture*                   SparseVolumeTexturePreview;                        // 0x0838(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         bAnimate : 1;                                      // 0x0840(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bReversePlayback : 1;                              // 0x0840(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bBlockingStreamingRequests : 1;                    // 0x0840(0x0001)(BitIndex: 0x02, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_841[0x3];                                      // 0x0841(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         AnimationFrame;                                    // 0x0844(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         FrameRate;                                         // 0x0848(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         AnimationTime;                                     // 0x084C(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ESparseVolumeTexturePreviewAttribute          PreviewAttribute;                                  // 0x0850(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_851[0x3];                                      // 0x0851(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         MipLevel;                                          // 0x0854(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Extinction;                                        // 0x0858(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_85C[0x24];                                     // 0x085C(0x0024)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class USparseVolumeTexture*                   SparseVolumeTexturePreview;                        // 0x08C8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         bAnimate : 1;                                      // 0x08D0(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bReversePlayback : 1;                              // 0x08D0(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bBlockingStreamingRequests : 1;                    // 0x08D0(0x0001)(BitIndex: 0x02, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_8D1[0x3];                                      // 0x08D1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         AnimationFrame;                                    // 0x08D4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         FrameRate;                                         // 0x08D8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         AnimationTime;                                     // 0x08DC(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ESparseVolumeTexturePreviewAttribute          PreviewAttribute;                                  // 0x08E0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_8E1[0x3];                                      // 0x08E1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         MipLevel;                                          // 0x08E4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Extinction;                                        // 0x08E8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_8EC[0x24];                                     // 0x08EC(0x0024)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()

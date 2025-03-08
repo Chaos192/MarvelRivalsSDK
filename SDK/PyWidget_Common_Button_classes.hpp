@@ -10,16 +10,44 @@
 
 #include "Basic.hpp"
 
-#include "python_enums_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "Marvel_structs.hpp"
 #include "SlateCore_structs.hpp"
-#include "PyWidget_Button_classes.hpp"
 #include "UMG_structs.hpp"
+#include "PyWidget_Button_classes.hpp"
+#include "python_enums_structs.hpp"
 
 
 namespace SDK
 {
+
+// PythonClass PyWidget_Common_Button.PyWidget_CommonButton_Icon
+// 0x0028 (0x0778 - 0x0750)
+class UPyWidget_CommonButton_Icon : public UPyWidget_Button
+{
+public:
+	class UTexture2D*                             IconTexture;                                       // 0x0750(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ECommonButtonSize                             CommonButtonSize;                                  // 0x0758(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_759[0x7];                                      // 0x0759(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FVector2D>                      CommonButtonTypeList;                              // 0x0760(0x0010)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	class USizeBox*                               SizeBox_Main;                                      // 0x0770(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, Transient, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	void SetBtnIsPressed(bool IsBtnPressed_0);
+	void SetIsHover(bool IsHover_0);
+	void SetBtnIsEnabled(bool Enabled);
+	void SetBtnHidden();
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PyWidget_CommonButton_Icon">();
+	}
+	static class UPyWidget_CommonButton_Icon* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPyWidget_CommonButton_Icon>();
+	}
+};
 
 // PythonClass PyWidget_Common_Button.PyWidget_BaseCommonButton
 // 0x01A0 (0x08F0 - 0x0750)
@@ -78,49 +106,20 @@ public:
 };
 #pragma pack(pop)
 
-// PythonClass PyWidget_Common_Button.PyWidget_CommonButton_Lv4
+// PythonClass PyWidget_Common_Button.PyWidget_CommonButton_Lv2
 // 0x0000 (0x08F0 - 0x08F0)
-#pragma pack(push, 0x1)
-class alignas(0x10) UPyWidget_CommonButton_Lv4 : public UPyWidget_BaseCommonButton
+class UPyWidget_CommonButton_Lv2 final : public UPyWidget_BaseCommonButton
 {
-public:
-	void OnInitialized();
-
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"PyWidget_CommonButton_Lv4">();
+		return StaticClassImpl<"PyWidget_CommonButton_Lv2">();
 	}
-	static class UPyWidget_CommonButton_Lv4* GetDefaultObj()
+	static class UPyWidget_CommonButton_Lv2* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UPyWidget_CommonButton_Lv4>();
+		return GetDefaultObjImpl<UPyWidget_CommonButton_Lv2>();
 	}
 };
-#pragma pack(pop)
-
-// PythonClass PyWidget_Common_Button.PyWidget_CommonButton_Lv1_W
-// 0x0010 (0x0900 - 0x08F0)
-#pragma pack(push, 0x1)
-class alignas(0x10) UPyWidget_CommonButton_Lv1_W : public UPyWidget_BaseCommonButton
-{
-public:
-	class UWidgetAnimation*                       Anim_FadeIn_Match;                                 // 0x08E8(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UWidgetAnimation*                       Anim_FadeOut_Match;                                // 0x08F0(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-public:
-	void OnAnimationFinished(const class UWidgetAnimation* Animation);
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"PyWidget_CommonButton_Lv1_W">();
-	}
-	static class UPyWidget_CommonButton_Lv1_W* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UPyWidget_CommonButton_Lv1_W>();
-	}
-};
-#pragma pack(pop)
 
 // PythonClass PyWidget_Common_Button.PyWidget_CommonButton_Lv0
 // 0x0010 (0x0900 - 0x08F0)
@@ -164,48 +163,49 @@ public:
 };
 #pragma pack(pop)
 
-// PythonClass PyWidget_Common_Button.PyWidget_CommonButton_Icon
-// 0x0028 (0x0778 - 0x0750)
-class UPyWidget_CommonButton_Icon : public UPyWidget_Button
-{
-public:
-	class UTexture2D*                             IconTexture;                                       // 0x0750(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ECommonButtonSize                             CommonButtonSize;                                  // 0x0758(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_759[0x7];                                      // 0x0759(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FVector2D>                      CommonButtonTypeList;                              // 0x0760(0x0010)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	class USizeBox*                               SizeBox_Main;                                      // 0x0770(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, Transient, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-public:
-	void SetBtnIsPressed(bool IsBtnPressed_0);
-	void SetIsHover(bool IsHover_0);
-	void SetBtnIsEnabled(bool Enabled);
-	void SetBtnHidden();
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"PyWidget_CommonButton_Icon">();
-	}
-	static class UPyWidget_CommonButton_Icon* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UPyWidget_CommonButton_Icon>();
-	}
-};
-
-// PythonClass PyWidget_Common_Button.PyWidget_CommonButton_Lv2
+// PythonClass PyWidget_Common_Button.PyWidget_CommonButton_Lv4
 // 0x0000 (0x08F0 - 0x08F0)
-class UPyWidget_CommonButton_Lv2 final : public UPyWidget_BaseCommonButton
+#pragma pack(push, 0x1)
+class alignas(0x10) UPyWidget_CommonButton_Lv4 : public UPyWidget_BaseCommonButton
 {
+public:
+	void OnInitialized();
+
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"PyWidget_CommonButton_Lv2">();
+		return StaticClassImpl<"PyWidget_CommonButton_Lv4">();
 	}
-	static class UPyWidget_CommonButton_Lv2* GetDefaultObj()
+	static class UPyWidget_CommonButton_Lv4* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UPyWidget_CommonButton_Lv2>();
+		return GetDefaultObjImpl<UPyWidget_CommonButton_Lv4>();
 	}
 };
+#pragma pack(pop)
+
+// PythonClass PyWidget_Common_Button.PyWidget_CommonButton_Lv1_W
+// 0x0010 (0x0900 - 0x08F0)
+#pragma pack(push, 0x1)
+class alignas(0x10) UPyWidget_CommonButton_Lv1_W : public UPyWidget_BaseCommonButton
+{
+public:
+	class UWidgetAnimation*                       Anim_FadeIn_Match;                                 // 0x08E8(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UWidgetAnimation*                       Anim_FadeOut_Match;                                // 0x08F0(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	void OnAnimationFinished(const class UWidgetAnimation* Animation);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PyWidget_CommonButton_Lv1_W">();
+	}
+	static class UPyWidget_CommonButton_Lv1_W* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPyWidget_CommonButton_Lv1_W>();
+	}
+};
+#pragma pack(pop)
 
 // PythonClass PyWidget_Common_Button.PyWidget_CommonButton_Lv3
 // 0x0000 (0x08F0 - 0x08F0)

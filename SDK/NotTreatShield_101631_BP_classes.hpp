@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass NotTreatShield_101631_BP.NotTreatShield_101631_BP_C
-// 0x0000 (0x11F0 - 0x11F0)
+// 0x0000 (0x1200 - 0x1200)
 class UNotTreatShield_101631_BP_C final : public UUMarvelTreatOverflowConvAbility_10163101
 {
 public:

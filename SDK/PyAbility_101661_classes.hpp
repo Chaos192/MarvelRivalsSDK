@@ -18,7 +18,7 @@ namespace SDK
 {
 
 // PythonClass PyAbility_101661.PyUIController_101661
-// 0x0000 (0x0C60 - 0x0C60)
+// 0x0000 (0x0C50 - 0x0C50)
 class UPyUIController_101661 final : public UUIC_Ability
 {
 public:
@@ -38,7 +38,7 @@ public:
 };
 
 // PythonClass PyAbility_101661.PyAbility_101661
-// 0x0000 (0x2740 - 0x2740)
+// 0x0000 (0x2748 - 0x2748)
 class UPyAbility_101661 : public UAbility_101661
 {
 public:

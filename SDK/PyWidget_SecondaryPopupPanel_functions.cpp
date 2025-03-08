@@ -202,7 +202,7 @@ void UPyWidget_SecondaryPopupPanel::SetCommonBGType(ECommonBGType CommonBGType_0
 // PythonFunction PyWidget_SecondaryPopupPanel.PyWidget_SecondaryPopupPanel.SetTitleText
 // (Native, Public, BlueprintCallable)
 // Parameters:
-// class FText                             TitleText_0                                            (Parm)
+// const class FText&                      TitleText_0                                            (Parm)
 
 void UPyWidget_SecondaryPopupPanel::SetTitleText(const class FText& TitleText_0)
 {
@@ -254,9 +254,9 @@ void UPyWidget_SecondaryPopupPanel::SetTitleTimeCountDown(int32 TimeCountDown, i
 // PythonFunction PyWidget_SecondaryPopupPanel.PyWidget_SecondaryPopupPanel.SetBtnsText
 // (Native, Public, BlueprintCallable)
 // Parameters:
-// class FText                             LeftBtnText_0                                          (Parm)
-// class FText                             RightBtnText_0                                         (Parm)
-// class FText                             close_btn_text                                         (Parm)
+// const class FText&                      LeftBtnText_0                                          (Parm)
+// const class FText&                      RightBtnText_0                                         (Parm)
+// const class FText&                      close_btn_text                                         (Parm)
 
 void UPyWidget_SecondaryPopupPanel::SetBtnsText(const class FText& LeftBtnText_0, const class FText& RightBtnText_0, const class FText& close_btn_text)
 {
@@ -283,7 +283,7 @@ void UPyWidget_SecondaryPopupPanel::SetBtnsText(const class FText& LeftBtnText_0
 // PythonFunction PyWidget_SecondaryPopupPanel.PyWidget_SecondaryPopupPanel.SetLeftBtnText
 // (Native, Public, BlueprintCallable)
 // Parameters:
-// class FText                             LeftBtnText_0                                          (Parm)
+// const class FText&                      LeftBtnText_0                                          (Parm)
 
 void UPyWidget_SecondaryPopupPanel::SetLeftBtnText(const class FText& LeftBtnText_0)
 {
@@ -308,7 +308,7 @@ void UPyWidget_SecondaryPopupPanel::SetLeftBtnText(const class FText& LeftBtnTex
 // PythonFunction PyWidget_SecondaryPopupPanel.PyWidget_SecondaryPopupPanel.SetRightBtnText
 // (Native, Public, BlueprintCallable)
 // Parameters:
-// class FText                             RightBtnText_0                                         (Parm)
+// const class FText&                      RightBtnText_0                                         (Parm)
 
 void UPyWidget_SecondaryPopupPanel::SetRightBtnText(const class FText& RightBtnText_0)
 {
@@ -333,7 +333,7 @@ void UPyWidget_SecondaryPopupPanel::SetRightBtnText(const class FText& RightBtnT
 // PythonFunction PyWidget_SecondaryPopupPanel.PyWidget_SecondaryPopupPanel.SetCloseBtnText
 // (Native, Public, BlueprintCallable)
 // Parameters:
-// class FText                             BtnText                                                (Parm)
+// const class FText&                      BtnText                                                (Parm)
 
 void UPyWidget_SecondaryPopupPanel::SetCloseBtnText(const class FText& BtnText)
 {
@@ -358,8 +358,8 @@ void UPyWidget_SecondaryPopupPanel::SetCloseBtnText(const class FText& BtnText)
 // PythonFunction PyWidget_SecondaryPopupPanel.PyWidget_SecondaryPopupPanel.SetBtnAboveTipsText
 // (Native, Public, BlueprintCallable)
 // Parameters:
-// class FText                             LeftTips                                               (Parm)
-// class FText                             RightTips                                              (Parm)
+// const class FText&                      LeftTips                                               (Parm)
+// const class FText&                      RightTips                                              (Parm)
 
 void UPyWidget_SecondaryPopupPanel::SetBtnAboveTipsText(const class FText& LeftTips, const class FText& RightTips)
 {
@@ -395,6 +395,31 @@ void UPyWidget_SecondaryPopupPanel::SetLeftBtnEnabled(bool Enabled)
 		Func = Class->GetFunction("PyWidget_SecondaryPopupPanel", "SetLeftBtnEnabled");
 
 	Params::PyWidget_SecondaryPopupPanel_SetLeftBtnEnabled Parms{};
+
+	Parms.Enabled = Enabled;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// PythonFunction PyWidget_SecondaryPopupPanel.PyWidget_SecondaryPopupPanel.SetRightBtnEnabled
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    Enabled                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UPyWidget_SecondaryPopupPanel::SetRightBtnEnabled(bool Enabled)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyWidget_SecondaryPopupPanel", "SetRightBtnEnabled");
+
+	Params::PyWidget_SecondaryPopupPanel_SetRightBtnEnabled Parms{};
 
 	Parms.Enabled = Enabled;
 
@@ -660,10 +685,10 @@ void UPyWidget_SecondaryPopupPanel::SetRightBtnYellowVisible(bool Visible)
 // PythonFunction PyWidget_SecondaryPopupPanel.PyWidget_SecondaryPopupPanel.SetLeftBtnTwoPrice
 // (Native, Public, BlueprintCallable)
 // Parameters:
-// class FString                           cost_id1                                               (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    cost_id1                                               (Parm, ZeroConstructor, HasGetValueTypeHash)
 // int32                                   price1                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    is_enough1                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           cost_id2                                               (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    cost_id2                                               (Parm, ZeroConstructor, HasGetValueTypeHash)
 // int32                                   price2                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    is_enough2                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 

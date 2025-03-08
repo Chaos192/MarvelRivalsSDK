@@ -218,7 +218,7 @@ void APyLevelProcessController::OnModeTimeOut()
 // PythonFunction PyLevelProcessController.PyLevelProcessController.EndCurrentLevel
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<EBattleSide>                     win_side_list                                          (ConstParm, Parm, OutParm, ReferenceParm)
+// const TArray<EBattleSide>&              win_side_list                                          (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyLevelProcessController::EndCurrentLevel(const TArray<EBattleSide>& win_side_list)
 {

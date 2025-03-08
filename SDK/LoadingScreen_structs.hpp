@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_structs.hpp"
 #include "MoviePlayer_structs.hpp"
 #include "Slate_structs.hpp"
+#include "CoreUObject_structs.hpp"
 
 
 namespace SDK

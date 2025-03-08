@@ -209,7 +209,7 @@ void UPyWidget_HeroSystem_Story_ReadPanel::OnInitialized()
 // PythonFunction PyWidget_HeroSystem_Story.PyWidget_HeroSystem_Story_ReadPanel.Tick
 // (BlueprintCosmetic, Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGeometry                        MyGeometry                                             (Parm, IsPlainOldData, NoDestructor)
+// const struct FGeometry&                 MyGeometry                                             (Parm, IsPlainOldData, NoDestructor)
 // float                                   InDeltaTime                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UPyWidget_HeroSystem_Story_ReadPanel::Tick(const struct FGeometry& MyGeometry, float InDeltaTime)
@@ -261,7 +261,7 @@ void UPyWidget_HeroSystem_Story_ReadPanel::SetUnlocked(bool IsUnlocked)
 // PythonFunction PyWidget_HeroSystem_Story.PyWidget_HeroSystem_Story_ReadPanel.OnAnimationFinished
 // (BlueprintCosmetic, Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UWidgetAnimation*                 Animation                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// const class UWidgetAnimation*           Animation                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 void UPyWidget_HeroSystem_Story_ReadPanel::OnAnimationFinished(const class UWidgetAnimation* Animation)
 {

@@ -16,33 +16,8 @@
 namespace SDK
 {
 
-// PythonClass PyAbility_200010.PyAbility_200010
-// 0x0010 (0x2590 - 0x2580)
-class UPyAbility_200010 : public UMarvelGameplayAbility
-{
-public:
-	TMulticastInlineDelegate<void(class APyLevelPortal* Portal)> PortalChangeDispatcher;                            // 0x2580(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
-
-public:
-	void BeginPlay();
-	void K2_ActivateAbility();
-	void K2_OnEndAbility(bool bWasCancelled);
-
-	bool K2_CanActivateAbility(const struct FGameplayAbilityActorInfo& ActorInfo, const struct FGameplayAbilitySpecHandle& Handle, struct FGameplayTagContainer* RelevantTags) const;
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"PyAbility_200010">();
-	}
-	static class UPyAbility_200010* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UPyAbility_200010>();
-	}
-};
-
 // PythonClass PyAbility_200010.PyUIController_200010
-// 0x0000 (0x0C60 - 0x0C60)
+// 0x0000 (0x0C50 - 0x0C50)
 class UPyUIController_200010 final : public UUIC_Ability
 {
 public:
@@ -57,6 +32,33 @@ public:
 	static class UPyUIController_200010* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<UPyUIController_200010>();
+	}
+};
+
+// PythonClass PyAbility_200010.PyAbility_200010
+// 0x0018 (0x25A0 - 0x2588)
+class UPyAbility_200010 : public UMarvelGameplayAbility
+{
+public:
+	class APyLevelPortal*                         CurrentPortal;                                     // 0x2588(0x0008)(Net, ZeroConstructor, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class APyLevelPortal* Portal)> PortalChangeDispatcher;             // 0x2590(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+
+public:
+	void BeginPlay();
+	void OnRep_CurrentPortal();
+	void K2_ActivateAbility();
+	void RecoverDelegate();
+
+	bool K2_CanActivateAbility(const struct FGameplayAbilityActorInfo& ActorInfo, const struct FGameplayAbilitySpecHandle& Handle, struct FGameplayTagContainer* RelevantTags) const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PyAbility_200010">();
+	}
+	static class UPyAbility_200010* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPyAbility_200010>();
 	}
 };
 

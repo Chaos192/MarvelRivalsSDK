@@ -40,7 +40,7 @@ void UWBP_Common_VX_Line_C::ExecuteUbergraph_WBP_Common_VX_Line(int32 EntryPoint
 // Function WBP_Common_VX_Line.WBP_Common_VX_Line_C.OnAnimationFinished
 // (BlueprintCosmetic, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UWidgetAnimation*                 Animation                                              (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// const class UWidgetAnimation*           Animation                                              (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 void UWBP_Common_VX_Line_C::OnAnimationFinished(const class UWidgetAnimation* Animation)
 {

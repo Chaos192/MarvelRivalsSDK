@@ -61,11 +61,11 @@ public:
 };
 
 // Class Tether.TetherCableMeshComponent
-// 0x0050 (0x0900 - 0x08B0)
+// 0x0050 (0x0990 - 0x0940)
 class UTetherCableMeshComponent final : public UMeshComponent
 {
 public:
-	uint8                                         Pad_8A8[0x58];                                     // 0x08A8(0x0058)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_938[0x58];                                     // 0x0938(0x0058)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -97,12 +97,12 @@ public:
 };
 
 // Class Tether.TetherGuideSplineComponent
-// 0x0030 (0x0970 - 0x0940)
+// 0x0030 (0x0A00 - 0x09D0)
 class UTetherGuideSplineComponent final : public USplineComponent
 {
 public:
-	uint8                                         Pad_938[0x30];                                     // 0x0938(0x0030)(Fixing Size After Last Property [ Dumper-7 ])
-	class UTetherGuideSplineMetadata*             MetaData;                                          // 0x0968(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_9C8[0x30];                                     // 0x09C8(0x0030)(Fixing Size After Last Property [ Dumper-7 ])
+	class UTetherGuideSplineMetadata*             MetaData;                                          // 0x09F8(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 
 public:
 	static class UClass* StaticClass()

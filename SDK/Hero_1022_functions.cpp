@@ -39,7 +39,7 @@ void ACue_Projectile_Loop_10223301::DelayShowFX()
 // Function Hero_1022.Projectile_10226101.OnOwnerTagUpdate
 // (Final, Native, Protected, HasOutParams)
 // Parameters:
-// struct FGameplayTag                     Tag                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              Tag                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    TagExists                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void AProjectile_10226101::OnOwnerTagUpdate(const struct FGameplayTag& Tag, bool TagExists)
@@ -66,7 +66,7 @@ void AProjectile_10226101::OnOwnerTagUpdate(const struct FGameplayTag& Tag, bool
 // Function Hero_1022.UIC_Controller_102235.OnAbilityCountUpdate
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// struct FGameplayTag                     Tag                                                    (ConstParm, Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              Tag                                                    (ConstParm, Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   NewCount                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UUIC_Controller_102235::OnAbilityCountUpdate(const struct FGameplayTag& Tag, int32 NewCount)
@@ -88,7 +88,7 @@ void UUIC_Controller_102235::OnAbilityCountUpdate(const struct FGameplayTag& Tag
 // Function Hero_1022.UIC_Controller_102235.OnBuffTagUpdate
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// struct FGameplayTag                     Tag                                                    (ConstParm, Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              Tag                                                    (ConstParm, Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   NewCount                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UUIC_Controller_102235::OnBuffTagUpdate(const struct FGameplayTag& Tag, int32 NewCount)
@@ -112,8 +112,8 @@ void UUIC_Controller_102235::OnBuffTagUpdate(const struct FGameplayTag& Tag, int
 // Parameters:
 // class UAbilitySystemComponent*          Source                                                 (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UAbilitySystemComponent*          Target                                                 (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayEffectSpecStackHandle   EffectSpecHandle                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-// struct FActiveGameplayEffectHandle      EffectHandle                                           (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayEffectSpecStackHandle&EffectSpecHandle                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FActiveGameplayEffectHandle&EffectHandle                                           (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void USummonedComp_102241::OnApplyBuff(class UAbilitySystemComponent* Source, class UAbilitySystemComponent* Target, const struct FGameplayEffectSpecStackHandle& EffectSpecHandle, const struct FActiveGameplayEffectHandle& EffectHandle)
 {
@@ -282,7 +282,7 @@ void ASummoned_102241::SetShieldActive(bool bIsActive)
 // Function Hero_1022.Ability_102251.OnGameplayEvent
 // (Final, Native, Public, HasOutParams)
 // Parameters:
-// struct FGameplayEventData               EventData                                              (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FGameplayEventData&        EventData                                              (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UAbility_102251::OnGameplayEvent(const struct FGameplayEventData& EventData)
 {
@@ -379,7 +379,7 @@ void AMarvelCueNotify_CaptainShadow::SetCharacterMeshHidden(class UPoseableMeshC
 // (Final, Native, Public, HasDefaults)
 // Parameters:
 // class UPoseableMeshComponent*           Mesh                                                   (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          MoveDir                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   MoveDir                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void AMarvelCueNotify_CaptainShadow::SetCharacterMeshMovePosition(class UPoseableMeshComponent* Mesh, const struct FVector& MoveDir)
 {
@@ -432,8 +432,8 @@ void AMarvelCueNotify_CaptainShadow::SetCharacterMeshOpacity(class UPoseableMesh
 // Function Hero_1022.MarvelCueNotify_CaptainShadow.SetShadowMeshMaterial
 // (Final, Native, Public, HasOutParams)
 // Parameters:
-// struct FShadowMeshInfo                  ShadowMeshInfo                                         (Parm, OutParm, NativeAccessSpecifierPublic)
-// TArray<struct FShadowMeshInfo>          ChildShadowMeshInfo                                    (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+// struct FShadowMeshInfo*                 ShadowMeshInfo                                         (Parm, OutParm, NativeAccessSpecifierPublic)
+// TArray<struct FShadowMeshInfo>*         ChildShadowMeshInfo                                    (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 
 void AMarvelCueNotify_CaptainShadow::SetShadowMeshMaterial(struct FShadowMeshInfo* ShadowMeshInfo, TArray<struct FShadowMeshInfo>* ChildShadowMeshInfo)
 {
@@ -462,7 +462,7 @@ void AMarvelCueNotify_CaptainShadow::SetShadowMeshMaterial(struct FShadowMeshInf
 // Function Hero_1022.Cue_Ability_Loop_10225101.OnTagChanged
 // (Final, Native, Public, HasOutParams)
 // Parameters:
-// struct FGameplayTag                     TagUpdated                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              TagUpdated                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    TagExists                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void ACue_Ability_Loop_10225101::OnTagChanged(const struct FGameplayTag& TagUpdated, bool TagExists)
@@ -476,31 +476,6 @@ void ACue_Ability_Loop_10225101::OnTagChanged(const struct FGameplayTag& TagUpda
 
 	Parms.TagUpdated = std::move(TagUpdated);
 	Parms.TagExists = TagExists;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Hero_1022.Ability_102253.OnDashFinish
-// (Final, Native, Protected)
-// Parameters:
-// EDashStopReason                         Reason                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UAbility_102253::OnDashFinish(EDashStopReason Reason)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Ability_102253", "OnDashFinish");
-
-	Params::Ability_102253_OnDashFinish Parms{};
-
-	Parms.Reason = Reason;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -584,8 +559,8 @@ void UAbility_102254::UpdateState()
 // (Final, Native, Private, HasOutParams)
 // Parameters:
 // class UAbilitySystemComponent*          InASC                                                  (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayEffectSpecStackHandle   EffectSpecHandle                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-// struct FActiveGameplayEffectHandle      Handle                                                 (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayEffectSpecStackHandle&EffectSpecHandle                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FActiveGameplayEffectHandle&Handle                                                 (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void ACue_Ability_Loop_10225401::OnOwnerBuffApplied(class UAbilitySystemComponent* InASC, const struct FGameplayEffectSpecStackHandle& EffectSpecHandle, const struct FActiveGameplayEffectHandle& Handle)
 {
@@ -612,8 +587,8 @@ void ACue_Ability_Loop_10225401::OnOwnerBuffApplied(class UAbilitySystemComponen
 // Function Hero_1022.Cue_Ability_Loop_10225401.OnOwnerBuffRemove
 // (Final, Native, Private, HasOutParams)
 // Parameters:
-// class UAbilitySystemComponent*          ASC                                                    (ConstParm, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FActiveGameplayEffect            Age                                                    (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const class UAbilitySystemComponent*    ASC                                                    (ConstParm, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FActiveGameplayEffect&     Age                                                    (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 void ACue_Ability_Loop_10225401::OnOwnerBuffRemove(const class UAbilitySystemComponent* ASC, const struct FActiveGameplayEffect& Age)
 {
@@ -761,6 +736,56 @@ void UAbility_102255::OnKey102235Release(float TimeWaited)
 }
 
 
+// Function Hero_1022.Ability_102255.OnKeyVPress
+// (Final, Native, Protected)
+// Parameters:
+// float                                   TimeWaited                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UAbility_102255::OnKeyVPress(float TimeWaited)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Ability_102255", "OnKeyVPress");
+
+	Params::Ability_102255_OnKeyVPress Parms{};
+
+	Parms.TimeWaited = TimeWaited;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Hero_1022.Ability_102255.OnKeyVRelease
+// (Final, Native, Protected)
+// Parameters:
+// float                                   TimeWaited                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UAbility_102255::OnKeyVRelease(float TimeWaited)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Ability_102255", "OnKeyVRelease");
+
+	Params::Ability_102255_OnKeyVRelease Parms{};
+
+	Parms.TimeWaited = TimeWaited;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function Hero_1022.Ability_102255.OnMoveForwardInput
 // (Final, Native, Protected)
 // Parameters:
@@ -816,7 +841,7 @@ void UAbility_102255::SetActivatePressing(bool bIsPressing)
 // Function Hero_1022.Cue_Ability_Loop_10225501.OnTagChanged
 // (Final, Native, Public, HasOutParams)
 // Parameters:
-// struct FGameplayTag                     TagUpdated                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              TagUpdated                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    TagExists                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void ACue_Ability_Loop_10225501::OnTagChanged(const struct FGameplayTag& TagUpdated, bool TagExists)
@@ -918,7 +943,7 @@ void UArmorAttenuation_102271::AddArmor(float DeltaValue)
 // Function Hero_1022.Cue_Ability_Loop_10227101.OnTagChanged
 // (Final, Native, Public, HasOutParams)
 // Parameters:
-// struct FGameplayTag                     TagUpdated                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              TagUpdated                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    TagExists                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void ACue_Ability_Loop_10227101::OnTagChanged(const struct FGameplayTag& TagUpdated, bool TagExists)
@@ -995,7 +1020,7 @@ class USkeletalMeshComponent* ACaptainAmericaChildActor::GetShieldMesh()
 // Function Hero_1022.CaptainAmericaChildActor.OnTagChanged
 // (Final, Native, Protected, HasOutParams)
 // Parameters:
-// struct FGameplayTag                     TagUpdated                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              TagUpdated                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    TagExists                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void ACaptainAmericaChildActor::OnTagChanged(const struct FGameplayTag& TagUpdated, bool TagExists)
@@ -1038,6 +1063,31 @@ void ACaptainAmericaCharacter::ForceSetActorAndMeshRotation()
 }
 
 
+// Function Hero_1022.CaptainAmericaCharacter.GetShareComboState
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 ACaptainAmericaCharacter::GetShareComboState()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CaptainAmericaCharacter", "GetShareComboState");
+
+	Params::CaptainAmericaCharacter_GetShareComboState Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function Hero_1022.CaptainAmericaCharacter.GetShieldMesh
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -1060,6 +1110,54 @@ class USkeletalMeshComponent* ACaptainAmericaCharacter::GetShieldMesh()
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
+}
+
+
+// Function Hero_1022.CaptainAmericaCharacter.ResetShareComboState
+// (Final, Native, Public, BlueprintCallable)
+
+void ACaptainAmericaCharacter::ResetShareComboState()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CaptainAmericaCharacter", "ResetShareComboState");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Hero_1022.CaptainAmericaCharacter.SetShareComboState
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   NewState                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   ComboSectionNum                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   ComboTimeout                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ACaptainAmericaCharacter::SetShareComboState(int32 NewState, int32 ComboSectionNum, float ComboTimeout)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CaptainAmericaCharacter", "SetShareComboState");
+
+	Params::CaptainAmericaCharacter_SetShareComboState Parms{};
+
+	Parms.NewState = NewState;
+	Parms.ComboSectionNum = ComboSectionNum;
+	Parms.ComboTimeout = ComboTimeout;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 }
 
 

@@ -12,8 +12,8 @@
 
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
-#include "DataRegistry_structs.hpp"
 #include "DeveloperSettings_classes.hpp"
+#include "DataRegistry_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
 
@@ -135,7 +135,7 @@ public:
 class UMetaDataRegistrySource_CurveTable final : public UMetaDataRegistrySource
 {
 public:
-	TSubclassOf<class UDataRegistrySource_CurveTable> CreatedSource;                                     // 0x0110(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSubclassOf<class UDataRegistrySource_CurveTable> CreatedSource;                                 // 0x0110(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FDataRegistrySource_DataTableRules     TableRules;                                        // 0x0118(0x0008)(Edit, NoDestructor, NativeAccessSpecifierPublic)
 
 public:
@@ -176,7 +176,7 @@ public:
 class UMetaDataRegistrySource_DataTable final : public UMetaDataRegistrySource
 {
 public:
-	TSubclassOf<class UDataRegistrySource_DataTable> CreatedSource;                                     // 0x0110(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSubclassOf<class UDataRegistrySource_DataTable> CreatedSource;                                  // 0x0110(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FDataRegistrySource_DataTableRules     TableRules;                                        // 0x0118(0x0008)(Edit, NoDestructor, NativeAccessSpecifierPublic)
 
 public:

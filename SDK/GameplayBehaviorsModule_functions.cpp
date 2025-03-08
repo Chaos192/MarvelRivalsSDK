@@ -137,7 +137,7 @@ void UGameplayBehavior::K2_OnFinishedPawn(class APawn* Avatar, bool bWasInterrup
 // (Event, Public, BlueprintEvent)
 // Parameters:
 // class AActor*                           Avatar                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UGameplayBehaviorConfig*          Config                                                 (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UGameplayBehaviorConfig*    Config                                                 (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           SmartObjectOwner                                       (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UGameplayBehavior::K2_OnTriggered(class AActor* Avatar, const class UGameplayBehaviorConfig* Config, class AActor* SmartObjectOwner)
@@ -161,7 +161,7 @@ void UGameplayBehavior::K2_OnTriggered(class AActor* Avatar, const class UGamepl
 // (Event, Public, BlueprintEvent)
 // Parameters:
 // class ACharacter*                       Avatar                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UGameplayBehaviorConfig*          Config                                                 (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UGameplayBehaviorConfig*    Config                                                 (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           SmartObjectOwner                                       (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UGameplayBehavior::K2_OnTriggeredCharacter(class ACharacter* Avatar, const class UGameplayBehaviorConfig* Config, class AActor* SmartObjectOwner)
@@ -185,7 +185,7 @@ void UGameplayBehavior::K2_OnTriggeredCharacter(class ACharacter* Avatar, const 
 // (Event, Public, BlueprintEvent)
 // Parameters:
 // class APawn*                            Avatar                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UGameplayBehaviorConfig*          Config                                                 (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UGameplayBehaviorConfig*    Config                                                 (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           SmartObjectOwner                                       (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UGameplayBehavior::K2_OnTriggeredPawn(class APawn* Avatar, const class UGameplayBehaviorConfig* Config, class AActor* SmartObjectOwner)
@@ -265,7 +265,7 @@ int32 UGameplayBehavior::K2_GetNextActorIndexInSequence(int32 CurrentIndex) cons
 // Function GameplayBehaviorsModule.GameplayBehaviorsBlueprintFunctionLibrary.AddGameplayTagFilterToBlackboardKeySelector
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FBlackboardKeySelector           InSelector                                             (Parm, OutParm, NativeAccessSpecifierPublic)
+// struct FBlackboardKeySelector*          InSelector                                             (Parm, OutParm, NativeAccessSpecifierPublic)
 // class UObject*                          Owner                                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FName                             PropertyName                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -297,7 +297,7 @@ void UGameplayBehaviorsBlueprintFunctionLibrary::AddGameplayTagFilterToBlackboar
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
 // class UBTNode*                          NodeOwner                                              (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FBlackboardKeySelector           Key                                                    (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FBlackboardKeySelector&    Key                                                    (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // struct FGameplayTagContainer            ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
 struct FGameplayTagContainer UGameplayBehaviorsBlueprintFunctionLibrary::GetBlackboardValueAsGameplayTag(class UBTNode* NodeOwner, const struct FBlackboardKeySelector& Key)
@@ -327,7 +327,7 @@ struct FGameplayTagContainer UGameplayBehaviorsBlueprintFunctionLibrary::GetBlac
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // class UBlackboardComponent*             BlackboardComp                                         (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             KeyName                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName&                      KeyName                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FGameplayTagContainer            ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
 struct FGameplayTagContainer UGameplayBehaviorsBlueprintFunctionLibrary::GetBlackboardValueAsGameplayTagFromBlackboardComp(class UBlackboardComponent* BlackboardComp, const class FName& KeyName)
@@ -357,8 +357,8 @@ struct FGameplayTagContainer UGameplayBehaviorsBlueprintFunctionLibrary::GetBlac
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // class UBTNode*                          NodeOwner                                              (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FBlackboardKeySelector           Key                                                    (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FGameplayTagContainer            Value                                                  (Parm, NativeAccessSpecifierPublic)
+// const struct FBlackboardKeySelector&    Key                                                    (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FGameplayTagContainer&     Value                                                  (Parm, NativeAccessSpecifierPublic)
 
 void UGameplayBehaviorsBlueprintFunctionLibrary::SetBlackboardValueAsGameplayTag(class UBTNode* NodeOwner, const struct FBlackboardKeySelector& Key, const struct FGameplayTagContainer& Value)
 {
@@ -386,8 +386,8 @@ void UGameplayBehaviorsBlueprintFunctionLibrary::SetBlackboardValueAsGameplayTag
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // class UBlackboardComponent*             BlackboardComp                                         (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             KeyName                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayTagContainer            GameplayTagValue                                       (Parm, NativeAccessSpecifierPublic)
+// const class FName&                      KeyName                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTagContainer&     GameplayTagValue                                       (Parm, NativeAccessSpecifierPublic)
 
 void UGameplayBehaviorsBlueprintFunctionLibrary::SetValueAsGameplayTagForBlackboardComp(class UBlackboardComponent* BlackboardComp, const class FName& KeyName, const struct FGameplayTagContainer& GameplayTagValue)
 {

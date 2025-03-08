@@ -21,7 +21,7 @@ namespace SDK
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 bool APyCue_Death_134::WhileActive(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
@@ -51,7 +51,7 @@ bool APyCue_Death_134::WhileActive(class AActor* MyTarget, const struct FGamepla
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 bool APyCue_Death_134::OnRemove(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
@@ -130,8 +130,8 @@ void APyCue_Death_134::OnSoulEnd(EAdamSoulEndReason Reason)
 // PythonFunction PyAbility_134.PyCue_Death_134.K2_OnGameplayFXEvent
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayTag                     MatchingTag                                            (Parm, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayEventData               Payload                                                (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayTag&              MatchingTag                                            (Parm, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayEventData&        Payload                                                (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyCue_Death_134::K2_OnGameplayFXEvent(const struct FGameplayTag& MatchingTag, const struct FGameplayEventData& Payload)
 {
@@ -241,7 +241,7 @@ void UPyAbility_134::OnRecvDelayRespawnTime(float DelayTime)
 // Parameters:
 // class AActor*                           InSource                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 // class AActor*                           InTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FAttributeModifierHandle         ModifierParamHandle                                    (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
+// const struct FAttributeModifierHandle&  ModifierParamHandle                                    (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
 
 void UPyAbility_134::OnPreDeath(class AActor* InSource, class AActor* InTarget, const struct FAttributeModifierHandle& ModifierParamHandle)
 {
@@ -315,7 +315,7 @@ bool UPyAbility_134::TryActivateSelf(class AActor* TargetActor)
 // PythonFunction PyAbility_134.PyAbility_134.CanActivateSelfWithCheck
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FAttributeModifierParameter      ModifierParam                                          (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FAttributeModifierParameter&ModifierParam                                          (ConstParm, Parm, OutParm, ReferenceParm)
 // bool                                    IsServer                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
@@ -458,7 +458,7 @@ void UPyAbility_134::K2_OnEndAbility(bool bWasCancelled)
 // PythonFunction PyAbility_134.PyAbility_134.K2_ExecuteStageStatus
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayTag                     InStatus                                               (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              InStatus                                               (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
 
 void UPyAbility_134::K2_ExecuteStageStatus(const struct FGameplayTag& InStatus)
 {
@@ -546,7 +546,7 @@ void UPyAbility_134::OnDurationEnd()
 // PythonFunction PyAbility_134.PyAbility_134.NativeOnMontageEvent
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_134::NativeOnMontageEvent(const class FString& Tag)
 {

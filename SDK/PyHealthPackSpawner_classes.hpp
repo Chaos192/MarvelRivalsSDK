@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "GameplayTags_structs.hpp"
 #include "Marvel_structs.hpp"
 #include "Marvel_classes.hpp"
+#include "GameplayTags_structs.hpp"
 #include "Engine_classes.hpp"
 
 
@@ -82,7 +82,7 @@ public:
 };
 
 // PythonClass PyHealthPackSpawner.PyBuffAbility_20000018
-// 0x0000 (0x10F8 - 0x10F8)
+// 0x0000 (0x1100 - 0x1100)
 class UPyBuffAbility_20000018 final : public UMarvelEffectGameplayAbility
 {
 public:

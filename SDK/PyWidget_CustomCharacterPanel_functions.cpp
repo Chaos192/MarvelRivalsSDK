@@ -121,7 +121,7 @@ void UPyWidget_CustomCharacterPanel::MarvelSetVisible(bool Visible)
 // PythonFunction PyWidget_CustomCharacterPanel.PyWidget_CustomCharacterPanel.OnAnimationFinished
 // (BlueprintCosmetic, Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UWidgetAnimation*                 Animation                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// const class UWidgetAnimation*           Animation                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 void UPyWidget_CustomCharacterPanel::OnAnimationFinished(const class UWidgetAnimation* Animation)
 {

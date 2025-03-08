@@ -75,11 +75,14 @@ void UPyControlAnalyzerSubsystem::WriteToLog()
 
 
 // PythonFunction PyControlAnalyzerSubsystem.PyControlAnalyzerSubsystem.SendWarning
-// (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
+// (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           warning_str                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const TArray<int32>&                    LSScores                                               (ConstParm, Parm, OutParm, ReferenceParm)
+// const TArray<int32>&                    RSScores                                               (ConstParm, Parm, OutParm, ReferenceParm)
+// const TArray<int32>&                    LTScores                                               (ConstParm, Parm, OutParm, ReferenceParm)
+// const TArray<int32>&                    RTScores                                               (ConstParm, Parm, OutParm, ReferenceParm)
 
-void UPyControlAnalyzerSubsystem::SendWarning(const class FString& warning_str)
+void UPyControlAnalyzerSubsystem::SendWarning(const TArray<int32>& LSScores, const TArray<int32>& RSScores, const TArray<int32>& LTScores, const TArray<int32>& RTScores)
 {
 	static class UFunction* Func = nullptr;
 
@@ -88,7 +91,10 @@ void UPyControlAnalyzerSubsystem::SendWarning(const class FString& warning_str)
 
 	Params::PyControlAnalyzerSubsystem_SendWarning Parms{};
 
-	Parms.warning_str = std::move(warning_str);
+	Parms.LSScores = std::move(LSScores);
+	Parms.RSScores = std::move(RSScores);
+	Parms.LTScores = std::move(LTScores);
+	Parms.RTScores = std::move(RTScores);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

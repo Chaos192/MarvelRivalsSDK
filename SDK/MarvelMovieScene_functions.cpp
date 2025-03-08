@@ -20,7 +20,7 @@ namespace SDK
 // Function MarvelMovieScene.MovieSceneMarvelNiagaraMeshComponentSection.SetConstraintBindingID
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FMovieSceneObjectBindingID       InConstraintBindingID                                  (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FMovieSceneObjectBindingID&InConstraintBindingID                                  (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UMovieSceneMarvelNiagaraMeshComponentSection::SetConstraintBindingID(const struct FMovieSceneObjectBindingID& InConstraintBindingID)
 {
@@ -67,35 +67,10 @@ const struct FMovieSceneObjectBindingID UMovieSceneMarvelNiagaraMeshComponentSec
 }
 
 
-// Function MarvelMovieScene.PaintSceneManagerActor.OnScenePushPaintSceneCommands
-// (Final, Native, Public, HasOutParams)
-// Parameters:
-// struct FPaintSceneCommand               InCommand                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-
-void APaintSceneManagerActor::OnScenePushPaintSceneCommands(const struct FPaintSceneCommand& InCommand)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PaintSceneManagerActor", "OnScenePushPaintSceneCommands");
-
-	Params::PaintSceneManagerActor_OnScenePushPaintSceneCommands Parms{};
-
-	Parms.InCommand = std::move(InCommand);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // Function MarvelMovieScene.MovieSceneMarvelNiagaraSplineComponentSection.SetConstraintBindingID
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FMovieSceneObjectBindingID       InConstraintBindingID                                  (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FMovieSceneObjectBindingID&InConstraintBindingID                                  (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UMovieSceneMarvelNiagaraSplineComponentSection::SetConstraintBindingID(const struct FMovieSceneObjectBindingID& InConstraintBindingID)
 {
@@ -145,7 +120,7 @@ const struct FMovieSceneObjectBindingID UMovieSceneMarvelNiagaraSplineComponentS
 // Function MarvelMovieScene.MovieSceneMarvelPortalLinkTargetSection.SetConstraintBindingID
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FMovieSceneObjectBindingID       InConstraintBindingID                                  (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FMovieSceneObjectBindingID&InConstraintBindingID                                  (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UMovieSceneMarvelPortalLinkTargetSection::SetConstraintBindingID(const struct FMovieSceneObjectBindingID& InConstraintBindingID)
 {
@@ -189,6 +164,31 @@ const struct FMovieSceneObjectBindingID UMovieSceneMarvelPortalLinkTargetSection
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
+}
+
+
+// Function MarvelMovieScene.PaintSceneManagerActor.OnScenePushPaintSceneCommands
+// (Final, Native, Public, HasOutParams)
+// Parameters:
+// const struct FPaintSceneCommand&        InCommand                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+
+void APaintSceneManagerActor::OnScenePushPaintSceneCommands(const struct FPaintSceneCommand& InCommand)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PaintSceneManagerActor", "OnScenePushPaintSceneCommands");
+
+	Params::PaintSceneManagerActor_OnScenePushPaintSceneCommands Parms{};
+
+	Parms.InCommand = std::move(InCommand);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 }
 
 }

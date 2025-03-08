@@ -184,7 +184,7 @@ void UPyLevelActorMoveComponent::PyTimelineUpdate(float DeltaTime)
 // PythonFunction PyLevelActorMoveComponent.PyLevelActorMoveComponent.FollowTraceMoveStart
 // (Native, Public, BlueprintCallable)
 // Parameters:
-// class FString                           TraceName_0                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    TraceName_0                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
 // float                                   StartPercent                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UPyLevelActorMoveComponent::FollowTraceMoveStart(const class FString& TraceName_0, float StartPercent)
@@ -261,7 +261,7 @@ float UPyLevelActorMoveComponent::GetCurLength()
 // PythonFunction PyLevelActorMoveComponent.PyLevelActorMoveComponent.ReachCheckPoint
 // (Native, Event, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           EventName                                              (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    EventName                                              (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyLevelActorMoveComponent::ReachCheckPoint(const class FString& EventName)
 {

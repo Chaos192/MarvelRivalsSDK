@@ -19,8 +19,9 @@ namespace SDK
 struct FMarvelMatchGameMapTable final
 {
 public:
-	int32                                         ModeId_2_3EB7211E45982A9C77A2A28B7EF0267D;         // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          Delivery_8_E0EB8BBE4C7589DBC353009EAD313FCF;       // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         ModeId_2_3EB7211E45982A9C77A2A28B7EF0267D;         // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class FText                                   PlayModeName_6_063376B74B59BF66B375B0AA7EF5CFEA;   // 0x0008(0x0018)(Edit, BlueprintVisible)
 };
 

@@ -65,7 +65,7 @@ struct FPaintSceneReconnectRebuildData AFillColorBox::GeneratePaintSceneRebuildD
 // Function MarvelLevel.FillColorBox.GetItemsState
 // (Final, Native, Protected)
 // Parameters:
-// int32                                   InArrayLength                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int32                             InArrayLength                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<int32>                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
 TArray<int32> AFillColorBox::GetItemsState(const int32 InArrayLength)
@@ -93,7 +93,7 @@ TArray<int32> AFillColorBox::GetItemsState(const int32 InArrayLength)
 // Function MarvelLevel.FillColorBox.InitializeItems
 // (Final, Native, Protected)
 // Parameters:
-// int32                                   InArrayLength                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int32                             InArrayLength                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void AFillColorBox::InitializeItems(const int32 InArrayLength)
 {
@@ -165,8 +165,8 @@ void AFillColorBox::RewindForReplayForPy()
 // Function MarvelLevel.FillColorBox.UpdateItemState
 // (Final, Native, Protected)
 // Parameters:
-// TArray<int32>                           ArrayIndexList                                         (ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
-// int32                                   NewState                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<int32>&                    ArrayIndexList                                         (ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+// const int32                             NewState                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void AFillColorBox::UpdateItemState(const TArray<int32>& ArrayIndexList, const int32 NewState)
 {
@@ -251,7 +251,7 @@ void ALevelBlockActor::UpdateMaskFilter()
 // Function MarvelLevel.LevelCustomEventSubsystem.GetLevelCustomEventSubsystem
 // (Final, Native, Static, Public)
 // Parameters:
-// class UObject*                          WorldContextObject                                     (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UObject*                    WorldContextObject                                     (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class ULevelCustomEventSubsystem*       ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class ULevelCustomEventSubsystem* ULevelCustomEventSubsystem::GetLevelCustomEventSubsystem(const class UObject* WorldContextObject)
@@ -358,8 +358,8 @@ int32 ULevelFunctionLibrary::FindDeathCollectionIndex(class UObject* WorldContex
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // class UObject*                          WorldContextObject                                     (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<class FName>                     Tags                                                   (ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
-// TMap<class FName, struct FActorsWithSameOneTag>OutActors                                              (Parm, OutParm, NativeAccessSpecifierPublic)
+// const TArray<class FName>&              Tags                                                   (ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+// TMap<class FName, struct FActorsWithSameOneTag>*OutActors                                              (Parm, OutParm, NativeAccessSpecifierPublic)
 
 void ULevelFunctionLibrary::GetAllActorsWithTagInWorld(class UObject* WorldContextObject, const TArray<class FName>& Tags, TMap<class FName, struct FActorsWithSameOneTag>* OutActors)
 {
@@ -441,11 +441,68 @@ float ULevelFunctionLibrary::GetSequencePlayerCurrentTime(class ULevelSequencePl
 }
 
 
+// Function MarvelLevel.LevelFunctionLibrary.IsActorInAABBRange
+// (Final, Native, Static, Public, HasOutParams, HasDefaults)
+// Parameters:
+// const struct FTransform&                LocalTransform                                         (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   BorderHalfSize                                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AMarvelBaseCharacter*             InActor                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool ULevelFunctionLibrary::IsActorInAABBRange(const struct FTransform& LocalTransform, const struct FVector& BorderHalfSize, class AMarvelBaseCharacter* InActor)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LevelFunctionLibrary", "IsActorInAABBRange");
+
+	Params::LevelFunctionLibrary_IsActorInAABBRange Parms{};
+
+	Parms.LocalTransform = std::move(LocalTransform);
+	Parms.BorderHalfSize = std::move(BorderHalfSize);
+	Parms.InActor = InActor;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MarvelLevel.LevelFunctionLibrary.IsEnableLevelAsyncLoadInQueue
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool ULevelFunctionLibrary::IsEnableLevelAsyncLoadInQueue()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LevelFunctionLibrary", "IsEnableLevelAsyncLoadInQueue");
+
+	Params::LevelFunctionLibrary_IsEnableLevelAsyncLoadInQueue Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function MarvelLevel.LevelFunctionLibrary.LevelSetClientTravel
 // (Final, Native, Static, Public)
 // Parameters:
 // class UObject*                          WorldContextObject                                     (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           NextURLString                                          (ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    NextURLString                                          (ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void ULevelFunctionLibrary::LevelSetClientTravel(class UObject* WorldContextObject, const class FString& NextURLString)
 {
@@ -471,7 +528,7 @@ void ULevelFunctionLibrary::LevelSetClientTravel(class UObject* WorldContextObje
 // Function MarvelLevel.LevelFunctionLibrary.MeshData
 // (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
-// class UStaticMeshComponent*             StaticMeshComponent                                    (ConstParm, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UStaticMeshComponent*       StaticMeshComponent                                    (ConstParm, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<struct FVector>                  ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
 TArray<struct FVector> ULevelFunctionLibrary::MeshData(const class UStaticMeshComponent* StaticMeshComponent)
@@ -564,9 +621,9 @@ void AMarvelLevelSummonedBase::SetTriggerRepCheck()
 // Function MarvelLevel.LevelGravityElevator.GetPathVelocity
 // (Native, Event, Public, HasDefaults, BlueprintEvent, Const)
 // Parameters:
-// struct FVector                          InVelocity                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   InVelocity                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UPrimitiveComponent*              UpdatedComponent                                       (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          InGravity                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   InGravity                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   DeltaTime                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // EMovementMode                           MovementMode                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -600,7 +657,7 @@ struct FVector ALevelGravityElevator::GetPathVelocity(const struct FVector& InVe
 // Function MarvelLevel.LevelGravityZoneEffectTemplate.IsDispelledByAbility
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FGameplayTagContainer            AbilityTags                                            (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FGameplayTagContainer&     AbilityTags                                            (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool ULevelGravityZoneEffectTemplate::IsDispelledByAbility(const struct FGameplayTagContainer& AbilityTags)
@@ -723,7 +780,7 @@ void ULevelPackageRulesFuncLibrary::UpdatePackageDataTables()
 // Function MarvelLevel.LevelStaticMeshActor.MeshData
 // (Final, Native, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
-// class UStaticMeshComponent*             StaticMeshComponent                                    (ConstParm, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UStaticMeshComponent*       StaticMeshComponent                                    (ConstParm, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<struct FVector>                  ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
 TArray<struct FVector> ALevelStaticMeshActor::MeshData(const class UStaticMeshComponent* StaticMeshComponent)
@@ -751,7 +808,7 @@ TArray<struct FVector> ALevelStaticMeshActor::MeshData(const class UStaticMeshCo
 // Function MarvelLevel.LevelTransportPipe.GetKnockUp
 // (Native, Event, Public, HasOutParams, BlueprintEvent, Const)
 // Parameters:
-// struct FPhysicForceMove                 OutPhysicKnockUp                                       (Parm, OutParm, NativeAccessSpecifierPublic)
+// struct FPhysicForceMove*                OutPhysicKnockUp                                       (Parm, OutParm, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool ALevelTransportPipe::GetKnockUp(struct FPhysicForceMove* OutPhysicKnockUp) const
@@ -780,9 +837,9 @@ bool ALevelTransportPipe::GetKnockUp(struct FPhysicForceMove* OutPhysicKnockUp) 
 // Function MarvelLevel.LevelTransportPipe.GetPathVelocity
 // (Native, Event, Public, HasDefaults, BlueprintEvent, Const)
 // Parameters:
-// struct FVector                          InVelocity                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   InVelocity                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UPrimitiveComponent*              UpdatedComponent                                       (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          InGravity                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   InGravity                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   DeltaTime                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // EMovementMode                           MovementMode                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -879,7 +936,7 @@ void UMarvelLevelAnimActionComponent::OnLinkClientGCBreak()
 // Function MarvelLevel.MarvelLevelAnimActionComponent.OnLinkGCBreak
 // (Final, Native, Public, HasOutParams)
 // Parameters:
-// struct FChaosBreakEvent                 BreakEvent                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FChaosBreakEvent&          BreakEvent                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 void UMarvelLevelAnimActionComponent::OnLinkGCBreak(const struct FChaosBreakEvent& BreakEvent)
 {
@@ -904,8 +961,8 @@ void UMarvelLevelAnimActionComponent::OnLinkGCBreak(const struct FChaosBreakEven
 // Function MarvelLevel.MarvelLevelAnimActionComponent.OnLinkGCIgnoreBreak
 // (Final, Native, Public, HasOutParams)
 // Parameters:
-// int32                                   Index_0                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   ServerTime                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int32&                            Index_0                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float&                            ServerTime                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UMarvelLevelAnimActionComponent::OnLinkGCIgnoreBreak(const int32& Index_0, const float& ServerTime)
 {
@@ -932,7 +989,7 @@ void UMarvelLevelAnimActionComponent::OnLinkGCIgnoreBreak(const int32& Index_0, 
 // (Final, Native, Public, HasOutParams)
 // Parameters:
 // class UPrimitiveComponent*              NewBase                                                (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FHitResult                       FloorHitResult                                         (Parm, OutParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// struct FHitResult*                      FloorHitResult                                         (Parm, OutParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 void UMarvelLevelAnimActionComponent::OnMovementBaseChanged(class UPrimitiveComponent* NewBase, struct FHitResult* FloorHitResult)
 {
@@ -1114,8 +1171,8 @@ void UPlayerStateTrainComponent::ClearMainAttackData()
 // Parameters:
 // class AActor*                           Source                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           Target                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FAttributeModifierHandle         ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGlobalEventExtraData            ExtraData                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FAttributeModifierHandle&  ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGlobalEventExtraData&     ExtraData                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
 void UPlayerStateTrainComponent::OnActorDeath(class AActor* Source, class AActor* Target, const struct FAttributeModifierHandle& ModifierParameterHandle, const struct FGlobalEventExtraData& ExtraData)
 {
@@ -1145,8 +1202,8 @@ void UPlayerStateTrainComponent::OnActorDeath(class AActor* Source, class AActor
 // Parameters:
 // class AActor*                           InInstigator                                           (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           InTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FAttributeModifierHandle         ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGlobalEventExtraData            ExtraData                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FAttributeModifierHandle&  ModifierParameterHandle                                (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGlobalEventExtraData&     ExtraData                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
 void UPlayerStateTrainComponent::OnActorTakeDamage(class AActor* InInstigator, class AActor* InTarget, const struct FAttributeModifierHandle& ModifierParameterHandle, const struct FGlobalEventExtraData& ExtraData)
 {
@@ -1214,8 +1271,8 @@ void UPlayerStateTrainComponent::OnRep_MainAttackMiss()
 // Parameters:
 // class AActor*                           Source                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UMarvelGameplayAbility*           SourceAbility                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FMarvelTargetActorGenerateInfo   GenerateInfo                                           (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FEndAgentTaskInfo                EndAgentTaskInfo                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FMarvelTargetActorGenerateInfo&GenerateInfo                                           (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FEndAgentTaskInfo&         EndAgentTaskInfo                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
 void UPlayerStateTrainComponent::OnTargetActorRecycleAgentTask(class AActor* Source, class UMarvelGameplayAbility* SourceAbility, const struct FMarvelTargetActorGenerateInfo& GenerateInfo, const struct FEndAgentTaskInfo& EndAgentTaskInfo)
 {
@@ -1248,7 +1305,7 @@ void UPlayerStateTrainComponent::OnTargetActorRecycleAgentTask(class AActor* Sou
 // int32                                   AbilityID                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bHit                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bIsCritHit                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGlobalEventExtraData            ExtraData                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FGlobalEventExtraData&     ExtraData                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
 void UPlayerStateTrainComponent::OnWeaponAmmoUse(class AActor* Source, class AActor* Target, int32 AbilityID, bool bHit, bool bIsCritHit, const struct FGlobalEventExtraData& ExtraData)
 {
@@ -1451,8 +1508,8 @@ void ASummoned_20020001::K2_SetReplicatingMovement(bool NewReplicate)
 // Function MarvelLevel.TurnOnLevelTimerNode.TurnOnLevelTimer
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class UActorComponent*                  WorldContextObject                                     (ConstParm, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UActorComponent*            WorldContextObject                                     (ConstParm, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   DelayTime                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bLooping                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   LoopTime                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)

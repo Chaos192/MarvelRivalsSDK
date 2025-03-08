@@ -11,6 +11,7 @@
 #include "Basic.hpp"
 
 #include "GameplayAbilities_structs.hpp"
+#include "GameplayTags_structs.hpp"
 
 
 namespace SDK::Params
@@ -74,6 +75,14 @@ struct PyCueNotify_Buff_10507101_OnRemoveAudio final
 public:
 	class AActor*                                 MyTarget;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	struct FGameplayCueParameters                 Parameters;                                        // 0x0008(0x01B8)(ConstParm, Parm, OutParm, ReferenceParm)
+};
+
+// PythonFunction PyAbility_105071.PyUIController_105071.OnAbilityActivateFailed
+// 0x0068 (0x0068 - 0x0000)
+struct PyUIController_105071_OnAbilityActivateFailed final
+{
+public:
+	struct FGameplayTagContainer                  FailedTags;                                        // 0x0000(0x0068)(ConstParm, Parm, OutParm, ReferenceParm)
 };
 
 }

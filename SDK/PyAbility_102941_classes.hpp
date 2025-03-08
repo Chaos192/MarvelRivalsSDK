@@ -28,7 +28,7 @@ public:
 	uint8                                         Pad_9C[0x4];                                       // 0x009C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FDashAbilityInfo                       DashInfo;                                          // 0x00A0(0x0BA8)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	int32                                         LeftAbilityId;                                     // 0x0C48(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         RightAbilityId;                                    // 0x0C4C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         RightAbilityID;                                    // 0x0C4C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FGameplayTag                           MaterialCueTag;                                    // 0x0C50(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
@@ -61,11 +61,11 @@ public:
 };
 
 // PythonClass PyAbility_102941.PyAbility_102941
-// 0x0010 (0x2598 - 0x2588)
+// 0x0010 (0x25A0 - 0x2590)
 class UPyAbility_102941 : public UAbility_108
 {
 public:
-	struct FGameplayTag                           DashingTag;                                        // 0x2588(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGameplayTag                           DashingTag;                                        // 0x2590(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void BeginPlay();

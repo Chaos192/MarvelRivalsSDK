@@ -20,28 +20,30 @@ namespace SDK
 {
 
 // PythonClass PyDataAsset_BattlePass.PyDataAsset_BattlePass
-// 0x0180 (0x01B8 - 0x0038)
+// 0x01A8 (0x01E0 - 0x0038)
 class UPyDataAsset_BattlePass final : public UPrimaryDataAsset
 {
 public:
 	struct FSlateColor                            EnoughCoinBtnTextColor;                            // 0x0038(0x0014)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FSlateColor                            NoEnoughCoinBtnTextColor;                          // 0x004C(0x0014)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	TMap<EItemQualityType, struct FSoftObjectPath> ItemQualityIconMap;                                // 0x0060(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FSoftObjectPath                        PrevPageBtnImage;                                  // 0x00B0(0x0028)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FSoftObjectPath                        HomePageBtnImage;                                  // 0x00D8(0x0028)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FSoftObjectPath                        PageUnlockImage;                                   // 0x0100(0x0028)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FSoftObjectPath                        PageLockImage;                                     // 0x0128(0x0028)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FSlateColor                            PageBtnNormalColor;                                // 0x0150(0x0014)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FSlateColor                            PageBtnLockColor;                                  // 0x0164(0x0014)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FSlateColor                            PageBtnSelectColor;                                // 0x0178(0x0014)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FSlateColor                            PageBtnHoverColor;                                 // 0x018C(0x0014)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	int32                                         MinCrystalEnableScroll;                            // 0x01A0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         WheelScrollMultiplier;                             // 0x01A4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         DesiredSizePerCrystal;                             // 0x01A8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          DragDirection;                                     // 0x01AC(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1AD[0x3];                                      // 0x01AD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         DefaultOffset;                                     // 0x01B0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         RotationAngle;                                     // 0x01B4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FSlateColor                            PropViewBtnPromptNormalColor;                      // 0x0060(0x0014)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FSlateColor                            PropViewBtnPromptExclusiveUnableColor;             // 0x0074(0x0014)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	TMap<EItemQualityType, struct FSoftObjectPath> ItemQualityIconMap;                               // 0x0088(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FSoftObjectPath                        PrevPageBtnImage;                                  // 0x00D8(0x0028)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FSoftObjectPath                        HomePageBtnImage;                                  // 0x0100(0x0028)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FSoftObjectPath                        PageUnlockImage;                                   // 0x0128(0x0028)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FSoftObjectPath                        PageLockImage;                                     // 0x0150(0x0028)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FSlateColor                            PageBtnNormalColor;                                // 0x0178(0x0014)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FSlateColor                            PageBtnLockColor;                                  // 0x018C(0x0014)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FSlateColor                            PageBtnSelectColor;                                // 0x01A0(0x0014)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FSlateColor                            PageBtnHoverColor;                                 // 0x01B4(0x0014)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	int32                                         MinCrystalEnableScroll;                            // 0x01C8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         WheelScrollMultiplier;                             // 0x01CC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         DesiredSizePerCrystal;                             // 0x01D0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          DragDirection;                                     // 0x01D4(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1D5[0x3];                                      // 0x01D5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         DefaultOffset;                                     // 0x01D8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         RotationAngle;                                     // 0x01DC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()

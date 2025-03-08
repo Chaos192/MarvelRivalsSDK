@@ -271,11 +271,11 @@ public:
 class UPlayMontageCallbackProxy final : public UObject
 {
 public:
-	TMulticastInlineDelegate<void(class FName NotifyName)> OnCompleted;                                       // 0x0030(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class FName NotifyName)> OnBlendOut;                                        // 0x0040(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class FName NotifyName)> OnInterrupted;                                     // 0x0050(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class FName NotifyName)> OnNotifyBegin;                                     // 0x0060(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class FName NotifyName)> OnNotifyEnd;                                       // 0x0070(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class FName NotifyName)> OnCompleted;                              // 0x0030(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class FName NotifyName)> OnBlendOut;                               // 0x0040(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class FName NotifyName)> OnInterrupted;                            // 0x0050(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class FName NotifyName)> OnNotifyBegin;                            // 0x0060(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class FName NotifyName)> OnNotifyEnd;                              // 0x0070(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	uint8                                         Pad_80[0x30];                                      // 0x0080(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
@@ -354,8 +354,8 @@ public:
 };
 
 // Class AnimGraphRuntime.SequencerAnimationSupport
-// 0x0000 (0x0030 - 0x0030)
-class ISequencerAnimationSupport final : public IInterface
+// 0x0000 (0x0000 - 0x0000)
+class ISequencerAnimationSupport final
 {
 public:
 	static class UClass* StaticClass()
@@ -365,6 +365,15 @@ public:
 	static class ISequencerAnimationSupport* GetDefaultObj()
 	{
 		return GetDefaultObjImpl<ISequencerAnimationSupport>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
 	}
 };
 

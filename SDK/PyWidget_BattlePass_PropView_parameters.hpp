@@ -16,6 +16,22 @@
 namespace SDK::Params
 {
 
+// PythonFunction PyWidget_BattlePass_PropView.PyWidget_BattlePass_CuttingItemList.MarvelSetVisible
+// 0x0001 (0x0001 - 0x0000)
+struct PyWidget_BattlePass_CuttingItemList_MarvelSetVisible final
+{
+public:
+	bool                                          Visible;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+
+// PythonFunction PyWidget_BattlePass_PropView.PyWidget_BattlePass_PageItem.OnCascadingVisibleChanged
+// 0x0001 (0x0001 - 0x0000)
+struct PyWidget_BattlePass_PageItem_OnCascadingVisibleChanged final
+{
+public:
+	bool                                          Visible;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+
 // PythonFunction PyWidget_BattlePass_PropView.PyWidget_BattlePass_PageItem.SetIsHover
 // 0x0001 (0x0001 - 0x0000)
 struct PyWidget_BattlePass_PageItem_SetIsHover final
@@ -64,17 +80,17 @@ public:
 	const class UWidgetAnimation*                 Animation;                                         // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 };
 
-// PythonFunction PyWidget_BattlePass_PropView.PyWidget_BattlePass_CuttingItemList.MarvelSetVisible
+// PythonFunction PyWidget_BattlePass_PropView.PyWidget_BattlePass_PropView.MarvelSetVisible
 // 0x0001 (0x0001 - 0x0000)
-struct PyWidget_BattlePass_CuttingItemList_MarvelSetVisible final
+struct PyWidget_BattlePass_PropView_MarvelSetVisible final
 {
 public:
 	bool                                          Visible;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 
-// PythonFunction PyWidget_BattlePass_PropView.PyWidget_BattlePass_PropView.MarvelSetVisible
+// PythonFunction PyWidget_BattlePass_PropView.PyWidget_BattlePass_PropView.OnCascadingVisibleChanged
 // 0x0001 (0x0001 - 0x0000)
-struct PyWidget_BattlePass_PropView_MarvelSetVisible final
+struct PyWidget_BattlePass_PropView_OnCascadingVisibleChanged final
 {
 public:
 	bool                                          Visible;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)

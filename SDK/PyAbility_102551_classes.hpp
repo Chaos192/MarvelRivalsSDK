@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // PythonClass PyAbility_102551.PyAbility_102551
-// 0x0000 (0x2838 - 0x2838)
+// 0x0000 (0x2840 - 0x2840)
 class UPyAbility_102551 : public UAbility_109
 {
 public:
@@ -62,12 +62,12 @@ public:
 };
 
 // PythonClass PyAbility_102551.PyUIController_102551
-// 0x0010 (0x0C70 - 0x0C60)
+// 0x0010 (0x0C60 - 0x0C50)
 class UPyUIController_102551 final : public UUIC_Ability
 {
 public:
-	class UTexture2D*                             Icon_CloakToDagger;                                // 0x0C60(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UTexture2D*                             Icon_DaggerToCloak;                                // 0x0C68(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UTexture2D*                             Icon_CloakToDagger;                                // 0x0C50(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UTexture2D*                             Icon_DaggerToCloak;                                // 0x0C58(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void OnSwitchAbilityForNewController();

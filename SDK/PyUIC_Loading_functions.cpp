@@ -83,7 +83,7 @@ void UPyUIC_Loading::OnLoadingVisibleChanged(bool bVisible)
 // PythonFunction PyUIC_Loading.PyUIC_Loading.OnPreLoadMapRecord
 // (Native, Public, BlueprintCallable)
 // Parameters:
-// class FString                           MapName                                                (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    MapName                                                (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyUIC_Loading::OnPreLoadMapRecord(const class FString& MapName)
 {
@@ -133,7 +133,7 @@ void UPyUIC_Loading::OnPostLoadMapRecord(class UWorld* WorldObj)
 // PythonFunction PyUIC_Loading.PyUIC_Loading.PyOnPreLoadMap
 // (Native, Public, BlueprintCallable)
 // Parameters:
-// class FString                           MapName                                                (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    MapName                                                (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyUIC_Loading::PyOnPreLoadMap(const class FString& MapName)
 {
@@ -183,7 +183,7 @@ void UPyUIC_Loading::PyOnPostLoadMap(class UWorld* WorldObj)
 // PythonFunction PyUIC_Loading.PyUIC_Loading.OnSelectHeroWorldLoaded
 // (Native, Public, BlueprintCallable)
 // Parameters:
-// class FString                           LoadedWorld                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    LoadedWorld                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyUIC_Loading::OnSelectHeroWorldLoaded(const class FString& LoadedWorld)
 {
@@ -219,6 +219,31 @@ void UPyUIC_Loading::OnServerFirstMapLoaded()
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// PythonFunction PyUIC_Loading.PyUIC_Loading.LevelLoadingPercent
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   Percent                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UPyUIC_Loading::LevelLoadingPercent(int32 Percent)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyUIC_Loading", "LevelLoadingPercent");
+
+	Params::PyUIC_Loading_LevelLoadingPercent Parms{};
+
+	Parms.Percent = Percent;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 }

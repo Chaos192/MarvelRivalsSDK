@@ -37,11 +37,11 @@ public:
 };
 
 // PythonClass PyAbility_104101.PyAbility_104101
-// 0x0010 (0x2590 - 0x2580)
+// 0x0010 (0x2598 - 0x2588)
 class UPyAbility_104101 : public UMarvelGameplayAbility
 {
 public:
-	TMulticastInlineDelegate<void()>              OnPassiveAmmoAdd;                                  // 0x2580(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void()>              OnPassiveAmmoAdd;                                  // 0x2588(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 
 public:
 	void BeginPlay();
@@ -61,7 +61,7 @@ public:
 };
 
 // PythonClass PyAbility_104101.PyUIController_104101
-// 0x0000 (0x0C60 - 0x0C60)
+// 0x0000 (0x0C50 - 0x0C50)
 class UPyUIController_104101 final : public UUIC_Ability
 {
 public:

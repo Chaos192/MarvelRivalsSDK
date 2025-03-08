@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "Marvel_classes.hpp"
-#include "GameplayTags_structs.hpp"
 #include "DeclarativeUnreal_structs.hpp"
+#include "GameplayTags_structs.hpp"
 
 
 namespace SDK

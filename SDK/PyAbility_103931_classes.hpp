@@ -81,14 +81,14 @@ public:
 };
 
 // PythonClass PyAbility_103931.PyAbility_103931
-// 0x0090 (0x2630 - 0x25A0)
+// 0x0090 (0x2638 - 0x25A8)
 class UPyAbility_103931 : public UAbility_103931
 {
 public:
-	struct FGameplayTag                           EnergyTag;                                         // 0x25A0(0x000C)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_25AC[0x4];                                     // 0x25AC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FGameplayAttribute                     CurrentEnergyAttr;                                 // 0x25B0(0x0040)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGameplayAttribute                     MaxEnergyAttr;                                     // 0x25F0(0x0040)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGameplayTag                           EnergyTag;                                         // 0x25A8(0x000C)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_25B4[0x4];                                     // 0x25B4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FGameplayAttribute                     CurrentEnergyAttr;                                 // 0x25B8(0x0040)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGameplayAttribute                     MaxEnergyAttr;                                     // 0x25F8(0x0040)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void BeginPlay();
@@ -108,15 +108,15 @@ public:
 };
 
 // PythonClass PyAbility_103931.PySkillEnergy_103931
-// 0x00A0 (0x1198 - 0x10F8)
+// 0x00A0 (0x11A0 - 0x1100)
 class UPySkillEnergy_103931 final : public UMarvelEffectGameplayAbility
 {
 public:
-	TArray<int32>                                 AbilityIDs;                                        // 0x10F8(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance, NativeAccessSpecifierPublic)
-	float                                         RestorEnergyValue;                                 // 0x1108(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGameplayTag                           EnergyTag;                                         // 0x110C(0x000C)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGameplayAttribute                     CurrentEnergyAttr;                                 // 0x1118(0x0040)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGameplayAttribute                     MaxEnergyAttr;                                     // 0x1158(0x0040)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<int32>                                 AbilityIDs;                                        // 0x1100(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	float                                         RestorEnergyValue;                                 // 0x1110(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGameplayTag                           EnergyTag;                                         // 0x1114(0x000C)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGameplayAttribute                     CurrentEnergyAttr;                                 // 0x1120(0x0040)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGameplayAttribute                     MaxEnergyAttr;                                     // 0x1160(0x0040)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()

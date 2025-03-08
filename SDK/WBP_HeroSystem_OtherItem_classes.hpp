@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "PyWidget_HeroSystem_ShowItem_classes.hpp"
 #include "Engine_structs.hpp"
+#include "PyWidget_HeroSystem_ShowItem_classes.hpp"
 
 
 namespace SDK
@@ -46,10 +46,11 @@ public:
 	class UNamedSlot*                             Slot_Reddot;                                       // 0x09D0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
+	void BP_OnEntryReleased();
+	void BP_OnItemExpansionChanged(bool bIsExpanded);
+	void BP_OnItemSelectionChanged(bool bIsSelected);
 	void ExecuteUbergraph_WBP_HeroSystem_OtherItem(int32 EntryPoint);
-	void RefreshItemEvent();
-	void SequenceEvent__ENTRYPOINTWBP_HeroSystem_OtherItem();
-	void SequenceEvent__ENTRYPOINTWBP_HeroSystem_OtherItem_0();
+	void OnListItemObjectSet(class UObject* ListItemObject);
 
 public:
 	static class UClass* StaticClass()

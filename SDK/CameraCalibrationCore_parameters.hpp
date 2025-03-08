@@ -98,7 +98,7 @@ struct CameraCalibrationSubsystem_GetDistortionModelHandlers final
 {
 public:
 	class UCineCameraComponent*                   Component;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<class ULensDistortionModelHandlerBase*> ReturnValue;                                       // 0x0008(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+	TArray<class ULensDistortionModelHandlerBase*> ReturnValue;                                      // 0x0008(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 };
 
 // Function CameraCalibrationCore.CameraCalibrationSubsystem.SetDefaultLensFile

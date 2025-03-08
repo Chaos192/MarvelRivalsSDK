@@ -89,22 +89,22 @@ public:
 };
 
 // Class Paper2D.PaperFlipbookComponent
-// 0x0040 (0x08F0 - 0x08B0)
+// 0x0040 (0x0980 - 0x0940)
 class UPaperFlipbookComponent final : public UMeshComponent
 {
 public:
-	class UPaperFlipbook*                         SourceFlipbook;                                    // 0x08A8(0x0008)(Edit, Net, ZeroConstructor, RepNotify, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class UMaterialInterface*                     Material;                                          // 0x08B0(0x0008)(ZeroConstructor, Deprecated, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         PlayRate;                                          // 0x08B8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         bLooping : 1;                                      // 0x08BC(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected))
-	uint8                                         bReversePlayback : 1;                              // 0x08BC(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected))
-	uint8                                         bPlaying : 1;                                      // 0x08BC(0x0001)(BitIndex: 0x02, PropSize: 0x0001 (NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected))
-	uint8                                         Pad_8BD[0x3];                                      // 0x08BD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         AccumulatedTime;                                   // 0x08C0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	int32                                         CachedFrameIndex;                                  // 0x08C4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FLinearColor                           SpriteColor;                                       // 0x08C8(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class UBodySetup*                             CachedBodySetup;                                   // 0x08D8(0x0008)(ZeroConstructor, Transient, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	TMulticastInlineDelegate<void()>              OnFinishedPlaying;                                 // 0x08E0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	class UPaperFlipbook*                         SourceFlipbook;                                    // 0x0938(0x0008)(Edit, Net, ZeroConstructor, RepNotify, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UMaterialInterface*                     Material;                                          // 0x0940(0x0008)(ZeroConstructor, Deprecated, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         PlayRate;                                          // 0x0948(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         bLooping : 1;                                      // 0x094C(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected))
+	uint8                                         bReversePlayback : 1;                              // 0x094C(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected))
+	uint8                                         bPlaying : 1;                                      // 0x094C(0x0001)(BitIndex: 0x02, PropSize: 0x0001 (NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected))
+	uint8                                         Pad_94D[0x3];                                      // 0x094D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         AccumulatedTime;                                   // 0x0950(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	int32                                         CachedFrameIndex;                                  // 0x0954(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FLinearColor                           SpriteColor;                                       // 0x0958(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UBodySetup*                             CachedBodySetup;                                   // 0x0968(0x0008)(ZeroConstructor, Transient, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	TMulticastInlineDelegate<void()>              OnFinishedPlaying;                                 // 0x0970(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 
 public:
 	class UPaperFlipbook* GetFlipbook();
@@ -163,13 +163,13 @@ public:
 };
 
 // Class Paper2D.PaperGroupedSpriteComponent
-// 0x0030 (0x08E0 - 0x08B0)
+// 0x0030 (0x0970 - 0x0940)
 class UPaperGroupedSpriteComponent final : public UMeshComponent
 {
 public:
-	TArray<class UMaterialInterface*>             InstanceMaterials;                                 // 0x08A8(0x0010)(ZeroConstructor, Protected, UObjectWrapper, NativeAccessSpecifierProtected)
-	TArray<struct FSpriteInstanceData>            PerInstanceSpriteData;                             // 0x08B8(0x0010)(Edit, ZeroConstructor, Protected, NativeAccessSpecifierProtected)
-	uint8                                         Pad_8C8[0x18];                                     // 0x08C8(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	TArray<class UMaterialInterface*>             InstanceMaterials;                                 // 0x0938(0x0010)(ZeroConstructor, Protected, UObjectWrapper, NativeAccessSpecifierProtected)
+	TArray<struct FSpriteInstanceData>            PerInstanceSpriteData;                             // 0x0948(0x0010)(Edit, ZeroConstructor, Protected, NativeAccessSpecifierProtected)
+	uint8                                         Pad_958[0x18];                                     // 0x0958(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	int32 AddInstance(const struct FTransform& Transform, class UPaperSprite* Sprite, bool bWorldSpace, const struct FLinearColor& Color);
@@ -298,14 +298,14 @@ public:
 };
 
 // Class Paper2D.PaperSpriteComponent
-// 0x0020 (0x08D0 - 0x08B0)
+// 0x0020 (0x0960 - 0x0940)
 class UPaperSpriteComponent final : public UMeshComponent
 {
 public:
-	class UPaperSprite*                           SourceSprite;                                      // 0x08A8(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class UMaterialInterface*                     MaterialOverride;                                  // 0x08B0(0x0008)(ZeroConstructor, Deprecated, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FLinearColor                           SpriteColor;                                       // 0x08B8(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_8C8[0x8];                                      // 0x08C8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class UPaperSprite*                           SourceSprite;                                      // 0x0938(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UMaterialInterface*                     MaterialOverride;                                  // 0x0940(0x0008)(ZeroConstructor, Deprecated, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FLinearColor                           SpriteColor;                                       // 0x0948(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_958[0x8];                                      // 0x0958(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	class UPaperSprite* GetSprite();
@@ -413,23 +413,23 @@ public:
 };
 
 // Class Paper2D.PaperTileMapComponent
-// 0x0050 (0x0900 - 0x08B0)
+// 0x0050 (0x0990 - 0x0940)
 class UPaperTileMapComponent final : public UMeshComponent
 {
 public:
-	int32                                         MapWidth;                                          // 0x08A8(0x0004)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	int32                                         MapHeight;                                         // 0x08AC(0x0004)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	int32                                         TileWidth;                                         // 0x08B0(0x0004)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	int32                                         TileHeight;                                        // 0x08B4(0x0004)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	class UPaperTileSet*                          DefaultLayerTileSet;                               // 0x08B8(0x0008)(ZeroConstructor, Deprecated, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	class UMaterialInterface*                     Material;                                          // 0x08C0(0x0008)(ZeroConstructor, Deprecated, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	TArray<class UPaperTileLayer*>                TileLayers;                                        // 0x08C8(0x0010)(ZeroConstructor, Deprecated, UObjectWrapper, NativeAccessSpecifierPrivate)
-	struct FLinearColor                           TileMapColor;                                      // 0x08D8(0x0010)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	int32                                         UseSingleLayerIndex;                               // 0x08E8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	bool                                          bUseSingleLayer;                                   // 0x08EC(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_8ED[0x3];                                      // 0x08ED(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class UPaperTileMap*                          TileMap;                                           // 0x08F0(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_8F8[0x8];                                      // 0x08F8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	int32                                         MapWidth;                                          // 0x0938(0x0004)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	int32                                         MapHeight;                                         // 0x093C(0x0004)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	int32                                         TileWidth;                                         // 0x0940(0x0004)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	int32                                         TileHeight;                                        // 0x0944(0x0004)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class UPaperTileSet*                          DefaultLayerTileSet;                               // 0x0948(0x0008)(ZeroConstructor, Deprecated, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class UMaterialInterface*                     Material;                                          // 0x0950(0x0008)(ZeroConstructor, Deprecated, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	TArray<class UPaperTileLayer*>                TileLayers;                                        // 0x0958(0x0010)(ZeroConstructor, Deprecated, UObjectWrapper, NativeAccessSpecifierPrivate)
+	struct FLinearColor                           TileMapColor;                                      // 0x0968(0x0010)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	int32                                         UseSingleLayerIndex;                               // 0x0978(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	bool                                          bUseSingleLayer;                                   // 0x097C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_97D[0x3];                                      // 0x097D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class UPaperTileMap*                          TileMap;                                           // 0x0980(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_988[0x8];                                      // 0x0988(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	class UPaperTileLayer* AddNewLayer();
@@ -539,25 +539,25 @@ public:
 };
 
 // Class Paper2D.PaperTerrainComponent
-// 0x0050 (0x0890 - 0x0840)
+// 0x0050 (0x0920 - 0x08D0)
 class UPaperTerrainComponent final : public UPrimitiveComponent
 {
 public:
-	class UPaperTerrainMaterial*                  TerrainMaterial;                                   // 0x0838(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bClosedSpline;                                     // 0x0840(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bFilledSpline;                                     // 0x0841(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_842[0x6];                                      // 0x0842(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	class UPaperTerrainSplineComponent*           AssociatedSpline;                                  // 0x0848(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         RandomSeed;                                        // 0x0850(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         SegmentOverlapAmount;                              // 0x0854(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FLinearColor                           TerrainColor;                                      // 0x0858(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	int32                                         ReparamStepsPerSegment;                            // 0x0868(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	ESpriteCollisionMode                          SpriteCollisionDomain;                             // 0x086C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_86D[0x3];                                      // 0x086D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         CollisionThickness;                                // 0x0870(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_874[0x4];                                      // 0x0874(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UBodySetup*                             CachedBodySetup;                                   // 0x0878(0x0008)(ZeroConstructor, Transient, DuplicateTransient, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_880[0x10];                                     // 0x0880(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class UPaperTerrainMaterial*                  TerrainMaterial;                                   // 0x08C8(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bClosedSpline;                                     // 0x08D0(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bFilledSpline;                                     // 0x08D1(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_8D2[0x6];                                      // 0x08D2(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class UPaperTerrainSplineComponent*           AssociatedSpline;                                  // 0x08D8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         RandomSeed;                                        // 0x08E0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         SegmentOverlapAmount;                              // 0x08E4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLinearColor                           TerrainColor;                                      // 0x08E8(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	int32                                         ReparamStepsPerSegment;                            // 0x08F8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	ESpriteCollisionMode                          SpriteCollisionDomain;                             // 0x08FC(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_8FD[0x3];                                      // 0x08FD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         CollisionThickness;                                // 0x0900(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_904[0x4];                                      // 0x0904(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UBodySetup*                             CachedBodySetup;                                   // 0x0908(0x0008)(ZeroConstructor, Transient, DuplicateTransient, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_910[0x10];                                     // 0x0910(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void SetTerrainColor(const struct FLinearColor& NewColor);
@@ -593,11 +593,11 @@ public:
 };
 
 // Class Paper2D.PaperTerrainSplineComponent
-// 0x0010 (0x0950 - 0x0940)
+// 0x0010 (0x09E0 - 0x09D0)
 class UPaperTerrainSplineComponent final : public USplineComponent
 {
 public:
-	uint8                                         Pad_938[0x18];                                     // 0x0938(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9C8[0x18];                                     // 0x09C8(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()

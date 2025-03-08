@@ -53,7 +53,7 @@ public:
 struct MovieSceneCapture_SetAudioCaptureProtocolType final
 {
 public:
-	TSubclassOf<class UMovieSceneCaptureProtocolBase> ProtocolType;                                      // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSubclassOf<class UMovieSceneCaptureProtocolBase> ProtocolType;                                  // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
 // Function MovieSceneCapture.MovieSceneCapture.SetImageCaptureProtocolType
@@ -61,7 +61,7 @@ public:
 struct MovieSceneCapture_SetImageCaptureProtocolType final
 {
 public:
-	TSubclassOf<class UMovieSceneCaptureProtocolBase> ProtocolType;                                      // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSubclassOf<class UMovieSceneCaptureProtocolBase> ProtocolType;                                  // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 
 // Function MovieSceneCapture.MovieSceneCaptureEnvironment.FindAudioCaptureProtocol

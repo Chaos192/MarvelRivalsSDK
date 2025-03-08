@@ -18,11 +18,11 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass WC_AudioEmitterBP.WC_AudioEmitterBP_C
-// 0x0010 (0x0A30 - 0x0A20)
+// 0x0010 (0x0AC0 - 0x0AB0)
 class UWC_AudioEmitterBP_C final : public UWidgetComponent
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0A20(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0AB0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
 	void DestroySelf();

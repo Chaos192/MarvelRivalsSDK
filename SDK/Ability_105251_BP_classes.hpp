@@ -18,17 +18,17 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Ability_105251_BP.Ability_105251_BP_C
-// 0x0F58 (0x34D8 - 0x2580)
+// 0x0F58 (0x34E0 - 0x2588)
 class UAbility_105251_BP_C final : public UPyAbility_105251
 {
 public:
-	struct FDashAbilityInfo                       Dash_Info;                                         // 0x2580(0x0BA8)(Edit, BlueprintVisible, DisableEditOnInstance)
-	class UCurveFloat*                            DamageCurve;                                       // 0x3128(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
-	int32                                         Timeline_Index_0;                                  // 0x3130(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         In_Scope_ID;                                       // 0x3134(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UAnimTimeline*                          Timeline;                                          // 0x3138(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
-	struct FMarvelTraceRule                       Trace_Rule;                                        // 0x3140(0x0390)(Edit, BlueprintVisible, DisableEditOnInstance)
-	float                                         KickDash;                                          // 0x34D0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FDashAbilityInfo                       Dash_Info;                                         // 0x2588(0x0BA8)(Edit, BlueprintVisible, DisableEditOnInstance)
+	class UCurveFloat*                            DamageCurve;                                       // 0x3130(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	int32                                         Timeline_Index_0;                                  // 0x3138(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         In_Scope_ID;                                       // 0x313C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UAnimTimeline*                          Timeline;                                          // 0x3140(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	struct FMarvelTraceRule                       Trace_Rule;                                        // 0x3148(0x0390)(Edit, BlueprintVisible, DisableEditOnInstance)
+	float                                         KickDash;                                          // 0x34D8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

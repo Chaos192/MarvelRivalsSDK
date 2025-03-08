@@ -40,7 +40,7 @@ void APyCue_Level_100003::ReceiveBeginPlay()
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           PayloadActor                                           (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 bool APyCue_Level_100003::WhileActive(class AActor* PayloadActor, const struct FGameplayCueParameters& Parameters)
@@ -620,7 +620,7 @@ void APyPayload::PayloadEndFight(EBattleSide win_side)
 // PythonFunction PyPayload.PyPayload.SetTraceList
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<class APyPayloadTrace*>          trace_list                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const TArray<class APyPayloadTrace*>&   trace_list                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyPayload::SetTraceList(const TArray<class APyPayloadTrace*>& trace_list)
 {

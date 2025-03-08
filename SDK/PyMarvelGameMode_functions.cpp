@@ -142,10 +142,10 @@ void APyMarvelGameMode::K2_OnLogout(class AController* ExitingController)
 // PythonFunction PyMarvelGameMode.PyMarvelGameMode.PreLoginCheck
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           OPTIONS                                                (Parm, ZeroConstructor, HasGetValueTypeHash)
-// class FString                           address                                                (Parm, ZeroConstructor, HasGetValueTypeHash)
-// class FString                           UniqueIdStr                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
-// class FString                           ErrorMessage                                           (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    OPTIONS                                                (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    address                                                (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    UniqueIdStr                                            (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    ErrorMessage                                           (Parm, ZeroConstructor, HasGetValueTypeHash)
 // class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash)
 
 class FString APyMarvelGameMode::PreLoginCheck(const class FString& OPTIONS, const class FString& address, const class FString& UniqueIdStr, const class FString& ErrorMessage)

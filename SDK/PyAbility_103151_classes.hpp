@@ -32,7 +32,7 @@ public:
 };
 
 // PythonClass PyAbility_103151.PyAbility_103151
-// 0x0000 (0x2588 - 0x2588)
+// 0x0000 (0x2590 - 0x2590)
 class UPyAbility_103151 final : public UAbility_108
 {
 public:
@@ -62,7 +62,7 @@ public:
 };
 
 // PythonClass PyAbility_103151.PyProjectile_10315101
-// 0x0000 (0x3050 - 0x3050)
+// 0x0000 (0x3110 - 0x3110)
 class APyProjectile_10315101 final : public AMarvelAbilityTargetActor_Projectile
 {
 public:
@@ -77,13 +77,13 @@ public:
 };
 
 // PythonClass PyAbility_103151.PyBuffAbility_10315103
-// 0x0018 (0x1110 - 0x10F8)
+// 0x0018 (0x1118 - 0x1100)
 class UPyBuffAbility_10315103 : public UMarvelEffectGameplayAbility
 {
 public:
-	int32                                         MainBuffID;                                        // 0x10F8(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_10FC[0x4];                                     // 0x10FC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<int32>                                 DependentBuffID;                                   // 0x1100(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	int32                                         MainBuffID;                                        // 0x1100(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1104[0x4];                                     // 0x1104(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<int32>                                 DependentBuffID;                                   // 0x1108(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
 
 public:
 	void K2_ActivateAbility();

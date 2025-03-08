@@ -33,7 +33,7 @@ public:
 };
 
 // PythonClass PyMoonKnightCharacter.PyMoonKnightCharacter
-// 0x0000 (0x1820 - 0x1820)
+// 0x0000 (0x1870 - 0x1870)
 class APyMoonKnightCharacter : public AMoonKnightCharacter
 {
 public:

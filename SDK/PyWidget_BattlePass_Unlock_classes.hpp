@@ -60,9 +60,9 @@ class UPyWidget_BattlePass_Unlock : public UPyWidget_ModuleMainPanel
 {
 public:
 	uint8                                         Pad_611[0x7];                                      // 0x0611(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FPyWidget_BattlePass_RewardItemStruct> Normal_Reward;                                     // 0x0618(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance, NativeAccessSpecifierPublic)
-	TArray<struct FPyWidget_BattlePass_RewardItemStruct> Advance_Reward;                                    // 0x0628(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance, NativeAccessSpecifierPublic)
-	TArray<struct FPyWidget_BattlePass_RewardItemStruct> Free_To_Advance_Reward;                            // 0x0638(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	TArray<struct FPyWidget_BattlePass_RewardItemStruct> Normal_Reward;                              // 0x0618(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	TArray<struct FPyWidget_BattlePass_RewardItemStruct> Advance_Reward;                             // 0x0628(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	TArray<struct FPyWidget_BattlePass_RewardItemStruct> Free_To_Advance_Reward;                     // 0x0638(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance, NativeAccessSpecifierPublic)
 	float                                         Reward_Delay_Time;                                 // 0x0648(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Normal_To_Advance_Text_Delay_Time;                 // 0x064C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UAkAudioEvent*                          AkEvent_Upgrade;                                   // 0x0650(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)

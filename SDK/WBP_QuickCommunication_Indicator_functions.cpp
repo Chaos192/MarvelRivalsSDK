@@ -40,7 +40,7 @@ void UWBP_QuickCommunication_Indicator_C::ExecuteUbergraph_WBP_QuickCommunicatio
 // Function WBP_QuickCommunication_Indicator.WBP_QuickCommunication_Indicator_C.OnAnimationStarted
 // (BlueprintCosmetic, Event, Protected, BlueprintEvent)
 // Parameters:
-// class UWidgetAnimation*                 Animation                                              (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// const class UWidgetAnimation*           Animation                                              (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
 void UWBP_QuickCommunication_Indicator_C::OnAnimationStarted(const class UWidgetAnimation* Animation)
 {

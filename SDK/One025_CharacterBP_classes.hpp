@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass 1025_CharacterBP.1025_CharacterBP_C
-// 0x0000 (0x1830 - 0x1830)
+// 0x0000 (0x1890 - 0x1890)
 class AOne025_CharacterBP_C final : public APyCloakAndDaggerCharacter
 {
 public:

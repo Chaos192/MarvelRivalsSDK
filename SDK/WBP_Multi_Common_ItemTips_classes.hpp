@@ -17,12 +17,12 @@ namespace SDK
 {
 
 // WidgetBlueprintGeneratedClass WBP_Multi_Common_ItemTips.WBP_Multi_Common_ItemTips_C
-// 0x0010 (0x0620 - 0x0610)
+// 0x0010 (0x0628 - 0x0618)
 class UWBP_Multi_Common_ItemTips_C final : public UPyWidget_Multi_CommomItemTips
 {
 public:
-	class UMarvelVerticalBox*                     VBox_ItemTips_List;                                // 0x0610(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UWBP_Common_ItemTips_C*                 WBP_Common_ItemTips;                               // 0x0618(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UMarvelVerticalBox*                     VBox_ItemTips_List;                                // 0x0618(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UWBP_Common_ItemTips_C*                 WBP_Common_ItemTips;                               // 0x0620(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

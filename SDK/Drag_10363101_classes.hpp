@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Drag_10363101.Drag_10363101_C
-// 0x0000 (0x1CF0 - 0x1CF0)
+// 0x0000 (0x1CF8 - 0x1CF8)
 class UDrag_10363101_C final : public UDragAbility_103631
 {
 public:

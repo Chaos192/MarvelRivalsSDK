@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Projectile_10303101_BP.Projectile_10303101_BP_C
-// 0x0000 (0x40A0 - 0x40A0)
+// 0x0000 (0x4200 - 0x4200)
 class AProjectile_10303101_BP_C final : public AProjectile_10302101_BP_C
 {
 public:

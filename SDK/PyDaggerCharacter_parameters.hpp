@@ -18,14 +18,6 @@
 namespace SDK::Params
 {
 
-// PythonFunction PyDaggerCharacter.PyUIController_CloakAndDaggerAbilities.OnMarvelSculptChanged
-// 0x0004 (0x0004 - 0x0000)
-struct PyUIController_CloakAndDaggerAbilities_OnMarvelSculptChanged final
-{
-public:
-	int32                                         sculpt_id;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-
 // PythonFunction PyDaggerCharacter.PyCloakAndDaggerCharacter.ReceiveEndPlay
 // 0x0001 (0x0001 - 0x0000)
 struct PyCloakAndDaggerCharacter_ReceiveEndPlay final
@@ -56,6 +48,14 @@ struct PyCloakAndDaggerCharacter_ClientSetCharacterType final
 {
 public:
 	EDaggerCharacterType                          InType;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+
+// PythonFunction PyDaggerCharacter.PyUIController_CloakAndDaggerAbilities.OnMarvelSculptChanged
+// 0x0004 (0x0004 - 0x0000)
+struct PyUIController_CloakAndDaggerAbilities_OnMarvelSculptChanged final
+{
+public:
+	int32                                         sculpt_id;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 
 }

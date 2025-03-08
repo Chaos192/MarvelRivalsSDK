@@ -25,6 +25,14 @@ public:
 	EEndPlayReason                                EndPlayReason;                                     // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 
+// PythonFunction PyMarvelPlayerState.PyMarvelPlayerState.RegulatePreviewHeroID
+// 0x0004 (0x0004 - 0x0000)
+struct PyMarvelPlayerState_RegulatePreviewHeroID final
+{
+public:
+	int32                                         HeroID;                                            // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+
 // PythonFunction PyMarvelPlayerState.PyMarvelPlayerState.ServerChangeReticleSetting
 // 0x0010 (0x0010 - 0x0000)
 struct PyMarvelPlayerState_ServerChangeReticleSetting final

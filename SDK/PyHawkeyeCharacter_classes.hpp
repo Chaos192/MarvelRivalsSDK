@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // PythonClass PyHawkeyeCharacter.PyHawkeyeCharacter
-// 0x0000 (0x1940 - 0x1940)
+// 0x0000 (0x19A0 - 0x19A0)
 class APyHawkeyeCharacter : public AHawkeyeCharacter
 {
 public:

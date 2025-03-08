@@ -282,7 +282,7 @@ void UPyTrainingStatisticsController::OnLeaveTrainArea(class APyMarvelPlayerStat
 // PythonFunction PyTrainingStatisticsController.PyTrainingStatisticsController.OnTrainStart
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FTrainLogContent                 Info                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
+// const struct FTrainLogContent&          Info                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor)
 
 void UPyTrainingStatisticsController::OnTrainStart(const struct FTrainLogContent& Info)
 {

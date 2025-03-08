@@ -165,7 +165,7 @@ void UPyAbility_102492::K2_OnEndAbility(bool bWasCancelled)
 // PythonFunction PyAbility_102492.PyAbility_102492.NativeOnMontageEvent
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_102492::NativeOnMontageEvent(const class FString& Tag)
 {

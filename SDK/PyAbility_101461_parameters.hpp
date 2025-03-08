@@ -179,13 +179,13 @@ public:
 };
 
 // PythonFunction PyAbility_101461.PyCue_SummonerLoop_10146101.AfterEquipWeapon
-// 0x02D0 (0x02D0 - 0x0000)
+// 0x02C0 (0x02C0 - 0x0000)
 struct PyCue_SummonerLoop_10146101_AfterEquipWeapon final
 {
 public:
 	class AShootingWeapon*                        Weapon;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	struct FMarvelEquipmentTable                  WeaponInfo;                                        // 0x0008(0x02C0)(ConstParm, Parm, OutParm, ReferenceParm)
-	bool                                          bState;                                            // 0x02C8(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FMarvelEquipmentTable                  WeaponInfo;                                        // 0x0008(0x02B0)(ConstParm, Parm, OutParm, ReferenceParm)
+	bool                                          bState;                                            // 0x02B8(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 
 // PythonFunction PyAbility_101461.PyCue_SummonerLoop_10146101.OnTurretEndTask

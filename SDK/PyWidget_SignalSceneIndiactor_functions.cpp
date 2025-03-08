@@ -104,7 +104,7 @@ void UPyWdiget_SignalSceneIndicator::SetDying(bool IsDying)
 // Parameters:
 // class FName                             CueTag                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // EGameplayCueEvent                       EventType                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void UPyWdiget_SignalSceneIndicator::OnCueTagActivated(class FName CueTag, EGameplayCueEvent EventType, const struct FGameplayCueParameters& Parameters)
 {

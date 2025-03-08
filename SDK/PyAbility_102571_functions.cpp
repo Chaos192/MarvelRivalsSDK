@@ -21,7 +21,7 @@ namespace SDK
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyCue_Scope_Loop_10257101::WhileActiveAudio(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
 {
@@ -48,7 +48,7 @@ void APyCue_Scope_Loop_10257101::WhileActiveAudio(class AActor* MyTarget, const 
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyCue_Scope_Loop_10257101::OnActiveAudio(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
 {
@@ -75,7 +75,7 @@ void APyCue_Scope_Loop_10257101::OnActiveAudio(class AActor* MyTarget, const str
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyCue_Scope_Loop_10257101::OnExecuteAudio(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
 {
@@ -121,7 +121,7 @@ void APyCue_Scope_Loop_10257101::OnScopeSpreadStopped()
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyCue_Scope_Loop_10257101::WhileActiveFX(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
 {
@@ -148,7 +148,7 @@ void APyCue_Scope_Loop_10257101::WhileActiveFX(class AActor* MyTarget, const str
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 
 void APyCue_Scope_Loop_10257101::OnRemoveFX(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
 {
@@ -174,7 +174,7 @@ void APyCue_Scope_Loop_10257101::OnRemoveFX(class AActor* MyTarget, const struct
 // PythonFunction PyAbility_102571.PyCue_Scope_Loop_10257101.OnFloorLocation
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FVector                          Location                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVector&                   Location                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void APyCue_Scope_Loop_10257101::OnFloorLocation(const struct FVector& Location)
 {
@@ -200,7 +200,7 @@ void APyCue_Scope_Loop_10257101::OnFloorLocation(const struct FVector& Location)
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 bool APyCue_Ability_Loop_10257101::WhileActive(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
@@ -223,6 +223,31 @@ bool APyCue_Ability_Loop_10257101::WhileActive(class AActor* MyTarget, const str
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
+}
+
+
+// PythonFunction PyAbility_102571.PyCue_Ability_Loop_10257101.OnMontageEnded
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// const class FString&                    NotifyName                                             (Parm, ZeroConstructor, HasGetValueTypeHash)
+
+void APyCue_Ability_Loop_10257101::OnMontageEnded(const class FString& NotifyName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyCue_Ability_Loop_10257101", "OnMontageEnded");
+
+	Params::PyCue_Ability_Loop_10257101_OnMontageEnded Parms{};
+
+	Parms.NotifyName = std::move(NotifyName);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 }
 
 
@@ -254,8 +279,8 @@ void APyCue_Ability_Loop_10257101::OnAbilityInit(int32 AbilityID)
 // PythonFunction PyAbility_102571.PyCue_Ability_Loop_10257101.OnTranslatedByPortal
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FVector                          LastPosition                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FVector                          NewPosition                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVector&                   LastPosition                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVector&                   NewPosition                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void APyCue_Ability_Loop_10257101::OnTranslatedByPortal(const struct FVector& LastPosition, const struct FVector& NewPosition)
 {
@@ -332,7 +357,7 @@ void APyCue_Ability_Loop_10257101::OnFlyStoped(bool IsLastFly)
 // (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           MyTarget                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayCueParameters           Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 bool APyCue_Ability_Loop_10257101::OnRemove(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
@@ -525,8 +550,8 @@ void APyScope_10257101::OnFlyStarted(bool IsLastFly)
 // PythonFunction PyAbility_102571.PyScope_10257101.SegmentScope
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FVector                          LastPosition                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FVector                          NewPosition                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVector&                   LastPosition                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVector&                   NewPosition                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void APyScope_10257101::SegmentScope(const struct FVector& LastPosition, const struct FVector& NewPosition)
 {
@@ -590,7 +615,7 @@ void APyScope_10257101::OnRep_SpreadState()
 // PythonFunction PyAbility_102571.PyScope_10257101.OnFloorLocation
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FVector                          InLocation                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVector&                   InLocation                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void APyScope_10257101::OnFloorLocation(const struct FVector& InLocation)
 {
@@ -669,6 +694,31 @@ void UPyAbility_102571::K2_ActivateAbility()
 }
 
 
+// PythonFunction PyAbility_102571.PyAbility_102571.OnSculptChanged
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   SculptID                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UPyAbility_102571::OnSculptChanged(int32 SculptID)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PyAbility_102571", "OnSculptChanged");
+
+	Params::PyAbility_102571_OnSculptChanged Parms{};
+
+	Parms.SculptID = SculptID;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // PythonFunction PyAbility_102571.PyAbility_102571.ReceiveTick
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -697,7 +747,7 @@ void UPyAbility_102571::ReceiveTick(float DeltaSeconds)
 // PythonFunction PyAbility_102571.PyAbility_102571.NativeOnMontageEvent
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_102571::NativeOnMontageEvent(const class FString& Tag)
 {
@@ -747,7 +797,7 @@ void UPyAbility_102571::OnDashFinish(EDashStopReason Reason)
 // PythonFunction PyAbility_102571.PyAbility_102571.NativeOnMontageCompleted
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UPyAbility_102571::NativeOnMontageCompleted(const class FString& Tag)
 {

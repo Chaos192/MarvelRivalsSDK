@@ -63,11 +63,11 @@ public:
 };
 
 // PythonClass PyAbility_102493.PyAbility_102493
-// 0x0010 (0x27F0 - 0x27E0)
+// 0x0010 (0x27F8 - 0x27E8)
 class UPyAbility_102493 : public UAbility_113
 {
 public:
-	TMulticastInlineDelegate<void()>              AdsorbEndDispatcher;                               // 0x27E0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void()>              AdsorbEndDispatcher;                               // 0x27E8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)
 
 public:
 	void BeginPlay();
@@ -91,7 +91,7 @@ public:
 };
 
 // PythonClass PyAbility_102493.PyNotTreatFallAbility_102493
-// 0x0000 (0x12B8 - 0x12B8)
+// 0x0000 (0x12C8 - 0x12C8)
 class UPyNotTreatFallAbility_102493 : public UMarvelNotTreatFallAbility
 {
 public:

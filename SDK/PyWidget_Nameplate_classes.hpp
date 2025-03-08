@@ -18,9 +18,8 @@ namespace SDK
 {
 
 // PythonClass PyWidget_Nameplate.PyWidget_Nameplate
-// 0x0060 (0x0950 - 0x08F0)
-#pragma pack(push, 0x1)
-class alignas(0x10) UPyWidget_Nameplate : public UPyWidget_BaseCommonButton
+// 0x0070 (0x0960 - 0x08F0)
+class UPyWidget_Nameplate : public UPyWidget_BaseCommonButton
 {
 public:
 	bool                                          ShowTrainingTips;                                  // 0x08E8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -45,6 +44,10 @@ public:
 	int32                                         ClanMiniNameVisibility;                            // 0x0938(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_93C[0x4];                                      // 0x093C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UWidget*                                WBP_Voice_NamePlateIcon;                           // 0x0940(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, Transient, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         WomanAnimTimer;                                    // 0x0948(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ValentinesAnimTimer;                               // 0x094C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UAkAudioEvent*                          AkEvent_Valentines_L;                              // 0x0950(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UAkAudioEvent*                          AkEvent_Valentines_R;                              // 0x0958(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void OnInitialized();
@@ -64,7 +67,6 @@ public:
 		return GetDefaultObjImpl<UPyWidget_Nameplate>();
 	}
 };
-#pragma pack(pop)
 
 }
 

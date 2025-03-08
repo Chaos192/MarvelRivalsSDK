@@ -10,6 +10,7 @@
 
 #include "Basic.hpp"
 
+#include "GameplayTags_structs.hpp"
 #include "MarvelLevel_classes.hpp"
 #include "Engine_structs.hpp"
 
@@ -18,7 +19,7 @@ namespace SDK
 {
 
 // PythonClass PyLevelPortal.PyLevelPortal
-// 0x0020 (0x04B0 - 0x0490)
+// 0x0030 (0x04C0 - 0x0490)
 class APyLevelPortal final : public ALevelPortal
 {
 public:
@@ -26,10 +27,14 @@ public:
 	class APlayerStart*                           SelfPlayerStart;                                   // 0x0498(0x0008)(Edit, ZeroConstructor, DisableEditOnTemplate, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UAkAudioEvent*                          InAudio;                                           // 0x04A0(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UAkAudioEvent*                          OutAudio;                                          // 0x04A8(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGameplayTag                           ScreenFXCueTag;                                    // 0x04B0(0x000C)(Edit, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ScreenFXTime;                                      // 0x04BC(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void ReceiveBeginPlay();
 	void ReceiveEndPlay(EEndPlayReason _);
+	void PlayInAudio();
+	void PlayOutAudio();
 
 public:
 	static class UClass* StaticClass()

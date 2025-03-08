@@ -21,7 +21,7 @@ namespace SDK
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class UObject*                          WorldObject                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FWinterFestivalClientPaintParam  Param                                                  (Parm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FWinterFestivalClientPaintParam&Param                                                  (Parm, NoDestructor, NativeAccessSpecifierPublic)
 
 void UWinterFestivalLibrary::WinterFestivalPaintOnLocation(class UObject* WorldObject, const struct FWinterFestivalClientPaintParam& Param)
 {

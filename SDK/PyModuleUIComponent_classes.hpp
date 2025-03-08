@@ -76,13 +76,13 @@ public:
 };
 
 // PythonClass PyModuleUIComponent.PyWC_Module
-// 0x0010 (0x0B20 - 0x0B10)
+// 0x0010 (0x0BB0 - 0x0BA0)
 class UPyWC_Module final : public UMarvelWidgetComponent
 {
 public:
-	uint8                                         Pad_B08[0x8];                                      // 0x0B08(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         ArrowVisibleRange;                                 // 0x0B10(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         SquaredArrowVisibleRange;                          // 0x0B14(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_B98[0x8];                                      // 0x0B98(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         ArrowVisibleRange;                                 // 0x0BA0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         SquaredArrowVisibleRange;                          // 0x0BA4(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	void ReceiveBeginPlay();

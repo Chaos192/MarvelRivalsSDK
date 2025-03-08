@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "AIModule_structs.hpp"
 #include "MarvelAI_structs.hpp"
+#include "AIModule_structs.hpp"
 #include "BTS_PySelectTarget_Base_classes.hpp"
 
 
